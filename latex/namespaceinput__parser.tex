@@ -1,0 +1,276 @@
+\hypertarget{namespaceinput__parser}{}\doxysection{input\+\_\+parser Module Reference}
+\label{namespaceinput__parser}\index{input\_parser@{input\_parser}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceinput__parser_ac78e2b99150ada99102bdbea471f4ea2}{read\+\_\+problem}} (system, run\+\_\+equil, verbose)
+\item 
+subroutine \mbox{\hyperlink{namespaceinput__parser_aa9a77c1395d69d54ce38420acdb3f87f}{read\+\_\+qho}} (QHO)
+\item 
+subroutine \mbox{\hyperlink{namespaceinput__parser_a3ebe204fa7f63e19fbf29c36f580ee74}{read\+\_\+h2plus}} (H2plus)
+\item 
+subroutine \mbox{\hyperlink{namespaceinput__parser_a163a65b1b9201a421da32ba2a7c92148}{read\+\_\+h2}} (H2)
+\item 
+subroutine \mbox{\hyperlink{namespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea}{read\+\_\+inputs}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer \mbox{\hyperlink{namespaceinput__parser_a209ae7e3892e6b6dcbe9137fdeb0875f}{fu}}
+\item 
+integer \mbox{\hyperlink{namespaceinput__parser_a0d29f515c2bc6f306a8576c1b4253c8d}{rc}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespaceinput__parser_ac78e2b99150ada99102bdbea471f4ea2}\label{namespaceinput__parser_ac78e2b99150ada99102bdbea471f4ea2}} 
+\index{input\_parser@{input\_parser}!read\_problem@{read\_problem}}
+\index{read\_problem@{read\_problem}!input\_parser@{input\_parser}}
+\doxysubsubsection{\texorpdfstring{read\_problem()}{read\_problem()}}
+{\footnotesize\ttfamily subroutine input\+\_\+parser\+::read\+\_\+problem (\begin{DoxyParamCaption}\item[{character(len=10), intent(out)}]{system,  }\item[{logical, intent(out)}]{run\+\_\+equil,  }\item[{logical, intent(out)}]{verbose }\end{DoxyParamCaption})}
+
+
+
+Definition at line 13 of file input\+\_\+parser.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     \textcolor{comment}{! Local variables}}
+\DoxyCodeLine{16     \textcolor{keywordtype}{character(len=10)}, \textcolor{keywordtype}{intent(out)} :: system}
+\DoxyCodeLine{17     \textcolor{keywordtype}{logical}, \textcolor{keywordtype}{intent(out)} :: run\_equil, verbose}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{comment}{! Define the namelist}}
+\DoxyCodeLine{20     namelist /problem/ system, run\_equil, verbose}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{comment}{! Open the file}}
+\DoxyCodeLine{23     \textcolor{keyword}{open}(action=\textcolor{stringliteral}{'read'}, file=\textcolor{stringliteral}{'params.txt'}, iostat=rc, newunit=fu)}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{comment}{! Read the namelist}}
+\DoxyCodeLine{26     \textcolor{keyword}{read}(nml=problem, iostat=rc, unit=fu)}
+\DoxyCodeLine{27     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{28         print*, \textcolor{stringliteral}{'Error: Invalid PROBLEM namelist format in file "{}params.txt"{}.'}}
+\DoxyCodeLine{29 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{30     }
+\DoxyCodeLine{31     \textcolor{comment}{! Close the file}}
+\DoxyCodeLine{32     \textcolor{keyword}{close}(fu)}
+\DoxyCodeLine{33 }
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceinput__parser_ac78e2b99150ada99102bdbea471f4ea2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceinput__parser_aa9a77c1395d69d54ce38420acdb3f87f}\label{namespaceinput__parser_aa9a77c1395d69d54ce38420acdb3f87f}} 
+\index{input\_parser@{input\_parser}!read\_qho@{read\_qho}}
+\index{read\_qho@{read\_qho}!input\_parser@{input\_parser}}
+\doxysubsubsection{\texorpdfstring{read\_qho()}{read\_qho()}}
+{\footnotesize\ttfamily subroutine input\+\_\+parser\+::read\+\_\+qho (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structshared__data_1_1qho__type}{qho\+\_\+type}}), intent(out)}]{QHO }\end{DoxyParamCaption})}
+
+
+
+Definition at line 37 of file input\+\_\+parser.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{comment}{! Local variables}}
+\DoxyCodeLine{40     \textcolor{keywordtype}{type}(QHO\_type), \textcolor{keywordtype}{intent(out)} :: QHO}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{comment}{! Define the namelist}}
+\DoxyCodeLine{43     namelist /parameters/ qho}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{comment}{! Open the file}}
+\DoxyCodeLine{46     \textcolor{keyword}{open}(action=\textcolor{stringliteral}{'read'}, file=\textcolor{stringliteral}{'params.txt'}, iostat=rc, newunit=fu)}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{comment}{! Read the namelist}}
+\DoxyCodeLine{49     \textcolor{keyword}{read}(nml=parameters, iostat=rc, unit=fu)}
+\DoxyCodeLine{50     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{51         print*, \textcolor{stringliteral}{'Error: Invalid PARAMETERS namelist for QHO system in file "{}params.txt"{}.'}}
+\DoxyCodeLine{52 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{53     }
+\DoxyCodeLine{54     \textcolor{comment}{! Close the file}}
+\DoxyCodeLine{55     \textcolor{keyword}{close}(fu)}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceinput__parser_aa9a77c1395d69d54ce38420acdb3f87f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceinput__parser_a3ebe204fa7f63e19fbf29c36f580ee74}\label{namespaceinput__parser_a3ebe204fa7f63e19fbf29c36f580ee74}} 
+\index{input\_parser@{input\_parser}!read\_h2plus@{read\_h2plus}}
+\index{read\_h2plus@{read\_h2plus}!input\_parser@{input\_parser}}
+\doxysubsubsection{\texorpdfstring{read\_h2plus()}{read\_h2plus()}}
+{\footnotesize\ttfamily subroutine input\+\_\+parser\+::read\+\_\+h2plus (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structshared__data_1_1h2plus__type}{h2plus\+\_\+type}}), intent(out)}]{H2plus }\end{DoxyParamCaption})}
+
+
+
+Definition at line 59 of file input\+\_\+parser.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \textcolor{comment}{! Local variables}}
+\DoxyCodeLine{62     \textcolor{keywordtype}{type}(H2plus\_type), \textcolor{keywordtype}{intent(out)} :: H2plus}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \textcolor{comment}{! Define the namelist}}
+\DoxyCodeLine{65     namelist /parameters/ h2plus}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{comment}{! Open the file}}
+\DoxyCodeLine{68     \textcolor{keyword}{open}(action=\textcolor{stringliteral}{'read'}, file=\textcolor{stringliteral}{'params.txt'}, iostat=rc, newunit=fu)}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     \textcolor{comment}{! Read the namelist}}
+\DoxyCodeLine{71     \textcolor{keyword}{read}(nml=parameters, iostat=rc, unit=fu)}
+\DoxyCodeLine{72     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{73         print*, \textcolor{stringliteral}{'Error: Invalid PARAMETERS namelist for H2plus system in file "{}params.txt"{}.'}}
+\DoxyCodeLine{74 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{75     }
+\DoxyCodeLine{76     \textcolor{comment}{! Close the file}}
+\DoxyCodeLine{77     \textcolor{keyword}{close}(fu)}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceinput__parser_a3ebe204fa7f63e19fbf29c36f580ee74_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceinput__parser_a163a65b1b9201a421da32ba2a7c92148}\label{namespaceinput__parser_a163a65b1b9201a421da32ba2a7c92148}} 
+\index{input\_parser@{input\_parser}!read\_h2@{read\_h2}}
+\index{read\_h2@{read\_h2}!input\_parser@{input\_parser}}
+\doxysubsubsection{\texorpdfstring{read\_h2()}{read\_h2()}}
+{\footnotesize\ttfamily subroutine input\+\_\+parser\+::read\+\_\+h2 (\begin{DoxyParamCaption}\item[{type(\mbox{\hyperlink{structshared__data_1_1h2__type}{h2\+\_\+type}}), intent(out)}]{H2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 81 of file input\+\_\+parser.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83     \textcolor{comment}{! Local variables}}
+\DoxyCodeLine{84     \textcolor{keywordtype}{type}(H2\_type), \textcolor{keywordtype}{intent(out)} :: H2}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     \textcolor{comment}{! Define the namelist}}
+\DoxyCodeLine{87     namelist /parameters/ h2}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{comment}{! Open the file}}
+\DoxyCodeLine{90     \textcolor{keyword}{open}(action=\textcolor{stringliteral}{'read'}, file=\textcolor{stringliteral}{'params.txt'}, iostat=rc, newunit=fu)}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{comment}{! Read the namelist}}
+\DoxyCodeLine{93     \textcolor{keyword}{read}(nml=parameters, iostat=rc, unit=fu)}
+\DoxyCodeLine{94     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{95         print*, \textcolor{stringliteral}{'Error: Invalid PARAMETERS namelist for H2 system in file "{}params.txt"{}.'}}
+\DoxyCodeLine{96 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{97     }
+\DoxyCodeLine{98     \textcolor{comment}{! Close the file}}
+\DoxyCodeLine{99     \textcolor{keyword}{close}(fu)}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceinput__parser_a163a65b1b9201a421da32ba2a7c92148_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea}\label{namespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea}} 
+\index{input\_parser@{input\_parser}!read\_inputs@{read\_inputs}}
+\index{read\_inputs@{read\_inputs}!input\_parser@{input\_parser}}
+\doxysubsubsection{\texorpdfstring{read\_inputs()}{read\_inputs()}}
+{\footnotesize\ttfamily subroutine input\+\_\+parser\+::read\+\_\+inputs}
+
+
+
+Definition at line 103 of file input\+\_\+parser.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105     \textcolor{comment}{! Check if file 'params.txt' exists}}
+\DoxyCodeLine{106     \textcolor{keyword}{inquire}(file=\textcolor{stringliteral}{'params.txt'}, iostat=rc)}
+\DoxyCodeLine{107     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{108         print*, \textcolor{stringliteral}{'Error: Input file "{}params.txt"{} does not exist.'}}
+\DoxyCodeLine{109         \textcolor{keywordflow}{return}}
+\DoxyCodeLine{110 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112     \textcolor{comment}{! Read PROBLEM namelist}}
+\DoxyCodeLine{113     \textcolor{keyword}{call }read\_problem(system, run\_equil, verbose)}
+\DoxyCodeLine{114     print*,\textcolor{stringliteral}{'System: '},system }
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     \textcolor{comment}{! If system='test', return to main}}
+\DoxyCodeLine{117     \textcolor{keywordflow}{if} (trim(system)==\textcolor{stringliteral}{'test'}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{118         \textcolor{keywordflow}{return}}
+\DoxyCodeLine{119 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{120      }
+\DoxyCodeLine{121     \textcolor{comment}{! Read PARAMETERS of the defined problem}}
+\DoxyCodeLine{122     \textcolor{keywordflow}{if} (trim(system)==\textcolor{stringliteral}{'QHO'}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{123         \textcolor{keyword}{call }read\_qho(qho)}
+\DoxyCodeLine{124         print*, qho\%alpha}
+\DoxyCodeLine{125     \textcolor{keywordflow}{elseif} (trim(system)==\textcolor{stringliteral}{'H2plus'}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{126         \textcolor{keyword}{call }read\_h2plus(h2plus)}
+\DoxyCodeLine{127         print*, h2plus\%bond}
+\DoxyCodeLine{128     \textcolor{keywordflow}{elseif} (trim(system)==\textcolor{stringliteral}{'H2'}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{129         \textcolor{keyword}{call }read\_h2(h2)}
+\DoxyCodeLine{130         print*, h2\%bond}
+\DoxyCodeLine{131     else\textcolor{comment}{!if (trim(system)/='test') then}}
+\DoxyCodeLine{132         print*, \textcolor{stringliteral}{'Error: Invalid system definition.'}}
+\DoxyCodeLine{133 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{134 }
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{namespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{namespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceinput__parser_a209ae7e3892e6b6dcbe9137fdeb0875f}\label{namespaceinput__parser_a209ae7e3892e6b6dcbe9137fdeb0875f}} 
+\index{input\_parser@{input\_parser}!fu@{fu}}
+\index{fu@{fu}!input\_parser@{input\_parser}}
+\doxysubsubsection{\texorpdfstring{fu}{fu}}
+{\footnotesize\ttfamily integer input\+\_\+parser\+::fu}
+
+
+
+Definition at line 8 of file input\+\_\+parser.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8     \textcolor{keywordtype}{integer} :: fu, rc}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceinput__parser_a0d29f515c2bc6f306a8576c1b4253c8d}\label{namespaceinput__parser_a0d29f515c2bc6f306a8576c1b4253c8d}} 
+\index{input\_parser@{input\_parser}!rc@{rc}}
+\index{rc@{rc}!input\_parser@{input\_parser}}
+\doxysubsubsection{\texorpdfstring{rc}{rc}}
+{\footnotesize\ttfamily integer input\+\_\+parser\+::rc}
+
+
+
+Definition at line 8 of file input\+\_\+parser.\+f90.
+

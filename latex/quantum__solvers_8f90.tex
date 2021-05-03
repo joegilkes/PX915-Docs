@@ -1,0 +1,30 @@
+\hypertarget{quantum__solvers_8f90}{}\doxysection{repo/src/quantum\+\_\+solvers.f90 File Reference}
+\label{quantum__solvers_8f90}\index{repo/src/quantum\_solvers.f90@{repo/src/quantum\_solvers.f90}}
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacesolvers}{solvers}}
+\begin{DoxyCompactList}\small\item\em Contains local energy and transition probability solvers for available problems. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+real(real64) function \mbox{\hyperlink{namespacesolvers_a722edf182d188ad1db7fa6a675fea13c}{solvers\+::qho\+\_\+prob}} (alpha, x\+\_\+current, x\+\_\+next)
+\begin{DoxyCompactList}\small\item\em Calculates transition probability for quantum harmonic oscillator problem. \end{DoxyCompactList}\item 
+real(real64) function \mbox{\hyperlink{namespacesolvers_a4f0054c0d0d2f5080c92a04557feaf52}{solvers\+::qho\+\_\+energy}} (alpha, x)
+\begin{DoxyCompactList}\small\item\em Calculates local energy for quantum harmonic oscillator problem. \end{DoxyCompactList}\item 
+real(real64) function \mbox{\hyperlink{namespacesolvers_a7d32620a8f8a8780a0b0ef83c490e8f7}{solvers\+::h1s\+\_\+wfn}} (r\+\_\+elec, R\+\_\+nuc)
+\begin{DoxyCompactList}\small\item\em Calculates value of the wavefunction of a hydrogen 1s orbital. \end{DoxyCompactList}\item 
+real(real64) function \mbox{\hyperlink{namespacesolvers_a89943685e3d86544f0261f24fac44419}{solvers\+::h2s\+\_\+wfn}} (r\+\_\+elec, R\+\_\+nuc)
+\begin{DoxyCompactList}\small\item\em Calculates value of the wavefunction of a hydrogen 2s orbital. \end{DoxyCompactList}\item 
+real(real64) function \mbox{\hyperlink{namespacesolvers_a6d705d11696b64991f1624e298067bed}{solvers\+::h\+\_\+2\+\_\+plus\+\_\+wfn}} (c, r, R\+\_\+a, R\+\_\+b)
+\begin{DoxyCompactList}\small\item\em Calculates trial wavefunction for the $ H_{2}^{+} $ problem. \end{DoxyCompactList}\item 
+real(real64) function \mbox{\hyperlink{namespacesolvers_a5695d107239a7a8fb1f8b096786af028}{solvers\+::h\+\_\+2\+\_\+plus\+\_\+prob}} (c, r\+\_\+current, r\+\_\+next, R\+\_\+a, R\+\_\+b)
+\begin{DoxyCompactList}\small\item\em Calculates transition probability for the $ H_{2}^{+} $ problem. \end{DoxyCompactList}\item 
+real(real64) function \mbox{\hyperlink{namespacesolvers_a1f21386928aadfc3dd6bc5cfb82fb94f}{solvers\+::h\+\_\+2\+\_\+plus\+\_\+energy}} (c, r, R\+\_\+a, R\+\_\+b, fdstep)
+\begin{DoxyCompactList}\small\item\em Calculates local energy for the $ H_{2}^{+} $ problem. \end{DoxyCompactList}\item 
+real(real64) function \mbox{\hyperlink{namespacesolvers_aa0515876b10a8cebd7f381e14b1ff856}{solvers\+::h\+\_\+2\+\_\+wfn}} (c, r\+\_\+1, r\+\_\+2, R\+\_\+a, R\+\_\+b)
+\begin{DoxyCompactList}\small\item\em Calculates trial wavefunction for the $ H_{2} $ problem. \end{DoxyCompactList}\item 
+real(real64) function \mbox{\hyperlink{namespacesolvers_a0d0f254ede019bb0bf743397cd0069f7}{solvers\+::h\+\_\+2\+\_\+prob}} (c, r\+\_\+1\+\_\+current, r\+\_\+2\+\_\+current, r\+\_\+1\+\_\+next, r\+\_\+2\+\_\+next, R\+\_\+a, R\+\_\+b)
+\begin{DoxyCompactList}\small\item\em Calculates transition probability for the $ H_{2} $ problem. \end{DoxyCompactList}\item 
+real(real64) function \mbox{\hyperlink{namespacesolvers_ab21b7ec07e33a8417b62ecb75c327a6f}{solvers\+::h\+\_\+2\+\_\+energy}} (c, r\+\_\+1, r\+\_\+2, R\+\_\+a, R\+\_\+b, fdstep)
+\begin{DoxyCompactList}\small\item\em Calculates local energy for the $ H_{2} $ problem. \end{DoxyCompactList}\end{DoxyCompactItemize}

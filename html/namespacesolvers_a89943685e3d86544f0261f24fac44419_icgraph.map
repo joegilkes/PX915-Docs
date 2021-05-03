@@ -1,0 +1,9 @@
+<map id="solvers::h2s_wfn" name="solvers::h2s_wfn">
+<area shape="rect" id="node1" title="Calculates value of the wavefunction of a hydrogen 2s orbital." alt="" coords="419,81,537,108"/>
+<area shape="rect" id="node2" href="$namespacesolvers.html#a6d705d11696b64991f1624e298067bed" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="220,56,371,83"/>
+<area shape="rect" id="node5" href="$namespacesolvers.html#aa0515876b10a8cebd7f381e14b1ff856" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="236,107,355,133"/>
+<area shape="rect" id="node3" href="$namespacesolvers.html#a1f21386928aadfc3dd6bc5cfb82fb94f" title="Calculates local energy for the &#160;problem." alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node4" href="$namespacesolvers.html#a5695d107239a7a8fb1f8b096786af028" title="Calculates transition probability for the &#160;problem." alt="" coords="11,56,166,83"/>
+<area shape="rect" id="node6" href="$namespacesolvers.html#ab21b7ec07e33a8417b62ecb75c327a6f" title="Calculates local energy for the &#160;problem." alt="" coords="21,107,157,133"/>
+<area shape="rect" id="node7" href="$namespacesolvers.html#a0d0f254ede019bb0bf743397cd0069f7" title="Calculates transition probability for the &#160;problem." alt="" coords="27,157,150,184"/>
+</map>

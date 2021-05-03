@@ -1,0 +1,125 @@
+\hypertarget{namespacevqmc}{}\doxysection{vqmc Module Reference}
+\label{namespacevqmc}\index{vqmc@{vqmc}}
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacevqmc_ad0cafe2ccd786d0253d924414b1b0a90}{random\+\_\+normal}} (d, x)
+\item 
+subroutine \mbox{\hyperlink{namespacevqmc_a94083d1875232dba0b92445ecfb0aa59}{mcmc}} (problem, x\+\_\+start, sigma, N, X, accept\+\_\+rate)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacevqmc_ad0cafe2ccd786d0253d924414b1b0a90}\label{namespacevqmc_ad0cafe2ccd786d0253d924414b1b0a90}} 
+\index{vqmc@{vqmc}!random\_normal@{random\_normal}}
+\index{random\_normal@{random\_normal}!vqmc@{vqmc}}
+\doxysubsubsection{\texorpdfstring{random\_normal()}{random\_normal()}}
+{\footnotesize\ttfamily subroutine vqmc\+::random\+\_\+normal (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{d,  }\item[{real(real64), intent(out)}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line 12 of file VQMC.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13         }
+\DoxyCodeLine{14         \textcolor{keywordtype}{implicit none} }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16         \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: d}
+\DoxyCodeLine{17 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: x }
+\DoxyCodeLine{18 \textcolor{keywordtype}{        real}(real64) :: u\_1, u\_2 }
+\DoxyCodeLine{19         \textcolor{keywordtype}{integer} :: i}
+\DoxyCodeLine{20         }
+\DoxyCodeLine{21         \textcolor{keywordflow}{do} i = 1, d}
+\DoxyCodeLine{22             \textcolor{keyword}{call }random\_number(u\_1)}
+\DoxyCodeLine{23             \textcolor{keyword}{call }random\_number(u\_2)}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25             x(i) = sqrt(-\/2*log(u1))*cos(2*pi*u2)}
+\DoxyCodeLine{26 \textcolor{keywordflow}{        end do} }
+\DoxyCodeLine{27 }
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{namespacevqmc_ad0cafe2ccd786d0253d924414b1b0a90_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacevqmc_a94083d1875232dba0b92445ecfb0aa59}\label{namespacevqmc_a94083d1875232dba0b92445ecfb0aa59}} 
+\index{vqmc@{vqmc}!mcmc@{mcmc}}
+\index{mcmc@{mcmc}!vqmc@{vqmc}}
+\doxysubsubsection{\texorpdfstring{mcmc()}{mcmc()}}
+{\footnotesize\ttfamily subroutine vqmc\+::mcmc (\begin{DoxyParamCaption}\item[{character(len=20)}]{problem,  }\item[{real(real64), dimension(\+:), intent(in)}]{x\+\_\+start,  }\item[{real(real64), intent(in)}]{sigma,  }\item[{integer, intent(in)}]{N,  }\item[{real(real64), dimension(\+:, \+:), intent(out), allocatable}]{X,  }\item[{real(real64), intent(out)}]{accept\+\_\+rate }\end{DoxyParamCaption})}
+
+
+
+Definition at line 30 of file VQMC.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         \textcolor{keywordtype}{implicit none} }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: x\_start}
+\DoxyCodeLine{35 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: sigma}
+\DoxyCodeLine{36         \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N }
+\DoxyCodeLine{37         \textcolor{keywordtype}{character(len=20)} :: problem }
+\DoxyCodeLine{38         }
+\DoxyCodeLine{39 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: accept\_rate}
+\DoxyCodeLine{40 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:, :)}, \textcolor{keywordtype}{allocatable} :: X}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{allocatable}, \textcolor{keywordtype}{dimension(:)} :: X\_n, sample\_normal}
+\DoxyCodeLine{43 \textcolor{keywordtype}{        real}(real64) :: log\_prob\_n, alpha, a, unif\_num}
+\DoxyCodeLine{44         \textcolor{keywordtype}{integer} :: i, d, accept  }
+\DoxyCodeLine{45         }
+\DoxyCodeLine{46         \textcolor{keywordflow}{if} (problem == \textcolor{stringliteral}{'QHO'}) \textcolor{keywordflow}{then} }
+\DoxyCodeLine{47             \textcolor{keyword}{allocate}(x\_n(1))}
+\DoxyCodeLine{48             \textcolor{keyword}{allocate}(sample\_normal(1))}
+\DoxyCodeLine{49             d = 1}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51             \textcolor{keyword}{allocate}(x(1, 1:n+1))}
+\DoxyCodeLine{52         \textcolor{keywordflow}{else} }
+\DoxyCodeLine{53             \textcolor{keyword}{allocate}(x\_n(1:3))}
+\DoxyCodeLine{54             \textcolor{keyword}{allocate}(sample\_normal(1:3))}
+\DoxyCodeLine{55             d = 3}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57             \textcolor{keyword}{allocate}(x(1:3, 1:n+1))}
+\DoxyCodeLine{58 \textcolor{keywordflow}{        end if} }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60         x(:,1) = x\_start }
+\DoxyCodeLine{61         a = 0.5}
+\DoxyCodeLine{62         accept = 0 }
+\DoxyCodeLine{63         }
+\DoxyCodeLine{64         \textcolor{keywordflow}{do} i = 2, n+1 }
+\DoxyCodeLine{65             \textcolor{comment}{! Propose the next step}}
+\DoxyCodeLine{66             \textcolor{keyword}{call }random\_normal(d, sample\_normal)}
+\DoxyCodeLine{67             x\_n = x(:, i-\/1) + sigma * sample\_normal}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69             log\_prob\_n = log(qho\_prob(a, x(:,i-\/1), x\_n))}
+\DoxyCodeLine{70             alpha = min(1.0\_real64, log\_prob\_n)}
+\DoxyCodeLine{71             }
+\DoxyCodeLine{72             \textcolor{keyword}{call }random\_number(unif\_num)}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74             \textcolor{keywordflow}{if} (alpha <= unif\_num) \textcolor{keywordflow}{then} }
+\DoxyCodeLine{75                 x(:, i) = x\_n }
+\DoxyCodeLine{76                 accept =  1 + accept}
+\DoxyCodeLine{77             \textcolor{keywordflow}{else} }
+\DoxyCodeLine{78                 x(:, i) = x(:, i-\/1)}
+\DoxyCodeLine{79 \textcolor{keywordflow}{            end if} }
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{keywordflow}{        end do} }
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83         accept\_rate = accept / n }
+\DoxyCodeLine{84 }
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{namespacevqmc_a94083d1875232dba0b92445ecfb0aa59_cgraph}
+\end{center}
+\end{figure}
