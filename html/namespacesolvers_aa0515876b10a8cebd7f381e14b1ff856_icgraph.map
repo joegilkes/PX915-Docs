@@ -1,5 +1,6 @@
 <map id="solvers::h_2_wfn" name="solvers::h_2_wfn">
-<area shape="rect" id="node1" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="189,31,308,57"/>
-<area shape="rect" id="node2" href="$namespacesolvers.html#ab21b7ec07e33a8417b62ecb75c327a6f" title="Calculates local energy for the &#160;problem." alt="" coords="5,5,141,32"/>
-<area shape="rect" id="node3" href="$namespacesolvers.html#a0d0f254ede019bb0bf743397cd0069f7" title="Calculates transition probability for the &#160;problem." alt="" coords="12,56,135,83"/>
+<area shape="rect" id="node1" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="357,31,476,57"/>
+<area shape="rect" id="node2" href="$namespacesolvers.html#ab21b7ec07e33a8417b62ecb75c327a6f" title="Calculates local energy for the &#160;problem." alt="" coords="173,5,309,32"/>
+<area shape="rect" id="node4" href="$namespacesolvers.html#a0d0f254ede019bb0bf743397cd0069f7" title="Calculates transition probability for the &#160;problem." alt="" coords="180,56,303,83"/>
+<area shape="rect" id="node3" href="$namespacevqmc.html#a82cd0f11ac51e9fc6f3246db0ca923aa" title=" " alt="" coords="5,31,125,57"/>
 </map>

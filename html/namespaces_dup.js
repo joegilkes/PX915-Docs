@@ -35,7 +35,9 @@ var namespaces_dup =
     [ "testing", "namespacetesting.html", null ],
     [ "visualise", "namespacevisualise.html", null ],
     [ "vqmc", "namespacevqmc.html", [
-      [ "random_normal", "namespacevqmc.html#ad0cafe2ccd786d0253d924414b1b0a90", null ],
-      [ "mcmc", "namespacevqmc.html#a94083d1875232dba0b92445ecfb0aa59", null ]
+      [ "random_normal", "namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335", null ],
+      [ "vqmc_qho", "namespacevqmc.html#aa1f3818a0761a8d2907614fa15256a10", null ],
+      [ "vqmc_h_2_plus", "namespacevqmc.html#ab903fb33ac49e462c789d47067ba311d", null ],
+      [ "vqmc_h_2", "namespacevqmc.html#a82cd0f11ac51e9fc6f3246db0ca923aa", null ]
     ] ]
 ];
