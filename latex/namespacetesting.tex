@@ -1,2 +1,148 @@
 \hypertarget{namespacetesting}{}\doxysection{testing Module Reference}
 \label{namespacetesting}\index{testing@{testing}}
+
+
+Contains unit tests for all major functions in the program.  
+
+
+\doxysubsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+integer function \mbox{\hyperlink{namespacetesting_a3cd96e3cb653762262d063e2aed44ab7}{test\+\_\+qho\+\_\+prob}} ()
+\begin{DoxyCompactList}\small\item\em Tests the QHO\+\_\+\+Prob function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. \end{DoxyCompactList}\item 
+integer function \mbox{\hyperlink{namespacetesting_a55374b3e27ef78754002549b1b423118}{test\+\_\+qho\+\_\+energy}} ()
+\begin{DoxyCompactList}\small\item\em Tests the QHO\+\_\+\+Energy function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+real(real64), parameter \mbox{\hyperlink{namespacetesting_abac17ed62ec6fb1d981bcfce635ed8b3}{tol}} = 1e-\/6\+\_\+real64
+\begin{DoxyCompactList}\small\item\em Error tolerance in floating point evaluations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains unit tests for all major functions in the program. 
+
+Module containing all test data needed for unit tests, ie. all pre-\/defined inputs/outputs to internal functions, as well as functions for running these tests and reporting any discrepancies. 
+
+\doxysubsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacetesting_a3cd96e3cb653762262d063e2aed44ab7}\label{namespacetesting_a3cd96e3cb653762262d063e2aed44ab7}} 
+\index{testing@{testing}!test\_qho\_prob@{test\_qho\_prob}}
+\index{test\_qho\_prob@{test\_qho\_prob}!testing@{testing}}
+\doxysubsubsection{\texorpdfstring{test\_qho\_prob()}{test\_qho\_prob()}}
+{\footnotesize\ttfamily integer function testing\+::test\+\_\+qho\+\_\+prob}
+
+
+
+Tests the QHO\+\_\+\+Prob function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em ierr} & Unit test error state \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 45 of file testing.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keywordtype}{        real}(real64) :: alpha = 0.1\_real64}
+\DoxyCodeLine{50 \textcolor{keywordtype}{        real}(real64) :: x\_current = 0.2\_real64}
+\DoxyCodeLine{51 \textcolor{keywordtype}{        real}(real64) :: x\_next = 1.0\_real64}
+\DoxyCodeLine{52 \textcolor{keywordtype}{        real}(real64) :: res\_expected = 0.8253068685\_real64}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keywordtype}{        real}(real64) :: res\_actual}
+\DoxyCodeLine{55         \textcolor{keywordtype}{integer} :: ierr}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57         res\_actual = qho\_prob(alpha, x\_current, x\_next)}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{60             ierr = 1}
+\DoxyCodeLine{61         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{62             ierr = 0}
+\DoxyCodeLine{63 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{64 }
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{namespacetesting_a3cd96e3cb653762262d063e2aed44ab7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacetesting_a55374b3e27ef78754002549b1b423118}\label{namespacetesting_a55374b3e27ef78754002549b1b423118}} 
+\index{testing@{testing}!test\_qho\_energy@{test\_qho\_energy}}
+\index{test\_qho\_energy@{test\_qho\_energy}!testing@{testing}}
+\doxysubsubsection{\texorpdfstring{test\_qho\_energy()}{test\_qho\_energy()}}
+{\footnotesize\ttfamily integer function testing\+::test\+\_\+qho\+\_\+energy}
+
+
+
+Tests the QHO\+\_\+\+Energy function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em ierr} & Unit test error state \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 77 of file testing.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{keywordtype}{        real}(real64) :: alpha = 0.15\_real64}
+\DoxyCodeLine{82 \textcolor{keywordtype}{        real}(real64) :: x = 0.314\_real64}
+\DoxyCodeLine{83 \textcolor{keywordtype}{        real}(real64) :: res\_expected = 0.19486118\_real64}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{keywordtype}{        real}(real64) :: res\_actual}
+\DoxyCodeLine{86         \textcolor{keywordtype}{integer} :: ierr}
+\DoxyCodeLine{87     }
+\DoxyCodeLine{88         res\_actual = qho\_energy(alpha, x)}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{91             ierr = 1}
+\DoxyCodeLine{92         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{93             ierr = 0}
+\DoxyCodeLine{94 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{95 }
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{namespacetesting_a55374b3e27ef78754002549b1b423118_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacetesting_abac17ed62ec6fb1d981bcfce635ed8b3}\label{namespacetesting_abac17ed62ec6fb1d981bcfce635ed8b3}} 
+\index{testing@{testing}!tol@{tol}}
+\index{tol@{tol}!testing@{testing}}
+\doxysubsubsection{\texorpdfstring{tol}{tol}}
+{\footnotesize\ttfamily real(real64), parameter testing\+::tol = 1e-\/6\+\_\+real64}
+
+
+
+Error tolerance in floating point evaluations. 
+
+
+
+Definition at line 25 of file testing.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{25 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{parameter} :: tol = 1e-\/6\_real64    }
+
+\end{DoxyCode}

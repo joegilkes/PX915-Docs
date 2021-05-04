@@ -34,7 +34,11 @@ var namespaces_dup =
       [ "h_2_prob", "namespacesolvers.html#a0d0f254ede019bb0bf743397cd0069f7", null ],
       [ "h_2_energy", "namespacesolvers.html#ab21b7ec07e33a8417b62ecb75c327a6f", null ]
     ] ],
-    [ "testing", "namespacetesting.html", null ],
+    [ "testing", "namespacetesting.html", [
+      [ "test_qho_prob", "namespacetesting.html#a3cd96e3cb653762262d063e2aed44ab7", null ],
+      [ "test_qho_energy", "namespacetesting.html#a55374b3e27ef78754002549b1b423118", null ],
+      [ "tol", "namespacetesting.html#abac17ed62ec6fb1d981bcfce635ed8b3", null ]
+    ] ],
     [ "visualise", "namespacevisualise.html", null ],
     [ "vqmc", "namespacevqmc.html", [
       [ "random_normal", "namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335", null ],

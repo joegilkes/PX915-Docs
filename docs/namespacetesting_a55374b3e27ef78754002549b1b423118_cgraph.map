@@ -1,0 +1,4 @@
+<map id="testing::test_qho_energy" name="testing::test_qho_energy">
+<area shape="rect" id="node1" title="Tests the QHO_Energy function in the solvers module." alt="" coords="5,5,168,32"/>
+<area shape="rect" id="node2" href="$namespacesolvers.html#a4f0054c0d0d2f5080c92a04557feaf52" title="Calculates local energy for quantum harmonic oscillator problem." alt="" coords="216,5,352,32"/>
+</map>

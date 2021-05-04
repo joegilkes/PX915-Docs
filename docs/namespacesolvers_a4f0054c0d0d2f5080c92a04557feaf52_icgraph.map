@@ -1,4 +1,5 @@
 <map id="solvers::qho_energy" name="solvers::qho_energy">
-<area shape="rect" id="node1" title="Calculates local energy for quantum harmonic oscillator problem." alt="" coords="173,5,309,32"/>
-<area shape="rect" id="node2" href="$namespacevqmc.html#aa1f3818a0761a8d2907614fa15256a10" title=" " alt="" coords="5,5,125,32"/>
+<area shape="rect" id="node1" title="Calculates local energy for quantum harmonic oscillator problem." alt="" coords="216,31,352,57"/>
+<area shape="rect" id="node2" href="$namespacetesting.html#a55374b3e27ef78754002549b1b423118" title="Tests the QHO_Energy function in the solvers module." alt="" coords="5,5,168,32"/>
+<area shape="rect" id="node3" href="$namespacevqmc.html#aa1f3818a0761a8d2907614fa15256a10" title=" " alt="" coords="27,56,147,83"/>
 </map>

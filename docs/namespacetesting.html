@@ -88,10 +88,163 @@ $(document).ready(function(){initNavTree('namespacetesting.html',''); initResiza
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions/Subroutines</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">testing Module Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Contains unit tests for all major functions in the program.  
+<a href="namespacetesting.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions/Subroutines</h2></td></tr>
+<tr class="memitem:a3cd96e3cb653762262d063e2aed44ab7"><td class="memItemLeft" align="right" valign="top">integer function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetesting.html#a3cd96e3cb653762262d063e2aed44ab7">test_qho_prob</a> ()</td></tr>
+<tr class="memdesc:a3cd96e3cb653762262d063e2aed44ab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the QHO_Prob function in the <a class="el" href="namespacesolvers.html">solvers</a> module.  <a href="namespacetesting.html#a3cd96e3cb653762262d063e2aed44ab7">More...</a><br /></td></tr>
+<tr class="separator:a3cd96e3cb653762262d063e2aed44ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55374b3e27ef78754002549b1b423118"><td class="memItemLeft" align="right" valign="top">integer function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetesting.html#a55374b3e27ef78754002549b1b423118">test_qho_energy</a> ()</td></tr>
+<tr class="memdesc:a55374b3e27ef78754002549b1b423118"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the QHO_Energy function in the <a class="el" href="namespacesolvers.html">solvers</a> module.  <a href="namespacetesting.html#a55374b3e27ef78754002549b1b423118">More...</a><br /></td></tr>
+<tr class="separator:a55374b3e27ef78754002549b1b423118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:abac17ed62ec6fb1d981bcfce635ed8b3"><td class="memItemLeft" align="right" valign="top">real(real64), parameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetesting.html#abac17ed62ec6fb1d981bcfce635ed8b3">tol</a> = 1e-6_real64</td></tr>
+<tr class="memdesc:abac17ed62ec6fb1d981bcfce635ed8b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error tolerance in floating point evaluations.  <a href="namespacetesting.html#abac17ed62ec6fb1d981bcfce635ed8b3">More...</a><br /></td></tr>
+<tr class="separator:abac17ed62ec6fb1d981bcfce635ed8b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Contains unit tests for all major functions in the program. </p>
+<p>Module containing all test data needed for unit tests, ie. all pre-defined inputs/outputs to internal functions, as well as functions for running these tests and reporting any discrepancies. </p>
+</div><h2 class="groupheader">Function/Subroutine Documentation</h2>
+<a id="a3cd96e3cb653762262d063e2aed44ab7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cd96e3cb653762262d063e2aed44ab7">&#9670;&nbsp;</a></span>test_qho_prob()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer function testing::test_qho_prob</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tests the QHO_Prob function in the <a class="el" href="namespacesolvers.html">solvers</a> module. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">ierr</td><td>Unit test error state </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="testing_8f90_source.html#l00045">45</a> of file <a class="el" href="testing_8f90_source.html">testing.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">implicit none</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">        real</span>(real64) :: alpha = 0.1_real64</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">        real</span>(real64) :: x_current = 0.2_real64</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordtype">        real</span>(real64) :: x_next = 1.0_real64</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">        real</span>(real64) :: res_expected = 0.8253068685_real64</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">        real</span>(real64) :: res_actual</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">integer</span> :: ierr</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        res_actual = qho_prob(alpha, x_current, x_next)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> (abs(res_actual - res_expected) .ge. tol) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            ierr = 1</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            ierr = 0</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keywordflow">        end if</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+</div><!-- fragment --><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespacetesting_a3cd96e3cb653762262d063e2aed44ab7_cgraph.png" border="0" usemap="#anamespacetesting_a3cd96e3cb653762262d063e2aed44ab7_cgraph" alt=""/></div>
+<map name="anamespacetesting_a3cd96e3cb653762262d063e2aed44ab7_cgraph" id="anamespacetesting_a3cd96e3cb653762262d063e2aed44ab7_cgraph">
+<area shape="rect" title="Tests the QHO_Prob function in the solvers module." alt="" coords="5,5,155,32"/>
+<area shape="rect" href="namespacesolvers.html#a722edf182d188ad1db7fa6a675fea13c" title="Calculates transition probability for quantum harmonic oscillator problem." alt="" coords="203,5,325,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a55374b3e27ef78754002549b1b423118"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55374b3e27ef78754002549b1b423118">&#9670;&nbsp;</a></span>test_qho_energy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer function testing::test_qho_energy</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tests the QHO_Energy function in the <a class="el" href="namespacesolvers.html">solvers</a> module. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">ierr</td><td>Unit test error state </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="testing_8f90_source.html#l00077">77</a> of file <a class="el" href="testing_8f90_source.html">testing.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordtype">implicit none</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordtype">        real</span>(real64) :: alpha = 0.15_real64</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keywordtype">        real</span>(real64) :: x = 0.314_real64</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keywordtype">        real</span>(real64) :: res_expected = 0.19486118_real64</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keywordtype">        real</span>(real64) :: res_actual</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordtype">integer</span> :: ierr</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        res_actual = qho_energy(alpha, x)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">if</span> (abs(res_actual - res_expected) .ge. tol) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            ierr = 1</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            ierr = 0</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keywordflow">        end if</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+</div><!-- fragment --><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespacetesting_a55374b3e27ef78754002549b1b423118_cgraph.png" border="0" usemap="#anamespacetesting_a55374b3e27ef78754002549b1b423118_cgraph" alt=""/></div>
+<map name="anamespacetesting_a55374b3e27ef78754002549b1b423118_cgraph" id="anamespacetesting_a55374b3e27ef78754002549b1b423118_cgraph">
+<area shape="rect" title="Tests the QHO_Energy function in the solvers module." alt="" coords="5,5,168,32"/>
+<area shape="rect" href="namespacesolvers.html#a4f0054c0d0d2f5080c92a04557feaf52" title="Calculates local energy for quantum harmonic oscillator problem." alt="" coords="216,5,352,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="abac17ed62ec6fb1d981bcfce635ed8b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abac17ed62ec6fb1d981bcfce635ed8b3">&#9670;&nbsp;</a></span>tol</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">real(real64), parameter testing::tol = 1e-6_real64</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Error tolerance in floating point evaluations. </p>
+
+<p class="definition">Definition at line <a class="el" href="testing_8f90_source.html#l00025">25</a> of file <a class="el" href="testing_8f90_source.html">testing.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">    real</span>(real64), <span class="keywordtype">parameter</span> :: tol = 1e-6_real64    </div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
