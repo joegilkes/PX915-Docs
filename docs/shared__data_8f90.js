@@ -16,5 +16,8 @@ var shared__data_8f90 =
     [ "verbose", "shared__data_8f90.html#af557286c349984a4922cd9ba110bbd71", null ],
     [ "qho", "shared__data_8f90.html#a7503c2b3bd10f3ee43c4cf9964c42ab2", null ],
     [ "h2plus", "shared__data_8f90.html#a1e9e95c9ea52c9aa2ec2f05b8d65e4f3", null ],
-    [ "h2", "shared__data_8f90.html#a1703912ee00414a4aaf1a41d3c167694", null ]
+    [ "anchor", "shared__data_8f90.html#ab3e958f42cf6f3d9f77ebf79162bf0cf", null ],
+    [ "ref_h2plus_var", "shared__data_8f90.html#a8361373c98eb1fafe136c55a2bcbdc6a", null ],
+    [ "h2", "shared__data_8f90.html#a1703912ee00414a4aaf1a41d3c167694", null ],
+    [ "ref_h2_var", "shared__data_8f90.html#a0cd1222b243b07f841166bbb6a54ed8e", null ]
 ];
