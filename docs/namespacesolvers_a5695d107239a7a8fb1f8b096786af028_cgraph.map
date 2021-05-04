@@ -1,4 +1,6 @@
 <map id="solvers::h_2_plus_prob" name="solvers::h_2_plus_prob">
-<area shape="rect" id="node1" title="Calculates transition probability for the &#160;problem." alt="" coords="5,5,160,32"/>
-<area shape="rect" id="node2" href="$namespacesolvers.html#a6d705d11696b64991f1624e298067bed" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="208,5,359,32"/>
+<area shape="rect" id="node1" title="Calculates transition probability for the &#160;problem." alt="" coords="5,31,160,57"/>
+<area shape="rect" id="node2" href="$namespacesolvers.html#a6d705d11696b64991f1624e298067bed" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="208,31,359,57"/>
+<area shape="rect" id="node3" href="$namespacesolvers.html#a7d32620a8f8a8780a0b0ef83c490e8f7" title="Calculates value of the wavefunction of a hydrogen 1s orbital." alt="" coords="407,5,525,32"/>
+<area shape="rect" id="node4" href="$namespacesolvers.html#a89943685e3d86544f0261f24fac44419" title="Calculates value of the wavefunction of a hydrogen 2s orbital." alt="" coords="407,56,525,83"/>
 </map>
