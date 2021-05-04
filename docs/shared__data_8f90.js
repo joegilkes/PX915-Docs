@@ -4,7 +4,6 @@ var shared__data_8f90 =
     [ "h2plus_type", "structshared__data_1_1h2plus__type.html", "structshared__data_1_1h2plus__type" ],
     [ "h2_type", "structshared__data_1_1h2__type.html", "structshared__data_1_1h2__type" ],
     [ "pi", "shared__data_8f90.html#a25d12bb3441f2773a3a3e42dac41a9c1", null ],
-    [ "var", "shared__data_8f90.html#a49f86fc3729a8f74cddac385574aa6a9", null ],
     [ "pi_dash", "shared__data_8f90.html#a54c9d4eb7a08da77b2012fc1dfe8612b", null ],
     [ "sqrt", "shared__data_8f90.html#a24b7d5a276b40440c3a41cd1d70393bd", null ],
     [ "multiplication", "shared__data_8f90.html#a7ccc4f59221eefcae7aaeb9bed4e7ab2", null ],
