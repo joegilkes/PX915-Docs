@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['test_5fqho_5fenergy_109',['test_qho_energy',['../namespacetesting.html#a55374b3e27ef78754002549b1b423118',1,'testing']]],
-  ['test_5fqho_5fprob_110',['test_qho_prob',['../namespacetesting.html#a3cd96e3cb653762262d063e2aed44ab7',1,'testing']]]
+  ['qho_5fenergy_106',['qho_energy',['../namespacesolvers.html#a4f0054c0d0d2f5080c92a04557feaf52',1,'solvers']]],
+  ['qho_5fprob_107',['qho_prob',['../namespacesolvers.html#a722edf182d188ad1db7fa6a675fea13c',1,'solvers']]]
 ];

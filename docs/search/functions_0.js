@@ -1,11 +1,4 @@
 var searchData=
 [
-  ['h1s_5fwfn_92',['h1s_wfn',['../namespacesolvers.html#a7d32620a8f8a8780a0b0ef83c490e8f7',1,'solvers']]],
-  ['h2s_5fwfn_93',['h2s_wfn',['../namespacesolvers.html#a89943685e3d86544f0261f24fac44419',1,'solvers']]],
-  ['h_5f2_5fenergy_94',['h_2_energy',['../namespacesolvers.html#ab21b7ec07e33a8417b62ecb75c327a6f',1,'solvers']]],
-  ['h_5f2_5fplus_5fenergy_95',['h_2_plus_energy',['../namespacesolvers.html#a1f21386928aadfc3dd6bc5cfb82fb94f',1,'solvers']]],
-  ['h_5f2_5fplus_5fprob_96',['h_2_plus_prob',['../namespacesolvers.html#a5695d107239a7a8fb1f8b096786af028',1,'solvers']]],
-  ['h_5f2_5fplus_5fwfn_97',['h_2_plus_wfn',['../namespacesolvers.html#a6d705d11696b64991f1624e298067bed',1,'solvers']]],
-  ['h_5f2_5fprob_98',['h_2_prob',['../namespacesolvers.html#a0d0f254ede019bb0bf743397cd0069f7',1,'solvers']]],
-  ['h_5f2_5fwfn_99',['h_2_wfn',['../namespacesolvers.html#aa0515876b10a8cebd7f381e14b1ff856',1,'solvers']]]
+  ['append_5fto_5farray_95',['append_to_array',['../namespacenetcdf__out.html#a8a7c7a548cdc46bdf91642e3cba8a327',1,'netcdf_out']]]
 ];

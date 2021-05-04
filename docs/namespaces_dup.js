@@ -20,7 +20,11 @@ var namespaces_dup =
       [ "fu", "namespaceinput__parser.html#a209ae7e3892e6b6dcbe9137fdeb0875f", null ],
       [ "rc", "namespaceinput__parser.html#a0d29f515c2bc6f306a8576c1b4253c8d", null ]
     ] ],
-    [ "netcdf_out", "namespacenetcdf__out.html", null ],
+    [ "netcdf_out", "namespacenetcdf__out.html", [
+      [ "error_check", "namespacenetcdf__out.html#a7101fa517ac1fac09dfec141a7b18eee", null ],
+      [ "write_array", "namespacenetcdf__out.html#aafe1ac30c27bd3b870ecf2a0deb045ae", null ],
+      [ "append_to_array", "namespacenetcdf__out.html#a8a7c7a548cdc46bdf91642e3cba8a327", null ]
+    ] ],
     [ "shared_data", "namespaceshared__data.html", "namespaceshared__data" ],
     [ "solvers", "namespacesolvers.html", [
       [ "qho_prob", "namespacesolvers.html#a722edf182d188ad1db7fa6a675fea13c", null ],
