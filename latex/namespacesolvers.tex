@@ -144,7 +144,7 @@ Here is the caller graph for this function\+:
 
 Calculates value of the wavefunction of a hydrogen 1s orbital. 
 
-Function to calculate the wavefunction of an electron at position $ \mathbf{r} $ in a hydrogenic 1s atomic orbital, centred on nuclear position $ \mathbf{R}_{nuc}. $ Computes \[ \phi_{1s}(\mathbf{r}) = \frac{1}{\sqrt{\pi}a_{0}^{3/2}} e^{-\frac{\left |\mathbf{r-\mathbf{R}_{nuc}} \right |}{a_{0}}}, \] where \[a_{0}=\frac{\hbar^{2}}{2m} \] 
+Function to calculate the wavefunction of an electron at position $ \mathbf{r} $ in a hydrogenic 1s atomic orbital, centred on nuclear position $ \mathbf{R}_{nuc}. $ Computes \[ \phi_{1s}^{A}(\mathbf{r}) = \frac{1}{\sqrt{\pi}}e^{\left |\mathbf{r-\mathbf{R}_{A}} \right |} \] 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em r\+\_\+elec} & Electron position \\
 \hline
@@ -158,21 +158,21 @@ Function to calculate the wavefunction of an electron at position $ \mathbf{r} $
 \end{DoxyRetVals}
 
 
-Definition at line 116 of file quantum\+\_\+solvers.\+f90.
+Definition at line 114 of file quantum\+\_\+solvers.\+f90.
 
 
 \begin{DoxyCode}{0}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116         \textcolor{keywordtype}{implicit none}}
 \DoxyCodeLine{117 }
-\DoxyCodeLine{118         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{118 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_elec, R\_nuc}
 \DoxyCodeLine{119 }
-\DoxyCodeLine{120 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_elec, R\_nuc}
+\DoxyCodeLine{120 \textcolor{keywordtype}{        real}(real64) :: H1s\_wfn, expfac}
 \DoxyCodeLine{121 }
-\DoxyCodeLine{122 \textcolor{keywordtype}{        real}(real64) :: H1s\_wfn, expfac}
+\DoxyCodeLine{122         expfac = -\/norm2(r\_elec -\/ r\_nuc)}
 \DoxyCodeLine{123 }
-\DoxyCodeLine{124         expfac = -\/norm2(r\_elec -\/ r\_nuc)}
+\DoxyCodeLine{124         h1s\_wfn = pi\_dash * exp(expfac)}
 \DoxyCodeLine{125 }
-\DoxyCodeLine{126         h1s\_wfn = pi\_dash * exp(expfac)}
-\DoxyCodeLine{127 }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -193,7 +193,7 @@ Here is the caller graph for this function\+:
 
 Calculates value of the wavefunction of a hydrogen 2s orbital. 
 
-Function to calculate the wavefunction of an electron at position $ \mathbf{r} $ in a hydrogenic 2s atomic orbital, centred on nuclear position $ \mathbf{R}_{nuc}. $ Computes \[ \psi_{2s} = \frac{1}{4\sqrt{2\pi}a_{0}^{3/2}} \left [ 2 - \frac{\left |\mathbf{r-\mathbf{R}_{A}} \right |}{a_{0}} \right ] e^{-\frac{\left |\mathbf{r-\mathbf{R}_{A}} \right |}{2a_{0}}}, \] where \[a_{0}=\frac{\hbar^{2}}{2m} \] 
+Function to calculate the wavefunction of an electron at position $ \mathbf{r} $ in a hydrogenic 2s atomic orbital, centred on nuclear position $ \mathbf{R}_{nuc}. $ Computes \[ \psi^{A}_{2s} = \frac{1}{4\sqrt{2\pi}}\left [ 2 - \left |\mathbf{r-\mathbf{R}_{A}} \right | \right ] e^{-\frac{\left |\mathbf{r-\mathbf{R}_{A}} \right |}{2}} \] 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em r\+\_\+elec} & Electron position \\
 \hline
@@ -207,23 +207,23 @@ Function to calculate the wavefunction of an electron at position $ \mathbf{r} $
 \end{DoxyRetVals}
 
 
-Definition at line 150 of file quantum\+\_\+solvers.\+f90.
+Definition at line 147 of file quantum\+\_\+solvers.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{151 }
-\DoxyCodeLine{152         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{153 }
-\DoxyCodeLine{154 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_elec, R\_nuc}
-\DoxyCodeLine{155 }
-\DoxyCodeLine{156 \textcolor{keywordtype}{        real}(real64) :: H2s\_wfn, prefac, expfac, r\_norm}
-\DoxyCodeLine{157 }
-\DoxyCodeLine{158         r\_norm = norm2(r\_elec -\/ r\_nuc)}
-\DoxyCodeLine{159         prefac = pi\_dash\_2 * (2 -\/ r\_norm)}
-\DoxyCodeLine{160         expfac = -\/(r\_norm / 2)}
-\DoxyCodeLine{161 }
-\DoxyCodeLine{162         h2s\_wfn = prefac * exp(expfac)}
-\DoxyCodeLine{163 }
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_elec, R\_nuc}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 \textcolor{keywordtype}{        real}(real64) :: H2s\_wfn, prefac, expfac, r\_norm}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155         r\_norm = norm2(r\_elec -\/ r\_nuc)}
+\DoxyCodeLine{156         prefac = pi\_dash\_2 * (2 -\/ r\_norm)}
+\DoxyCodeLine{157         expfac = -\/(r\_norm / 2)}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159         h2s\_wfn = prefac * exp(expfac)}
+\DoxyCodeLine{160 }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -244,7 +244,7 @@ Here is the caller graph for this function\+:
 
 Calculates trial wavefunction for the $ H_{2}^{+} $ problem. 
 
-Function to calculate the wavefunction of an electron at position $ \mathbf{r} $ in the hydrogen molecular ion $ H_{2}^{+} $. Depending on the value of variable {\itshape include\+\_\+pqn}, will either calculate \[ \psi^{c}_{T}(\mathbf{r}) = c\phi_{1s}^{A}(\mathbf{r}) + \sqrt{1-c^{2}}\phi_{1s}^{B}(\mathbf{r}) \] if {\itshape include\+\_\+pqn} is set to 1, or \[ \psi^{\mathbf{c}}_{T}(\mathbf{r}) = c_{1}\phi_{1s}^{A} + \sqrt{1-c_{1}^{2}}\phi_{1s}^{B} + c_{2}\phi_{2s}^{A} + \sqrt{1-c_{2}^{2}}\phi_{2s}^{B} \] if {\itshape include\+\_\+pqn} is set to 2. 
+Function to calculate the wavefunction of an electron at position $ \mathbf{r} $ in the hydrogen molecular ion $ H_{2}^{+} $. Depending on the value of variable {\itshape include\+\_\+pqn}, will either calculate \[ \psi^{c}_{T}(\mathbf{r}) = c\phi_{1s}^{A}(\mathbf{r}) + \sqrt{1-c^{2}}\phi_{1s}^{B}(\mathbf{r}) \] if {\itshape H2plusinclude\+\_\+pqn} is set to 1, or \[ \psi^{\mathbf{c}}_{T}(\mathbf{r}) = c_{1}\phi_{1s}^{A} + \sqrt{1-c_{1}^{2}}\phi_{1s}^{B} + c_{2}\phi_{2s}^{A} + \sqrt{1-c_{2}^{2}}\phi_{2s}^{B} \] if {\itshape H2plusinclude\+\_\+pqn} is set to 2. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em c} & Parameter(s) of trial wavefunction \\
 \hline
@@ -262,28 +262,28 @@ Function to calculate the wavefunction of an electron at position $ \mathbf{r} $
 \end{DoxyRetVals}
 
 
-Definition at line 195 of file quantum\+\_\+solvers.\+f90.
+Definition at line 192 of file quantum\+\_\+solvers.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{196 }
-\DoxyCodeLine{197         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{198 }
-\DoxyCodeLine{199 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{intent(in)} :: c}
-\DoxyCodeLine{200 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r}
-\DoxyCodeLine{201 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
-\DoxyCodeLine{202 }
-\DoxyCodeLine{203 \textcolor{keywordtype}{        real}(real64) :: wfn}
-\DoxyCodeLine{204 }
-\DoxyCodeLine{205         \textcolor{keywordflow}{if} (h2plus\%include\_pqn .eq. 1) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{206             wfn = (c(1) * h1s\_wfn(r, r\_a)) + (sqrt(1 -\/ (c(1)*c(1))) * h1s\_wfn\textcolor{comment}{(r, r\_b))}}
-\DoxyCodeLine{207 \textcolor{comment}{}        \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (h2plus\%include\_pqn .eq. 2) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{208             wfn = (c(1) * h1s\_wfn(r, r\_a)) + (sqrt(1 -\/ (c(1)*c(1))) * h1s\_wfn\textcolor{comment}{(r, r\_b)) \&}}
-\DoxyCodeLine{209 \textcolor{comment}{}                    + (c(2) * h2s\_wfn(r, r\_a)) + (sqrt(1 -\/ (c(2)*c(2))) \textcolor{comment}{* h2s\_wfn(r, r\_b))}}
-\DoxyCodeLine{210 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
-\DoxyCodeLine{211             error stop \textcolor{stringliteral}{'Global include\_pqn can only take values 1 or 2.'}}
-\DoxyCodeLine{212 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{213 }
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{intent(in)} :: c}
+\DoxyCodeLine{197 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r}
+\DoxyCodeLine{198 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200 \textcolor{keywordtype}{        real}(real64) :: wfn}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202         \textcolor{keywordflow}{if} (h2plus\%include\_pqn .eq. 1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{203             wfn = (c(1) * h1s\_wfn(r, r\_a)) + (sqrt(1 -\/ (c(1)*c(1))) * h1s\_wfn\textcolor{comment}{(r, r\_b))}}
+\DoxyCodeLine{204 \textcolor{comment}{}        \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (h2plus\%include\_pqn .eq. 2) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{205             wfn = (c(1) * h1s\_wfn(r, r\_a)) + (sqrt(1 -\/ (c(1)*c(1))) * h1s\_wfn\textcolor{comment}{(r, r\_b)) \&}}
+\DoxyCodeLine{206 \textcolor{comment}{}                    + (c(2) * h2s\_wfn(r, r\_a)) + (sqrt(1 -\/ (c(2)*c(2))) \textcolor{comment}{* h2s\_wfn(r, r\_b))}}
+\DoxyCodeLine{207 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
+\DoxyCodeLine{208             error stop \textcolor{stringliteral}{'Global include\_pqn can only take values 1 or 2.'}}
+\DoxyCodeLine{209 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{210 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -332,21 +332,21 @@ Function to calculate transition probability for walkers in the $ H_{2}^{+} $ pr
 \end{DoxyRetVals}
 
 
-Definition at line 236 of file quantum\+\_\+solvers.\+f90.
+Definition at line 233 of file quantum\+\_\+solvers.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{237 }
-\DoxyCodeLine{238         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{239 }
-\DoxyCodeLine{240 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{intent(in)} :: c}
-\DoxyCodeLine{241 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_current, r\_next}
-\DoxyCodeLine{242 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
-\DoxyCodeLine{243 }
-\DoxyCodeLine{244 \textcolor{keywordtype}{        real}(real64) :: Prob}
-\DoxyCodeLine{245 }
-\DoxyCodeLine{246         prob = h\_2\_plus\_wfn(c, r\_next, r\_a, r\_b) / h\_2\_plus\_wfn(c, r\_current\textcolor{comment}{, r\_a, r\_b)}}
-\DoxyCodeLine{247 \textcolor{comment}{}}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{intent(in)} :: c}
+\DoxyCodeLine{238 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_current, r\_next}
+\DoxyCodeLine{239 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241 \textcolor{keywordtype}{        real}(real64) :: Prob}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243         prob = h\_2\_plus\_wfn(c, r\_next, r\_a, r\_b) / h\_2\_plus\_wfn(c, r\_current\textcolor{comment}{, r\_a, r\_b)}}
+\DoxyCodeLine{244 \textcolor{comment}{}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -395,59 +395,59 @@ Function to calculate the local energy of a walker in the $ H_{2}^{+} $ problem.
 \end{DoxyRetVals}
 
 
-Definition at line 274 of file quantum\+\_\+solvers.\+f90.
+Definition at line 271 of file quantum\+\_\+solvers.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{275 }
-\DoxyCodeLine{276         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{277 }
-\DoxyCodeLine{278 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{intent(in)} :: c}
-\DoxyCodeLine{279 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r}
-\DoxyCodeLine{280 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
-\DoxyCodeLine{281 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{optional} :: fdstep}
-\DoxyCodeLine{282 }
-\DoxyCodeLine{283 \textcolor{keywordtype}{        real}(real64) :: step                    \textcolor{comment}{! Auxiliary variable for defaulting}}
-\DoxyCodeLine{284 \textcolor{keywordtype}{        real}(real64) :: laplacian               \textcolor{comment}{! 2nd derivative of trial wavefunction}}
-\DoxyCodeLine{285 \textcolor{keywordtype}{        real}(real64) :: coulomb                 \textcolor{comment}{! Coulomb terms of Hamiltonian}}
-\DoxyCodeLine{286 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_temp}
-\DoxyCodeLine{287 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(2, 3)} :: diffs  \textcolor{comment}{! Wavefunction finite differences}}
-\DoxyCodeLine{288 \textcolor{keywordtype}{        real}(real64) :: wfn, wfnx2              \textcolor{comment}{! Wavefunction at walker position}}
-\DoxyCodeLine{289         \textcolor{keywordtype}{integer} :: i}
-\DoxyCodeLine{290 }
-\DoxyCodeLine{291 \textcolor{keywordtype}{        real}(real64) :: E\_loc}
-\DoxyCodeLine{292 }
-\DoxyCodeLine{293         \textcolor{comment}{! Allow the finite difference step size to take a default value.}}
-\DoxyCodeLine{294         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(fdstep)) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{295             step = fdstep}
-\DoxyCodeLine{296         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{297             step = 1e-\/3\_real64}
-\DoxyCodeLine{298 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{299 }
-\DoxyCodeLine{300         \textcolor{comment}{! Calculate trial wavefunction at provided point.}}
-\DoxyCodeLine{301         wfn = h\_2\_plus\_wfn(c, r, r\_a, r\_b)}
-\DoxyCodeLine{302         wfnx2 = 2 * wfn}
-\DoxyCodeLine{303 }
-\DoxyCodeLine{304         \textcolor{comment}{! Calculate trial wavefunction in finite difference directions.}}
-\DoxyCodeLine{305         \textcolor{keywordflow}{do} i = 1, 3}
-\DoxyCodeLine{306             r\_temp = r}
-\DoxyCodeLine{307             r\_temp(i) = r(i) -\/ step}
-\DoxyCodeLine{308             diffs(1, i) = h\_2\_plus\_wfn(c, r\_temp, r\_a, r\_b)}
-\DoxyCodeLine{309 }
-\DoxyCodeLine{310             r\_temp(i) = r(i) + step}
-\DoxyCodeLine{311             diffs(2, i) = h\_2\_plus\_wfn(c, r\_temp, r\_a, r\_b)}
-\DoxyCodeLine{312 \textcolor{keywordflow}{        end do}}
-\DoxyCodeLine{313 }
-\DoxyCodeLine{314         \textcolor{comment}{! Assemble Hamiltonian}}
-\DoxyCodeLine{315         laplacian = ((diffs(1, 1) -\/ wfnx2 + diffs(2, 1)) + \&}
-\DoxyCodeLine{316                      (diffs(1, 2) -\/ wfnx2 + diffs(2, 2)) + \&}
-\DoxyCodeLine{317                      (diffs(1, 3) -\/ wfnx2 + diffs(2, 3))) / (step*step)}
-\DoxyCodeLine{318         laplacian = laplacian * (-\/0.5\_real64)}
-\DoxyCodeLine{319 }
-\DoxyCodeLine{320         coulomb = (-\/(1  / norm2(r -\/ r\_a)) -\/ (1 / norm2(r -\/ r\_b))) * wfn}
-\DoxyCodeLine{321         }
-\DoxyCodeLine{322         e\_loc = (laplacian + coulomb) / wfn}
-\DoxyCodeLine{323         }
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{intent(in)} :: c}
+\DoxyCodeLine{276 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r}
+\DoxyCodeLine{277 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
+\DoxyCodeLine{278 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{optional} :: fdstep}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280 \textcolor{keywordtype}{        real}(real64) :: step                    \textcolor{comment}{! Auxiliary variable for defaulting}}
+\DoxyCodeLine{281 \textcolor{keywordtype}{        real}(real64) :: laplacian               \textcolor{comment}{! 2nd derivative of trial wavefunction}}
+\DoxyCodeLine{282 \textcolor{keywordtype}{        real}(real64) :: coulomb                 \textcolor{comment}{! Coulomb terms of Hamiltonian}}
+\DoxyCodeLine{283 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_temp}
+\DoxyCodeLine{284 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(2, 3)} :: diffs  \textcolor{comment}{! Wavefunction finite differences}}
+\DoxyCodeLine{285 \textcolor{keywordtype}{        real}(real64) :: wfn, wfnx2              \textcolor{comment}{! Wavefunction at walker position}}
+\DoxyCodeLine{286         \textcolor{keywordtype}{integer} :: i}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{288 \textcolor{keywordtype}{        real}(real64) :: E\_loc}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290         \textcolor{comment}{! Allow the finite difference step size to take a default value.}}
+\DoxyCodeLine{291         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(fdstep)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{292             step = fdstep}
+\DoxyCodeLine{293         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{294             step = 1e-\/3\_real64}
+\DoxyCodeLine{295 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{297         \textcolor{comment}{! Calculate trial wavefunction at provided point.}}
+\DoxyCodeLine{298         wfn = h\_2\_plus\_wfn(c, r, r\_a, r\_b)}
+\DoxyCodeLine{299         wfnx2 = 2 * wfn}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301         \textcolor{comment}{! Calculate trial wavefunction in finite difference directions.}}
+\DoxyCodeLine{302         \textcolor{keywordflow}{do} i = 1, 3}
+\DoxyCodeLine{303             r\_temp = r}
+\DoxyCodeLine{304             r\_temp(i) = r(i) -\/ step}
+\DoxyCodeLine{305             diffs(1, i) = h\_2\_plus\_wfn(c, r\_temp, r\_a, r\_b)}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{307             r\_temp(i) = r(i) + step}
+\DoxyCodeLine{308             diffs(2, i) = h\_2\_plus\_wfn(c, r\_temp, r\_a, r\_b)}
+\DoxyCodeLine{309 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{311         \textcolor{comment}{! Assemble Hamiltonian}}
+\DoxyCodeLine{312         laplacian = ((diffs(1, 1) -\/ wfnx2 + diffs(2, 1)) + \&}
+\DoxyCodeLine{313                      (diffs(1, 2) -\/ wfnx2 + diffs(2, 2)) + \&}
+\DoxyCodeLine{314                      (diffs(1, 3) -\/ wfnx2 + diffs(2, 3))) / (step*step)}
+\DoxyCodeLine{315         laplacian = laplacian * (-\/0.5\_real64)}
+\DoxyCodeLine{316 }
+\DoxyCodeLine{317         coulomb = (-\/(1  / norm2(r -\/ r\_a)) -\/ (1 / norm2(r -\/ r\_b))) * wfn}
+\DoxyCodeLine{318         }
+\DoxyCodeLine{319         e\_loc = (laplacian + coulomb) / wfn}
+\DoxyCodeLine{320         }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -476,7 +476,7 @@ Here is the caller graph for this function\+:
 
 Calculates trial wavefunction for the $ H_{2} $ problem. 
 
-Function to calculate the wavefunction of two electrons at positions $ \mathbf{r}_{1} $ and $ \mathbf{r}_{2} $ in the hydrogen molecule $ H_{2} $. Depending on the value of variable {\itshape include\+\_\+pqn}, will either calculate \[ \psi^{c}_{T}(\mathbf{r}_{1}, \mathbf{r}_{2}) = c \left ( \phi_{1s}^{A}(\mathbf{r}_{1})\phi_{1s}^{B}(\mathbf{r}_{2}) + \phi_{1s}^{A}(\mathbf{r}_{2})\phi_{1s}^{B}(\mathbf{r}_{1}) \right ) \] if {\itshape include\+\_\+pqn} is set to 1, or \[ \psi^{\mathbf{c}}_{T}(\mathbf{r}_{1}, \mathbf{r}_{2}) = c_{1} \left ( \phi_{1s}^{A}(\mathbf{r}_{1})\phi_{1s}^{B}(\mathbf{r}_{2}) + \phi_{1s}^{A}(\mathbf{r}_{2})\phi_{1s}^{B}(\mathbf{r}_{1}) \right ) + c_{2} \left ( \phi_{2s}^{A}(\mathbf{r}_{1})\phi_{2s}^{B}(\mathbf{r}_{2}) + \phi_{2s}^{A}(\mathbf{r}_{2})\phi_{2s}^{B}(\mathbf{r}_{1}) \right ) \] if {\itshape include\+\_\+pqn} is set to 2. 
+Function to calculate the wavefunction of two electrons at positions $ \mathbf{r}_{1} $ and $ \mathbf{r}_{2} $ in the hydrogen molecule $ H_{2} $. Depending on the value of variable {\itshape include\+\_\+pqn}, will either calculate \[ \psi^{c}_{T}(\mathbf{r}_{1}, \mathbf{r}_{2}) = c \left ( \phi_{1s}^{A}(\mathbf{r}_{1})\phi_{1s}^{B}(\mathbf{r}_{2}) + \phi_{1s}^{A}(\mathbf{r}_{2})\phi_{1s}^{B}(\mathbf{r}_{1}) \right ) \] if {\itshape H2include\+\_\+pqn} is set to 1, or \[ \psi^{\mathbf{c}}_{T}(\mathbf{r}_{1}, \mathbf{r}_{2}) = c_{1} \left ( \phi_{1s}^{A}(\mathbf{r}_{1})\phi_{1s}^{B}(\mathbf{r}_{2}) + \phi_{1s}^{A}(\mathbf{r}_{2})\phi_{1s}^{B}(\mathbf{r}_{1}) \right ) + c_{2} \left ( \phi_{2s}^{A}(\mathbf{r}_{1})\phi_{2s}^{B}(\mathbf{r}_{2}) + \phi_{2s}^{A}(\mathbf{r}_{2})\phi_{2s}^{B}(\mathbf{r}_{1}) \right ) \] if {\itshape H2include\+\_\+pqn} is set to 2. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em c} & Parameter(s) of trial wavefunction \\
 \hline
@@ -496,31 +496,31 @@ Function to calculate the wavefunction of two electrons at positions $ \mathbf{r
 \end{DoxyRetVals}
 
 
-Definition at line 360 of file quantum\+\_\+solvers.\+f90.
+Definition at line 357 of file quantum\+\_\+solvers.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{361 }
-\DoxyCodeLine{362         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{363 }
-\DoxyCodeLine{364 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{intent(in)} :: c}
-\DoxyCodeLine{365 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_1, r\_2}
-\DoxyCodeLine{366 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
-\DoxyCodeLine{367 }
-\DoxyCodeLine{368 \textcolor{keywordtype}{        real}(real64) :: wfn}
-\DoxyCodeLine{369 }
-\DoxyCodeLine{370         \textcolor{keywordflow}{if} (h2\%include\_pqn .eq. 1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{360 }
+\DoxyCodeLine{361 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{intent(in)} :: c}
+\DoxyCodeLine{362 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_1, r\_2}
+\DoxyCodeLine{363 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
+\DoxyCodeLine{364 }
+\DoxyCodeLine{365 \textcolor{keywordtype}{        real}(real64) :: wfn}
+\DoxyCodeLine{366 }
+\DoxyCodeLine{367         \textcolor{keywordflow}{if} (h2\%include\_pqn .eq. 1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{368             wfn = c(1) * ((h1s\_wfn(r\_1, r\_a) * h1s\_wfn(r\_2, r\_b)) \&}
+\DoxyCodeLine{369                   + (h1s\_wfn(r\_2, r\_a) * h1s\_wfn(r\_1, r\_b)))}
+\DoxyCodeLine{370         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (h2\%include\_pqn .eq. 2) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{371             wfn = c(1) * ((h1s\_wfn(r\_1, r\_a) * h1s\_wfn(r\_2, r\_b)) \&}
-\DoxyCodeLine{372                   + (h1s\_wfn(r\_2, r\_a) * h1s\_wfn(r\_1, r\_b)))}
-\DoxyCodeLine{373         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (h2\%include\_pqn .eq. 2) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{374             wfn = c(1) * ((h1s\_wfn(r\_1, r\_a) * h1s\_wfn(r\_2, r\_b)) \&}
-\DoxyCodeLine{375                   + (h1s\_wfn(r\_2, r\_a) * h1s\_wfn(r\_1, r\_b))) + \& }
-\DoxyCodeLine{376                   c(2) * ((h2s\_wfn(r\_1, r\_a) * h2s\_wfn(r\_2, r\_b)) \&}
-\DoxyCodeLine{377                   + (h2s\_wfn(r\_2, r\_a) * h2s\_wfn(r\_1, r\_b)))}
-\DoxyCodeLine{378         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{379             error stop \textcolor{stringliteral}{'Global include\_pqn can only take values 1 or 2.'}}
-\DoxyCodeLine{380 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{381 }
+\DoxyCodeLine{372                   + (h1s\_wfn(r\_2, r\_a) * h1s\_wfn(r\_1, r\_b))) + \& }
+\DoxyCodeLine{373                   c(2) * ((h2s\_wfn(r\_1, r\_a) * h2s\_wfn(r\_2, r\_b)) \&}
+\DoxyCodeLine{374                   + (h2s\_wfn(r\_2, r\_a) * h2s\_wfn(r\_1, r\_b)))}
+\DoxyCodeLine{375         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{376             error stop \textcolor{stringliteral}{'Global include\_pqn can only take values 1 or 2.'}}
+\DoxyCodeLine{377 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{378 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -573,23 +573,23 @@ Function to calculate transition probability for walkers in the $ H_{2} $ proble
 \end{DoxyRetVals}
 
 
-Definition at line 407 of file quantum\+\_\+solvers.\+f90.
+Definition at line 404 of file quantum\+\_\+solvers.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{409 }
-\DoxyCodeLine{410         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{411 }
-\DoxyCodeLine{412 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{intent(in)} :: c}
-\DoxyCodeLine{413 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_1\_current, r\_2\_current}
-\DoxyCodeLine{414 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_1\_next, r\_2\_next}
-\DoxyCodeLine{415 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
-\DoxyCodeLine{416 }
-\DoxyCodeLine{417 \textcolor{keywordtype}{        real}(real64) :: Prob}
+\DoxyCodeLine{406 }
+\DoxyCodeLine{407         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{408 }
+\DoxyCodeLine{409 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{intent(in)} :: c}
+\DoxyCodeLine{410 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_1\_current, r\_2\_current}
+\DoxyCodeLine{411 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_1\_next, r\_2\_next}
+\DoxyCodeLine{412 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
+\DoxyCodeLine{413 }
+\DoxyCodeLine{414 \textcolor{keywordtype}{        real}(real64) :: Prob}
+\DoxyCodeLine{415 }
+\DoxyCodeLine{416         prob = h\_2\_wfn(c, r\_1\_next, r\_2\_next, r\_a, r\_b) / \&}
+\DoxyCodeLine{417                h\_2\_wfn(c, r\_1\_current, r\_2\_current, r\_a, r\_b)}
 \DoxyCodeLine{418 }
-\DoxyCodeLine{419         prob = h\_2\_wfn(c, r\_1\_next, r\_2\_next, r\_a, r\_b) / \&}
-\DoxyCodeLine{420                h\_2\_wfn(c, r\_1\_current, r\_2\_current, r\_a, r\_b)}
-\DoxyCodeLine{421 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -640,73 +640,73 @@ Function to calculate the local energy of two walkers in the $ H_{2} $ problem. 
 \end{DoxyRetVals}
 
 
-Definition at line 453 of file quantum\+\_\+solvers.\+f90.
+Definition at line 450 of file quantum\+\_\+solvers.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{454 }
-\DoxyCodeLine{455         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{456 }
-\DoxyCodeLine{457 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{intent(in)} :: c}
-\DoxyCodeLine{458 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_1, r\_2}
-\DoxyCodeLine{459 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
-\DoxyCodeLine{460 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{optional} :: fdstep}
-\DoxyCodeLine{461 }
-\DoxyCodeLine{462 \textcolor{keywordtype}{        real}(real64) :: step                                \textcolor{comment}{! Auxiliary variable for defaulting}}
-\DoxyCodeLine{463 \textcolor{keywordtype}{        real}(real64) :: laplacian                           \textcolor{comment}{! 2nd derivative of trial wavefunction}}
-\DoxyCodeLine{464 \textcolor{keywordtype}{        real}(real64) :: coulomb                             \textcolor{comment}{! Coulomb terms of Hamiltonian}}
-\DoxyCodeLine{465 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_1\_temp, r\_2\_temp}
-\DoxyCodeLine{466 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(2, 3)} :: diffs\_1, diffs\_2   \textcolor{comment}{! Wavefunction finite differences}}
-\DoxyCodeLine{467 \textcolor{keywordtype}{        real}(real64) :: wfn, wfnx2                          \textcolor{comment}{! Wavefunction at walker positions}}
-\DoxyCodeLine{468         \textcolor{keywordtype}{integer} :: backdiff, forwdiff}
-\DoxyCodeLine{469         \textcolor{keywordtype}{integer} :: i}
-\DoxyCodeLine{470 }
-\DoxyCodeLine{471 \textcolor{keywordtype}{        real}(real64) :: E\_loc}
-\DoxyCodeLine{472 }
-\DoxyCodeLine{473         \textcolor{comment}{! Allow the finite difference step size to take a default value.}}
-\DoxyCodeLine{474         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(fdstep)) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{475             step = fdstep}
-\DoxyCodeLine{476         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{477             step = 1e-\/3\_real64}
-\DoxyCodeLine{478 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{479 }
-\DoxyCodeLine{480         \textcolor{comment}{! Calculate trial wavefunction at provided walker positions.}}
-\DoxyCodeLine{481         wfn = h\_2\_wfn(c, r\_1, r\_2, r\_a, r\_b)}
-\DoxyCodeLine{482         wfnx2 = 2 * wfn \textcolor{comment}{! Reduce unneccessary multiplication}}
-\DoxyCodeLine{483 }
-\DoxyCodeLine{484         backdiff = 1}
-\DoxyCodeLine{485         forwdiff = 2}
-\DoxyCodeLine{486         \textcolor{comment}{! Calculate trial wavefunction in finite difference directions.}}
-\DoxyCodeLine{487         \textcolor{keywordflow}{do} i = 1, 3}
-\DoxyCodeLine{488             r\_1\_temp = r\_1}
-\DoxyCodeLine{489             r\_2\_temp = r\_2}
-\DoxyCodeLine{490             r\_1\_temp(i) = r\_1(i) -\/ step}
-\DoxyCodeLine{491             r\_2\_temp(i) = r\_2(i) -\/ step}
-\DoxyCodeLine{492             diffs\_1(backdiff, i) = h\_2\_wfn(c, r\_1\_temp, r\_2, r\_a, r\_b)}
-\DoxyCodeLine{493             diffs\_2(backdiff, i) = h\_2\_wfn(c, r\_1, r\_2\_temp, r\_a, r\_b)}
-\DoxyCodeLine{494 }
-\DoxyCodeLine{495             r\_1\_temp(i) = r\_1(i) + step}
-\DoxyCodeLine{496             r\_2\_temp(i) = r\_2(i) + step}
-\DoxyCodeLine{497             diffs\_1(forwdiff, i) = h\_2\_wfn(c, r\_1\_temp, r\_2, r\_a, r\_b)}
-\DoxyCodeLine{498             diffs\_2(forwdiff, i) = h\_2\_wfn(c, r\_1, r\_2\_temp, r\_a, r\_b)}
-\DoxyCodeLine{499 \textcolor{keywordflow}{        end do}}
-\DoxyCodeLine{500 }
-\DoxyCodeLine{501         \textcolor{comment}{! Assemble Hamiltonian.}}
-\DoxyCodeLine{502         laplacian = (((diffs\_1(backdiff, 1) -\/ wfnx2 + diffs\_1(forwdiff, \textcolor{comment}{1)) + \&}}
-\DoxyCodeLine{503 \textcolor{comment}{}                      (diffs\_1(backdiff, 2) -\/ wfnx2 + diffs\_1(forwdiff, \textcolor{comment}{2)) + \&}}
-\DoxyCodeLine{504 \textcolor{comment}{}                      (diffs\_1(backdiff, 3) -\/ wfnx2 + diffs\_1(forwdiff, \textcolor{comment}{3))) + \&}}
-\DoxyCodeLine{505 \textcolor{comment}{}                     ((diffs\_2(backdiff, 1) -\/ wfnx2 + diffs\_2(forwdiff, \textcolor{comment}{1)) + \&}}
-\DoxyCodeLine{506 \textcolor{comment}{}                      (diffs\_2(backdiff, 2) -\/ wfnx2 + diffs\_2(forwdiff, \textcolor{comment}{2)) + \&}}
-\DoxyCodeLine{507 \textcolor{comment}{}                      (diffs\_2(backdiff, 3) -\/ wfnx2 + diffs\_2(forwdiff, \textcolor{comment}{3)))) \&}}
-\DoxyCodeLine{508 \textcolor{comment}{}                    / (step*step)}
-\DoxyCodeLine{509         laplacian = laplacian * (-\/0.5\_real64)}
-\DoxyCodeLine{510 }
-\DoxyCodeLine{511         coulomb = (-\/ (1 / norm2(r\_1 -\/ r\_a)) -\/ (1 / norm2(r\_1 -\/ r\_b)) \&}
-\DoxyCodeLine{512                    -\/ (1 / norm2(r\_2 -\/ r\_a)) -\/ (1 / norm2(r\_2 -\/ r\_b)) \&}
-\DoxyCodeLine{513                    + (1 / norm2(r\_1 -\/ r\_2))) * wfn}
-\DoxyCodeLine{514         }
-\DoxyCodeLine{515         e\_loc = (laplacian + coulomb) / wfn}
-\DoxyCodeLine{516         }
+\DoxyCodeLine{451 }
+\DoxyCodeLine{452         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{453 }
+\DoxyCodeLine{454 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{intent(in)} :: c}
+\DoxyCodeLine{455 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_1, r\_2}
+\DoxyCodeLine{456 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
+\DoxyCodeLine{457 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{optional} :: fdstep}
+\DoxyCodeLine{458 }
+\DoxyCodeLine{459 \textcolor{keywordtype}{        real}(real64) :: step                                \textcolor{comment}{! Auxiliary variable for defaulting}}
+\DoxyCodeLine{460 \textcolor{keywordtype}{        real}(real64) :: laplacian                           \textcolor{comment}{! 2nd derivative of trial wavefunction}}
+\DoxyCodeLine{461 \textcolor{keywordtype}{        real}(real64) :: coulomb                             \textcolor{comment}{! Coulomb terms of Hamiltonian}}
+\DoxyCodeLine{462 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_1\_temp, r\_2\_temp}
+\DoxyCodeLine{463 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(2, 3)} :: diffs\_1, diffs\_2   \textcolor{comment}{! Wavefunction finite differences}}
+\DoxyCodeLine{464 \textcolor{keywordtype}{        real}(real64) :: wfn, wfnx2                          \textcolor{comment}{! Wavefunction at walker positions}}
+\DoxyCodeLine{465         \textcolor{keywordtype}{integer} :: backdiff, forwdiff}
+\DoxyCodeLine{466         \textcolor{keywordtype}{integer} :: i}
+\DoxyCodeLine{467 }
+\DoxyCodeLine{468 \textcolor{keywordtype}{        real}(real64) :: E\_loc}
+\DoxyCodeLine{469 }
+\DoxyCodeLine{470         \textcolor{comment}{! Allow the finite difference step size to take a default value.}}
+\DoxyCodeLine{471         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(fdstep)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{472             step = fdstep}
+\DoxyCodeLine{473         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{474             step = 1e-\/3\_real64}
+\DoxyCodeLine{475 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{476 }
+\DoxyCodeLine{477         \textcolor{comment}{! Calculate trial wavefunction at provided walker positions.}}
+\DoxyCodeLine{478         wfn = h\_2\_wfn(c, r\_1, r\_2, r\_a, r\_b)}
+\DoxyCodeLine{479         wfnx2 = 2 * wfn \textcolor{comment}{! Reduce unneccessary multiplication}}
+\DoxyCodeLine{480 }
+\DoxyCodeLine{481         backdiff = 1}
+\DoxyCodeLine{482         forwdiff = 2}
+\DoxyCodeLine{483         \textcolor{comment}{! Calculate trial wavefunction in finite difference directions.}}
+\DoxyCodeLine{484         \textcolor{keywordflow}{do} i = 1, 3}
+\DoxyCodeLine{485             r\_1\_temp = r\_1}
+\DoxyCodeLine{486             r\_2\_temp = r\_2}
+\DoxyCodeLine{487             r\_1\_temp(i) = r\_1(i) -\/ step}
+\DoxyCodeLine{488             r\_2\_temp(i) = r\_2(i) -\/ step}
+\DoxyCodeLine{489             diffs\_1(backdiff, i) = h\_2\_wfn(c, r\_1\_temp, r\_2, r\_a, r\_b)}
+\DoxyCodeLine{490             diffs\_2(backdiff, i) = h\_2\_wfn(c, r\_1, r\_2\_temp, r\_a, r\_b)}
+\DoxyCodeLine{491 }
+\DoxyCodeLine{492             r\_1\_temp(i) = r\_1(i) + step}
+\DoxyCodeLine{493             r\_2\_temp(i) = r\_2(i) + step}
+\DoxyCodeLine{494             diffs\_1(forwdiff, i) = h\_2\_wfn(c, r\_1\_temp, r\_2, r\_a, r\_b)}
+\DoxyCodeLine{495             diffs\_2(forwdiff, i) = h\_2\_wfn(c, r\_1, r\_2\_temp, r\_a, r\_b)}
+\DoxyCodeLine{496 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{497 }
+\DoxyCodeLine{498         \textcolor{comment}{! Assemble Hamiltonian.}}
+\DoxyCodeLine{499         laplacian = (((diffs\_1(backdiff, 1) -\/ wfnx2 + diffs\_1(forwdiff, \textcolor{comment}{1)) + \&}}
+\DoxyCodeLine{500 \textcolor{comment}{}                      (diffs\_1(backdiff, 2) -\/ wfnx2 + diffs\_1(forwdiff, \textcolor{comment}{2)) + \&}}
+\DoxyCodeLine{501 \textcolor{comment}{}                      (diffs\_1(backdiff, 3) -\/ wfnx2 + diffs\_1(forwdiff, \textcolor{comment}{3))) + \&}}
+\DoxyCodeLine{502 \textcolor{comment}{}                     ((diffs\_2(backdiff, 1) -\/ wfnx2 + diffs\_2(forwdiff, \textcolor{comment}{1)) + \&}}
+\DoxyCodeLine{503 \textcolor{comment}{}                      (diffs\_2(backdiff, 2) -\/ wfnx2 + diffs\_2(forwdiff, \textcolor{comment}{2)) + \&}}
+\DoxyCodeLine{504 \textcolor{comment}{}                      (diffs\_2(backdiff, 3) -\/ wfnx2 + diffs\_2(forwdiff, \textcolor{comment}{3)))) \&}}
+\DoxyCodeLine{505 \textcolor{comment}{}                    / (step*step)}
+\DoxyCodeLine{506         laplacian = laplacian * (-\/0.5\_real64)}
+\DoxyCodeLine{507 }
+\DoxyCodeLine{508         coulomb = (-\/ (1 / norm2(r\_1 -\/ r\_a)) -\/ (1 / norm2(r\_1 -\/ r\_b)) \&}
+\DoxyCodeLine{509                    -\/ (1 / norm2(r\_2 -\/ r\_a)) -\/ (1 / norm2(r\_2 -\/ r\_b)) \&}
+\DoxyCodeLine{510                    + (1 / norm2(r\_1 -\/ r\_2))) * wfn}
+\DoxyCodeLine{511         }
+\DoxyCodeLine{512         e\_loc = (laplacian + coulomb) / wfn}
+\DoxyCodeLine{513         }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
