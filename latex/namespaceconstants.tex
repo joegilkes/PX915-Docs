@@ -1,24 +1,75 @@
 \hypertarget{namespaceconstants}{}\doxysection{constants Module Reference}
 \label{namespaceconstants}\index{constants@{constants}}
+
+
+Contains mathematical constants needed throughout the code, all of which are globally accessible.  
+
+
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 real(real64), parameter \mbox{\hyperlink{namespaceconstants_a25d12bb3441f2773a3a3e42dac41a9c1}{pi}} = 3.\+1415926535897\+\_\+real64
 \item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_a49f86fc3729a8f74cddac385574aa6a9}{var}}
+\item 
 real(real64), parameter \mbox{\hyperlink{namespaceconstants_a54c9d4eb7a08da77b2012fc1dfe8612b}{pi\+\_\+dash}} = 0.\+5641895835\+\_\+real64
 \item 
-real(real64), parameter \mbox{\hyperlink{namespaceconstants_a444dcf0e44c72ee753f937ae46b38493}{pi\+\_\+dash\+\_\+2}} = 0.\+0997355701\+\_\+real64
+real(real64), dimension(\mbox{\hyperlink{namespaceconstants_a25d12bb3441f2773a3a3e42dac41a9c1}{pi}}), parameter \mbox{\hyperlink{namespaceconstants_a24b7d5a276b40440c3a41cd1d70393bd}{sqrt}}
+\item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_a7ccc4f59221eefcae7aaeb9bed4e7ab2}{multiplication}}
+\item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_ad47fcf8554977b6075e439c2860100a7}{factor}}
+\item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_a14824baa7c9158bd1557ff359502eee6}{used}}
+\item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_ada5b1f7737c74aa1e274a48f9b845658}{by}}
+\item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_a4d903b2690aec30ca8ea6a88ba9a31dc}{h1s\+\_\+wfn}}
+\item 
+real(real64), dimension(4 $\ast$\mbox{\hyperlink{namespaceconstants_a24b7d5a276b40440c3a41cd1d70393bd}{sqrt}}(2 $\ast$\mbox{\hyperlink{namespaceconstants_a25d12bb3441f2773a3a3e42dac41a9c1}{pi}})), parameter \mbox{\hyperlink{namespaceconstants_a6ef5676aa648495a79edac9579065329}{pi\+\_\+dash\+\_\+2}} = 0.\+0997355701\+\_\+real64
+\item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_a8997059959563acb89f19b43412c9932}{h2s\+\_\+wfn}}
 \item 
 real(real64), parameter \mbox{\hyperlink{namespaceconstants_ad75ef80dea6583c8d228add43661af69}{hbar}} = 1.\+054571817e-\/34\+\_\+real64
 \item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_a74fad32f1a7f10fffff5c9a482aa432c}{reduced}}
+\item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_a626038a8303aa00f4921c2dc59991070}{planck}}
+\item 
+real(real64), dimension(j s), parameter \mbox{\hyperlink{namespaceconstants_ac797a3d18e85b8a0d9696852ca4201d9}{constant}}
+\item 
 real(real64), parameter \mbox{\hyperlink{namespaceconstants_a4f996dcd1b7e4cd0bc798d8e68bbdf70}{m\+\_\+elec}} = 9.\+1093837015e-\/31\+\_\+real64
+\item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_a6f58ba04ee2aba9b1801dc374777506a}{electron}}
+\item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_a77a281d11f48ecc004ea90c1112b391c}{rest}}
+\item 
+real(real64), dimension(kg), parameter \mbox{\hyperlink{namespaceconstants_ae85abe97d6edae695c69ca720ffb51f4}{mass}}
 \item 
 real(real64), parameter \mbox{\hyperlink{namespaceconstants_a041a2ee5336ce5dfd0e92072e614b2b6}{e\+\_\+chg}} = 1.\+602176634e-\/19\+\_\+real64
 \item 
+real(real64), dimension(c), parameter \mbox{\hyperlink{namespaceconstants_ae8345d499e44bdcf72af8abf87cbadb0}{charge}}
+\item 
 real(real64), parameter \mbox{\hyperlink{namespaceconstants_ac0600c375ab1128c6119e57f71b59b6e}{a\+\_\+0}} = 5.\+29177210903e-\/11\+\_\+real64
 \item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_ae45aed269a179a89d060cdc21abb48f9}{bohr}}
+\item 
+real(real64), dimension(m), parameter \mbox{\hyperlink{namespaceconstants_a5de481606fa8cbbb5914d6fd0d40b9c4}{radius}}
+\item 
 real(real64), parameter \mbox{\hyperlink{namespaceconstants_af01a8bd84f8943178f55201fc394f280}{eps\+\_\+0}} = 8.\+8541878128e-\/12\+\_\+real64
+\item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_ab46015d071f75670093d4a7824c12527}{vacuum}}
+\item 
+real(real64), dimension(f m$^\wedge$-\/1), parameter \mbox{\hyperlink{namespaceconstants_abbfce5a1e8eb391236cb5c9d8c54ddac}{permittivity}}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains mathematical constants needed throughout the code, all of which are globally accessible. 
+
+\begin{DoxyRemark}{Remarks}
+N.\+B. This module was made before the \mbox{\hyperlink{namespacesolvers}{solvers}} module was updated to work in atomic untis, and as such some of these constants may be unneccessary. Needs reviewing at the end of development. 
+\end{DoxyRemark}
 
 
 \doxysubsection{Variable Documentation}
@@ -30,13 +81,23 @@ real(real64), parameter \mbox{\hyperlink{namespaceconstants_af01a8bd84f8943178f5
 
 
 
-Definition at line 33 of file shared\+\_\+data.\+f90.
+Definition at line 24 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{33 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{parameter} :: pi = 3.1415926535897\_real64}
+\DoxyCodeLine{24 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{parameter} :: pi = 3.1415926535897\_real64}
 
 \end{DoxyCode}
+\mbox{\Hypertarget{namespaceconstants_a49f86fc3729a8f74cddac385574aa6a9}\label{namespaceconstants_a49f86fc3729a8f74cddac385574aa6a9}} 
+\index{constants@{constants}!var@{var}}
+\index{var@{var}!constants@{constants}}
+\doxysubsubsection{\texorpdfstring{var}{var}}
+{\footnotesize\ttfamily real(real64), parameter constants\+::var}
+
+
+
+Definition at line 24 of file shared\+\_\+data.\+f90.
+
 \mbox{\Hypertarget{namespaceconstants_a54c9d4eb7a08da77b2012fc1dfe8612b}\label{namespaceconstants_a54c9d4eb7a08da77b2012fc1dfe8612b}} 
 \index{constants@{constants}!pi\_dash@{pi\_dash}}
 \index{pi\_dash@{pi\_dash}!constants@{constants}}
@@ -45,28 +106,98 @@ Definition at line 33 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 34 of file shared\+\_\+data.\+f90.
+Definition at line 25 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{34 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{parameter} :: pi\_dash = 0.5641895835\_real64}
+\DoxyCodeLine{25 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{parameter} :: pi\_dash = 0.5641895835\_real64}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{namespaceconstants_a444dcf0e44c72ee753f937ae46b38493}\label{namespaceconstants_a444dcf0e44c72ee753f937ae46b38493}} 
+\mbox{\Hypertarget{namespaceconstants_a24b7d5a276b40440c3a41cd1d70393bd}\label{namespaceconstants_a24b7d5a276b40440c3a41cd1d70393bd}} 
+\index{constants@{constants}!sqrt@{sqrt}}
+\index{sqrt@{sqrt}!constants@{constants}}
+\doxysubsubsection{\texorpdfstring{sqrt}{sqrt}}
+{\footnotesize\ttfamily real(real64), dimension(\mbox{\hyperlink{namespaceconstants_a25d12bb3441f2773a3a3e42dac41a9c1}{pi}}), parameter constants\+::sqrt}
+
+
+
+Definition at line 25 of file shared\+\_\+data.\+f90.
+
+\mbox{\Hypertarget{namespaceconstants_a7ccc4f59221eefcae7aaeb9bed4e7ab2}\label{namespaceconstants_a7ccc4f59221eefcae7aaeb9bed4e7ab2}} 
+\index{constants@{constants}!multiplication@{multiplication}}
+\index{multiplication@{multiplication}!constants@{constants}}
+\doxysubsubsection{\texorpdfstring{multiplication}{multiplication}}
+{\footnotesize\ttfamily real(real64), parameter constants\+::multiplication}
+
+
+
+Definition at line 25 of file shared\+\_\+data.\+f90.
+
+\mbox{\Hypertarget{namespaceconstants_ad47fcf8554977b6075e439c2860100a7}\label{namespaceconstants_ad47fcf8554977b6075e439c2860100a7}} 
+\index{constants@{constants}!factor@{factor}}
+\index{factor@{factor}!constants@{constants}}
+\doxysubsubsection{\texorpdfstring{factor}{factor}}
+{\footnotesize\ttfamily real(real64), parameter constants\+::factor}
+
+
+
+Definition at line 25 of file shared\+\_\+data.\+f90.
+
+\mbox{\Hypertarget{namespaceconstants_a14824baa7c9158bd1557ff359502eee6}\label{namespaceconstants_a14824baa7c9158bd1557ff359502eee6}} 
+\index{constants@{constants}!used@{used}}
+\index{used@{used}!constants@{constants}}
+\doxysubsubsection{\texorpdfstring{used}{used}}
+{\footnotesize\ttfamily real(real64), parameter constants\+::used}
+
+
+
+Definition at line 25 of file shared\+\_\+data.\+f90.
+
+\mbox{\Hypertarget{namespaceconstants_ada5b1f7737c74aa1e274a48f9b845658}\label{namespaceconstants_ada5b1f7737c74aa1e274a48f9b845658}} 
+\index{constants@{constants}!by@{by}}
+\index{by@{by}!constants@{constants}}
+\doxysubsubsection{\texorpdfstring{by}{by}}
+{\footnotesize\ttfamily real(real64), parameter constants\+::by}
+
+
+
+Definition at line 25 of file shared\+\_\+data.\+f90.
+
+\mbox{\Hypertarget{namespaceconstants_a4d903b2690aec30ca8ea6a88ba9a31dc}\label{namespaceconstants_a4d903b2690aec30ca8ea6a88ba9a31dc}} 
+\index{constants@{constants}!h1s\_wfn@{h1s\_wfn}}
+\index{h1s\_wfn@{h1s\_wfn}!constants@{constants}}
+\doxysubsubsection{\texorpdfstring{h1s\_wfn}{h1s\_wfn}}
+{\footnotesize\ttfamily real(real64), parameter constants\+::h1s\+\_\+wfn}
+
+
+
+Definition at line 25 of file shared\+\_\+data.\+f90.
+
+\mbox{\Hypertarget{namespaceconstants_a6ef5676aa648495a79edac9579065329}\label{namespaceconstants_a6ef5676aa648495a79edac9579065329}} 
 \index{constants@{constants}!pi\_dash\_2@{pi\_dash\_2}}
 \index{pi\_dash\_2@{pi\_dash\_2}!constants@{constants}}
 \doxysubsubsection{\texorpdfstring{pi\_dash\_2}{pi\_dash\_2}}
-{\footnotesize\ttfamily real(real64), parameter constants\+::pi\+\_\+dash\+\_\+2 = 0.\+0997355701\+\_\+real64}
+{\footnotesize\ttfamily real(real64), dimension (4$\ast$\mbox{\hyperlink{namespaceconstants_a24b7d5a276b40440c3a41cd1d70393bd}{sqrt}}(2$\ast$\mbox{\hyperlink{namespaceconstants_a25d12bb3441f2773a3a3e42dac41a9c1}{pi}})), parameter constants\+::pi\+\_\+dash\+\_\+2 = 0.\+0997355701\+\_\+real64}
 
 
 
-Definition at line 35 of file shared\+\_\+data.\+f90.
+Definition at line 26 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{35 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{parameter} :: pi\_dash\_2 = 0.0997355701\_real64}
+\DoxyCodeLine{26 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{parameter} :: pi\_dash\_2 = 0.0997355701\_real64}
 
 \end{DoxyCode}
+\mbox{\Hypertarget{namespaceconstants_a8997059959563acb89f19b43412c9932}\label{namespaceconstants_a8997059959563acb89f19b43412c9932}} 
+\index{constants@{constants}!h2s\_wfn@{h2s\_wfn}}
+\index{h2s\_wfn@{h2s\_wfn}!constants@{constants}}
+\doxysubsubsection{\texorpdfstring{h2s\_wfn}{h2s\_wfn}}
+{\footnotesize\ttfamily real(real64), parameter constants\+::h2s\+\_\+wfn}
+
+
+
+Definition at line 26 of file shared\+\_\+data.\+f90.
+
 \mbox{\Hypertarget{namespaceconstants_ad75ef80dea6583c8d228add43661af69}\label{namespaceconstants_ad75ef80dea6583c8d228add43661af69}} 
 \index{constants@{constants}!hbar@{hbar}}
 \index{hbar@{hbar}!constants@{constants}}
@@ -75,13 +206,43 @@ Definition at line 35 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 36 of file shared\+\_\+data.\+f90.
+Definition at line 27 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{36 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{parameter} :: hbar = 1.054571817e-\/34\_real64}
+\DoxyCodeLine{27 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{parameter} :: hbar = 1.054571817e-\/34\_real64}
 
 \end{DoxyCode}
+\mbox{\Hypertarget{namespaceconstants_a74fad32f1a7f10fffff5c9a482aa432c}\label{namespaceconstants_a74fad32f1a7f10fffff5c9a482aa432c}} 
+\index{constants@{constants}!reduced@{reduced}}
+\index{reduced@{reduced}!constants@{constants}}
+\doxysubsubsection{\texorpdfstring{reduced}{reduced}}
+{\footnotesize\ttfamily real(real64), parameter constants\+::reduced}
+
+
+
+Definition at line 27 of file shared\+\_\+data.\+f90.
+
+\mbox{\Hypertarget{namespaceconstants_a626038a8303aa00f4921c2dc59991070}\label{namespaceconstants_a626038a8303aa00f4921c2dc59991070}} 
+\index{constants@{constants}!planck@{planck}}
+\index{planck@{planck}!constants@{constants}}
+\doxysubsubsection{\texorpdfstring{planck}{planck}}
+{\footnotesize\ttfamily real(real64), parameter constants\+::planck}
+
+
+
+Definition at line 27 of file shared\+\_\+data.\+f90.
+
+\mbox{\Hypertarget{namespaceconstants_ac797a3d18e85b8a0d9696852ca4201d9}\label{namespaceconstants_ac797a3d18e85b8a0d9696852ca4201d9}} 
+\index{constants@{constants}!constant@{constant}}
+\index{constant@{constant}!constants@{constants}}
+\doxysubsubsection{\texorpdfstring{constant}{constant}}
+{\footnotesize\ttfamily real(real64), dimension (j s), parameter constants\+::constant}
+
+
+
+Definition at line 27 of file shared\+\_\+data.\+f90.
+
 \mbox{\Hypertarget{namespaceconstants_a4f996dcd1b7e4cd0bc798d8e68bbdf70}\label{namespaceconstants_a4f996dcd1b7e4cd0bc798d8e68bbdf70}} 
 \index{constants@{constants}!m\_elec@{m\_elec}}
 \index{m\_elec@{m\_elec}!constants@{constants}}
@@ -90,13 +251,43 @@ Definition at line 36 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 37 of file shared\+\_\+data.\+f90.
+Definition at line 28 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{37 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{parameter} :: m\_elec = 9.1093837015e-\/31\_real64}
+\DoxyCodeLine{28 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{parameter} :: m\_elec = 9.1093837015e-\/31\_real64}
 
 \end{DoxyCode}
+\mbox{\Hypertarget{namespaceconstants_a6f58ba04ee2aba9b1801dc374777506a}\label{namespaceconstants_a6f58ba04ee2aba9b1801dc374777506a}} 
+\index{constants@{constants}!electron@{electron}}
+\index{electron@{electron}!constants@{constants}}
+\doxysubsubsection{\texorpdfstring{electron}{electron}}
+{\footnotesize\ttfamily real(real64), parameter constants\+::electron}
+
+
+
+Definition at line 28 of file shared\+\_\+data.\+f90.
+
+\mbox{\Hypertarget{namespaceconstants_a77a281d11f48ecc004ea90c1112b391c}\label{namespaceconstants_a77a281d11f48ecc004ea90c1112b391c}} 
+\index{constants@{constants}!rest@{rest}}
+\index{rest@{rest}!constants@{constants}}
+\doxysubsubsection{\texorpdfstring{rest}{rest}}
+{\footnotesize\ttfamily real(real64), parameter constants\+::rest}
+
+
+
+Definition at line 28 of file shared\+\_\+data.\+f90.
+
+\mbox{\Hypertarget{namespaceconstants_ae85abe97d6edae695c69ca720ffb51f4}\label{namespaceconstants_ae85abe97d6edae695c69ca720ffb51f4}} 
+\index{constants@{constants}!mass@{mass}}
+\index{mass@{mass}!constants@{constants}}
+\doxysubsubsection{\texorpdfstring{mass}{mass}}
+{\footnotesize\ttfamily real(real64), dimension (kg), parameter constants\+::mass}
+
+
+
+Definition at line 28 of file shared\+\_\+data.\+f90.
+
 \mbox{\Hypertarget{namespaceconstants_a041a2ee5336ce5dfd0e92072e614b2b6}\label{namespaceconstants_a041a2ee5336ce5dfd0e92072e614b2b6}} 
 \index{constants@{constants}!e\_chg@{e\_chg}}
 \index{e\_chg@{e\_chg}!constants@{constants}}
@@ -105,13 +296,23 @@ Definition at line 37 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 38 of file shared\+\_\+data.\+f90.
+Definition at line 29 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{38 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{parameter} :: e\_chg = 1.602176634e-\/19\_real64}
+\DoxyCodeLine{29 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{parameter} :: e\_chg = 1.602176634e-\/19\_real64}
 
 \end{DoxyCode}
+\mbox{\Hypertarget{namespaceconstants_ae8345d499e44bdcf72af8abf87cbadb0}\label{namespaceconstants_ae8345d499e44bdcf72af8abf87cbadb0}} 
+\index{constants@{constants}!charge@{charge}}
+\index{charge@{charge}!constants@{constants}}
+\doxysubsubsection{\texorpdfstring{charge}{charge}}
+{\footnotesize\ttfamily real(real64), dimension (c), parameter constants\+::charge}
+
+
+
+Definition at line 29 of file shared\+\_\+data.\+f90.
+
 \mbox{\Hypertarget{namespaceconstants_ac0600c375ab1128c6119e57f71b59b6e}\label{namespaceconstants_ac0600c375ab1128c6119e57f71b59b6e}} 
 \index{constants@{constants}!a\_0@{a\_0}}
 \index{a\_0@{a\_0}!constants@{constants}}
@@ -120,13 +321,33 @@ Definition at line 38 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 39 of file shared\+\_\+data.\+f90.
+Definition at line 30 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{39 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{parameter} :: a\_0 =  5.29177210903e-\/11\_real64}
+\DoxyCodeLine{30 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{parameter} :: a\_0 =  5.29177210903e-\/11\_real64}
 
 \end{DoxyCode}
+\mbox{\Hypertarget{namespaceconstants_ae45aed269a179a89d060cdc21abb48f9}\label{namespaceconstants_ae45aed269a179a89d060cdc21abb48f9}} 
+\index{constants@{constants}!bohr@{bohr}}
+\index{bohr@{bohr}!constants@{constants}}
+\doxysubsubsection{\texorpdfstring{bohr}{bohr}}
+{\footnotesize\ttfamily real(real64), parameter constants\+::bohr}
+
+
+
+Definition at line 30 of file shared\+\_\+data.\+f90.
+
+\mbox{\Hypertarget{namespaceconstants_a5de481606fa8cbbb5914d6fd0d40b9c4}\label{namespaceconstants_a5de481606fa8cbbb5914d6fd0d40b9c4}} 
+\index{constants@{constants}!radius@{radius}}
+\index{radius@{radius}!constants@{constants}}
+\doxysubsubsection{\texorpdfstring{radius}{radius}}
+{\footnotesize\ttfamily real(real64), dimension (m), parameter constants\+::radius}
+
+
+
+Definition at line 30 of file shared\+\_\+data.\+f90.
+
 \mbox{\Hypertarget{namespaceconstants_af01a8bd84f8943178f55201fc394f280}\label{namespaceconstants_af01a8bd84f8943178f55201fc394f280}} 
 \index{constants@{constants}!eps\_0@{eps\_0}}
 \index{eps\_0@{eps\_0}!constants@{constants}}
@@ -135,10 +356,30 @@ Definition at line 39 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 40 of file shared\+\_\+data.\+f90.
+Definition at line 31 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{40 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{parameter} :: eps\_0 = 8.8541878128e-\/12\_real64}
+\DoxyCodeLine{31 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{parameter} :: eps\_0 = 8.8541878128e-\/12\_real64}
 
 \end{DoxyCode}
+\mbox{\Hypertarget{namespaceconstants_ab46015d071f75670093d4a7824c12527}\label{namespaceconstants_ab46015d071f75670093d4a7824c12527}} 
+\index{constants@{constants}!vacuum@{vacuum}}
+\index{vacuum@{vacuum}!constants@{constants}}
+\doxysubsubsection{\texorpdfstring{vacuum}{vacuum}}
+{\footnotesize\ttfamily real(real64), parameter constants\+::vacuum}
+
+
+
+Definition at line 31 of file shared\+\_\+data.\+f90.
+
+\mbox{\Hypertarget{namespaceconstants_abbfce5a1e8eb391236cb5c9d8c54ddac}\label{namespaceconstants_abbfce5a1e8eb391236cb5c9d8c54ddac}} 
+\index{constants@{constants}!permittivity@{permittivity}}
+\index{permittivity@{permittivity}!constants@{constants}}
+\doxysubsubsection{\texorpdfstring{permittivity}{permittivity}}
+{\footnotesize\ttfamily real(real64), dimension (f m$^\wedge$-\/1), parameter constants\+::permittivity}
+
+
+
+Definition at line 31 of file shared\+\_\+data.\+f90.
+

@@ -1,9 +1,7 @@
 <map id="vqmc::vqmc_h_2" name="vqmc::vqmc_h_2">
 <area shape="rect" id="node1" title=" " alt="" coords="5,56,125,83"/>
 <area shape="rect" id="node2" href="$namespacesolvers.html#ab21b7ec07e33a8417b62ecb75c327a6f" title="Calculates local energy for the &#160;problem." alt="" coords="180,5,316,32"/>
-<area shape="rect" id="node6" href="$namespacesolvers.html#a0d0f254ede019bb0bf743397cd0069f7" title="Calculates transition probability for the &#160;problem." alt="" coords="187,56,309,83"/>
-<area shape="rect" id="node7" href="$namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335" title=" " alt="" coords="173,107,323,133"/>
+<area shape="rect" id="node4" href="$namespacesolvers.html#a0d0f254ede019bb0bf743397cd0069f7" title="Calculates transition probability for the &#160;problem." alt="" coords="187,56,309,83"/>
+<area shape="rect" id="node5" href="$namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335" title=" " alt="" coords="173,107,323,133"/>
 <area shape="rect" id="node3" href="$namespacesolvers.html#aa0515876b10a8cebd7f381e14b1ff856" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="371,31,489,57"/>
-<area shape="rect" id="node4" href="$namespacesolvers.html#a7d32620a8f8a8780a0b0ef83c490e8f7" title="Calculates value of the wavefunction of a hydrogen 1s orbital." alt="" coords="537,5,656,32"/>
-<area shape="rect" id="node5" href="$namespacesolvers.html#a89943685e3d86544f0261f24fac44419" title="Calculates value of the wavefunction of a hydrogen 2s orbital." alt="" coords="537,56,656,83"/>
 </map>

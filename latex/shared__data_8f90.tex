@@ -13,7 +13,7 @@ type \mbox{\hyperlink{structshared__data_1_1h2__type}{shared\+\_\+data\+::h2\+\_
 \begin{DoxyCompactItemize}
 \item 
 module \mbox{\hyperlink{namespaceconstants}{constants}}
-\item 
+\begin{DoxyCompactList}\small\item\em Contains mathematical constants needed throughout the code, all of which are globally accessible. \end{DoxyCompactList}\item 
 module \mbox{\hyperlink{namespaceshared__data}{shared\+\_\+data}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
@@ -21,19 +21,57 @@ module \mbox{\hyperlink{namespaceshared__data}{shared\+\_\+data}}
 \item 
 real(real64), parameter \mbox{\hyperlink{namespaceconstants_a25d12bb3441f2773a3a3e42dac41a9c1}{constants\+::pi}} = 3.\+1415926535897\+\_\+real64
 \item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_a49f86fc3729a8f74cddac385574aa6a9}{constants\+::var}}
+\item 
 real(real64), parameter \mbox{\hyperlink{namespaceconstants_a54c9d4eb7a08da77b2012fc1dfe8612b}{constants\+::pi\+\_\+dash}} = 0.\+5641895835\+\_\+real64
 \item 
-real(real64), parameter \mbox{\hyperlink{namespaceconstants_a444dcf0e44c72ee753f937ae46b38493}{constants\+::pi\+\_\+dash\+\_\+2}} = 0.\+0997355701\+\_\+real64
+real(real64), dimension(pi), parameter \mbox{\hyperlink{namespaceconstants_a24b7d5a276b40440c3a41cd1d70393bd}{constants\+::sqrt}}
+\item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_a7ccc4f59221eefcae7aaeb9bed4e7ab2}{constants\+::multiplication}}
+\item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_ad47fcf8554977b6075e439c2860100a7}{constants\+::factor}}
+\item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_a14824baa7c9158bd1557ff359502eee6}{constants\+::used}}
+\item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_ada5b1f7737c74aa1e274a48f9b845658}{constants\+::by}}
+\item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_a4d903b2690aec30ca8ea6a88ba9a31dc}{constants\+::h1s\+\_\+wfn}}
+\item 
+real(real64), dimension(4 $\ast$sqrt(2 $\ast$pi)), parameter \mbox{\hyperlink{namespaceconstants_a6ef5676aa648495a79edac9579065329}{constants\+::pi\+\_\+dash\+\_\+2}} = 0.\+0997355701\+\_\+real64
+\item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_a8997059959563acb89f19b43412c9932}{constants\+::h2s\+\_\+wfn}}
 \item 
 real(real64), parameter \mbox{\hyperlink{namespaceconstants_ad75ef80dea6583c8d228add43661af69}{constants\+::hbar}} = 1.\+054571817e-\/34\+\_\+real64
 \item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_a74fad32f1a7f10fffff5c9a482aa432c}{constants\+::reduced}}
+\item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_a626038a8303aa00f4921c2dc59991070}{constants\+::planck}}
+\item 
+real(real64), dimension(j s), parameter \mbox{\hyperlink{namespaceconstants_ac797a3d18e85b8a0d9696852ca4201d9}{constants\+::constant}}
+\item 
 real(real64), parameter \mbox{\hyperlink{namespaceconstants_a4f996dcd1b7e4cd0bc798d8e68bbdf70}{constants\+::m\+\_\+elec}} = 9.\+1093837015e-\/31\+\_\+real64
+\item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_a6f58ba04ee2aba9b1801dc374777506a}{constants\+::electron}}
+\item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_a77a281d11f48ecc004ea90c1112b391c}{constants\+::rest}}
+\item 
+real(real64), dimension(kg), parameter \mbox{\hyperlink{namespaceconstants_ae85abe97d6edae695c69ca720ffb51f4}{constants\+::mass}}
 \item 
 real(real64), parameter \mbox{\hyperlink{namespaceconstants_a041a2ee5336ce5dfd0e92072e614b2b6}{constants\+::e\+\_\+chg}} = 1.\+602176634e-\/19\+\_\+real64
 \item 
+real(real64), dimension(c), parameter \mbox{\hyperlink{namespaceconstants_ae8345d499e44bdcf72af8abf87cbadb0}{constants\+::charge}}
+\item 
 real(real64), parameter \mbox{\hyperlink{namespaceconstants_ac0600c375ab1128c6119e57f71b59b6e}{constants\+::a\+\_\+0}} = 5.\+29177210903e-\/11\+\_\+real64
 \item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_ae45aed269a179a89d060cdc21abb48f9}{constants\+::bohr}}
+\item 
+real(real64), dimension(m), parameter \mbox{\hyperlink{namespaceconstants_a5de481606fa8cbbb5914d6fd0d40b9c4}{constants\+::radius}}
+\item 
 real(real64), parameter \mbox{\hyperlink{namespaceconstants_af01a8bd84f8943178f55201fc394f280}{constants\+::eps\+\_\+0}} = 8.\+8541878128e-\/12\+\_\+real64
+\item 
+real(real64), parameter \mbox{\hyperlink{namespaceconstants_ab46015d071f75670093d4a7824c12527}{constants\+::vacuum}}
+\item 
+real(real64), dimension(f m$^\wedge$-\/1), parameter \mbox{\hyperlink{namespaceconstants_abbfce5a1e8eb391236cb5c9d8c54ddac}{constants\+::permittivity}}
 \item 
 character(len=10) \mbox{\hyperlink{namespaceshared__data_ad837e8f897bde556513b9a9c8135b904}{shared\+\_\+data\+::system}}
 \item 
@@ -45,11 +83,5 @@ type(qho\+\_\+type) \mbox{\hyperlink{namespaceshared__data_a7503c2b3bd10f3ee43c4
 \item 
 type(h2plus\+\_\+type) \mbox{\hyperlink{namespaceshared__data_a1e9e95c9ea52c9aa2ec2f05b8d65e4f3}{shared\+\_\+data\+::h2plus}}
 \item 
-type(h2plus\+\_\+type) \mbox{\hyperlink{namespaceshared__data_ab3e958f42cf6f3d9f77ebf79162bf0cf}{shared\+\_\+data\+::anchor}}
-\item 
-type(h2plus\+\_\+type) \mbox{\hyperlink{namespaceshared__data_a8361373c98eb1fafe136c55a2bcbdc6a}{shared\+\_\+data\+::ref\+\_\+h2plus\+\_\+var}}
-\item 
 type(h2\+\_\+type) \mbox{\hyperlink{namespaceshared__data_a1703912ee00414a4aaf1a41d3c167694}{shared\+\_\+data\+::h2}}
-\item 
-type(h2\+\_\+type) \mbox{\hyperlink{namespaceshared__data_a0cd1222b243b07f841166bbb6a54ed8e}{shared\+\_\+data\+::ref\+\_\+h2\+\_\+var}}
 \end{DoxyCompactItemize}

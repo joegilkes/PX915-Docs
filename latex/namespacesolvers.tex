@@ -175,14 +175,6 @@ Definition at line 114 of file quantum\+\_\+solvers.\+f90.
 \DoxyCodeLine{125 }
 
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{namespacesolvers_a7d32620a8f8a8780a0b0ef83c490e8f7_icgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{namespacesolvers_a89943685e3d86544f0261f24fac44419}\label{namespacesolvers_a89943685e3d86544f0261f24fac44419}} 
 \index{solvers@{solvers}!h2s\_wfn@{h2s\_wfn}}
 \index{h2s\_wfn@{h2s\_wfn}!solvers@{solvers}}
@@ -226,14 +218,6 @@ Definition at line 147 of file quantum\+\_\+solvers.\+f90.
 \DoxyCodeLine{160 }
 
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{namespacesolvers_a89943685e3d86544f0261f24fac44419_icgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{namespacesolvers_a6d705d11696b64991f1624e298067bed}\label{namespacesolvers_a6d705d11696b64991f1624e298067bed}} 
 \index{solvers@{solvers}!h\_2\_plus\_wfn@{h\_2\_plus\_wfn}}
 \index{h\_2\_plus\_wfn@{h\_2\_plus\_wfn}!solvers@{solvers}}
@@ -244,7 +228,7 @@ Here is the caller graph for this function\+:
 
 Calculates trial wavefunction for the $ H_{2}^{+} $ problem. 
 
-Function to calculate the wavefunction of an electron at position $ \mathbf{r} $ in the hydrogen molecular ion $ H_{2}^{+} $. Depending on the value of variable {\itshape include\+\_\+pqn}, will either calculate \[ \psi^{c}_{T}(\mathbf{r}) = c\phi_{1s}^{A}(\mathbf{r}) + \sqrt{1-c^{2}}\phi_{1s}^{B}(\mathbf{r}) \] if {\itshape include\+\_\+pqn} in H2plus is set to 1, or \[ \psi^{\mathbf{c}}_{T}(\mathbf{r}) = c_{1}\phi_{1s}^{A} + \sqrt{1-c_{1}^{2}}\phi_{1s}^{B} + c_{2}\phi_{2s}^{A} + \sqrt{1-c_{2}^{2}}\phi_{2s}^{B} \] if {\itshape include\+\_\+pqn} in H2plus is set to 2. 
+Function to calculate the wavefunction of an electron at position $ \mathbf{r} $ in the hydrogen molecular ion $ H_{2}^{+} $. Depending on the value of variable {\itshape include\+\_\+pqn}, will either calculate \[ \psi^{c}_{T}(\mathbf{r}) = c\phi_{1s}^{A}(\mathbf{r}) + \sqrt{1-c^{2}}\phi_{1s}^{B}(\mathbf{r}) \] if {\itshape include\+\_\+pqn} in \mbox{\hyperlink{}{H2plus}} is set to 1, or \[ \psi^{\mathbf{c}}_{T}(\mathbf{r}) = c_{1}\phi_{1s}^{A} + \sqrt{1-c_{1}^{2}}\phi_{1s}^{B} + c_{2}\phi_{2s}^{A} + \sqrt{1-c_{2}^{2}}\phi_{2s}^{B} \] if {\itshape include\+\_\+pqn} in \mbox{\hyperlink{}{H2plus}} is set to 2. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em c} & Parameter(s) of trial wavefunction \\
 \hline
@@ -286,14 +270,6 @@ Definition at line 192 of file quantum\+\_\+solvers.\+f90.
 \DoxyCodeLine{210 }
 
 \end{DoxyCode}
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=318pt]{namespacesolvers_a6d705d11696b64991f1624e298067bed_cgraph}
-\end{center}
-\end{figure}
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
@@ -354,7 +330,7 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespacesolvers_a5695d107239a7a8fb1f8b096786af028_cgraph}
+\includegraphics[width=345pt]{namespacesolvers_a5695d107239a7a8fb1f8b096786af028_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:
@@ -476,7 +452,7 @@ Here is the caller graph for this function\+:
 
 Calculates trial wavefunction for the $ H_{2} $ problem. 
 
-Function to calculate the wavefunction of two electrons at positions $ \mathbf{r}_{1} $ and $ \mathbf{r}_{2} $ in the hydrogen molecule $ H_{2} $. Depending on the value of variable {\itshape include\+\_\+pqn}, will either calculate \[ \psi^{c}_{T}(\mathbf{r}_{1}, \mathbf{r}_{2}) = c \left ( \phi_{1s}^{A}(\mathbf{r}_{1})\phi_{1s}^{B}(\mathbf{r}_{2}) + \phi_{1s}^{A}(\mathbf{r}_{2})\phi_{1s}^{B}(\mathbf{r}_{1}) \right ) \] if {\itshape include\+\_\+pqn} in the derived type \#\+H2 is set to 1, or \[ \psi^{\mathbf{c}}_{T}(\mathbf{r}_{1}, \mathbf{r}_{2}) = c_{1} \left ( \phi_{1s}^{A}(\mathbf{r}_{1})\phi_{1s}^{B}(\mathbf{r}_{2}) + \phi_{1s}^{A}(\mathbf{r}_{2})\phi_{1s}^{B}(\mathbf{r}_{1}) \right ) + c_{2} \left ( \phi_{2s}^{A}(\mathbf{r}_{1})\phi_{2s}^{B}(\mathbf{r}_{2}) + \phi_{2s}^{A}(\mathbf{r}_{2})\phi_{2s}^{B}(\mathbf{r}_{1}) \right ) \] if {\itshape include\+\_\+pqn} in the derived type \#\+H2 is set to 2. 
+Function to calculate the wavefunction of two electrons at positions $ \mathbf{r}_{1} $ and $ \mathbf{r}_{2} $ in the hydrogen molecule $ H_{2} $. Depending on the value of variable {\itshape include\+\_\+pqn}, will either calculate \[ \psi^{c}_{T}(\mathbf{r}_{1}, \mathbf{r}_{2}) = c \left ( \phi_{1s}^{A}(\mathbf{r}_{1})\phi_{1s}^{B}(\mathbf{r}_{2}) + \phi_{1s}^{A}(\mathbf{r}_{2})\phi_{1s}^{B}(\mathbf{r}_{1}) \right ) \] if {\itshape include\+\_\+pqn} in \mbox{\hyperlink{}{H2}} is set to 1, or \[ \psi^{\mathbf{c}}_{T}(\mathbf{r}_{1}, \mathbf{r}_{2}) = c_{1} \left ( \phi_{1s}^{A}(\mathbf{r}_{1})\phi_{1s}^{B}(\mathbf{r}_{2}) + \phi_{1s}^{A}(\mathbf{r}_{2})\phi_{1s}^{B}(\mathbf{r}_{1}) \right ) + c_{2} \left ( \phi_{2s}^{A}(\mathbf{r}_{1})\phi_{2s}^{B}(\mathbf{r}_{2}) + \phi_{2s}^{A}(\mathbf{r}_{2})\phi_{2s}^{B}(\mathbf{r}_{1}) \right ) \] if {\itshape include\+\_\+pqn} in \mbox{\hyperlink{}{H2}} is set to 2. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em c} & Parameter(s) of trial wavefunction \\
 \hline
@@ -523,14 +499,6 @@ Definition at line 357 of file quantum\+\_\+solvers.\+f90.
 \DoxyCodeLine{378 }
 
 \end{DoxyCode}
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=294pt]{namespacesolvers_aa0515876b10a8cebd7f381e14b1ff856_cgraph}
-\end{center}
-\end{figure}
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
@@ -597,7 +565,7 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespacesolvers_a0d0f254ede019bb0bf743397cd0069f7_cgraph}
+\includegraphics[width=297pt]{namespacesolvers_a0d0f254ede019bb0bf743397cd0069f7_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:
@@ -714,7 +682,7 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespacesolvers_ab21b7ec07e33a8417b62ecb75c327a6f_cgraph}
+\includegraphics[width=307pt]{namespacesolvers_ab21b7ec07e33a8417b62ecb75c327a6f_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:
