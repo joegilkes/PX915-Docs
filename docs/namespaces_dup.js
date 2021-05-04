@@ -2,6 +2,8 @@ var namespaces_dup =
 [
     [ "constants", "namespaceconstants.html", [
       [ "pi", "namespaceconstants.html#a25d12bb3441f2773a3a3e42dac41a9c1", null ],
+      [ "pi_dash", "namespaceconstants.html#a54c9d4eb7a08da77b2012fc1dfe8612b", null ],
+      [ "pi_dash_2", "namespaceconstants.html#a444dcf0e44c72ee753f937ae46b38493", null ],
       [ "hbar", "namespaceconstants.html#ad75ef80dea6583c8d228add43661af69", null ],
       [ "m_elec", "namespaceconstants.html#a4f996dcd1b7e4cd0bc798d8e68bbdf70", null ],
       [ "e_chg", "namespaceconstants.html#a041a2ee5336ce5dfd0e92072e614b2b6", null ],
