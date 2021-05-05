@@ -150,12 +150,12 @@ $(document).ready(function(){initNavTree('_v_q_m_c_8f90_source.html',''); initRe
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keyword">call </span><a class="code" href="namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335">random_normal</a>(1, sample_normal)</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            x_n = x(i-1) + sigma * sample_normal</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            log_prob_n = log(<a class="code" href="namespacesolvers.html#a722edf182d188ad1db7fa6a675fea13c">qho_prob</a>(alpha_const, x(i-1), x_n))</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            log_prob_n = log(<a class="code" href="namespacesolvers.html#a722edf182d188ad1db7fa6a675fea13c">qho_prob</a>(alpha_const, x(i-1), x_n(1)))</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            a_prob_trans = min(1.0_real64, log_prob_n)</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keyword">call </span>random_number(unif_num)</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">if</span> (alpha &lt;= unif_num) <span class="keywordflow">then</span> </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">if</span> (a_prob_trans &lt;= unif_num) <span class="keywordflow">then</span> </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                x(i) = x_n(i) </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                accept =  1 + accept</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                total_energy = total_energy + <a class="code" href="namespacesolvers.html#a4f0054c0d0d2f5080c92a04557feaf52">qho_energy</a>(alpha_const, x_n(1))</div>

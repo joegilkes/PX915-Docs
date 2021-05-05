@@ -85,12 +85,12 @@ Definition at line 33 of file VQMC.\+f90.
 \DoxyCodeLine{56             \textcolor{keyword}{call }random\_normal(1, sample\_normal)}
 \DoxyCodeLine{57             x\_n = x(i-\/1) + sigma * sample\_normal}
 \DoxyCodeLine{58 }
-\DoxyCodeLine{59             log\_prob\_n = log(qho\_prob(alpha\_const, x(i-\/1), x\_n))}
+\DoxyCodeLine{59             log\_prob\_n = log(qho\_prob(alpha\_const, x(i-\/1), x\_n(1)))}
 \DoxyCodeLine{60             a\_prob\_trans = min(1.0\_real64, log\_prob\_n)}
 \DoxyCodeLine{61             }
 \DoxyCodeLine{62             \textcolor{keyword}{call }random\_number(unif\_num)}
 \DoxyCodeLine{63 }
-\DoxyCodeLine{64             \textcolor{keywordflow}{if} (alpha <= unif\_num) \textcolor{keywordflow}{then} }
+\DoxyCodeLine{64             \textcolor{keywordflow}{if} (a\_prob\_trans <= unif\_num) \textcolor{keywordflow}{then} }
 \DoxyCodeLine{65                 x(i) = x\_n(i) }
 \DoxyCodeLine{66                 accept =  1 + accept}
 \DoxyCodeLine{67                 total\_energy = total\_energy + qho\_energy(alpha\_const, x\_n\textcolor{comment}{(1))}}
