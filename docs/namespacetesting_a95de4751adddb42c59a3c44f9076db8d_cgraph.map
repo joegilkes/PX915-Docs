@@ -1,0 +1,7 @@
+<map id="testing::test_h_2_plus_energy" name="testing::test_h_2_plus_energy">
+<area shape="rect" id="node1" title="Tests the H_2_plus_Energy function in the solvers module." alt="" coords="5,23,153,65"/>
+<area shape="rect" id="node2" href="$namespacesolvers.html#a1f21386928aadfc3dd6bc5cfb82fb94f" title="Calculates local energy for the &#160;problem." alt="" coords="201,31,368,57"/>
+<area shape="rect" id="node3" href="$namespacesolvers.html#a6d705d11696b64991f1624e298067bed" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="416,31,567,57"/>
+<area shape="rect" id="node4" href="$namespacesolvers.html#a7d32620a8f8a8780a0b0ef83c490e8f7" title="Calculates value of the wavefunction of a hydrogen 1s orbital." alt="" coords="615,5,733,32"/>
+<area shape="rect" id="node5" href="$namespacesolvers.html#a89943685e3d86544f0261f24fac44419" title="Calculates value of the wavefunction of a hydrogen 2s orbital." alt="" coords="615,56,733,83"/>
+</map>

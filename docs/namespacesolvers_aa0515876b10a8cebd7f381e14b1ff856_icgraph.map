@@ -1,6 +1,10 @@
 <map id="solvers::h_2_wfn" name="solvers::h_2_wfn">
-<area shape="rect" id="node1" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="357,31,476,57"/>
-<area shape="rect" id="node2" href="$namespacesolvers.html#ab21b7ec07e33a8417b62ecb75c327a6f" title="Calculates local energy for the &#160;problem." alt="" coords="173,5,309,32"/>
-<area shape="rect" id="node4" href="$namespacesolvers.html#a0d0f254ede019bb0bf743397cd0069f7" title="Calculates transition probability for the &#160;problem." alt="" coords="180,56,303,83"/>
-<area shape="rect" id="node3" href="$namespacevqmc.html#a93752a22b0228b2043fc815cba952497" title=" " alt="" coords="5,31,125,57"/>
+<area shape="rect" id="node1" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="581,107,700,133"/>
+<area shape="rect" id="node2" href="$namespacesolvers.html#ab21b7ec07e33a8417b62ecb75c327a6f" title="Calculates local energy for the &#160;problem." alt="" coords="393,56,529,83"/>
+<area shape="rect" id="node6" href="$namespacesolvers.html#a0d0f254ede019bb0bf743397cd0069f7" title="Calculates transition probability for the &#160;problem." alt="" coords="399,107,522,133"/>
+<area shape="rect" id="node8" href="$namespacetesting.html#a70f58338fe8165f65417781dae734e68" title="Tests the H_2_wfn function in the solvers module." alt="" coords="388,157,533,184"/>
+<area shape="rect" id="node3" href="$namespacetesting.html#a313d78f649070a104e89a7535811d6a5" title="Tests the H_2_Energy function in the solvers module." alt="" coords="177,5,340,32"/>
+<area shape="rect" id="node5" href="$namespacevqmc.html#a93752a22b0228b2043fc815cba952497" title=" " alt="" coords="199,56,319,83"/>
+<area shape="rect" id="node4" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="5,107,129,133"/>
+<area shape="rect" id="node7" href="$namespacetesting.html#ad02da7e5d742236c571c965b4f80992c" title="Tests the H_2_Prob function in the solvers module." alt="" coords="184,107,333,133"/>
 </map>

@@ -103,10 +103,11 @@ $(document).ready(function(){initNavTree('driver_8f90_source.html',''); initResi
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment">! If system=&#39;test&#39;, run test module</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">if</span> (trim(system)==<span class="stringliteral">&#39;test&#39;</span>) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        print*,<span class="stringliteral">&#39;Run the Test module&#39;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keywordflow">    endif</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">end program </span>main</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keyword">call </span>unit_tests()</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">call </span>exit()</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordflow">    endif</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">end program </span>main</div>
 <div class="ttc" id="adriver_8f90_html_a8ec2266d83cd6c0b762cbcbc92c0af3d"><div class="ttname"><a href="driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d">main</a></div><div class="ttdeci">program main</div><div class="ttdef"><b>Definition:</b> <a href="driver_8f90_source.html#l00001">driver.f90:1</a></div></div>
 <div class="ttc" id="anamespaceinput__parser_html"><div class="ttname"><a href="namespaceinput__parser.html">input_parser</a></div><div class="ttdef"><b>Definition:</b> <a href="input__parser_8f90_source.html#l00001">input_parser.f90:1</a></div></div>
 <div class="ttc" id="anamespaceinput__parser_html_a3c35b8a909f420e7aa4f19d1392d74ea"><div class="ttname"><a href="namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea">input_parser::read_inputs</a></div><div class="ttdeci">subroutine read_inputs()</div><div class="ttdef"><b>Definition:</b> <a href="input__parser_8f90_source.html#l00103">input_parser.f90:104</a></div></div>

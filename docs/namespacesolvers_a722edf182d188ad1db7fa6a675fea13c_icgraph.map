@@ -1,5 +1,6 @@
 <map id="solvers::qho_prob" name="solvers::qho_prob">
-<area shape="rect" id="node1" title="Calculates transition probability for quantum harmonic oscillator problem." alt="" coords="203,31,325,57"/>
-<area shape="rect" id="node2" href="$namespacetesting.html#a3cd96e3cb653762262d063e2aed44ab7" title="Tests the QHO_Prob function in the solvers module." alt="" coords="5,5,155,32"/>
-<area shape="rect" id="node3" href="$namespacevqmc.html#aa1f3818a0761a8d2907614fa15256a10" title=" " alt="" coords="20,56,140,83"/>
+<area shape="rect" id="node1" title="Calculates transition probability for quantum harmonic oscillator problem." alt="" coords="375,31,497,57"/>
+<area shape="rect" id="node2" href="$namespacetesting.html#a3cd96e3cb653762262d063e2aed44ab7" title="Tests the QHO_Prob function in the solvers module." alt="" coords="177,5,327,32"/>
+<area shape="rect" id="node4" href="$namespacevqmc.html#aa1f3818a0761a8d2907614fa15256a10" title=" " alt="" coords="192,56,312,83"/>
+<area shape="rect" id="node3" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="5,5,129,32"/>
 </map>

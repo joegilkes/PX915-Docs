@@ -1,4 +1,6 @@
 <map id="solvers::h_2_plus_prob" name="solvers::h_2_plus_prob">
-<area shape="rect" id="node1" title="Calculates transition probability for the &#160;problem." alt="" coords="204,5,359,32"/>
-<area shape="rect" id="node2" href="$namespacevqmc.html#ab903fb33ac49e462c789d47067ba311d" title=" " alt="" coords="5,5,156,32"/>
+<area shape="rect" id="node1" title="Calculates transition probability for the &#160;problem." alt="" coords="405,31,560,57"/>
+<area shape="rect" id="node2" href="$namespacetesting.html#a15f3412ac40e1145572a5269c6f1b971" title="Tests the H_2_plus_Prob function in the solvers module." alt="" coords="177,5,357,32"/>
+<area shape="rect" id="node4" href="$namespacevqmc.html#ab903fb33ac49e462c789d47067ba311d" title=" " alt="" coords="192,56,343,83"/>
+<area shape="rect" id="node3" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="5,5,129,32"/>
 </map>
