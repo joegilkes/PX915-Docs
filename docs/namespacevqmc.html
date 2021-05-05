@@ -263,7 +263,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">if</span> (alpha &lt;= unif_num) <span class="keywordflow">then</span> </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                x(i) = x_n(i) </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                accept =  1 + accept</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                total_energy = total_energy + qho_energy(alpha_const, x_n<span class="comment">)</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                total_energy = total_energy + qho_energy(alpha_const, x_n<span class="comment">(1))</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"></span>            <span class="keywordflow">else</span> </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                x(i) = x(i-1)</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keywordflow">            end if</span> </div>
@@ -329,7 +329,7 @@ Functions/Subroutines</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real(real64), intent(in)&#160;</td>
+          <td class="paramtype">real(real64), dimension(:)&#160;</td>
           <td class="paramname"><em>c_const</em>, </td>
         </tr>
         <tr>
@@ -374,47 +374,48 @@ Functions/Subroutines</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">implicit none</span> </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(3)</span> :: x_start, R_a, R_b</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: sigma, c_const </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">integer</span>, <span class="keywordtype">intent(in)</span> :: N, burn, thin </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;         </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span> :: accept_rate, total_energy</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span>, <span class="keywordtype">dimension(:, :)</span>, <span class="keywordtype">allocatable</span> :: X</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keywordtype">        real</span>(real64) :: log_prob_n, a_prob_trans, unif_num</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: X_n, sample_normal</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">integer</span> :: i, accept  </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keyword">allocate</span>(x(3, 1:n+1)) </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        x(:,1) = x_start </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        accept = 0 </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        total_energy = 0</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">do</span> i = 2, n+1 </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="comment">! Propose the next step</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keyword">call </span>random_normal(3, sample_normal)</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            x_n = x(:, i-1) + sigma * sample_normal</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            log_prob_n = log(h_2_plus_prob(c_const, x(:,i-1), x_n, r_a, r_b<span class="comment">)</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment"></span>            a_prob_trans = min(1.0_real64, log_prob_n)</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keyword">call </span>random_number(unif_num)</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">if</span> (alpha &lt;= unif_num) <span class="keywordflow">then</span> </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                x(:, i) = x_n </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                accept =  1 + accept</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                total_energy = total_energy + h_2_plus_energy(c_const, x_n<span class="comment">, r_a, r_b)</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment"></span>            <span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                x(:, i) = x(:, i-1)</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keywordflow">            end if</span> </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keywordflow">        end do</span> </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        accept_rate = accept / n </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        total_energy = total_energy / accept</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: sigma</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(:)</span> :: c_const </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">integer</span>, <span class="keywordtype">intent(in)</span> :: N, burn, thin </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;         </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span> :: accept_rate, total_energy</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span>, <span class="keywordtype">dimension(:, :)</span>, <span class="keywordtype">allocatable</span> :: X</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keywordtype">        real</span>(real64) :: log_prob_n, a_prob_trans, unif_num</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: X_n, sample_normal</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">integer</span> :: i, accept  </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keyword">allocate</span>(x(3, 1:n+1)) </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        x(:,1) = x_start </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        accept = 0 </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        total_energy = 0</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">do</span> i = 2, n+1 </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="comment">! Propose the next step</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keyword">call </span>random_normal(3, sample_normal)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            x_n = x(:, i-1) + sigma * sample_normal</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            log_prob_n = log(h_2_plus_prob(c_const, x(:,i-1), x_n, r_a, r_b<span class="comment">))</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment"></span>            a_prob_trans = min(1.0_real64, log_prob_n)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keyword">call </span>random_number(unif_num)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordflow">if</span> (a_prob_trans &lt;= unif_num) <span class="keywordflow">then</span> </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                x(:, i) = x_n </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                accept =  1 + accept</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                total_energy = total_energy + h_2_plus_energy(c_const, x_n<span class="comment">, r_a, r_b)</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment"></span>            <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                x(:, i) = x(:, i-1)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keywordflow">            end if</span> </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="keywordflow">        end do</span> </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        accept_rate = accept / n </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        total_energy = total_energy / accept</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
 </div><!-- fragment --><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
