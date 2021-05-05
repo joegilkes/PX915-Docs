@@ -144,7 +144,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keyword">call </span>random_number(u_1)</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keyword">call </span>random_number(u_2)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            x(i) = sqrt(-2*log(u1))*cos(2*pi*u2)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            x(i) = sqrt(-2*log(u_1))*cos(2*pi*u_2)</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordflow">        end do</span> </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 </div><!-- fragment --><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -240,7 +240,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span> :: accept_rate, total_energy</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span>, <span class="keywordtype">dimension(:)</span>, <span class="keywordtype">allocatable</span> :: X </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">        real</span>(real64) :: log_prob_n, a_prob_trans, unif_num, sample_normal</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">        real</span>(real64) :: log_prob_n, a_prob_trans, unif_num</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(1)</span>:: X_n, sample_normal</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">integer</span> :: i, accept  </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        </div>

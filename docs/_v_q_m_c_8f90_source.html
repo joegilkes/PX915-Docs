@@ -116,7 +116,7 @@ $(document).ready(function(){initNavTree('_v_q_m_c_8f90_source.html',''); initRe
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keyword">call </span>random_number(u_1)</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keyword">call </span>random_number(u_2)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            x(i) = sqrt(-2*log(u1))*cos(2*<a class="code" href="namespaceconstants.html#a25d12bb3441f2773a3a3e42dac41a9c1">pi</a>*u2)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            x(i) = sqrt(-2*log(u_1))*cos(2*<a class="code" href="namespaceconstants.html#a25d12bb3441f2773a3a3e42dac41a9c1">pi</a>*u_2)</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordflow">        end do</span> </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">end subroutine </span><a class="code" href="namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335">random_normal</a></div>
@@ -135,7 +135,7 @@ $(document).ready(function(){initNavTree('_v_q_m_c_8f90_source.html',''); initRe
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span> :: accept_rate, total_energy</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span>, <span class="keywordtype">dimension(:)</span>, <span class="keywordtype">allocatable</span> :: X </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">        real</span>(real64) :: log_prob_n, a_prob_trans, unif_num, sample_normal</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">        real</span>(real64) :: log_prob_n, a_prob_trans, unif_num</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(1)</span>:: X_n, sample_normal</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">integer</span> :: i, accept  </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        </div>

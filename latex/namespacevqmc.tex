@@ -36,7 +36,7 @@ Definition at line 12 of file VQMC.\+f90.
 \DoxyCodeLine{22             \textcolor{keyword}{call }random\_number(u\_1)}
 \DoxyCodeLine{23             \textcolor{keyword}{call }random\_number(u\_2)}
 \DoxyCodeLine{24 }
-\DoxyCodeLine{25             x(i) = sqrt(-\/2*log(u1))*cos(2*pi*u2)}
+\DoxyCodeLine{25             x(i) = sqrt(-\/2*log(u\_1))*cos(2*pi*u\_2)}
 \DoxyCodeLine{26 \textcolor{keywordflow}{        end do} }
 \DoxyCodeLine{27 }
 
@@ -70,7 +70,7 @@ Definition at line 33 of file VQMC.\+f90.
 \DoxyCodeLine{41 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: accept\_rate, total\_energy}
 \DoxyCodeLine{42 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable} :: X }
 \DoxyCodeLine{43 }
-\DoxyCodeLine{44 \textcolor{keywordtype}{        real}(real64) :: log\_prob\_n, a\_prob\_trans, unif\_num, sample\_normal}
+\DoxyCodeLine{44 \textcolor{keywordtype}{        real}(real64) :: log\_prob\_n, a\_prob\_trans, unif\_num}
 \DoxyCodeLine{45 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(1)}:: X\_n, sample\_normal}
 \DoxyCodeLine{46         \textcolor{keywordtype}{integer} :: i, accept  }
 \DoxyCodeLine{47         }
