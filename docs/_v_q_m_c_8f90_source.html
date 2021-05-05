@@ -150,7 +150,7 @@ $(document).ready(function(){initNavTree('_v_q_m_c_8f90_source.html',''); initRe
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keyword">call </span><a class="code" href="namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335">random_normal</a>(1, sample_normal)</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            x_n = x(i-1) + sigma * sample_normal</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            log_prob_n = log(<a class="code" href="namespacesolvers.html#a722edf182d188ad1db7fa6a675fea13c">qho_prob</a>(alpha, x(i-1), x_n))</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            log_prob_n = log(<a class="code" href="namespacesolvers.html#a722edf182d188ad1db7fa6a675fea13c">qho_prob</a>(alpha_const, x(i-1), x_n))</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            a_prob_trans = min(1.0_real64, log_prob_n)</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keyword">call </span>random_number(unif_num)</div>
