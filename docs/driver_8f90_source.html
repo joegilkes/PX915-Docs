@@ -94,23 +94,35 @@ $(document).ready(function(){initNavTree('driver_8f90_source.html',''); initResi
 <div class="contents">
 <a href="driver_8f90.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d">    1</a></span>&#160;<span class="keyword">program</span> <a class="code" href="driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d">main</a></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    <span class="keywordtype">use </span><a class="code" href="namespaceinput__parser.html">input_parser</a></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="comment">! Read the input parameters</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">call </span><a class="code" href="namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea">read_inputs</a>()</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    <span class="keywordtype">use </span><a class="code" href="namespaceshared__data.html">shared_data</a></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    <span class="keywordtype">use </span><a class="code" href="namespaceinput__parser.html">input_parser</a></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keywordtype">use </span><a class="code" href="namespacesolvers.html">solvers</a></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordtype">use </span><a class="code" href="namespacevqmc.html">vqmc</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">use </span><a class="code" href="namespacetesting.html">testing</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordtype">use </span><a class="code" href="namespacenetcdf__out.html">netcdf_out</a></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment">! If system=&#39;test&#39;, run test module</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">if</span> (trim(system)==<span class="stringliteral">&#39;test&#39;</span>) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keyword">call </span>unit_tests()</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">call </span>exit()</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordflow">    endif</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">end program </span>main</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordtype">implicit none</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment">! Read the input parameters</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">call </span><a class="code" href="namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea">read_inputs</a>()</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">! If system=&#39;test&#39;, run test module</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">if</span> (trim(<a class="code" href="namespaceshared__data.html#ad837e8f897bde556513b9a9c8135b904">system</a>)==<span class="stringliteral">&#39;test&#39;</span>) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">call </span><a class="code" href="namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6">unit_tests</a>()</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">call </span>exit()</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordflow">    endif</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">end program </span>main</div>
 <div class="ttc" id="adriver_8f90_html_a8ec2266d83cd6c0b762cbcbc92c0af3d"><div class="ttname"><a href="driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d">main</a></div><div class="ttdeci">program main</div><div class="ttdef"><b>Definition:</b> <a href="driver_8f90_source.html#l00001">driver.f90:1</a></div></div>
 <div class="ttc" id="anamespaceinput__parser_html"><div class="ttname"><a href="namespaceinput__parser.html">input_parser</a></div><div class="ttdef"><b>Definition:</b> <a href="input__parser_8f90_source.html#l00001">input_parser.f90:1</a></div></div>
 <div class="ttc" id="anamespaceinput__parser_html_a3c35b8a909f420e7aa4f19d1392d74ea"><div class="ttname"><a href="namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea">input_parser::read_inputs</a></div><div class="ttdeci">subroutine read_inputs()</div><div class="ttdef"><b>Definition:</b> <a href="input__parser_8f90_source.html#l00103">input_parser.f90:104</a></div></div>
+<div class="ttc" id="anamespacenetcdf__out_html"><div class="ttname"><a href="namespacenetcdf__out.html">netcdf_out</a></div><div class="ttdef"><b>Definition:</b> <a href="netcdf__out_8f90_source.html#l00008">netcdf_out.f90:8</a></div></div>
+<div class="ttc" id="anamespaceshared__data_html"><div class="ttname"><a href="namespaceshared__data.html">shared_data</a></div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00036">shared_data.f90:36</a></div></div>
+<div class="ttc" id="anamespaceshared__data_html_ad837e8f897bde556513b9a9c8135b904"><div class="ttname"><a href="namespaceshared__data.html#ad837e8f897bde556513b9a9c8135b904">shared_data::system</a></div><div class="ttdeci">character(len=10) system</div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00070">shared_data.f90:70</a></div></div>
+<div class="ttc" id="anamespacesolvers_html"><div class="ttname"><a href="namespacesolvers.html">solvers</a></div><div class="ttdoc">Contains local energy and transition probability solvers for available problems.</div><div class="ttdef"><b>Definition:</b> <a href="quantum__solvers_8f90_source.html#l00019">quantum_solvers.f90:19</a></div></div>
+<div class="ttc" id="anamespacetesting_html"><div class="ttname"><a href="namespacetesting.html">testing</a></div><div class="ttdoc">Contains unit tests for all major functions in the program.</div><div class="ttdef"><b>Definition:</b> <a href="testing_8f90_source.html#l00015">testing.f90:15</a></div></div>
+<div class="ttc" id="anamespacetesting_html_a426ebe0ada45b0bc1c4ebba3f469a5c6"><div class="ttname"><a href="namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6">testing::unit_tests</a></div><div class="ttdeci">subroutine unit_tests()</div><div class="ttdoc">Runs all of the unit tests, reporting successes and failures.</div><div class="ttdef"><b>Definition:</b> <a href="testing_8f90_source.html#l00455">testing.f90:456</a></div></div>
+<div class="ttc" id="anamespacevqmc_html"><div class="ttname"><a href="namespacevqmc.html">vqmc</a></div><div class="ttdef"><b>Definition:</b> <a href="_v_q_m_c_8f90_source.html#l00001">VQMC.f90:1</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
