@@ -47,6 +47,7 @@ var namespaces_dup =
     [ "vqmc", "namespacevqmc.html", [
       [ "random_normal", "namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335", null ],
       [ "vqmc_qho", "namespacevqmc.html#aa1f3818a0761a8d2907614fa15256a10", null ],
-      [ "vqmc_h_2_plus", "namespacevqmc.html#ab903fb33ac49e462c789d47067ba311d", null ]
+      [ "vqmc_h_2_plus", "namespacevqmc.html#ab903fb33ac49e462c789d47067ba311d", null ],
+      [ "vqmc_h_2", "namespacevqmc.html#a93752a22b0228b2043fc815cba952497", null ]
     ] ]
 ];

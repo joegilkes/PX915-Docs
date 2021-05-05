@@ -1,6 +1,7 @@
 <map id="solvers::h_2_plus_wfn" name="solvers::h_2_plus_wfn">
 <area shape="rect" id="node1" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="419,31,569,57"/>
 <area shape="rect" id="node2" href="$namespacesolvers.html#a1f21386928aadfc3dd6bc5cfb82fb94f" title="Calculates local energy for the &#160;problem." alt="" coords="204,5,371,32"/>
-<area shape="rect" id="node4" href="$namespacesolvers.html#a5695d107239a7a8fb1f8b096786af028" title="Calculates transition probability for the &#160;problem." alt="" coords="210,56,365,83"/>
-<area shape="rect" id="node3" href="$namespacevqmc.html#ab903fb33ac49e462c789d47067ba311d" title=" " alt="" coords="5,31,156,57"/>
+<area shape="rect" id="node5" href="$namespacesolvers.html#a5695d107239a7a8fb1f8b096786af028" title="Calculates transition probability for the &#160;problem." alt="" coords="210,56,365,83"/>
+<area shape="rect" id="node3" href="$namespacevqmc.html#a93752a22b0228b2043fc815cba952497" title=" " alt="" coords="21,5,141,32"/>
+<area shape="rect" id="node4" href="$namespacevqmc.html#ab903fb33ac49e462c789d47067ba311d" title=" " alt="" coords="5,56,156,83"/>
 </map>
