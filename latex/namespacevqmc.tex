@@ -209,41 +209,43 @@ Definition at line 131 of file VQMC.\+f90.
 \DoxyCodeLine{144 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: X\_n\_1, X\_n\_2, sample\_normal}
 \DoxyCodeLine{145         \textcolor{keywordtype}{integer} :: i, accept  }
 \DoxyCodeLine{146         }
-\DoxyCodeLine{147         \textcolor{keyword}{allocate}(x(3, 1:n+1)) }
-\DoxyCodeLine{148 }
-\DoxyCodeLine{149         x\_1(:,1) = x\_start\_1}
-\DoxyCodeLine{150         x\_2(:,1) = x\_start\_2}
-\DoxyCodeLine{151         accept = 0 }
-\DoxyCodeLine{152         total\_energy = 0}
-\DoxyCodeLine{153         }
-\DoxyCodeLine{154         \textcolor{keywordflow}{do} i = 2, n+1 }
-\DoxyCodeLine{155             \textcolor{comment}{! Propose the next step}}
-\DoxyCodeLine{156             \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
-\DoxyCodeLine{157             x\_n\_1 = x\_1(:, i-\/1) + sigma * sample\_normal}
-\DoxyCodeLine{158 }
-\DoxyCodeLine{159             \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
-\DoxyCodeLine{160             x\_n\_2 = x\_2(:, i-\/1) + sigma * sample\_normal}
-\DoxyCodeLine{161 }
-\DoxyCodeLine{162             log\_prob\_n = log(h\_2\_prob(c\_const, x\_1(:, i-\/1), x\_2(:, i-\/1),\textcolor{comment}{ x\_n\_1, x\_n\_2, r\_a, r\_b))}}
-\DoxyCodeLine{163 \textcolor{comment}{}            a\_prob\_trans = min(1.0\_real64, exp(log\_prob\_n))}
-\DoxyCodeLine{164             }
-\DoxyCodeLine{165             \textcolor{keyword}{call }random\_number(unif\_num)}
-\DoxyCodeLine{166 }
-\DoxyCodeLine{167             \textcolor{keywordflow}{if} (a\_prob\_trans <= unif\_num) \textcolor{keywordflow}{then} }
-\DoxyCodeLine{168                 x\_1(:, i) = x\_n\_1}
-\DoxyCodeLine{169                 x\_2(:, i) = x\_n\_2 }
-\DoxyCodeLine{170                 accept =  1 + accept}
-\DoxyCodeLine{171                 total\_energy = total\_energy + h\_2\_plus\_energy(c\_const, x\_n\_1\textcolor{comment}{, x\_n\_2, r\_a, r\_b)}}
-\DoxyCodeLine{172 \textcolor{comment}{}            \textcolor{keywordflow}{else} }
-\DoxyCodeLine{173                 x(:, i) = x(:, i-\/1)}
-\DoxyCodeLine{174 \textcolor{keywordflow}{            end if} }
-\DoxyCodeLine{175 }
-\DoxyCodeLine{176 \textcolor{keywordflow}{        end do} }
+\DoxyCodeLine{147         \textcolor{keyword}{allocate}(x\_1(3, 1:n+1)) }
+\DoxyCodeLine{148         \textcolor{keyword}{allocate}(x\_2(3, 1:n+1))}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150         x\_1(:,1) = x\_start\_1}
+\DoxyCodeLine{151         x\_2(:,1) = x\_start\_2}
+\DoxyCodeLine{152         accept = 0 }
+\DoxyCodeLine{153         total\_energy = 0}
+\DoxyCodeLine{154         }
+\DoxyCodeLine{155         \textcolor{keywordflow}{do} i = 2, n+1 }
+\DoxyCodeLine{156             \textcolor{comment}{! Propose the next step}}
+\DoxyCodeLine{157             \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
+\DoxyCodeLine{158             x\_n\_1 = x\_1(:, i-\/1) + sigma * sample\_normal}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160             \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
+\DoxyCodeLine{161             x\_n\_2 = x\_2(:, i-\/1) + sigma * sample\_normal}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163             log\_prob\_n = log(h\_2\_prob(c\_const, x\_1(:, i-\/1), x\_2(:, i-\/1),\textcolor{comment}{ x\_n\_1, x\_n\_2, r\_a, r\_b))}}
+\DoxyCodeLine{164 \textcolor{comment}{}            a\_prob\_trans = min(1.0\_real64, exp(log\_prob\_n))}
+\DoxyCodeLine{165             }
+\DoxyCodeLine{166             \textcolor{keyword}{call }random\_number(unif\_num)}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168             \textcolor{keywordflow}{if} (a\_prob\_trans <= unif\_num) \textcolor{keywordflow}{then} }
+\DoxyCodeLine{169                 x\_1(:, i) = x\_n\_1}
+\DoxyCodeLine{170                 x\_2(:, i) = x\_n\_2 }
+\DoxyCodeLine{171                 accept =  1 + accept}
+\DoxyCodeLine{172                 total\_energy = total\_energy + h\_2\_energy(c\_const, x\_n\_1,\textcolor{comment}{ x\_n\_2, r\_a, r\_b)}}
+\DoxyCodeLine{173 \textcolor{comment}{}            \textcolor{keywordflow}{else} }
+\DoxyCodeLine{174                 x\_1(:, i) = x\_1(:, i-\/1)}
+\DoxyCodeLine{175                 x\_2(:, i) = x\_2(:, i-\/1) }
+\DoxyCodeLine{176 \textcolor{keywordflow}{            end if} }
 \DoxyCodeLine{177 }
-\DoxyCodeLine{178         accept\_rate = accept / n }
+\DoxyCodeLine{178 \textcolor{keywordflow}{        end do} }
 \DoxyCodeLine{179 }
-\DoxyCodeLine{180         total\_energy = total\_energy / accept}
+\DoxyCodeLine{180         accept\_rate = accept / n }
 \DoxyCodeLine{181 }
+\DoxyCodeLine{182         total\_energy = total\_energy / accept}
+\DoxyCodeLine{183 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:

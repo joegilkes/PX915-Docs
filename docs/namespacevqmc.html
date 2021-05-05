@@ -545,41 +545,43 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: X_n_1, X_n_2, sample_normal</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordtype">integer</span> :: i, accept  </div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keyword">allocate</span>(x(3, 1:n+1)) </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        x_1(:,1) = x_start_1</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        x_2(:,1) = x_start_2</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        accept = 0 </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        total_energy = 0</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">do</span> i = 2, n+1 </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <span class="comment">! Propose the next step</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <span class="keyword">call </span>random_normal(3, sample_normal)</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            x_n_1 = x_1(:, i-1) + sigma * sample_normal</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <span class="keyword">call </span>random_normal(3, sample_normal)</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            x_n_2 = x_2(:, i-1) + sigma * sample_normal</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            log_prob_n = log(h_2_prob(c_const, x_1(:, i-1), x_2(:, i-1),<span class="comment"> x_n_1, x_n_2, r_a, r_b))</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment"></span>            a_prob_trans = min(1.0_real64, exp(log_prob_n))</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keyword">call </span>random_number(unif_num)</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keywordflow">if</span> (a_prob_trans &lt;= unif_num) <span class="keywordflow">then</span> </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                x_1(:, i) = x_n_1</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                x_2(:, i) = x_n_2 </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                accept =  1 + accept</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                total_energy = total_energy + h_2_plus_energy(c_const, x_n_1<span class="comment">, x_n_2, r_a, r_b)</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment"></span>            <span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                x(:, i) = x(:, i-1)</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="keywordflow">            end if</span> </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="keywordflow">        end do</span> </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keyword">allocate</span>(x_1(3, 1:n+1)) </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keyword">allocate</span>(x_2(3, 1:n+1))</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        x_1(:,1) = x_start_1</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        x_2(:,1) = x_start_2</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        accept = 0 </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        total_energy = 0</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keywordflow">do</span> i = 2, n+1 </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <span class="comment">! Propose the next step</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keyword">call </span>random_normal(3, sample_normal)</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            x_n_1 = x_1(:, i-1) + sigma * sample_normal</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="keyword">call </span>random_normal(3, sample_normal)</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            x_n_2 = x_2(:, i-1) + sigma * sample_normal</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            log_prob_n = log(h_2_prob(c_const, x_1(:, i-1), x_2(:, i-1),<span class="comment"> x_n_1, x_n_2, r_a, r_b))</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment"></span>            a_prob_trans = min(1.0_real64, exp(log_prob_n))</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <span class="keyword">call </span>random_number(unif_num)</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <span class="keywordflow">if</span> (a_prob_trans &lt;= unif_num) <span class="keywordflow">then</span> </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                x_1(:, i) = x_n_1</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                x_2(:, i) = x_n_2 </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                accept =  1 + accept</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                total_energy = total_energy + h_2_energy(c_const, x_n_1,<span class="comment"> x_n_2, r_a, r_b)</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment"></span>            <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                x_1(:, i) = x_1(:, i-1)</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                x_2(:, i) = x_2(:, i-1) </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="keywordflow">            end if</span> </div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        accept_rate = accept / n </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="keywordflow">        end do</span> </div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        total_energy = total_energy / accept</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        accept_rate = accept / n </div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        total_energy = total_energy / accept</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
 </div><!-- fragment --><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -588,13 +590,12 @@ Functions/Subroutines</h2></td></tr>
 <div class="center"><img src="namespacevqmc_a93752a22b0228b2043fc815cba952497_cgraph.png" border="0" usemap="#anamespacevqmc_a93752a22b0228b2043fc815cba952497_cgraph" alt=""/></div>
 <map name="anamespacevqmc_a93752a22b0228b2043fc815cba952497_cgraph" id="anamespacevqmc_a93752a22b0228b2043fc815cba952497_cgraph">
 <area shape="rect" title=" " alt="" coords="5,56,125,83"/>
-<area shape="rect" href="namespacesolvers.html#a1f21386928aadfc3dd6bc5cfb82fb94f" title="Calculates local energy for the &#160;problem." alt="" coords="173,5,340,32"/>
-<area shape="rect" href="namespacesolvers.html#a0d0f254ede019bb0bf743397cd0069f7" title="Calculates transition probability for the &#160;problem." alt="" coords="195,56,318,83"/>
-<area shape="rect" href="namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335" title=" " alt="" coords="182,107,331,133"/>
-<area shape="rect" href="namespacesolvers.html#a6d705d11696b64991f1624e298067bed" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="388,5,539,32"/>
-<area shape="rect" href="namespacesolvers.html#a7d32620a8f8a8780a0b0ef83c490e8f7" title="Calculates value of the wavefunction of a hydrogen 1s orbital." alt="" coords="587,5,705,32"/>
-<area shape="rect" href="namespacesolvers.html#a89943685e3d86544f0261f24fac44419" title="Calculates value of the wavefunction of a hydrogen 2s orbital." alt="" coords="587,56,705,83"/>
-<area shape="rect" href="namespacesolvers.html#aa0515876b10a8cebd7f381e14b1ff856" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="404,56,523,83"/>
+<area shape="rect" href="namespacesolvers.html#ab21b7ec07e33a8417b62ecb75c327a6f" title="Calculates local energy for the &#160;problem." alt="" coords="180,5,316,32"/>
+<area shape="rect" href="namespacesolvers.html#a0d0f254ede019bb0bf743397cd0069f7" title="Calculates transition probability for the &#160;problem." alt="" coords="187,56,309,83"/>
+<area shape="rect" href="namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335" title=" " alt="" coords="173,107,323,133"/>
+<area shape="rect" href="namespacesolvers.html#aa0515876b10a8cebd7f381e14b1ff856" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="371,31,489,57"/>
+<area shape="rect" href="namespacesolvers.html#a7d32620a8f8a8780a0b0ef83c490e8f7" title="Calculates value of the wavefunction of a hydrogen 1s orbital." alt="" coords="537,5,656,32"/>
+<area shape="rect" href="namespacesolvers.html#a89943685e3d86544f0261f24fac44419" title="Calculates value of the wavefunction of a hydrogen 2s orbital." alt="" coords="537,56,656,83"/>
 </map>
 </div>
 

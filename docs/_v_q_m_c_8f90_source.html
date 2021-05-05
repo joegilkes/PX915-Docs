@@ -238,45 +238,47 @@ $(document).ready(function(){initNavTree('_v_q_m_c_8f90_source.html',''); initRe
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: X_n_1, X_n_2, sample_normal</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordtype">integer</span> :: i, accept  </div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keyword">allocate</span>(x(3, 1:n+1)) </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        x_1(:,1) = x_start_1</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        x_2(:,1) = x_start_2</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        accept = 0 </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        total_energy = 0</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">do</span> i = 2, n+1 </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <span class="comment">! Propose the next step</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <span class="keyword">call </span><a class="code" href="namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335">random_normal</a>(3, sample_normal)</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            x_n_1 = x_1(:, i-1) + sigma * sample_normal</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <span class="keyword">call </span><a class="code" href="namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335">random_normal</a>(3, sample_normal)</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            x_n_2 = x_2(:, i-1) + sigma * sample_normal</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            log_prob_n = log(<a class="code" href="namespacesolvers.html#a0d0f254ede019bb0bf743397cd0069f7">h_2_prob</a>(c_const, x_1(:, i-1), x_2(:, i-1), x_n_1, x_n_2, r_a, r_b))</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            a_prob_trans = min(1.0_real64, exp(log_prob_n))</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keyword">call </span>random_number(unif_num)</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keywordflow">if</span> (a_prob_trans &lt;= unif_num) <span class="keywordflow">then</span> </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                x_1(:, i) = x_n_1</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                x_2(:, i) = x_n_2 </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                accept =  1 + accept</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                total_energy = total_energy + <a class="code" href="namespacesolvers.html#a1f21386928aadfc3dd6bc5cfb82fb94f">h_2_plus_energy</a>(c_const, x_n_1, x_n_2, r_a, r_b)</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                x(:, i) = x(:, i-1)</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="keywordflow">            end if</span> </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="keywordflow">        end do</span> </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keyword">allocate</span>(x_1(3, 1:n+1)) </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keyword">allocate</span>(x_2(3, 1:n+1))</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        x_1(:,1) = x_start_1</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        x_2(:,1) = x_start_2</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        accept = 0 </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        total_energy = 0</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keywordflow">do</span> i = 2, n+1 </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <span class="comment">! Propose the next step</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keyword">call </span><a class="code" href="namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335">random_normal</a>(3, sample_normal)</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            x_n_1 = x_1(:, i-1) + sigma * sample_normal</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="keyword">call </span><a class="code" href="namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335">random_normal</a>(3, sample_normal)</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            x_n_2 = x_2(:, i-1) + sigma * sample_normal</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            log_prob_n = log(<a class="code" href="namespacesolvers.html#a0d0f254ede019bb0bf743397cd0069f7">h_2_prob</a>(c_const, x_1(:, i-1), x_2(:, i-1), x_n_1, x_n_2, r_a, r_b))</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            a_prob_trans = min(1.0_real64, exp(log_prob_n))</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <span class="keyword">call </span>random_number(unif_num)</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <span class="keywordflow">if</span> (a_prob_trans &lt;= unif_num) <span class="keywordflow">then</span> </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                x_1(:, i) = x_n_1</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                x_2(:, i) = x_n_2 </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                accept =  1 + accept</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                total_energy = total_energy + <a class="code" href="namespacesolvers.html#ab21b7ec07e33a8417b62ecb75c327a6f">h_2_energy</a>(c_const, x_n_1, x_n_2, r_a, r_b)</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                x_1(:, i) = x_1(:, i-1)</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                x_2(:, i) = x_2(:, i-1) </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="keywordflow">            end if</span> </div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        accept_rate = accept / n </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="keywordflow">        end do</span> </div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        total_energy = total_energy / accept</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        accept_rate = accept / n </div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keyword">end subroutine </span><a class="code" href="namespacevqmc.html#a93752a22b0228b2043fc815cba952497">vqmc_h_2</a></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        total_energy = total_energy / accept</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="keyword">end module </span>VQMC</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keyword">end subroutine </span><a class="code" href="namespacevqmc.html#a93752a22b0228b2043fc815cba952497">vqmc_h_2</a></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="keyword">end module </span>VQMC</div>
 <div class="ttc" id="anamespaceconstants_html"><div class="ttname"><a href="namespaceconstants.html">constants</a></div><div class="ttdoc">Contains mathematical constants needed throughout the code, all of which are globally accessible.</div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00016">shared_data.f90:16</a></div></div>
 <div class="ttc" id="anamespaceconstants_html_a25d12bb3441f2773a3a3e42dac41a9c1"><div class="ttname"><a href="namespaceconstants.html#a25d12bb3441f2773a3a3e42dac41a9c1">constants::pi</a></div><div class="ttdeci">real(real64), parameter pi</div><div class="ttdoc">Pi.</div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00024">shared_data.f90:24</a></div></div>
 <div class="ttc" id="anamespaceshared__data_html"><div class="ttname"><a href="namespaceshared__data.html">shared_data</a></div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00036">shared_data.f90:36</a></div></div>
@@ -286,6 +288,7 @@ $(document).ready(function(){initNavTree('_v_q_m_c_8f90_source.html',''); initRe
 <div class="ttc" id="anamespacesolvers_html_a4f0054c0d0d2f5080c92a04557feaf52"><div class="ttname"><a href="namespacesolvers.html#a4f0054c0d0d2f5080c92a04557feaf52">solvers::qho_energy</a></div><div class="ttdeci">real(real64) function qho_energy(alpha, x)</div><div class="ttdoc">Calculates local energy for quantum harmonic oscillator problem.</div><div class="ttdef"><b>Definition:</b> <a href="quantum__solvers_8f90_source.html#l00079">quantum_solvers.f90:80</a></div></div>
 <div class="ttc" id="anamespacesolvers_html_a5695d107239a7a8fb1f8b096786af028"><div class="ttname"><a href="namespacesolvers.html#a5695d107239a7a8fb1f8b096786af028">solvers::h_2_plus_prob</a></div><div class="ttdeci">real(real64) function h_2_plus_prob(c, r_current, r_next, R_a, R_b)</div><div class="ttdoc">Calculates transition probability for the  problem.</div><div class="ttdef"><b>Definition:</b> <a href="quantum__solvers_8f90_source.html#l00233">quantum_solvers.f90:234</a></div></div>
 <div class="ttc" id="anamespacesolvers_html_a722edf182d188ad1db7fa6a675fea13c"><div class="ttname"><a href="namespacesolvers.html#a722edf182d188ad1db7fa6a675fea13c">solvers::qho_prob</a></div><div class="ttdeci">real(real64) function qho_prob(alpha, x_current, x_next)</div><div class="ttdoc">Calculates transition probability for quantum harmonic oscillator problem.</div><div class="ttdef"><b>Definition:</b> <a href="quantum__solvers_8f90_source.html#l00050">quantum_solvers.f90:51</a></div></div>
+<div class="ttc" id="anamespacesolvers_html_ab21b7ec07e33a8417b62ecb75c327a6f"><div class="ttname"><a href="namespacesolvers.html#ab21b7ec07e33a8417b62ecb75c327a6f">solvers::h_2_energy</a></div><div class="ttdeci">real(real64) function h_2_energy(c, r_1, r_2, R_a, R_b, fdstep)</div><div class="ttdoc">Calculates local energy for the  problem.</div><div class="ttdef"><b>Definition:</b> <a href="quantum__solvers_8f90_source.html#l00450">quantum_solvers.f90:451</a></div></div>
 <div class="ttc" id="anamespacevqmc_html"><div class="ttname"><a href="namespacevqmc.html">vqmc</a></div><div class="ttdef"><b>Definition:</b> <a href="_v_q_m_c_8f90_source.html#l00001">VQMC.f90:1</a></div></div>
 <div class="ttc" id="anamespacevqmc_html_a62ec9b662e5d9b46ec37d52ff93cb335"><div class="ttname"><a href="namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335">vqmc::random_normal</a></div><div class="ttdeci">subroutine random_normal(dim, x)</div><div class="ttdef"><b>Definition:</b> <a href="_v_q_m_c_8f90_source.html#l00012">VQMC.f90:13</a></div></div>
 <div class="ttc" id="anamespacevqmc_html_a93752a22b0228b2043fc815cba952497"><div class="ttname"><a href="namespacevqmc.html#a93752a22b0228b2043fc815cba952497">vqmc::vqmc_h_2</a></div><div class="ttdeci">subroutine vqmc_h_2(x_start_1, x_start_2, sigma, N, burn, thin, c_const, R_a, R_b, X_1, X_2, accept_rate, total_energy)</div><div class="ttdef"><b>Definition:</b> <a href="_v_q_m_c_8f90_source.html#l00131">VQMC.f90:133</a></div></div>
