@@ -9,9 +9,15 @@ Contains unit tests for all major functions in the program.
 \begin{DoxyCompactItemize}
 \item 
 integer function \mbox{\hyperlink{namespacetesting_a3cd96e3cb653762262d063e2aed44ab7}{test\+\_\+qho\+\_\+prob}} ()
-\begin{DoxyCompactList}\small\item\em Tests the QHO\+\_\+\+Prob function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Tests the \mbox{\hyperlink{namespacesolvers_a722edf182d188ad1db7fa6a675fea13c}{QHO\+\_\+\+Prob}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. \end{DoxyCompactList}\item 
 integer function \mbox{\hyperlink{namespacetesting_a55374b3e27ef78754002549b1b423118}{test\+\_\+qho\+\_\+energy}} ()
-\begin{DoxyCompactList}\small\item\em Tests the QHO\+\_\+\+Energy function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Tests the \mbox{\hyperlink{namespacesolvers_a4f0054c0d0d2f5080c92a04557feaf52}{QHO\+\_\+\+Energy}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. \end{DoxyCompactList}\item 
+integer function \mbox{\hyperlink{namespacetesting_a12c0e6c6469c658e1bd6b30e9fc3f5da}{test\+\_\+h1s\+\_\+wfn}} ()
+\begin{DoxyCompactList}\small\item\em Tests the \mbox{\hyperlink{namespacesolvers_a7d32620a8f8a8780a0b0ef83c490e8f7}{H1s\+\_\+wfn}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. \end{DoxyCompactList}\item 
+integer function \mbox{\hyperlink{namespacetesting_abe0f62bb50fbee5f3ebd52fcd43bf1e6}{test\+\_\+h2s\+\_\+wfn}} ()
+\begin{DoxyCompactList}\small\item\em Tests the \mbox{\hyperlink{namespacesolvers_a89943685e3d86544f0261f24fac44419}{H2s\+\_\+wfn}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. \end{DoxyCompactList}\item 
+integer function \mbox{\hyperlink{namespacetesting_ad1d0b5a5ff6ea4b8b8f29cc2a0e1982a}{test\+\_\+h\+\_\+2\+\_\+plus\+\_\+wfn}} ()
+\begin{DoxyCompactList}\small\item\em Tests the \mbox{\hyperlink{namespacesolvers_a6d705d11696b64991f1624e298067bed}{H\+\_\+2\+\_\+plus\+\_\+wfn}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -33,38 +39,38 @@ Module containing all test data needed for unit tests, ie. all pre-\/defined inp
 
 
 
-Tests the QHO\+\_\+\+Prob function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. 
+Tests the \mbox{\hyperlink{namespacesolvers_a722edf182d188ad1db7fa6a675fea13c}{QHO\+\_\+\+Prob}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. 
 
-
+Returns a value of 0 if the test is successful, returns a value of 1 if the result of the test falls outside tolerances. 
 \begin{DoxyRetVals}{Return values}
 {\em ierr} & Unit test error state \\
 \hline
 \end{DoxyRetVals}
 
 
-Definition at line 45 of file testing.\+f90.
+Definition at line 48 of file testing.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{46 }
-\DoxyCodeLine{47         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{48 }
-\DoxyCodeLine{49 \textcolor{keywordtype}{        real}(real64) :: alpha = 0.1\_real64}
-\DoxyCodeLine{50 \textcolor{keywordtype}{        real}(real64) :: x\_current = 0.2\_real64}
-\DoxyCodeLine{51 \textcolor{keywordtype}{        real}(real64) :: x\_next = 1.0\_real64}
-\DoxyCodeLine{52 \textcolor{keywordtype}{        real}(real64) :: res\_expected = 0.8253068685\_real64}
-\DoxyCodeLine{53 }
-\DoxyCodeLine{54 \textcolor{keywordtype}{        real}(real64) :: res\_actual}
-\DoxyCodeLine{55         \textcolor{keywordtype}{integer} :: ierr}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{keywordtype}{        real}(real64) :: alpha = 0.1\_real64}
+\DoxyCodeLine{53 \textcolor{keywordtype}{        real}(real64) :: x\_current = 0.2\_real64}
+\DoxyCodeLine{54 \textcolor{keywordtype}{        real}(real64) :: x\_next = 1.0\_real64}
+\DoxyCodeLine{55 \textcolor{keywordtype}{        real}(real64) :: res\_expected = 0.8253068685\_real64}
 \DoxyCodeLine{56 }
-\DoxyCodeLine{57         res\_actual = qho\_prob(alpha, x\_current, x\_next)}
-\DoxyCodeLine{58 }
-\DoxyCodeLine{59         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{60             ierr = 1}
-\DoxyCodeLine{61         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{62             ierr = 0}
-\DoxyCodeLine{63 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{64 }
+\DoxyCodeLine{57 \textcolor{keywordtype}{        real}(real64) :: res\_actual}
+\DoxyCodeLine{58         \textcolor{keywordtype}{integer} :: ierr}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60         res\_actual = qho\_prob(alpha, x\_current, x\_next)}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{63             ierr = 1}
+\DoxyCodeLine{64         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{65             ierr = 0}
+\DoxyCodeLine{66 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{67 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -83,37 +89,37 @@ Here is the call graph for this function\+:
 
 
 
-Tests the QHO\+\_\+\+Energy function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. 
+Tests the \mbox{\hyperlink{namespacesolvers_a4f0054c0d0d2f5080c92a04557feaf52}{QHO\+\_\+\+Energy}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. 
 
-
+Returns a value of 0 if the test is successful, returns a value of 1 if the result of the test falls outside tolerances. 
 \begin{DoxyRetVals}{Return values}
 {\em ierr} & Unit test error state \\
 \hline
 \end{DoxyRetVals}
 
 
-Definition at line 77 of file testing.\+f90.
+Definition at line 84 of file testing.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{78 }
-\DoxyCodeLine{79         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{80 }
-\DoxyCodeLine{81 \textcolor{keywordtype}{        real}(real64) :: alpha = 0.15\_real64}
-\DoxyCodeLine{82 \textcolor{keywordtype}{        real}(real64) :: x = 0.314\_real64}
-\DoxyCodeLine{83 \textcolor{keywordtype}{        real}(real64) :: res\_expected = 0.19486118\_real64}
-\DoxyCodeLine{84 }
-\DoxyCodeLine{85 \textcolor{keywordtype}{        real}(real64) :: res\_actual}
-\DoxyCodeLine{86         \textcolor{keywordtype}{integer} :: ierr}
-\DoxyCodeLine{87     }
-\DoxyCodeLine{88         res\_actual = qho\_energy(alpha, x)}
-\DoxyCodeLine{89 }
-\DoxyCodeLine{90         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{91             ierr = 1}
-\DoxyCodeLine{92         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{93             ierr = 0}
-\DoxyCodeLine{94 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{95 }
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{keywordtype}{        real}(real64) :: alpha = 0.15\_real64}
+\DoxyCodeLine{89 \textcolor{keywordtype}{        real}(real64) :: x = 0.314\_real64}
+\DoxyCodeLine{90 \textcolor{keywordtype}{        real}(real64) :: res\_expected = 0.19486118\_real64}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{keywordtype}{        real}(real64) :: res\_actual}
+\DoxyCodeLine{93         \textcolor{keywordtype}{integer} :: ierr}
+\DoxyCodeLine{94     }
+\DoxyCodeLine{95         res\_actual = qho\_energy(alpha, x)}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{98             ierr = 1}
+\DoxyCodeLine{99         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{100             ierr = 0}
+\DoxyCodeLine{101 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{102 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -122,6 +128,165 @@ Here is the call graph for this function\+:
 \begin{center}
 \leavevmode
 \includegraphics[width=340pt]{namespacetesting_a55374b3e27ef78754002549b1b423118_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacetesting_a12c0e6c6469c658e1bd6b30e9fc3f5da}\label{namespacetesting_a12c0e6c6469c658e1bd6b30e9fc3f5da}} 
+\index{testing@{testing}!test\_h1s\_wfn@{test\_h1s\_wfn}}
+\index{test\_h1s\_wfn@{test\_h1s\_wfn}!testing@{testing}}
+\doxysubsubsection{\texorpdfstring{test\_h1s\_wfn()}{test\_h1s\_wfn()}}
+{\footnotesize\ttfamily integer function testing\+::test\+\_\+h1s\+\_\+wfn}
+
+
+
+Tests the \mbox{\hyperlink{namespacesolvers_a7d32620a8f8a8780a0b0ef83c490e8f7}{H1s\+\_\+wfn}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. 
+
+Returns a value of 0 if the test is successful, returns a value of 1 if the result of the test falls outside tolerances. 
+\begin{DoxyRetVals}{Return values}
+{\em ierr} & Unit test error state \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 118 of file testing.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_elec = (/1.5\_real64, 0.2\_real64,\textcolor{comment}{ -\/0.5\_real64/)}}
+\DoxyCodeLine{123 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_nuc = (/1.0\_real64, 0.0\_real64, \textcolor{comment}{0.0\_real64/)}}
+\DoxyCodeLine{124 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64) :: res\_expected = 0.2705734006\_real64}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{keywordtype}{        real}(real64) :: res\_actual}
+\DoxyCodeLine{127         \textcolor{keywordtype}{integer} :: ierr}
+\DoxyCodeLine{128     }
+\DoxyCodeLine{129         res\_actual = h1s\_wfn(r\_elec, r\_nuc)}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{132             ierr = 1}
+\DoxyCodeLine{133         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{134             ierr = 0}
+\DoxyCodeLine{135 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{136 }
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{namespacetesting_a12c0e6c6469c658e1bd6b30e9fc3f5da_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacetesting_abe0f62bb50fbee5f3ebd52fcd43bf1e6}\label{namespacetesting_abe0f62bb50fbee5f3ebd52fcd43bf1e6}} 
+\index{testing@{testing}!test\_h2s\_wfn@{test\_h2s\_wfn}}
+\index{test\_h2s\_wfn@{test\_h2s\_wfn}!testing@{testing}}
+\doxysubsubsection{\texorpdfstring{test\_h2s\_wfn()}{test\_h2s\_wfn()}}
+{\footnotesize\ttfamily integer function testing\+::test\+\_\+h2s\+\_\+wfn}
+
+
+
+Tests the \mbox{\hyperlink{namespacesolvers_a89943685e3d86544f0261f24fac44419}{H2s\+\_\+wfn}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. 
+
+Returns a value of 0 if the test is successful, returns a value of 1 if the result of the test falls outside tolerances. 
+\begin{DoxyRetVals}{Return values}
+{\em ierr} & Unit test error state \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 152 of file testing.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_elec = (/1.5\_real64, 0.2\_real64,\textcolor{comment}{ -\/0.5\_real64/)}}
+\DoxyCodeLine{157 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_nuc = (/1.0\_real64, 0.0\_real64, \textcolor{comment}{0.0\_real64/)}}
+\DoxyCodeLine{158 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64) :: res\_expected = 0.08738223907\_real64}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160 \textcolor{keywordtype}{        real}(real64) :: res\_actual}
+\DoxyCodeLine{161         \textcolor{keywordtype}{integer} :: ierr}
+\DoxyCodeLine{162     }
+\DoxyCodeLine{163         res\_actual = h2s\_wfn(r\_elec, r\_nuc)}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{166             ierr = 1}
+\DoxyCodeLine{167         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{168             ierr = 0}
+\DoxyCodeLine{169 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{170 }
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{namespacetesting_abe0f62bb50fbee5f3ebd52fcd43bf1e6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacetesting_ad1d0b5a5ff6ea4b8b8f29cc2a0e1982a}\label{namespacetesting_ad1d0b5a5ff6ea4b8b8f29cc2a0e1982a}} 
+\index{testing@{testing}!test\_h\_2\_plus\_wfn@{test\_h\_2\_plus\_wfn}}
+\index{test\_h\_2\_plus\_wfn@{test\_h\_2\_plus\_wfn}!testing@{testing}}
+\doxysubsubsection{\texorpdfstring{test\_h\_2\_plus\_wfn()}{test\_h\_2\_plus\_wfn()}}
+{\footnotesize\ttfamily integer function testing\+::test\+\_\+h\+\_\+2\+\_\+plus\+\_\+wfn}
+
+
+
+Tests the \mbox{\hyperlink{namespacesolvers_a6d705d11696b64991f1624e298067bed}{H\+\_\+2\+\_\+plus\+\_\+wfn}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. 
+
+Returns a value of 0 if the test is successful. Returns a value of 1 if the result of the test with include\+\_\+pqn = 1 falls outside tolerances. Returns a value of 2 if the result of the test with include\+\_\+pqn = 2 falls outside tolerances. Returns a value of 3 if both tests fall outside tolerances. 
+\begin{DoxyRetVals}{Return values}
+{\em ierr} & Unit test error state \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 191 of file testing.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(1)} :: c\_test1 = 0.5\_real64}
+\DoxyCodeLine{196 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(2)} :: c\_test2 = (/0.5\_real64, 0.5\_real64\textcolor{comment}{/)}}
+\DoxyCodeLine{197 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r = (/1.5\_real64, 0.2\_real64, -\/0.5\_real64\textcolor{comment}{/)}}
+\DoxyCodeLine{198 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_a = (/1.0\_real64, 0.0\_real64, 0.\textcolor{comment}{0\_real64/)}}
+\DoxyCodeLine{199 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_b = (/-\/1.0\_real64, 0.0\_real64, 0\textcolor{comment}{.0\_real64/)}}
+\DoxyCodeLine{200 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64) :: res\_expected\_test1 = 0.1731585063\_real64}
+\DoxyCodeLine{201 \textcolor{keywordtype}{        real}(real64) :: res\_expected\_test2 = 0.203447215\_real64}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203 \textcolor{keywordtype}{        real}(real64) :: res\_actual\_test1, res\_actual\_test2}
+\DoxyCodeLine{204         \textcolor{keywordtype}{integer} :: ierr}
+\DoxyCodeLine{205     }
+\DoxyCodeLine{206         res\_actual\_test1 = h\_2\_plus\_wfn(c\_test1, r, r\_a, r\_b)}
+\DoxyCodeLine{207         h2plus\%include\_pqn = 2}
+\DoxyCodeLine{208         res\_actual\_test2 = h\_2\_plus\_wfn(c\_test2, r, r\_a, r\_b)}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210         ierr = 0}
+\DoxyCodeLine{211         \textcolor{keywordflow}{if} (abs(res\_actual\_test1 -\/ res\_expected\_test1) .ge. tol) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{212             ierr = 1}
+\DoxyCodeLine{213 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{214         \textcolor{keywordflow}{if} (abs(res\_actual\_test2 -\/ res\_expected\_test2) .ge. tol) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{215             \textcolor{keywordflow}{if} (ierr .eq. 1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{216                 ierr = 3}
+\DoxyCodeLine{217             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{218                 ierr = 2}
+\DoxyCodeLine{219 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{220 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{221 }
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetesting_ad1d0b5a5ff6ea4b8b8f29cc2a0e1982a_cgraph}
 \end{center}
 \end{figure}
 

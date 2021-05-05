@@ -1,0 +1,4 @@
+<map id="testing::test_h2s_wfn" name="testing::test_h2s_wfn">
+<area shape="rect" id="node1" title="Tests the H2s_wfn function in the solvers module." alt="" coords="5,5,151,32"/>
+<area shape="rect" id="node2" href="$namespacesolvers.html#a89943685e3d86544f0261f24fac44419" title="Calculates value of the wavefunction of a hydrogen 2s orbital." alt="" coords="199,5,317,32"/>
+</map>

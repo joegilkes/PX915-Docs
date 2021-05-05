@@ -310,7 +310,7 @@ Functions/Subroutines</h2></td></tr>
 
 <p>Calculates value of the wavefunction of a hydrogen 1s orbital. </p>
 <p>Function to calculate the wavefunction of an electron at position \( \mathbf{r} \) in a hydrogenic 1s atomic orbital, centred on nuclear position \( \mathbf{R}_{nuc}. \) Computes </p><p class="formulaDsp">
-\[ \phi_{1s}^{A}(\mathbf{r}) = \frac{1}{\sqrt{\pi}}e^{\left |\mathbf{r-\mathbf{R}_{A}} \right |} \]
+\[ \phi_{1s}^{A}(\mathbf{r}) = \frac{1}{\sqrt{\pi}}e^{-\left |\mathbf{r-\mathbf{R}_{nuc}} \right |} \]
 </p>
  <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -345,15 +345,17 @@ Functions/Subroutines</h2></td></tr>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespacesolvers_a7d32620a8f8a8780a0b0ef83c490e8f7_icgraph.png" border="0" usemap="#anamespacesolvers_a7d32620a8f8a8780a0b0ef83c490e8f7_icgraph" alt=""/></div>
 <map name="anamespacesolvers_a7d32620a8f8a8780a0b0ef83c490e8f7_icgraph" id="anamespacesolvers_a7d32620a8f8a8780a0b0ef83c490e8f7_icgraph">
-<area shape="rect" title="Calculates value of the wavefunction of a hydrogen 1s orbital." alt="" coords="617,81,736,108"/>
-<area shape="rect" href="namespacesolvers.html#a6d705d11696b64991f1624e298067bed" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="419,56,569,83"/>
-<area shape="rect" href="namespacesolvers.html#aa0515876b10a8cebd7f381e14b1ff856" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="435,107,553,133"/>
-<area shape="rect" href="namespacesolvers.html#a1f21386928aadfc3dd6bc5cfb82fb94f" title="Calculates local energy for the &#160;problem." alt="" coords="204,5,371,32"/>
-<area shape="rect" href="namespacesolvers.html#a5695d107239a7a8fb1f8b096786af028" title="Calculates transition probability for the &#160;problem." alt="" coords="210,56,365,83"/>
-<area shape="rect" href="namespacevqmc.html#ab903fb33ac49e462c789d47067ba311d" title=" " alt="" coords="5,44,156,71"/>
-<area shape="rect" href="namespacesolvers.html#ab21b7ec07e33a8417b62ecb75c327a6f" title="Calculates local energy for the &#160;problem." alt="" coords="219,107,355,133"/>
-<area shape="rect" href="namespacesolvers.html#a0d0f254ede019bb0bf743397cd0069f7" title="Calculates transition probability for the &#160;problem." alt="" coords="226,157,349,184"/>
-<area shape="rect" href="namespacevqmc.html#a93752a22b0228b2043fc815cba952497" title=" " alt="" coords="21,120,141,147"/>
+<area shape="rect" title="Calculates value of the wavefunction of a hydrogen 1s orbital." alt="" coords="627,157,745,184"/>
+<area shape="rect" href="namespacesolvers.html#a6d705d11696b64991f1624e298067bed" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="428,81,579,108"/>
+<area shape="rect" href="namespacesolvers.html#aa0515876b10a8cebd7f381e14b1ff856" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="444,157,563,184"/>
+<area shape="rect" href="namespacetesting.html#a12c0e6c6469c658e1bd6b30e9fc3f5da" title="Tests the H1s_wfn function in the solvers module." alt="" coords="431,208,576,235"/>
+<area shape="rect" href="namespacesolvers.html#a1f21386928aadfc3dd6bc5cfb82fb94f" title="Calculates local energy for the &#160;problem." alt="" coords="209,5,375,32"/>
+<area shape="rect" href="namespacesolvers.html#a5695d107239a7a8fb1f8b096786af028" title="Calculates transition probability for the &#160;problem." alt="" coords="215,56,369,83"/>
+<area shape="rect" href="namespacetesting.html#ad1d0b5a5ff6ea4b8b8f29cc2a0e1982a" title="Tests the H_2_plus_wfn function in the solvers module." alt="" coords="204,107,380,133"/>
+<area shape="rect" href="namespacevqmc.html#ab903fb33ac49e462c789d47067ba311d" title=" " alt="" coords="5,31,156,57"/>
+<area shape="rect" href="namespacesolvers.html#ab21b7ec07e33a8417b62ecb75c327a6f" title="Calculates local energy for the &#160;problem." alt="" coords="224,157,360,184"/>
+<area shape="rect" href="namespacesolvers.html#a0d0f254ede019bb0bf743397cd0069f7" title="Calculates transition probability for the &#160;problem." alt="" coords="231,208,353,235"/>
+<area shape="rect" href="namespacevqmc.html#a93752a22b0228b2043fc815cba952497" title=" " alt="" coords="21,183,141,209"/>
 </map>
 </div>
 
@@ -387,7 +389,7 @@ Functions/Subroutines</h2></td></tr>
 
 <p>Calculates value of the wavefunction of a hydrogen 2s orbital. </p>
 <p>Function to calculate the wavefunction of an electron at position \( \mathbf{r} \) in a hydrogenic 2s atomic orbital, centred on nuclear position \( \mathbf{R}_{nuc}. \) Computes </p><p class="formulaDsp">
-\[ \psi^{A}_{2s} = \frac{1}{4\sqrt{2\pi}}\left [ 2 - \left |\mathbf{r-\mathbf{R}_{A}} \right | \right ] e^{-\frac{\left |\mathbf{r-\mathbf{R}_{A}} \right |}{2}} \]
+\[ \psi^{A}_{2s} = \frac{1}{4\sqrt{2\pi}}\left [ 2 - \left |\mathbf{r-\mathbf{R}_{nuc}} \right | \right ] e^{-\frac{\left |\mathbf{r-\mathbf{R}_{nuc}} \right |}{2}} \]
 </p>
  <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -424,15 +426,17 @@ Functions/Subroutines</h2></td></tr>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespacesolvers_a89943685e3d86544f0261f24fac44419_icgraph.png" border="0" usemap="#anamespacesolvers_a89943685e3d86544f0261f24fac44419_icgraph" alt=""/></div>
 <map name="anamespacesolvers_a89943685e3d86544f0261f24fac44419_icgraph" id="anamespacesolvers_a89943685e3d86544f0261f24fac44419_icgraph">
-<area shape="rect" title="Calculates value of the wavefunction of a hydrogen 2s orbital." alt="" coords="617,81,736,108"/>
-<area shape="rect" href="namespacesolvers.html#a6d705d11696b64991f1624e298067bed" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="419,56,569,83"/>
-<area shape="rect" href="namespacesolvers.html#aa0515876b10a8cebd7f381e14b1ff856" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="435,107,553,133"/>
-<area shape="rect" href="namespacesolvers.html#a1f21386928aadfc3dd6bc5cfb82fb94f" title="Calculates local energy for the &#160;problem." alt="" coords="204,5,371,32"/>
-<area shape="rect" href="namespacesolvers.html#a5695d107239a7a8fb1f8b096786af028" title="Calculates transition probability for the &#160;problem." alt="" coords="210,56,365,83"/>
-<area shape="rect" href="namespacevqmc.html#ab903fb33ac49e462c789d47067ba311d" title=" " alt="" coords="5,44,156,71"/>
-<area shape="rect" href="namespacesolvers.html#ab21b7ec07e33a8417b62ecb75c327a6f" title="Calculates local energy for the &#160;problem." alt="" coords="219,107,355,133"/>
-<area shape="rect" href="namespacesolvers.html#a0d0f254ede019bb0bf743397cd0069f7" title="Calculates transition probability for the &#160;problem." alt="" coords="226,157,349,184"/>
-<area shape="rect" href="namespacevqmc.html#a93752a22b0228b2043fc815cba952497" title=" " alt="" coords="21,120,141,147"/>
+<area shape="rect" title="Calculates value of the wavefunction of a hydrogen 2s orbital." alt="" coords="627,157,745,184"/>
+<area shape="rect" href="namespacesolvers.html#a6d705d11696b64991f1624e298067bed" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="428,81,579,108"/>
+<area shape="rect" href="namespacesolvers.html#aa0515876b10a8cebd7f381e14b1ff856" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="444,157,563,184"/>
+<area shape="rect" href="namespacetesting.html#abe0f62bb50fbee5f3ebd52fcd43bf1e6" title="Tests the H2s_wfn function in the solvers module." alt="" coords="431,208,576,235"/>
+<area shape="rect" href="namespacesolvers.html#a1f21386928aadfc3dd6bc5cfb82fb94f" title="Calculates local energy for the &#160;problem." alt="" coords="209,5,375,32"/>
+<area shape="rect" href="namespacesolvers.html#a5695d107239a7a8fb1f8b096786af028" title="Calculates transition probability for the &#160;problem." alt="" coords="215,56,369,83"/>
+<area shape="rect" href="namespacetesting.html#ad1d0b5a5ff6ea4b8b8f29cc2a0e1982a" title="Tests the H_2_plus_wfn function in the solvers module." alt="" coords="204,107,380,133"/>
+<area shape="rect" href="namespacevqmc.html#ab903fb33ac49e462c789d47067ba311d" title=" " alt="" coords="5,31,156,57"/>
+<area shape="rect" href="namespacesolvers.html#ab21b7ec07e33a8417b62ecb75c327a6f" title="Calculates local energy for the &#160;problem." alt="" coords="224,157,360,184"/>
+<area shape="rect" href="namespacesolvers.html#a0d0f254ede019bb0bf743397cd0069f7" title="Calculates transition probability for the &#160;problem." alt="" coords="231,208,353,235"/>
+<area shape="rect" href="namespacevqmc.html#a93752a22b0228b2043fc815cba952497" title=" " alt="" coords="21,183,141,209"/>
 </map>
 </div>
 
@@ -537,9 +541,10 @@ Functions/Subroutines</h2></td></tr>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespacesolvers_a6d705d11696b64991f1624e298067bed_icgraph.png" border="0" usemap="#anamespacesolvers_a6d705d11696b64991f1624e298067bed_icgraph" alt=""/></div>
 <map name="anamespacesolvers_a6d705d11696b64991f1624e298067bed_icgraph" id="anamespacesolvers_a6d705d11696b64991f1624e298067bed_icgraph">
-<area shape="rect" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="419,31,569,57"/>
-<area shape="rect" href="namespacesolvers.html#a1f21386928aadfc3dd6bc5cfb82fb94f" title="Calculates local energy for the &#160;problem." alt="" coords="204,5,371,32"/>
-<area shape="rect" href="namespacesolvers.html#a5695d107239a7a8fb1f8b096786af028" title="Calculates transition probability for the &#160;problem." alt="" coords="210,56,365,83"/>
+<area shape="rect" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="428,56,579,83"/>
+<area shape="rect" href="namespacesolvers.html#a1f21386928aadfc3dd6bc5cfb82fb94f" title="Calculates local energy for the &#160;problem." alt="" coords="209,5,375,32"/>
+<area shape="rect" href="namespacesolvers.html#a5695d107239a7a8fb1f8b096786af028" title="Calculates transition probability for the &#160;problem." alt="" coords="215,56,369,83"/>
+<area shape="rect" href="namespacetesting.html#ad1d0b5a5ff6ea4b8b8f29cc2a0e1982a" title="Tests the H_2_plus_wfn function in the solvers module." alt="" coords="204,107,380,133"/>
 <area shape="rect" href="namespacevqmc.html#ab903fb33ac49e462c789d47067ba311d" title=" " alt="" coords="5,31,156,57"/>
 </map>
 </div>

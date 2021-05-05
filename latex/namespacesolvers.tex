@@ -144,7 +144,7 @@ Here is the caller graph for this function\+:
 
 Calculates value of the wavefunction of a hydrogen 1s orbital. 
 
-Function to calculate the wavefunction of an electron at position $ \mathbf{r} $ in a hydrogenic 1s atomic orbital, centred on nuclear position $ \mathbf{R}_{nuc}. $ Computes \[ \phi_{1s}^{A}(\mathbf{r}) = \frac{1}{\sqrt{\pi}}e^{\left |\mathbf{r-\mathbf{R}_{A}} \right |} \] 
+Function to calculate the wavefunction of an electron at position $ \mathbf{r} $ in a hydrogenic 1s atomic orbital, centred on nuclear position $ \mathbf{R}_{nuc}. $ Computes \[ \phi_{1s}^{A}(\mathbf{r}) = \frac{1}{\sqrt{\pi}}e^{-\left |\mathbf{r-\mathbf{R}_{nuc}} \right |} \] 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em r\+\_\+elec} & Electron position \\
 \hline
@@ -193,7 +193,7 @@ Here is the caller graph for this function\+:
 
 Calculates value of the wavefunction of a hydrogen 2s orbital. 
 
-Function to calculate the wavefunction of an electron at position $ \mathbf{r} $ in a hydrogenic 2s atomic orbital, centred on nuclear position $ \mathbf{R}_{nuc}. $ Computes \[ \psi^{A}_{2s} = \frac{1}{4\sqrt{2\pi}}\left [ 2 - \left |\mathbf{r-\mathbf{R}_{A}} \right | \right ] e^{-\frac{\left |\mathbf{r-\mathbf{R}_{A}} \right |}{2}} \] 
+Function to calculate the wavefunction of an electron at position $ \mathbf{r} $ in a hydrogenic 2s atomic orbital, centred on nuclear position $ \mathbf{R}_{nuc}. $ Computes \[ \psi^{A}_{2s} = \frac{1}{4\sqrt{2\pi}}\left [ 2 - \left |\mathbf{r-\mathbf{R}_{nuc}} \right | \right ] e^{-\frac{\left |\mathbf{r-\mathbf{R}_{nuc}} \right |}{2}} \] 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em r\+\_\+elec} & Electron position \\
 \hline

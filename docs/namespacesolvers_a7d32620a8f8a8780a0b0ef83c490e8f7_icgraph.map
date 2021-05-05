@@ -1,11 +1,13 @@
 <map id="solvers::h1s_wfn" name="solvers::h1s_wfn">
-<area shape="rect" id="node1" title="Calculates value of the wavefunction of a hydrogen 1s orbital." alt="" coords="617,81,736,108"/>
-<area shape="rect" id="node2" href="$namespacesolvers.html#a6d705d11696b64991f1624e298067bed" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="419,56,569,83"/>
-<area shape="rect" id="node6" href="$namespacesolvers.html#aa0515876b10a8cebd7f381e14b1ff856" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="435,107,553,133"/>
-<area shape="rect" id="node3" href="$namespacesolvers.html#a1f21386928aadfc3dd6bc5cfb82fb94f" title="Calculates local energy for the &#160;problem." alt="" coords="204,5,371,32"/>
-<area shape="rect" id="node5" href="$namespacesolvers.html#a5695d107239a7a8fb1f8b096786af028" title="Calculates transition probability for the &#160;problem." alt="" coords="210,56,365,83"/>
-<area shape="rect" id="node4" href="$namespacevqmc.html#ab903fb33ac49e462c789d47067ba311d" title=" " alt="" coords="5,44,156,71"/>
-<area shape="rect" id="node7" href="$namespacesolvers.html#ab21b7ec07e33a8417b62ecb75c327a6f" title="Calculates local energy for the &#160;problem." alt="" coords="219,107,355,133"/>
-<area shape="rect" id="node9" href="$namespacesolvers.html#a0d0f254ede019bb0bf743397cd0069f7" title="Calculates transition probability for the &#160;problem." alt="" coords="226,157,349,184"/>
-<area shape="rect" id="node8" href="$namespacevqmc.html#a93752a22b0228b2043fc815cba952497" title=" " alt="" coords="21,120,141,147"/>
+<area shape="rect" id="node1" title="Calculates value of the wavefunction of a hydrogen 1s orbital." alt="" coords="627,157,745,184"/>
+<area shape="rect" id="node2" href="$namespacesolvers.html#a6d705d11696b64991f1624e298067bed" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="428,81,579,108"/>
+<area shape="rect" id="node7" href="$namespacesolvers.html#aa0515876b10a8cebd7f381e14b1ff856" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="444,157,563,184"/>
+<area shape="rect" id="node11" href="$namespacetesting.html#a12c0e6c6469c658e1bd6b30e9fc3f5da" title="Tests the H1s_wfn function in the solvers module." alt="" coords="431,208,576,235"/>
+<area shape="rect" id="node3" href="$namespacesolvers.html#a1f21386928aadfc3dd6bc5cfb82fb94f" title="Calculates local energy for the &#160;problem." alt="" coords="209,5,375,32"/>
+<area shape="rect" id="node5" href="$namespacesolvers.html#a5695d107239a7a8fb1f8b096786af028" title="Calculates transition probability for the &#160;problem." alt="" coords="215,56,369,83"/>
+<area shape="rect" id="node6" href="$namespacetesting.html#ad1d0b5a5ff6ea4b8b8f29cc2a0e1982a" title="Tests the H_2_plus_wfn function in the solvers module." alt="" coords="204,107,380,133"/>
+<area shape="rect" id="node4" href="$namespacevqmc.html#ab903fb33ac49e462c789d47067ba311d" title=" " alt="" coords="5,31,156,57"/>
+<area shape="rect" id="node8" href="$namespacesolvers.html#ab21b7ec07e33a8417b62ecb75c327a6f" title="Calculates local energy for the &#160;problem." alt="" coords="224,157,360,184"/>
+<area shape="rect" id="node10" href="$namespacesolvers.html#a0d0f254ede019bb0bf743397cd0069f7" title="Calculates transition probability for the &#160;problem." alt="" coords="231,208,353,235"/>
+<area shape="rect" id="node9" href="$namespacevqmc.html#a93752a22b0228b2043fc815cba952497" title=" " alt="" coords="21,183,141,209"/>
 </map>

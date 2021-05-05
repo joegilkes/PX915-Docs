@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['visualise_83',['visualise',['../namespacevisualise.html',1,'']]],
-  ['vqmc_84',['vqmc',['../namespacevqmc.html',1,'']]]
+  ['visualise_86',['visualise',['../namespacevisualise.html',1,'']]],
+  ['vqmc_87',['vqmc',['../namespacevqmc.html',1,'']]]
 ];
