@@ -13,55 +13,94 @@ Collaboration diagram for shared\+\_\+data\+::h2plus\+\_\+type\+:
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-integer(int32) \mbox{\hyperlink{structshared__data_1_1h2plus__type_ad083f40223825a334434481a67337f3d}{burn\+\_\+step}} =200
+integer(int32) \mbox{\hyperlink{structshared__data_1_1h2plus__type_a3ca4d4abe74c106a44ebc86584cf481a}{steps}} =100000
 \item 
-integer(int32) \mbox{\hyperlink{structshared__data_1_1h2plus__type_aa0e6869ea406dbf9b00365b827ce1c82}{thin\+\_\+step}} =20
+integer(int32) \mbox{\hyperlink{structshared__data_1_1h2plus__type_ad083f40223825a334434481a67337f3d}{burn\+\_\+step}} =1000
+\item 
+integer(int32) \mbox{\hyperlink{structshared__data_1_1h2plus__type_aa0e6869ea406dbf9b00365b827ce1c82}{thin\+\_\+step}} =10
+\item 
+real(real64) \mbox{\hyperlink{structshared__data_1_1h2plus__type_a581c3f69fc28686e7c69c0f260556981}{sigma}} =0.\+1
 \item 
 real(real64) \mbox{\hyperlink{structshared__data_1_1h2plus__type_a01b321e914d850af416ccc4168797106}{rcutoff}} =3
 \item 
 integer(int32) \mbox{\hyperlink{structshared__data_1_1h2plus__type_a82659556237f292ab074f0d5c5ea8496}{include\+\_\+pqn}} =1
 \item 
-real(real64), dimension(3) \mbox{\hyperlink{structshared__data_1_1h2plus__type_a4f449352c67869aa3ab0abb6b03a702e}{c1}}
+real(real64), dimension(3) \mbox{\hyperlink{structshared__data_1_1h2plus__type_a4f449352c67869aa3ab0abb6b03a702e}{c1}} = (/0,1,10/)
 \item 
-real(real64), dimension(3) \mbox{\hyperlink{structshared__data_1_1h2plus__type_ad45bca73e6f0c703fa0c82a04e9e388d}{c2}}
+real(real64), dimension(3) \mbox{\hyperlink{structshared__data_1_1h2plus__type_ad45bca73e6f0c703fa0c82a04e9e388d}{c2}} = (/0,1,10/)
 \item 
-real(real64), dimension(3) \mbox{\hyperlink{structshared__data_1_1h2plus__type_a6137adec3c96acee9e866a0a107d55f8}{bond}}
+real(real64), dimension(3) \mbox{\hyperlink{structshared__data_1_1h2plus__type_a6137adec3c96acee9e866a0a107d55f8}{bond}} = (/1,3,10/)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 
 
-Definition at line 54 of file shared\+\_\+data.\+f90.
+Definition at line 56 of file shared\+\_\+data.\+f90.
 
 
 
 \doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structshared__data_1_1h2plus__type_a3ca4d4abe74c106a44ebc86584cf481a}\label{structshared__data_1_1h2plus__type_a3ca4d4abe74c106a44ebc86584cf481a}} 
+\index{shared\_data::h2plus\_type@{shared\_data::h2plus\_type}!steps@{steps}}
+\index{steps@{steps}!shared\_data::h2plus\_type@{shared\_data::h2plus\_type}}
+\doxysubsubsection{\texorpdfstring{steps}{steps}}
+{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::h2plus\+\_\+type\+::steps =100000}
+
+
+
+Definition at line 57 of file shared\+\_\+data.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{57         \textcolor{keywordtype}{integer(int32)} :: steps=100000}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2plus__type_ad083f40223825a334434481a67337f3d}\label{structshared__data_1_1h2plus__type_ad083f40223825a334434481a67337f3d}} 
 \index{shared\_data::h2plus\_type@{shared\_data::h2plus\_type}!burn\_step@{burn\_step}}
 \index{burn\_step@{burn\_step}!shared\_data::h2plus\_type@{shared\_data::h2plus\_type}}
 \doxysubsubsection{\texorpdfstring{burn\_step}{burn\_step}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::h2plus\+\_\+type\+::burn\+\_\+step =200}
+{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::h2plus\+\_\+type\+::burn\+\_\+step =1000}
 
 
 
-Definition at line 55 of file shared\+\_\+data.\+f90.
+Definition at line 58 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{55         \textcolor{keywordtype}{integer(int32)} :: burn\_step=200, thin\_step=20}
+\DoxyCodeLine{58         \textcolor{keywordtype}{integer(int32)} :: burn\_step=1000}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2plus__type_aa0e6869ea406dbf9b00365b827ce1c82}\label{structshared__data_1_1h2plus__type_aa0e6869ea406dbf9b00365b827ce1c82}} 
 \index{shared\_data::h2plus\_type@{shared\_data::h2plus\_type}!thin\_step@{thin\_step}}
 \index{thin\_step@{thin\_step}!shared\_data::h2plus\_type@{shared\_data::h2plus\_type}}
 \doxysubsubsection{\texorpdfstring{thin\_step}{thin\_step}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::h2plus\+\_\+type\+::thin\+\_\+step =20}
+{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::h2plus\+\_\+type\+::thin\+\_\+step =10}
 
 
 
-Definition at line 55 of file shared\+\_\+data.\+f90.
+Definition at line 59 of file shared\+\_\+data.\+f90.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{59         \textcolor{keywordtype}{integer(int32)} :: thin\_step=10}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structshared__data_1_1h2plus__type_a581c3f69fc28686e7c69c0f260556981}\label{structshared__data_1_1h2plus__type_a581c3f69fc28686e7c69c0f260556981}} 
+\index{shared\_data::h2plus\_type@{shared\_data::h2plus\_type}!sigma@{sigma}}
+\index{sigma@{sigma}!shared\_data::h2plus\_type@{shared\_data::h2plus\_type}}
+\doxysubsubsection{\texorpdfstring{sigma}{sigma}}
+{\footnotesize\ttfamily real(real64) shared\+\_\+data\+::h2plus\+\_\+type\+::sigma =0.\+1}
+
+
+
+Definition at line 60 of file shared\+\_\+data.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{60 \textcolor{keywordtype}{        real}(real64) :: sigma=0.1}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2plus__type_a01b321e914d850af416ccc4168797106}\label{structshared__data_1_1h2plus__type_a01b321e914d850af416ccc4168797106}} 
 \index{shared\_data::h2plus\_type@{shared\_data::h2plus\_type}!rcutoff@{rcutoff}}
 \index{rcutoff@{rcutoff}!shared\_data::h2plus\_type@{shared\_data::h2plus\_type}}
@@ -70,11 +109,11 @@ Definition at line 55 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 56 of file shared\+\_\+data.\+f90.
+Definition at line 61 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{56 \textcolor{keywordtype}{        real}(real64) :: rcutoff=3}
+\DoxyCodeLine{61 \textcolor{keywordtype}{        real}(real64) :: rcutoff=3}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2plus__type_a82659556237f292ab074f0d5c5ea8496}\label{structshared__data_1_1h2plus__type_a82659556237f292ab074f0d5c5ea8496}} 
@@ -85,48 +124,58 @@ Definition at line 56 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 57 of file shared\+\_\+data.\+f90.
+Definition at line 62 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{57         \textcolor{keywordtype}{integer(int32)} :: include\_pqn=1}
+\DoxyCodeLine{62         \textcolor{keywordtype}{integer(int32)} :: include\_pqn=1}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2plus__type_a4f449352c67869aa3ab0abb6b03a702e}\label{structshared__data_1_1h2plus__type_a4f449352c67869aa3ab0abb6b03a702e}} 
 \index{shared\_data::h2plus\_type@{shared\_data::h2plus\_type}!c1@{c1}}
 \index{c1@{c1}!shared\_data::h2plus\_type@{shared\_data::h2plus\_type}}
 \doxysubsubsection{\texorpdfstring{c1}{c1}}
-{\footnotesize\ttfamily real(real64), dimension(3) shared\+\_\+data\+::h2plus\+\_\+type\+::c1}
+{\footnotesize\ttfamily real(real64), dimension(3) shared\+\_\+data\+::h2plus\+\_\+type\+::c1 = (/0,1,10/)}
 
 
 
-Definition at line 58 of file shared\+\_\+data.\+f90.
+Definition at line 63 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{58 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: c1, c2, bond}
+\DoxyCodeLine{63 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: c1 = (/0,1,10/)}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2plus__type_ad45bca73e6f0c703fa0c82a04e9e388d}\label{structshared__data_1_1h2plus__type_ad45bca73e6f0c703fa0c82a04e9e388d}} 
 \index{shared\_data::h2plus\_type@{shared\_data::h2plus\_type}!c2@{c2}}
 \index{c2@{c2}!shared\_data::h2plus\_type@{shared\_data::h2plus\_type}}
 \doxysubsubsection{\texorpdfstring{c2}{c2}}
-{\footnotesize\ttfamily real(real64), dimension(3) shared\+\_\+data\+::h2plus\+\_\+type\+::c2}
+{\footnotesize\ttfamily real(real64), dimension(3) shared\+\_\+data\+::h2plus\+\_\+type\+::c2 = (/0,1,10/)}
 
 
 
-Definition at line 58 of file shared\+\_\+data.\+f90.
+Definition at line 64 of file shared\+\_\+data.\+f90.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{64 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: c2 = (/0,1,10/)}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2plus__type_a6137adec3c96acee9e866a0a107d55f8}\label{structshared__data_1_1h2plus__type_a6137adec3c96acee9e866a0a107d55f8}} 
 \index{shared\_data::h2plus\_type@{shared\_data::h2plus\_type}!bond@{bond}}
 \index{bond@{bond}!shared\_data::h2plus\_type@{shared\_data::h2plus\_type}}
 \doxysubsubsection{\texorpdfstring{bond}{bond}}
-{\footnotesize\ttfamily real(real64), dimension(3) shared\+\_\+data\+::h2plus\+\_\+type\+::bond}
+{\footnotesize\ttfamily real(real64), dimension(3) shared\+\_\+data\+::h2plus\+\_\+type\+::bond = (/1,3,10/)}
 
 
 
-Definition at line 58 of file shared\+\_\+data.\+f90.
+Definition at line 65 of file shared\+\_\+data.\+f90.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{65 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: bond = (/1,3,10/)}
+
+\end{DoxyCode}
 
 
 The documentation for this type was generated from the following file\+:\begin{DoxyCompactItemize}

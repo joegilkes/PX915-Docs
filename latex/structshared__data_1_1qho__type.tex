@@ -13,13 +13,15 @@ Collaboration diagram for shared\+\_\+data\+::qho\+\_\+type\+:
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-integer(int32) \mbox{\hyperlink{structshared__data_1_1qho__type_a914a539afdc5758886f341b2d5ad227b}{burn\+\_\+step}} =100
+integer(int32) \mbox{\hyperlink{structshared__data_1_1qho__type_abb2147cd07714d43f682599d2b4cfd09}{steps}} =100000
+\item 
+integer(int32) \mbox{\hyperlink{structshared__data_1_1qho__type_a914a539afdc5758886f341b2d5ad227b}{burn\+\_\+step}} =1000
 \item 
 integer(int32) \mbox{\hyperlink{structshared__data_1_1qho__type_a209d4e3c4910ba329506ba6e39a1d3de}{thin\+\_\+step}} =10
 \item 
-real(real64) \mbox{\hyperlink{structshared__data_1_1qho__type_a526ad42f3c15c5fc5f4eefe09ade829c}{rcutoff}} =2
+real(real64) \mbox{\hyperlink{structshared__data_1_1qho__type_ae2a36c67d15fece7562440b75c74da04}{sigma}} =0.\+1
 \item 
-real(real64), dimension(3) \mbox{\hyperlink{structshared__data_1_1qho__type_a617a3bd7ad00f08ff22fa999db1d52b1}{alpha}}
+real(real64), dimension(3) \mbox{\hyperlink{structshared__data_1_1qho__type_a617a3bd7ad00f08ff22fa999db1d52b1}{alpha}} = (/0,1,10/)
 \end{DoxyCompactItemize}
 
 
@@ -31,11 +33,11 @@ Definition at line 47 of file shared\+\_\+data.\+f90.
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{structshared__data_1_1qho__type_a914a539afdc5758886f341b2d5ad227b}\label{structshared__data_1_1qho__type_a914a539afdc5758886f341b2d5ad227b}} 
-\index{shared\_data::qho\_type@{shared\_data::qho\_type}!burn\_step@{burn\_step}}
-\index{burn\_step@{burn\_step}!shared\_data::qho\_type@{shared\_data::qho\_type}}
-\doxysubsubsection{\texorpdfstring{burn\_step}{burn\_step}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::qho\+\_\+type\+::burn\+\_\+step =100}
+\mbox{\Hypertarget{structshared__data_1_1qho__type_abb2147cd07714d43f682599d2b4cfd09}\label{structshared__data_1_1qho__type_abb2147cd07714d43f682599d2b4cfd09}} 
+\index{shared\_data::qho\_type@{shared\_data::qho\_type}!steps@{steps}}
+\index{steps@{steps}!shared\_data::qho\_type@{shared\_data::qho\_type}}
+\doxysubsubsection{\texorpdfstring{steps}{steps}}
+{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::qho\+\_\+type\+::steps =100000}
 
 
 
@@ -43,7 +45,22 @@ Definition at line 48 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{48         \textcolor{keywordtype}{integer(int32)} :: burn\_step=100, thin\_step=10}
+\DoxyCodeLine{48         \textcolor{keywordtype}{integer(int32)} :: steps=100000}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structshared__data_1_1qho__type_a914a539afdc5758886f341b2d5ad227b}\label{structshared__data_1_1qho__type_a914a539afdc5758886f341b2d5ad227b}} 
+\index{shared\_data::qho\_type@{shared\_data::qho\_type}!burn\_step@{burn\_step}}
+\index{burn\_step@{burn\_step}!shared\_data::qho\_type@{shared\_data::qho\_type}}
+\doxysubsubsection{\texorpdfstring{burn\_step}{burn\_step}}
+{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::qho\+\_\+type\+::burn\+\_\+step =1000}
+
+
+
+Definition at line 49 of file shared\+\_\+data.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{49         \textcolor{keywordtype}{integer(int32)} :: burn\_step=1000}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1qho__type_a209d4e3c4910ba329506ba6e39a1d3de}\label{structshared__data_1_1qho__type_a209d4e3c4910ba329506ba6e39a1d3de}} 
@@ -54,36 +71,41 @@ Definition at line 48 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 48 of file shared\+\_\+data.\+f90.
-
-\mbox{\Hypertarget{structshared__data_1_1qho__type_a526ad42f3c15c5fc5f4eefe09ade829c}\label{structshared__data_1_1qho__type_a526ad42f3c15c5fc5f4eefe09ade829c}} 
-\index{shared\_data::qho\_type@{shared\_data::qho\_type}!rcutoff@{rcutoff}}
-\index{rcutoff@{rcutoff}!shared\_data::qho\_type@{shared\_data::qho\_type}}
-\doxysubsubsection{\texorpdfstring{rcutoff}{rcutoff}}
-{\footnotesize\ttfamily real(real64) shared\+\_\+data\+::qho\+\_\+type\+::rcutoff =2}
-
-
-
-Definition at line 49 of file shared\+\_\+data.\+f90.
+Definition at line 50 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{49 \textcolor{keywordtype}{        real}(real64) :: rcutoff=2}
+\DoxyCodeLine{50         \textcolor{keywordtype}{integer(int32)} :: thin\_step=10}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structshared__data_1_1qho__type_ae2a36c67d15fece7562440b75c74da04}\label{structshared__data_1_1qho__type_ae2a36c67d15fece7562440b75c74da04}} 
+\index{shared\_data::qho\_type@{shared\_data::qho\_type}!sigma@{sigma}}
+\index{sigma@{sigma}!shared\_data::qho\_type@{shared\_data::qho\_type}}
+\doxysubsubsection{\texorpdfstring{sigma}{sigma}}
+{\footnotesize\ttfamily real(real64) shared\+\_\+data\+::qho\+\_\+type\+::sigma =0.\+1}
+
+
+
+Definition at line 51 of file shared\+\_\+data.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{51 \textcolor{keywordtype}{        real}(real64) :: sigma=0.1}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1qho__type_a617a3bd7ad00f08ff22fa999db1d52b1}\label{structshared__data_1_1qho__type_a617a3bd7ad00f08ff22fa999db1d52b1}} 
 \index{shared\_data::qho\_type@{shared\_data::qho\_type}!alpha@{alpha}}
 \index{alpha@{alpha}!shared\_data::qho\_type@{shared\_data::qho\_type}}
 \doxysubsubsection{\texorpdfstring{alpha}{alpha}}
-{\footnotesize\ttfamily real(real64), dimension(3) shared\+\_\+data\+::qho\+\_\+type\+::alpha}
+{\footnotesize\ttfamily real(real64), dimension(3) shared\+\_\+data\+::qho\+\_\+type\+::alpha = (/0,1,10/)}
 
 
 
-Definition at line 50 of file shared\+\_\+data.\+f90.
+Definition at line 52 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{50 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: alpha}
+\DoxyCodeLine{52 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: alpha = (/0,1,10/)}
 
 \end{DoxyCode}
 

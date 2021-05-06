@@ -102,25 +102,44 @@ $(document).ready(function(){initNavTree('structshared__data_1_1qho__type.html',
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="structshared__data_1_1qho__type__coll__graph.png" border="0" usemap="#ashared__data_1_1qho__type_coll__map" alt="Collaboration graph"/></div>
 <map name="ashared__data_1_1qho__type_coll__map" id="ashared__data_1_1qho__type_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,156,127"/>
+<area shape="rect" title=" " alt="" coords="5,5,156,141"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a914a539afdc5758886f341b2d5ad227b"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1qho__type.html#a914a539afdc5758886f341b2d5ad227b">burn_step</a> =100</td></tr>
+<tr class="memitem:abb2147cd07714d43f682599d2b4cfd09"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1qho__type.html#abb2147cd07714d43f682599d2b4cfd09">steps</a> =100000</td></tr>
+<tr class="separator:abb2147cd07714d43f682599d2b4cfd09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a914a539afdc5758886f341b2d5ad227b"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1qho__type.html#a914a539afdc5758886f341b2d5ad227b">burn_step</a> =1000</td></tr>
 <tr class="separator:a914a539afdc5758886f341b2d5ad227b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a209d4e3c4910ba329506ba6e39a1d3de"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1qho__type.html#a209d4e3c4910ba329506ba6e39a1d3de">thin_step</a> =10</td></tr>
 <tr class="separator:a209d4e3c4910ba329506ba6e39a1d3de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a526ad42f3c15c5fc5f4eefe09ade829c"><td class="memItemLeft" align="right" valign="top">real(real64)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1qho__type.html#a526ad42f3c15c5fc5f4eefe09ade829c">rcutoff</a> =2</td></tr>
-<tr class="separator:a526ad42f3c15c5fc5f4eefe09ade829c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a617a3bd7ad00f08ff22fa999db1d52b1"><td class="memItemLeft" align="right" valign="top">real(real64), dimension(3)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1qho__type.html#a617a3bd7ad00f08ff22fa999db1d52b1">alpha</a></td></tr>
+<tr class="memitem:ae2a36c67d15fece7562440b75c74da04"><td class="memItemLeft" align="right" valign="top">real(real64)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1qho__type.html#ae2a36c67d15fece7562440b75c74da04">sigma</a> =0.1</td></tr>
+<tr class="separator:ae2a36c67d15fece7562440b75c74da04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a617a3bd7ad00f08ff22fa999db1d52b1"><td class="memItemLeft" align="right" valign="top">real(real64), dimension(3)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1qho__type.html#a617a3bd7ad00f08ff22fa999db1d52b1">alpha</a> = (/0,1,10/)</td></tr>
 <tr class="separator:a617a3bd7ad00f08ff22fa999db1d52b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00047">47</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="abb2147cd07714d43f682599d2b4cfd09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb2147cd07714d43f682599d2b4cfd09">&#9670;&nbsp;</a></span>steps</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer(int32) shared_data::qho_type::steps =100000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00048">48</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">integer(int32)</span> :: steps=100000</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a914a539afdc5758886f341b2d5ad227b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a914a539afdc5758886f341b2d5ad227b">&#9670;&nbsp;</a></span>burn_step</h2>
 
@@ -128,13 +147,13 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">integer(int32) shared_data::qho_type::burn_step =100</td>
+          <td class="memname">integer(int32) shared_data::qho_type::burn_step =1000</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00048">48</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">integer(int32)</span> :: burn_step=100, thin_step=10</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00049">49</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">integer(int32)</span> :: burn_step=1000</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -150,24 +169,25 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00048">48</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00050">50</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">integer(int32)</span> :: thin_step=10</div>
+</div><!-- fragment -->
 </div>
 </div>
-<a id="a526ad42f3c15c5fc5f4eefe09ade829c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a526ad42f3c15c5fc5f4eefe09ade829c">&#9670;&nbsp;</a></span>rcutoff</h2>
+<a id="ae2a36c67d15fece7562440b75c74da04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2a36c67d15fece7562440b75c74da04">&#9670;&nbsp;</a></span>sigma</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">real(real64) shared_data::qho_type::rcutoff =2</td>
+          <td class="memname">real(real64) shared_data::qho_type::sigma =0.1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00049">49</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">        real</span>(real64) :: rcutoff=2</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00051">51</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordtype">        real</span>(real64) :: sigma=0.1</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -178,13 +198,13 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">real(real64), dimension(3) shared_data::qho_type::alpha</td>
+          <td class="memname">real(real64), dimension(3) shared_data::qho_type::alpha = (/0,1,10/)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00050">50</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: alpha</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00052">52</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: alpha = (/0,1,10/)</div>
 </div><!-- fragment -->
 </div>
 </div>
