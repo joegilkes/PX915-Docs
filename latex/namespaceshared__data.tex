@@ -14,9 +14,9 @@ type \mbox{\hyperlink{structshared__data_1_1h2__type}{h2\+\_\+type}}
 \item 
 character(len=10) \mbox{\hyperlink{namespaceshared__data_ad837e8f897bde556513b9a9c8135b904}{system}}
 \item 
-logical \mbox{\hyperlink{namespaceshared__data_a9285af0408bde68c647a77c75900929d}{run\+\_\+equil}}
+logical \mbox{\hyperlink{namespaceshared__data_a9285af0408bde68c647a77c75900929d}{run\+\_\+equil}} =.FALSE.
 \item 
-logical \mbox{\hyperlink{namespaceshared__data_af557286c349984a4922cd9ba110bbd71}{verbose}}
+logical \mbox{\hyperlink{namespaceshared__data_af557286c349984a4922cd9ba110bbd71}{verbose}} =.TRUE.
 \item 
 procedure, pointer \mbox{\hyperlink{namespaceshared__data_a90ae0ab031f373ebe8630207134a16e8}{prob}}
 \item 
@@ -39,37 +39,37 @@ type(\mbox{\hyperlink{structshared__data_1_1h2__type}{h2\+\_\+type}}) \mbox{\hyp
 
 
 
-Definition at line 81 of file shared\+\_\+data.\+f90.
+Definition at line 83 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{81     \textcolor{keywordtype}{character(len=10)} :: system}
+\DoxyCodeLine{83     \textcolor{keywordtype}{character(len=10)} :: system}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a9285af0408bde68c647a77c75900929d}\label{namespaceshared__data_a9285af0408bde68c647a77c75900929d}} 
 \index{shared\_data@{shared\_data}!run\_equil@{run\_equil}}
 \index{run\_equil@{run\_equil}!shared\_data@{shared\_data}}
 \doxysubsubsection{\texorpdfstring{run\_equil}{run\_equil}}
-{\footnotesize\ttfamily logical shared\+\_\+data\+::run\+\_\+equil}
+{\footnotesize\ttfamily logical shared\+\_\+data\+::run\+\_\+equil =.FALSE.}
 
 
 
-Definition at line 82 of file shared\+\_\+data.\+f90.
+Definition at line 84 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{82     \textcolor{keywordtype}{logical} :: run\_equil, verbose}
+\DoxyCodeLine{84     \textcolor{keywordtype}{logical} :: run\_equil=.false., verbose=.true. \textcolor{comment}{!defaults}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_af557286c349984a4922cd9ba110bbd71}\label{namespaceshared__data_af557286c349984a4922cd9ba110bbd71}} 
 \index{shared\_data@{shared\_data}!verbose@{verbose}}
 \index{verbose@{verbose}!shared\_data@{shared\_data}}
 \doxysubsubsection{\texorpdfstring{verbose}{verbose}}
-{\footnotesize\ttfamily logical shared\+\_\+data\+::verbose}
+{\footnotesize\ttfamily logical shared\+\_\+data\+::verbose =.TRUE.}
 
 
 
-Definition at line 82 of file shared\+\_\+data.\+f90.
+Definition at line 84 of file shared\+\_\+data.\+f90.
 
 \mbox{\Hypertarget{namespaceshared__data_a90ae0ab031f373ebe8630207134a16e8}\label{namespaceshared__data_a90ae0ab031f373ebe8630207134a16e8}} 
 \index{shared\_data@{shared\_data}!prob@{prob}}
@@ -79,11 +79,11 @@ Definition at line 82 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 83 of file shared\+\_\+data.\+f90.
+Definition at line 86 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{83     \textcolor{keywordtype}{procedure}, \textcolor{keywordtype}{pointer} :: prob, local\_energy}
+\DoxyCodeLine{86     \textcolor{keywordtype}{procedure}, \textcolor{keywordtype}{pointer} :: prob, local\_energy}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_af2dc6565143614b66ee8c02adf611c60}\label{namespaceshared__data_af2dc6565143614b66ee8c02adf611c60}} 
@@ -94,7 +94,7 @@ Definition at line 83 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 83 of file shared\+\_\+data.\+f90.
+Definition at line 86 of file shared\+\_\+data.\+f90.
 
 \mbox{\Hypertarget{namespaceshared__data_a7503c2b3bd10f3ee43c4cf9964c42ab2}\label{namespaceshared__data_a7503c2b3bd10f3ee43c4cf9964c42ab2}} 
 \index{shared\_data@{shared\_data}!qho@{qho}}
@@ -104,11 +104,11 @@ Definition at line 83 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 84 of file shared\+\_\+data.\+f90.
+Definition at line 87 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{84     \textcolor{keywordtype}{type}(QHO\_type) :: QHO}
+\DoxyCodeLine{87     \textcolor{keywordtype}{type}(QHO\_type) :: QHO}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a1e9e95c9ea52c9aa2ec2f05b8d65e4f3}\label{namespaceshared__data_a1e9e95c9ea52c9aa2ec2f05b8d65e4f3}} 
@@ -119,11 +119,11 @@ Definition at line 84 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 85 of file shared\+\_\+data.\+f90.
+Definition at line 88 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{85     \textcolor{keywordtype}{type}(H2plus\_type) :: H2plus}
+\DoxyCodeLine{88     \textcolor{keywordtype}{type}(H2plus\_type) :: H2plus}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a1703912ee00414a4aaf1a41d3c167694}\label{namespaceshared__data_a1703912ee00414a4aaf1a41d3c167694}} 
@@ -134,10 +134,10 @@ Definition at line 85 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 86 of file shared\+\_\+data.\+f90.
+Definition at line 89 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{86     \textcolor{keywordtype}{type}(H2\_type) :: H2}
+\DoxyCodeLine{89     \textcolor{keywordtype}{type}(H2\_type) :: H2}
 
 \end{DoxyCode}

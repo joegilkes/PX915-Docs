@@ -109,9 +109,9 @@ Data Types</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:ad837e8f897bde556513b9a9c8135b904"><td class="memItemLeft" align="right" valign="top">character(len=10)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#ad837e8f897bde556513b9a9c8135b904">system</a></td></tr>
 <tr class="separator:ad837e8f897bde556513b9a9c8135b904"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9285af0408bde68c647a77c75900929d"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a9285af0408bde68c647a77c75900929d">run_equil</a></td></tr>
+<tr class="memitem:a9285af0408bde68c647a77c75900929d"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a9285af0408bde68c647a77c75900929d">run_equil</a> =.FALSE.</td></tr>
 <tr class="separator:a9285af0408bde68c647a77c75900929d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af557286c349984a4922cd9ba110bbd71"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#af557286c349984a4922cd9ba110bbd71">verbose</a></td></tr>
+<tr class="memitem:af557286c349984a4922cd9ba110bbd71"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#af557286c349984a4922cd9ba110bbd71">verbose</a> =.TRUE.</td></tr>
 <tr class="separator:af557286c349984a4922cd9ba110bbd71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90ae0ab031f373ebe8630207134a16e8"><td class="memItemLeft" align="right" valign="top">procedure, pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a90ae0ab031f373ebe8630207134a16e8">prob</a></td></tr>
 <tr class="separator:a90ae0ab031f373ebe8630207134a16e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,8 +137,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00081">81</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">character(len=10)</span> :: system</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00083">83</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">character(len=10)</span> :: system</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -149,13 +149,13 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">logical shared_data::run_equil</td>
+          <td class="memname">logical shared_data::run_equil =.FALSE.</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00082">82</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">logical</span> :: run_equil, verbose</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00084">84</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">logical</span> :: run_equil=.false., verbose=.true. <span class="comment">!defaults</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -166,12 +166,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">logical shared_data::verbose</td>
+          <td class="memname">logical shared_data::verbose =.TRUE.</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00082">82</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00084">84</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
 
 </div>
 </div>
@@ -187,8 +187,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00083">83</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">procedure</span>, <span class="keywordtype">pointer</span> :: prob, local_energy</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00086">86</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">procedure</span>, <span class="keywordtype">pointer</span> :: prob, local_energy</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -204,7 +204,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00083">83</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00086">86</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
 
 </div>
 </div>
@@ -220,8 +220,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00084">84</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">type</span>(QHO_type) :: QHO</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00087">87</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">type</span>(QHO_type) :: QHO</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -237,8 +237,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00085">85</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">type</span>(H2plus_type) :: H2plus</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00088">88</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">type</span>(H2plus_type) :: H2plus</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -254,8 +254,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00086">86</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">type</span>(H2_type) :: H2</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00089">89</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">type</span>(H2_type) :: H2</div>
 </div><!-- fragment -->
 </div>
 </div>

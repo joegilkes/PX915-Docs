@@ -1,5 +1,6 @@
 var namespaces_dup =
 [
+    [ "check", "namespacecheck.html", null ],
     [ "constants", "namespaceconstants.html", [
       [ "pi", "namespaceconstants.html#a25d12bb3441f2773a3a3e42dac41a9c1", null ],
       [ "pi_dash", "namespaceconstants.html#a54c9d4eb7a08da77b2012fc1dfe8612b", null ],
@@ -67,5 +68,6 @@ var namespaces_dup =
       [ "iv", "namespacevqmc.html#a86db46440794b9ef7cfd9fbf1fd69930", null ],
       [ "iy", "namespacevqmc.html#a1608372d703310a49afc4243ccf27368", null ],
       [ "seed", "namespacevqmc.html#a986f071589794992c4bc31de25c63976", null ]
-    ] ]
+    ] ],
+    [ "write", "namespacewrite.html", null ]
 ];
