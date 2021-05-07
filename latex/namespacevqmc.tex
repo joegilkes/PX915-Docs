@@ -9,11 +9,11 @@ subroutine \mbox{\hyperlink{namespacevqmc_a01b80444204a0cd0b5cddde82cbc7651}{ran
 \item 
 subroutine \mbox{\hyperlink{namespacevqmc_a62ec9b662e5d9b46ec37d52ff93cb335}{random\+\_\+normal}} (dim, x)
 \item 
-subroutine \mbox{\hyperlink{namespacevqmc_a57c858610a7c9e9ea3d77e073f62ee4b}{vqmc\+\_\+qho}} (sigma, N, burn, thin, alpha\+\_\+const, X, accept\+\_\+rate, total\+\_\+energy)
+subroutine \mbox{\hyperlink{namespacevqmc_af750525012cfc872fca742b9ef803120}{vqmc\+\_\+qho}} (sigma, N, burn, thin, alpha\+\_\+const, X, accept\+\_\+rate, energy\+\_\+chain)
 \item 
-subroutine \mbox{\hyperlink{namespacevqmc_ab3ebcdddd5b8e7773eb9b7f9f7e0b6db}{vqmc\+\_\+h\+\_\+2\+\_\+plus}} (sigma, N, burn, thin, c\+\_\+const, R\+\_\+a, R\+\_\+b, X, accept\+\_\+rate, total\+\_\+energy)
+subroutine \mbox{\hyperlink{namespacevqmc_a156887f8e878c4d01de5d2d4fa606a18}{vqmc\+\_\+h\+\_\+2\+\_\+plus}} (sigma, N, burn, thin, c\+\_\+const, R\+\_\+a, R\+\_\+b, X, accept\+\_\+rate, energy\+\_\+chain)
 \item 
-subroutine \mbox{\hyperlink{namespacevqmc_a2b74b2a7f10a7f005a22ce37338f8242}{vqmc\+\_\+h\+\_\+2}} (sigma, N, burn, thin, c\+\_\+const, R\+\_\+a, R\+\_\+b, X\+\_\+1, X\+\_\+2, accept\+\_\+rate, total\+\_\+energy)
+subroutine \mbox{\hyperlink{namespacevqmc_afdead1c964c264b80a7698da1bc3e792}{vqmc\+\_\+h\+\_\+2}} (sigma, N, burn, thin, c\+\_\+const, R\+\_\+a, R\+\_\+b, X\+\_\+1, X\+\_\+2, accept\+\_\+rate, energy\+\_\+chain)
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -166,11 +166,11 @@ Here is the caller graph for this function\+:
 \includegraphics[width=350pt]{namespacevqmc_a62ec9b662e5d9b46ec37d52ff93cb335_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespacevqmc_a57c858610a7c9e9ea3d77e073f62ee4b}\label{namespacevqmc_a57c858610a7c9e9ea3d77e073f62ee4b}} 
+\mbox{\Hypertarget{namespacevqmc_af750525012cfc872fca742b9ef803120}\label{namespacevqmc_af750525012cfc872fca742b9ef803120}} 
 \index{vqmc@{vqmc}!vqmc\_qho@{vqmc\_qho}}
 \index{vqmc\_qho@{vqmc\_qho}!vqmc@{vqmc}}
 \doxysubsubsection{\texorpdfstring{vqmc\_qho()}{vqmc\_qho()}}
-{\footnotesize\ttfamily subroutine vqmc\+::vqmc\+\_\+qho (\begin{DoxyParamCaption}\item[{real(real64), intent(in)}]{sigma,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{burn,  }\item[{integer, intent(in)}]{thin,  }\item[{real(real64), intent(in)}]{alpha\+\_\+const,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{X,  }\item[{real(real64), intent(out)}]{accept\+\_\+rate,  }\item[{real(real64), intent(out)}]{total\+\_\+energy }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily subroutine vqmc\+::vqmc\+\_\+qho (\begin{DoxyParamCaption}\item[{real(real64), intent(in)}]{sigma,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{burn,  }\item[{integer, intent(in)}]{thin,  }\item[{real(real64), intent(in)}]{alpha\+\_\+const,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{X,  }\item[{real(real64), intent(out)}]{accept\+\_\+rate,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{energy\+\_\+chain }\end{DoxyParamCaption})}
 
 
 
@@ -184,45 +184,45 @@ Definition at line 111 of file vqmc.\+f90.
 \DoxyCodeLine{116 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: sigma, alpha\_const}
 \DoxyCodeLine{117         \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N, burn, thin }
 \DoxyCodeLine{118          }
-\DoxyCodeLine{119 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: accept\_rate, total\_energy}
-\DoxyCodeLine{120 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable} :: X }
-\DoxyCodeLine{121 }
-\DoxyCodeLine{122 \textcolor{keywordtype}{        real}(real64) :: log\_prob\_n, a\_prob\_trans, unif\_num}
+\DoxyCodeLine{119 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: accept\_rate}
+\DoxyCodeLine{120 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable} :: X, energy\_chain\textcolor{comment}{ }}
+\DoxyCodeLine{121 \textcolor{comment}{}}
+\DoxyCodeLine{122 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64) :: log\_prob\_n, a\_prob\_trans, unif\_num}
 \DoxyCodeLine{123 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(1)}:: x\_start, X\_n, sample\_normal}
-\DoxyCodeLine{124         \textcolor{keywordtype}{integer} :: i, accept  }
+\DoxyCodeLine{124         \textcolor{keywordtype}{integer} :: i, accept }
 \DoxyCodeLine{125         }
 \DoxyCodeLine{126         \textcolor{keyword}{allocate}(x(1:n+1)) }
-\DoxyCodeLine{127 }
-\DoxyCodeLine{128         \textcolor{keyword}{call }random\_normal(1, sample\_normal)}
-\DoxyCodeLine{129 }
-\DoxyCodeLine{130         x\_start = sample\_normal}
-\DoxyCodeLine{131         x(:,1) = x\_start}
-\DoxyCodeLine{132         accept = 0 }
-\DoxyCodeLine{133         total\_energy = 0 }
-\DoxyCodeLine{134         }
-\DoxyCodeLine{135         \textcolor{keywordflow}{do} i = 2, n+1 }
-\DoxyCodeLine{136             \textcolor{comment}{! Propose the next step}}
-\DoxyCodeLine{137             \textcolor{keyword}{call }random\_normal(1, sample\_normal)}
-\DoxyCodeLine{138             x\_n = x(i-\/1) + sigma * sample\_normal}
-\DoxyCodeLine{139 }
-\DoxyCodeLine{140             log\_prob\_n = log(qho\_prob(alpha\_const, x(i-\/1), x\_n(1)))}
-\DoxyCodeLine{141             a\_prob\_trans = min(1.0\_real64, exp(log\_prob\_n))}
-\DoxyCodeLine{142             }
-\DoxyCodeLine{143             \textcolor{keyword}{call }random\_number(unif\_num)}
-\DoxyCodeLine{144 }
-\DoxyCodeLine{145             \textcolor{keywordflow}{if} (a\_prob\_trans <= unif\_num) \textcolor{keywordflow}{then} }
-\DoxyCodeLine{146                 x(i) = x\_n(i) }
-\DoxyCodeLine{147                 accept =  1 + accept}
-\DoxyCodeLine{148                 total\_energy = total\_energy + qho\_energy(alpha\_const, x\_n\textcolor{comment}{(1))}}
-\DoxyCodeLine{149 \textcolor{comment}{}            \textcolor{keywordflow}{else} }
-\DoxyCodeLine{150                 x(i) = x(i-\/1)}
-\DoxyCodeLine{151 \textcolor{keywordflow}{            end if} }
-\DoxyCodeLine{152 }
-\DoxyCodeLine{153 \textcolor{keywordflow}{        end do} }
+\DoxyCodeLine{127         \textcolor{keyword}{allocate}(energy\_chain(1:n+1))}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129         \textcolor{keyword}{call }random\_normal(1, sample\_normal)}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131         x\_start = sample\_normal}
+\DoxyCodeLine{132         x(1) = x\_start}
+\DoxyCodeLine{133         accept = 0 }
+\DoxyCodeLine{134         energy\_chain(1) = qho\_energy(alpha\_const, x(1))}
+\DoxyCodeLine{135         }
+\DoxyCodeLine{136         \textcolor{keywordflow}{do} i = 2, n+1 }
+\DoxyCodeLine{137             \textcolor{comment}{! Propose the next step}}
+\DoxyCodeLine{138             \textcolor{keyword}{call }random\_normal(1, sample\_normal)}
+\DoxyCodeLine{139             x\_n = x(i-\/1) + sigma * sample\_normal}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141             log\_prob\_n = log(qho\_prob(alpha\_const, x(i-\/1), x\_n(1)))}
+\DoxyCodeLine{142             a\_prob\_trans = min(1.0\_real64, exp(log\_prob\_n))}
+\DoxyCodeLine{143             }
+\DoxyCodeLine{144             \textcolor{keyword}{call }random\_number(unif\_num)}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146             \textcolor{keywordflow}{if} (a\_prob\_trans <= unif\_num) \textcolor{keywordflow}{then} }
+\DoxyCodeLine{147                 x(i) = x\_n(i) }
+\DoxyCodeLine{148                 accept =  1 + accept}
+\DoxyCodeLine{149                 energy\_chain(i) = qho\_energy(alpha\_const, x\_n(1))}
+\DoxyCodeLine{150             \textcolor{keywordflow}{else} }
+\DoxyCodeLine{151                 x(i) = x(i-\/1)}
+\DoxyCodeLine{152                 energy\_chain(i) = energy\_chain(i-\/1)}
+\DoxyCodeLine{153 \textcolor{keywordflow}{            end if} }
 \DoxyCodeLine{154 }
-\DoxyCodeLine{155         accept\_rate = accept / n }
+\DoxyCodeLine{155 \textcolor{keywordflow}{        end do} }
 \DoxyCodeLine{156 }
-\DoxyCodeLine{157         total\_energy = total\_energy / accept}
+\DoxyCodeLine{157         accept\_rate = accept / n }
 \DoxyCodeLine{158 }
 
 \end{DoxyCode}
@@ -231,14 +231,14 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespacevqmc_a57c858610a7c9e9ea3d77e073f62ee4b_cgraph}
+\includegraphics[width=350pt]{namespacevqmc_af750525012cfc872fca742b9ef803120_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespacevqmc_ab3ebcdddd5b8e7773eb9b7f9f7e0b6db}\label{namespacevqmc_ab3ebcdddd5b8e7773eb9b7f9f7e0b6db}} 
+\mbox{\Hypertarget{namespacevqmc_a156887f8e878c4d01de5d2d4fa606a18}\label{namespacevqmc_a156887f8e878c4d01de5d2d4fa606a18}} 
 \index{vqmc@{vqmc}!vqmc\_h\_2\_plus@{vqmc\_h\_2\_plus}}
 \index{vqmc\_h\_2\_plus@{vqmc\_h\_2\_plus}!vqmc@{vqmc}}
 \doxysubsubsection{\texorpdfstring{vqmc\_h\_2\_plus()}{vqmc\_h\_2\_plus()}}
-{\footnotesize\ttfamily subroutine vqmc\+::vqmc\+\_\+h\+\_\+2\+\_\+plus (\begin{DoxyParamCaption}\item[{real(real64), intent(in)}]{sigma,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{burn,  }\item[{integer, intent(in)}]{thin,  }\item[{real(real64), dimension(\+:)}]{c\+\_\+const,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+a,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+b,  }\item[{real(real64), dimension(\+:, \+:), intent(out), allocatable}]{X,  }\item[{real(real64), intent(out)}]{accept\+\_\+rate,  }\item[{real(real64), intent(out)}]{total\+\_\+energy }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily subroutine vqmc\+::vqmc\+\_\+h\+\_\+2\+\_\+plus (\begin{DoxyParamCaption}\item[{real(real64), intent(in)}]{sigma,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{burn,  }\item[{integer, intent(in)}]{thin,  }\item[{real(real64), dimension(\+:)}]{c\+\_\+const,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+a,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+b,  }\item[{real(real64), dimension(\+:, \+:), intent(out), allocatable}]{X,  }\item[{real(real64), intent(out)}]{accept\+\_\+rate,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{energy\+\_\+chain }\end{DoxyParamCaption})}
 
 
 
@@ -253,47 +253,48 @@ Definition at line 162 of file vqmc.\+f90.
 \DoxyCodeLine{168 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)} :: c\_const }
 \DoxyCodeLine{169         \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N, burn, thin }
 \DoxyCodeLine{170          }
-\DoxyCodeLine{171 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: accept\_rate, total\_energy}
+\DoxyCodeLine{171 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: accept\_rate}
 \DoxyCodeLine{172 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:, :)}, \textcolor{keywordtype}{allocatable} :: X}
-\DoxyCodeLine{173 }
-\DoxyCodeLine{174 \textcolor{keywordtype}{        real}(real64) :: log\_prob\_n, a\_prob\_trans, unif\_num}
-\DoxyCodeLine{175 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: x\_start, X\_n, sample\_normal}
-\DoxyCodeLine{176         \textcolor{keywordtype}{integer} :: i, accept  }
-\DoxyCodeLine{177         }
-\DoxyCodeLine{178         \textcolor{keyword}{allocate}(x(3, 1:n+1)) }
-\DoxyCodeLine{179 }
-\DoxyCodeLine{180         \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
-\DoxyCodeLine{181         x\_start = sample\_normal}
-\DoxyCodeLine{182 }
-\DoxyCodeLine{183         x(:,1) = x\_start }
-\DoxyCodeLine{184         accept = 0 }
-\DoxyCodeLine{185         total\_energy = 0}
-\DoxyCodeLine{186         }
-\DoxyCodeLine{187         \textcolor{keywordflow}{do} i = 2, n+1 }
-\DoxyCodeLine{188             \textcolor{comment}{! Propose the next step}}
-\DoxyCodeLine{189             \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
-\DoxyCodeLine{190             x\_n = x(:, i-\/1) + sigma * sample\_normal}
-\DoxyCodeLine{191 }
-\DoxyCodeLine{192             log\_prob\_n = log(h\_2\_plus\_prob(c\_const, x(:,i-\/1), x\_n, r\_a, r\_b\textcolor{comment}{))}}
-\DoxyCodeLine{193 \textcolor{comment}{}            a\_prob\_trans = min(1.0\_real64, exp(log\_prob\_n))}
-\DoxyCodeLine{194             }
-\DoxyCodeLine{195             \textcolor{keyword}{call }random\_number(unif\_num)}
-\DoxyCodeLine{196 }
-\DoxyCodeLine{197             \textcolor{keywordflow}{if} (a\_prob\_trans <= unif\_num) \textcolor{keywordflow}{then} }
-\DoxyCodeLine{198                 x(:, i) = x\_n }
-\DoxyCodeLine{199                 accept =  1 + accept}
-\DoxyCodeLine{200                 total\_energy = total\_energy + h\_2\_plus\_energy(c\_const, x\_n\textcolor{comment}{, r\_a, r\_b)}}
-\DoxyCodeLine{201 \textcolor{comment}{}            \textcolor{keywordflow}{else} }
-\DoxyCodeLine{202                 x(:, i) = x(:, i-\/1)}
-\DoxyCodeLine{203 \textcolor{keywordflow}{            end if} }
-\DoxyCodeLine{204 }
-\DoxyCodeLine{205 \textcolor{keywordflow}{        end do} }
+\DoxyCodeLine{173 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable} :: energy\_chain}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175 \textcolor{keywordtype}{        real}(real64) :: log\_prob\_n, a\_prob\_trans, unif\_num}
+\DoxyCodeLine{176 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: x\_start, X\_n, sample\_normal}
+\DoxyCodeLine{177         \textcolor{keywordtype}{integer} :: i, accept  }
+\DoxyCodeLine{178         }
+\DoxyCodeLine{179         \textcolor{keyword}{allocate}(x(3, 1:n+1)) }
+\DoxyCodeLine{180         \textcolor{keyword}{allocate}(energy\_chain(1:n+1))}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182         \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
+\DoxyCodeLine{183         x\_start = sample\_normal}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185         x(:,1) = x\_start }
+\DoxyCodeLine{186         accept = 0 }
+\DoxyCodeLine{187         energy\_chain(1) = h\_2\_plus\_energy(c\_const, x(:, 1), r\_a, r\_b)}
+\DoxyCodeLine{188         }
+\DoxyCodeLine{189         \textcolor{keywordflow}{do} i = 2, n+1 }
+\DoxyCodeLine{190             \textcolor{comment}{! Propose the next step}}
+\DoxyCodeLine{191             \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
+\DoxyCodeLine{192             x\_n = x(:, i-\/1) + sigma * sample\_normal}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194             log\_prob\_n = log(h\_2\_plus\_prob(c\_const, x(:, i-\/1), x\_n, r\_a,\textcolor{comment}{ r\_b))}}
+\DoxyCodeLine{195 \textcolor{comment}{}            a\_prob\_trans = min(1.0\_real64, exp(log\_prob\_n))}
+\DoxyCodeLine{196             }
+\DoxyCodeLine{197             \textcolor{keyword}{call }random\_number(unif\_num)}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199             \textcolor{keywordflow}{if} (a\_prob\_trans <= unif\_num) \textcolor{keywordflow}{then} }
+\DoxyCodeLine{200                 x(:, i) = x\_n }
+\DoxyCodeLine{201                 accept =  1 + accept}
+\DoxyCodeLine{202                 energy\_chain(i) = h\_2\_plus\_energy(c\_const, x\_n, r\_a, r\_b\textcolor{comment}{)}}
+\DoxyCodeLine{203 \textcolor{comment}{}            \textcolor{keywordflow}{else} }
+\DoxyCodeLine{204                 x(:, i) = x(:, i-\/1)}
+\DoxyCodeLine{205                 energy\_chain(i) = energy\_chain(i-\/1)}
 \DoxyCodeLine{206 }
-\DoxyCodeLine{207         accept\_rate = accept / n }
+\DoxyCodeLine{207 \textcolor{keywordflow}{            end if} }
 \DoxyCodeLine{208 }
-\DoxyCodeLine{209         total\_energy = total\_energy / accept}
-\DoxyCodeLine{210         }
-\DoxyCodeLine{211 }
+\DoxyCodeLine{209 \textcolor{keywordflow}{        end do} }
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211         accept\_rate = accept / n }
+\DoxyCodeLine{212 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -301,78 +302,82 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespacevqmc_ab3ebcdddd5b8e7773eb9b7f9f7e0b6db_cgraph}
+\includegraphics[width=350pt]{namespacevqmc_a156887f8e878c4d01de5d2d4fa606a18_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespacevqmc_a2b74b2a7f10a7f005a22ce37338f8242}\label{namespacevqmc_a2b74b2a7f10a7f005a22ce37338f8242}} 
+\mbox{\Hypertarget{namespacevqmc_afdead1c964c264b80a7698da1bc3e792}\label{namespacevqmc_afdead1c964c264b80a7698da1bc3e792}} 
 \index{vqmc@{vqmc}!vqmc\_h\_2@{vqmc\_h\_2}}
 \index{vqmc\_h\_2@{vqmc\_h\_2}!vqmc@{vqmc}}
 \doxysubsubsection{\texorpdfstring{vqmc\_h\_2()}{vqmc\_h\_2()}}
-{\footnotesize\ttfamily subroutine vqmc\+::vqmc\+\_\+h\+\_\+2 (\begin{DoxyParamCaption}\item[{real(real64), intent(in)}]{sigma,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{burn,  }\item[{integer, intent(in)}]{thin,  }\item[{real(real64), dimension(\+:), intent(in)}]{c\+\_\+const,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+a,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+b,  }\item[{real(real64), dimension(\+:, \+:), intent(out), allocatable}]{X\+\_\+1,  }\item[{real(real64), dimension(\+:, \+:), intent(out), allocatable}]{X\+\_\+2,  }\item[{real(real64), intent(out)}]{accept\+\_\+rate,  }\item[{real(real64), intent(out)}]{total\+\_\+energy }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily subroutine vqmc\+::vqmc\+\_\+h\+\_\+2 (\begin{DoxyParamCaption}\item[{real(real64), intent(in)}]{sigma,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{burn,  }\item[{integer, intent(in)}]{thin,  }\item[{real(real64), dimension(\+:), intent(in)}]{c\+\_\+const,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+a,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+b,  }\item[{real(real64), dimension(\+:, \+:), intent(out), allocatable}]{X\+\_\+1,  }\item[{real(real64), dimension(\+:, \+:), intent(out), allocatable}]{X\+\_\+2,  }\item[{real(real64), intent(out)}]{accept\+\_\+rate,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{energy\+\_\+chain }\end{DoxyParamCaption})}
 
 
 
-Definition at line 215 of file vqmc.\+f90.
+Definition at line 216 of file vqmc.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{217         \textcolor{keywordtype}{implicit none} }
-\DoxyCodeLine{218 }
-\DoxyCodeLine{219 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(3)} :: R\_a, R\_b}
-\DoxyCodeLine{220 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: sigma}
-\DoxyCodeLine{221 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: c\_const }
-\DoxyCodeLine{222         \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N, burn, thin }
-\DoxyCodeLine{223          }
-\DoxyCodeLine{224 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: accept\_rate, total\_energy}
-\DoxyCodeLine{225 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:, :)}, \textcolor{keywordtype}{allocatable} :: X\_1, X\_2}
-\DoxyCodeLine{226 }
-\DoxyCodeLine{227 \textcolor{keywordtype}{        real}(real64) :: log\_prob\_n, a\_prob\_trans, unif\_num}
-\DoxyCodeLine{228 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: x\_start\_1, x\_start\_2, X\_n\_1, X\_n\_2\textcolor{comment}{, sample\_normal}}
-\DoxyCodeLine{229 \textcolor{comment}{        }\textcolor{keywordtype}{integer} :: i, accept  }
-\DoxyCodeLine{230         }
-\DoxyCodeLine{231         \textcolor{keyword}{allocate}(x\_1(3, 1:n+1)) }
-\DoxyCodeLine{232         \textcolor{keyword}{allocate}(x\_2(3, 1:n+1))}
-\DoxyCodeLine{233 }
-\DoxyCodeLine{234         \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
-\DoxyCodeLine{235         x\_start\_1 = sample\_normal}
+\DoxyCodeLine{218         \textcolor{keywordtype}{implicit none} }
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(3)} :: R\_a, R\_b}
+\DoxyCodeLine{221 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: sigma}
+\DoxyCodeLine{222 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: c\_const }
+\DoxyCodeLine{223         \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N, burn, thin }
+\DoxyCodeLine{224          }
+\DoxyCodeLine{225 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: accept\_rate}
+\DoxyCodeLine{226 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:, :)}, \textcolor{keywordtype}{allocatable} :: X\_1, X\_2}
+\DoxyCodeLine{227 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable} :: energy\_chain}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{229 \textcolor{keywordtype}{        real}(real64) :: log\_prob\_n, a\_prob\_trans, unif\_num}
+\DoxyCodeLine{230 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: x\_start\_1, x\_start\_2, X\_n\_1, X\_n\_2\textcolor{comment}{, sample\_normal}}
+\DoxyCodeLine{231 \textcolor{comment}{        }\textcolor{keywordtype}{integer} :: i, accept  }
+\DoxyCodeLine{232         }
+\DoxyCodeLine{233         \textcolor{keyword}{allocate}(x\_1(3, 1:n+1)) }
+\DoxyCodeLine{234         \textcolor{keyword}{allocate}(x\_2(3, 1:n+1))}
+\DoxyCodeLine{235         \textcolor{keyword}{allocate}(energy\_chain(1:n+1))}
 \DoxyCodeLine{236 }
 \DoxyCodeLine{237         \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
-\DoxyCodeLine{238         x\_start\_2 = sample\_normal }
+\DoxyCodeLine{238         x\_start\_1 = sample\_normal}
 \DoxyCodeLine{239 }
-\DoxyCodeLine{240         x\_1(:,1) = x\_start\_1}
-\DoxyCodeLine{241         x\_2(:,1) = x\_start\_2}
-\DoxyCodeLine{242         accept = 0 }
-\DoxyCodeLine{243         total\_energy = 0}
-\DoxyCodeLine{244         }
-\DoxyCodeLine{245         \textcolor{keywordflow}{do} i = 2, n+1 }
-\DoxyCodeLine{246             \textcolor{comment}{! Propose the next step}}
-\DoxyCodeLine{247             \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
-\DoxyCodeLine{248             x\_n\_1 = x\_1(:, i-\/1) + sigma * sample\_normal}
-\DoxyCodeLine{249 }
+\DoxyCodeLine{240         \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
+\DoxyCodeLine{241         x\_start\_2 = sample\_normal }
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243         x\_1(:,1) = x\_start\_1}
+\DoxyCodeLine{244         x\_2(:,1) = x\_start\_2}
+\DoxyCodeLine{245         accept = 0 }
+\DoxyCodeLine{246         energy\_chain(1) = h\_2\_energy(c\_const, x\_1(:,1), x\_2(:,1), r\_a, r\_b\textcolor{comment}{) }}
+\DoxyCodeLine{247 \textcolor{comment}{}        }
+\DoxyCodeLine{248         \textcolor{keywordflow}{do} i = 2, n+1 }
+\DoxyCodeLine{249             \textcolor{comment}{! Propose the next step}}
 \DoxyCodeLine{250             \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
-\DoxyCodeLine{251             x\_n\_2 = x\_2(:, i-\/1) + sigma * sample\_normal}
+\DoxyCodeLine{251             x\_n\_1 = x\_1(:, i-\/1) + sigma * sample\_normal}
 \DoxyCodeLine{252 }
-\DoxyCodeLine{253             log\_prob\_n = log(h\_2\_prob(c\_const, x\_1(:, i-\/1), x\_2(:, i-\/1),\textcolor{comment}{ x\_n\_1, x\_n\_2, r\_a, r\_b))}}
-\DoxyCodeLine{254 \textcolor{comment}{}            a\_prob\_trans = min(1.0\_real64, exp(log\_prob\_n))}
-\DoxyCodeLine{255             }
-\DoxyCodeLine{256             \textcolor{keyword}{call }random\_number(unif\_num)}
-\DoxyCodeLine{257 }
-\DoxyCodeLine{258             \textcolor{keywordflow}{if} (a\_prob\_trans <= unif\_num) \textcolor{keywordflow}{then} }
-\DoxyCodeLine{259                 x\_1(:, i) = x\_n\_1}
-\DoxyCodeLine{260                 x\_2(:, i) = x\_n\_2 }
-\DoxyCodeLine{261                 accept =  1 + accept}
-\DoxyCodeLine{262                 total\_energy = total\_energy + h\_2\_energy(c\_const, x\_n\_1,\textcolor{comment}{ x\_n\_2, r\_a, r\_b)}}
-\DoxyCodeLine{263 \textcolor{comment}{}            \textcolor{keywordflow}{else} }
-\DoxyCodeLine{264                 x\_1(:, i) = x\_1(:, i-\/1)}
-\DoxyCodeLine{265                 x\_2(:, i) = x\_2(:, i-\/1) }
-\DoxyCodeLine{266 \textcolor{keywordflow}{            end if} }
-\DoxyCodeLine{267 }
-\DoxyCodeLine{268 \textcolor{keywordflow}{        end do} }
-\DoxyCodeLine{269 }
-\DoxyCodeLine{270         accept\_rate = accept / n }
-\DoxyCodeLine{271 }
-\DoxyCodeLine{272         total\_energy = total\_energy / accept}
-\DoxyCodeLine{273 }
+\DoxyCodeLine{253             \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
+\DoxyCodeLine{254             x\_n\_2 = x\_2(:, i-\/1) + sigma * sample\_normal}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256             log\_prob\_n = log(h\_2\_prob(c\_const, x\_1(:, i-\/1), x\_2(:, i-\/1),\textcolor{comment}{ x\_n\_1, x\_n\_2, r\_a, r\_b))}}
+\DoxyCodeLine{257 \textcolor{comment}{}            a\_prob\_trans = min(1.0\_real64, exp(log\_prob\_n))}
+\DoxyCodeLine{258             }
+\DoxyCodeLine{259             \textcolor{keyword}{call }random\_number(unif\_num)}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261             \textcolor{keywordflow}{if} (a\_prob\_trans <= unif\_num) \textcolor{keywordflow}{then} }
+\DoxyCodeLine{262                 x\_1(:, i) = x\_n\_1}
+\DoxyCodeLine{263                 x\_2(:, i) = x\_n\_2 }
+\DoxyCodeLine{264                 accept =  1 + accept}
+\DoxyCodeLine{265                 energy\_chain(i) = h\_2\_energy(c\_const, x\_n\_1, x\_n\_2, r\_a,\textcolor{comment}{ r\_b)}}
+\DoxyCodeLine{266 \textcolor{comment}{}            \textcolor{keywordflow}{else} }
+\DoxyCodeLine{267                 x\_1(:, i) = x\_1(:, i-\/1)}
+\DoxyCodeLine{268                 x\_2(:, i) = x\_2(:, i-\/1) }
+\DoxyCodeLine{269                 }
+\DoxyCodeLine{270                 energy\_chain(i) = energy\_chain(i-\/1)}
+\DoxyCodeLine{271 \textcolor{keywordflow}{            end if} }
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273 \textcolor{keywordflow}{        end do} }
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275         accept\_rate = accept / n }
+\DoxyCodeLine{276 }
+\DoxyCodeLine{277         total\_energy = total\_energy / accept}
+\DoxyCodeLine{278 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -380,7 +385,7 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespacevqmc_a2b74b2a7f10a7f005a22ce37338f8242_cgraph}
+\includegraphics[width=350pt]{namespacevqmc_afdead1c964c264b80a7698da1bc3e792_cgraph}
 \end{center}
 \end{figure}
 
