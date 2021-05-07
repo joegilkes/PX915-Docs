@@ -6,5 +6,6 @@ var dir_79e04574ead3dbd7de3bc806ea6ac3aa =
     [ "quantum_solvers.f90", "quantum__solvers_8f90.html", "quantum__solvers_8f90" ],
     [ "shared_data.f90", "shared__data_8f90.html", "shared__data_8f90" ],
     [ "testing.f90", "testing_8f90.html", "testing_8f90" ],
+    [ "visualisation.py", "visualisation_8py.html", null ],
     [ "VQMC.f90", "_v_q_m_c_8f90.html", "_v_q_m_c_8f90" ]
 ];

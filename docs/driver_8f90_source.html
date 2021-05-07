@@ -117,42 +117,44 @@ $(document).ready(function(){initNavTree('driver_8f90_source.html',''); initResi
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="namespaceshared__data.html#a90ae0ab031f373ebe8630207134a16e8">prob</a> =&gt; <a class="code" href="namespacesolvers.html#a722edf182d188ad1db7fa6a675fea13c">qho_prob</a></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="namespaceshared__data.html#af2dc6565143614b66ee8c02adf611c60">local_energy</a> =&gt; <a class="code" href="namespacesolvers.html#a4f0054c0d0d2f5080c92a04557feaf52">qho_energy</a></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="namespacevqmc.html#aa1f3818a0761a8d2907614fa15256a10">vqmc_qho</a>()</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">case</span>(<span class="stringliteral">&#39;H2plus&#39;</span>)</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <a class="code" href="namespaceshared__data.html#a90ae0ab031f373ebe8630207134a16e8">prob</a> =&gt; <a class="code" href="namespacesolvers.html#a5695d107239a7a8fb1f8b096786af028">h_2_plus_prob</a></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="namespaceshared__data.html#af2dc6565143614b66ee8c02adf611c60">local_energy</a> =&gt; <a class="code" href="namespacesolvers.html#a1f21386928aadfc3dd6bc5cfb82fb94f">h_2_plus_energy</a></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">case</span>(<span class="stringliteral">&#39;H2&#39;</span>)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <a class="code" href="namespaceshared__data.html#a90ae0ab031f373ebe8630207134a16e8">prob</a> =&gt; <a class="code" href="namespacesolvers.html#a0d0f254ede019bb0bf743397cd0069f7">h_2_prob</a></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="namespaceshared__data.html#af2dc6565143614b66ee8c02adf611c60">local_energy</a> =&gt; <a class="code" href="namespacesolvers.html#ab21b7ec07e33a8417b62ecb75c327a6f">h_2_energy</a></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordflow">    end select</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">!Writing the results to NetCDF files</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">subroutine </span><a class="code" href="namespacenetcdf__out.html#aafe1ac30c27bd3b870ecf2a0deb045ae">write_array</a>(array,filename,ierr) <span class="comment">!missing the ability to write individual energies to the netcdf</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="namespacevqmc.html#aa1f3818a0761a8d2907614fa15256a10">vqmc_qho</a>(x_start,<a class="code" href="namespaceshared__data.html#a7503c2b3bd10f3ee43c4cf9964c42ab2">qho</a>%sigma, <a class="code" href="namespaceshared__data.html#a7503c2b3bd10f3ee43c4cf9964c42ab2">qho</a>%steps, <a class="code" href="namespaceshared__data.html#a7503c2b3bd10f3ee43c4cf9964c42ab2">qho</a>%burn_step &amp;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <a class="code" href="namespaceshared__data.html#a7503c2b3bd10f3ee43c4cf9964c42ab2">qho</a>%thin_step, alpha, x, accept_rate, total_energy)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">case</span>(<span class="stringliteral">&#39;H2plus&#39;</span>)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="namespaceshared__data.html#a90ae0ab031f373ebe8630207134a16e8">prob</a> =&gt; <a class="code" href="namespacesolvers.html#a5695d107239a7a8fb1f8b096786af028">h_2_plus_prob</a></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <a class="code" href="namespaceshared__data.html#af2dc6565143614b66ee8c02adf611c60">local_energy</a> =&gt; <a class="code" href="namespacesolvers.html#a1f21386928aadfc3dd6bc5cfb82fb94f">h_2_plus_energy</a></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">case</span>(<span class="stringliteral">&#39;H2&#39;</span>)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="namespaceshared__data.html#a90ae0ab031f373ebe8630207134a16e8">prob</a> =&gt; <a class="code" href="namespacesolvers.html#a0d0f254ede019bb0bf743397cd0069f7">h_2_prob</a></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="namespaceshared__data.html#af2dc6565143614b66ee8c02adf611c60">local_energy</a> =&gt; <a class="code" href="namespacesolvers.html#ab21b7ec07e33a8417b62ecb75c327a6f">h_2_energy</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordflow">    end select</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">!Writing the results to NetCDF files</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">subroutine </span><a class="code" href="namespacenetcdf__out.html#aafe1ac30c27bd3b870ecf2a0deb045ae">write_array</a>(array,filename,ierr) <span class="comment">!missing the ability to write individual energies to the netcdf</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">! If system=&#39;test&#39;, run test module</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> (trim(<a class="code" href="namespaceshared__data.html#ad837e8f897bde556513b9a9c8135b904">system</a>)==<span class="stringliteral">&#39;test&#39;</span>) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">call </span>unit_tests()</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">call </span>exit()</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordflow">    endif</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">! If system=&#39;test&#39;, run test module</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span> (trim(<a class="code" href="namespaceshared__data.html#ad837e8f897bde556513b9a9c8135b904">system</a>)==<span class="stringliteral">&#39;test&#39;</span>) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">call </span>unit_tests()</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">call </span>exit()</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordflow">    endif</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">end program </span>main</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">end program </span>main</div>
 <div class="ttc" id="anamespaceinput__parser_html"><div class="ttname"><a href="namespaceinput__parser.html">input_parser</a></div><div class="ttdef"><b>Definition:</b> <a href="input__parser_8f90_source.html#l00001">input_parser.f90:1</a></div></div>
 <div class="ttc" id="anamespaceinput__parser_html_a3c35b8a909f420e7aa4f19d1392d74ea"><div class="ttname"><a href="namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea">input_parser::read_inputs</a></div><div class="ttdeci">subroutine read_inputs()</div><div class="ttdef"><b>Definition:</b> <a href="input__parser_8f90_source.html#l00103">input_parser.f90:104</a></div></div>
 <div class="ttc" id="anamespacenetcdf__out_html"><div class="ttname"><a href="namespacenetcdf__out.html">netcdf_out</a></div><div class="ttdef"><b>Definition:</b> <a href="netcdf__out_8f90_source.html#l00008">netcdf_out.f90:8</a></div></div>
 <div class="ttc" id="anamespacenetcdf__out_html_aafe1ac30c27bd3b870ecf2a0deb045ae"><div class="ttname"><a href="namespacenetcdf__out.html#aafe1ac30c27bd3b870ecf2a0deb045ae">netcdf_out::write_array</a></div><div class="ttdeci">subroutine write_array(array, filename, ierr)</div><div class="ttdef"><b>Definition:</b> <a href="netcdf__out_8f90_source.html#l00027">netcdf_out.f90:28</a></div></div>
 <div class="ttc" id="anamespaceshared__data_html"><div class="ttname"><a href="namespaceshared__data.html">shared_data</a></div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00036">shared_data.f90:36</a></div></div>
+<div class="ttc" id="anamespaceshared__data_html_a7503c2b3bd10f3ee43c4cf9964c42ab2"><div class="ttname"><a href="namespaceshared__data.html#a7503c2b3bd10f3ee43c4cf9964c42ab2">shared_data::qho</a></div><div class="ttdeci">type(qho_type) qho</div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00084">shared_data.f90:84</a></div></div>
 <div class="ttc" id="anamespaceshared__data_html_a90ae0ab031f373ebe8630207134a16e8"><div class="ttname"><a href="namespaceshared__data.html#a90ae0ab031f373ebe8630207134a16e8">shared_data::prob</a></div><div class="ttdeci">procedure, pointer prob</div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00083">shared_data.f90:83</a></div></div>
 <div class="ttc" id="anamespaceshared__data_html_ad837e8f897bde556513b9a9c8135b904"><div class="ttname"><a href="namespaceshared__data.html#ad837e8f897bde556513b9a9c8135b904">shared_data::system</a></div><div class="ttdeci">character(len=10) system</div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00081">shared_data.f90:81</a></div></div>
 <div class="ttc" id="anamespaceshared__data_html_af2dc6565143614b66ee8c02adf611c60"><div class="ttname"><a href="namespaceshared__data.html#af2dc6565143614b66ee8c02adf611c60">shared_data::local_energy</a></div><div class="ttdeci">procedure, pointer local_energy</div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00083">shared_data.f90:83</a></div></div>

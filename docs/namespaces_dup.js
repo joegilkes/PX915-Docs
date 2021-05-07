@@ -52,6 +52,7 @@ var namespaces_dup =
       [ "unit_tests", "namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6", null ],
       [ "tol", "namespacetesting.html#abac17ed62ec6fb1d981bcfce635ed8b3", null ]
     ] ],
+    [ "visualisation", "namespacevisualisation.html", null ],
     [ "visualise", "namespacevisualise.html", null ],
     [ "vqmc", "namespacevqmc.html", [
       [ "random_normal", "namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335", null ],
