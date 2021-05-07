@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Group_A_Codes: repo/src/VQMC.f90 File Reference</title>
+<title>Group_A_Codes: repo/src/vqmc.f90 File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('_v_q_m_c_8f90.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('vqmc_8f90.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -90,13 +90,14 @@ $(document).ready(function(){initNavTree('_v_q_m_c_8f90.html',''); initResizable
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Modules</a> &#124;
-<a href="#func-members">Functions/Subroutines</a>  </div>
+<a href="#func-members">Functions/Subroutines</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">VQMC.f90 File Reference</div>  </div>
+<div class="title">vqmc.f90 File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><a href="_v_q_m_c_8f90_source.html">Go to the source code of this file.</a></p>
+<p><a href="vqmc_8f90_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Modules</h2></td></tr>
@@ -105,6 +106,10 @@ Modules</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions/Subroutines</h2></td></tr>
+<tr class="memitem:aed182179994b5465f5466b4d909a764e"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevqmc.html#aed182179994b5465f5466b4d909a764e">vqmc::init_ran1</a> ()</td></tr>
+<tr class="separator:aed182179994b5465f5466b4d909a764e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01b80444204a0cd0b5cddde82cbc7651"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevqmc.html#a01b80444204a0cd0b5cddde82cbc7651">vqmc::ran1</a> (sample, dseed)</td></tr>
+<tr class="separator:a01b80444204a0cd0b5cddde82cbc7651"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62ec9b662e5d9b46ec37d52ff93cb335"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335">vqmc::random_normal</a> (dim, x)</td></tr>
 <tr class="separator:a62ec9b662e5d9b46ec37d52ff93cb335"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1f3818a0761a8d2907614fa15256a10"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevqmc.html#aa1f3818a0761a8d2907614fa15256a10">vqmc::vqmc_qho</a> (x_start, sigma, N, burn, thin, alpha_const, X, accept_rate, total_energy)</td></tr>
@@ -113,13 +118,24 @@ Functions/Subroutines</h2></td></tr>
 <tr class="separator:ab903fb33ac49e462c789d47067ba311d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93752a22b0228b2043fc815cba952497"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevqmc.html#a93752a22b0228b2043fc815cba952497">vqmc::vqmc_h_2</a> (x_start_1, x_start_2, sigma, N, burn, thin, c_const, R_a, R_b, X_1, X_2, accept_rate, total_energy)</td></tr>
 <tr class="separator:a93752a22b0228b2043fc815cba952497"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a4acb6b64bbac5c4684654d00393f7f24"><td class="memItemLeft" align="right" valign="top">integer, parameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevqmc.html#a4acb6b64bbac5c4684654d00393f7f24">vqmc::ntab</a> = 32</td></tr>
+<tr class="separator:a4acb6b64bbac5c4684654d00393f7f24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86db46440794b9ef7cfd9fbf1fd69930"><td class="memItemLeft" align="right" valign="top">integer(int64), dimension(ntab), save&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevqmc.html#a86db46440794b9ef7cfd9fbf1fd69930">vqmc::iv</a> = 0</td></tr>
+<tr class="separator:a86db46440794b9ef7cfd9fbf1fd69930"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1608372d703310a49afc4243ccf27368"><td class="memItemLeft" align="right" valign="top">integer(int64), save&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevqmc.html#a1608372d703310a49afc4243ccf27368">vqmc::iy</a> = 0</td></tr>
+<tr class="separator:a1608372d703310a49afc4243ccf27368"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a986f071589794992c4bc31de25c63976"><td class="memItemLeft" align="right" valign="top">integer(int64), public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevqmc.html#a986f071589794992c4bc31de25c63976">vqmc::seed</a></td></tr>
+<tr class="separator:a986f071589794992c4bc31de25c63976"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_752f9258976072ab3e06b31dacb87d2d.html">repo</a></li><li class="navelem"><a class="el" href="dir_79e04574ead3dbd7de3bc806ea6ac3aa.html">src</a></li><li class="navelem"><a class="el" href="_v_q_m_c_8f90.html">VQMC.f90</a></li>
+    <li class="navelem"><a class="el" href="dir_752f9258976072ab3e06b31dacb87d2d.html">repo</a></li><li class="navelem"><a class="el" href="dir_79e04574ead3dbd7de3bc806ea6ac3aa.html">src</a></li><li class="navelem"><a class="el" href="vqmc_8f90.html">vqmc.f90</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

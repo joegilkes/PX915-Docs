@@ -10,6 +10,8 @@ var testing_8f90 =
     [ "test_h_2_wfn", "testing_8f90.html#a70f58338fe8165f65417781dae734e68", null ],
     [ "test_h_2_prob", "testing_8f90.html#ad02da7e5d742236c571c965b4f80992c", null ],
     [ "test_h_2_energy", "testing_8f90.html#a313d78f649070a104e89a7535811d6a5", null ],
+    [ "test_ran1", "testing_8f90.html#adb38a97b7ceaad408410367f1510e997", null ],
+    [ "test_random_normal", "testing_8f90.html#acbf13e7eaa077016d7d1712b58fc5223", null ],
     [ "unit_tests", "testing_8f90.html#a426ebe0ada45b0bc1c4ebba3f469a5c6", null ],
     [ "tol", "testing_8f90.html#abac17ed62ec6fb1d981bcfce635ed8b3", null ]
 ];

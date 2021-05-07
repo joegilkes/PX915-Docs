@@ -49,15 +49,23 @@ var namespaces_dup =
       [ "test_h_2_wfn", "namespacetesting.html#a70f58338fe8165f65417781dae734e68", null ],
       [ "test_h_2_prob", "namespacetesting.html#ad02da7e5d742236c571c965b4f80992c", null ],
       [ "test_h_2_energy", "namespacetesting.html#a313d78f649070a104e89a7535811d6a5", null ],
+      [ "test_ran1", "namespacetesting.html#adb38a97b7ceaad408410367f1510e997", null ],
+      [ "test_random_normal", "namespacetesting.html#acbf13e7eaa077016d7d1712b58fc5223", null ],
       [ "unit_tests", "namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6", null ],
       [ "tol", "namespacetesting.html#abac17ed62ec6fb1d981bcfce635ed8b3", null ]
     ] ],
     [ "visualisation", "namespacevisualisation.html", null ],
     [ "visualise", "namespacevisualise.html", null ],
     [ "vqmc", "namespacevqmc.html", [
+      [ "init_ran1", "namespacevqmc.html#aed182179994b5465f5466b4d909a764e", null ],
+      [ "ran1", "namespacevqmc.html#a01b80444204a0cd0b5cddde82cbc7651", null ],
       [ "random_normal", "namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335", null ],
       [ "vqmc_qho", "namespacevqmc.html#aa1f3818a0761a8d2907614fa15256a10", null ],
       [ "vqmc_h_2_plus", "namespacevqmc.html#ab903fb33ac49e462c789d47067ba311d", null ],
-      [ "vqmc_h_2", "namespacevqmc.html#a93752a22b0228b2043fc815cba952497", null ]
+      [ "vqmc_h_2", "namespacevqmc.html#a93752a22b0228b2043fc815cba952497", null ],
+      [ "ntab", "namespacevqmc.html#a4acb6b64bbac5c4684654d00393f7f24", null ],
+      [ "iv", "namespacevqmc.html#a86db46440794b9ef7cfd9fbf1fd69930", null ],
+      [ "iy", "namespacevqmc.html#a1608372d703310a49afc4243ccf27368", null ],
+      [ "seed", "namespacevqmc.html#a986f071589794992c4bc31de25c63976", null ]
     ] ]
 ];

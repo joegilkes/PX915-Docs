@@ -1,5 +1,5 @@
-\hypertarget{_v_q_m_c_8f90}{}\doxysection{repo/src/\+VQMC.f90 File Reference}
-\label{_v_q_m_c_8f90}\index{repo/src/VQMC.f90@{repo/src/VQMC.f90}}
+\hypertarget{vqmc_8f90}{}\doxysection{repo/src/vqmc.f90 File Reference}
+\label{vqmc_8f90}\index{repo/src/vqmc.f90@{repo/src/vqmc.f90}}
 \doxysubsection*{Modules}
 \begin{DoxyCompactItemize}
 \item 
@@ -8,6 +8,10 @@ module \mbox{\hyperlink{namespacevqmc}{vqmc}}
 \doxysubsection*{Functions/\+Subroutines}
 \begin{DoxyCompactItemize}
 \item 
+subroutine \mbox{\hyperlink{namespacevqmc_aed182179994b5465f5466b4d909a764e}{vqmc\+::init\+\_\+ran1}} ()
+\item 
+subroutine \mbox{\hyperlink{namespacevqmc_a01b80444204a0cd0b5cddde82cbc7651}{vqmc\+::ran1}} (sample, dseed)
+\item 
 subroutine \mbox{\hyperlink{namespacevqmc_a62ec9b662e5d9b46ec37d52ff93cb335}{vqmc\+::random\+\_\+normal}} (dim, x)
 \item 
 subroutine \mbox{\hyperlink{namespacevqmc_aa1f3818a0761a8d2907614fa15256a10}{vqmc\+::vqmc\+\_\+qho}} (x\+\_\+start, sigma, N, burn, thin, alpha\+\_\+const, X, accept\+\_\+rate, total\+\_\+energy)
@@ -15,4 +19,15 @@ subroutine \mbox{\hyperlink{namespacevqmc_aa1f3818a0761a8d2907614fa15256a10}{vqm
 subroutine \mbox{\hyperlink{namespacevqmc_ab903fb33ac49e462c789d47067ba311d}{vqmc\+::vqmc\+\_\+h\+\_\+2\+\_\+plus}} (x\+\_\+start, sigma, N, burn, thin, c\+\_\+const, R\+\_\+a, R\+\_\+b, X, accept\+\_\+rate, total\+\_\+energy)
 \item 
 subroutine \mbox{\hyperlink{namespacevqmc_a93752a22b0228b2043fc815cba952497}{vqmc\+::vqmc\+\_\+h\+\_\+2}} (x\+\_\+start\+\_\+1, x\+\_\+start\+\_\+2, sigma, N, burn, thin, c\+\_\+const, R\+\_\+a, R\+\_\+b, X\+\_\+1, X\+\_\+2, accept\+\_\+rate, total\+\_\+energy)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter \mbox{\hyperlink{namespacevqmc_a4acb6b64bbac5c4684654d00393f7f24}{vqmc\+::ntab}} = 32
+\item 
+integer(int64), dimension(ntab), save \mbox{\hyperlink{namespacevqmc_a86db46440794b9ef7cfd9fbf1fd69930}{vqmc\+::iv}} = 0
+\item 
+integer(int64), save \mbox{\hyperlink{namespacevqmc_a1608372d703310a49afc4243ccf27368}{vqmc\+::iy}} = 0
+\item 
+integer(int64), public \mbox{\hyperlink{namespacevqmc_a986f071589794992c4bc31de25c63976}{vqmc\+::seed}}
 \end{DoxyCompactItemize}
