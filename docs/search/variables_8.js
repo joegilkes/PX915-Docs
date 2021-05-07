@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['pi_154',['pi',['../namespaceconstants.html#a25d12bb3441f2773a3a3e42dac41a9c1',1,'constants']]],
-  ['pi_5fdash_155',['pi_dash',['../namespaceconstants.html#a54c9d4eb7a08da77b2012fc1dfe8612b',1,'constants']]],
-  ['pi_5fdash_5f2_156',['pi_dash_2',['../namespaceconstants.html#a444dcf0e44c72ee753f937ae46b38493',1,'constants']]]
+  ['m_5felec_154',['m_elec',['../namespaceconstants.html#a4f996dcd1b7e4cd0bc798d8e68bbdf70',1,'constants']]]
 ];

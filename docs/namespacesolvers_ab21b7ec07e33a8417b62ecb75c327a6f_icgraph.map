@@ -1,7 +1,6 @@
 <map id="solvers::h_2_energy" name="solvers::h_2_energy">
-<area shape="rect" id="node1" title="Calculates local energy for the &#160;problem." alt="" coords="487,31,623,57"/>
-<area shape="rect" id="node2" href="$namespacetesting.html#a313d78f649070a104e89a7535811d6a5" title="Tests the H_2_Energy function in the solvers module." alt="" coords="276,5,439,32"/>
-<area shape="rect" id="node5" href="$namespacevqmc.html#a93752a22b0228b2043fc815cba952497" title=" " alt="" coords="297,56,417,83"/>
-<area shape="rect" id="node3" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="104,5,228,32"/>
-<area shape="rect" id="node4" href="$driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title=" " alt="" coords="5,5,56,32"/>
+<area shape="rect" id="node1" title="Calculates local energy for the &#160;problem." alt="" coords="388,31,524,57"/>
+<area shape="rect" id="node2" href="$namespacetesting.html#a313d78f649070a104e89a7535811d6a5" title="Tests the H_2_Energy function in the solvers module." alt="" coords="177,5,340,32"/>
+<area shape="rect" id="node4" href="$namespacevqmc.html#a93752a22b0228b2043fc815cba952497" title=" " alt="" coords="199,56,319,83"/>
+<area shape="rect" id="node3" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="5,5,129,32"/>
 </map>

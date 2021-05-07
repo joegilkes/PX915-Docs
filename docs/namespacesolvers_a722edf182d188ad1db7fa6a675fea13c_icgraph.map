@@ -1,7 +1,6 @@
 <map id="solvers::qho_prob" name="solvers::qho_prob">
-<area shape="rect" id="node1" title="Calculates transition probability for quantum harmonic oscillator problem." alt="" coords="473,31,596,57"/>
-<area shape="rect" id="node2" href="$namespacetesting.html#a3cd96e3cb653762262d063e2aed44ab7" title="Tests the QHO_Prob function in the solvers module." alt="" coords="276,5,425,32"/>
-<area shape="rect" id="node5" href="$namespacevqmc.html#aa1f3818a0761a8d2907614fa15256a10" title=" " alt="" coords="291,56,411,83"/>
-<area shape="rect" id="node3" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="104,5,228,32"/>
-<area shape="rect" id="node4" href="$driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title=" " alt="" coords="5,5,56,32"/>
+<area shape="rect" id="node1" title="Calculates transition probability for quantum harmonic oscillator problem." alt="" coords="375,31,497,57"/>
+<area shape="rect" id="node2" href="$namespacetesting.html#a3cd96e3cb653762262d063e2aed44ab7" title="Tests the QHO_Prob function in the solvers module." alt="" coords="177,5,327,32"/>
+<area shape="rect" id="node4" href="$namespacevqmc.html#aa1f3818a0761a8d2907614fa15256a10" title=" " alt="" coords="192,56,312,83"/>
+<area shape="rect" id="node3" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="5,5,129,32"/>
 </map>
