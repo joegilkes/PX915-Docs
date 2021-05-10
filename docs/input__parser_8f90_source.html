@@ -111,15 +111,15 @@ $(document).ready(function(){initNavTree('input__parser_8f90_source.html',''); i
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">logical</span>, <span class="keywordtype">intent(out)</span> :: run_equil, verbose</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">! Define the namelist</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    namelist /problem/ system, run_equil, verbose</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    namelist /control/ system, run_equil, verbose</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">! Open the file</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">open</span>(action=<span class="stringliteral">&#39;read&#39;</span>, file=<span class="stringliteral">&#39;params.txt&#39;</span>, iostat=<a class="code" href="namespaceinput__parser.html#a0d29f515c2bc6f306a8576c1b4253c8d">rc</a>, newunit=<a class="code" href="namespaceinput__parser.html#a209ae7e3892e6b6dcbe9137fdeb0875f">fu</a>)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">! Read the namelist</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">read</span>(nml=problem, iostat=<a class="code" href="namespaceinput__parser.html#a0d29f515c2bc6f306a8576c1b4253c8d">rc</a>, unit=<a class="code" href="namespaceinput__parser.html#a209ae7e3892e6b6dcbe9137fdeb0875f">fu</a>)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">read</span>(nml=control, iostat=<a class="code" href="namespaceinput__parser.html#a0d29f515c2bc6f306a8576c1b4253c8d">rc</a>, unit=<a class="code" href="namespaceinput__parser.html#a209ae7e3892e6b6dcbe9137fdeb0875f">fu</a>)</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceinput__parser.html#a0d29f515c2bc6f306a8576c1b4253c8d">rc</a> /= 0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        print*, <span class="stringliteral">&#39;Error: Invalid PROBLEM namelist format in file &quot;params.txt&quot;.&#39;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        print*, <span class="stringliteral">&#39;Error: Invalid CONTROL namelist format in file &quot;params.txt&quot;.&#39;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordflow">    end if</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">! Close the file</span></div>
