@@ -16,12 +16,12 @@ real(real64) function, dimension(\+:), allocatable \mbox{\hyperlink{namespacevqm
 \begin{DoxyCompactList}\small\item\em Adaptation of numpy\textquotesingle{}s linspace function. \end{DoxyCompactList}\item 
 subroutine \mbox{\hyperlink{namespacevqmc_a62ec9b662e5d9b46ec37d52ff93cb335}{random\+\_\+normal}} (dim, x)
 \begin{DoxyCompactList}\small\item\em Adaptation of numpy\textquotesingle{}s linspace function. \end{DoxyCompactList}\item 
-subroutine \mbox{\hyperlink{namespacevqmc_a8b66a706cd8db1d3228f169f9a6964da}{vqmc\+\_\+qho}} (sigma, N, burn, thin, alpha\+\_\+const, x\+\_\+start, X, accept\+\_\+rate, energy\+\_\+chain)
+subroutine \mbox{\hyperlink{namespacevqmc_a02b8c351075434a8fd2aa4a590012fdd}{vqmc\+\_\+qho}} (sigma, N, burn, thin, alpha\+\_\+const, X, accept\+\_\+rate, energy\+\_\+chain, x\+\_\+start)
 \begin{DoxyCompactList}\small\item\em Performs VQMC for QHO. \end{DoxyCompactList}\item 
-subroutine \mbox{\hyperlink{namespacevqmc_a014fdaf26103c82839fcc36c34fb9ea7}{vqmc\+\_\+h\+\_\+2\+\_\+plus}} (sigma, N, burn, thin, c\+\_\+const, R\+\_\+a, R\+\_\+b, x\+\_\+start, X, accept\+\_\+rate, energy\+\_\+chain)
+subroutine \mbox{\hyperlink{namespacevqmc_a2084652c11e4ee910ecd93c8a935dbd8}{vqmc\+\_\+h\+\_\+2\+\_\+plus}} (sigma, N, burn, thin, c\+\_\+const, R\+\_\+a, R\+\_\+b, X, accept\+\_\+rate, energy\+\_\+chain, x\+\_\+start)
 \begin{DoxyCompactList}\small\item\em Performs VQMC for H\+\_\+2\+\_\+plus ~\newline
  \end{DoxyCompactList}\item 
-subroutine \mbox{\hyperlink{namespacevqmc_a95b4dedd1b7e0d0c94d4f64055e30ce5}{vqmc\+\_\+h\+\_\+2}} (sigma, N, burn, thin, c\+\_\+const, R\+\_\+a, R\+\_\+b, x\+\_\+start\+\_\+1, x\+\_\+start\+\_\+2, X\+\_\+1, X\+\_\+2, accept\+\_\+rate, energy\+\_\+chain)
+subroutine \mbox{\hyperlink{namespacevqmc_ac6ac761c39bd7f67f23e4fb7d7cae066}{vqmc\+\_\+h\+\_\+2}} (sigma, N, burn, thin, c\+\_\+const, R\+\_\+a, R\+\_\+b, X\+\_\+1, X\+\_\+2, accept\+\_\+rate, energy\+\_\+chain, x\+\_\+start\+\_\+1, x\+\_\+start\+\_\+2)
 \begin{DoxyCompactList}\small\item\em Performs VQMC for H\+\_\+2 ~\newline
  \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
@@ -89,6 +89,14 @@ Definition at line 57 of file vqmc.\+f90.
 \DoxyCodeLine{85 }
 
 \end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{namespacevqmc_aed182179994b5465f5466b4d909a764e_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{namespacevqmc_a01b80444204a0cd0b5cddde82cbc7651}\label{namespacevqmc_a01b80444204a0cd0b5cddde82cbc7651}} 
 \index{vqmc@{vqmc}!ran1@{ran1}}
 \index{ran1@{ran1}!vqmc@{vqmc}}
@@ -209,6 +217,14 @@ Definition at line 163 of file vqmc.\+f90.
 \DoxyCodeLine{185 }
 
 \end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{namespacevqmc_a6b89c5b7a64a3e438695787b90a62359_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{namespacevqmc_a62ec9b662e5d9b46ec37d52ff93cb335}\label{namespacevqmc_a62ec9b662e5d9b46ec37d52ff93cb335}} 
 \index{vqmc@{vqmc}!random\_normal@{random\_normal}}
 \index{random\_normal@{random\_normal}!vqmc@{vqmc}}
@@ -274,11 +290,11 @@ Here is the caller graph for this function\+:
 \includegraphics[width=350pt]{namespacevqmc_a62ec9b662e5d9b46ec37d52ff93cb335_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespacevqmc_a8b66a706cd8db1d3228f169f9a6964da}\label{namespacevqmc_a8b66a706cd8db1d3228f169f9a6964da}} 
+\mbox{\Hypertarget{namespacevqmc_a02b8c351075434a8fd2aa4a590012fdd}\label{namespacevqmc_a02b8c351075434a8fd2aa4a590012fdd}} 
 \index{vqmc@{vqmc}!vqmc\_qho@{vqmc\_qho}}
 \index{vqmc\_qho@{vqmc\_qho}!vqmc@{vqmc}}
 \doxysubsubsection{\texorpdfstring{vqmc\_qho()}{vqmc\_qho()}}
-{\footnotesize\ttfamily subroutine vqmc\+::vqmc\+\_\+qho (\begin{DoxyParamCaption}\item[{real(real64), intent(in)}]{sigma,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{burn,  }\item[{integer, intent(in)}]{thin,  }\item[{real(real64), intent(in)}]{alpha\+\_\+const,  }\item[{real(real64), optional}]{x\+\_\+start,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{X,  }\item[{real(real64), intent(out)}]{accept\+\_\+rate,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{energy\+\_\+chain }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily subroutine vqmc\+::vqmc\+\_\+qho (\begin{DoxyParamCaption}\item[{real(real64), intent(in)}]{sigma,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{burn,  }\item[{integer, intent(in)}]{thin,  }\item[{real(real64), intent(in)}]{alpha\+\_\+const,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{X,  }\item[{real(real64), intent(out)}]{accept\+\_\+rate,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{energy\+\_\+chain,  }\item[{real(real64), optional}]{x\+\_\+start }\end{DoxyParamCaption})}
 
 
 
@@ -325,7 +341,7 @@ Definition at line 254 of file vqmc.\+f90.
 \DoxyCodeLine{266 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64) :: log\_prob\_n                      \textcolor{comment}{! The natural logarithm of the transition proability}}
 \DoxyCodeLine{267 \textcolor{keywordtype}{        real}(real64) :: a\_prob\_trans                    \textcolor{comment}{! Acceptance ratio of the transition probability }}
 \DoxyCodeLine{268 \textcolor{keywordtype}{        real}(real64) :: unif\_num                        \textcolor{comment}{! A random sample from the uniform distribution }}
-\DoxyCodeLine{269 \textcolor{keywordtype}{        real}(64), \textcolor{keywordtype}{dimension(1)} :: start                 \textcolor{comment}{! The starting point of the MCMC chain }}
+\DoxyCodeLine{269 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(1)} :: start                 \textcolor{comment}{! The starting point of the MCMC chain }}
 \DoxyCodeLine{270 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(1)} :: X\_n               \textcolor{comment}{! The proposed step }}
 \DoxyCodeLine{271 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(1)} :: sample\_normal     \textcolor{comment}{! A sample from the normal distribution }}
 \DoxyCodeLine{272         \textcolor{keywordtype}{integer} :: accept                               \textcolor{comment}{! Number of accepted steps }}
@@ -341,7 +357,7 @@ Definition at line 254 of file vqmc.\+f90.
 \DoxyCodeLine{282             x(1) = start(1)}
 \DoxyCodeLine{283         \textcolor{keywordflow}{else} }
 \DoxyCodeLine{284             \textcolor{comment}{! Creates the initial position of the random walker that is whithin a certain radius  }}
-\DoxyCodeLine{285             \textcolor{keywordflow}{do} \textcolor{keywordflow}{while}(norm2(sample\_normal) <= rcut )}
+\DoxyCodeLine{285             \textcolor{keywordflow}{do} \textcolor{keywordflow}{while}(norm2(sample\_normal) <= qho\%rcut )}
 \DoxyCodeLine{286                 \textcolor{keyword}{call }random\_normal(1, sample\_normal)}
 \DoxyCodeLine{287 \textcolor{keywordflow}{            end do} }
 \DoxyCodeLine{288             start = sample\_normal}
@@ -406,8 +422,8 @@ Definition at line 254 of file vqmc.\+f90.
 \DoxyCodeLine{347         \textcolor{keywordflow}{if} (verbose) \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('')"{}})}
 \DoxyCodeLine{348 }
 \DoxyCodeLine{349         \textcolor{comment}{! Calculate the acceptance ratio }}
-\DoxyCodeLine{350         accept\_rate = (real(accept, 8) / real(n, 8)) }
-\DoxyCodeLine{351 }
+\DoxyCodeLine{350         accept\_rate = (real(accept, kind=real64) / real(n, kind=real64))\textcolor{comment}{ }}
+\DoxyCodeLine{351 \textcolor{comment}{}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -415,14 +431,22 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespacevqmc_a8b66a706cd8db1d3228f169f9a6964da_cgraph}
+\includegraphics[width=350pt]{namespacevqmc_a02b8c351075434a8fd2aa4a590012fdd_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespacevqmc_a014fdaf26103c82839fcc36c34fb9ea7}\label{namespacevqmc_a014fdaf26103c82839fcc36c34fb9ea7}} 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{namespacevqmc_a02b8c351075434a8fd2aa4a590012fdd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacevqmc_a2084652c11e4ee910ecd93c8a935dbd8}\label{namespacevqmc_a2084652c11e4ee910ecd93c8a935dbd8}} 
 \index{vqmc@{vqmc}!vqmc\_h\_2\_plus@{vqmc\_h\_2\_plus}}
 \index{vqmc\_h\_2\_plus@{vqmc\_h\_2\_plus}!vqmc@{vqmc}}
 \doxysubsubsection{\texorpdfstring{vqmc\_h\_2\_plus()}{vqmc\_h\_2\_plus()}}
-{\footnotesize\ttfamily subroutine vqmc\+::vqmc\+\_\+h\+\_\+2\+\_\+plus (\begin{DoxyParamCaption}\item[{real(real64), intent(in)}]{sigma,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{burn,  }\item[{integer, intent(in)}]{thin,  }\item[{real(real64), dimension(\+:), intent(in)}]{c\+\_\+const,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+a,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+b,  }\item[{real(real64), dimension(3), optional}]{x\+\_\+start,  }\item[{real(real64), dimension(\+:, \+:), intent(out), allocatable}]{X,  }\item[{real(real64), intent(out)}]{accept\+\_\+rate,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{energy\+\_\+chain }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily subroutine vqmc\+::vqmc\+\_\+h\+\_\+2\+\_\+plus (\begin{DoxyParamCaption}\item[{real(real64), intent(in)}]{sigma,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{burn,  }\item[{integer, intent(in)}]{thin,  }\item[{real(real64), dimension(\+:), intent(in)}]{c\+\_\+const,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+a,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+b,  }\item[{real(real64), dimension(\+:, \+:), intent(out), allocatable}]{X,  }\item[{real(real64), intent(out)}]{accept\+\_\+rate,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{energy\+\_\+chain,  }\item[{real(real64), dimension(3), optional}]{x\+\_\+start }\end{DoxyParamCaption})}
 
 
 
@@ -493,7 +517,7 @@ Definition at line 381 of file vqmc.\+f90.
 \DoxyCodeLine{412             x(:,1) = start }
 \DoxyCodeLine{413         \textcolor{keywordflow}{else} }
 \DoxyCodeLine{414             \textcolor{comment}{! Create the initial position of the random walker that is within a certain radius }}
-\DoxyCodeLine{415             \textcolor{keywordflow}{do} \textcolor{keywordflow}{while}(norm2(sample\_normal) <= rcut )}
+\DoxyCodeLine{415             \textcolor{keywordflow}{do} \textcolor{keywordflow}{while}(norm2(sample\_normal) <= h2plus\%rcut )}
 \DoxyCodeLine{416                 \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
 \DoxyCodeLine{417 \textcolor{keywordflow}{            end do} }
 \DoxyCodeLine{418             start = sample\_normal}
@@ -539,8 +563,8 @@ Definition at line 381 of file vqmc.\+f90.
 \DoxyCodeLine{458 \textcolor{keywordflow}{        end do} }
 \DoxyCodeLine{459 }
 \DoxyCodeLine{460         \textcolor{comment}{! Calculate the acceptance ratio}}
-\DoxyCodeLine{461         accept\_rate = (real(accept, 8) / real(n, 8)) }
-\DoxyCodeLine{462 }
+\DoxyCodeLine{461         accept\_rate = (real(accept, kind=real64) / real(n, kind=real64))\textcolor{comment}{ }}
+\DoxyCodeLine{462 \textcolor{comment}{}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -548,14 +572,14 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespacevqmc_a014fdaf26103c82839fcc36c34fb9ea7_cgraph}
+\includegraphics[width=350pt]{namespacevqmc_a2084652c11e4ee910ecd93c8a935dbd8_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespacevqmc_a95b4dedd1b7e0d0c94d4f64055e30ce5}\label{namespacevqmc_a95b4dedd1b7e0d0c94d4f64055e30ce5}} 
+\mbox{\Hypertarget{namespacevqmc_ac6ac761c39bd7f67f23e4fb7d7cae066}\label{namespacevqmc_ac6ac761c39bd7f67f23e4fb7d7cae066}} 
 \index{vqmc@{vqmc}!vqmc\_h\_2@{vqmc\_h\_2}}
 \index{vqmc\_h\_2@{vqmc\_h\_2}!vqmc@{vqmc}}
 \doxysubsubsection{\texorpdfstring{vqmc\_h\_2()}{vqmc\_h\_2()}}
-{\footnotesize\ttfamily subroutine vqmc\+::vqmc\+\_\+h\+\_\+2 (\begin{DoxyParamCaption}\item[{real(real64), intent(in)}]{sigma,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{burn,  }\item[{integer, intent(in)}]{thin,  }\item[{real(real64), dimension(\+:), intent(in)}]{c\+\_\+const,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+a,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+b,  }\item[{real(real64), dimension(3), optional}]{x\+\_\+start\+\_\+1,  }\item[{real(real64), dimension(3), optional}]{x\+\_\+start\+\_\+2,  }\item[{real(real64), dimension(\+:, \+:), intent(out), allocatable}]{X\+\_\+1,  }\item[{real(real64), dimension(\+:, \+:), intent(out), allocatable}]{X\+\_\+2,  }\item[{real(real64), intent(out)}]{accept\+\_\+rate,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{energy\+\_\+chain }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily subroutine vqmc\+::vqmc\+\_\+h\+\_\+2 (\begin{DoxyParamCaption}\item[{real(real64), intent(in)}]{sigma,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{burn,  }\item[{integer, intent(in)}]{thin,  }\item[{real(real64), dimension(\+:), intent(in)}]{c\+\_\+const,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+a,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+b,  }\item[{real(real64), dimension(\+:, \+:), intent(out), allocatable}]{X\+\_\+1,  }\item[{real(real64), dimension(\+:, \+:), intent(out), allocatable}]{X\+\_\+2,  }\item[{real(real64), intent(out)}]{accept\+\_\+rate,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{energy\+\_\+chain,  }\item[{real(real64), dimension(3), optional}]{x\+\_\+start\+\_\+1,  }\item[{real(real64), dimension(3), optional}]{x\+\_\+start\+\_\+2 }\end{DoxyParamCaption})}
 
 
 
@@ -634,14 +658,14 @@ Definition at line 494 of file vqmc.\+f90.
 \DoxyCodeLine{529             x\_2(:,1) = start\_2}
 \DoxyCodeLine{530         \textcolor{keywordflow}{else} }
 \DoxyCodeLine{531             \textcolor{comment}{! Create the initial position of random walker 1 that is within a certain radius}}
-\DoxyCodeLine{532             \textcolor{keywordflow}{do} \textcolor{keywordflow}{while}(norm2(sample\_normal) <= rcut )}
+\DoxyCodeLine{532             \textcolor{keywordflow}{do} \textcolor{keywordflow}{while}(norm2(sample\_normal) <= h2\%rcut )}
 \DoxyCodeLine{533                 \textcolor{keyword}{call }random\_normal(1, sample\_normal)}
 \DoxyCodeLine{534 \textcolor{keywordflow}{            end do} }
 \DoxyCodeLine{535             start\_1 = sample\_normal}
 \DoxyCodeLine{536             x\_1(:,1) = start\_1}
 \DoxyCodeLine{537 }
 \DoxyCodeLine{538             \textcolor{comment}{! Create the initial position of random walker 2 that is within a certain radius}}
-\DoxyCodeLine{539             \textcolor{keywordflow}{do} \textcolor{keywordflow}{while}(norm2(sample\_normal) <= rcut )}
+\DoxyCodeLine{539             \textcolor{keywordflow}{do} \textcolor{keywordflow}{while}(norm2(sample\_normal) <= h2\%rcut )}
 \DoxyCodeLine{540                 \textcolor{keyword}{call }random\_normal(1, sample\_normal)}
 \DoxyCodeLine{541 \textcolor{keywordflow}{            end do} }
 \DoxyCodeLine{542             start\_2 = sample\_normal }
@@ -693,8 +717,8 @@ Definition at line 494 of file vqmc.\+f90.
 \DoxyCodeLine{588 \textcolor{keywordflow}{        end do} }
 \DoxyCodeLine{589 }
 \DoxyCodeLine{590         \textcolor{comment}{! Calculate the acceptance ratio}}
-\DoxyCodeLine{591         accept\_rate = (real(accept, 8) / real(n, 8)) }
-\DoxyCodeLine{592 }
+\DoxyCodeLine{591         accept\_rate = (real(accept, kind=real64) / real(n, kind=real64))\textcolor{comment}{ }}
+\DoxyCodeLine{592 \textcolor{comment}{}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -702,7 +726,7 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespacevqmc_a95b4dedd1b7e0d0c94d4f64055e30ce5_cgraph}
+\includegraphics[width=350pt]{namespacevqmc_ac6ac761c39bd7f67f23e4fb7d7cae066_cgraph}
 \end{center}
 \end{figure}
 

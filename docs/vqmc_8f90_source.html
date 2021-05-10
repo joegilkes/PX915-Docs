@@ -303,8 +303,8 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="comment">! PARAMETERS:</span></div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="comment">!</span></div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="comment">! ----------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00254"></a><span class="lineno"><a class="line" href="namespacevqmc.html#a8b66a706cd8db1d3228f169f9a6964da">  254</a></span>&#160;    <span class="keyword">subroutine </span><a class="code" href="namespacevqmc.html#a8b66a706cd8db1d3228f169f9a6964da">vqmc_qho</a>(sigma, N, burn, thin, alpha_const, x_start, X, &amp; </div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        accept_rate, energy_chain) </div>
+<div class="line"><a name="l00254"></a><span class="lineno"><a class="line" href="namespacevqmc.html#a02b8c351075434a8fd2aa4a590012fdd">  254</a></span>&#160;    <span class="keyword">subroutine </span><a class="code" href="namespacevqmc.html#a02b8c351075434a8fd2aa4a590012fdd">vqmc_qho</a>(sigma, N, burn, thin, alpha_const, X, &amp; </div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        accept_rate, energy_chain, x_start) </div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="keywordtype">implicit none</span> </div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
@@ -318,7 +318,7 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="keywordtype">        real</span>(real64) :: log_prob_n                      <span class="comment">! The natural logarithm of the transition proability</span></div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="keywordtype">        real</span>(real64) :: a_prob_trans                    <span class="comment">! Acceptance ratio of the transition probability </span></div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="keywordtype">        real</span>(real64) :: unif_num                        <span class="comment">! A random sample from the uniform distribution </span></div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="keywordtype">        real</span>(64), <span class="keywordtype">dimension(1)</span> :: start                 <span class="comment">! The starting point of the MCMC chain </span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(1)</span> :: start                 <span class="comment">! The starting point of the MCMC chain </span></div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(1)</span> :: X_n               <span class="comment">! The proposed step </span></div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(1)</span> :: sample_normal     <span class="comment">! A sample from the normal distribution </span></div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <span class="keywordtype">integer</span> :: accept                               <span class="comment">! Number of accepted steps </span></div>
@@ -334,7 +334,7 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            x(1) = start(1)</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="keywordflow">else</span> </div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <span class="comment">! Creates the initial position of the random walker that is whithin a certain radius  </span></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            <span class="keywordflow">do</span> <span class="keywordflow">while</span>(norm2(sample_normal) &lt;= rcut )</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            <span class="keywordflow">do</span> <span class="keywordflow">while</span>(norm2(sample_normal) &lt;= qho%rcut )</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                <span class="keyword">call </span><a class="code" href="namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335">random_normal</a>(1, sample_normal)</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="keywordflow">            end do</span> </div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            start = sample_normal</div>
@@ -399,9 +399,9 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        <span class="keywordflow">if</span> (verbose) <span class="keyword">write</span>(0, <span class="stringliteral">&quot;(&#39;&#39;)&quot;</span>)</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <span class="comment">! Calculate the acceptance ratio </span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        accept_rate = (real(accept, 8) / real(n, 8)) </div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        accept_rate = (real(accept, kind=real64) / real(n, kind=real64)) </div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keyword">end subroutine </span><a class="code" href="namespacevqmc.html#a8b66a706cd8db1d3228f169f9a6964da">vqmc_qho</a></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keyword">end subroutine </span><a class="code" href="namespacevqmc.html#a02b8c351075434a8fd2aa4a590012fdd">vqmc_qho</a></div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="comment">! --------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="comment">! SECTION: VQMC for H_2_plus</span></div>
@@ -416,8 +416,8 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="comment">! PARAMETERS:</span></div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="comment">!</span></div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="comment">! ----------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00381"></a><span class="lineno"><a class="line" href="namespacevqmc.html#a014fdaf26103c82839fcc36c34fb9ea7">  381</a></span>&#160;    <span class="keyword">subroutine </span><a class="code" href="namespacevqmc.html#a014fdaf26103c82839fcc36c34fb9ea7">vqmc_h_2_plus</a>(sigma, N, burn, thin, c_const, R_a, R_b, x_start, &amp; </div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        X, accept_rate, energy_chain)</div>
+<div class="line"><a name="l00381"></a><span class="lineno"><a class="line" href="namespacevqmc.html#a2084652c11e4ee910ecd93c8a935dbd8">  381</a></span>&#160;    <span class="keyword">subroutine </span><a class="code" href="namespacevqmc.html#a2084652c11e4ee910ecd93c8a935dbd8">vqmc_h_2_plus</a>(sigma, N, burn, thin, c_const, R_a, R_b, &amp; </div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        X, accept_rate, energy_chain, x_start)</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <span class="keywordtype">implicit none</span> </div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; </div>
@@ -450,7 +450,7 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            x(:,1) = start </div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        <span class="keywordflow">else</span> </div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;            <span class="comment">! Create the initial position of the random walker that is within a certain radius </span></div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;            <span class="keywordflow">do</span> <span class="keywordflow">while</span>(norm2(sample_normal) &lt;= rcut )</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;            <span class="keywordflow">do</span> <span class="keywordflow">while</span>(norm2(sample_normal) &lt;= h2plus%rcut )</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                <span class="keyword">call </span><a class="code" href="namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335">random_normal</a>(3, sample_normal)</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;<span class="keywordflow">            end do</span> </div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;            start = sample_normal</div>
@@ -496,9 +496,9 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;<span class="keywordflow">        end do</span> </div>
 <div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160; </div>
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;        <span class="comment">! Calculate the acceptance ratio</span></div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;        accept_rate = (real(accept, 8) / real(n, 8)) </div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;        accept_rate = (real(accept, kind=real64) / real(n, kind=real64)) </div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160; </div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    <span class="keyword">end subroutine </span><a class="code" href="namespacevqmc.html#a014fdaf26103c82839fcc36c34fb9ea7">vqmc_h_2_plus</a></div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    <span class="keyword">end subroutine </span><a class="code" href="namespacevqmc.html#a2084652c11e4ee910ecd93c8a935dbd8">vqmc_h_2_plus</a></div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160; </div>
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;<span class="comment">! --------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;<span class="comment">! SECTION: VQMC for H_2</span></div>
@@ -513,8 +513,8 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    <span class="comment">! PARAMETERS:</span></div>
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    <span class="comment">!</span></div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    <span class="comment">! ----------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00494"></a><span class="lineno"><a class="line" href="namespacevqmc.html#a95b4dedd1b7e0d0c94d4f64055e30ce5">  494</a></span>&#160;    <span class="keyword">subroutine </span><a class="code" href="namespacevqmc.html#a95b4dedd1b7e0d0c94d4f64055e30ce5">vqmc_h_2</a>(sigma, N, burn, thin, c_const, R_a, R_b, x_start_1, &amp;</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;        x_start_2, X_1, X_2, accept_rate, energy_chain)</div>
+<div class="line"><a name="l00494"></a><span class="lineno"><a class="line" href="namespacevqmc.html#ac6ac761c39bd7f67f23e4fb7d7cae066">  494</a></span>&#160;    <span class="keyword">subroutine </span><a class="code" href="namespacevqmc.html#ac6ac761c39bd7f67f23e4fb7d7cae066">vqmc_h_2</a>(sigma, N, burn, thin, c_const, R_a, R_b, &amp;</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;        X_1, X_2, accept_rate, energy_chain, x_start_1, x_start_2)</div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160; </div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;        <span class="keywordtype">implicit none</span> </div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160; </div>
@@ -551,14 +551,14 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;            x_2(:,1) = start_2</div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        <span class="keywordflow">else</span> </div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;            <span class="comment">! Create the initial position of random walker 1 that is within a certain radius</span></div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;            <span class="keywordflow">do</span> <span class="keywordflow">while</span>(norm2(sample_normal) &lt;= rcut )</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;            <span class="keywordflow">do</span> <span class="keywordflow">while</span>(norm2(sample_normal) &lt;= h2%rcut )</div>
 <div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;                <span class="keyword">call </span><a class="code" href="namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335">random_normal</a>(1, sample_normal)</div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;<span class="keywordflow">            end do</span> </div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;            start_1 = sample_normal</div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;            x_1(:,1) = start_1</div>
 <div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160; </div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;            <span class="comment">! Create the initial position of random walker 2 that is within a certain radius</span></div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;            <span class="keywordflow">do</span> <span class="keywordflow">while</span>(norm2(sample_normal) &lt;= rcut )</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;            <span class="keywordflow">do</span> <span class="keywordflow">while</span>(norm2(sample_normal) &lt;= h2%rcut )</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;                <span class="keyword">call </span><a class="code" href="namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335">random_normal</a>(1, sample_normal)</div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;<span class="keywordflow">            end do</span> </div>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;            start_2 = sample_normal </div>
@@ -610,9 +610,9 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;<span class="keywordflow">        end do</span> </div>
 <div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160; </div>
 <div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;        <span class="comment">! Calculate the acceptance ratio</span></div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;        accept_rate = (real(accept, 8) / real(n, 8)) </div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;        accept_rate = (real(accept, kind=real64) / real(n, kind=real64)) </div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160; </div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    <span class="keyword">end subroutine </span><a class="code" href="namespacevqmc.html#a95b4dedd1b7e0d0c94d4f64055e30ce5">vqmc_h_2</a></div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    <span class="keyword">end subroutine </span><a class="code" href="namespacevqmc.html#ac6ac761c39bd7f67f23e4fb7d7cae066">vqmc_h_2</a></div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160; </div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;<span class="keyword">end module </span>VQMC</div>
 <div class="ttc" id="anamespaceconstants_html"><div class="ttname"><a href="namespaceconstants.html">constants</a></div><div class="ttdoc">Contains mathematical constants needed throughout the code, all of which are globally accessible.</div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00016">shared_data.f90:16</a></div></div>
@@ -620,16 +620,16 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="ttc" id="anamespaceshared__data_html_af557286c349984a4922cd9ba110bbd71"><div class="ttname"><a href="namespaceshared__data.html#af557286c349984a4922cd9ba110bbd71">shared_data::verbose</a></div><div class="ttdeci">logical verbose</div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00084">shared_data.f90:84</a></div></div>
 <div class="ttc" id="anamespacesolvers_html"><div class="ttname"><a href="namespacesolvers.html">solvers</a></div><div class="ttdoc">Contains local energy and transition probability solvers for available problems.</div><div class="ttdef"><b>Definition:</b> <a href="quantum__solvers_8f90_source.html#l00019">quantum_solvers.f90:19</a></div></div>
 <div class="ttc" id="anamespacevqmc_html"><div class="ttname"><a href="namespacevqmc.html">vqmc</a></div><div class="ttdoc">Contains a random number generator, a sub-routine that draws from a normal distribution and a VQMC so...</div><div class="ttdef"><b>Definition:</b> <a href="vqmc_8f90_source.html#l00020">vqmc.f90:20</a></div></div>
-<div class="ttc" id="anamespacevqmc_html_a014fdaf26103c82839fcc36c34fb9ea7"><div class="ttname"><a href="namespacevqmc.html#a014fdaf26103c82839fcc36c34fb9ea7">vqmc::vqmc_h_2_plus</a></div><div class="ttdeci">subroutine vqmc_h_2_plus(sigma, N, burn, thin, c_const, R_a, R_b, x_start, X, accept_rate, energy_chain)</div><div class="ttdoc">Performs VQMC for H_2_plus</div><div class="ttdef"><b>Definition:</b> <a href="vqmc_8f90_source.html#l00381">vqmc.f90:383</a></div></div>
 <div class="ttc" id="anamespacevqmc_html_a01b80444204a0cd0b5cddde82cbc7651"><div class="ttname"><a href="namespacevqmc.html#a01b80444204a0cd0b5cddde82cbc7651">vqmc::ran1</a></div><div class="ttdeci">subroutine ran1(sample, dseed)</div><div class="ttdoc">Implementation of David Quigley's random number generator.</div><div class="ttdef"><b>Definition:</b> <a href="vqmc_8f90_source.html#l00100">vqmc.f90:101</a></div></div>
+<div class="ttc" id="anamespacevqmc_html_a02b8c351075434a8fd2aa4a590012fdd"><div class="ttname"><a href="namespacevqmc.html#a02b8c351075434a8fd2aa4a590012fdd">vqmc::vqmc_qho</a></div><div class="ttdeci">subroutine vqmc_qho(sigma, N, burn, thin, alpha_const, X, accept_rate, energy_chain, x_start)</div><div class="ttdoc">Performs VQMC for QHO.</div><div class="ttdef"><b>Definition:</b> <a href="vqmc_8f90_source.html#l00254">vqmc.f90:256</a></div></div>
 <div class="ttc" id="anamespacevqmc_html_a1608372d703310a49afc4243ccf27368"><div class="ttname"><a href="namespacevqmc.html#a1608372d703310a49afc4243ccf27368">vqmc::iy</a></div><div class="ttdeci">integer(int64), save iy</div><div class="ttdef"><b>Definition:</b> <a href="vqmc_8f90_source.html#l00034">vqmc.f90:34</a></div></div>
+<div class="ttc" id="anamespacevqmc_html_a2084652c11e4ee910ecd93c8a935dbd8"><div class="ttname"><a href="namespacevqmc.html#a2084652c11e4ee910ecd93c8a935dbd8">vqmc::vqmc_h_2_plus</a></div><div class="ttdeci">subroutine vqmc_h_2_plus(sigma, N, burn, thin, c_const, R_a, R_b, X, accept_rate, energy_chain, x_start)</div><div class="ttdoc">Performs VQMC for H_2_plus</div><div class="ttdef"><b>Definition:</b> <a href="vqmc_8f90_source.html#l00381">vqmc.f90:383</a></div></div>
 <div class="ttc" id="anamespacevqmc_html_a4acb6b64bbac5c4684654d00393f7f24"><div class="ttname"><a href="namespacevqmc.html#a4acb6b64bbac5c4684654d00393f7f24">vqmc::ntab</a></div><div class="ttdeci">integer, parameter ntab</div><div class="ttdef"><b>Definition:</b> <a href="vqmc_8f90_source.html#l00032">vqmc.f90:32</a></div></div>
 <div class="ttc" id="anamespacevqmc_html_a62ec9b662e5d9b46ec37d52ff93cb335"><div class="ttname"><a href="namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335">vqmc::random_normal</a></div><div class="ttdeci">subroutine random_normal(dim, x)</div><div class="ttdoc">Adaptation of numpy's linspace function.</div><div class="ttdef"><b>Definition:</b> <a href="vqmc_8f90_source.html#l00202">vqmc.f90:203</a></div></div>
 <div class="ttc" id="anamespacevqmc_html_a6b89c5b7a64a3e438695787b90a62359"><div class="ttname"><a href="namespacevqmc.html#a6b89c5b7a64a3e438695787b90a62359">vqmc::linspace</a></div><div class="ttdeci">real(real64) function, dimension(:), allocatable linspace(start, end, num)</div><div class="ttdoc">Adaptation of numpy's linspace function.</div><div class="ttdef"><b>Definition:</b> <a href="vqmc_8f90_source.html#l00163">vqmc.f90:164</a></div></div>
 <div class="ttc" id="anamespacevqmc_html_a86db46440794b9ef7cfd9fbf1fd69930"><div class="ttname"><a href="namespacevqmc.html#a86db46440794b9ef7cfd9fbf1fd69930">vqmc::iv</a></div><div class="ttdeci">integer(int64), dimension(ntab), save iv</div><div class="ttdef"><b>Definition:</b> <a href="vqmc_8f90_source.html#l00033">vqmc.f90:33</a></div></div>
-<div class="ttc" id="anamespacevqmc_html_a8b66a706cd8db1d3228f169f9a6964da"><div class="ttname"><a href="namespacevqmc.html#a8b66a706cd8db1d3228f169f9a6964da">vqmc::vqmc_qho</a></div><div class="ttdeci">subroutine vqmc_qho(sigma, N, burn, thin, alpha_const, x_start, X, accept_rate, energy_chain)</div><div class="ttdoc">Performs VQMC for QHO.</div><div class="ttdef"><b>Definition:</b> <a href="vqmc_8f90_source.html#l00254">vqmc.f90:256</a></div></div>
-<div class="ttc" id="anamespacevqmc_html_a95b4dedd1b7e0d0c94d4f64055e30ce5"><div class="ttname"><a href="namespacevqmc.html#a95b4dedd1b7e0d0c94d4f64055e30ce5">vqmc::vqmc_h_2</a></div><div class="ttdeci">subroutine vqmc_h_2(sigma, N, burn, thin, c_const, R_a, R_b, x_start_1, x_start_2, X_1, X_2, accept_rate, energy_chain)</div><div class="ttdoc">Performs VQMC for H_2</div><div class="ttdef"><b>Definition:</b> <a href="vqmc_8f90_source.html#l00494">vqmc.f90:496</a></div></div>
 <div class="ttc" id="anamespacevqmc_html_a986f071589794992c4bc31de25c63976"><div class="ttname"><a href="namespacevqmc.html#a986f071589794992c4bc31de25c63976">vqmc::seed</a></div><div class="ttdeci">integer(int64), public seed</div><div class="ttdef"><b>Definition:</b> <a href="vqmc_8f90_source.html#l00035">vqmc.f90:35</a></div></div>
+<div class="ttc" id="anamespacevqmc_html_ac6ac761c39bd7f67f23e4fb7d7cae066"><div class="ttname"><a href="namespacevqmc.html#ac6ac761c39bd7f67f23e4fb7d7cae066">vqmc::vqmc_h_2</a></div><div class="ttdeci">subroutine vqmc_h_2(sigma, N, burn, thin, c_const, R_a, R_b, X_1, X_2, accept_rate, energy_chain, x_start_1, x_start_2)</div><div class="ttdoc">Performs VQMC for H_2</div><div class="ttdef"><b>Definition:</b> <a href="vqmc_8f90_source.html#l00494">vqmc.f90:496</a></div></div>
 <div class="ttc" id="anamespacevqmc_html_aed182179994b5465f5466b4d909a764e"><div class="ttname"><a href="namespacevqmc.html#aed182179994b5465f5466b4d909a764e">vqmc::init_ran1</a></div><div class="ttdeci">subroutine init_ran1()</div><div class="ttdoc">Initialise random number generator by drawing a seed from /dev/urandom.</div><div class="ttdef"><b>Definition:</b> <a href="vqmc_8f90_source.html#l00057">vqmc.f90:58</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,10 +1,11 @@
 <map id="vqmc::ran1" name="vqmc::ran1">
-<area shape="rect" id="node1" title="Implementation of David Quigley&#39;s random number generator." alt="" coords="573,115,659,141"/>
-<area shape="rect" id="node2" href="$namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335" title="Adaptation of numpy&#39;s linspace function." alt="" coords="376,115,525,141"/>
-<area shape="rect" id="node5" href="$namespacevqmc.html#a95b4dedd1b7e0d0c94d4f64055e30ce5" title="Performs VQMC for H_2" alt="" coords="193,53,313,80"/>
-<area shape="rect" id="node6" href="$namespacevqmc.html#a014fdaf26103c82839fcc36c34fb9ea7" title="Performs VQMC for H_2_plus" alt="" coords="177,171,328,197"/>
-<area shape="rect" id="node7" href="$namespacevqmc.html#a8b66a706cd8db1d3228f169f9a6964da" title="Performs VQMC for QHO." alt="" coords="193,221,313,248"/>
-<area shape="rect" id="node8" href="$namespacetesting.html#adb38a97b7ceaad408410367f1510e997" title="Tests the ran1 function in the vqmc module." alt="" coords="390,5,511,32"/>
-<area shape="rect" id="node3" href="$namespacetesting.html#acbf13e7eaa077016d7d1712b58fc5223" title="Tests the random_normal function in the vqmc module." alt="" coords="183,105,322,146"/>
-<area shape="rect" id="node4" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="5,57,129,84"/>
+<area shape="rect" id="node1" title="Implementation of David Quigley&#39;s random number generator." alt="" coords="672,107,757,133"/>
+<area shape="rect" id="node2" href="$namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335" title="Adaptation of numpy&#39;s linspace function." alt="" coords="475,157,624,184"/>
+<area shape="rect" id="node6" href="$namespacevqmc.html#ac6ac761c39bd7f67f23e4fb7d7cae066" title="Performs VQMC for H_2" alt="" coords="291,56,411,83"/>
+<area shape="rect" id="node7" href="$namespacevqmc.html#a2084652c11e4ee910ecd93c8a935dbd8" title="Performs VQMC for H_2_plus" alt="" coords="276,107,427,133"/>
+<area shape="rect" id="node8" href="$namespacevqmc.html#a02b8c351075434a8fd2aa4a590012fdd" title="Performs VQMC for QHO." alt="" coords="291,224,411,251"/>
+<area shape="rect" id="node9" href="$namespacetesting.html#adb38a97b7ceaad408410367f1510e997" title="Tests the ran1 function in the vqmc module." alt="" coords="489,5,610,32"/>
+<area shape="rect" id="node3" href="$namespacetesting.html#acbf13e7eaa077016d7d1712b58fc5223" title="Tests the random_normal function in the vqmc module." alt="" coords="282,158,421,199"/>
+<area shape="rect" id="node4" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="104,165,228,192"/>
+<area shape="rect" id="node5" href="$driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title=" " alt="" coords="5,195,56,221"/>
 </map>
