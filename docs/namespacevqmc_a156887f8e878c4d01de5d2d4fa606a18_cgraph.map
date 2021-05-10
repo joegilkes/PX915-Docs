@@ -1,5 +1,5 @@
 <map id="vqmc::vqmc_h_2_plus" name="vqmc::vqmc_h_2_plus">
 <area shape="rect" id="node1" title="Performs VQMC for H_2_plus" alt="" coords="5,5,156,32"/>
-<area shape="rect" id="node2" href="$namespacevqmc.html#a01b80444204a0cd0b5cddde82cbc7651" title=" " alt="" coords="401,5,487,32"/>
-<area shape="rect" id="node3" href="$namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335" title=" " alt="" coords="204,31,353,57"/>
+<area shape="rect" id="node2" href="$namespacevqmc.html#a01b80444204a0cd0b5cddde82cbc7651" title="Implementation of David Quigley&#39;s random number generator." alt="" coords="401,5,487,32"/>
+<area shape="rect" id="node3" href="$namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335" title="Adaptation of numpy&#39;s linspace function." alt="" coords="204,31,353,57"/>
 </map>

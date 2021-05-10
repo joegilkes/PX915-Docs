@@ -1,5 +1,5 @@
 <map id="vqmc::random_normal" name="vqmc::random_normal">
-<area shape="rect" id="node1" title=" " alt="" coords="475,97,624,123"/>
+<area shape="rect" id="node1" title="Adaptation of numpy&#39;s linspace function." alt="" coords="475,97,624,123"/>
 <area shape="rect" id="node2" href="$namespacetesting.html#acbf13e7eaa077016d7d1712b58fc5223" title="Tests the random_normal function in the vqmc module." alt="" coords="282,5,421,47"/>
 <area shape="rect" id="node5" href="$namespacevqmc.html#afdead1c964c264b80a7698da1bc3e792" title="Performs VQMC for H_2" alt="" coords="291,71,411,98"/>
 <area shape="rect" id="node6" href="$namespacevqmc.html#a156887f8e878c4d01de5d2d4fa606a18" title="Performs VQMC for H_2_plus" alt="" coords="276,122,427,149"/>
