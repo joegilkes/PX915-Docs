@@ -1,5 +1,5 @@
 <map id="testing::test_random_normal" name="testing::test_random_normal">
 <area shape="rect" id="node1" title="Tests the random_normal function in the vqmc module." alt="" coords="5,5,144,47"/>
-<area shape="rect" id="node2" href="$namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335" title="Adaptation of numpy&#39;s linspace function." alt="" coords="192,13,341,39"/>
-<area shape="rect" id="node3" href="$namespacevqmc.html#a01b80444204a0cd0b5cddde82cbc7651" title="Implementation of David Quigley&#39;s random number generator." alt="" coords="389,13,475,39"/>
+<area shape="rect" id="node2" href="$namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335" title=" " alt="" coords="192,13,341,39"/>
+<area shape="rect" id="node3" href="$namespacevqmc.html#a01b80444204a0cd0b5cddde82cbc7651" title=" " alt="" coords="389,13,475,39"/>
 </map>

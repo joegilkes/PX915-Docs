@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['linspace_36',['linspace',['../namespacevqmc.html#a6b89c5b7a64a3e438695787b90a62359',1,'vqmc']]],
-  ['logid_37',['logid',['../namespaceshared__data.html#af5798eba5b1c4594d4c3c9648d732e9e',1,'shared_data']]]
+  ['m_5felec_36',['m_elec',['../namespaceconstants.html#a4f996dcd1b7e4cd0bc798d8e68bbdf70',1,'constants']]]
 ];

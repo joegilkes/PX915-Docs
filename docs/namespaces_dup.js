@@ -55,7 +55,6 @@ var namespaces_dup =
     [ "vqmc", "namespacevqmc.html", [
       [ "init_ran1", "namespacevqmc.html#aed182179994b5465f5466b4d909a764e", null ],
       [ "ran1", "namespacevqmc.html#a01b80444204a0cd0b5cddde82cbc7651", null ],
-      [ "linspace", "namespacevqmc.html#a6b89c5b7a64a3e438695787b90a62359", null ],
       [ "random_normal", "namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335", null ],
       [ "vqmc_qho", "namespacevqmc.html#af750525012cfc872fca742b9ef803120", null ],
       [ "vqmc_h_2_plus", "namespacevqmc.html#a156887f8e878c4d01de5d2d4fa606a18", null ],
@@ -68,12 +67,12 @@ var namespaces_dup =
     [ "write", "namespacewrite.html", null ],
     [ "write_netcdf", "namespacewrite__netcdf.html", [
       [ "error_check", "namespacewrite__netcdf.html#aca2bb13e88c9dbfc7d0027b1bd83d9d0", null ],
-      [ "write_qho_main", "namespacewrite__netcdf.html#ae2722e18129ba78f02541fa0ae49f886", null ],
-      [ "write_qho_equilibration", "namespacewrite__netcdf.html#a4b9b251a06719d1b0470cfc1f03883ab", null ],
-      [ "write_h2plus_main", "namespacewrite__netcdf.html#a818c3a109a649bbf802adaa2a937a458", null ],
-      [ "write_h2plus_equilibration", "namespacewrite__netcdf.html#a45c5f8affdc7b8d275bc35f8b70337f4", null ],
-      [ "write_h2_main", "namespacewrite__netcdf.html#a8b125766a34e4cc2d72228a5bd109ce0", null ],
-      [ "write_h2_equilibration", "namespacewrite__netcdf.html#adc83694755df0f3d9228fb9aa0874452", null ],
+      [ "write_qho_main", "namespacewrite__netcdf.html#aa4cf75f725a9e7988ba2c58eb09fc18a", null ],
+      [ "write_qho_equilibration", "namespacewrite__netcdf.html#a1b78afa95c272f816051dabf32e3e42d", null ],
+      [ "write_h2plus_main", "namespacewrite__netcdf.html#aef023d7b03751b08f279dc05728a4d11", null ],
+      [ "write_h2plus_equilibration", "namespacewrite__netcdf.html#a91ed047f7a75e6fb662d177f1f966ae8", null ],
+      [ "write_h2_main", "namespacewrite__netcdf.html#a2a59a0a3771d8557ff4da920f78a7b86", null ],
+      [ "write_h2_equilibration", "namespacewrite__netcdf.html#ae055195ca247dba21a04d1f38a96d72a", null ],
       [ "append_to_array", "namespacewrite__netcdf.html#a6830bd805591aad1ec622d12037dd99d", null ]
     ] ]
 ];

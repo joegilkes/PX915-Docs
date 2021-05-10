@@ -41,15 +41,15 @@ Definition at line 13 of file input\+\_\+parser.\+f90.
 \DoxyCodeLine{17     \textcolor{keywordtype}{logical}, \textcolor{keywordtype}{intent(out)} :: run\_equil, verbose}
 \DoxyCodeLine{18 }
 \DoxyCodeLine{19     \textcolor{comment}{! Define the namelist}}
-\DoxyCodeLine{20     namelist /control/ system, run\_equil, verbose}
+\DoxyCodeLine{20     namelist /problem/ system, run\_equil, verbose}
 \DoxyCodeLine{21 }
 \DoxyCodeLine{22     \textcolor{comment}{! Open the file}}
 \DoxyCodeLine{23     \textcolor{keyword}{open}(action=\textcolor{stringliteral}{'read'}, file=\textcolor{stringliteral}{'params.txt'}, iostat=rc, newunit=fu)}
 \DoxyCodeLine{24 }
 \DoxyCodeLine{25     \textcolor{comment}{! Read the namelist}}
-\DoxyCodeLine{26     \textcolor{keyword}{read}(nml=control, iostat=rc, unit=fu)}
+\DoxyCodeLine{26     \textcolor{keyword}{read}(nml=problem, iostat=rc, unit=fu)}
 \DoxyCodeLine{27     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{28         print*, \textcolor{stringliteral}{'Error: Invalid CONTROL namelist format in file "{}params.txt"{}.'}}
+\DoxyCodeLine{28         print*, \textcolor{stringliteral}{'Error: Invalid PROBLEM namelist format in file "{}params.txt"{}.'}}
 \DoxyCodeLine{29 \textcolor{keywordflow}{    end if}}
 \DoxyCodeLine{30     }
 \DoxyCodeLine{31     \textcolor{comment}{! Close the file}}
@@ -62,7 +62,7 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespaceinput__parser_a802002d813d9cea7f6194a28752b37f2_icgraph}
+\includegraphics[width=302pt]{namespaceinput__parser_a802002d813d9cea7f6194a28752b37f2_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{namespaceinput__parser_aa9a77c1395d69d54ce38420acdb3f87f}\label{namespaceinput__parser_aa9a77c1395d69d54ce38420acdb3f87f}} 
@@ -102,7 +102,7 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespaceinput__parser_aa9a77c1395d69d54ce38420acdb3f87f_icgraph}
+\includegraphics[width=323pt]{namespaceinput__parser_aa9a77c1395d69d54ce38420acdb3f87f_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{namespaceinput__parser_a3ebe204fa7f63e19fbf29c36f580ee74}\label{namespaceinput__parser_a3ebe204fa7f63e19fbf29c36f580ee74}} 
@@ -142,7 +142,7 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespaceinput__parser_a3ebe204fa7f63e19fbf29c36f580ee74_icgraph}
+\includegraphics[width=302pt]{namespaceinput__parser_a3ebe204fa7f63e19fbf29c36f580ee74_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{namespaceinput__parser_a163a65b1b9201a421da32ba2a7c92148}\label{namespaceinput__parser_a163a65b1b9201a421da32ba2a7c92148}} 
@@ -182,7 +182,7 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespaceinput__parser_a163a65b1b9201a421da32ba2a7c92148_icgraph}
+\includegraphics[width=318pt]{namespaceinput__parser_a163a65b1b9201a421da32ba2a7c92148_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{namespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea}\label{namespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea}} 
@@ -254,14 +254,6 @@ Here is the call graph for this function\+:
 \begin{center}
 \leavevmode
 \includegraphics[width=323pt]{namespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=247pt]{namespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea_icgraph}
 \end{center}
 \end{figure}
 

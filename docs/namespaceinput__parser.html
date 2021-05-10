@@ -156,15 +156,15 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">logical</span>, <span class="keywordtype">intent(out)</span> :: run_equil, verbose</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">! Define the namelist</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    namelist /control/ system, run_equil, verbose</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    namelist /problem/ system, run_equil, verbose</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">! Open the file</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">open</span>(action=<span class="stringliteral">&#39;read&#39;</span>, file=<span class="stringliteral">&#39;params.txt&#39;</span>, iostat=rc, newunit=fu)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">! Read the namelist</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">read</span>(nml=control, iostat=rc, unit=fu)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">read</span>(nml=problem, iostat=rc, unit=fu)</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">if</span> (rc /= 0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        print*, <span class="stringliteral">&#39;Error: Invalid CONTROL namelist format in file &quot;params.txt&quot;.&#39;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        print*, <span class="stringliteral">&#39;Error: Invalid PROBLEM namelist format in file &quot;params.txt&quot;.&#39;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordflow">    end if</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">! Close the file</span></div>
@@ -177,9 +177,8 @@ Variables</h2></td></tr>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespaceinput__parser_a802002d813d9cea7f6194a28752b37f2_icgraph.png" border="0" usemap="#anamespaceinput__parser_a802002d813d9cea7f6194a28752b37f2_icgraph" alt=""/></div>
 <map name="anamespaceinput__parser_a802002d813d9cea7f6194a28752b37f2_icgraph" id="anamespaceinput__parser_a802002d813d9cea7f6194a28752b37f2_icgraph">
-<area shape="rect" title=" " alt="" coords="276,5,400,47"/>
-<area shape="rect" href="namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea" title=" " alt="" coords="104,5,228,47"/>
-<area shape="rect" href="driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title=" " alt="" coords="5,13,56,39"/>
+<area shape="rect" title=" " alt="" coords="177,5,301,47"/>
+<area shape="rect" href="namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea" title=" " alt="" coords="5,5,129,47"/>
 </map>
 </div>
 
@@ -227,9 +226,8 @@ Variables</h2></td></tr>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespaceinput__parser_aa9a77c1395d69d54ce38420acdb3f87f_icgraph.png" border="0" usemap="#anamespaceinput__parser_aa9a77c1395d69d54ce38420acdb3f87f_icgraph" alt=""/></div>
 <map name="anamespaceinput__parser_aa9a77c1395d69d54ce38420acdb3f87f_icgraph" id="anamespaceinput__parser_aa9a77c1395d69d54ce38420acdb3f87f_icgraph">
-<area shape="rect" title=" " alt="" coords="276,13,428,39"/>
-<area shape="rect" href="namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea" title=" " alt="" coords="104,5,228,47"/>
-<area shape="rect" href="driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title=" " alt="" coords="5,13,56,39"/>
+<area shape="rect" title=" " alt="" coords="177,13,329,39"/>
+<area shape="rect" href="namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea" title=" " alt="" coords="5,5,129,47"/>
 </map>
 </div>
 
@@ -277,9 +275,8 @@ Variables</h2></td></tr>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespaceinput__parser_a3ebe204fa7f63e19fbf29c36f580ee74_icgraph.png" border="0" usemap="#anamespaceinput__parser_a3ebe204fa7f63e19fbf29c36f580ee74_icgraph" alt=""/></div>
 <map name="anamespaceinput__parser_a3ebe204fa7f63e19fbf29c36f580ee74_icgraph" id="anamespaceinput__parser_a3ebe204fa7f63e19fbf29c36f580ee74_icgraph">
-<area shape="rect" title=" " alt="" coords="276,5,400,47"/>
-<area shape="rect" href="namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea" title=" " alt="" coords="104,5,228,47"/>
-<area shape="rect" href="driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title=" " alt="" coords="5,13,56,39"/>
+<area shape="rect" title=" " alt="" coords="177,5,301,47"/>
+<area shape="rect" href="namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea" title=" " alt="" coords="5,5,129,47"/>
 </map>
 </div>
 
@@ -327,9 +324,8 @@ Variables</h2></td></tr>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespaceinput__parser_a163a65b1b9201a421da32ba2a7c92148_icgraph.png" border="0" usemap="#anamespaceinput__parser_a163a65b1b9201a421da32ba2a7c92148_icgraph" alt=""/></div>
 <map name="anamespaceinput__parser_a163a65b1b9201a421da32ba2a7c92148_icgraph" id="anamespaceinput__parser_a163a65b1b9201a421da32ba2a7c92148_icgraph">
-<area shape="rect" title=" " alt="" coords="276,13,421,39"/>
-<area shape="rect" href="namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea" title=" " alt="" coords="104,5,228,47"/>
-<area shape="rect" href="driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title=" " alt="" coords="5,13,56,39"/>
+<area shape="rect" title=" " alt="" coords="177,13,323,39"/>
+<area shape="rect" href="namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea" title=" " alt="" coords="5,5,129,47"/>
 </map>
 </div>
 
@@ -409,17 +405,6 @@ Variables</h2></td></tr>
 <area shape="rect" href="namespaceinput__parser.html#a163a65b1b9201a421da32ba2a7c92148" title=" " alt="" coords="181,71,326,98"/>
 <area shape="rect" href="namespaceinput__parser.html#a3ebe204fa7f63e19fbf29c36f580ee74" title=" " alt="" coords="191,123,315,164"/>
 <area shape="rect" href="namespaceinput__parser.html#aa9a77c1395d69d54ce38420acdb3f87f" title=" " alt="" coords="177,189,329,215"/>
-</map>
-</div>
-<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="namespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea_icgraph.png" border="0" usemap="#anamespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea_icgraph" alt=""/></div>
-<map name="anamespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea_icgraph" id="anamespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea_icgraph">
-<area shape="rect" title=" " alt="" coords="104,5,228,47"/>
-<area shape="rect" href="driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title=" " alt="" coords="5,13,56,39"/>
 </map>
 </div>
 

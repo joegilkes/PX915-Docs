@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['linspace_144',['linspace',['../namespacevqmc.html#a6b89c5b7a64a3e438695787b90a62359',1,'vqmc']]]
+  ['qho_5fenergy_141',['qho_energy',['../namespacesolvers.html#a4f0054c0d0d2f5080c92a04557feaf52',1,'solvers']]],
+  ['qho_5fprob_142',['qho_prob',['../namespacesolvers.html#a722edf182d188ad1db7fa6a675fea13c',1,'solvers']]]
 ];
