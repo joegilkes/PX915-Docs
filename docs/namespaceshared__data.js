@@ -6,8 +6,6 @@ var namespaceshared__data =
     [ "system", "namespaceshared__data.html#ad837e8f897bde556513b9a9c8135b904", null ],
     [ "run_equil", "namespaceshared__data.html#a9285af0408bde68c647a77c75900929d", null ],
     [ "verbose", "namespaceshared__data.html#af557286c349984a4922cd9ba110bbd71", null ],
-    [ "prob", "namespaceshared__data.html#a90ae0ab031f373ebe8630207134a16e8", null ],
-    [ "local_energy", "namespaceshared__data.html#af2dc6565143614b66ee8c02adf611c60", null ],
     [ "qho", "namespaceshared__data.html#a7503c2b3bd10f3ee43c4cf9964c42ab2", null ],
     [ "h2plus", "namespaceshared__data.html#a1e9e95c9ea52c9aa2ec2f05b8d65e4f3", null ],
     [ "h2", "namespaceshared__data.html#a1703912ee00414a4aaf1a41d3c167694", null ]
