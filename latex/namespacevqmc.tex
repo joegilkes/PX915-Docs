@@ -423,7 +423,7 @@ Definition at line 254 of file vqmc.\+f90.
 \DoxyCodeLine{348                     \textcolor{comment}{! Increment by the number of accepted steps }}
 \DoxyCodeLine{349                     accept = 1 + accept }
 \DoxyCodeLine{350 }
-\DoxyCodeLine{351                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((i > (burn + 1)) .and. (thin\_counter == thin)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{351                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((i > (burn + 1)) .and. (thin\_counter == (thin +\textcolor{comment}{ 1))) }\textcolor{keywordflow}{then}}
 \DoxyCodeLine{352                     \textcolor{comment}{! Increment the reset counter }}
 \DoxyCodeLine{353                     reset\_counter = 1 + reset\_counter}
 \DoxyCodeLine{354                     \textcolor{comment}{! Add to the burn and thinned MCMC chain}}
@@ -450,7 +450,7 @@ Definition at line 254 of file vqmc.\+f90.
 \DoxyCodeLine{375                     energy\_chain(i -\/ burn) = qho\_energy(alpha\_const, x(i\textcolor{comment}{-\/1))}}
 \DoxyCodeLine{376 \textcolor{comment}{}}
 \DoxyCodeLine{377                     acceptance = \textcolor{stringliteral}{'N'}}
-\DoxyCodeLine{378                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((i > (burn + 1)) .and. (thin\_counter == thin)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{378                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((i > (burn + 1)) .and. (thin\_counter == (thin +\textcolor{comment}{ 1))) }\textcolor{keywordflow}{then}}
 \DoxyCodeLine{379                     x\_burnt(i -\/ burn -\/ (reset\_counter * thin)) = x(i-\/1)}
 \DoxyCodeLine{380                     energy\_chain(i -\/ burn -\/ (reset\_counter * thin)) = qho\_energy\textcolor{comment}{(alpha\_const, x(i-\/1))}}
 \DoxyCodeLine{381 \textcolor{comment}{}                    thin\_counter = 0 }
