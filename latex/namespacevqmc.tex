@@ -209,10 +209,10 @@ Definition at line 111 of file vqmc.\+f90.
 \DoxyCodeLine{141             log\_prob\_n = log(qho\_prob(alpha\_const, x(i-\/1), x\_n(1)))}
 \DoxyCodeLine{142             a\_prob\_trans = min(1.0\_real64, exp(log\_prob\_n))}
 \DoxyCodeLine{143             }
-\DoxyCodeLine{144             \textcolor{keyword}{call }random\_number(unif\_num)}
+\DoxyCodeLine{144             \textcolor{keyword}{call }ran1(unif\_num, seed)}
 \DoxyCodeLine{145 }
-\DoxyCodeLine{146             \textcolor{keywordflow}{if} (a\_prob\_trans <= unif\_num) \textcolor{keywordflow}{then} }
-\DoxyCodeLine{147                 x(i) = x\_n(i) }
+\DoxyCodeLine{146             \textcolor{keywordflow}{if} (a\_prob\_trans => unif\_num) \textcolor{keywordflow}{then} }
+\DoxyCodeLine{147                 x(i) = x\_n(1) }
 \DoxyCodeLine{148                 accept =  1 + accept}
 \DoxyCodeLine{149                 energy\_chain(i) = qho\_energy(alpha\_const, x\_n(1))}
 \DoxyCodeLine{150             \textcolor{keywordflow}{else} }
@@ -238,7 +238,7 @@ Here is the call graph for this function\+:
 \index{vqmc@{vqmc}!vqmc\_h\_2\_plus@{vqmc\_h\_2\_plus}}
 \index{vqmc\_h\_2\_plus@{vqmc\_h\_2\_plus}!vqmc@{vqmc}}
 \doxysubsubsection{\texorpdfstring{vqmc\_h\_2\_plus()}{vqmc\_h\_2\_plus()}}
-{\footnotesize\ttfamily subroutine vqmc\+::vqmc\+\_\+h\+\_\+2\+\_\+plus (\begin{DoxyParamCaption}\item[{real(real64), intent(in)}]{sigma,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{burn,  }\item[{integer, intent(in)}]{thin,  }\item[{real(real64), dimension(\+:)}]{c\+\_\+const,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+a,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+b,  }\item[{real(real64), dimension(\+:, \+:), intent(out), allocatable}]{X,  }\item[{real(real64), intent(out)}]{accept\+\_\+rate,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{energy\+\_\+chain }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily subroutine vqmc\+::vqmc\+\_\+h\+\_\+2\+\_\+plus (\begin{DoxyParamCaption}\item[{real(real64), intent(in)}]{sigma,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{burn,  }\item[{integer, intent(in)}]{thin,  }\item[{real(real64), dimension(\+:), intent(in)}]{c\+\_\+const,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+a,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+b,  }\item[{real(real64), dimension(\+:, \+:), intent(out), allocatable}]{X,  }\item[{real(real64), intent(out)}]{accept\+\_\+rate,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{energy\+\_\+chain }\end{DoxyParamCaption})}
 
 
 
@@ -250,7 +250,7 @@ Definition at line 162 of file vqmc.\+f90.
 \DoxyCodeLine{165 }
 \DoxyCodeLine{166 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(3)} :: R\_a, R\_b}
 \DoxyCodeLine{167 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: sigma}
-\DoxyCodeLine{168 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)} :: c\_const }
+\DoxyCodeLine{168 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} \textcolor{keywordtype}{dimension(:)} :: c\_const }
 \DoxyCodeLine{169         \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N, burn, thin }
 \DoxyCodeLine{170          }
 \DoxyCodeLine{171 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: accept\_rate}
@@ -279,9 +279,9 @@ Definition at line 162 of file vqmc.\+f90.
 \DoxyCodeLine{194             log\_prob\_n = log(h\_2\_plus\_prob(c\_const, x(:, i-\/1), x\_n, r\_a,\textcolor{comment}{ r\_b))}}
 \DoxyCodeLine{195 \textcolor{comment}{}            a\_prob\_trans = min(1.0\_real64, exp(log\_prob\_n))}
 \DoxyCodeLine{196             }
-\DoxyCodeLine{197             \textcolor{keyword}{call }random\_number(unif\_num)}
+\DoxyCodeLine{197             \textcolor{keyword}{call }ran1(unif\_num, seed)}
 \DoxyCodeLine{198 }
-\DoxyCodeLine{199             \textcolor{keywordflow}{if} (a\_prob\_trans <= unif\_num) \textcolor{keywordflow}{then} }
+\DoxyCodeLine{199             \textcolor{keywordflow}{if} (a\_prob\_trans => unif\_num) \textcolor{keywordflow}{then} }
 \DoxyCodeLine{200                 x(:, i) = x\_n }
 \DoxyCodeLine{201                 accept =  1 + accept}
 \DoxyCodeLine{202                 energy\_chain(i) = h\_2\_plus\_energy(c\_const, x\_n, r\_a, r\_b\textcolor{comment}{)}}
@@ -358,9 +358,9 @@ Definition at line 216 of file vqmc.\+f90.
 \DoxyCodeLine{256             log\_prob\_n = log(h\_2\_prob(c\_const, x\_1(:, i-\/1), x\_2(:, i-\/1),\textcolor{comment}{ x\_n\_1, x\_n\_2, r\_a, r\_b))}}
 \DoxyCodeLine{257 \textcolor{comment}{}            a\_prob\_trans = min(1.0\_real64, exp(log\_prob\_n))}
 \DoxyCodeLine{258             }
-\DoxyCodeLine{259             \textcolor{keyword}{call }random\_number(unif\_num)}
+\DoxyCodeLine{259             \textcolor{keyword}{call }ran1(unif\_num, seed)}
 \DoxyCodeLine{260 }
-\DoxyCodeLine{261             \textcolor{keywordflow}{if} (a\_prob\_trans <= unif\_num) \textcolor{keywordflow}{then} }
+\DoxyCodeLine{261             \textcolor{keywordflow}{if} (a\_prob\_trans => unif\_num) \textcolor{keywordflow}{then} }
 \DoxyCodeLine{262                 x\_1(:, i) = x\_n\_1}
 \DoxyCodeLine{263                 x\_2(:, i) = x\_n\_2 }
 \DoxyCodeLine{264                 accept =  1 + accept}
@@ -376,8 +376,6 @@ Definition at line 216 of file vqmc.\+f90.
 \DoxyCodeLine{274 }
 \DoxyCodeLine{275         accept\_rate = accept / n }
 \DoxyCodeLine{276 }
-\DoxyCodeLine{277         total\_energy = total\_energy / accept}
-\DoxyCodeLine{278 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
