@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ntab_177',['ntab',['../namespacevqmc.html#a4acb6b64bbac5c4684654d00393f7f24',1,'vqmc']]]
+  ['m_5felec_178',['m_elec',['../namespaceconstants.html#a4f996dcd1b7e4cd0bc798d8e68bbdf70',1,'constants']]]
 ];
