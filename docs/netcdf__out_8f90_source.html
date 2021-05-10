@@ -117,10 +117,10 @@ $(document).ready(function(){initNavTree('netcdf__out_8f90_source.html',''); ini
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">! Write NetCDF QHO main output</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespacewrite__netcdf.html#ae2722e18129ba78f02541fa0ae49f886">   24</a></span>&#160;<span class="keyword">subroutine </span><a class="code" href="namespacewrite__netcdf.html#ae2722e18129ba78f02541fa0ae49f886">write_qho_main</a>(alpha_array,energy_array,filename,ierr,QHO,accept_rate)</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">! Declaring input variables</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: alpha_array, energy_array</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">    real</span>(real64), <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: alpha_array, energy_array</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">intent(in)</span> :: filename</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">type</span>(<a class="code" href="structshared__data_1_1qho__type.html">qho_type</a>), <span class="keywordtype">intent(in)</span> :: QHO</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span> :: accept_rate</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">    real</span>(real64), <span class="keywordtype">intent(in)</span> :: accept_rate</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">! Declaring other variables</span></div>
