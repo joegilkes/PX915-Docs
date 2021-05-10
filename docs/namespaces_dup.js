@@ -53,6 +53,7 @@ var namespaces_dup =
     [ "visualisation", "namespacevisualisation.html", null ],
     [ "visualise", "namespacevisualise.html", null ],
     [ "vqmc", "namespacevqmc.html", [
+      [ "linspace", "namespacevqmc.html#a6b89c5b7a64a3e438695787b90a62359", null ],
       [ "init_ran1", "namespacevqmc.html#aed182179994b5465f5466b4d909a764e", null ],
       [ "ran1", "namespacevqmc.html#a01b80444204a0cd0b5cddde82cbc7651", null ],
       [ "random_normal", "namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335", null ],

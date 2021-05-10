@@ -1,6 +1,5 @@
 <map id="solvers::h_2_energy" name="solvers::h_2_energy">
-<area shape="rect" id="node1" title="Calculates local energy for the &#160;problem." alt="" coords="388,31,524,57"/>
+<area shape="rect" id="node1" title="Calculates local energy for the &#160;problem." alt="" coords="388,5,524,32"/>
 <area shape="rect" id="node2" href="$namespacetesting.html#a313d78f649070a104e89a7535811d6a5" title="Tests the H_2_Energy function in the solvers module." alt="" coords="177,5,340,32"/>
-<area shape="rect" id="node4" href="$namespacevqmc.html#afdead1c964c264b80a7698da1bc3e792" title=" " alt="" coords="199,56,319,83"/>
 <area shape="rect" id="node3" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="5,5,129,32"/>
 </map>
