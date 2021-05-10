@@ -1,9 +1,9 @@
 <map id="vqmc::ran1" name="vqmc::ran1">
 <area shape="rect" id="node1" title=" " alt="" coords="672,107,757,133"/>
 <area shape="rect" id="node2" href="$namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335" title=" " alt="" coords="475,157,624,184"/>
-<area shape="rect" id="node6" href="$namespacevqmc.html#afdead1c964c264b80a7698da1bc3e792" title=" " alt="" coords="291,56,411,83"/>
-<area shape="rect" id="node7" href="$namespacevqmc.html#a156887f8e878c4d01de5d2d4fa606a18" title=" " alt="" coords="276,107,427,133"/>
-<area shape="rect" id="node8" href="$namespacevqmc.html#af750525012cfc872fca742b9ef803120" title=" " alt="" coords="291,224,411,251"/>
+<area shape="rect" id="node6" href="$namespacevqmc.html#afdead1c964c264b80a7698da1bc3e792" title="Performs VQMC for H_2" alt="" coords="291,56,411,83"/>
+<area shape="rect" id="node7" href="$namespacevqmc.html#a156887f8e878c4d01de5d2d4fa606a18" title="Performs VQMC for H_2_plus" alt="" coords="276,107,427,133"/>
+<area shape="rect" id="node8" href="$namespacevqmc.html#af750525012cfc872fca742b9ef803120" title="Performs VQMC for QHO." alt="" coords="291,224,411,251"/>
 <area shape="rect" id="node9" href="$namespacetesting.html#adb38a97b7ceaad408410367f1510e997" title="Tests the ran1 function in the vqmc module." alt="" coords="489,5,610,32"/>
 <area shape="rect" id="node3" href="$namespacetesting.html#acbf13e7eaa077016d7d1712b58fc5223" title="Tests the random_normal function in the vqmc module." alt="" coords="282,158,421,199"/>
 <area shape="rect" id="node4" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="104,165,228,192"/>
