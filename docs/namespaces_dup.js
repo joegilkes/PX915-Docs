@@ -21,11 +21,6 @@ var namespaces_dup =
       [ "fu", "namespaceinput__parser.html#a209ae7e3892e6b6dcbe9137fdeb0875f", null ],
       [ "rc", "namespaceinput__parser.html#a0d29f515c2bc6f306a8576c1b4253c8d", null ]
     ] ],
-    [ "netcdf_out", "namespacenetcdf__out.html", [
-      [ "error_check", "namespacenetcdf__out.html#a7101fa517ac1fac09dfec141a7b18eee", null ],
-      [ "write_array", "namespacenetcdf__out.html#aafe1ac30c27bd3b870ecf2a0deb045ae", null ],
-      [ "append_to_array", "namespacenetcdf__out.html#a8a7c7a548cdc46bdf91642e3cba8a327", null ]
-    ] ],
     [ "shared_data", "namespaceshared__data.html", "namespaceshared__data" ],
     [ "solvers", "namespacesolvers.html", [
       [ "qho_prob", "namespacesolvers.html#a722edf182d188ad1db7fa6a675fea13c", null ],
@@ -69,5 +64,15 @@ var namespaces_dup =
       [ "iy", "namespacevqmc.html#a1608372d703310a49afc4243ccf27368", null ],
       [ "seed", "namespacevqmc.html#a986f071589794992c4bc31de25c63976", null ]
     ] ],
-    [ "write", "namespacewrite.html", null ]
+    [ "write", "namespacewrite.html", null ],
+    [ "write_netcdf", "namespacewrite__netcdf.html", [
+      [ "error_check", "namespacewrite__netcdf.html#aca2bb13e88c9dbfc7d0027b1bd83d9d0", null ],
+      [ "write_qho_main", "namespacewrite__netcdf.html#aa4cf75f725a9e7988ba2c58eb09fc18a", null ],
+      [ "write_qho_equilibration", "namespacewrite__netcdf.html#a1b78afa95c272f816051dabf32e3e42d", null ],
+      [ "write_h2plus_main", "namespacewrite__netcdf.html#aef023d7b03751b08f279dc05728a4d11", null ],
+      [ "write_h2plus_equilibration", "namespacewrite__netcdf.html#a91ed047f7a75e6fb662d177f1f966ae8", null ],
+      [ "write_h2_main", "namespacewrite__netcdf.html#a2a59a0a3771d8557ff4da920f78a7b86", null ],
+      [ "write_h2_equilibration", "namespacewrite__netcdf.html#ae055195ca247dba21a04d1f38a96d72a", null ],
+      [ "append_to_array", "namespacewrite__netcdf.html#a6830bd805591aad1ec622d12037dd99d", null ]
+    ] ]
 ];

@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('driver_8f90_source.html',''); initResi
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    <span class="keywordtype">use </span><a class="code" href="namespaceinput__parser.html">input_parser</a></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    <span class="keywordtype">use </span><a class="code" href="namespacesolvers.html">solvers</a></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keywordtype">use </span><a class="code" href="namespacevqmc.html">vqmc</a></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordtype">use </span><a class="code" href="namespacenetcdf__out.html">netcdf_out</a></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordtype">use </span>netcdf_out</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordtype">implicit none</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
@@ -129,7 +129,7 @@ $(document).ready(function(){initNavTree('driver_8f90_source.html',''); initResi
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordflow">    end select</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">!Writing the results to NetCDF files</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">subroutine </span><a class="code" href="namespacenetcdf__out.html#aafe1ac30c27bd3b870ecf2a0deb045ae">write_array</a>(array,filename,ierr) <span class="comment">!missing the ability to write individual energies to the netcdf</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">subroutine </span>write_array(array,filename,ierr) <span class="comment">!missing the ability to write individual energies to the netcdf</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
@@ -151,8 +151,6 @@ $(document).ready(function(){initNavTree('driver_8f90_source.html',''); initResi
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">end program </span>main</div>
 <div class="ttc" id="anamespaceinput__parser_html"><div class="ttname"><a href="namespaceinput__parser.html">input_parser</a></div><div class="ttdef"><b>Definition:</b> <a href="input__parser_8f90_source.html#l00001">input_parser.f90:1</a></div></div>
 <div class="ttc" id="anamespaceinput__parser_html_a3c35b8a909f420e7aa4f19d1392d74ea"><div class="ttname"><a href="namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea">input_parser::read_inputs</a></div><div class="ttdeci">subroutine read_inputs()</div><div class="ttdef"><b>Definition:</b> <a href="input__parser_8f90_source.html#l00103">input_parser.f90:104</a></div></div>
-<div class="ttc" id="anamespacenetcdf__out_html"><div class="ttname"><a href="namespacenetcdf__out.html">netcdf_out</a></div><div class="ttdef"><b>Definition:</b> <a href="netcdf__out_8f90_source.html#l00008">netcdf_out.f90:8</a></div></div>
-<div class="ttc" id="anamespacenetcdf__out_html_aafe1ac30c27bd3b870ecf2a0deb045ae"><div class="ttname"><a href="namespacenetcdf__out.html#aafe1ac30c27bd3b870ecf2a0deb045ae">netcdf_out::write_array</a></div><div class="ttdeci">subroutine write_array(array, filename, ierr)</div><div class="ttdef"><b>Definition:</b> <a href="netcdf__out_8f90_source.html#l00027">netcdf_out.f90:28</a></div></div>
 <div class="ttc" id="anamespaceshared__data_html"><div class="ttname"><a href="namespaceshared__data.html">shared_data</a></div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00036">shared_data.f90:36</a></div></div>
 <div class="ttc" id="anamespaceshared__data_html_a7503c2b3bd10f3ee43c4cf9964c42ab2"><div class="ttname"><a href="namespaceshared__data.html#a7503c2b3bd10f3ee43c4cf9964c42ab2">shared_data::qho</a></div><div class="ttdeci">type(qho_type) qho</div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00087">shared_data.f90:87</a></div></div>
 <div class="ttc" id="anamespaceshared__data_html_a90ae0ab031f373ebe8630207134a16e8"><div class="ttname"><a href="namespaceshared__data.html#a90ae0ab031f373ebe8630207134a16e8">shared_data::prob</a></div><div class="ttdeci">procedure, pointer prob</div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00086">shared_data.f90:86</a></div></div>
