@@ -131,7 +131,7 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="input__parser_8f90_source.html#l00015">15</a> of file <a class="el" href="input__parser_8f90_source.html">input_parser.f90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="netcdf__out_8f90_source.html#l00015">15</a> of file <a class="el" href="netcdf__out_8f90_source.html">netcdf_out.f90</a>.</p>
 <div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">integer</span>,<span class="keywordtype">intent(in)</span> :: ierr</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">if</span> (ierr /= nf90_noerr) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        print*, trim(nf90_strerror(ierr))</div>
@@ -167,13 +167,13 @@ Functions/Subroutines</h2></td></tr>
         <tr>
           <td class="memname">subroutine write_netcdf::write_qho_main </td>
           <td>(</td>
-          <td class="paramtype">real, dimension(:), intent(in)&#160;</td>
+          <td class="paramtype">real(real64), dimension(:), intent(in)&#160;</td>
           <td class="paramname"><em>alpha_array</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real, dimension(:), intent(in)&#160;</td>
+          <td class="paramtype">real(real64), dimension(:), intent(in)&#160;</td>
           <td class="paramname"><em>energy_array</em>, </td>
         </tr>
         <tr>
@@ -197,7 +197,7 @@ Functions/Subroutines</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real, intent(in)&#160;</td>
+          <td class="paramtype">real(real64), intent(in)&#160;</td>
           <td class="paramname"><em>accept_rate</em>&#160;</td>
         </tr>
         <tr>
@@ -208,12 +208,12 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="input__parser_8f90_source.html#l00024">24</a> of file <a class="el" href="input__parser_8f90_source.html">input_parser.f90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="netcdf__out_8f90_source.html#l00024">24</a> of file <a class="el" href="netcdf__out_8f90_source.html">netcdf_out.f90</a>.</p>
 <div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">! Declaring input variables</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: alpha_array, energy_array</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">    real</span>(real64), <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: alpha_array, energy_array</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">intent(in)</span> :: filename</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">type</span>(QHO_type), <span class="keywordtype">intent(in)</span> :: QHO</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span> :: accept_rate</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">    real</span>(real64), <span class="keywordtype">intent(in)</span> :: accept_rate</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">! Declaring other variables</span></div>
@@ -345,7 +345,7 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="input__parser_8f90_source.html#l00090">90</a> of file <a class="el" href="input__parser_8f90_source.html">input_parser.f90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="netcdf__out_8f90_source.html#l00090">90</a> of file <a class="el" href="netcdf__out_8f90_source.html">netcdf_out.f90</a>.</p>
 <div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">! Declaring input variables</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: trace</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">intent(in)</span> :: filename</div>
@@ -462,7 +462,7 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="input__parser_8f90_source.html#l00147">147</a> of file <a class="el" href="input__parser_8f90_source.html">input_parser.f90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="netcdf__out_8f90_source.html#l00147">147</a> of file <a class="el" href="netcdf__out_8f90_source.html">netcdf_out.f90</a>.</p>
 <div class="fragment"><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="comment">! Declaring input variables</span></div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: bondlength_array, energy_array</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">intent(in)</span> :: filename</div>
@@ -588,7 +588,7 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="input__parser_8f90_source.html#l00220">220</a> of file <a class="el" href="input__parser_8f90_source.html">input_parser.f90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="netcdf__out_8f90_source.html#l00220">220</a> of file <a class="el" href="netcdf__out_8f90_source.html">netcdf_out.f90</a>.</p>
 <div class="fragment"><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="comment">! Declaring input variables</span></div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: trace</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">intent(in)</span> :: filename</div>
@@ -709,7 +709,7 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="input__parser_8f90_source.html#l00282">282</a> of file <a class="el" href="input__parser_8f90_source.html">input_parser.f90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="netcdf__out_8f90_source.html#l00282">282</a> of file <a class="el" href="netcdf__out_8f90_source.html">netcdf_out.f90</a>.</p>
 <div class="fragment"><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="comment">! Declaring input variables</span></div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: bondlength_array, energy_array</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">intent(in)</span> :: filename</div>
@@ -835,7 +835,7 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="input__parser_8f90_source.html#l00354">354</a> of file <a class="el" href="input__parser_8f90_source.html">input_parser.f90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="netcdf__out_8f90_source.html#l00354">354</a> of file <a class="el" href="netcdf__out_8f90_source.html">netcdf_out.f90</a>.</p>
 <div class="fragment"><div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="comment">! Declaring input variables</span></div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: trace</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">intent(in)</span> :: filename</div>
@@ -938,7 +938,7 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="input__parser_8f90_source.html#l00420">420</a> of file <a class="el" href="input__parser_8f90_source.html">input_parser.f90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="netcdf__out_8f90_source.html#l00420">420</a> of file <a class="el" href="netcdf__out_8f90_source.html">netcdf_out.f90</a>.</p>
 <div class="fragment"><div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    <span class="comment">! Declaring inpit variables</span></div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: array</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">intent(in)</span> :: filename</div>

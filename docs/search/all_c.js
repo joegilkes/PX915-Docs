@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['ran1_49',['ran1',['../namespacevqmc.html#a01b80444204a0cd0b5cddde82cbc7651',1,'vqmc']]],
-  ['random_5fnormal_50',['random_normal',['../namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335',1,'vqmc']]],
-  ['rcut_51',['rcut',['../structshared__data_1_1qho__type.html#a39c77f54ab550862e08a78073d69606b',1,'shared_data::qho_type::rcut()'],['../structshared__data_1_1h2plus__type.html#a45e78018edd3283615e8b2a0cddb7fb6',1,'shared_data::h2plus_type::rcut()'],['../structshared__data_1_1h2__type.html#a0c0947d862a86bad2415dc9de78ceb24',1,'shared_data::h2_type::rcut()']]],
-  ['readme_2emd_52',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['run_5fequil_53',['run_equil',['../namespaceshared__data.html#a9285af0408bde68c647a77c75900929d',1,'shared_data']]]
+  ['qho_45',['qho',['../namespaceshared__data.html#a7503c2b3bd10f3ee43c4cf9964c42ab2',1,'shared_data']]],
+  ['qho_5fenergy_46',['qho_energy',['../namespacesolvers.html#a4f0054c0d0d2f5080c92a04557feaf52',1,'solvers']]],
+  ['qho_5fprob_47',['qho_prob',['../namespacesolvers.html#a722edf182d188ad1db7fa6a675fea13c',1,'solvers']]],
+  ['qho_5ftype_48',['qho_type',['../structshared__data_1_1qho__type.html',1,'shared_data']]],
+  ['qmc_20project_20_2d_20px915_20group_20a_49',['QMC Project - PX915 Group A',['../index.html',1,'']]],
+  ['quantum_5fsolvers_2ef90_50',['quantum_solvers.f90',['../quantum__solvers_8f90.html',1,'']]]
 ];

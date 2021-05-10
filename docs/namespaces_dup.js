@@ -12,6 +12,15 @@ var namespaces_dup =
       [ "eps_0", "namespaceconstants.html#af01a8bd84f8943178f55201fc394f280", null ]
     ] ],
     [ "input", "namespaceinput.html", null ],
+    [ "input_parser", "namespaceinput__parser.html", [
+      [ "read_control", "namespaceinput__parser.html#a802002d813d9cea7f6194a28752b37f2", null ],
+      [ "read_qho", "namespaceinput__parser.html#aa9a77c1395d69d54ce38420acdb3f87f", null ],
+      [ "read_h2plus", "namespaceinput__parser.html#a3ebe204fa7f63e19fbf29c36f580ee74", null ],
+      [ "read_h2", "namespaceinput__parser.html#a163a65b1b9201a421da32ba2a7c92148", null ],
+      [ "read_inputs", "namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea", null ],
+      [ "fu", "namespaceinput__parser.html#a209ae7e3892e6b6dcbe9137fdeb0875f", null ],
+      [ "rc", "namespaceinput__parser.html#a0d29f515c2bc6f306a8576c1b4253c8d", null ]
+    ] ],
     [ "shared_data", "namespaceshared__data.html", "namespaceshared__data" ],
     [ "solvers", "namespacesolvers.html", [
       [ "qho_prob", "namespacesolvers.html#a722edf182d188ad1db7fa6a675fea13c", null ],
