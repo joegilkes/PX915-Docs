@@ -1,20 +1,29 @@
 \hypertarget{namespacevqmc}{}\doxysection{vqmc Module Reference}
 \label{namespacevqmc}\index{vqmc@{vqmc}}
+
+
+Contains a random number generator, a sub-\/routine that draws from a normal distribution and a VQMC solver for the three different problems.  
+
+
 \doxysubsection*{Functions/\+Subroutines}
 \begin{DoxyCompactItemize}
 \item 
 subroutine \mbox{\hyperlink{namespacevqmc_aed182179994b5465f5466b4d909a764e}{init\+\_\+ran1}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Initialise random number generator by drawing a seed from /dev/urandom. \end{DoxyCompactList}\item 
 subroutine \mbox{\hyperlink{namespacevqmc_a01b80444204a0cd0b5cddde82cbc7651}{ran1}} (sample, dseed)
-\item 
+\begin{DoxyCompactList}\small\item\em Implementation of David Quigley\textquotesingle{}s random number generator. \end{DoxyCompactList}\item 
+real(real64) function, dimension(\+:), allocatable \mbox{\hyperlink{namespacevqmc_a6b89c5b7a64a3e438695787b90a62359}{linspace}} (start, end, num)
+\begin{DoxyCompactList}\small\item\em Adaptation of numpy\textquotesingle{}s linspace function. \end{DoxyCompactList}\item 
 subroutine \mbox{\hyperlink{namespacevqmc_a62ec9b662e5d9b46ec37d52ff93cb335}{random\+\_\+normal}} (dim, x)
-\item 
-subroutine \mbox{\hyperlink{namespacevqmc_af750525012cfc872fca742b9ef803120}{vqmc\+\_\+qho}} (sigma, N, burn, thin, alpha\+\_\+const, X, accept\+\_\+rate, energy\+\_\+chain)
-\item 
-subroutine \mbox{\hyperlink{namespacevqmc_a156887f8e878c4d01de5d2d4fa606a18}{vqmc\+\_\+h\+\_\+2\+\_\+plus}} (sigma, N, burn, thin, c\+\_\+const, R\+\_\+a, R\+\_\+b, X, accept\+\_\+rate, energy\+\_\+chain)
-\item 
-subroutine \mbox{\hyperlink{namespacevqmc_afdead1c964c264b80a7698da1bc3e792}{vqmc\+\_\+h\+\_\+2}} (sigma, N, burn, thin, c\+\_\+const, R\+\_\+a, R\+\_\+b, X\+\_\+1, X\+\_\+2, accept\+\_\+rate, energy\+\_\+chain)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Adaptation of numpy\textquotesingle{}s linspace function. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacevqmc_a8b66a706cd8db1d3228f169f9a6964da}{vqmc\+\_\+qho}} (sigma, N, burn, thin, alpha\+\_\+const, x\+\_\+start, X, accept\+\_\+rate, energy\+\_\+chain)
+\begin{DoxyCompactList}\small\item\em Performs VQMC for QHO. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacevqmc_a014fdaf26103c82839fcc36c34fb9ea7}{vqmc\+\_\+h\+\_\+2\+\_\+plus}} (sigma, N, burn, thin, c\+\_\+const, R\+\_\+a, R\+\_\+b, x\+\_\+start, X, accept\+\_\+rate, energy\+\_\+chain)
+\begin{DoxyCompactList}\small\item\em Performs VQMC for H\+\_\+2\+\_\+plus ~\newline
+ \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacevqmc_a95b4dedd1b7e0d0c94d4f64055e30ce5}{vqmc\+\_\+h\+\_\+2}} (sigma, N, burn, thin, c\+\_\+const, R\+\_\+a, R\+\_\+b, x\+\_\+start\+\_\+1, x\+\_\+start\+\_\+2, X\+\_\+1, X\+\_\+2, accept\+\_\+rate, energy\+\_\+chain)
+\begin{DoxyCompactList}\small\item\em Performs VQMC for H\+\_\+2 ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -28,6 +37,11 @@ integer(int64), public \mbox{\hyperlink{namespacevqmc_a986f071589794992c4bc31de2
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Contains a random number generator, a sub-\/routine that draws from a normal distribution and a VQMC solver for the three different problems. 
+
+Module contains the VQMC solver for quantum harmonic oscillator (QHO), hydrogen ion (H\+\_\+2\+\_\+plus) and hydrogen molecule (H\+\_\+2). It also has the sub\+\_\+routine random normal which generates a sample from a normal distribution using the Box-\/\+Muller transfrom, which is needed for the Metropolis algorythm used in VQMC. The VQMC solvers uses the module \textquotesingle{}solvers\textquotesingle{} to obtain the transitional probabilities needed for the Metropolis algorythm and to calculate the local energies given the position of the random walker. 
+
 \doxysubsection{Function/\+Subroutine Documentation}
 \mbox{\Hypertarget{namespacevqmc_aed182179994b5465f5466b4d909a764e}\label{namespacevqmc_aed182179994b5465f5466b4d909a764e}} 
 \index{vqmc@{vqmc}!init\_ran1@{init\_ran1}}
@@ -37,26 +51,42 @@ integer(int64), public \mbox{\hyperlink{namespacevqmc_a986f071589794992c4bc31de2
 
 
 
-Definition at line 23 of file vqmc.\+f90.
+Initialise random number generator by drawing a seed from /dev/urandom. 
+
+
+
+Definition at line 57 of file vqmc.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{24 }
-\DoxyCodeLine{25         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{26 }
-\DoxyCodeLine{27         \textcolor{keywordtype}{integer} :: fu, rc}
-\DoxyCodeLine{28 }
-\DoxyCodeLine{29         \textcolor{keyword}{open} (access=\textcolor{stringliteral}{'stream'}, action=\textcolor{stringliteral}{'read'}, file=\textcolor{stringliteral}{'/dev/urandom'}, \&}
-\DoxyCodeLine{30           form=\textcolor{stringliteral}{'unformatted'}, iostat=rc, newunit=fu)}
-\DoxyCodeLine{31 }
-\DoxyCodeLine{32         \textcolor{keywordflow}{if} (rc == 0) \textcolor{keyword}{read} (fu) seed}
-\DoxyCodeLine{33 }
-\DoxyCodeLine{34         \textcolor{keyword}{close} (fu)}
-\DoxyCodeLine{35 }
-\DoxyCodeLine{36         \textcolor{keywordflow}{if} (seed .gt. 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{37             seed = -\/seed}
-\DoxyCodeLine{38 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{39 }
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61         \textcolor{keywordtype}{integer} :: fu, rc, l\_seed}
+\DoxyCodeLine{62         \textcolor{keywordtype}{character(len=30)} :: c\_seed}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64         \textcolor{keyword}{open} (access=\textcolor{stringliteral}{'stream'}, action=\textcolor{stringliteral}{'read'}, file=\textcolor{stringliteral}{'/dev/urandom'}, \&}
+\DoxyCodeLine{65         form=\textcolor{stringliteral}{'unformatted'}, iostat=rc, newunit=fu)}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67         \textcolor{keywordflow}{if} (rc == 0) \textcolor{keyword}{read} (fu) seed}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69         \textcolor{keyword}{close} (fu)}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71         \textcolor{keyword}{write}(c\_seed, \textcolor{stringliteral}{"{}(I30)"{}}) seed}
+\DoxyCodeLine{72         l\_seed = len(c\_seed)}
+\DoxyCodeLine{73         c\_seed = adjustl(c\_seed)}
+\DoxyCodeLine{74         c\_seed = c\_seed(7:l\_seed)}
+\DoxyCodeLine{75         \textcolor{keyword}{read}(c\_seed, *) seed}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77         \textcolor{keywordflow}{if} (seed .gt. 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{78             seed = -\/seed}
+\DoxyCodeLine{79 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81         \textcolor{keywordflow}{if} (verbose) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{82             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Initial seed from /dev/urandom: ', I20)"{}}) seed}
+\DoxyCodeLine{83             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{84 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{85 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespacevqmc_a01b80444204a0cd0b5cddde82cbc7651}\label{namespacevqmc_a01b80444204a0cd0b5cddde82cbc7651}} 
@@ -67,48 +97,53 @@ Definition at line 23 of file vqmc.\+f90.
 
 
 
-Definition at line 45 of file vqmc.\+f90.
+Implementation of David Quigley\textquotesingle{}s random number generator. 
+
+Variable dseed must be a negative integer. 
+
+Definition at line 100 of file vqmc.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{46 }
-\DoxyCodeLine{47         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{48 }
-\DoxyCodeLine{49         \textcolor{keywordtype}{integer(int64)}, \textcolor{keywordtype}{intent(inout)} :: dseed}
-\DoxyCodeLine{50 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: sample}
-\DoxyCodeLine{51 }
-\DoxyCodeLine{52         \textcolor{comment}{! Constants defined in Press et al}}
-\DoxyCodeLine{53         \textcolor{keywordtype}{integer(int64)}, \textcolor{keywordtype}{parameter} :: ia = 16807, im = 2147483647, iq = 1\textcolor{comment}{27773}}
-\DoxyCodeLine{54 \textcolor{comment}{}        \textcolor{keywordtype}{integer(int64)}, \textcolor{keywordtype}{parameter} :: ir = 2836, \&}
-\DoxyCodeLine{55                                      ndiv = 1 + floor((real(im, kind=real64\textcolor{comment}{)-\/1.0)/ntab)}}
-\DoxyCodeLine{56 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{parameter} :: am = 1.0/real(im, kind=real64), eps =\textcolor{comment}{ 1.2e-\/7, \&}}
-\DoxyCodeLine{57 \textcolor{comment}{}                                   rnmx = 1.0-\/eps}
-\DoxyCodeLine{58 }
-\DoxyCodeLine{59         \textcolor{comment}{! Loop counters}}
-\DoxyCodeLine{60         \textcolor{keywordtype}{integer(int64)} :: j, k}
-\DoxyCodeLine{61 }
-\DoxyCodeLine{62         \textcolor{comment}{! The following is transcribed directly from Press et al}}
-\DoxyCodeLine{63         \textcolor{keywordflow}{if} (dseed<=0 .or. iy==0) \textcolor{keywordflow}{then} \textcolor{comment}{! initialization}}
-\DoxyCodeLine{64             dseed = max(-\/dseed,1)}
-\DoxyCodeLine{65 }
-\DoxyCodeLine{66             \textcolor{keywordflow}{do} j = ntab+8, 1, -\/1}
-\DoxyCodeLine{67                 k = floor(real(dseed, kind=real64)/real(iq, kind=real64)\textcolor{comment}{)}}
-\DoxyCodeLine{68 \textcolor{comment}{}                dseed = ia * (dseed-\/k*iq) -\/ ir * k}
-\DoxyCodeLine{69                 \textcolor{keywordflow}{if} (dseed < 0) dseed = dseed + im}
-\DoxyCodeLine{70                 \textcolor{keywordflow}{if} (j <= ntab) iv(j) = dseed}
-\DoxyCodeLine{71 \textcolor{keywordflow}{            end do}}
-\DoxyCodeLine{72 }
-\DoxyCodeLine{73             iy = iv(1)}
-\DoxyCodeLine{74 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{75 }
-\DoxyCodeLine{76         k = floor(real(dseed, kind=real64)/real(iq, kind=real64))}
-\DoxyCodeLine{77         dseed = ia * (dseed-\/k*iq) -\/ ir * k}
-\DoxyCodeLine{78         \textcolor{keywordflow}{if} (dseed < 0) dseed = dseed + im}
-\DoxyCodeLine{79         j = 1\_int64 + iy / ndiv}
-\DoxyCodeLine{80         iy = iv(j)}
-\DoxyCodeLine{81         iv(j) = dseed}
-\DoxyCodeLine{82         sample = min(am*iy, rnmx)}
-\DoxyCodeLine{83 }
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104         \textcolor{keywordtype}{integer(int64)}, \textcolor{keywordtype}{intent(inout)} :: dseed}
+\DoxyCodeLine{105 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: sample}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107         \textcolor{comment}{! Constants defined in Press et al}}
+\DoxyCodeLine{108         \textcolor{keywordtype}{integer(int64)}, \textcolor{keywordtype}{parameter} :: ia = 16807, im = 2147483647, iq = 1\textcolor{comment}{27773}}
+\DoxyCodeLine{109 \textcolor{comment}{}        \textcolor{keywordtype}{integer(int64)}, \textcolor{keywordtype}{parameter} :: ir = 2836, \&}
+\DoxyCodeLine{110                                      ndiv = 1 + floor((real(im, kind=real64\textcolor{comment}{)-\/1.0)/ntab)}}
+\DoxyCodeLine{111 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{parameter} :: am = 1.0/real(im, kind=real64), eps =\textcolor{comment}{ 1.2e-\/7, \&}}
+\DoxyCodeLine{112 \textcolor{comment}{}                                   rnmx = 1.0-\/eps}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114         \textcolor{comment}{! Loop counters}}
+\DoxyCodeLine{115         \textcolor{keywordtype}{integer(int64)} :: j, k}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117         \textcolor{comment}{! The following is transcribed directly from Press et al}}
+\DoxyCodeLine{118         \textcolor{keywordflow}{if} (dseed<=0 .or. iy==0) \textcolor{keywordflow}{then} \textcolor{comment}{! initialization}}
+\DoxyCodeLine{119                                       \textcolor{comment}{! NB this may need to be modified to allow for restarting as iy will be 0}}
+\DoxyCodeLine{120             dseed = max(-\/dseed,1)}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122             \textcolor{keywordflow}{do} j = ntab+8, 1, -\/1}
+\DoxyCodeLine{123                 k = floor(real(dseed, kind=real64)/real(iq, kind=real64)\textcolor{comment}{)}}
+\DoxyCodeLine{124 \textcolor{comment}{}                dseed = ia * (dseed-\/k*iq) -\/ ir * k}
+\DoxyCodeLine{125                 \textcolor{keywordflow}{if} (dseed < 0) dseed = dseed + im}
+\DoxyCodeLine{126                 \textcolor{keywordflow}{if} (j <= ntab) iv(j) = dseed}
+\DoxyCodeLine{127 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129             iy = iv(1)}
+\DoxyCodeLine{130 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132         k = floor(real(dseed, kind=real64)/real(iq, kind=real64))}
+\DoxyCodeLine{133         dseed = ia * (dseed-\/k*iq) -\/ ir * k}
+\DoxyCodeLine{134         \textcolor{keywordflow}{if} (dseed < 0) dseed = dseed + im}
+\DoxyCodeLine{135         j = 1\_int64 + iy / ndiv}
+\DoxyCodeLine{136         iy = iv(j)}
+\DoxyCodeLine{137         iv(j) = dseed}
+\DoxyCodeLine{138         sample = min(am*iy, rnmx)}
+\DoxyCodeLine{139 }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -119,6 +154,61 @@ Here is the caller graph for this function\+:
 \includegraphics[width=350pt]{namespacevqmc_a01b80444204a0cd0b5cddde82cbc7651_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{namespacevqmc_a6b89c5b7a64a3e438695787b90a62359}\label{namespacevqmc_a6b89c5b7a64a3e438695787b90a62359}} 
+\index{vqmc@{vqmc}!linspace@{linspace}}
+\index{linspace@{linspace}!vqmc@{vqmc}}
+\doxysubsubsection{\texorpdfstring{linspace()}{linspace()}}
+{\footnotesize\ttfamily real(real64) function, dimension(\+:), allocatable vqmc\+::linspace (\begin{DoxyParamCaption}\item[{real(real64), intent(in)}]{start,  }\item[{real(real64), intent(in)}]{end,  }\item[{real(real64), intent(in)}]{num }\end{DoxyParamCaption})}
+
+
+
+Adaptation of numpy\textquotesingle{}s linspace function. 
+
+Uses a REAL value for num for compatbility with parameter arrays, 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em start} & Starting value of the sequence \\
+\hline
+\mbox{\texttt{ in}}  & {\em end} & End value of the sequence \\
+\hline
+\mbox{\texttt{ in}}  & {\em num} & Number of samples to generate between start and end value ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em ls\+\_\+array} & An array with evenly specified numbers over an interval \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 163 of file vqmc.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: start, end, num}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable} :: ls\_array}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171         \textcolor{keywordtype}{integer} :: inum                                         \textcolor{comment}{! The integer type of num}}
+\DoxyCodeLine{172         \textcolor{keywordtype}{integer} :: i                                            \textcolor{comment}{! Loop variable }}
+\DoxyCodeLine{173 \textcolor{keywordtype}{        real}(real64) :: step                                    \textcolor{comment}{! Spacing between two numbers in the array}}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175         \textcolor{comment}{! Handle real value for num}}
+\DoxyCodeLine{176         inum = int(num)}
+\DoxyCodeLine{177         \textcolor{comment}{! Generate array}}
+\DoxyCodeLine{178         \textcolor{keyword}{allocate}(ls\_array(inum))}
+\DoxyCodeLine{179         \textcolor{comment}{! Find step size}}
+\DoxyCodeLine{180         step = (\textcolor{keyword}{end }-\/ start) / real(inum-\/1, kind=real64)}
+\DoxyCodeLine{181         \textcolor{comment}{! Fill array}}
+\DoxyCodeLine{182         \textcolor{keywordflow}{do} i = 1, inum}
+\DoxyCodeLine{183             ls\_array(i) = start + (i-\/1)*step}
+\DoxyCodeLine{184 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{185 }
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacevqmc_a62ec9b662e5d9b46ec37d52ff93cb335}\label{namespacevqmc_a62ec9b662e5d9b46ec37d52ff93cb335}} 
 \index{vqmc@{vqmc}!random\_normal@{random\_normal}}
 \index{random\_normal@{random\_normal}!vqmc@{vqmc}}
@@ -127,27 +217,45 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 88 of file vqmc.\+f90.
+Adaptation of numpy\textquotesingle{}s linspace function. 
+
+Computes 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dim} & The dimension of the random vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em x} & The sample from the normal distribution \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 202 of file vqmc.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{89         }
-\DoxyCodeLine{90         \textcolor{keywordtype}{implicit none} }
-\DoxyCodeLine{91 }
-\DoxyCodeLine{92         \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: dim}
-\DoxyCodeLine{93 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:)} :: x }
-\DoxyCodeLine{94 \textcolor{keywordtype}{        real}(real64) :: u\_1, u\_2 }
-\DoxyCodeLine{95         \textcolor{keywordtype}{integer} :: i}
-\DoxyCodeLine{96         }
-\DoxyCodeLine{97         \textcolor{keywordflow}{do} i = 1, dim}
-\DoxyCodeLine{98             \textcolor{comment}{!call random\_number(u\_1)}}
-\DoxyCodeLine{99             \textcolor{comment}{!call random\_number(u\_2)}}
-\DoxyCodeLine{100             \textcolor{keyword}{call }ran1(u\_1, seed)}
-\DoxyCodeLine{101             \textcolor{keyword}{call }ran1(u\_2, seed)}
-\DoxyCodeLine{102 }
-\DoxyCodeLine{103             x(i) = sqrt(-\/2*log(u\_1))*cos(2*pi*u\_2)}
-\DoxyCodeLine{104 \textcolor{keywordflow}{        end do} }
-\DoxyCodeLine{105 }
+\DoxyCodeLine{203         }
+\DoxyCodeLine{204         \textcolor{keywordtype}{implicit none} }
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206         \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: dim}
+\DoxyCodeLine{207 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:)} :: x }
+\DoxyCodeLine{208         }
+\DoxyCodeLine{209 \textcolor{keywordtype}{        real}(real64) :: u\_1, u\_2                        \textcolor{comment}{! Samples from uniform distribution }}
+\DoxyCodeLine{210         \textcolor{keywordtype}{integer} :: i                                    \textcolor{comment}{! Loop variable }}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212         \textcolor{comment}{! Generate vector containg samples from normal distributions }}
+\DoxyCodeLine{213         \textcolor{keywordflow}{do} i = 1, dim}
+\DoxyCodeLine{214             \textcolor{comment}{! This can be done the Fortran intrinsic random number generator but this }}
+\DoxyCodeLine{215             \textcolor{comment}{! is not a good random number generator }}
+\DoxyCodeLine{216             \textcolor{comment}{! call random\_number(u\_1)}}
+\DoxyCodeLine{217             \textcolor{comment}{! call random\_number(u\_2)}}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219             \textcolor{comment}{! Draws from uniform distribution}}
+\DoxyCodeLine{220             \textcolor{keyword}{call }ran1(u\_1, seed)}
+\DoxyCodeLine{221             \textcolor{keyword}{call }ran1(u\_2, seed)}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223             \textcolor{comment}{! Calculate the sample from the normal distribution using the Box-\/Muller transform }}
+\DoxyCodeLine{224             x(i) = sqrt(-\/2*log(u\_1))*cos(2*pi*u\_2)}
+\DoxyCodeLine{225 \textcolor{keywordflow}{        end do} }
+\DoxyCodeLine{226 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -166,64 +274,140 @@ Here is the caller graph for this function\+:
 \includegraphics[width=350pt]{namespacevqmc_a62ec9b662e5d9b46ec37d52ff93cb335_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespacevqmc_af750525012cfc872fca742b9ef803120}\label{namespacevqmc_af750525012cfc872fca742b9ef803120}} 
+\mbox{\Hypertarget{namespacevqmc_a8b66a706cd8db1d3228f169f9a6964da}\label{namespacevqmc_a8b66a706cd8db1d3228f169f9a6964da}} 
 \index{vqmc@{vqmc}!vqmc\_qho@{vqmc\_qho}}
 \index{vqmc\_qho@{vqmc\_qho}!vqmc@{vqmc}}
 \doxysubsubsection{\texorpdfstring{vqmc\_qho()}{vqmc\_qho()}}
-{\footnotesize\ttfamily subroutine vqmc\+::vqmc\+\_\+qho (\begin{DoxyParamCaption}\item[{real(real64), intent(in)}]{sigma,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{burn,  }\item[{integer, intent(in)}]{thin,  }\item[{real(real64), intent(in)}]{alpha\+\_\+const,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{X,  }\item[{real(real64), intent(out)}]{accept\+\_\+rate,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{energy\+\_\+chain }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily subroutine vqmc\+::vqmc\+\_\+qho (\begin{DoxyParamCaption}\item[{real(real64), intent(in)}]{sigma,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{burn,  }\item[{integer, intent(in)}]{thin,  }\item[{real(real64), intent(in)}]{alpha\+\_\+const,  }\item[{real(real64), optional}]{x\+\_\+start,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{X,  }\item[{real(real64), intent(out)}]{accept\+\_\+rate,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{energy\+\_\+chain }\end{DoxyParamCaption})}
 
 
 
-Definition at line 111 of file vqmc.\+f90.
+Performs VQMC for QHO. 
+
+Computes 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sigma} & Step size \\
+\hline
+\mbox{\texttt{ in}}  & {\em N} & Number of steps to take \\
+\hline
+\mbox{\texttt{ in}}  & {\em burn} & Number of sample to discard at the beginning \\
+\hline
+\mbox{\texttt{ in}}  & {\em thin} & The frequency at which we discard the samples from the MCMC chain after burning ~\newline
+ \\
+\hline
+\mbox{\texttt{ in}}  & {\em alpha\+\_\+const} & Parameter \\
+\hline
+\mbox{\texttt{ in}}  & {\em x\+\_\+start} & Starting point of MCMC chain (optional, default is randomly generated) \\
+\hline
+\mbox{\texttt{ out}}  & {\em X} & The full MCMC chain for the random walker \\
+\hline
+\mbox{\texttt{ out}}  & {\em accept\+\_\+rate} & The acceptance rate of the MCMC chain \\
+\hline
+\mbox{\texttt{ out}}  & {\em energy\+\_\+chain} & An array with the local energies of the each points in the MCMC chain \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 254 of file vqmc.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{113 }
-\DoxyCodeLine{114         \textcolor{keywordtype}{implicit none} }
-\DoxyCodeLine{115 }
-\DoxyCodeLine{116 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: sigma, alpha\_const}
-\DoxyCodeLine{117         \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N, burn, thin }
-\DoxyCodeLine{118          }
-\DoxyCodeLine{119 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: accept\_rate}
-\DoxyCodeLine{120 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable} :: X, energy\_chain\textcolor{comment}{ }}
-\DoxyCodeLine{121 \textcolor{comment}{}}
-\DoxyCodeLine{122 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64) :: log\_prob\_n, a\_prob\_trans, unif\_num}
-\DoxyCodeLine{123 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(1)}:: x\_start, X\_n, sample\_normal}
-\DoxyCodeLine{124         \textcolor{keywordtype}{integer} :: i, accept }
-\DoxyCodeLine{125         }
-\DoxyCodeLine{126         \textcolor{keyword}{allocate}(x(1:n+1)) }
-\DoxyCodeLine{127         \textcolor{keyword}{allocate}(energy\_chain(1:n+1))}
-\DoxyCodeLine{128 }
-\DoxyCodeLine{129         \textcolor{keyword}{call }random\_normal(1, sample\_normal)}
-\DoxyCodeLine{130 }
-\DoxyCodeLine{131         x\_start = sample\_normal}
-\DoxyCodeLine{132         x(1) = x\_start}
-\DoxyCodeLine{133         accept = 0 }
-\DoxyCodeLine{134         energy\_chain(1) = qho\_energy(alpha\_const, x(1))}
-\DoxyCodeLine{135         }
-\DoxyCodeLine{136         \textcolor{keywordflow}{do} i = 2, n+1 }
-\DoxyCodeLine{137             \textcolor{comment}{! Propose the next step}}
-\DoxyCodeLine{138             \textcolor{keyword}{call }random\_normal(1, sample\_normal)}
-\DoxyCodeLine{139             x\_n = x(i-\/1) + sigma * sample\_normal}
-\DoxyCodeLine{140 }
-\DoxyCodeLine{141             log\_prob\_n = log(qho\_prob(alpha\_const, x(i-\/1), x\_n(1)))}
-\DoxyCodeLine{142             a\_prob\_trans = min(1.0\_real64, exp(log\_prob\_n))}
-\DoxyCodeLine{143             }
-\DoxyCodeLine{144             \textcolor{keyword}{call }ran1(unif\_num, seed)}
-\DoxyCodeLine{145 }
-\DoxyCodeLine{146             \textcolor{keywordflow}{if} (a\_prob\_trans => unif\_num) \textcolor{keywordflow}{then} }
-\DoxyCodeLine{147                 x(i) = x\_n(1) }
-\DoxyCodeLine{148                 accept =  1 + accept}
-\DoxyCodeLine{149                 energy\_chain(i) = qho\_energy(alpha\_const, x\_n(1))}
-\DoxyCodeLine{150             \textcolor{keywordflow}{else} }
-\DoxyCodeLine{151                 x(i) = x(i-\/1)}
-\DoxyCodeLine{152                 energy\_chain(i) = energy\_chain(i-\/1)}
-\DoxyCodeLine{153 \textcolor{keywordflow}{            end if} }
-\DoxyCodeLine{154 }
-\DoxyCodeLine{155 \textcolor{keywordflow}{        end do} }
-\DoxyCodeLine{156 }
-\DoxyCodeLine{157         accept\_rate = accept / n }
-\DoxyCodeLine{158 }
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257         \textcolor{keywordtype}{implicit none} }
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: sigma, alpha\_const}
+\DoxyCodeLine{260         \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N, burn, thin }
+\DoxyCodeLine{261 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{optional} :: x\_start }
+\DoxyCodeLine{262          }
+\DoxyCodeLine{263 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: accept\_rate}
+\DoxyCodeLine{264 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable} :: X, energy\_chain\textcolor{comment}{ }}
+\DoxyCodeLine{265 \textcolor{comment}{        }}
+\DoxyCodeLine{266 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64) :: log\_prob\_n                      \textcolor{comment}{! The natural logarithm of the transition proability}}
+\DoxyCodeLine{267 \textcolor{keywordtype}{        real}(real64) :: a\_prob\_trans                    \textcolor{comment}{! Acceptance ratio of the transition probability }}
+\DoxyCodeLine{268 \textcolor{keywordtype}{        real}(real64) :: unif\_num                        \textcolor{comment}{! A random sample from the uniform distribution }}
+\DoxyCodeLine{269 \textcolor{keywordtype}{        real}(64), \textcolor{keywordtype}{dimension(1)} :: start                 \textcolor{comment}{! The starting point of the MCMC chain }}
+\DoxyCodeLine{270 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(1)} :: X\_n               \textcolor{comment}{! The proposed step }}
+\DoxyCodeLine{271 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(1)} :: sample\_normal     \textcolor{comment}{! A sample from the normal distribution }}
+\DoxyCodeLine{272         \textcolor{keywordtype}{integer} :: accept                               \textcolor{comment}{! Number of accepted steps }}
+\DoxyCodeLine{273         \textcolor{keywordtype}{integer} :: i                                    \textcolor{comment}{! Loop variable }}
+\DoxyCodeLine{274         \textcolor{keywordtype}{character(len=1)} :: acceptance                  \textcolor{comment}{! Yes/No signpost for acceptance}}
+\DoxyCodeLine{275         }
+\DoxyCodeLine{276         \textcolor{keyword}{allocate}(x(1:n+1)); x(:) = 0.0\_real64}
+\DoxyCodeLine{277         \textcolor{keyword}{allocate}(energy\_chain(1:n+1)); energy\_chain(:) = 0.0\_real64}
+\DoxyCodeLine{278         }
+\DoxyCodeLine{279         \textcolor{comment}{! Allow the starting position to take the defualt value }}
+\DoxyCodeLine{280         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(x\_start)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{281             start = x\_start}
+\DoxyCodeLine{282             x(1) = start(1)}
+\DoxyCodeLine{283         \textcolor{keywordflow}{else} }
+\DoxyCodeLine{284             \textcolor{comment}{! Creates the initial position of the random walker that is whithin a certain radius  }}
+\DoxyCodeLine{285             \textcolor{keywordflow}{do} \textcolor{keywordflow}{while}(norm2(sample\_normal) <= rcut )}
+\DoxyCodeLine{286                 \textcolor{keyword}{call }random\_normal(1, sample\_normal)}
+\DoxyCodeLine{287 \textcolor{keywordflow}{            end do} }
+\DoxyCodeLine{288             start = sample\_normal}
+\DoxyCodeLine{289             x(1) = start(1)}
+\DoxyCodeLine{290 \textcolor{keywordflow}{        end if} }
+\DoxyCodeLine{291 }
+\DoxyCodeLine{292         \textcolor{comment}{! Calculates the local energy of the initial position}}
+\DoxyCodeLine{293         energy\_chain(1) = qho\_energy(alpha\_const, x(1))}
+\DoxyCodeLine{294 }
+\DoxyCodeLine{295         \textcolor{comment}{! Start the counter for the number of accepted moves}}
+\DoxyCodeLine{296         accept = 0 }
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298         \textcolor{keywordflow}{if} (verbose) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{299             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Markov chain for alpha = ', F7.4)"{}}) alpha\_const}
+\DoxyCodeLine{300             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Position       Local Energy     Accepted?')"{}}\textcolor{comment}{)}}
+\DoxyCodeLine{301 \textcolor{comment}{}            \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(F12.8, '   ', F12.8)"{}}) x(1), energy\_chain(1)}
+\DoxyCodeLine{302 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{303        }
+\DoxyCodeLine{304         \textcolor{comment}{! Metropolis Algorithm}}
+\DoxyCodeLine{305         \textcolor{keywordflow}{do} i = 2, n+1 }
+\DoxyCodeLine{306             \textcolor{comment}{! Propose the next step}}
+\DoxyCodeLine{307             \textcolor{keyword}{call }random\_normal(1, sample\_normal)}
+\DoxyCodeLine{308             x\_n = x(i-\/1) + sigma * sample\_normal}
+\DoxyCodeLine{309 }
+\DoxyCodeLine{310             \textcolor{comment}{! Calculate the transition probability between proposed step and current step}}
+\DoxyCodeLine{311             log\_prob\_n = log(qho\_prob(alpha\_const, x(i-\/1), x\_n(1)))}
+\DoxyCodeLine{312             }
+\DoxyCodeLine{313             \textcolor{comment}{! Calculate the acceptance ratio}}
+\DoxyCodeLine{314             a\_prob\_trans = min(1.0\_real64, exp(log\_prob\_n))}
+\DoxyCodeLine{315 }
+\DoxyCodeLine{316             \textcolor{comment}{! Generate sample from uniform distribution }}
+\DoxyCodeLine{317             \textcolor{keyword}{call }ran1(unif\_num, seed)}
+\DoxyCodeLine{318             }
+\DoxyCodeLine{319             \textcolor{comment}{! Compare the drawn sample from the uniform distribution with the acceptance ratio }}
+\DoxyCodeLine{320             \textcolor{keywordflow}{if} (a\_prob\_trans >= unif\_num) \textcolor{keywordflow}{then} }
+\DoxyCodeLine{321                 \textcolor{comment}{! If accepted calculate local energy and add proposed position to the MCMC chain}}
+\DoxyCodeLine{322                 x(i) = x\_n(1) }
+\DoxyCodeLine{323                 energy\_chain(i) = qho\_energy(alpha\_const, x\_n(1))}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{325                 acceptance = \textcolor{stringliteral}{'Y'}}
+\DoxyCodeLine{326                 \textcolor{comment}{! Increment by the number of accepted steps }}
+\DoxyCodeLine{327                 accept = 1 + accept }
+\DoxyCodeLine{328             \textcolor{keywordflow}{else} }
+\DoxyCodeLine{329                 \textcolor{comment}{! If rejected the proposed step is the current step}}
+\DoxyCodeLine{330                 x(i) = x(i-\/1)}
+\DoxyCodeLine{331                 \textcolor{comment}{! The local energy of the proposed step is the same as the current step when rejected}}
+\DoxyCodeLine{332                 energy\_chain(i) = energy\_chain(i-\/1)}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{334                 acceptance = \textcolor{stringliteral}{'N'}}
+\DoxyCodeLine{335 \textcolor{keywordflow}{            end if} }
+\DoxyCodeLine{336 }
+\DoxyCodeLine{337             \textcolor{keywordflow}{if} (verbose) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{338                 \textcolor{keywordflow}{if} (mod(i, 1) .eq. 0.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{339                 \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(F12.8, '   ', F12.8, '     ', A1)"{}}) \&}
+\DoxyCodeLine{340                     x(i), energy\_chain(i), acceptance}
+\DoxyCodeLine{341 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{342 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{343 \textcolor{keywordflow}{        end do} }
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345         \textcolor{comment}{! if (verbose) write(logid, "{}('')"{})}}
+\DoxyCodeLine{346         \textcolor{keyword}{write}(*, *) \textcolor{stringliteral}{'[Temp output] variable accept = '}, accept}
+\DoxyCodeLine{347         \textcolor{keywordflow}{if} (verbose) \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{348 }
+\DoxyCodeLine{349         \textcolor{comment}{! Calculate the acceptance ratio }}
+\DoxyCodeLine{350         accept\_rate = (real(accept, 8) / real(n, 8)) }
+\DoxyCodeLine{351 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -231,70 +415,132 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespacevqmc_af750525012cfc872fca742b9ef803120_cgraph}
+\includegraphics[width=350pt]{namespacevqmc_a8b66a706cd8db1d3228f169f9a6964da_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespacevqmc_a156887f8e878c4d01de5d2d4fa606a18}\label{namespacevqmc_a156887f8e878c4d01de5d2d4fa606a18}} 
+\mbox{\Hypertarget{namespacevqmc_a014fdaf26103c82839fcc36c34fb9ea7}\label{namespacevqmc_a014fdaf26103c82839fcc36c34fb9ea7}} 
 \index{vqmc@{vqmc}!vqmc\_h\_2\_plus@{vqmc\_h\_2\_plus}}
 \index{vqmc\_h\_2\_plus@{vqmc\_h\_2\_plus}!vqmc@{vqmc}}
 \doxysubsubsection{\texorpdfstring{vqmc\_h\_2\_plus()}{vqmc\_h\_2\_plus()}}
-{\footnotesize\ttfamily subroutine vqmc\+::vqmc\+\_\+h\+\_\+2\+\_\+plus (\begin{DoxyParamCaption}\item[{real(real64), intent(in)}]{sigma,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{burn,  }\item[{integer, intent(in)}]{thin,  }\item[{real(real64), dimension(\+:), intent(in)}]{c\+\_\+const,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+a,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+b,  }\item[{real(real64), dimension(\+:, \+:), intent(out), allocatable}]{X,  }\item[{real(real64), intent(out)}]{accept\+\_\+rate,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{energy\+\_\+chain }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily subroutine vqmc\+::vqmc\+\_\+h\+\_\+2\+\_\+plus (\begin{DoxyParamCaption}\item[{real(real64), intent(in)}]{sigma,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{burn,  }\item[{integer, intent(in)}]{thin,  }\item[{real(real64), dimension(\+:), intent(in)}]{c\+\_\+const,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+a,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+b,  }\item[{real(real64), dimension(3), optional}]{x\+\_\+start,  }\item[{real(real64), dimension(\+:, \+:), intent(out), allocatable}]{X,  }\item[{real(real64), intent(out)}]{accept\+\_\+rate,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{energy\+\_\+chain }\end{DoxyParamCaption})}
 
 
 
-Definition at line 162 of file vqmc.\+f90.
+Performs VQMC for H\+\_\+2\+\_\+plus ~\newline
+ 
+
+Computes 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sigma} & Step size \\
+\hline
+\mbox{\texttt{ in}}  & {\em N} & Number of steps to take \\
+\hline
+\mbox{\texttt{ in}}  & {\em burn} & Number of sample to discard at the beginning \\
+\hline
+\mbox{\texttt{ in}}  & {\em thin} & The frequency at which we discard the samples from the MCMC chain after burning ~\newline
+ \\
+\hline
+\mbox{\texttt{ in}}  & {\em c\+\_\+const} & Parameter(s) of trial wavefunction \\
+\hline
+\mbox{\texttt{ in}}  & {\em R\+\_\+a} & Position of hydrogen atom A \\
+\hline
+\mbox{\texttt{ in}}  & {\em R\+\_\+b} & Position of hydrogen atom B \\
+\hline
+\mbox{\texttt{ in}}  & {\em x\+\_\+start} & Starting point of MCMC chain (optional, default is randomly generated) \\
+\hline
+\mbox{\texttt{ out}}  & {\em X} & The full MCMC chain for the random walker \\
+\hline
+\mbox{\texttt{ out}}  & {\em accept\+\_\+rate} & The acceptance rate of the MCMC chain \\
+\hline
+\mbox{\texttt{ out}}  & {\em energy\+\_\+chain} & An array with the local energis of the each points in the MCMC chain \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 381 of file vqmc.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{164         \textcolor{keywordtype}{implicit none} }
-\DoxyCodeLine{165 }
-\DoxyCodeLine{166 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(3)} :: R\_a, R\_b}
-\DoxyCodeLine{167 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: sigma}
-\DoxyCodeLine{168 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} \textcolor{keywordtype}{dimension(:)} :: c\_const }
-\DoxyCodeLine{169         \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N, burn, thin }
-\DoxyCodeLine{170          }
-\DoxyCodeLine{171 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: accept\_rate}
-\DoxyCodeLine{172 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:, :)}, \textcolor{keywordtype}{allocatable} :: X}
-\DoxyCodeLine{173 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable} :: energy\_chain}
-\DoxyCodeLine{174 }
-\DoxyCodeLine{175 \textcolor{keywordtype}{        real}(real64) :: log\_prob\_n, a\_prob\_trans, unif\_num}
-\DoxyCodeLine{176 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: x\_start, X\_n, sample\_normal}
-\DoxyCodeLine{177         \textcolor{keywordtype}{integer} :: i, accept  }
-\DoxyCodeLine{178         }
-\DoxyCodeLine{179         \textcolor{keyword}{allocate}(x(3, 1:n+1)) }
-\DoxyCodeLine{180         \textcolor{keyword}{allocate}(energy\_chain(1:n+1))}
-\DoxyCodeLine{181 }
-\DoxyCodeLine{182         \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
-\DoxyCodeLine{183         x\_start = sample\_normal}
-\DoxyCodeLine{184 }
-\DoxyCodeLine{185         x(:,1) = x\_start }
-\DoxyCodeLine{186         accept = 0 }
-\DoxyCodeLine{187         energy\_chain(1) = h\_2\_plus\_energy(c\_const, x(:, 1), r\_a, r\_b)}
-\DoxyCodeLine{188         }
-\DoxyCodeLine{189         \textcolor{keywordflow}{do} i = 2, n+1 }
-\DoxyCodeLine{190             \textcolor{comment}{! Propose the next step}}
-\DoxyCodeLine{191             \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
-\DoxyCodeLine{192             x\_n = x(:, i-\/1) + sigma * sample\_normal}
-\DoxyCodeLine{193 }
-\DoxyCodeLine{194             log\_prob\_n = log(h\_2\_plus\_prob(c\_const, x(:, i-\/1), x\_n, r\_a,\textcolor{comment}{ r\_b))}}
-\DoxyCodeLine{195 \textcolor{comment}{}            a\_prob\_trans = min(1.0\_real64, exp(log\_prob\_n))}
-\DoxyCodeLine{196             }
-\DoxyCodeLine{197             \textcolor{keyword}{call }ran1(unif\_num, seed)}
-\DoxyCodeLine{198 }
-\DoxyCodeLine{199             \textcolor{keywordflow}{if} (a\_prob\_trans => unif\_num) \textcolor{keywordflow}{then} }
-\DoxyCodeLine{200                 x(:, i) = x\_n }
-\DoxyCodeLine{201                 accept =  1 + accept}
-\DoxyCodeLine{202                 energy\_chain(i) = h\_2\_plus\_energy(c\_const, x\_n, r\_a, r\_b\textcolor{comment}{)}}
-\DoxyCodeLine{203 \textcolor{comment}{}            \textcolor{keywordflow}{else} }
-\DoxyCodeLine{204                 x(:, i) = x(:, i-\/1)}
-\DoxyCodeLine{205                 energy\_chain(i) = energy\_chain(i-\/1)}
-\DoxyCodeLine{206 }
-\DoxyCodeLine{207 \textcolor{keywordflow}{            end if} }
-\DoxyCodeLine{208 }
-\DoxyCodeLine{209 \textcolor{keywordflow}{        end do} }
-\DoxyCodeLine{210 }
-\DoxyCodeLine{211         accept\_rate = accept / n }
-\DoxyCodeLine{212 }
+\DoxyCodeLine{383 }
+\DoxyCodeLine{384         \textcolor{keywordtype}{implicit none} }
+\DoxyCodeLine{385 }
+\DoxyCodeLine{386 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(3)} :: R\_a, R\_b}
+\DoxyCodeLine{387 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: sigma}
+\DoxyCodeLine{388 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: c\_const}
+\DoxyCodeLine{389 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{optional} :: x\_start}
+\DoxyCodeLine{390         \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N, burn, thin }
+\DoxyCodeLine{391         }
+\DoxyCodeLine{392          }
+\DoxyCodeLine{393 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: accept\_rate}
+\DoxyCodeLine{394 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:, :)}, \textcolor{keywordtype}{allocatable} :: X}
+\DoxyCodeLine{395 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable} :: energy\_chain}
+\DoxyCodeLine{396 }
+\DoxyCodeLine{397 \textcolor{keywordtype}{        real}(real64) :: log\_prob\_n                      \textcolor{comment}{! The natural logarithm of the transition proability}}
+\DoxyCodeLine{398 \textcolor{keywordtype}{        real}(real64) :: a\_prob\_trans                    \textcolor{comment}{! Acceptance ratio of the transitional probability }}
+\DoxyCodeLine{399 \textcolor{keywordtype}{        real}(real64) :: unif\_num                        \textcolor{comment}{! A random sample from the uniform distribution }}
+\DoxyCodeLine{400 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: start             \textcolor{comment}{! Starting point of MCMC chain}}
+\DoxyCodeLine{401 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: X\_n               \textcolor{comment}{! The proposed step }}
+\DoxyCodeLine{402 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: sample\_normal     \textcolor{comment}{! A sample from the normal distribution }}
+\DoxyCodeLine{403         \textcolor{keywordtype}{integer} :: accept                               \textcolor{comment}{! Number of accepted steps }}
+\DoxyCodeLine{404         \textcolor{keywordtype}{integer} :: i                                    \textcolor{comment}{! Loop variable }}
+\DoxyCodeLine{405         }
+\DoxyCodeLine{406         \textcolor{keyword}{allocate}(x(3, 1:n+1)) }
+\DoxyCodeLine{407         \textcolor{keyword}{allocate}(energy\_chain(1:n+1))}
+\DoxyCodeLine{408 }
+\DoxyCodeLine{409         \textcolor{comment}{! Allow the starting position to take on the default value}}
+\DoxyCodeLine{410         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(x\_start)) \textcolor{keywordflow}{then} }
+\DoxyCodeLine{411             start = x\_start}
+\DoxyCodeLine{412             x(:,1) = start }
+\DoxyCodeLine{413         \textcolor{keywordflow}{else} }
+\DoxyCodeLine{414             \textcolor{comment}{! Create the initial position of the random walker that is within a certain radius }}
+\DoxyCodeLine{415             \textcolor{keywordflow}{do} \textcolor{keywordflow}{while}(norm2(sample\_normal) <= rcut )}
+\DoxyCodeLine{416                 \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
+\DoxyCodeLine{417 \textcolor{keywordflow}{            end do} }
+\DoxyCodeLine{418             start = sample\_normal}
+\DoxyCodeLine{419             x(:,1) = start }
+\DoxyCodeLine{420 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{421 }
+\DoxyCodeLine{422         \textcolor{comment}{! Calculate the local energy of the initial step }}
+\DoxyCodeLine{423         energy\_chain(1) = h\_2\_plus\_energy(c\_const, x(:, 1), r\_a, r\_b)}
+\DoxyCodeLine{424 }
+\DoxyCodeLine{425         \textcolor{comment}{! Start the counter for the number of accepted moves}}
+\DoxyCodeLine{426         accept = 0  }
+\DoxyCodeLine{427 }
+\DoxyCodeLine{428         \textcolor{comment}{! Metropolis algorithm }}
+\DoxyCodeLine{429         \textcolor{keywordflow}{do} i = 2, n+1 }
+\DoxyCodeLine{430             \textcolor{comment}{! Propose the next step }}
+\DoxyCodeLine{431             \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
+\DoxyCodeLine{432             x\_n = x(:, i-\/1) + sigma * sample\_normal}
+\DoxyCodeLine{433 }
+\DoxyCodeLine{434             \textcolor{comment}{! Calculate the transition probability between proposed step and current step }}
+\DoxyCodeLine{435             log\_prob\_n = log(h\_2\_plus\_prob(c\_const, x(:, i-\/1), x\_n, r\_a,\textcolor{comment}{ r\_b))}}
+\DoxyCodeLine{436 \textcolor{comment}{}           }
+\DoxyCodeLine{437             \textcolor{comment}{! Calculate the acceptance ratio }}
+\DoxyCodeLine{438             a\_prob\_trans = min(1.0\_real64, exp(log\_prob\_n))}
+\DoxyCodeLine{439             }
+\DoxyCodeLine{440             \textcolor{comment}{! Generate sample from uniform distribution}}
+\DoxyCodeLine{441             \textcolor{keyword}{call }ran1(unif\_num, seed)}
+\DoxyCodeLine{442 }
+\DoxyCodeLine{443             \textcolor{comment}{! Compare the drawn sample from the uniform distribution with the acceptance ratio}}
+\DoxyCodeLine{444             \textcolor{keywordflow}{if} (a\_prob\_trans >= unif\_num) \textcolor{keywordflow}{then} }
+\DoxyCodeLine{445                 \textcolor{comment}{! If accepted calculate local energy and add proposed position to the MCMC chain}}
+\DoxyCodeLine{446                 x(:, i) = x\_n }
+\DoxyCodeLine{447                 energy\_chain(i) = h\_2\_plus\_energy(c\_const, x\_n, r\_a, r\_b\textcolor{comment}{)}}
+\DoxyCodeLine{448 \textcolor{comment}{}                }
+\DoxyCodeLine{449                 \textcolor{comment}{! Increment by the number of accepted steps }}
+\DoxyCodeLine{450                 accept = 1 + accept }
+\DoxyCodeLine{451             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{452                 \textcolor{comment}{! If rejected the proposed step is the current step }}
+\DoxyCodeLine{453                 x(:, i) = x(:, i-\/1)}
+\DoxyCodeLine{454                 }
+\DoxyCodeLine{455                 \textcolor{comment}{! The local energy of the proposed step is the same as the current step when rejected}}
+\DoxyCodeLine{456                 energy\_chain(i) = energy\_chain(i-\/1)}
+\DoxyCodeLine{457 \textcolor{keywordflow}{            end if} }
+\DoxyCodeLine{458 \textcolor{keywordflow}{        end do} }
+\DoxyCodeLine{459 }
+\DoxyCodeLine{460         \textcolor{comment}{! Calculate the acceptance ratio}}
+\DoxyCodeLine{461         accept\_rate = (real(accept, 8) / real(n, 8)) }
+\DoxyCodeLine{462 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -302,80 +548,153 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespacevqmc_a156887f8e878c4d01de5d2d4fa606a18_cgraph}
+\includegraphics[width=350pt]{namespacevqmc_a014fdaf26103c82839fcc36c34fb9ea7_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespacevqmc_afdead1c964c264b80a7698da1bc3e792}\label{namespacevqmc_afdead1c964c264b80a7698da1bc3e792}} 
+\mbox{\Hypertarget{namespacevqmc_a95b4dedd1b7e0d0c94d4f64055e30ce5}\label{namespacevqmc_a95b4dedd1b7e0d0c94d4f64055e30ce5}} 
 \index{vqmc@{vqmc}!vqmc\_h\_2@{vqmc\_h\_2}}
 \index{vqmc\_h\_2@{vqmc\_h\_2}!vqmc@{vqmc}}
 \doxysubsubsection{\texorpdfstring{vqmc\_h\_2()}{vqmc\_h\_2()}}
-{\footnotesize\ttfamily subroutine vqmc\+::vqmc\+\_\+h\+\_\+2 (\begin{DoxyParamCaption}\item[{real(real64), intent(in)}]{sigma,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{burn,  }\item[{integer, intent(in)}]{thin,  }\item[{real(real64), dimension(\+:), intent(in)}]{c\+\_\+const,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+a,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+b,  }\item[{real(real64), dimension(\+:, \+:), intent(out), allocatable}]{X\+\_\+1,  }\item[{real(real64), dimension(\+:, \+:), intent(out), allocatable}]{X\+\_\+2,  }\item[{real(real64), intent(out)}]{accept\+\_\+rate,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{energy\+\_\+chain }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily subroutine vqmc\+::vqmc\+\_\+h\+\_\+2 (\begin{DoxyParamCaption}\item[{real(real64), intent(in)}]{sigma,  }\item[{integer, intent(in)}]{N,  }\item[{integer, intent(in)}]{burn,  }\item[{integer, intent(in)}]{thin,  }\item[{real(real64), dimension(\+:), intent(in)}]{c\+\_\+const,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+a,  }\item[{real(real64), dimension(3), intent(in)}]{R\+\_\+b,  }\item[{real(real64), dimension(3), optional}]{x\+\_\+start\+\_\+1,  }\item[{real(real64), dimension(3), optional}]{x\+\_\+start\+\_\+2,  }\item[{real(real64), dimension(\+:, \+:), intent(out), allocatable}]{X\+\_\+1,  }\item[{real(real64), dimension(\+:, \+:), intent(out), allocatable}]{X\+\_\+2,  }\item[{real(real64), intent(out)}]{accept\+\_\+rate,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{energy\+\_\+chain }\end{DoxyParamCaption})}
 
 
 
-Definition at line 216 of file vqmc.\+f90.
+Performs VQMC for H\+\_\+2 ~\newline
+ 
+
+Computes 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sigma} & Step size \\
+\hline
+\mbox{\texttt{ in}}  & {\em N} & Number of steps to take \\
+\hline
+\mbox{\texttt{ in}}  & {\em burn} & Number of sample to discard at the beginning \\
+\hline
+\mbox{\texttt{ in}}  & {\em thin} & The frequency at which we discard the samples from the MCMC chain after burning ~\newline
+ \\
+\hline
+\mbox{\texttt{ in}}  & {\em c\+\_\+const} & Parameter(s) of trial wavefunction \\
+\hline
+\mbox{\texttt{ in}}  & {\em R\+\_\+a} & Position of hydrogen atom A \\
+\hline
+\mbox{\texttt{ in}}  & {\em R\+\_\+b} & Position of hydrogen atom B \\
+\hline
+\mbox{\texttt{ in}}  & {\em x\+\_\+start\+\_\+1} & Starting point of 1st MCMC chain (optional, default is randomly generated) \\
+\hline
+\mbox{\texttt{ in}}  & {\em x\+\_\+start\+\_\+2} & Starting point of 2nd MCMC chain (optional, default is randomly generated) \\
+\hline
+\mbox{\texttt{ out}}  & {\em X\+\_\+1} & The full MCMC chain for random walker 1 \\
+\hline
+\mbox{\texttt{ out}}  & {\em X\+\_\+2} & The full MCMC chain for random walker 2 \\
+\hline
+\mbox{\texttt{ out}}  & {\em accept\+\_\+rate} & The acceptance rate of the MCMC chain \\
+\hline
+\mbox{\texttt{ out}}  & {\em energy\+\_\+chain} & An array with the local energies of the each points in the MCMC chains \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 494 of file vqmc.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{218         \textcolor{keywordtype}{implicit none} }
-\DoxyCodeLine{219 }
-\DoxyCodeLine{220 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(3)} :: R\_a, R\_b}
-\DoxyCodeLine{221 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: sigma}
-\DoxyCodeLine{222 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: c\_const }
-\DoxyCodeLine{223         \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N, burn, thin }
-\DoxyCodeLine{224          }
-\DoxyCodeLine{225 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: accept\_rate}
-\DoxyCodeLine{226 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:, :)}, \textcolor{keywordtype}{allocatable} :: X\_1, X\_2}
-\DoxyCodeLine{227 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable} :: energy\_chain}
-\DoxyCodeLine{228 }
-\DoxyCodeLine{229 \textcolor{keywordtype}{        real}(real64) :: log\_prob\_n, a\_prob\_trans, unif\_num}
-\DoxyCodeLine{230 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: x\_start\_1, x\_start\_2, X\_n\_1, X\_n\_2\textcolor{comment}{, sample\_normal}}
-\DoxyCodeLine{231 \textcolor{comment}{        }\textcolor{keywordtype}{integer} :: i, accept  }
-\DoxyCodeLine{232         }
-\DoxyCodeLine{233         \textcolor{keyword}{allocate}(x\_1(3, 1:n+1)) }
-\DoxyCodeLine{234         \textcolor{keyword}{allocate}(x\_2(3, 1:n+1))}
-\DoxyCodeLine{235         \textcolor{keyword}{allocate}(energy\_chain(1:n+1))}
-\DoxyCodeLine{236 }
-\DoxyCodeLine{237         \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
-\DoxyCodeLine{238         x\_start\_1 = sample\_normal}
-\DoxyCodeLine{239 }
-\DoxyCodeLine{240         \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
-\DoxyCodeLine{241         x\_start\_2 = sample\_normal }
-\DoxyCodeLine{242 }
-\DoxyCodeLine{243         x\_1(:,1) = x\_start\_1}
-\DoxyCodeLine{244         x\_2(:,1) = x\_start\_2}
-\DoxyCodeLine{245         accept = 0 }
-\DoxyCodeLine{246         energy\_chain(1) = h\_2\_energy(c\_const, x\_1(:,1), x\_2(:,1), r\_a, r\_b\textcolor{comment}{) }}
-\DoxyCodeLine{247 \textcolor{comment}{}        }
-\DoxyCodeLine{248         \textcolor{keywordflow}{do} i = 2, n+1 }
-\DoxyCodeLine{249             \textcolor{comment}{! Propose the next step}}
-\DoxyCodeLine{250             \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
-\DoxyCodeLine{251             x\_n\_1 = x\_1(:, i-\/1) + sigma * sample\_normal}
-\DoxyCodeLine{252 }
-\DoxyCodeLine{253             \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
-\DoxyCodeLine{254             x\_n\_2 = x\_2(:, i-\/1) + sigma * sample\_normal}
-\DoxyCodeLine{255 }
-\DoxyCodeLine{256             log\_prob\_n = log(h\_2\_prob(c\_const, x\_1(:, i-\/1), x\_2(:, i-\/1),\textcolor{comment}{ x\_n\_1, x\_n\_2, r\_a, r\_b))}}
-\DoxyCodeLine{257 \textcolor{comment}{}            a\_prob\_trans = min(1.0\_real64, exp(log\_prob\_n))}
-\DoxyCodeLine{258             }
-\DoxyCodeLine{259             \textcolor{keyword}{call }ran1(unif\_num, seed)}
-\DoxyCodeLine{260 }
-\DoxyCodeLine{261             \textcolor{keywordflow}{if} (a\_prob\_trans => unif\_num) \textcolor{keywordflow}{then} }
-\DoxyCodeLine{262                 x\_1(:, i) = x\_n\_1}
-\DoxyCodeLine{263                 x\_2(:, i) = x\_n\_2 }
-\DoxyCodeLine{264                 accept =  1 + accept}
-\DoxyCodeLine{265                 energy\_chain(i) = h\_2\_energy(c\_const, x\_n\_1, x\_n\_2, r\_a,\textcolor{comment}{ r\_b)}}
-\DoxyCodeLine{266 \textcolor{comment}{}            \textcolor{keywordflow}{else} }
-\DoxyCodeLine{267                 x\_1(:, i) = x\_1(:, i-\/1)}
-\DoxyCodeLine{268                 x\_2(:, i) = x\_2(:, i-\/1) }
-\DoxyCodeLine{269                 }
-\DoxyCodeLine{270                 energy\_chain(i) = energy\_chain(i-\/1)}
-\DoxyCodeLine{271 \textcolor{keywordflow}{            end if} }
-\DoxyCodeLine{272 }
-\DoxyCodeLine{273 \textcolor{keywordflow}{        end do} }
-\DoxyCodeLine{274 }
-\DoxyCodeLine{275         accept\_rate = accept / n }
-\DoxyCodeLine{276 }
+\DoxyCodeLine{496 }
+\DoxyCodeLine{497         \textcolor{keywordtype}{implicit none} }
+\DoxyCodeLine{498 }
+\DoxyCodeLine{499 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(3)} :: R\_a, R\_b}
+\DoxyCodeLine{500 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: sigma}
+\DoxyCodeLine{501 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: c\_const }
+\DoxyCodeLine{502 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{optional} :: x\_start\_1, x\_start\_2}
+\DoxyCodeLine{503         \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N, burn, thin }
+\DoxyCodeLine{504         }
+\DoxyCodeLine{505          }
+\DoxyCodeLine{506 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: accept\_rate}
+\DoxyCodeLine{507 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:, :)}, \textcolor{keywordtype}{allocatable} :: X\_1, X\_2}
+\DoxyCodeLine{508 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable} :: energy\_chain}
+\DoxyCodeLine{509 }
+\DoxyCodeLine{510 \textcolor{keywordtype}{        real}(real64) :: log\_prob\_n                              \textcolor{comment}{! The natural logarithm of the transition proability }}
+\DoxyCodeLine{511 \textcolor{keywordtype}{        real}(real64) :: a\_prob\_trans                            \textcolor{comment}{! Acceptance ratio of the transitional probability                   }}
+\DoxyCodeLine{512 \textcolor{keywordtype}{        real}(real64) :: unif\_num                                \textcolor{comment}{! A random sample from the uniform distribution }}
+\DoxyCodeLine{513 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: start\_1, start\_2      \textcolor{comment}{! Starting points for the random walkers }}
+\DoxyCodeLine{514 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: X\_n\_1, X\_n\_2              \textcolor{comment}{! The propsed steps for the random walkers }}
+\DoxyCodeLine{515 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: sample\_normal             \textcolor{comment}{! Sample from the normal distribution }}
+\DoxyCodeLine{516         \textcolor{keywordtype}{integer} :: accept                                       \textcolor{comment}{! Number of accepted steps }}
+\DoxyCodeLine{517         \textcolor{keywordtype}{integer} :: i                                            \textcolor{comment}{! Loop variable }}
+\DoxyCodeLine{518         }
+\DoxyCodeLine{519         \textcolor{keyword}{allocate}(x\_1(3, 1:n+1)) }
+\DoxyCodeLine{520         \textcolor{keyword}{allocate}(x\_2(3, 1:n+1))}
+\DoxyCodeLine{521         \textcolor{keyword}{allocate}(energy\_chain(1:n+1))}
+\DoxyCodeLine{522 }
+\DoxyCodeLine{523         \textcolor{comment}{! Allow the starting position to take on the default value }}
+\DoxyCodeLine{524         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(x\_start\_1) .and. \textcolor{keyword}{present}(x\_start\_2)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{525             start\_1 = x\_start\_1}
+\DoxyCodeLine{526             x\_1(:,1) = start\_1}
+\DoxyCodeLine{527             }
+\DoxyCodeLine{528             start\_2 = x\_start\_2}
+\DoxyCodeLine{529             x\_2(:,1) = start\_2}
+\DoxyCodeLine{530         \textcolor{keywordflow}{else} }
+\DoxyCodeLine{531             \textcolor{comment}{! Create the initial position of random walker 1 that is within a certain radius}}
+\DoxyCodeLine{532             \textcolor{keywordflow}{do} \textcolor{keywordflow}{while}(norm2(sample\_normal) <= rcut )}
+\DoxyCodeLine{533                 \textcolor{keyword}{call }random\_normal(1, sample\_normal)}
+\DoxyCodeLine{534 \textcolor{keywordflow}{            end do} }
+\DoxyCodeLine{535             start\_1 = sample\_normal}
+\DoxyCodeLine{536             x\_1(:,1) = start\_1}
+\DoxyCodeLine{537 }
+\DoxyCodeLine{538             \textcolor{comment}{! Create the initial position of random walker 2 that is within a certain radius}}
+\DoxyCodeLine{539             \textcolor{keywordflow}{do} \textcolor{keywordflow}{while}(norm2(sample\_normal) <= rcut )}
+\DoxyCodeLine{540                 \textcolor{keyword}{call }random\_normal(1, sample\_normal)}
+\DoxyCodeLine{541 \textcolor{keywordflow}{            end do} }
+\DoxyCodeLine{542             start\_2 = sample\_normal }
+\DoxyCodeLine{543             x\_2(:,1) = start\_2}
+\DoxyCodeLine{544 \textcolor{keywordflow}{        end if} }
+\DoxyCodeLine{545         }
+\DoxyCodeLine{546         \textcolor{comment}{! Calculate the local energy of the initial steps}}
+\DoxyCodeLine{547         energy\_chain(1) = h\_2\_energy(c\_const, x\_1(:,1), x\_2(:,1), r\_a, r\_b\textcolor{comment}{)}}
+\DoxyCodeLine{548 \textcolor{comment}{}        }
+\DoxyCodeLine{549         \textcolor{comment}{! Start the counter for the number of accepted moves}}
+\DoxyCodeLine{550         accept = 0  }
+\DoxyCodeLine{551 }
+\DoxyCodeLine{552         \textcolor{comment}{! Metropolis algorithm }}
+\DoxyCodeLine{553         \textcolor{keywordflow}{do} i = 2, n+1 }
+\DoxyCodeLine{554             \textcolor{comment}{! Propose the next step for random walker 1 }}
+\DoxyCodeLine{555             \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
+\DoxyCodeLine{556             x\_n\_1 = x\_1(:, i-\/1) + sigma * sample\_normal}
+\DoxyCodeLine{557 }
+\DoxyCodeLine{558             \textcolor{comment}{! Propose the next step for random walker 2 }}
+\DoxyCodeLine{559             \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
+\DoxyCodeLine{560             x\_n\_2 = x\_2(:, i-\/1) + sigma * sample\_normal}
+\DoxyCodeLine{561 }
+\DoxyCodeLine{562             \textcolor{comment}{! Calculate the transition probability between the proposed steps and current steps}}
+\DoxyCodeLine{563             log\_prob\_n = log(h\_2\_prob(c\_const, x\_1(:, i-\/1), x\_2(:, i-\/1),\textcolor{comment}{ x\_n\_1, x\_n\_2, r\_a, r\_b))}}
+\DoxyCodeLine{564 \textcolor{comment}{}}
+\DoxyCodeLine{565             \textcolor{comment}{! Calculate the acceptance ratio}}
+\DoxyCodeLine{566             a\_prob\_trans = min(1.0\_real64, exp(log\_prob\_n))}
+\DoxyCodeLine{567 }
+\DoxyCodeLine{568             \textcolor{comment}{! Generate sample from uniform distribution}}
+\DoxyCodeLine{569             \textcolor{keyword}{call }ran1(unif\_num, seed)}
+\DoxyCodeLine{570 }
+\DoxyCodeLine{571             \textcolor{comment}{! Compare the drawn sample from the uniform distribution with the acceptance ratio}}
+\DoxyCodeLine{572             \textcolor{keywordflow}{if} (a\_prob\_trans >= unif\_num) \textcolor{keywordflow}{then} }
+\DoxyCodeLine{573                 \textcolor{comment}{! If accepted calculate local energy and add proposed position to the MCMC chain}}
+\DoxyCodeLine{574                 x\_1(:, i) = x\_n\_1}
+\DoxyCodeLine{575                 x\_2(:, i) = x\_n\_2 }
+\DoxyCodeLine{576                 energy\_chain(i) = h\_2\_energy(c\_const, x\_n\_1, x\_n\_2, r\_a,\textcolor{comment}{ r\_b)}}
+\DoxyCodeLine{577 \textcolor{comment}{}                }
+\DoxyCodeLine{578                 \textcolor{comment}{! Increment by the number of accepted steps }}
+\DoxyCodeLine{579                 accept = 1 + accept }
+\DoxyCodeLine{580             \textcolor{keywordflow}{else} }
+\DoxyCodeLine{581                 \textcolor{comment}{! If rejected the proposed step is the current step }}
+\DoxyCodeLine{582                 x\_1(:, i) = x\_1(:, i-\/1)}
+\DoxyCodeLine{583                 x\_2(:, i) = x\_2(:, i-\/1) }
+\DoxyCodeLine{584                 }
+\DoxyCodeLine{585                 \textcolor{comment}{! The local energy of the proposed step is the same as the current step when rejected}}
+\DoxyCodeLine{586                 energy\_chain(i) = energy\_chain(i-\/1)}
+\DoxyCodeLine{587 \textcolor{keywordflow}{            end if} }
+\DoxyCodeLine{588 \textcolor{keywordflow}{        end do} }
+\DoxyCodeLine{589 }
+\DoxyCodeLine{590         \textcolor{comment}{! Calculate the acceptance ratio}}
+\DoxyCodeLine{591         accept\_rate = (real(accept, 8) / real(n, 8)) }
+\DoxyCodeLine{592 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -383,7 +702,7 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespacevqmc_afdead1c964c264b80a7698da1bc3e792_cgraph}
+\includegraphics[width=350pt]{namespacevqmc_a95b4dedd1b7e0d0c94d4f64055e30ce5_cgraph}
 \end{center}
 \end{figure}
 
@@ -397,11 +716,11 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line 13 of file vqmc.\+f90.
+Definition at line 32 of file vqmc.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{13     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: ntab = 32}
+\DoxyCodeLine{32     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: ntab = 32}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespacevqmc_a86db46440794b9ef7cfd9fbf1fd69930}\label{namespacevqmc_a86db46440794b9ef7cfd9fbf1fd69930}} 
@@ -412,11 +731,11 @@ Definition at line 13 of file vqmc.\+f90.
 
 
 
-Definition at line 14 of file vqmc.\+f90.
+Definition at line 33 of file vqmc.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{14     \textcolor{keywordtype}{integer(int64)}, \textcolor{keywordtype}{dimension(ntab)}, \textcolor{keywordtype}{save} :: iv = 0 \textcolor{comment}{! 'threadprivate' by default since using MPI}}
+\DoxyCodeLine{33     \textcolor{keywordtype}{integer(int64)}, \textcolor{keywordtype}{dimension(ntab)}, \textcolor{keywordtype}{save} :: iv = 0 \textcolor{comment}{! 'threadprivate' by default since using MPI}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespacevqmc_a1608372d703310a49afc4243ccf27368}\label{namespacevqmc_a1608372d703310a49afc4243ccf27368}} 
@@ -427,11 +746,11 @@ Definition at line 14 of file vqmc.\+f90.
 
 
 
-Definition at line 15 of file vqmc.\+f90.
+Definition at line 34 of file vqmc.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{15     \textcolor{keywordtype}{integer(int64)}, \textcolor{keywordtype}{save} :: iy = 0}
+\DoxyCodeLine{34     \textcolor{keywordtype}{integer(int64)}, \textcolor{keywordtype}{save} :: iy = 0}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespacevqmc_a986f071589794992c4bc31de25c63976}\label{namespacevqmc_a986f071589794992c4bc31de25c63976}} 
@@ -442,10 +761,10 @@ Definition at line 15 of file vqmc.\+f90.
 
 
 
-Definition at line 16 of file vqmc.\+f90.
+Definition at line 35 of file vqmc.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{16     \textcolor{keywordtype}{integer(int64)} :: seed}
+\DoxyCodeLine{35     \textcolor{keywordtype}{integer(int64)} :: seed}
 
 \end{DoxyCode}

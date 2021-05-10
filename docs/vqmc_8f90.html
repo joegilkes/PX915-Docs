@@ -102,22 +102,34 @@ $(document).ready(function(){initNavTree('vqmc_8f90.html',''); initResizable(); 
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Modules</h2></td></tr>
 <tr class="memitem:namespacevqmc"><td class="memItemLeft" align="right" valign="top">module &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevqmc.html">vqmc</a></td></tr>
+<tr class="memdesc:namespacevqmc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains a random number generator, a sub-routine that draws from a normal distribution and a VQMC solver for the three different problems. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions/Subroutines</h2></td></tr>
 <tr class="memitem:aed182179994b5465f5466b4d909a764e"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevqmc.html#aed182179994b5465f5466b4d909a764e">vqmc::init_ran1</a> ()</td></tr>
+<tr class="memdesc:aed182179994b5465f5466b4d909a764e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise random number generator by drawing a seed from /dev/urandom.  <a href="namespacevqmc.html#aed182179994b5465f5466b4d909a764e">More...</a><br /></td></tr>
 <tr class="separator:aed182179994b5465f5466b4d909a764e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01b80444204a0cd0b5cddde82cbc7651"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevqmc.html#a01b80444204a0cd0b5cddde82cbc7651">vqmc::ran1</a> (sample, dseed)</td></tr>
+<tr class="memdesc:a01b80444204a0cd0b5cddde82cbc7651"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of David Quigley's random number generator.  <a href="namespacevqmc.html#a01b80444204a0cd0b5cddde82cbc7651">More...</a><br /></td></tr>
 <tr class="separator:a01b80444204a0cd0b5cddde82cbc7651"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b89c5b7a64a3e438695787b90a62359"><td class="memItemLeft" align="right" valign="top">real(real64) function, dimension(:), allocatable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevqmc.html#a6b89c5b7a64a3e438695787b90a62359">vqmc::linspace</a> (start, end, num)</td></tr>
+<tr class="memdesc:a6b89c5b7a64a3e438695787b90a62359"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adaptation of numpy's linspace function.  <a href="namespacevqmc.html#a6b89c5b7a64a3e438695787b90a62359">More...</a><br /></td></tr>
+<tr class="separator:a6b89c5b7a64a3e438695787b90a62359"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62ec9b662e5d9b46ec37d52ff93cb335"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335">vqmc::random_normal</a> (dim, x)</td></tr>
+<tr class="memdesc:a62ec9b662e5d9b46ec37d52ff93cb335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adaptation of numpy's linspace function.  <a href="namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335">More...</a><br /></td></tr>
 <tr class="separator:a62ec9b662e5d9b46ec37d52ff93cb335"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af750525012cfc872fca742b9ef803120"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevqmc.html#af750525012cfc872fca742b9ef803120">vqmc::vqmc_qho</a> (sigma, N, burn, thin, alpha_const, X, accept_rate, energy_chain)</td></tr>
-<tr class="separator:af750525012cfc872fca742b9ef803120"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a156887f8e878c4d01de5d2d4fa606a18"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevqmc.html#a156887f8e878c4d01de5d2d4fa606a18">vqmc::vqmc_h_2_plus</a> (sigma, N, burn, thin, c_const, R_a, R_b, X, accept_rate, energy_chain)</td></tr>
-<tr class="separator:a156887f8e878c4d01de5d2d4fa606a18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdead1c964c264b80a7698da1bc3e792"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevqmc.html#afdead1c964c264b80a7698da1bc3e792">vqmc::vqmc_h_2</a> (sigma, N, burn, thin, c_const, R_a, R_b, X_1, X_2, accept_rate, energy_chain)</td></tr>
-<tr class="separator:afdead1c964c264b80a7698da1bc3e792"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b66a706cd8db1d3228f169f9a6964da"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevqmc.html#a8b66a706cd8db1d3228f169f9a6964da">vqmc::vqmc_qho</a> (sigma, N, burn, thin, alpha_const, x_start, X, accept_rate, energy_chain)</td></tr>
+<tr class="memdesc:a8b66a706cd8db1d3228f169f9a6964da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs VQMC for QHO.  <a href="namespacevqmc.html#a8b66a706cd8db1d3228f169f9a6964da">More...</a><br /></td></tr>
+<tr class="separator:a8b66a706cd8db1d3228f169f9a6964da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a014fdaf26103c82839fcc36c34fb9ea7"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevqmc.html#a014fdaf26103c82839fcc36c34fb9ea7">vqmc::vqmc_h_2_plus</a> (sigma, N, burn, thin, c_const, R_a, R_b, x_start, X, accept_rate, energy_chain)</td></tr>
+<tr class="memdesc:a014fdaf26103c82839fcc36c34fb9ea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs VQMC for H_2_plus <br  />
+  <a href="namespacevqmc.html#a014fdaf26103c82839fcc36c34fb9ea7">More...</a><br /></td></tr>
+<tr class="separator:a014fdaf26103c82839fcc36c34fb9ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95b4dedd1b7e0d0c94d4f64055e30ce5"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevqmc.html#a95b4dedd1b7e0d0c94d4f64055e30ce5">vqmc::vqmc_h_2</a> (sigma, N, burn, thin, c_const, R_a, R_b, x_start_1, x_start_2, X_1, X_2, accept_rate, energy_chain)</td></tr>
+<tr class="memdesc:a95b4dedd1b7e0d0c94d4f64055e30ce5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs VQMC for H_2 <br  />
+  <a href="namespacevqmc.html#a95b4dedd1b7e0d0c94d4f64055e30ce5">More...</a><br /></td></tr>
+<tr class="separator:a95b4dedd1b7e0d0c94d4f64055e30ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>

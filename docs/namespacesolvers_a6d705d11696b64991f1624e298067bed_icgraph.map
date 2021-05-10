@@ -1,10 +1,9 @@
 <map id="solvers::h_2_plus_wfn" name="solvers::h_2_plus_wfn">
-<area shape="rect" id="node1" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="629,122,780,149"/>
-<area shape="rect" id="node2" href="$namespacesolvers.html#a1f21386928aadfc3dd6bc5cfb82fb94f" title="Calculates local energy for the &#160;problem." alt="" coords="410,71,577,98"/>
-<area shape="rect" id="node6" href="$namespacesolvers.html#a5695d107239a7a8fb1f8b096786af028" title="Calculates transition probability for the &#160;problem." alt="" coords="416,122,571,149"/>
-<area shape="rect" id="node8" href="$namespacetesting.html#ad1d0b5a5ff6ea4b8b8f29cc2a0e1982a" title="Tests the H_2_plus_wfn function in the solvers module." alt="" coords="405,173,581,199"/>
+<area shape="rect" id="node1" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="620,71,771,98"/>
+<area shape="rect" id="node2" href="$namespacesolvers.html#a1f21386928aadfc3dd6bc5cfb82fb94f" title="Calculates local energy for the &#160;problem." alt="" coords="405,17,572,43"/>
+<area shape="rect" id="node5" href="$namespacesolvers.html#a5695d107239a7a8fb1f8b096786af028" title="Calculates transition probability for the &#160;problem." alt="" coords="411,71,566,98"/>
+<area shape="rect" id="node7" href="$namespacetesting.html#ad1d0b5a5ff6ea4b8b8f29cc2a0e1982a" title="Tests the H_2_plus_wfn function in the solvers module." alt="" coords="179,122,355,149"/>
 <area shape="rect" id="node3" href="$namespacetesting.html#a95de4751adddb42c59a3c44f9076db8d" title="Tests the H_2_plus_Energy function in the solvers module." alt="" coords="193,5,341,47"/>
-<area shape="rect" id="node5" href="$namespacevqmc.html#a156887f8e878c4d01de5d2d4fa606a18" title=" " alt="" coords="192,71,343,98"/>
-<area shape="rect" id="node4" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="5,122,129,149"/>
-<area shape="rect" id="node7" href="$namespacetesting.html#a15f3412ac40e1145572a5269c6f1b971" title="Tests the H_2_plus_Prob function in the solvers module." alt="" coords="177,122,357,149"/>
+<area shape="rect" id="node4" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="5,71,129,98"/>
+<area shape="rect" id="node6" href="$namespacetesting.html#a15f3412ac40e1145572a5269c6f1b971" title="Tests the H_2_plus_Prob function in the solvers module." alt="" coords="177,71,357,98"/>
 </map>
