@@ -207,7 +207,7 @@ Definition at line 103 of file input\+\_\+parser.\+f90.
 \DoxyCodeLine{111 }
 \DoxyCodeLine{112     \textcolor{comment}{! Read CONTROL namelist}}
 \DoxyCodeLine{113     \textcolor{keyword}{call }read\_control(system, run\_equil, verbose)}
-\DoxyCodeLine{114     print*,\textcolor{stringliteral}{'System: '},system }
+\DoxyCodeLine{114     \textcolor{keyword}{write}(*, *) \textcolor{stringliteral}{'System: '}, system}
 \DoxyCodeLine{115 }
 \DoxyCodeLine{116     \textcolor{comment}{! If system='test', return to main}}
 \DoxyCodeLine{117     \textcolor{keywordflow}{if} (trim(system)==\textcolor{stringliteral}{'test'}) \textcolor{keywordflow}{then}}
