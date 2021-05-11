@@ -54,7 +54,7 @@ var namespaces_dup =
       [ "linspace", "namespacevqmc.html#a6b89c5b7a64a3e438695787b90a62359", null ],
       [ "random_normal", "namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335", null ],
       [ "vqmc_qho", "namespacevqmc.html#ac8a07ca12229e28074bf9088be5c2b5c", null ],
-      [ "vqmc_h_2_plus", "namespacevqmc.html#a2084652c11e4ee910ecd93c8a935dbd8", null ],
+      [ "vqmc_h_2_plus", "namespacevqmc.html#adef1f40504be89d534ea89658a169aad", null ],
       [ "vqmc_h_2", "namespacevqmc.html#ac6ac761c39bd7f67f23e4fb7d7cae066", null ],
       [ "ntab", "namespacevqmc.html#a4acb6b64bbac5c4684654d00393f7f24", null ],
       [ "iv", "namespacevqmc.html#a86db46440794b9ef7cfd9fbf1fd69930", null ],
