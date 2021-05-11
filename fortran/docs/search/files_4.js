@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['python_5fmainpage_2emd_113',['PYTHON_MAINPAGE.md',['../_p_y_t_h_o_n___m_a_i_n_p_a_g_e_8md.html',1,'']]]
+  ['quantum_5fsolvers_2ef90_111',['quantum_solvers.f90',['../quantum__solvers_8f90.html',1,'']]]
 ];

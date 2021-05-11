@@ -26,8 +26,7 @@ var NAVTREE =
 [
   [ "[Project Name] Python Frontend Documentation", "index.html", [
     [ "Python Documentation Main Page", "index.html", null ],
-    [ "Fortran Documentation Main Page", "md_repo__f_o_r_t_r_a_n__m_a_i_n_p_a_g_e.html", null ],
-    [ "QMC Project - PX915 Group A", "md_repo__r_e_a_d_m_e.html", null ],
+    [ "[Project Name] Readme", "md_repo__r_e_a_d_m_e.html", null ],
     [ "Packages", "namespaces.html", [
       [ "Packages", "namespaces.html", "namespaces_dup" ]
     ] ],

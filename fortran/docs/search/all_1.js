@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['bond_3',['bond',['../structshared__data_1_1h2plus__type.html#a6137adec3c96acee9e866a0a107d55f8',1,'shared_data::h2plus_type::bond()'],['../structshared__data_1_1h2__type.html#af37043d2de3ce1c6ab700a88764e0ba4',1,'shared_data::h2_type::bond()']]],
-  ['burn_5fstep_4',['burn_step',['../structshared__data_1_1qho__type.html#a914a539afdc5758886f341b2d5ad227b',1,'shared_data::qho_type::burn_step()'],['../structshared__data_1_1h2plus__type.html#ad083f40223825a334434481a67337f3d',1,'shared_data::h2plus_type::burn_step()'],['../structshared__data_1_1h2__type.html#a3b0fc9e9b3524742ed36b9e35ff63307',1,'shared_data::h2_type::burn_step()']]]
+  ['a_5f0_1',['a_0',['../namespaceconstants.html#ac0600c375ab1128c6119e57f71b59b6e',1,'constants']]],
+  ['alpha_2',['alpha',['../structshared__data_1_1qho__type.html#a617a3bd7ad00f08ff22fa999db1d52b1',1,'shared_data::qho_type']]],
+  ['append_5fto_5farray_3',['append_to_array',['../namespacewrite__netcdf.html#a6830bd805591aad1ec622d12037dd99d',1,'write_netcdf']]]
 ];
