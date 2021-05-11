@@ -441,11 +441,11 @@ Definition at line 254 of file vqmc.\+f90.
 \DoxyCodeLine{366 \textcolor{comment}{}\textcolor{keywordflow}{                        end if}}
 \DoxyCodeLine{367 \textcolor{keywordflow}{                    end if}}
 \DoxyCodeLine{368 }
-\DoxyCodeLine{369                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((i > (burn + 1)) .and. (thin\_counter == (thin +\textcolor{comment}{ 1))) }\textcolor{keywordflow}{then}}
+\DoxyCodeLine{369                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((i > (burn + 1)) .and. (thin\_counter == thin) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{370                     \textcolor{comment}{! Increment the reset counter }}
 \DoxyCodeLine{371                     reset\_counter = 1 + reset\_counter}
 \DoxyCodeLine{372                     \textcolor{comment}{! Precalculate i\_bt for shorthand}}
-\DoxyCodeLine{373                     i\_bt = i -\/ burn -\/ (reset\_counter * thin)}
+\DoxyCodeLine{373                     i\_bt = i -\/ burn -\/ (reset\_counter * (thin -\/ 1))}
 \DoxyCodeLine{374                     \textcolor{comment}{! Add to the burn and thinned MCMC chain}}
 \DoxyCodeLine{375                     x\_burnt(i\_bt) = x\_n(1)}
 \DoxyCodeLine{376                     \textcolor{comment}{! Calculate the local energy at this point }}
@@ -463,59 +463,60 @@ Definition at line 254 of file vqmc.\+f90.
 \DoxyCodeLine{388 \textcolor{comment}{}                                (i\_bt), x\_burnt(i\_bt), energy\_chain(i\_bt\textcolor{comment}{), acceptance}}
 \DoxyCodeLine{389 \textcolor{comment}{}\textcolor{keywordflow}{                        end if}}
 \DoxyCodeLine{390 \textcolor{keywordflow}{                    end if}}
-\DoxyCodeLine{391 \textcolor{keywordflow}{                end if} }
-\DoxyCodeLine{392 }
-\DoxyCodeLine{393             \textcolor{keywordflow}{else} }
-\DoxyCodeLine{394                 \textcolor{comment}{! If rejected the proposed step is the current step}}
-\DoxyCodeLine{395                 x(i) = x(i-\/1)}
-\DoxyCodeLine{396 }
-\DoxyCodeLine{397                 \textcolor{comment}{! To determine whether this point should be added to the burnt and thinned MCMC chain }}
-\DoxyCodeLine{398                 \textcolor{keywordflow}{if} (i == (burn + 1)) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{399                     \textcolor{comment}{! Add to the burn and thinned MCMC chain}}
-\DoxyCodeLine{400                     x\_burnt(i -\/ burn) = x\_n(1)}
-\DoxyCodeLine{401                     \textcolor{comment}{! The local energy of the proposed step is the same as the current step when rejected }}
-\DoxyCodeLine{402                     energy\_chain(i -\/ burn) = qho\_energy(alpha\_const, x(i\textcolor{comment}{-\/1))}}
-\DoxyCodeLine{403 \textcolor{comment}{}                    \textcolor{comment}{! Resetting the thin counter }}
-\DoxyCodeLine{404                     thin\_counter = 0}
-\DoxyCodeLine{405 }
-\DoxyCodeLine{406                     acceptance = \textcolor{stringliteral}{'N'}}
-\DoxyCodeLine{407 }
-\DoxyCodeLine{408                     \textcolor{keywordflow}{if} (verbose) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{409                         \textcolor{keywordflow}{if} (burn .gt. 0) \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('-\/-\/-\/ Burning steps completed -\/-\/-\/')"{}}\textcolor{comment}{)}}
-\DoxyCodeLine{410 \textcolor{comment}{}                        \textcolor{keywordflow}{if} (mod(i-\/burn, logfrac) .eq. 0.0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{411                             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(I8, '   ', F12.8, '   ', F12.6, '     ', A1)"{}}\textcolor{comment}{) \&}}
-\DoxyCodeLine{412 \textcolor{comment}{}                                (i-\/burn), x\_burnt(i-\/burn), energy\_chain(i\textcolor{comment}{-\/burn), acceptance}}
-\DoxyCodeLine{413 \textcolor{comment}{}\textcolor{keywordflow}{                        end if}}
-\DoxyCodeLine{414 \textcolor{keywordflow}{                    end if}}
-\DoxyCodeLine{415 }
-\DoxyCodeLine{416                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((i > (burn + 1)) .and. (thin\_counter == (thin +\textcolor{comment}{ 1))) }\textcolor{keywordflow}{then}}
-\DoxyCodeLine{417                     \textcolor{comment}{! Increment the reset counter }}
-\DoxyCodeLine{418                     reset\_counter = 1 + reset\_counter}
-\DoxyCodeLine{419                     \textcolor{comment}{! Precalculate i\_bt for shorthand}}
-\DoxyCodeLine{420                     i\_bt = i -\/ burn -\/ (reset\_counter * thin)}
-\DoxyCodeLine{421                     \textcolor{comment}{! Add to the burn and thinned MCMC chain}}
-\DoxyCodeLine{422                     x\_burnt(i\_bt) = x(i-\/1)}
-\DoxyCodeLine{423                     \textcolor{comment}{! Calculate the local energy at this point}}
-\DoxyCodeLine{424                     energy\_chain(i\_bt) = qho\_energy(alpha\_const, x(i-\/1))}
-\DoxyCodeLine{425                     \textcolor{comment}{! Reseting the thin counter }}
-\DoxyCodeLine{426                     thin\_counter = 0 }
-\DoxyCodeLine{427 }
-\DoxyCodeLine{428                     acceptance = \textcolor{stringliteral}{'N'}}
-\DoxyCodeLine{429 }
-\DoxyCodeLine{430                     \textcolor{keywordflow}{if} (verbose) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{431                         \textcolor{keywordflow}{if} (mod(i\_bt, logfrac) .eq. 0.0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{432                             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(I8, '   ', F12.8, '   ', F12.6, '     ', A1)"{}}\textcolor{comment}{) \&}}
-\DoxyCodeLine{433 \textcolor{comment}{}                                (i\_bt), x\_burnt(i\_bt), energy\_chain(i\_bt\textcolor{comment}{), acceptance}}
-\DoxyCodeLine{434 \textcolor{comment}{}\textcolor{keywordflow}{                        end if}}
-\DoxyCodeLine{435 \textcolor{keywordflow}{                    end if}}
-\DoxyCodeLine{436 \textcolor{keywordflow}{                end if} }
-\DoxyCodeLine{437 \textcolor{keywordflow}{            end if} }
-\DoxyCodeLine{438 }
-\DoxyCodeLine{439 \textcolor{keywordflow}{        end do} }
-\DoxyCodeLine{440 }
-\DoxyCodeLine{441         \textcolor{comment}{! Calculate the acceptance ratio }}
-\DoxyCodeLine{442         accept\_rate = (real(accept, kind=real64) / real(re\_size, kind=real64\textcolor{comment}{)) }}
-\DoxyCodeLine{443 \textcolor{comment}{}}
+\DoxyCodeLine{391                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ()}
+\DoxyCodeLine{392 \textcolor{keywordflow}{                end if} }
+\DoxyCodeLine{393 }
+\DoxyCodeLine{394             \textcolor{keywordflow}{else} }
+\DoxyCodeLine{395                 \textcolor{comment}{! If rejected the proposed step is the current step}}
+\DoxyCodeLine{396                 x(i) = x(i-\/1)}
+\DoxyCodeLine{397 }
+\DoxyCodeLine{398                 \textcolor{comment}{! To determine whether this point should be added to the burnt and thinned MCMC chain }}
+\DoxyCodeLine{399                 \textcolor{keywordflow}{if} (i == (burn + 1)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{400                     \textcolor{comment}{! Add to the burn and thinned MCMC chain}}
+\DoxyCodeLine{401                     x\_burnt(i -\/ burn) = x\_n(1)}
+\DoxyCodeLine{402                     \textcolor{comment}{! The local energy of the proposed step is the same as the current step when rejected }}
+\DoxyCodeLine{403                     energy\_chain(i -\/ burn) = qho\_energy(alpha\_const, x(i\textcolor{comment}{-\/1))}}
+\DoxyCodeLine{404 \textcolor{comment}{}                    \textcolor{comment}{! Resetting the thin counter }}
+\DoxyCodeLine{405                     thin\_counter = 0}
+\DoxyCodeLine{406 }
+\DoxyCodeLine{407                     acceptance = \textcolor{stringliteral}{'N'}}
+\DoxyCodeLine{408 }
+\DoxyCodeLine{409                     \textcolor{keywordflow}{if} (verbose) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{410                         \textcolor{keywordflow}{if} (burn .gt. 0) \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('-\/-\/-\/ Burning steps completed -\/-\/-\/')"{}}\textcolor{comment}{)}}
+\DoxyCodeLine{411 \textcolor{comment}{}                        \textcolor{keywordflow}{if} (mod(i-\/burn, logfrac) .eq. 0.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{412                             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(I8, '   ', F12.8, '   ', F12.6, '     ', A1)"{}}\textcolor{comment}{) \&}}
+\DoxyCodeLine{413 \textcolor{comment}{}                                (i-\/burn), x\_burnt(i-\/burn), energy\_chain(i\textcolor{comment}{-\/burn), acceptance}}
+\DoxyCodeLine{414 \textcolor{comment}{}\textcolor{keywordflow}{                        end if}}
+\DoxyCodeLine{415 \textcolor{keywordflow}{                    end if}}
+\DoxyCodeLine{416 }
+\DoxyCodeLine{417                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((i > (burn + 1)) .and. (thin\_counter == thin)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{418                     \textcolor{comment}{! Increment the reset counter }}
+\DoxyCodeLine{419                     reset\_counter = 1 + reset\_counter}
+\DoxyCodeLine{420                     \textcolor{comment}{! Precalculate i\_bt for shorthand}}
+\DoxyCodeLine{421                     i\_bt = i -\/ burn -\/ (reset\_counter * (thin -\/ 1))}
+\DoxyCodeLine{422                     \textcolor{comment}{! Add to the burn and thinned MCMC chain}}
+\DoxyCodeLine{423                     x\_burnt(i\_bt) = x(i-\/1)}
+\DoxyCodeLine{424                     \textcolor{comment}{! Calculate the local energy at this point}}
+\DoxyCodeLine{425                     energy\_chain(i\_bt) = qho\_energy(alpha\_const, x(i-\/1))}
+\DoxyCodeLine{426                     \textcolor{comment}{! Reseting the thin counter }}
+\DoxyCodeLine{427                     thin\_counter = 0 }
+\DoxyCodeLine{428 }
+\DoxyCodeLine{429                     acceptance = \textcolor{stringliteral}{'N'}}
+\DoxyCodeLine{430 }
+\DoxyCodeLine{431                     \textcolor{keywordflow}{if} (verbose) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{432                         \textcolor{keywordflow}{if} (mod(i\_bt, logfrac) .eq. 0.0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{433                             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(I8, '   ', F12.8, '   ', F12.6, '     ', A1)"{}}\textcolor{comment}{) \&}}
+\DoxyCodeLine{434 \textcolor{comment}{}                                (i\_bt), x\_burnt(i\_bt), energy\_chain(i\_bt\textcolor{comment}{), acceptance}}
+\DoxyCodeLine{435 \textcolor{comment}{}\textcolor{keywordflow}{                        end if}}
+\DoxyCodeLine{436 \textcolor{keywordflow}{                    end if}}
+\DoxyCodeLine{437 \textcolor{keywordflow}{                end if} }
+\DoxyCodeLine{438 \textcolor{keywordflow}{            end if} }
+\DoxyCodeLine{439 }
+\DoxyCodeLine{440 \textcolor{keywordflow}{        end do} }
+\DoxyCodeLine{441 }
+\DoxyCodeLine{442         \textcolor{comment}{! Calculate the acceptance ratio }}
+\DoxyCodeLine{443         accept\_rate = (real(accept, kind=real64) / real(re\_size, kind=real64\textcolor{comment}{)) }}
+\DoxyCodeLine{444 \textcolor{comment}{}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -573,90 +574,90 @@ Computes
 \end{DoxyParams}
 
 
-Definition at line 473 of file vqmc.\+f90.
+Definition at line 474 of file vqmc.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{475 }
-\DoxyCodeLine{476         \textcolor{keywordtype}{implicit none} }
-\DoxyCodeLine{477 }
-\DoxyCodeLine{478 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(3)} :: R\_a, R\_b}
-\DoxyCodeLine{479 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: sigma}
-\DoxyCodeLine{480 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: c\_const}
-\DoxyCodeLine{481 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{optional} :: x\_start}
-\DoxyCodeLine{482         \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N, burn, thin }
-\DoxyCodeLine{483         }
-\DoxyCodeLine{484          }
-\DoxyCodeLine{485 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: accept\_rate}
-\DoxyCodeLine{486 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:, :)}, \textcolor{keywordtype}{allocatable} :: X}
-\DoxyCodeLine{487 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable} :: energy\_chain}
-\DoxyCodeLine{488 }
-\DoxyCodeLine{489 \textcolor{keywordtype}{        real}(real64) :: log\_prob\_n                      \textcolor{comment}{! The natural logarithm of the transition proability}}
-\DoxyCodeLine{490 \textcolor{keywordtype}{        real}(real64) :: a\_prob\_trans                    \textcolor{comment}{! Acceptance ratio of the transitional probability }}
-\DoxyCodeLine{491 \textcolor{keywordtype}{        real}(real64) :: unif\_num                        \textcolor{comment}{! A random sample from the uniform distribution }}
-\DoxyCodeLine{492 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: start             \textcolor{comment}{! Starting point of MCMC chain}}
-\DoxyCodeLine{493 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: X\_n               \textcolor{comment}{! The proposed step }}
-\DoxyCodeLine{494 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: sample\_normal     \textcolor{comment}{! A sample from the normal distribution }}
-\DoxyCodeLine{495         \textcolor{keywordtype}{integer} :: accept                               \textcolor{comment}{! Number of accepted steps }}
-\DoxyCodeLine{496         \textcolor{keywordtype}{integer} :: i                                    \textcolor{comment}{! Loop variable }}
-\DoxyCodeLine{497         }
-\DoxyCodeLine{498         \textcolor{keyword}{allocate}(x(3, 1:n+1)) }
-\DoxyCodeLine{499         \textcolor{keyword}{allocate}(energy\_chain(1:n+1))}
-\DoxyCodeLine{500 }
-\DoxyCodeLine{501         \textcolor{comment}{! Allow the starting position to take on the default value}}
-\DoxyCodeLine{502         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(x\_start)) \textcolor{keywordflow}{then} }
-\DoxyCodeLine{503             start = x\_start}
-\DoxyCodeLine{504             x(:,1) = start }
-\DoxyCodeLine{505         \textcolor{keywordflow}{else} }
-\DoxyCodeLine{506             \textcolor{comment}{! Create the initial position of the random walker that is within a certain radius }}
-\DoxyCodeLine{507             \textcolor{keywordflow}{do} \textcolor{keywordflow}{while}(norm2(sample\_normal) <= h2plus\%rcut )}
-\DoxyCodeLine{508                 \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
-\DoxyCodeLine{509 \textcolor{keywordflow}{            end do} }
-\DoxyCodeLine{510             start = sample\_normal}
-\DoxyCodeLine{511             x(:,1) = start }
-\DoxyCodeLine{512 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{513 }
-\DoxyCodeLine{514         \textcolor{comment}{! Calculate the local energy of the initial step }}
-\DoxyCodeLine{515         energy\_chain(1) = h\_2\_plus\_energy(c\_const, x(:, 1), r\_a, r\_b)}
-\DoxyCodeLine{516 }
-\DoxyCodeLine{517         \textcolor{comment}{! Start the counter for the number of accepted moves}}
-\DoxyCodeLine{518         accept = 0  }
-\DoxyCodeLine{519 }
-\DoxyCodeLine{520         \textcolor{comment}{! Metropolis algorithm }}
-\DoxyCodeLine{521         \textcolor{keywordflow}{do} i = 2, n+1 }
-\DoxyCodeLine{522             \textcolor{comment}{! Propose the next step }}
-\DoxyCodeLine{523             \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
-\DoxyCodeLine{524             x\_n = x(:, i-\/1) + sigma * sample\_normal}
-\DoxyCodeLine{525 }
-\DoxyCodeLine{526             \textcolor{comment}{! Calculate the transition probability between proposed step and current step }}
-\DoxyCodeLine{527             log\_prob\_n = log(h\_2\_plus\_prob(c\_const, x(:, i-\/1), x\_n, r\_a,\textcolor{comment}{ r\_b))}}
-\DoxyCodeLine{528 \textcolor{comment}{}           }
-\DoxyCodeLine{529             \textcolor{comment}{! Calculate the acceptance ratio }}
-\DoxyCodeLine{530             a\_prob\_trans = min(1.0\_real64, exp(log\_prob\_n))}
-\DoxyCodeLine{531             }
-\DoxyCodeLine{532             \textcolor{comment}{! Generate sample from uniform distribution}}
-\DoxyCodeLine{533             \textcolor{keyword}{call }ran1(unif\_num, seed)}
-\DoxyCodeLine{534 }
-\DoxyCodeLine{535             \textcolor{comment}{! Compare the drawn sample from the uniform distribution with the acceptance ratio}}
-\DoxyCodeLine{536             \textcolor{keywordflow}{if} (a\_prob\_trans >= unif\_num) \textcolor{keywordflow}{then} }
-\DoxyCodeLine{537                 \textcolor{comment}{! If accepted calculate local energy and add proposed position to the MCMC chain}}
-\DoxyCodeLine{538                 x(:, i) = x\_n }
-\DoxyCodeLine{539                 energy\_chain(i) = h\_2\_plus\_energy(c\_const, x\_n, r\_a, r\_b\textcolor{comment}{)}}
-\DoxyCodeLine{540 \textcolor{comment}{}                }
-\DoxyCodeLine{541                 \textcolor{comment}{! Increment by the number of accepted steps }}
-\DoxyCodeLine{542                 accept = 1 + accept }
-\DoxyCodeLine{543             \textcolor{keywordflow}{else}}
-\DoxyCodeLine{544                 \textcolor{comment}{! If rejected the proposed step is the current step }}
-\DoxyCodeLine{545                 x(:, i) = x(:, i-\/1)}
-\DoxyCodeLine{546                 }
-\DoxyCodeLine{547                 \textcolor{comment}{! The local energy of the proposed step is the same as the current step when rejected}}
-\DoxyCodeLine{548                 energy\_chain(i) = energy\_chain(i-\/1)}
-\DoxyCodeLine{549 \textcolor{keywordflow}{            end if} }
-\DoxyCodeLine{550 \textcolor{keywordflow}{        end do} }
-\DoxyCodeLine{551 }
-\DoxyCodeLine{552         \textcolor{comment}{! Calculate the acceptance ratio}}
-\DoxyCodeLine{553         accept\_rate = (real(accept, kind=real64) / real(n, kind=real64))\textcolor{comment}{ }}
-\DoxyCodeLine{554 \textcolor{comment}{}}
+\DoxyCodeLine{476 }
+\DoxyCodeLine{477         \textcolor{keywordtype}{implicit none} }
+\DoxyCodeLine{478 }
+\DoxyCodeLine{479 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(3)} :: R\_a, R\_b}
+\DoxyCodeLine{480 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: sigma}
+\DoxyCodeLine{481 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: c\_const}
+\DoxyCodeLine{482 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{optional} :: x\_start}
+\DoxyCodeLine{483         \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N, burn, thin }
+\DoxyCodeLine{484         }
+\DoxyCodeLine{485          }
+\DoxyCodeLine{486 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: accept\_rate}
+\DoxyCodeLine{487 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:, :)}, \textcolor{keywordtype}{allocatable} :: X}
+\DoxyCodeLine{488 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable} :: energy\_chain}
+\DoxyCodeLine{489 }
+\DoxyCodeLine{490 \textcolor{keywordtype}{        real}(real64) :: log\_prob\_n                      \textcolor{comment}{! The natural logarithm of the transition proability}}
+\DoxyCodeLine{491 \textcolor{keywordtype}{        real}(real64) :: a\_prob\_trans                    \textcolor{comment}{! Acceptance ratio of the transitional probability }}
+\DoxyCodeLine{492 \textcolor{keywordtype}{        real}(real64) :: unif\_num                        \textcolor{comment}{! A random sample from the uniform distribution }}
+\DoxyCodeLine{493 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: start             \textcolor{comment}{! Starting point of MCMC chain}}
+\DoxyCodeLine{494 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: X\_n               \textcolor{comment}{! The proposed step }}
+\DoxyCodeLine{495 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: sample\_normal     \textcolor{comment}{! A sample from the normal distribution }}
+\DoxyCodeLine{496         \textcolor{keywordtype}{integer} :: accept                               \textcolor{comment}{! Number of accepted steps }}
+\DoxyCodeLine{497         \textcolor{keywordtype}{integer} :: i                                    \textcolor{comment}{! Loop variable }}
+\DoxyCodeLine{498         }
+\DoxyCodeLine{499         \textcolor{keyword}{allocate}(x(3, 1:n+1)) }
+\DoxyCodeLine{500         \textcolor{keyword}{allocate}(energy\_chain(1:n+1))}
+\DoxyCodeLine{501 }
+\DoxyCodeLine{502         \textcolor{comment}{! Allow the starting position to take on the default value}}
+\DoxyCodeLine{503         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(x\_start)) \textcolor{keywordflow}{then} }
+\DoxyCodeLine{504             start = x\_start}
+\DoxyCodeLine{505             x(:,1) = start }
+\DoxyCodeLine{506         \textcolor{keywordflow}{else} }
+\DoxyCodeLine{507             \textcolor{comment}{! Create the initial position of the random walker that is within a certain radius }}
+\DoxyCodeLine{508             \textcolor{keywordflow}{do} \textcolor{keywordflow}{while}(norm2(sample\_normal) <= h2plus\%rcut )}
+\DoxyCodeLine{509                 \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
+\DoxyCodeLine{510 \textcolor{keywordflow}{            end do} }
+\DoxyCodeLine{511             start = sample\_normal}
+\DoxyCodeLine{512             x(:,1) = start }
+\DoxyCodeLine{513 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{514 }
+\DoxyCodeLine{515         \textcolor{comment}{! Calculate the local energy of the initial step }}
+\DoxyCodeLine{516         energy\_chain(1) = h\_2\_plus\_energy(c\_const, x(:, 1), r\_a, r\_b)}
+\DoxyCodeLine{517 }
+\DoxyCodeLine{518         \textcolor{comment}{! Start the counter for the number of accepted moves}}
+\DoxyCodeLine{519         accept = 0  }
+\DoxyCodeLine{520 }
+\DoxyCodeLine{521         \textcolor{comment}{! Metropolis algorithm }}
+\DoxyCodeLine{522         \textcolor{keywordflow}{do} i = 2, n+1 }
+\DoxyCodeLine{523             \textcolor{comment}{! Propose the next step }}
+\DoxyCodeLine{524             \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
+\DoxyCodeLine{525             x\_n = x(:, i-\/1) + sigma * sample\_normal}
+\DoxyCodeLine{526 }
+\DoxyCodeLine{527             \textcolor{comment}{! Calculate the transition probability between proposed step and current step }}
+\DoxyCodeLine{528             log\_prob\_n = log(h\_2\_plus\_prob(c\_const, x(:, i-\/1), x\_n, r\_a,\textcolor{comment}{ r\_b))}}
+\DoxyCodeLine{529 \textcolor{comment}{}           }
+\DoxyCodeLine{530             \textcolor{comment}{! Calculate the acceptance ratio }}
+\DoxyCodeLine{531             a\_prob\_trans = min(1.0\_real64, exp(log\_prob\_n))}
+\DoxyCodeLine{532             }
+\DoxyCodeLine{533             \textcolor{comment}{! Generate sample from uniform distribution}}
+\DoxyCodeLine{534             \textcolor{keyword}{call }ran1(unif\_num, seed)}
+\DoxyCodeLine{535 }
+\DoxyCodeLine{536             \textcolor{comment}{! Compare the drawn sample from the uniform distribution with the acceptance ratio}}
+\DoxyCodeLine{537             \textcolor{keywordflow}{if} (a\_prob\_trans >= unif\_num) \textcolor{keywordflow}{then} }
+\DoxyCodeLine{538                 \textcolor{comment}{! If accepted calculate local energy and add proposed position to the MCMC chain}}
+\DoxyCodeLine{539                 x(:, i) = x\_n }
+\DoxyCodeLine{540                 energy\_chain(i) = h\_2\_plus\_energy(c\_const, x\_n, r\_a, r\_b\textcolor{comment}{)}}
+\DoxyCodeLine{541 \textcolor{comment}{}                }
+\DoxyCodeLine{542                 \textcolor{comment}{! Increment by the number of accepted steps }}
+\DoxyCodeLine{543                 accept = 1 + accept }
+\DoxyCodeLine{544             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{545                 \textcolor{comment}{! If rejected the proposed step is the current step }}
+\DoxyCodeLine{546                 x(:, i) = x(:, i-\/1)}
+\DoxyCodeLine{547                 }
+\DoxyCodeLine{548                 \textcolor{comment}{! The local energy of the proposed step is the same as the current step when rejected}}
+\DoxyCodeLine{549                 energy\_chain(i) = energy\_chain(i-\/1)}
+\DoxyCodeLine{550 \textcolor{keywordflow}{            end if} }
+\DoxyCodeLine{551 \textcolor{keywordflow}{        end do} }
+\DoxyCodeLine{552 }
+\DoxyCodeLine{553         \textcolor{comment}{! Calculate the acceptance ratio}}
+\DoxyCodeLine{554         accept\_rate = (real(accept, kind=real64) / real(n, kind=real64))\textcolor{comment}{ }}
+\DoxyCodeLine{555 \textcolor{comment}{}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -710,107 +711,107 @@ Computes
 \end{DoxyParams}
 
 
-Definition at line 586 of file vqmc.\+f90.
+Definition at line 587 of file vqmc.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{588 }
-\DoxyCodeLine{589         \textcolor{keywordtype}{implicit none} }
-\DoxyCodeLine{590 }
-\DoxyCodeLine{591 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(3)} :: R\_a, R\_b}
-\DoxyCodeLine{592 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: sigma}
-\DoxyCodeLine{593 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: c\_const }
-\DoxyCodeLine{594 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{optional} :: x\_start\_1, x\_start\_2}
-\DoxyCodeLine{595         \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N, burn, thin }
-\DoxyCodeLine{596         }
-\DoxyCodeLine{597          }
-\DoxyCodeLine{598 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: accept\_rate}
-\DoxyCodeLine{599 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:, :)}, \textcolor{keywordtype}{allocatable} :: X\_1, X\_2}
-\DoxyCodeLine{600 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable} :: energy\_chain}
-\DoxyCodeLine{601 }
-\DoxyCodeLine{602 \textcolor{keywordtype}{        real}(real64) :: log\_prob\_n                              \textcolor{comment}{! The natural logarithm of the transition proability }}
-\DoxyCodeLine{603 \textcolor{keywordtype}{        real}(real64) :: a\_prob\_trans                            \textcolor{comment}{! Acceptance ratio of the transitional probability                   }}
-\DoxyCodeLine{604 \textcolor{keywordtype}{        real}(real64) :: unif\_num                                \textcolor{comment}{! A random sample from the uniform distribution }}
-\DoxyCodeLine{605 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: start\_1, start\_2          \textcolor{comment}{! Starting points for the random walkers }}
-\DoxyCodeLine{606 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: X\_n\_1, X\_n\_2              \textcolor{comment}{! The propsed steps for the random walkers }}
-\DoxyCodeLine{607 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: sample\_normal             \textcolor{comment}{! Sample from the normal distribution }}
-\DoxyCodeLine{608         \textcolor{keywordtype}{integer} :: accept                                       \textcolor{comment}{! Number of accepted steps }}
-\DoxyCodeLine{609         \textcolor{keywordtype}{integer} :: i                                            \textcolor{comment}{! Loop variable }}
-\DoxyCodeLine{610         }
-\DoxyCodeLine{611         \textcolor{keyword}{allocate}(x\_1(3, 1:n+1)) }
-\DoxyCodeLine{612         \textcolor{keyword}{allocate}(x\_2(3, 1:n+1))}
-\DoxyCodeLine{613         \textcolor{keyword}{allocate}(energy\_chain(1:n+1))}
-\DoxyCodeLine{614 }
-\DoxyCodeLine{615         \textcolor{comment}{! Allow the starting position to take on the default value }}
-\DoxyCodeLine{616         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(x\_start\_1) .and. \textcolor{keyword}{present}(x\_start\_2)) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{617             start\_1 = x\_start\_1}
-\DoxyCodeLine{618             x\_1(:,1) = start\_1}
-\DoxyCodeLine{619             }
-\DoxyCodeLine{620             start\_2 = x\_start\_2}
-\DoxyCodeLine{621             x\_2(:,1) = start\_2}
-\DoxyCodeLine{622         \textcolor{keywordflow}{else} }
-\DoxyCodeLine{623             \textcolor{comment}{! Create the initial position of random walker 1 that is within a certain radius}}
-\DoxyCodeLine{624             \textcolor{keywordflow}{do} \textcolor{keywordflow}{while}(norm2(sample\_normal) <= h2\%rcut )}
-\DoxyCodeLine{625                 \textcolor{keyword}{call }random\_normal(1, sample\_normal)}
-\DoxyCodeLine{626 \textcolor{keywordflow}{            end do} }
-\DoxyCodeLine{627             start\_1 = sample\_normal}
-\DoxyCodeLine{628             x\_1(:,1) = start\_1}
-\DoxyCodeLine{629 }
-\DoxyCodeLine{630             \textcolor{comment}{! Create the initial position of random walker 2 that is within a certain radius}}
-\DoxyCodeLine{631             \textcolor{keywordflow}{do} \textcolor{keywordflow}{while}(norm2(sample\_normal) <= h2\%rcut )}
-\DoxyCodeLine{632                 \textcolor{keyword}{call }random\_normal(1, sample\_normal)}
-\DoxyCodeLine{633 \textcolor{keywordflow}{            end do} }
-\DoxyCodeLine{634             start\_2 = sample\_normal }
-\DoxyCodeLine{635             x\_2(:,1) = start\_2}
-\DoxyCodeLine{636 \textcolor{keywordflow}{        end if} }
-\DoxyCodeLine{637         }
-\DoxyCodeLine{638         \textcolor{comment}{! Calculate the local energy of the initial steps}}
-\DoxyCodeLine{639         energy\_chain(1) = h\_2\_energy(c\_const, x\_1(:,1), x\_2(:,1), r\_a, r\_b\textcolor{comment}{)}}
-\DoxyCodeLine{640 \textcolor{comment}{}        }
-\DoxyCodeLine{641         \textcolor{comment}{! Start the counter for the number of accepted moves}}
-\DoxyCodeLine{642         accept = 0  }
-\DoxyCodeLine{643 }
-\DoxyCodeLine{644         \textcolor{comment}{! Metropolis algorithm }}
-\DoxyCodeLine{645         \textcolor{keywordflow}{do} i = 2, n+1 }
-\DoxyCodeLine{646             \textcolor{comment}{! Propose the next step for random walker 1 }}
-\DoxyCodeLine{647             \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
-\DoxyCodeLine{648             x\_n\_1 = x\_1(:, i-\/1) + sigma * sample\_normal}
-\DoxyCodeLine{649 }
-\DoxyCodeLine{650             \textcolor{comment}{! Propose the next step for random walker 2 }}
-\DoxyCodeLine{651             \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
-\DoxyCodeLine{652             x\_n\_2 = x\_2(:, i-\/1) + sigma * sample\_normal}
-\DoxyCodeLine{653 }
-\DoxyCodeLine{654             \textcolor{comment}{! Calculate the transition probability between the proposed steps and current steps}}
-\DoxyCodeLine{655             log\_prob\_n = log(h\_2\_prob(c\_const, x\_1(:, i-\/1), x\_2(:, i-\/1),\textcolor{comment}{ x\_n\_1, x\_n\_2, r\_a, r\_b))}}
-\DoxyCodeLine{656 \textcolor{comment}{}}
-\DoxyCodeLine{657             \textcolor{comment}{! Calculate the acceptance ratio}}
-\DoxyCodeLine{658             a\_prob\_trans = min(1.0\_real64, exp(log\_prob\_n))}
-\DoxyCodeLine{659 }
-\DoxyCodeLine{660             \textcolor{comment}{! Generate sample from uniform distribution}}
-\DoxyCodeLine{661             \textcolor{keyword}{call }ran1(unif\_num, seed)}
-\DoxyCodeLine{662 }
-\DoxyCodeLine{663             \textcolor{comment}{! Compare the drawn sample from the uniform distribution with the acceptance ratio}}
-\DoxyCodeLine{664             \textcolor{keywordflow}{if} (a\_prob\_trans >= unif\_num) \textcolor{keywordflow}{then} }
-\DoxyCodeLine{665                 \textcolor{comment}{! If accepted calculate local energy and add proposed position to the MCMC chain}}
-\DoxyCodeLine{666                 x\_1(:, i) = x\_n\_1}
-\DoxyCodeLine{667                 x\_2(:, i) = x\_n\_2 }
-\DoxyCodeLine{668                 energy\_chain(i) = h\_2\_energy(c\_const, x\_n\_1, x\_n\_2, r\_a,\textcolor{comment}{ r\_b)}}
-\DoxyCodeLine{669 \textcolor{comment}{}                }
-\DoxyCodeLine{670                 \textcolor{comment}{! Increment by the number of accepted steps }}
-\DoxyCodeLine{671                 accept = 1 + accept }
-\DoxyCodeLine{672             \textcolor{keywordflow}{else} }
-\DoxyCodeLine{673                 \textcolor{comment}{! If rejected the proposed step is the current step }}
-\DoxyCodeLine{674                 x\_1(:, i) = x\_1(:, i-\/1)}
-\DoxyCodeLine{675                 x\_2(:, i) = x\_2(:, i-\/1) }
-\DoxyCodeLine{676                 }
-\DoxyCodeLine{677                 \textcolor{comment}{! The local energy of the proposed step is the same as the current step when rejected}}
-\DoxyCodeLine{678                 energy\_chain(i) = energy\_chain(i-\/1)}
-\DoxyCodeLine{679 \textcolor{keywordflow}{            end if} }
-\DoxyCodeLine{680 \textcolor{keywordflow}{        end do} }
-\DoxyCodeLine{681 }
-\DoxyCodeLine{682         \textcolor{comment}{! Calculate the acceptance ratio}}
-\DoxyCodeLine{683         accept\_rate = (real(accept, kind=real64) / real(n, kind=real64))\textcolor{comment}{ }}
-\DoxyCodeLine{684 \textcolor{comment}{}}
+\DoxyCodeLine{589 }
+\DoxyCodeLine{590         \textcolor{keywordtype}{implicit none} }
+\DoxyCodeLine{591 }
+\DoxyCodeLine{592 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(3)} :: R\_a, R\_b}
+\DoxyCodeLine{593 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: sigma}
+\DoxyCodeLine{594 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: c\_const }
+\DoxyCodeLine{595 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{optional} :: x\_start\_1, x\_start\_2}
+\DoxyCodeLine{596         \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{intent(in)} :: N, burn, thin }
+\DoxyCodeLine{597         }
+\DoxyCodeLine{598          }
+\DoxyCodeLine{599 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: accept\_rate}
+\DoxyCodeLine{600 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:, :)}, \textcolor{keywordtype}{allocatable} :: X\_1, X\_2}
+\DoxyCodeLine{601 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)}, \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable} :: energy\_chain}
+\DoxyCodeLine{602 }
+\DoxyCodeLine{603 \textcolor{keywordtype}{        real}(real64) :: log\_prob\_n                              \textcolor{comment}{! The natural logarithm of the transition proability }}
+\DoxyCodeLine{604 \textcolor{keywordtype}{        real}(real64) :: a\_prob\_trans                            \textcolor{comment}{! Acceptance ratio of the transitional probability                   }}
+\DoxyCodeLine{605 \textcolor{keywordtype}{        real}(real64) :: unif\_num                                \textcolor{comment}{! A random sample from the uniform distribution }}
+\DoxyCodeLine{606 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: start\_1, start\_2          \textcolor{comment}{! Starting points for the random walkers }}
+\DoxyCodeLine{607 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: X\_n\_1, X\_n\_2              \textcolor{comment}{! The propsed steps for the random walkers }}
+\DoxyCodeLine{608 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: sample\_normal             \textcolor{comment}{! Sample from the normal distribution }}
+\DoxyCodeLine{609         \textcolor{keywordtype}{integer} :: accept                                       \textcolor{comment}{! Number of accepted steps }}
+\DoxyCodeLine{610         \textcolor{keywordtype}{integer} :: i                                            \textcolor{comment}{! Loop variable }}
+\DoxyCodeLine{611         }
+\DoxyCodeLine{612         \textcolor{keyword}{allocate}(x\_1(3, 1:n+1)) }
+\DoxyCodeLine{613         \textcolor{keyword}{allocate}(x\_2(3, 1:n+1))}
+\DoxyCodeLine{614         \textcolor{keyword}{allocate}(energy\_chain(1:n+1))}
+\DoxyCodeLine{615 }
+\DoxyCodeLine{616         \textcolor{comment}{! Allow the starting position to take on the default value }}
+\DoxyCodeLine{617         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(x\_start\_1) .and. \textcolor{keyword}{present}(x\_start\_2)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{618             start\_1 = x\_start\_1}
+\DoxyCodeLine{619             x\_1(:,1) = start\_1}
+\DoxyCodeLine{620             }
+\DoxyCodeLine{621             start\_2 = x\_start\_2}
+\DoxyCodeLine{622             x\_2(:,1) = start\_2}
+\DoxyCodeLine{623         \textcolor{keywordflow}{else} }
+\DoxyCodeLine{624             \textcolor{comment}{! Create the initial position of random walker 1 that is within a certain radius}}
+\DoxyCodeLine{625             \textcolor{keywordflow}{do} \textcolor{keywordflow}{while}(norm2(sample\_normal) <= h2\%rcut )}
+\DoxyCodeLine{626                 \textcolor{keyword}{call }random\_normal(1, sample\_normal)}
+\DoxyCodeLine{627 \textcolor{keywordflow}{            end do} }
+\DoxyCodeLine{628             start\_1 = sample\_normal}
+\DoxyCodeLine{629             x\_1(:,1) = start\_1}
+\DoxyCodeLine{630 }
+\DoxyCodeLine{631             \textcolor{comment}{! Create the initial position of random walker 2 that is within a certain radius}}
+\DoxyCodeLine{632             \textcolor{keywordflow}{do} \textcolor{keywordflow}{while}(norm2(sample\_normal) <= h2\%rcut )}
+\DoxyCodeLine{633                 \textcolor{keyword}{call }random\_normal(1, sample\_normal)}
+\DoxyCodeLine{634 \textcolor{keywordflow}{            end do} }
+\DoxyCodeLine{635             start\_2 = sample\_normal }
+\DoxyCodeLine{636             x\_2(:,1) = start\_2}
+\DoxyCodeLine{637 \textcolor{keywordflow}{        end if} }
+\DoxyCodeLine{638         }
+\DoxyCodeLine{639         \textcolor{comment}{! Calculate the local energy of the initial steps}}
+\DoxyCodeLine{640         energy\_chain(1) = h\_2\_energy(c\_const, x\_1(:,1), x\_2(:,1), r\_a, r\_b\textcolor{comment}{)}}
+\DoxyCodeLine{641 \textcolor{comment}{}        }
+\DoxyCodeLine{642         \textcolor{comment}{! Start the counter for the number of accepted moves}}
+\DoxyCodeLine{643         accept = 0  }
+\DoxyCodeLine{644 }
+\DoxyCodeLine{645         \textcolor{comment}{! Metropolis algorithm }}
+\DoxyCodeLine{646         \textcolor{keywordflow}{do} i = 2, n+1 }
+\DoxyCodeLine{647             \textcolor{comment}{! Propose the next step for random walker 1 }}
+\DoxyCodeLine{648             \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
+\DoxyCodeLine{649             x\_n\_1 = x\_1(:, i-\/1) + sigma * sample\_normal}
+\DoxyCodeLine{650 }
+\DoxyCodeLine{651             \textcolor{comment}{! Propose the next step for random walker 2 }}
+\DoxyCodeLine{652             \textcolor{keyword}{call }random\_normal(3, sample\_normal)}
+\DoxyCodeLine{653             x\_n\_2 = x\_2(:, i-\/1) + sigma * sample\_normal}
+\DoxyCodeLine{654 }
+\DoxyCodeLine{655             \textcolor{comment}{! Calculate the transition probability between the proposed steps and current steps}}
+\DoxyCodeLine{656             log\_prob\_n = log(h\_2\_prob(c\_const, x\_1(:, i-\/1), x\_2(:, i-\/1),\textcolor{comment}{ x\_n\_1, x\_n\_2, r\_a, r\_b))}}
+\DoxyCodeLine{657 \textcolor{comment}{}}
+\DoxyCodeLine{658             \textcolor{comment}{! Calculate the acceptance ratio}}
+\DoxyCodeLine{659             a\_prob\_trans = min(1.0\_real64, exp(log\_prob\_n))}
+\DoxyCodeLine{660 }
+\DoxyCodeLine{661             \textcolor{comment}{! Generate sample from uniform distribution}}
+\DoxyCodeLine{662             \textcolor{keyword}{call }ran1(unif\_num, seed)}
+\DoxyCodeLine{663 }
+\DoxyCodeLine{664             \textcolor{comment}{! Compare the drawn sample from the uniform distribution with the acceptance ratio}}
+\DoxyCodeLine{665             \textcolor{keywordflow}{if} (a\_prob\_trans >= unif\_num) \textcolor{keywordflow}{then} }
+\DoxyCodeLine{666                 \textcolor{comment}{! If accepted calculate local energy and add proposed position to the MCMC chain}}
+\DoxyCodeLine{667                 x\_1(:, i) = x\_n\_1}
+\DoxyCodeLine{668                 x\_2(:, i) = x\_n\_2 }
+\DoxyCodeLine{669                 energy\_chain(i) = h\_2\_energy(c\_const, x\_n\_1, x\_n\_2, r\_a,\textcolor{comment}{ r\_b)}}
+\DoxyCodeLine{670 \textcolor{comment}{}                }
+\DoxyCodeLine{671                 \textcolor{comment}{! Increment by the number of accepted steps }}
+\DoxyCodeLine{672                 accept = 1 + accept }
+\DoxyCodeLine{673             \textcolor{keywordflow}{else} }
+\DoxyCodeLine{674                 \textcolor{comment}{! If rejected the proposed step is the current step }}
+\DoxyCodeLine{675                 x\_1(:, i) = x\_1(:, i-\/1)}
+\DoxyCodeLine{676                 x\_2(:, i) = x\_2(:, i-\/1) }
+\DoxyCodeLine{677                 }
+\DoxyCodeLine{678                 \textcolor{comment}{! The local energy of the proposed step is the same as the current step when rejected}}
+\DoxyCodeLine{679                 energy\_chain(i) = energy\_chain(i-\/1)}
+\DoxyCodeLine{680 \textcolor{keywordflow}{            end if} }
+\DoxyCodeLine{681 \textcolor{keywordflow}{        end do} }
+\DoxyCodeLine{682 }
+\DoxyCodeLine{683         \textcolor{comment}{! Calculate the acceptance ratio}}
+\DoxyCodeLine{684         accept\_rate = (real(accept, kind=real64) / real(n, kind=real64))\textcolor{comment}{ }}
+\DoxyCodeLine{685 \textcolor{comment}{}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
