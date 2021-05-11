@@ -1,7 +1,28 @@
-{\bfseries{Link to the program\textquotesingle{}s developer documentation main page\+: \href{https://joegilkes.github.io/PX915-Docs/}{\texttt{ here}}.}}
+\doxysubsection*{Links}
 
-{\bfseries{Link to the Fortran backend documentation\+: \href{https://joegilkes.github.io/PX915-Docs/fortran/docs/index.html}{\texttt{ here}}.}}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Destination   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Link    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Destination   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Link    }\\\cline{1-2}
+\endhead
+Git\+Hub   &\href{https://github.com/HetSys/PX915_2021_A}{\texttt{ Here}}    \\\cline{1-2}
+Dev Documentation Main   &\href{https://joegilkes.github.io/PX915-Docs/}{\texttt{ Here}}    \\\cline{1-2}
+Fortran Dev Documentation   &\href{https://joegilkes.github.io/PX915-Docs/fortran/docs/index.html}{\texttt{ Here}}    \\\cline{1-2}
+Python Dev Documentation   &\href{https://joegilkes.github.io/PX915-Docs/python/docs/index.html}{\texttt{ Here}}   \\\cline{1-2}
+\end{longtabu}
 
-{\bfseries{Link to the Python frontend documentation\+: \href{https://joegilkes.github.io/PX915-Docs/python/docs/index.html}{\texttt{ here}}.}}
 
-This documentation was generated from commit 8410d54 
+\doxysubsection*{Build Instructions}
+
+Clone the repository, load the modules, {\ttfamily make clean \&\& make}.
+
+Run the input generator with {\ttfamily python input.\+py}.
+
+Run the Fortran code with {\ttfamily ./program}.
+
+This documentation was generated from commit 4ed7471 
