@@ -120,10 +120,10 @@ Functions/Subroutines</h2></td></tr>
 <tr class="memdesc:adef1f40504be89d534ea89658a169aad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs VQMC for H_2_plus <br  />
   <a href="namespacevqmc.html#adef1f40504be89d534ea89658a169aad">More...</a><br /></td></tr>
 <tr class="separator:adef1f40504be89d534ea89658a169aad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6ac761c39bd7f67f23e4fb7d7cae066"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevqmc.html#ac6ac761c39bd7f67f23e4fb7d7cae066">vqmc_h_2</a> (sigma, N, burn, thin, c_const, R_a, R_b, X_1, X_2, accept_rate, energy_chain, x_start_1, x_start_2)</td></tr>
-<tr class="memdesc:ac6ac761c39bd7f67f23e4fb7d7cae066"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs VQMC for H_2 <br  />
-  <a href="namespacevqmc.html#ac6ac761c39bd7f67f23e4fb7d7cae066">More...</a><br /></td></tr>
-<tr class="separator:ac6ac761c39bd7f67f23e4fb7d7cae066"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac00c311b77347b5ed6258bb64214dd9f"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevqmc.html#ac00c311b77347b5ed6258bb64214dd9f">vqmc_h_2</a> (sigma, N, burn, thin, c_const, R_a, R_b, X_1_burnt, X_2_burnt, accept_rate, energy_chain, x_start_1, x_start_2)</td></tr>
+<tr class="memdesc:ac00c311b77347b5ed6258bb64214dd9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs VQMC for H_2 <br  />
+  <a href="namespacevqmc.html#ac00c311b77347b5ed6258bb64214dd9f">More...</a><br /></td></tr>
+<tr class="separator:ac00c311b77347b5ed6258bb64214dd9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -275,7 +275,7 @@ Variables</h2></td></tr>
 <map name="anamespacevqmc_a01b80444204a0cd0b5cddde82cbc7651_icgraph" id="anamespacevqmc_a01b80444204a0cd0b5cddde82cbc7651_icgraph">
 <area shape="rect" title="Implementation of David Quigley&#39;s random number generator." alt="" coords="672,107,757,133"/>
 <area shape="rect" href="namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335" title="Draws a sample from a normal distribution." alt="" coords="475,157,624,184"/>
-<area shape="rect" href="namespacevqmc.html#ac6ac761c39bd7f67f23e4fb7d7cae066" title="Performs VQMC for H_2" alt="" coords="291,56,411,83"/>
+<area shape="rect" href="namespacevqmc.html#ac00c311b77347b5ed6258bb64214dd9f" title="Performs VQMC for H_2" alt="" coords="291,56,411,83"/>
 <area shape="rect" href="namespacevqmc.html#adef1f40504be89d534ea89658a169aad" title="Performs VQMC for H_2_plus" alt="" coords="276,107,427,133"/>
 <area shape="rect" href="namespacevqmc.html#ac8a07ca12229e28074bf9088be5c2b5c" title="Performs VQMC for QHO." alt="" coords="291,224,411,251"/>
 <area shape="rect" href="namespacetesting.html#adb38a97b7ceaad408410367f1510e997" title="Tests the ran1 function in the vqmc module." alt="" coords="489,5,610,32"/>
@@ -453,7 +453,7 @@ Variables</h2></td></tr>
 <map name="anamespacevqmc_a62ec9b662e5d9b46ec37d52ff93cb335_icgraph" id="anamespacevqmc_a62ec9b662e5d9b46ec37d52ff93cb335_icgraph">
 <area shape="rect" title="Draws a sample from a normal distribution." alt="" coords="475,97,624,123"/>
 <area shape="rect" href="namespacetesting.html#acbf13e7eaa077016d7d1712b58fc5223" title="Tests the random_normal function in the vqmc module." alt="" coords="282,5,421,47"/>
-<area shape="rect" href="namespacevqmc.html#ac6ac761c39bd7f67f23e4fb7d7cae066" title="Performs VQMC for H_2" alt="" coords="291,71,411,98"/>
+<area shape="rect" href="namespacevqmc.html#ac00c311b77347b5ed6258bb64214dd9f" title="Performs VQMC for H_2" alt="" coords="291,71,411,98"/>
 <area shape="rect" href="namespacevqmc.html#adef1f40504be89d534ea89658a169aad" title="Performs VQMC for H_2_plus" alt="" coords="276,122,427,149"/>
 <area shape="rect" href="namespacevqmc.html#ac8a07ca12229e28074bf9088be5c2b5c" title="Performs VQMC for QHO." alt="" coords="106,118,226,145"/>
 <area shape="rect" href="namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="104,41,228,67"/>
@@ -1020,8 +1020,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ac6ac761c39bd7f67f23e4fb7d7cae066"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6ac761c39bd7f67f23e4fb7d7cae066">&#9670;&nbsp;</a></span>vqmc_h_2()</h2>
+<a id="ac00c311b77347b5ed6258bb64214dd9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac00c311b77347b5ed6258bb64214dd9f">&#9670;&nbsp;</a></span>vqmc_h_2()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1071,14 +1071,14 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real(real64), dimension(:, :), allocatable&#160;</td>
-          <td class="paramname"><em>X_1</em>, </td>
+          <td class="paramtype">real(real64), dimension(:, :), intent(out), allocatable&#160;</td>
+          <td class="paramname"><em>X_1_burnt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real(real64), dimension(:, :), allocatable&#160;</td>
-          <td class="paramname"><em>X_2</em>, </td>
+          <td class="paramtype">real(real64), dimension(:, :), intent(out), allocatable&#160;</td>
+          <td class="paramname"><em>X_2_burnt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1300,8 +1300,8 @@ Variables</h2></td></tr>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="namespacevqmc_ac6ac761c39bd7f67f23e4fb7d7cae066_cgraph.png" border="0" usemap="#anamespacevqmc_ac6ac761c39bd7f67f23e4fb7d7cae066_cgraph" alt=""/></div>
-<map name="anamespacevqmc_ac6ac761c39bd7f67f23e4fb7d7cae066_cgraph" id="anamespacevqmc_ac6ac761c39bd7f67f23e4fb7d7cae066_cgraph">
+<div class="center"><img src="namespacevqmc_ac00c311b77347b5ed6258bb64214dd9f_cgraph.png" border="0" usemap="#anamespacevqmc_ac00c311b77347b5ed6258bb64214dd9f_cgraph" alt=""/></div>
+<map name="anamespacevqmc_ac00c311b77347b5ed6258bb64214dd9f_cgraph" id="anamespacevqmc_ac00c311b77347b5ed6258bb64214dd9f_cgraph">
 <area shape="rect" title="Performs VQMC for H_2" alt="" coords="5,5,125,32"/>
 <area shape="rect" href="namespacevqmc.html#a01b80444204a0cd0b5cddde82cbc7651" title="Implementation of David Quigley&#39;s random number generator." alt="" coords="371,5,456,32"/>
 <area shape="rect" href="namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335" title="Draws a sample from a normal distribution." alt="" coords="173,31,323,57"/>

@@ -1,7 +1,7 @@
 <map id="vqmc::random_normal" name="vqmc::random_normal">
 <area shape="rect" id="node1" title="Draws a sample from a normal distribution." alt="" coords="475,97,624,123"/>
 <area shape="rect" id="node2" href="$namespacetesting.html#acbf13e7eaa077016d7d1712b58fc5223" title="Tests the random_normal function in the vqmc module." alt="" coords="282,5,421,47"/>
-<area shape="rect" id="node5" href="$namespacevqmc.html#ac6ac761c39bd7f67f23e4fb7d7cae066" title="Performs VQMC for H_2" alt="" coords="291,71,411,98"/>
+<area shape="rect" id="node5" href="$namespacevqmc.html#ac00c311b77347b5ed6258bb64214dd9f" title="Performs VQMC for H_2" alt="" coords="291,71,411,98"/>
 <area shape="rect" id="node6" href="$namespacevqmc.html#adef1f40504be89d534ea89658a169aad" title="Performs VQMC for H_2_plus" alt="" coords="276,122,427,149"/>
 <area shape="rect" id="node7" href="$namespacevqmc.html#ac8a07ca12229e28074bf9088be5c2b5c" title="Performs VQMC for QHO." alt="" coords="106,118,226,145"/>
 <area shape="rect" id="node3" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="104,41,228,67"/>
