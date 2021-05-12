@@ -3,7 +3,7 @@
 \doxysubsection*{Functions/\+Subroutines}
 \begin{DoxyCompactItemize}
 \item 
-subroutine \mbox{\hyperlink{namespaceinput__parser_a802002d813d9cea7f6194a28752b37f2}{read\+\_\+control}} (system, run\+\_\+equil, verbose)
+subroutine \mbox{\hyperlink{namespaceinput__parser_a0a22d7e4acbc508d3e23d3b4adbd2800}{read\+\_\+control}} (p\+\_\+system, run\+\_\+equil, verbose)
 \item 
 subroutine \mbox{\hyperlink{namespaceinput__parser_aa9a77c1395d69d54ce38420acdb3f87f}{read\+\_\+qho}} (QHO)
 \item 
@@ -23,11 +23,11 @@ integer \mbox{\hyperlink{namespaceinput__parser_a0d29f515c2bc6f306a8576c1b4253c8
 
 
 \doxysubsection{Function/\+Subroutine Documentation}
-\mbox{\Hypertarget{namespaceinput__parser_a802002d813d9cea7f6194a28752b37f2}\label{namespaceinput__parser_a802002d813d9cea7f6194a28752b37f2}} 
+\mbox{\Hypertarget{namespaceinput__parser_a0a22d7e4acbc508d3e23d3b4adbd2800}\label{namespaceinput__parser_a0a22d7e4acbc508d3e23d3b4adbd2800}} 
 \index{input\_parser@{input\_parser}!read\_control@{read\_control}}
 \index{read\_control@{read\_control}!input\_parser@{input\_parser}}
 \doxysubsubsection{\texorpdfstring{read\_control()}{read\_control()}}
-{\footnotesize\ttfamily subroutine input\+\_\+parser\+::read\+\_\+control (\begin{DoxyParamCaption}\item[{character(len=10), intent(out)}]{system,  }\item[{logical, intent(out)}]{run\+\_\+equil,  }\item[{logical, intent(out)}]{verbose }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily subroutine input\+\_\+parser\+::read\+\_\+control (\begin{DoxyParamCaption}\item[{character(len=10), intent(out)}]{p\+\_\+system,  }\item[{logical, intent(out)}]{run\+\_\+equil,  }\item[{logical, intent(out)}]{verbose }\end{DoxyParamCaption})}
 
 
 
@@ -37,11 +37,11 @@ Definition at line 13 of file input\+\_\+parser.\+f90.
 \begin{DoxyCode}{0}
 \DoxyCodeLine{14 }
 \DoxyCodeLine{15     \textcolor{comment}{! Local variables}}
-\DoxyCodeLine{16     \textcolor{keywordtype}{character(len=10)}, \textcolor{keywordtype}{intent(out)} :: system}
+\DoxyCodeLine{16     \textcolor{keywordtype}{character(len=10)}, \textcolor{keywordtype}{intent(out)} :: p\_system}
 \DoxyCodeLine{17     \textcolor{keywordtype}{logical}, \textcolor{keywordtype}{intent(out)} :: run\_equil, verbose}
 \DoxyCodeLine{18 }
 \DoxyCodeLine{19     \textcolor{comment}{! Define the namelist}}
-\DoxyCodeLine{20     namelist /control/ system, run\_equil, verbose}
+\DoxyCodeLine{20     namelist /control/ p\_system, run\_equil, verbose}
 \DoxyCodeLine{21 }
 \DoxyCodeLine{22     \textcolor{comment}{! Open the file}}
 \DoxyCodeLine{23     \textcolor{keyword}{open}(action=\textcolor{stringliteral}{'read'}, file=\textcolor{stringliteral}{'params.txt'}, iostat=rc, newunit=fu)}
@@ -62,7 +62,7 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespaceinput__parser_a802002d813d9cea7f6194a28752b37f2_icgraph}
+\includegraphics[width=350pt]{namespaceinput__parser_a0a22d7e4acbc508d3e23d3b4adbd2800_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{namespaceinput__parser_aa9a77c1395d69d54ce38420acdb3f87f}\label{namespaceinput__parser_aa9a77c1395d69d54ce38420acdb3f87f}} 
@@ -90,7 +90,7 @@ Definition at line 37 of file input\+\_\+parser.\+f90.
 \DoxyCodeLine{48     \textcolor{comment}{! Read the namelist}}
 \DoxyCodeLine{49     \textcolor{keyword}{read}(nml=parameters, iostat=rc, unit=fu)}
 \DoxyCodeLine{50     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{51         print*, \textcolor{stringliteral}{'Error: Invalid PARAMETERS namelist for QHO system in file "{}params.txt"{}.'}}
+\DoxyCodeLine{51         print*, \textcolor{stringliteral}{'Error: Invalid PARAMETERS namelist for QHO p\_system in file "{}params.txt"{}.'}}
 \DoxyCodeLine{52 \textcolor{keywordflow}{    end if}}
 \DoxyCodeLine{53     }
 \DoxyCodeLine{54     \textcolor{comment}{! Close the file}}
@@ -130,7 +130,7 @@ Definition at line 59 of file input\+\_\+parser.\+f90.
 \DoxyCodeLine{70     \textcolor{comment}{! Read the namelist}}
 \DoxyCodeLine{71     \textcolor{keyword}{read}(nml=parameters, iostat=rc, unit=fu)}
 \DoxyCodeLine{72     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{73         print*, \textcolor{stringliteral}{'Error: Invalid PARAMETERS namelist for H2plus system in file "{}params.txt"{}.'}}
+\DoxyCodeLine{73         print*, \textcolor{stringliteral}{'Error: Invalid PARAMETERS namelist for H2plus p\_system in file "{}params.txt"{}.'}}
 \DoxyCodeLine{74 \textcolor{keywordflow}{    end if}}
 \DoxyCodeLine{75     }
 \DoxyCodeLine{76     \textcolor{comment}{! Close the file}}
@@ -170,7 +170,7 @@ Definition at line 81 of file input\+\_\+parser.\+f90.
 \DoxyCodeLine{92     \textcolor{comment}{! Read the namelist}}
 \DoxyCodeLine{93     \textcolor{keyword}{read}(nml=parameters, iostat=rc, unit=fu)}
 \DoxyCodeLine{94     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{95         print*, \textcolor{stringliteral}{'Error: Invalid PARAMETERS namelist for H2 system in file "{}params.txt"{}.'}}
+\DoxyCodeLine{95         print*, \textcolor{stringliteral}{'Error: Invalid PARAMETERS namelist for H2 p\_system in file "{}params.txt"{}.'}}
 \DoxyCodeLine{96 \textcolor{keywordflow}{    end if}}
 \DoxyCodeLine{97     }
 \DoxyCodeLine{98     \textcolor{comment}{! Close the file}}
@@ -206,17 +206,17 @@ Definition at line 103 of file input\+\_\+parser.\+f90.
 \DoxyCodeLine{110 \textcolor{keywordflow}{    end if}}
 \DoxyCodeLine{111 }
 \DoxyCodeLine{112     \textcolor{comment}{! Read CONTROL namelist}}
-\DoxyCodeLine{113     \textcolor{keyword}{call }read\_control(system, run\_equil, verbose)}
-\DoxyCodeLine{114     \textcolor{keyword}{write}(*, *) \textcolor{stringliteral}{'System: '}, system}
+\DoxyCodeLine{113     \textcolor{keyword}{call }read\_control(p\_system, run\_equil, verbose)}
+\DoxyCodeLine{114     \textcolor{keyword}{write}(*, *) \textcolor{stringliteral}{'System: '}, p\_system}
 \DoxyCodeLine{115 }
-\DoxyCodeLine{116     \textcolor{comment}{! If system='test', return to main}}
-\DoxyCodeLine{117     \textcolor{keywordflow}{if} (trim(system)==\textcolor{stringliteral}{'test'}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{116     \textcolor{comment}{! If p\_system='test', return to main}}
+\DoxyCodeLine{117     \textcolor{keywordflow}{if} (trim(p\_system)==\textcolor{stringliteral}{'test'}) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{118         \textcolor{keywordflow}{return}}
 \DoxyCodeLine{119 \textcolor{keywordflow}{    endif}}
 \DoxyCodeLine{120     }
 \DoxyCodeLine{121     \textcolor{comment}{! For equilibration runs, modify the defaults}}
 \DoxyCodeLine{122     \textcolor{keywordflow}{if} (run\_equil .eqv. .true.) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{123         \textcolor{keywordflow}{select case} (trim(system))}
+\DoxyCodeLine{123         \textcolor{keywordflow}{select case} (trim(p\_system))}
 \DoxyCodeLine{124         \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'QHO'})}
 \DoxyCodeLine{125             qho\%steps = 20000}
 \DoxyCodeLine{126             qho\%burn\_step = 0}
@@ -235,7 +235,7 @@ Definition at line 103 of file input\+\_\+parser.\+f90.
 \DoxyCodeLine{139 \textcolor{keywordflow}{    endif}}
 \DoxyCodeLine{140 }
 \DoxyCodeLine{141     \textcolor{comment}{! Read PARAMETERS of the defined problem}}
-\DoxyCodeLine{142     \textcolor{keywordflow}{select case} (trim(system))}
+\DoxyCodeLine{142     \textcolor{keywordflow}{select case} (trim(p\_system))}
 \DoxyCodeLine{143     \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'QHO'})}
 \DoxyCodeLine{144         \textcolor{keyword}{call }read\_qho(qho)}
 \DoxyCodeLine{145     \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'H2plus'})}

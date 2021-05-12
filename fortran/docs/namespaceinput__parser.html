@@ -98,8 +98,8 @@ $(document).ready(function(){initNavTree('namespaceinput__parser.html',''); init
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions/Subroutines</h2></td></tr>
-<tr class="memitem:a802002d813d9cea7f6194a28752b37f2"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceinput__parser.html#a802002d813d9cea7f6194a28752b37f2">read_control</a> (system, run_equil, verbose)</td></tr>
-<tr class="separator:a802002d813d9cea7f6194a28752b37f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a22d7e4acbc508d3e23d3b4adbd2800"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceinput__parser.html#a0a22d7e4acbc508d3e23d3b4adbd2800">read_control</a> (p_system, run_equil, verbose)</td></tr>
+<tr class="separator:a0a22d7e4acbc508d3e23d3b4adbd2800"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9a77c1395d69d54ce38420acdb3f87f"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceinput__parser.html#aa9a77c1395d69d54ce38420acdb3f87f">read_qho</a> (QHO)</td></tr>
 <tr class="separator:aa9a77c1395d69d54ce38420acdb3f87f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ebe204fa7f63e19fbf29c36f580ee74"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceinput__parser.html#a3ebe204fa7f63e19fbf29c36f580ee74">read_h2plus</a> (H2plus)</td></tr>
@@ -117,8 +117,8 @@ Variables</h2></td></tr>
 <tr class="separator:a0d29f515c2bc6f306a8576c1b4253c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function/Subroutine Documentation</h2>
-<a id="a802002d813d9cea7f6194a28752b37f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a802002d813d9cea7f6194a28752b37f2">&#9670;&nbsp;</a></span>read_control()</h2>
+<a id="a0a22d7e4acbc508d3e23d3b4adbd2800"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a22d7e4acbc508d3e23d3b4adbd2800">&#9670;&nbsp;</a></span>read_control()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -127,7 +127,7 @@ Variables</h2></td></tr>
           <td class="memname">subroutine input_parser::read_control </td>
           <td>(</td>
           <td class="paramtype">character(len=10), intent(out)&#160;</td>
-          <td class="paramname"><em>system</em>, </td>
+          <td class="paramname"><em>p_system</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -152,11 +152,11 @@ Variables</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="input__parser_8f90_source.html#l00013">13</a> of file <a class="el" href="input__parser_8f90_source.html">input_parser.f90</a>.</p>
 <div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">! Local variables</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">character(len=10)</span>, <span class="keywordtype">intent(out)</span> :: system</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">character(len=10)</span>, <span class="keywordtype">intent(out)</span> :: p_system</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">logical</span>, <span class="keywordtype">intent(out)</span> :: run_equil, verbose</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">! Define the namelist</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    namelist /control/ system, run_equil, verbose</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    namelist /control/ p_system, run_equil, verbose</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">! Open the file</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">open</span>(action=<span class="stringliteral">&#39;read&#39;</span>, file=<span class="stringliteral">&#39;params.txt&#39;</span>, iostat=rc, newunit=fu)</div>
@@ -175,8 +175,8 @@ Variables</h2></td></tr>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="namespaceinput__parser_a802002d813d9cea7f6194a28752b37f2_icgraph.png" border="0" usemap="#anamespaceinput__parser_a802002d813d9cea7f6194a28752b37f2_icgraph" alt=""/></div>
-<map name="anamespaceinput__parser_a802002d813d9cea7f6194a28752b37f2_icgraph" id="anamespaceinput__parser_a802002d813d9cea7f6194a28752b37f2_icgraph">
+<div class="center"><img src="namespaceinput__parser_a0a22d7e4acbc508d3e23d3b4adbd2800_icgraph.png" border="0" usemap="#anamespaceinput__parser_a0a22d7e4acbc508d3e23d3b4adbd2800_icgraph" alt=""/></div>
+<map name="anamespaceinput__parser_a0a22d7e4acbc508d3e23d3b4adbd2800_icgraph" id="anamespaceinput__parser_a0a22d7e4acbc508d3e23d3b4adbd2800_icgraph">
 <area shape="rect" title=" " alt="" coords="276,5,400,47"/>
 <area shape="rect" href="namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea" title=" " alt="" coords="104,5,228,47"/>
 <area shape="rect" href="driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title=" " alt="" coords="5,13,56,39"/>
@@ -215,7 +215,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">! Read the namelist</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">read</span>(nml=parameters, iostat=rc, unit=fu)</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">if</span> (rc /= 0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        print*, <span class="stringliteral">&#39;Error: Invalid PARAMETERS namelist for QHO system in file &quot;params.txt&quot;.&#39;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        print*, <span class="stringliteral">&#39;Error: Invalid PARAMETERS namelist for QHO p_system in file &quot;params.txt&quot;.&#39;</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordflow">    end if</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">! Close the file</span></div>
@@ -265,7 +265,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">! Read the namelist</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">read</span>(nml=parameters, iostat=rc, unit=fu)</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (rc /= 0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        print*, <span class="stringliteral">&#39;Error: Invalid PARAMETERS namelist for H2plus system in file &quot;params.txt&quot;.&#39;</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        print*, <span class="stringliteral">&#39;Error: Invalid PARAMETERS namelist for H2plus p_system in file &quot;params.txt&quot;.&#39;</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordflow">    end if</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    </div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">! Close the file</span></div>
@@ -315,7 +315,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">! Read the namelist</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">read</span>(nml=parameters, iostat=rc, unit=fu)</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">if</span> (rc /= 0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        print*, <span class="stringliteral">&#39;Error: Invalid PARAMETERS namelist for H2 system in file &quot;params.txt&quot;.&#39;</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        print*, <span class="stringliteral">&#39;Error: Invalid PARAMETERS namelist for H2 p_system in file &quot;params.txt&quot;.&#39;</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keywordflow">    end if</span></div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    </div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">! Close the file</span></div>
@@ -357,17 +357,17 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keywordflow">    end if</span></div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">! Read CONTROL namelist</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">call </span>read_control(system, run_equil, verbose)</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keyword">write</span>(*, *) <span class="stringliteral">&#39;System: &#39;</span>, system</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">call </span>read_control(p_system, run_equil, verbose)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keyword">write</span>(*, *) <span class="stringliteral">&#39;System: &#39;</span>, p_system</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">! If system=&#39;test&#39;, return to main</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> (trim(system)==<span class="stringliteral">&#39;test&#39;</span>) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">! If p_system=&#39;test&#39;, return to main</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> (trim(p_system)==<span class="stringliteral">&#39;test&#39;</span>) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">return</span></div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keywordflow">    endif</span></div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    </div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="comment">! For equilibration runs, modify the defaults</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">if</span> (run_equil .eqv. .true.) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">select case</span> (trim(system))</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">select case</span> (trim(p_system))</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">case</span> (<span class="stringliteral">&#39;QHO&#39;</span>)</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            qho%steps = 20000</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            qho%burn_step = 0</div>
@@ -386,7 +386,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="keywordflow">    endif</span></div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="comment">! Read PARAMETERS of the defined problem</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">select case</span> (trim(system))</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">select case</span> (trim(p_system))</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">case</span> (<span class="stringliteral">&#39;QHO&#39;</span>)</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keyword">call </span>read_qho(qho)</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">case</span> (<span class="stringliteral">&#39;H2plus&#39;</span>)</div>
@@ -405,7 +405,7 @@ Variables</h2></td></tr>
 <div class="center"><img src="namespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea_cgraph.png" border="0" usemap="#anamespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea_cgraph" alt=""/></div>
 <map name="anamespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea_cgraph" id="anamespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea_cgraph">
 <area shape="rect" title=" " alt="" coords="5,93,129,135"/>
-<area shape="rect" href="namespaceinput__parser.html#a802002d813d9cea7f6194a28752b37f2" title=" " alt="" coords="191,5,315,47"/>
+<area shape="rect" href="namespaceinput__parser.html#a0a22d7e4acbc508d3e23d3b4adbd2800" title=" " alt="" coords="191,5,315,47"/>
 <area shape="rect" href="namespaceinput__parser.html#a163a65b1b9201a421da32ba2a7c92148" title=" " alt="" coords="181,71,326,98"/>
 <area shape="rect" href="namespaceinput__parser.html#a3ebe204fa7f63e19fbf29c36f580ee74" title=" " alt="" coords="191,123,315,164"/>
 <area shape="rect" href="namespaceinput__parser.html#aa9a77c1395d69d54ce38420acdb3f87f" title=" " alt="" coords="177,189,329,215"/>

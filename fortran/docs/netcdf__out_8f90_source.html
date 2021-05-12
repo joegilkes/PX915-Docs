@@ -183,10 +183,10 @@ $(document).ready(function(){initNavTree('netcdf__out_8f90_source.html',''); ini
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">! Write NetCDF QHO equilibration</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="namespacewrite__netcdf.html#a4b9b251a06719d1b0470cfc1f03883ab">   90</a></span>&#160;<span class="keyword">subroutine </span><a class="code" href="namespacewrite__netcdf.html#a4b9b251a06719d1b0470cfc1f03883ab">write_qho_equilibration</a>(trace,filename,ierr,QHO,accept_rate,alpha)</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">! Declaring input variables</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: trace</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keywordtype">    real</span>(real64), <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: trace</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">intent(in)</span> :: filename</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">type</span>(<a class="code" href="structshared__data_1_1qho__type.html">qho_type</a>), <span class="keywordtype">intent(in)</span> :: QHO</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span> :: accept_rate, alpha</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keywordtype">    real</span>(real64), <span class="keywordtype">intent(in)</span> :: accept_rate, alpha</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">! Declaring other variables</span></div>

@@ -144,7 +144,7 @@ Here is the caller graph for this function\+:
 \index{write\_netcdf@{write\_netcdf}!write\_qho\_equilibration@{write\_qho\_equilibration}}
 \index{write\_qho\_equilibration@{write\_qho\_equilibration}!write\_netcdf@{write\_netcdf}}
 \doxysubsubsection{\texorpdfstring{write\_qho\_equilibration()}{write\_qho\_equilibration()}}
-{\footnotesize\ttfamily subroutine write\+\_\+netcdf\+::write\+\_\+qho\+\_\+equilibration (\begin{DoxyParamCaption}\item[{real, dimension(\+:), intent(in)}]{trace,  }\item[{character(len=$\ast$), intent(in)}]{filename,  }\item[{integer}]{ierr,  }\item[{type(\mbox{\hyperlink{structshared__data_1_1qho__type}{qho\+\_\+type}}), intent(in)}]{QHO,  }\item[{real, intent(in)}]{accept\+\_\+rate,  }\item[{real, intent(in)}]{alpha }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily subroutine write\+\_\+netcdf\+::write\+\_\+qho\+\_\+equilibration (\begin{DoxyParamCaption}\item[{real(real64), dimension(\+:), intent(in)}]{trace,  }\item[{character(len=$\ast$), intent(in)}]{filename,  }\item[{integer}]{ierr,  }\item[{type(\mbox{\hyperlink{structshared__data_1_1qho__type}{qho\+\_\+type}}), intent(in)}]{QHO,  }\item[{real(real64), intent(in)}]{accept\+\_\+rate,  }\item[{real(real64), intent(in)}]{alpha }\end{DoxyParamCaption})}
 
 
 
@@ -153,10 +153,10 @@ Definition at line 90 of file netcdf\+\_\+out.\+f90.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{91     \textcolor{comment}{! Declaring input variables}}
-\DoxyCodeLine{92 \textcolor{keywordtype}{    real}, \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: trace}
+\DoxyCodeLine{92 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: trace}
 \DoxyCodeLine{93     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{intent(in)} :: filename}
 \DoxyCodeLine{94     \textcolor{keywordtype}{type}(QHO\_type), \textcolor{keywordtype}{intent(in)} :: QHO}
-\DoxyCodeLine{95 \textcolor{keywordtype}{    real}, \textcolor{keywordtype}{intent(in)} :: accept\_rate, alpha}
+\DoxyCodeLine{95 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{intent(in)} :: accept\_rate, alpha}
 \DoxyCodeLine{96 }
 \DoxyCodeLine{97 }
 \DoxyCodeLine{98     \textcolor{comment}{! Declaring other variables}}
@@ -212,6 +212,14 @@ Here is the call graph for this function\+:
 \begin{center}
 \leavevmode
 \includegraphics[width=305pt]{namespacewrite__netcdf_a4b9b251a06719d1b0470cfc1f03883ab_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{namespacewrite__netcdf_a4b9b251a06719d1b0470cfc1f03883ab_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{namespacewrite__netcdf_a818c3a109a649bbf802adaa2a937a458}\label{namespacewrite__netcdf_a818c3a109a649bbf802adaa2a937a458}} 

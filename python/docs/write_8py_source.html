@@ -219,7 +219,7 @@ $(document).ready(function(){initNavTree('write_8py_source.html',''); initResiza
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="comment"># Report system setting</span></div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    settings = [<span class="stringliteral">&quot;&#39;QHO&#39;&quot;</span>,<span class="stringliteral">&quot;&#39;H2plus&#39;&quot;</span>,<span class="stringliteral">&quot;&#39;H2&#39;&quot;</span>,<span class="stringliteral">&quot;&#39;test&#39;&quot;</span>]</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    messages = [<span class="stringliteral">&#39;Quantum Harmonic Oscillator&#39;</span>,<span class="stringliteral">&#39;Hydrogen Molecule Ion&#39;</span>,<span class="stringliteral">&#39;Hydrogen Molecule&#39;</span>,<span class="stringliteral">&#39;Test Cases&#39;</span>]</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    control[<span class="stringliteral">&#39;system&#39;</span>] = settings[options.index(sys)]</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    control[<span class="stringliteral">&#39;p_system&#39;</span>] = settings[options.index(sys)]</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    print(<span class="stringliteral">&#39;You have chosen the &#39;</span> + messages[options.index(sys)] + <span class="stringliteral">&#39;.&#39;</span>)</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
@@ -412,7 +412,7 @@ $(document).ready(function(){initNavTree('write_8py_source.html',''); initResiza
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        f.write(<span class="stringliteral">&#39;\\ \n&#39;</span>)</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keywordflow">else</span>:</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        f.write(<span class="stringliteral">&#39;&amp;PARAMETERS\n&#39;</span>)</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        sys = control[<span class="stringliteral">&#39;system&#39;</span>].replace(<span class="stringliteral">&quot;&#39;&quot;</span>,<span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        sys = control[<span class="stringliteral">&#39;p_system&#39;</span>].replace(<span class="stringliteral">&quot;&#39;&quot;</span>,<span class="stringliteral">&quot;&quot;</span>)</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <span class="keywordflow">for</span> tag <span class="keywordflow">in</span> params.keys():</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            f.write(sys+<span class="stringliteral">&#39;%&#39;</span>+tag+<span class="stringliteral">&#39; \t= &#39;</span>+params[tag]+<span class="stringliteral">&#39;\n&#39;</span>)</div>

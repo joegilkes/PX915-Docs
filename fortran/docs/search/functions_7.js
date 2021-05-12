@@ -2,7 +2,7 @@ var searchData=
 [
   ['ran1_131',['ran1',['../namespacevqmc.html#a01b80444204a0cd0b5cddde82cbc7651',1,'vqmc']]],
   ['random_5fnormal_132',['random_normal',['../namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335',1,'vqmc']]],
-  ['read_5fcontrol_133',['read_control',['../namespaceinput__parser.html#a802002d813d9cea7f6194a28752b37f2',1,'input_parser']]],
+  ['read_5fcontrol_133',['read_control',['../namespaceinput__parser.html#a0a22d7e4acbc508d3e23d3b4adbd2800',1,'input_parser']]],
   ['read_5fh2_134',['read_h2',['../namespaceinput__parser.html#a163a65b1b9201a421da32ba2a7c92148',1,'input_parser']]],
   ['read_5fh2plus_135',['read_h2plus',['../namespaceinput__parser.html#a3ebe204fa7f63e19fbf29c36f580ee74',1,'input_parser']]],
   ['read_5finputs_136',['read_inputs',['../namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea',1,'input_parser']]],
