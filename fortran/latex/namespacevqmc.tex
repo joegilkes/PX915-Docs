@@ -82,7 +82,7 @@ Definition at line 57 of file vqmc.\+f90.
 \DoxyCodeLine{78             seed = -\/seed}
 \DoxyCodeLine{79 \textcolor{keywordflow}{        end if}}
 \DoxyCodeLine{80 }
-\DoxyCodeLine{81         \textcolor{keywordflow}{if} (verbose) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{81         \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{82             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Initial seed from /dev/urandom: ', I20)"{}}) seed}
 \DoxyCodeLine{83             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}
 \DoxyCodeLine{84 \textcolor{keywordflow}{        end if}}
@@ -365,7 +365,7 @@ Definition at line 254 of file vqmc.\+f90.
 \DoxyCodeLine{290         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(x\_start)) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{291             start = x\_start}
 \DoxyCodeLine{292             x(1) = start(1)}
-\DoxyCodeLine{293             \textcolor{keywordflow}{if} (verbose) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{293             \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{294                 \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Starting from provided Markov chain position', F12.8)"{}}\textcolor{comment}{) x(1)}}
 \DoxyCodeLine{295 \textcolor{comment}{}\textcolor{keywordflow}{            end if}}
 \DoxyCodeLine{296         \textcolor{keywordflow}{else} }
@@ -375,7 +375,7 @@ Definition at line 254 of file vqmc.\+f90.
 \DoxyCodeLine{300 \textcolor{keywordflow}{            end do} }
 \DoxyCodeLine{301             start = sample\_normal}
 \DoxyCodeLine{302             x(1) = start(1)}
-\DoxyCodeLine{303             \textcolor{keywordflow}{if} (verbose) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{303             \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{304                 \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Generated random Markov chain start position', F12.8)"{}}\textcolor{comment}{) x(1)}}
 \DoxyCodeLine{305 \textcolor{comment}{}\textcolor{keywordflow}{            end if}}
 \DoxyCodeLine{306 \textcolor{keywordflow}{        end if} }
@@ -393,7 +393,7 @@ Definition at line 254 of file vqmc.\+f90.
 \DoxyCodeLine{318         \textcolor{comment}{! Start the reset counter }}
 \DoxyCodeLine{319         reset\_counter = 0}
 \DoxyCodeLine{320 }
-\DoxyCodeLine{321         \textcolor{keywordflow}{if} (verbose) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{321         \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{322             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Markov chain for alpha = ', F7.4)"{}}) alpha\_const}
 \DoxyCodeLine{323             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Sample     Position       Local Energy     Accepted?')"{}}\textcolor{comment}{)}}
 \DoxyCodeLine{324 \textcolor{comment}{}            \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(I8, '   ', F12.8, '   ', F12.6)"{}}) 1, x(1), energy\_chain\textcolor{comment}{(1)}}
@@ -434,7 +434,7 @@ Definition at line 254 of file vqmc.\+f90.
 \DoxyCodeLine{359                     \textcolor{comment}{! Increment by the number of accepted steps }}
 \DoxyCodeLine{360                     accept = 1 + accept }
 \DoxyCodeLine{361 }
-\DoxyCodeLine{362                     \textcolor{keywordflow}{if} (verbose) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{362                     \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{363                         \textcolor{keywordflow}{if} (burn .gt. 0) \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('-\/-\/-\/ Burning steps completed -\/-\/-\/')"{}}\textcolor{comment}{)}}
 \DoxyCodeLine{364 \textcolor{comment}{}                        \textcolor{keywordflow}{if} (mod(i-\/burn, logfrac) .eq. 0.0) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{365                             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(I8, '   ', F12.8, '   ', F12.6, '     ', A1)"{}}\textcolor{comment}{) \&}}
@@ -458,7 +458,7 @@ Definition at line 254 of file vqmc.\+f90.
 \DoxyCodeLine{383                     \textcolor{comment}{! Increment the number of accepted steps }}
 \DoxyCodeLine{384                     accept = 1 + accept }
 \DoxyCodeLine{385 }
-\DoxyCodeLine{386                     \textcolor{keywordflow}{if} (verbose) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{386                     \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{387                         \textcolor{keywordflow}{if} (mod(i\_bt, logfrac) .eq. 0.0) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{388                             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(I8, '   ', F12.8, '   ', F12.6, '     ', A1)"{}}\textcolor{comment}{) \&}}
 \DoxyCodeLine{389 \textcolor{comment}{}                                (i\_bt), x\_burnt(i\_bt), energy\_chain(i\_bt\textcolor{comment}{), acceptance}}
@@ -482,7 +482,7 @@ Definition at line 254 of file vqmc.\+f90.
 \DoxyCodeLine{407 }
 \DoxyCodeLine{408                     acceptance = \textcolor{stringliteral}{'N'}}
 \DoxyCodeLine{409 }
-\DoxyCodeLine{410                     \textcolor{keywordflow}{if} (verbose) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{410                     \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{411                         \textcolor{keywordflow}{if} (burn .gt. 0) \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('-\/-\/-\/ Burning steps completed -\/-\/-\/')"{}}\textcolor{comment}{)}}
 \DoxyCodeLine{412 \textcolor{comment}{}                        \textcolor{keywordflow}{if} (mod(i-\/burn, logfrac) .eq. 0.0) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{413                             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(I8, '   ', F12.8, '   ', F12.6, '     ', A1)"{}}\textcolor{comment}{) \&}}
@@ -504,7 +504,7 @@ Definition at line 254 of file vqmc.\+f90.
 \DoxyCodeLine{429 }
 \DoxyCodeLine{430                     acceptance = \textcolor{stringliteral}{'N'}}
 \DoxyCodeLine{431 }
-\DoxyCodeLine{432                     \textcolor{keywordflow}{if} (verbose) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{432                     \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{433                         \textcolor{keywordflow}{if} (mod(i\_bt, logfrac) .eq. 0.0) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{434                             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(I8, '   ', F12.8, '   ', F12.6, '     ', A1)"{}}\textcolor{comment}{) \&}}
 \DoxyCodeLine{435 \textcolor{comment}{}                                (i\_bt), x\_burnt(i\_bt), energy\_chain(i\_bt\textcolor{comment}{), acceptance}}

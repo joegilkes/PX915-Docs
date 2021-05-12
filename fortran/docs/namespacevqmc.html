@@ -178,7 +178,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            seed = -seed</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordflow">        end if</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">if</span> (verbose) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;Initial seed from /dev/urandom: &#39;, I20)&quot;</span>) seed</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;&#39;)&quot;</span>)</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keywordflow">        end if</span></div>
@@ -586,7 +586,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">present</span>(x_start)) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            start = x_start</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            x(1) = start(1)</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            <span class="keywordflow">if</span> (verbose) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;Starting from provided Markov chain position&#39;, F12.8)&quot;</span><span class="comment">) x(1)</span></div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="comment"></span><span class="keywordflow">            end if</span></div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="keywordflow">else</span> </div>
@@ -596,7 +596,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="keywordflow">            end do</span> </div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            start = sample_normal</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            x(1) = start(1)</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            <span class="keywordflow">if</span> (verbose) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;Generated random Markov chain start position&#39;, F12.8)&quot;</span><span class="comment">) x(1)</span></div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="comment"></span><span class="keywordflow">            end if</span></div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="keywordflow">        end if</span> </div>
@@ -614,7 +614,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="comment">! Start the reset counter </span></div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        reset_counter = 0</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="keywordflow">if</span> (verbose) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;Markov chain for alpha = &#39;, F7.4)&quot;</span>) alpha_const</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;Sample     Position       Local Energy     Accepted?&#39;)&quot;</span><span class="comment">)</span></div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="comment"></span>            <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(I8, &#39;   &#39;, F12.8, &#39;   &#39;, F12.6)&quot;</span>) 1, x(1), energy_chain<span class="comment">(1)</span></div>
@@ -655,7 +655,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                    <span class="comment">! Increment by the number of accepted steps </span></div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                    accept = 1 + accept </div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                    <span class="keywordflow">if</span> (verbose) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                    <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                        <span class="keywordflow">if</span> (burn .gt. 0) <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;--- Burning steps completed ---&#39;)&quot;</span><span class="comment">)</span></div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="comment"></span>                        <span class="keywordflow">if</span> (mod(i-burn, logfrac) .eq. 0.0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                            <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(I8, &#39;   &#39;, F12.8, &#39;   &#39;, F12.6, &#39;     &#39;, A1)&quot;</span><span class="comment">) &amp;</span></div>
@@ -679,7 +679,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                    <span class="comment">! Increment the number of accepted steps </span></div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                    accept = 1 + accept </div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; </div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                    <span class="keywordflow">if</span> (verbose) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                    <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                        <span class="keywordflow">if</span> (mod(i_bt, logfrac) .eq. 0.0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                            <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(I8, &#39;   &#39;, F12.8, &#39;   &#39;, F12.6, &#39;     &#39;, A1)&quot;</span><span class="comment">) &amp;</span></div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;<span class="comment"></span>                                (i_bt), x_burnt(i_bt), energy_chain(i_bt<span class="comment">), acceptance</span></div>
@@ -703,7 +703,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                    acceptance = <span class="stringliteral">&#39;N&#39;</span></div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                    <span class="keywordflow">if</span> (verbose) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                    <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                        <span class="keywordflow">if</span> (burn .gt. 0) <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;--- Burning steps completed ---&#39;)&quot;</span><span class="comment">)</span></div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;<span class="comment"></span>                        <span class="keywordflow">if</span> (mod(i-burn, logfrac) .eq. 0.0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                            <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(I8, &#39;   &#39;, F12.8, &#39;   &#39;, F12.6, &#39;     &#39;, A1)&quot;</span><span class="comment">) &amp;</span></div>
@@ -725,7 +725,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160; </div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                    acceptance = <span class="stringliteral">&#39;N&#39;</span></div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160; </div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                    <span class="keywordflow">if</span> (verbose) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                    <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                        <span class="keywordflow">if</span> (mod(i_bt, logfrac) .eq. 0.0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                            <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(I8, &#39;   &#39;, F12.8, &#39;   &#39;, F12.6, &#39;     &#39;, A1)&quot;</span><span class="comment">) &amp;</span></div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;<span class="comment"></span>                                (i_bt), x_burnt(i_bt), energy_chain(i_bt<span class="comment">), acceptance</span></div>

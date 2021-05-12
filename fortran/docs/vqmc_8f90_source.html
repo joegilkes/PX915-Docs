@@ -158,7 +158,7 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <a class="code" href="namespacevqmc.html#a986f071589794992c4bc31de25c63976">seed</a> = -<a class="code" href="namespacevqmc.html#a986f071589794992c4bc31de25c63976">seed</a></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordflow">        end if</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#af557286c349984a4922cd9ba110bbd71">verbose</a>) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#acf2cbacc5b2b4d8ee26c96dc7062aa9b">write_log</a>) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keyword">write</span>(<a class="code" href="namespaceshared__data.html#af5798eba5b1c4594d4c3c9648d732e9e">logid</a>, <span class="stringliteral">&quot;(&#39;Initial seed from /dev/urandom: &#39;, I20)&quot;</span>) <a class="code" href="namespacevqmc.html#a986f071589794992c4bc31de25c63976">seed</a></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keyword">write</span>(<a class="code" href="namespaceshared__data.html#af5798eba5b1c4594d4c3c9648d732e9e">logid</a>, <span class="stringliteral">&quot;(&#39;&#39;)&quot;</span>)</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keywordflow">        end if</span></div>
@@ -342,7 +342,7 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">present</span>(x_start)) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            start = x_start</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            x(1) = start(1)</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            <span class="keywordflow">if</span> (verbose) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;Starting from provided Markov chain position&#39;, F12.8)&quot;</span>) x(1)</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="keywordflow">            end if</span></div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="keywordflow">else</span> </div>
@@ -352,7 +352,7 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="keywordflow">            end do</span> </div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            start = sample_normal</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            x(1) = start(1)</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            <span class="keywordflow">if</span> (verbose) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;Generated random Markov chain start position&#39;, F12.8)&quot;</span>) x(1)</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="keywordflow">            end if</span></div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="keywordflow">        end if</span> </div>
@@ -370,7 +370,7 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="comment">! Start the reset counter </span></div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        reset_counter = 0</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="keywordflow">if</span> (verbose) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;Markov chain for alpha = &#39;, F7.4)&quot;</span>) alpha_const</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;Sample     Position       Local Energy     Accepted?&#39;)&quot;</span>)</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(I8, &#39;   &#39;, F12.8, &#39;   &#39;, F12.6)&quot;</span>) 1, x(1), energy_chain(1)</div>
@@ -411,7 +411,7 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                    <span class="comment">! Increment by the number of accepted steps </span></div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                    accept = 1 + accept </div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                    <span class="keywordflow">if</span> (verbose) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                    <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                        <span class="keywordflow">if</span> (burn .gt. 0) <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;--- Burning steps completed ---&#39;)&quot;</span>)</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                        <span class="keywordflow">if</span> (mod(i-burn, logfrac) .eq. 0.0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                            <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(I8, &#39;   &#39;, F12.8, &#39;   &#39;, F12.6, &#39;     &#39;, A1)&quot;</span>) &amp;</div>
@@ -435,7 +435,7 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                    <span class="comment">! Increment the number of accepted steps </span></div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                    accept = 1 + accept </div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; </div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                    <span class="keywordflow">if</span> (verbose) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                    <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                        <span class="keywordflow">if</span> (mod(i_bt, logfrac) .eq. 0.0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                            <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(I8, &#39;   &#39;, F12.8, &#39;   &#39;, F12.6, &#39;     &#39;, A1)&quot;</span>) &amp;</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                                (i_bt), x_burnt(i_bt), energy_chain(i_bt), acceptance</div>
@@ -459,7 +459,7 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                    acceptance = <span class="stringliteral">&#39;N&#39;</span></div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                    <span class="keywordflow">if</span> (verbose) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                    <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                        <span class="keywordflow">if</span> (burn .gt. 0) <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;--- Burning steps completed ---&#39;)&quot;</span>)</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                        <span class="keywordflow">if</span> (mod(i-burn, logfrac) .eq. 0.0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                            <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(I8, &#39;   &#39;, F12.8, &#39;   &#39;, F12.6, &#39;     &#39;, A1)&quot;</span>) &amp;</div>
@@ -481,7 +481,7 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160; </div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                    acceptance = <span class="stringliteral">&#39;N&#39;</span></div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160; </div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                    <span class="keywordflow">if</span> (verbose) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                    <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                        <span class="keywordflow">if</span> (mod(i_bt, logfrac) .eq. 0.0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                            <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(I8, &#39;   &#39;, F12.8, &#39;   &#39;, F12.6, &#39;     &#39;, A1)&quot;</span>) &amp;</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                                (i_bt), x_burnt(i_bt), energy_chain(i_bt), acceptance</div>
@@ -833,8 +833,8 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;<span class="keyword">end module </span>VQMC</div>
 <div class="ttc" id="anamespaceconstants_html"><div class="ttname"><a href="namespaceconstants.html">constants</a></div><div class="ttdoc">Contains mathematical constants needed throughout the code, all of which are globally accessible.</div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00016">shared_data.f90:16</a></div></div>
 <div class="ttc" id="anamespaceshared__data_html"><div class="ttname"><a href="namespaceshared__data.html">shared_data</a></div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00036">shared_data.f90:36</a></div></div>
-<div class="ttc" id="anamespaceshared__data_html_af557286c349984a4922cd9ba110bbd71"><div class="ttname"><a href="namespaceshared__data.html#af557286c349984a4922cd9ba110bbd71">shared_data::verbose</a></div><div class="ttdeci">logical verbose</div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00085">shared_data.f90:85</a></div></div>
-<div class="ttc" id="anamespaceshared__data_html_af5798eba5b1c4594d4c3c9648d732e9e"><div class="ttname"><a href="namespaceshared__data.html#af5798eba5b1c4594d4c3c9648d732e9e">shared_data::logid</a></div><div class="ttdeci">integer logid</div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00091">shared_data.f90:91</a></div></div>
+<div class="ttc" id="anamespaceshared__data_html_acf2cbacc5b2b4d8ee26c96dc7062aa9b"><div class="ttname"><a href="namespaceshared__data.html#acf2cbacc5b2b4d8ee26c96dc7062aa9b">shared_data::write_log</a></div><div class="ttdeci">logical write_log</div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00089">shared_data.f90:89</a></div></div>
+<div class="ttc" id="anamespaceshared__data_html_af5798eba5b1c4594d4c3c9648d732e9e"><div class="ttname"><a href="namespaceshared__data.html#af5798eba5b1c4594d4c3c9648d732e9e">shared_data::logid</a></div><div class="ttdeci">integer logid</div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00097">shared_data.f90:97</a></div></div>
 <div class="ttc" id="anamespacesolvers_html"><div class="ttname"><a href="namespacesolvers.html">solvers</a></div><div class="ttdoc">Contains local energy and transition probability solvers for available problems.</div><div class="ttdef"><b>Definition:</b> <a href="quantum__solvers_8f90_source.html#l00019">quantum_solvers.f90:19</a></div></div>
 <div class="ttc" id="anamespacevqmc_html"><div class="ttname"><a href="namespacevqmc.html">vqmc</a></div><div class="ttdoc">Contains a random number generator, a sub-routine that draws from a normal distribution and a VQMC so...</div><div class="ttdef"><b>Definition:</b> <a href="vqmc_8f90_source.html#l00020">vqmc.f90:20</a></div></div>
 <div class="ttc" id="anamespacevqmc_html_a01b80444204a0cd0b5cddde82cbc7651"><div class="ttname"><a href="namespacevqmc.html#a01b80444204a0cd0b5cddde82cbc7651">vqmc::ran1</a></div><div class="ttdeci">subroutine ran1(sample, dseed)</div><div class="ttdoc">Implementation of David Quigley's random number generator.</div><div class="ttdef"><b>Definition:</b> <a href="vqmc_8f90_source.html#l00100">vqmc.f90:101</a></div></div>
