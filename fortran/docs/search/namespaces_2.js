@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['shared_5fdata_113',['shared_data',['../namespaceshared__data.html',1,'']]],
-  ['solvers_114',['solvers',['../namespacesolvers.html',1,'']]]
+  ['restart_5ffns_117',['restart_fns',['../namespacerestart__fns.html',1,'']]]
 ];

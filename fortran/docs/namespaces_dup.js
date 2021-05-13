@@ -20,6 +20,12 @@ var namespaces_dup =
       [ "fu", "namespaceinput__parser.html#a209ae7e3892e6b6dcbe9137fdeb0875f", null ],
       [ "rc", "namespaceinput__parser.html#a0d29f515c2bc6f306a8576c1b4253c8d", null ]
     ] ],
+    [ "restart_fns", "namespacerestart__fns.html", [
+      [ "write_res_params", "namespacerestart__fns.html#aa9c19f2ebc4fd0db8d7b561ea351f79b", null ],
+      [ "read_res_params", "namespacerestart__fns.html#ad54208aa49a4b7f6637250e484523044", null ],
+      [ "fu", "namespacerestart__fns.html#abae4eaf545561c534bc832e303c47b4b", null ],
+      [ "rc", "namespacerestart__fns.html#ab386c6b0f14be0090063a054256f5923", null ]
+    ] ],
     [ "shared_data", "namespaceshared__data.html", "namespaceshared__data" ],
     [ "solvers", "namespacesolvers.html", [
       [ "qho_prob", "namespacesolvers.html#a722edf182d188ad1db7fa6a675fea13c", null ],

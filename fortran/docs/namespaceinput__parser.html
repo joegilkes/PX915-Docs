@@ -397,19 +397,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    </div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="comment">! Close the file</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keyword">close</span>(fu)</div>
-</div><!-- fragment --><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="namespaceinput__parser_a6ab6b03879dd4cad7ace90b37bdf39a4_icgraph.png" border="0" usemap="#anamespaceinput__parser_a6ab6b03879dd4cad7ace90b37bdf39a4_icgraph" alt=""/></div>
-<map name="anamespaceinput__parser_a6ab6b03879dd4cad7ace90b37bdf39a4_icgraph" id="anamespaceinput__parser_a6ab6b03879dd4cad7ace90b37bdf39a4_icgraph">
-<area shape="rect" title=" " alt="" coords="276,5,400,47"/>
-<area shape="rect" href="namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea" title=" " alt="" coords="104,5,228,47"/>
-<area shape="rect" href="driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="Driver code for the VQMC program." alt="" coords="5,13,56,39"/>
-</map>
-</div>
-
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3c35b8a909f420e7aa4f19d1392d74ea"></a>
@@ -474,31 +462,45 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        error stop <span class="stringliteral">&#39;Error: Invalid system definition.&#39;</span></div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="keywordflow">    end select</span></div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="comment">! For restart runs, read RESTART namelist </span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="comment">! For restart runs</span></div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">if</span> (run_restart .eqv. .true.) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keyword">call </span>read_restart(res)</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="keywordflow">    end if</span> </div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-</div><!-- fragment --><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="comment">! Read RESTART namelist </span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keyword">call </span>read_res_params(res)</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="comment">! Update parameter grid values</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">select case</span> (trim(p_system))</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordflow">case</span> (<span class="stringliteral">&#39;QHO&#39;</span>)</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="comment">! check alpha value</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordflow">case</span> (<span class="stringliteral">&#39;H2plus&#39;</span>)</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <span class="comment">! check if c1, c2 or bond</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keywordflow">case</span> (<span class="stringliteral">&#39;H2&#39;</span>)</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <span class="comment">! check if c1, c2 or bond</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="keywordflow">        case default</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            error stop <span class="stringliteral">&#39;Error: Invalid system definition.&#39;</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="keywordflow">        end select</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="keywordflow">    end if</span> </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+</div><!-- fragment --><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea_cgraph.png" border="0" usemap="#anamespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea_cgraph" alt=""/></div>
 <map name="anamespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea_cgraph" id="anamespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea_cgraph">
-<area shape="rect" title=" " alt="" coords="5,123,129,164"/>
+<area shape="rect" title=" " alt="" coords="5,93,129,135"/>
 <area shape="rect" href="namespaceinput__parser.html#ace5694fecca99b0223f02140c750e5f1" title=" " alt="" coords="191,5,315,47"/>
 <area shape="rect" href="namespaceinput__parser.html#a163a65b1b9201a421da32ba2a7c92148" title=" " alt="" coords="181,71,326,98"/>
 <area shape="rect" href="namespaceinput__parser.html#a3ebe204fa7f63e19fbf29c36f580ee74" title=" " alt="" coords="191,123,315,164"/>
 <area shape="rect" href="namespaceinput__parser.html#aa9a77c1395d69d54ce38420acdb3f87f" title=" " alt="" coords="177,189,329,215"/>
-<area shape="rect" href="namespaceinput__parser.html#a6ab6b03879dd4cad7ace90b37bdf39a4" title=" " alt="" coords="191,240,315,281"/>
 </map>
 </div>
-<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea_icgraph.png" border="0" usemap="#anamespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea_icgraph" alt=""/></div>
 <map name="anamespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea_icgraph" id="anamespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea_icgraph">
 <area shape="rect" title=" " alt="" coords="104,5,228,47"/>
