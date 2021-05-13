@@ -173,7 +173,7 @@ Here is the caller graph for this function\+:
 \index{write\_netcdf@{write\_netcdf}!write\_h2plus\_equilibration@{write\_h2plus\_equilibration}}
 \index{write\_h2plus\_equilibration@{write\_h2plus\_equilibration}!write\_netcdf@{write\_netcdf}}
 \doxysubsubsection{\texorpdfstring{write\_h2plus\_equilibration()}{write\_h2plus\_equilibration()}}
-{\footnotesize\ttfamily subroutine write\+\_\+netcdf\+::write\+\_\+h2plus\+\_\+equilibration (\begin{DoxyParamCaption}\item[{real, dimension(\+:), intent(in)}]{trace,  }\item[{character(len=$\ast$), intent(in)}]{filename,  }\item[{integer}]{ierr,  }\item[{type(\mbox{\hyperlink{structshared__data_1_1h2plus__type}{h2plus\+\_\+type}}), intent(in)}]{H2plus,  }\item[{real, intent(in)}]{accept\+\_\+rate }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily subroutine write\+\_\+netcdf\+::write\+\_\+h2plus\+\_\+equilibration (\begin{DoxyParamCaption}\item[{real(real64), dimension(\+:), intent(in)}]{trace,  }\item[{character(len=$\ast$), intent(in)}]{filename,  }\item[{integer}]{ierr,  }\item[{type(\mbox{\hyperlink{structshared__data_1_1h2plus__type}{h2plus\+\_\+type}}), intent(in)}]{H2plus,  }\item[{real(real64), intent(in)}]{accept\+\_\+rate }\end{DoxyParamCaption})}
 
 
 
@@ -197,10 +197,10 @@ Definition at line 145 of file netcdf\+\_\+out.\+f90.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{146         \textcolor{comment}{! Declaring input variables}}
-\DoxyCodeLine{147 \textcolor{keywordtype}{        real}, \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: trace}
+\DoxyCodeLine{147 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: trace}
 \DoxyCodeLine{148         \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{intent(in)} :: filename}
 \DoxyCodeLine{149         \textcolor{keywordtype}{type}(H2plus\_type), \textcolor{keywordtype}{intent(in)} :: H2plus}
-\DoxyCodeLine{150 \textcolor{keywordtype}{        real}, \textcolor{keywordtype}{intent(in)} :: accept\_rate}
+\DoxyCodeLine{150 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: accept\_rate}
 \DoxyCodeLine{151     }
 \DoxyCodeLine{152     }
 \DoxyCodeLine{153         \textcolor{comment}{! Declaring other variables}}
@@ -276,7 +276,7 @@ Here is the caller graph for this function\+:
 \index{write\_netcdf@{write\_netcdf}!write\_h2\_equilibration@{write\_h2\_equilibration}}
 \index{write\_h2\_equilibration@{write\_h2\_equilibration}!write\_netcdf@{write\_netcdf}}
 \doxysubsubsection{\texorpdfstring{write\_h2\_equilibration()}{write\_h2\_equilibration()}}
-{\footnotesize\ttfamily subroutine write\+\_\+netcdf\+::write\+\_\+h2\+\_\+equilibration (\begin{DoxyParamCaption}\item[{real, dimension(\+:), intent(in)}]{trace,  }\item[{character(len=$\ast$), intent(in)}]{filename,  }\item[{integer}]{ierr,  }\item[{type(\mbox{\hyperlink{structshared__data_1_1h2__type}{h2\+\_\+type}}), intent(in)}]{H2,  }\item[{real, intent(in)}]{accept\+\_\+rate }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily subroutine write\+\_\+netcdf\+::write\+\_\+h2\+\_\+equilibration (\begin{DoxyParamCaption}\item[{real(real64), dimension(\+:), intent(in)}]{trace,  }\item[{character(len=$\ast$), intent(in)}]{filename,  }\item[{integer}]{ierr,  }\item[{type(\mbox{\hyperlink{structshared__data_1_1h2__type}{h2\+\_\+type}}), intent(in)}]{H2,  }\item[{real(real64), intent(in)}]{accept\+\_\+rate }\end{DoxyParamCaption})}
 
 
 
@@ -300,10 +300,10 @@ Definition at line 222 of file netcdf\+\_\+out.\+f90.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{223         \textcolor{comment}{! Declaring input variables}}
-\DoxyCodeLine{224 \textcolor{keywordtype}{        real}, \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: trace}
+\DoxyCodeLine{224 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: trace}
 \DoxyCodeLine{225         \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{intent(in)} :: filename}
 \DoxyCodeLine{226         \textcolor{keywordtype}{type}(H2\_type), \textcolor{keywordtype}{intent(in)} :: H2}
-\DoxyCodeLine{227 \textcolor{keywordtype}{        real}, \textcolor{keywordtype}{intent(in)} :: accept\_rate}
+\DoxyCodeLine{227 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: accept\_rate}
 \DoxyCodeLine{228     }
 \DoxyCodeLine{229     }
 \DoxyCodeLine{230         \textcolor{comment}{! Declaring other variables}}
@@ -480,7 +480,7 @@ Here is the caller graph for this function\+:
 \index{write\_netcdf@{write\_netcdf}!write\_h2plus\_main@{write\_h2plus\_main}}
 \index{write\_h2plus\_main@{write\_h2plus\_main}!write\_netcdf@{write\_netcdf}}
 \doxysubsubsection{\texorpdfstring{write\_h2plus\_main()}{write\_h2plus\_main()}}
-{\footnotesize\ttfamily subroutine write\+\_\+netcdf\+::write\+\_\+h2plus\+\_\+main (\begin{DoxyParamCaption}\item[{real, dimension(\+:), intent(in)}]{bondlength\+\_\+array,  }\item[{real, dimension(\+:), intent(in)}]{energy\+\_\+array,  }\item[{character(len=$\ast$), intent(in)}]{filename,  }\item[{integer}]{ierr,  }\item[{type(\mbox{\hyperlink{structshared__data_1_1h2plus__type}{h2plus\+\_\+type}}), intent(in)}]{H2plus,  }\item[{real, dimension(\+:), intent(in)}]{accept\+\_\+rate }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily subroutine write\+\_\+netcdf\+::write\+\_\+h2plus\+\_\+main (\begin{DoxyParamCaption}\item[{real(real64), dimension(\+:), intent(in)}]{bondlength\+\_\+array,  }\item[{real(real64), dimension(\+:), intent(in)}]{energy\+\_\+array,  }\item[{character(len=$\ast$), intent(in)}]{filename,  }\item[{integer}]{ierr,  }\item[{type(\mbox{\hyperlink{structshared__data_1_1h2plus__type}{h2plus\+\_\+type}}), intent(in)}]{H2plus,  }\item[{real(real64), dimension(\+:), intent(in)}]{accept\+\_\+rate }\end{DoxyParamCaption})}
 
 
 
@@ -506,10 +506,10 @@ Definition at line 387 of file netcdf\+\_\+out.\+f90.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{388         \textcolor{comment}{! Declaring input variables}}
-\DoxyCodeLine{389 \textcolor{keywordtype}{        real}, \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: bondlength\_array, energy\_array}
+\DoxyCodeLine{389 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: bondlength\_array, energy\_array}
 \DoxyCodeLine{390         \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{intent(in)} :: filename}
 \DoxyCodeLine{391         \textcolor{keywordtype}{type}(H2plus\_type), \textcolor{keywordtype}{intent(in)} :: H2plus}
-\DoxyCodeLine{392 \textcolor{keywordtype}{        real}, \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: accept\_rate}
+\DoxyCodeLine{392 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: accept\_rate}
 \DoxyCodeLine{393     }
 \DoxyCodeLine{394     }
 \DoxyCodeLine{395         \textcolor{comment}{! Declaring other variables}}
@@ -596,7 +596,7 @@ Here is the caller graph for this function\+:
 \index{write\_netcdf@{write\_netcdf}!write\_h2\_main@{write\_h2\_main}}
 \index{write\_h2\_main@{write\_h2\_main}!write\_netcdf@{write\_netcdf}}
 \doxysubsubsection{\texorpdfstring{write\_h2\_main()}{write\_h2\_main()}}
-{\footnotesize\ttfamily subroutine write\+\_\+netcdf\+::write\+\_\+h2\+\_\+main (\begin{DoxyParamCaption}\item[{real, dimension(\+:), intent(in)}]{bondlength\+\_\+array,  }\item[{real, dimension(\+:), intent(in)}]{energy\+\_\+array,  }\item[{character(len=$\ast$), intent(in)}]{filename,  }\item[{integer}]{ierr,  }\item[{type(\mbox{\hyperlink{structshared__data_1_1h2__type}{h2\+\_\+type}}), intent(in)}]{H2,  }\item[{real, dimension(\+:), intent(in)}]{accept\+\_\+rate }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily subroutine write\+\_\+netcdf\+::write\+\_\+h2\+\_\+main (\begin{DoxyParamCaption}\item[{real(real64), dimension(\+:), intent(in)}]{bondlength\+\_\+array,  }\item[{real(real64), dimension(\+:), intent(in)}]{energy\+\_\+array,  }\item[{character(len=$\ast$), intent(in)}]{filename,  }\item[{integer}]{ierr,  }\item[{type(\mbox{\hyperlink{structshared__data_1_1h2__type}{h2\+\_\+type}}), intent(in)}]{H2,  }\item[{real(real64), dimension(\+:), intent(in)}]{accept\+\_\+rate }\end{DoxyParamCaption})}
 
 
 
@@ -622,10 +622,10 @@ Definition at line 476 of file netcdf\+\_\+out.\+f90.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{477         \textcolor{comment}{! Declaring input variables}}
-\DoxyCodeLine{478 \textcolor{keywordtype}{        real}, \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: bondlength\_array, energy\_array}
+\DoxyCodeLine{478 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: bondlength\_array, energy\_array}
 \DoxyCodeLine{479         \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{intent(in)} :: filename}
 \DoxyCodeLine{480         \textcolor{keywordtype}{type}(H2\_type), \textcolor{keywordtype}{intent(in)} :: H2}
-\DoxyCodeLine{481 \textcolor{keywordtype}{        real}, \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: accept\_rate}
+\DoxyCodeLine{481 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: accept\_rate}
 \DoxyCodeLine{482     }
 \DoxyCodeLine{483     }
 \DoxyCodeLine{484         \textcolor{comment}{! Declaring other variables}}
