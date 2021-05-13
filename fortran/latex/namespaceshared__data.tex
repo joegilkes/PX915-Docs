@@ -8,6 +8,8 @@ type \mbox{\hyperlink{structshared__data_1_1qho__type}{qho\+\_\+type}}
 type \mbox{\hyperlink{structshared__data_1_1h2plus__type}{h2plus\+\_\+type}}
 \item 
 type \mbox{\hyperlink{structshared__data_1_1h2__type}{h2\+\_\+type}}
+\item 
+type \mbox{\hyperlink{structshared__data_1_1restart__type}{restart\+\_\+type}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -32,6 +34,8 @@ type(\mbox{\hyperlink{structshared__data_1_1h2plus__type}{h2plus\+\_\+type}}) \m
 \item 
 type(\mbox{\hyperlink{structshared__data_1_1h2__type}{h2\+\_\+type}}) \mbox{\hyperlink{namespaceshared__data_a1703912ee00414a4aaf1a41d3c167694}{h2}}
 \item 
+type(\mbox{\hyperlink{structshared__data_1_1restart__type}{restart\+\_\+type}}) \mbox{\hyperlink{namespaceshared__data_a7a4b98a8315b04c8d754e1b13311e079}{restart}}
+\item 
 integer \mbox{\hyperlink{namespaceshared__data_af5798eba5b1c4594d4c3c9648d732e9e}{logid}}
 \end{DoxyCompactItemize}
 
@@ -45,11 +49,11 @@ integer \mbox{\hyperlink{namespaceshared__data_af5798eba5b1c4594d4c3c9648d732e9e
 
 
 
-Definition at line 83 of file shared\+\_\+data.\+f90.
+Definition at line 95 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{83     \textcolor{keywordtype}{character(len=10)} :: p\_system       \textcolor{comment}{! System of interest: QHO, H2plus, H2}}
+\DoxyCodeLine{95     \textcolor{keywordtype}{character(len=10)} :: p\_system       \textcolor{comment}{! System of interest: QHO, H2plus, H2}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a9285af0408bde68c647a77c75900929d}\label{namespaceshared__data_a9285af0408bde68c647a77c75900929d}} 
@@ -60,11 +64,11 @@ Definition at line 83 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 84 of file shared\+\_\+data.\+f90.
+Definition at line 96 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{84     \textcolor{keywordtype}{logical} :: run\_equil=.false.        \textcolor{comment}{! Tag for equilibration runs}}
+\DoxyCodeLine{96     \textcolor{keywordtype}{logical} :: run\_equil=.false.        \textcolor{comment}{! Tag for equilibration runs}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a2938e794296c80673d3b14040bc92798}\label{namespaceshared__data_a2938e794296c80673d3b14040bc92798}} 
@@ -75,11 +79,11 @@ Definition at line 84 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 85 of file shared\+\_\+data.\+f90.
+Definition at line 97 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{85     \textcolor{keywordtype}{logical} :: run\_restart =.false.     \textcolor{comment}{! Tag for restart runs}}
+\DoxyCodeLine{97     \textcolor{keywordtype}{logical} :: run\_restart =.false.     \textcolor{comment}{! Tag for restart runs}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_ade9d4ec979d01a52cdef8fc778abfa1d}\label{namespaceshared__data_ade9d4ec979d01a52cdef8fc778abfa1d}} 
@@ -90,11 +94,11 @@ Definition at line 85 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 86 of file shared\+\_\+data.\+f90.
+Definition at line 98 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{86     \textcolor{keywordtype}{logical} :: write\_restart = .true.   \textcolor{comment}{! Tag for writing restart files}}
+\DoxyCodeLine{98     \textcolor{keywordtype}{logical} :: write\_restart = .true.   \textcolor{comment}{! Tag for writing restart files}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_abee3357695dee9120626f1a0c422dd29}\label{namespaceshared__data_abee3357695dee9120626f1a0c422dd29}} 
@@ -105,11 +109,11 @@ Definition at line 86 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 87 of file shared\+\_\+data.\+f90.
+Definition at line 99 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{87     \textcolor{keywordtype}{integer(int32)} :: restart\_step = 100\textcolor{comment}{! Frequency of writing restart files, within MMC loop}}
+\DoxyCodeLine{99     \textcolor{keywordtype}{integer(int32)} :: restart\_step = 100\textcolor{comment}{! Frequency of writing restart files, within MMC loop}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a3ea265f2c8a3797c4d1a2b33059e1877}\label{namespaceshared__data_a3ea265f2c8a3797c4d1a2b33059e1877}} 
@@ -120,11 +124,11 @@ Definition at line 87 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 88 of file shared\+\_\+data.\+f90.
+Definition at line 100 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{88     \textcolor{keywordtype}{logical} :: write\_chains =.true.     \textcolor{comment}{! Tag to write final MMC chains}}
+\DoxyCodeLine{100     \textcolor{keywordtype}{logical} :: write\_chains =.true.     \textcolor{comment}{! Tag to write final MMC chains}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_acf2cbacc5b2b4d8ee26c96dc7062aa9b}\label{namespaceshared__data_acf2cbacc5b2b4d8ee26c96dc7062aa9b}} 
@@ -135,11 +139,11 @@ Definition at line 88 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 89 of file shared\+\_\+data.\+f90.
+Definition at line 101 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{89     \textcolor{keywordtype}{logical} :: write\_log = .true.       \textcolor{comment}{! Tag to write logfile}}
+\DoxyCodeLine{101     \textcolor{keywordtype}{logical} :: write\_log = .true.       \textcolor{comment}{! Tag to write logfile}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a7503c2b3bd10f3ee43c4cf9964c42ab2}\label{namespaceshared__data_a7503c2b3bd10f3ee43c4cf9964c42ab2}} 
@@ -150,11 +154,11 @@ Definition at line 89 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 92 of file shared\+\_\+data.\+f90.
+Definition at line 104 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{92     \textcolor{keywordtype}{type}(QHO\_type) :: QHO}
+\DoxyCodeLine{104     \textcolor{keywordtype}{type}(QHO\_type) :: QHO}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a1e9e95c9ea52c9aa2ec2f05b8d65e4f3}\label{namespaceshared__data_a1e9e95c9ea52c9aa2ec2f05b8d65e4f3}} 
@@ -165,11 +169,11 @@ Definition at line 92 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 93 of file shared\+\_\+data.\+f90.
+Definition at line 105 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{93     \textcolor{keywordtype}{type}(H2plus\_type) :: H2plus}
+\DoxyCodeLine{105     \textcolor{keywordtype}{type}(H2plus\_type) :: H2plus}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a1703912ee00414a4aaf1a41d3c167694}\label{namespaceshared__data_a1703912ee00414a4aaf1a41d3c167694}} 
@@ -180,11 +184,26 @@ Definition at line 93 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 94 of file shared\+\_\+data.\+f90.
+Definition at line 106 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{94     \textcolor{keywordtype}{type}(H2\_type) :: H2}
+\DoxyCodeLine{106     \textcolor{keywordtype}{type}(H2\_type) :: H2}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceshared__data_a7a4b98a8315b04c8d754e1b13311e079}\label{namespaceshared__data_a7a4b98a8315b04c8d754e1b13311e079}} 
+\index{shared\_data@{shared\_data}!restart@{restart}}
+\index{restart@{restart}!shared\_data@{shared\_data}}
+\doxysubsubsection{\texorpdfstring{restart}{restart}}
+{\footnotesize\ttfamily type(\mbox{\hyperlink{structshared__data_1_1restart__type}{restart\+\_\+type}}) shared\+\_\+data\+::restart}
+
+
+
+Definition at line 109 of file shared\+\_\+data.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{109     \textcolor{keywordtype}{type}(restart\_type) :: restart}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_af5798eba5b1c4594d4c3c9648d732e9e}\label{namespaceshared__data_af5798eba5b1c4594d4c3c9648d732e9e}} 
@@ -195,10 +214,10 @@ Definition at line 94 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 97 of file shared\+\_\+data.\+f90.
+Definition at line 112 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{97     \textcolor{keywordtype}{integer} :: logid}
+\DoxyCodeLine{112     \textcolor{keywordtype}{integer} :: logid}
 
 \end{DoxyCode}
