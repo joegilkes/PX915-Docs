@@ -1,4 +1,4 @@
 <map id="write_netcdf::write_h2plus_equilibration" name="write_netcdf::write_h2plus_equilibration">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,148,47"/>
-<area shape="rect" id="node2" href="$namespacewrite__netcdf.html#aca2bb13e88c9dbfc7d0027b1bd83d9d0" title=" " alt="" coords="196,5,321,47"/>
+<area shape="rect" id="node1" title="Output H2_plus system trace for equilibration." alt="" coords="5,5,148,47"/>
+<area shape="rect" id="node2" href="$namespacewrite__netcdf.html#aca2bb13e88c9dbfc7d0027b1bd83d9d0" title="Checks error status at each point of NetCDF file build." alt="" coords="196,5,321,47"/>
 </map>

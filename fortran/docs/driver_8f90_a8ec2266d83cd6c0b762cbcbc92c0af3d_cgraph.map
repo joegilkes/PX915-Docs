@@ -6,10 +6,10 @@
 <area shape="rect" id="node9" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="113,560,237,587"/>
 <area shape="rect" id="node34" href="$namespacevqmc.html#adef1f40504be89d534ea89658a169aad" title="Performs VQMC for H_2_plus" alt="" coords="309,880,460,907"/>
 <area shape="rect" id="node35" href="$namespacevqmc.html#ac8a07ca12229e28074bf9088be5c2b5c" title="Performs VQMC for QHO." alt="" coords="325,931,445,957"/>
-<area shape="rect" id="node36" href="$namespacewrite__netcdf.html#a45c5f8affdc7b8d275bc35f8b70337f4" title=" " alt="" coords="104,949,247,990"/>
-<area shape="rect" id="node38" href="$namespacewrite__netcdf.html#a818c3a109a649bbf802adaa2a937a458" title=" " alt="" coords="112,1014,239,1055"/>
-<area shape="rect" id="node39" href="$namespacewrite__netcdf.html#a4b9b251a06719d1b0470cfc1f03883ab" title=" " alt="" coords="112,818,239,859"/>
-<area shape="rect" id="node40" href="$namespacewrite__netcdf.html#ae2722e18129ba78f02541fa0ae49f886" title=" " alt="" coords="112,883,239,925"/>
+<area shape="rect" id="node36" href="$namespacewrite__netcdf.html#a45c5f8affdc7b8d275bc35f8b70337f4" title="Output H2_plus system trace for equilibration." alt="" coords="104,949,247,990"/>
+<area shape="rect" id="node38" href="$namespacewrite__netcdf.html#a818c3a109a649bbf802adaa2a937a458" title="Output results of H2plus MCMC run." alt="" coords="112,1014,239,1055"/>
+<area shape="rect" id="node39" href="$namespacewrite__netcdf.html#a4b9b251a06719d1b0470cfc1f03883ab" title="Output QHO system trace for equilibration." alt="" coords="112,818,239,859"/>
+<area shape="rect" id="node40" href="$namespacewrite__netcdf.html#ae2722e18129ba78f02541fa0ae49f886" title="Output results of QHO MCMC run." alt="" coords="112,883,239,925"/>
 <area shape="rect" id="node5" href="$namespaceinput__parser.html#ace5694fecca99b0223f02140c750e5f1" title=" " alt="" coords="323,57,447,98"/>
 <area shape="rect" id="node6" href="$namespaceinput__parser.html#a163a65b1b9201a421da32ba2a7c92148" title=" " alt="" coords="312,123,457,149"/>
 <area shape="rect" id="node7" href="$namespaceinput__parser.html#a3ebe204fa7f63e19fbf29c36f580ee74" title=" " alt="" coords="323,174,447,215"/>
@@ -38,5 +38,5 @@
 <area shape="rect" id="node29" href="$namespacesolvers.html#a722edf182d188ad1db7fa6a675fea13c" title="Calculates transition probability for quantum harmonic oscillator problem." alt="" coords="549,443,672,469"/>
 <area shape="rect" id="node31" href="$namespacevqmc.html#a01b80444204a0cd0b5cddde82cbc7651" title="Implementation of David Quigley&#39;s random number generator." alt="" coords="779,855,865,881"/>
 <area shape="rect" id="node33" href="$namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335" title="Draws a sample from a normal distribution." alt="" coords="536,829,685,856"/>
-<area shape="rect" id="node37" href="$namespacewrite__netcdf.html#aca2bb13e88c9dbfc7d0027b1bd83d9d0" title=" " alt="" coords="322,982,447,1023"/>
+<area shape="rect" id="node37" href="$namespacewrite__netcdf.html#aca2bb13e88c9dbfc7d0027b1bd83d9d0" title="Checks error status at each point of NetCDF file build." alt="" coords="322,982,447,1023"/>
 </map>
