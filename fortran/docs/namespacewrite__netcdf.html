@@ -197,7 +197,7 @@ Functions/Subroutines</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real(real64), intent(in)&#160;</td>
+          <td class="paramtype">real(real64), dimension(:), intent(in)&#160;</td>
           <td class="paramname"><em>accept_rate</em>&#160;</td>
         </tr>
         <tr>
@@ -213,7 +213,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">    real</span>(real64), <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: alpha_array, energy_array</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">intent(in)</span> :: filename</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">type</span>(QHO_type), <span class="keywordtype">intent(in)</span> :: QHO</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">    real</span>(real64), <span class="keywordtype">intent(in)</span> :: accept_rate</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">    real</span>(real64), <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: accept_rate</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">! Declaring other variables</span></div>
@@ -462,7 +462,7 @@ Functions/Subroutines</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real, intent(in)&#160;</td>
+          <td class="paramtype">real, dimension(:), intent(in)&#160;</td>
           <td class="paramname"><em>accept_rate</em>&#160;</td>
         </tr>
         <tr>
@@ -478,7 +478,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: bondlength_array, energy_array</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">intent(in)</span> :: filename</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">type</span>(H2plus_type), <span class="keywordtype">intent(in)</span> :: H2plus</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span> :: accept_rate</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: accept_rate</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">! Declaring other variables</span></div>
@@ -709,7 +709,7 @@ Functions/Subroutines</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real, intent(in)&#160;</td>
+          <td class="paramtype">real, dimension(:), intent(in)&#160;</td>
           <td class="paramname"><em>accept_rate</em>&#160;</td>
         </tr>
         <tr>
@@ -725,7 +725,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: bondlength_array, energy_array</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">intent(in)</span> :: filename</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keywordtype">type</span>(H2_type), <span class="keywordtype">intent(in)</span> :: H2</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span> :: accept_rate</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: accept_rate</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="comment">! Declaring other variables</span></div>
