@@ -1,5 +1,5 @@
 <map id="testing::test_qho_energy" name="testing::test_qho_energy">
 <area shape="rect" id="node1" title="Tests the QHO_Energy function in the solvers module." alt="" coords="276,5,439,32"/>
 <area shape="rect" id="node2" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="104,5,228,32"/>
-<area shape="rect" id="node3" href="$driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title=" " alt="" coords="5,5,56,32"/>
+<area shape="rect" id="node3" href="$driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="Driver code for the VQMC program." alt="" coords="5,5,56,32"/>
 </map>

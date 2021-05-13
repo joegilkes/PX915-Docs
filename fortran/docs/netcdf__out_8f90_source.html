@@ -240,10 +240,10 @@ $(document).ready(function(){initNavTree('netcdf__out_8f90_source.html',''); ini
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">! Write NetCDF H2+ main output</span></div>
 <div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="namespacewrite__netcdf.html#a818c3a109a649bbf802adaa2a937a458">  147</a></span>&#160;<span class="keyword">subroutine </span><a class="code" href="namespacewrite__netcdf.html#a818c3a109a649bbf802adaa2a937a458">write_h2plus_main</a>(bondlength_array,energy_array,filename,ierr,H2plus,accept_rate)</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="comment">! Declaring input variables</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: bondlength_array, energy_array</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keywordtype">    real</span>(real64), <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: bondlength_array, energy_array</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">intent(in)</span> :: filename</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">type</span>(<a class="code" href="structshared__data_1_1h2plus__type.html">h2plus_type</a>), <span class="keywordtype">intent(in)</span> :: H2plus</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: accept_rate</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="keywordtype">    real</span>(real64), <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: accept_rate</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">! Declaring other variables</span></div>
@@ -313,10 +313,10 @@ $(document).ready(function(){initNavTree('netcdf__out_8f90_source.html',''); ini
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
 <div class="line"><a name="l00220"></a><span class="lineno"><a class="line" href="namespacewrite__netcdf.html#a45c5f8affdc7b8d275bc35f8b70337f4">  220</a></span>&#160;<span class="keyword">subroutine </span><a class="code" href="namespacewrite__netcdf.html#a45c5f8affdc7b8d275bc35f8b70337f4">write_h2plus_equilibration</a>(trace,filename,ierr,H2plus,accept_rate)</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="comment">! Declaring input variables</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: trace</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="keywordtype">    real</span>(real64), <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: trace</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">intent(in)</span> :: filename</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordtype">type</span>(<a class="code" href="structshared__data_1_1h2plus__type.html">h2plus_type</a>), <span class="keywordtype">intent(in)</span> :: H2plus</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span> :: accept_rate</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="keywordtype">    real</span>(real64), <span class="keywordtype">intent(in)</span> :: accept_rate</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="comment">! Declaring other variables</span></div>

@@ -152,7 +152,7 @@ Functions/Subroutines</h2></td></tr>
 <area shape="rect" href="namespacewrite__netcdf.html#a818c3a109a649bbf802adaa2a937a458" title=" " alt="" coords="112,267,239,308"/>
 <area shape="rect" href="namespacewrite__netcdf.html#a4b9b251a06719d1b0470cfc1f03883ab" title=" " alt="" coords="112,332,239,373"/>
 <area shape="rect" href="namespacewrite__netcdf.html#ae2722e18129ba78f02541fa0ae49f886" title=" " alt="" coords="112,397,239,439"/>
-<area shape="rect" href="driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title=" " alt="" coords="5,373,56,399"/>
+<area shape="rect" href="driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="Driver code for the VQMC program." alt="" coords="5,307,56,334"/>
 </map>
 </div>
 
@@ -289,7 +289,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="center"><img src="namespacewrite__netcdf_ae2722e18129ba78f02541fa0ae49f886_icgraph.png" border="0" usemap="#anamespacewrite__netcdf_ae2722e18129ba78f02541fa0ae49f886_icgraph" alt=""/></div>
 <map name="anamespacewrite__netcdf_ae2722e18129ba78f02541fa0ae49f886_icgraph" id="anamespacewrite__netcdf_ae2722e18129ba78f02541fa0ae49f886_icgraph">
 <area shape="rect" title=" " alt="" coords="104,5,231,47"/>
-<area shape="rect" href="driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title=" " alt="" coords="5,13,56,39"/>
+<area shape="rect" href="driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="Driver code for the VQMC program." alt="" coords="5,13,56,39"/>
 </map>
 </div>
 
@@ -417,7 +417,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="center"><img src="namespacewrite__netcdf_a4b9b251a06719d1b0470cfc1f03883ab_icgraph.png" border="0" usemap="#anamespacewrite__netcdf_a4b9b251a06719d1b0470cfc1f03883ab_icgraph" alt=""/></div>
 <map name="anamespacewrite__netcdf_a4b9b251a06719d1b0470cfc1f03883ab_icgraph" id="anamespacewrite__netcdf_a4b9b251a06719d1b0470cfc1f03883ab_icgraph">
 <area shape="rect" title=" " alt="" coords="104,5,231,47"/>
-<area shape="rect" href="driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title=" " alt="" coords="5,13,56,39"/>
+<area shape="rect" href="driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="Driver code for the VQMC program." alt="" coords="5,13,56,39"/>
 </map>
 </div>
 
@@ -432,13 +432,13 @@ Functions/Subroutines</h2></td></tr>
         <tr>
           <td class="memname">subroutine write_netcdf::write_h2plus_main </td>
           <td>(</td>
-          <td class="paramtype">real, dimension(:), intent(in)&#160;</td>
+          <td class="paramtype">real(real64), dimension(:), intent(in)&#160;</td>
           <td class="paramname"><em>bondlength_array</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real, dimension(:), intent(in)&#160;</td>
+          <td class="paramtype">real(real64), dimension(:), intent(in)&#160;</td>
           <td class="paramname"><em>energy_array</em>, </td>
         </tr>
         <tr>
@@ -462,7 +462,7 @@ Functions/Subroutines</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real, dimension(:), intent(in)&#160;</td>
+          <td class="paramtype">real(real64), dimension(:), intent(in)&#160;</td>
           <td class="paramname"><em>accept_rate</em>&#160;</td>
         </tr>
         <tr>
@@ -475,10 +475,10 @@ Functions/Subroutines</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="netcdf__out_8f90_source.html#l00147">147</a> of file <a class="el" href="netcdf__out_8f90_source.html">netcdf_out.f90</a>.</p>
 <div class="fragment"><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="comment">! Declaring input variables</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: bondlength_array, energy_array</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keywordtype">    real</span>(real64), <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: bondlength_array, energy_array</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">intent(in)</span> :: filename</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">type</span>(H2plus_type), <span class="keywordtype">intent(in)</span> :: H2plus</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: accept_rate</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="keywordtype">    real</span>(real64), <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: accept_rate</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">! Declaring other variables</span></div>
@@ -552,6 +552,17 @@ Functions/Subroutines</h2></td></tr>
 <area shape="rect" href="namespacewrite__netcdf.html#aca2bb13e88c9dbfc7d0027b1bd83d9d0" title=" " alt="" coords="180,5,305,47"/>
 </map>
 </div>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespacewrite__netcdf_a818c3a109a649bbf802adaa2a937a458_icgraph.png" border="0" usemap="#anamespacewrite__netcdf_a818c3a109a649bbf802adaa2a937a458_icgraph" alt=""/></div>
+<map name="anamespacewrite__netcdf_a818c3a109a649bbf802adaa2a937a458_icgraph" id="anamespacewrite__netcdf_a818c3a109a649bbf802adaa2a937a458_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,231,47"/>
+<area shape="rect" href="driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="Driver code for the VQMC program." alt="" coords="5,13,56,39"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -564,7 +575,7 @@ Functions/Subroutines</h2></td></tr>
         <tr>
           <td class="memname">subroutine write_netcdf::write_h2plus_equilibration </td>
           <td>(</td>
-          <td class="paramtype">real, dimension(:), intent(in)&#160;</td>
+          <td class="paramtype">real(real64), dimension(:), intent(in)&#160;</td>
           <td class="paramname"><em>trace</em>, </td>
         </tr>
         <tr>
@@ -588,7 +599,7 @@ Functions/Subroutines</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real, intent(in)&#160;</td>
+          <td class="paramtype">real(real64), intent(in)&#160;</td>
           <td class="paramname"><em>accept_rate</em>&#160;</td>
         </tr>
         <tr>
@@ -601,10 +612,10 @@ Functions/Subroutines</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="netcdf__out_8f90_source.html#l00220">220</a> of file <a class="el" href="netcdf__out_8f90_source.html">netcdf_out.f90</a>.</p>
 <div class="fragment"><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="comment">! Declaring input variables</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: trace</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="keywordtype">    real</span>(real64), <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: trace</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">intent(in)</span> :: filename</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordtype">type</span>(H2plus_type), <span class="keywordtype">intent(in)</span> :: H2plus</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span> :: accept_rate</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="keywordtype">    real</span>(real64), <span class="keywordtype">intent(in)</span> :: accept_rate</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="comment">! Declaring other variables</span></div>
@@ -656,15 +667,26 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    ierr = nf90_close(file_id)</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
-</div><!-- fragment --><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div><!-- fragment --><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespacewrite__netcdf_a45c5f8affdc7b8d275bc35f8b70337f4_cgraph.png" border="0" usemap="#anamespacewrite__netcdf_a45c5f8affdc7b8d275bc35f8b70337f4_cgraph" alt=""/></div>
 <map name="anamespacewrite__netcdf_a45c5f8affdc7b8d275bc35f8b70337f4_cgraph" id="anamespacewrite__netcdf_a45c5f8affdc7b8d275bc35f8b70337f4_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,148,47"/>
 <area shape="rect" href="namespacewrite__netcdf.html#aca2bb13e88c9dbfc7d0027b1bd83d9d0" title=" " alt="" coords="196,5,321,47"/>
+</map>
+</div>
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespacewrite__netcdf_a45c5f8affdc7b8d275bc35f8b70337f4_icgraph.png" border="0" usemap="#anamespacewrite__netcdf_a45c5f8affdc7b8d275bc35f8b70337f4_icgraph" alt=""/></div>
+<map name="anamespacewrite__netcdf_a45c5f8affdc7b8d275bc35f8b70337f4_icgraph" id="anamespacewrite__netcdf_a45c5f8affdc7b8d275bc35f8b70337f4_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,247,47"/>
+<area shape="rect" href="driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="Driver code for the VQMC program." alt="" coords="5,13,56,39"/>
 </map>
 </div>
 
@@ -788,11 +810,11 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    ierr = nf90_close(file_id)</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
-</div><!-- fragment --><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div><!-- fragment --><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespacewrite__netcdf_a8b125766a34e4cc2d72228a5bd109ce0_cgraph.png" border="0" usemap="#anamespacewrite__netcdf_a8b125766a34e4cc2d72228a5bd109ce0_cgraph" alt=""/></div>
 <map name="anamespacewrite__netcdf_a8b125766a34e4cc2d72228a5bd109ce0_cgraph" id="anamespacewrite__netcdf_a8b125766a34e4cc2d72228a5bd109ce0_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,132,47"/>
@@ -903,11 +925,11 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    ierr = nf90_close(file_id)</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; </div>
-</div><!-- fragment --><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div><!-- fragment --><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespacewrite__netcdf_adc83694755df0f3d9228fb9aa0874452_cgraph.png" border="0" usemap="#anamespacewrite__netcdf_adc83694755df0f3d9228fb9aa0874452_cgraph" alt=""/></div>
 <map name="anamespacewrite__netcdf_adc83694755df0f3d9228fb9aa0874452_cgraph" id="anamespacewrite__netcdf_adc83694755df0f3d9228fb9aa0874452_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,132,47"/>
@@ -990,11 +1012,11 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;    ierr = nf90_close(file_id)</div>
 <div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160; </div>
-</div><!-- fragment --><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div><!-- fragment --><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespacewrite__netcdf_a6830bd805591aad1ec622d12037dd99d_cgraph.png" border="0" usemap="#anamespacewrite__netcdf_a6830bd805591aad1ec622d12037dd99d_cgraph" alt=""/></div>
 <map name="anamespacewrite__netcdf_a6830bd805591aad1ec622d12037dd99d_cgraph" id="anamespacewrite__netcdf_a6830bd805591aad1ec622d12037dd99d_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,147,47"/>
