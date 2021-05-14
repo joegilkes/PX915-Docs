@@ -10,5 +10,6 @@ var vqmc_8f90 =
     [ "ntab", "vqmc_8f90.html#a4acb6b64bbac5c4684654d00393f7f24", null ],
     [ "iv", "vqmc_8f90.html#a86db46440794b9ef7cfd9fbf1fd69930", null ],
     [ "iy", "vqmc_8f90.html#a1608372d703310a49afc4243ccf27368", null ],
-    [ "seed", "vqmc_8f90.html#a986f071589794992c4bc31de25c63976", null ]
+    [ "seed", "vqmc_8f90.html#a986f071589794992c4bc31de25c63976", null ],
+    [ "logfrac", "vqmc_8f90.html#a4f41e2c494f06da125bf9a56314161b5", null ]
 ];

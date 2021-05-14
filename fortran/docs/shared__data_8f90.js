@@ -12,6 +12,7 @@ var shared__data_8f90 =
     [ "e_chg", "shared__data_8f90.html#a041a2ee5336ce5dfd0e92072e614b2b6", null ],
     [ "a_0", "shared__data_8f90.html#ac0600c375ab1128c6119e57f71b59b6e", null ],
     [ "eps_0", "shared__data_8f90.html#af01a8bd84f8943178f55201fc394f280", null ],
+    [ "r2o2", "shared__data_8f90.html#a1bac0d0e628245595f9abe2bdd4de9c0", null ],
     [ "p_system", "shared__data_8f90.html#ac4c86b6f875f575f5b7194f9a5d2ddf4", null ],
     [ "run_equil", "shared__data_8f90.html#a9285af0408bde68c647a77c75900929d", null ],
     [ "run_restart", "shared__data_8f90.html#a2938e794296c80673d3b14040bc92798", null ],

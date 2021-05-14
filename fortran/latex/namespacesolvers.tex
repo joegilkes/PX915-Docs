@@ -421,7 +421,7 @@ Definition at line 271 of file quantum\+\_\+solvers.\+f90.
 \DoxyCodeLine{291         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(fdstep)) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{292             step = fdstep}
 \DoxyCodeLine{293         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{294             step = 1e-\/5\_real64}
+\DoxyCodeLine{294             step = 1e-\/3\_real64}
 \DoxyCodeLine{295 \textcolor{keywordflow}{        end if}}
 \DoxyCodeLine{296 }
 \DoxyCodeLine{297         \textcolor{comment}{! Calculate trial wavefunction at provided point.}}
@@ -430,7 +430,7 @@ Definition at line 271 of file quantum\+\_\+solvers.\+f90.
 \DoxyCodeLine{300 }
 \DoxyCodeLine{301         \textcolor{comment}{! Calculate trial wavefunction in finite difference directions.}}
 \DoxyCodeLine{302         \textcolor{keywordflow}{do} i = 1, 3}
-\DoxyCodeLine{303             r\_temp = r}
+\DoxyCodeLine{303             r\_temp(:) = r(:)}
 \DoxyCodeLine{304             r\_temp(i) = r(i) -\/ step}
 \DoxyCodeLine{305             diffs(1, i) = h\_2\_plus\_wfn(c, r\_temp, r\_a, r\_b)}
 \DoxyCodeLine{306 }
@@ -444,7 +444,7 @@ Definition at line 271 of file quantum\+\_\+solvers.\+f90.
 \DoxyCodeLine{314                      (diffs(1, 3) -\/ wfnx2 + diffs(2, 3))) / (step*step)}
 \DoxyCodeLine{315         laplacian = laplacian * (-\/0.5\_real64)}
 \DoxyCodeLine{316 }
-\DoxyCodeLine{317         coulomb = (-\/(1  / norm2(r -\/ r\_a)) -\/ (1 / norm2(r -\/ r\_b))) * wfn}
+\DoxyCodeLine{317         coulomb = -\/(1  / norm2(r -\/ r\_a))*wfn -\/ (1 / norm2(r -\/ r\_b))*wfn}
 \DoxyCodeLine{318         }
 \DoxyCodeLine{319         e\_loc = (laplacian + coulomb) / wfn}
 \DoxyCodeLine{320         }

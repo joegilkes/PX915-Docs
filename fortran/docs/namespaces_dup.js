@@ -8,7 +8,8 @@ var namespaces_dup =
       [ "m_elec", "namespaceconstants.html#a4f996dcd1b7e4cd0bc798d8e68bbdf70", null ],
       [ "e_chg", "namespaceconstants.html#a041a2ee5336ce5dfd0e92072e614b2b6", null ],
       [ "a_0", "namespaceconstants.html#ac0600c375ab1128c6119e57f71b59b6e", null ],
-      [ "eps_0", "namespaceconstants.html#af01a8bd84f8943178f55201fc394f280", null ]
+      [ "eps_0", "namespaceconstants.html#af01a8bd84f8943178f55201fc394f280", null ],
+      [ "r2o2", "namespaceconstants.html#a1bac0d0e628245595f9abe2bdd4de9c0", null ]
     ] ],
     [ "input_parser", "namespaceinput__parser.html", [
       [ "read_control", "namespaceinput__parser.html#ace5694fecca99b0223f02140c750e5f1", null ],
@@ -66,7 +67,8 @@ var namespaces_dup =
       [ "ntab", "namespacevqmc.html#a4acb6b64bbac5c4684654d00393f7f24", null ],
       [ "iv", "namespacevqmc.html#a86db46440794b9ef7cfd9fbf1fd69930", null ],
       [ "iy", "namespacevqmc.html#a1608372d703310a49afc4243ccf27368", null ],
-      [ "seed", "namespacevqmc.html#a986f071589794992c4bc31de25c63976", null ]
+      [ "seed", "namespacevqmc.html#a986f071589794992c4bc31de25c63976", null ],
+      [ "logfrac", "namespacevqmc.html#a4f41e2c494f06da125bf9a56314161b5", null ]
     ] ],
     [ "write_netcdf", "namespacewrite__netcdf.html", [
       [ "error_check", "namespacewrite__netcdf.html#aca2bb13e88c9dbfc7d0027b1bd83d9d0", null ],

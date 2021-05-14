@@ -763,7 +763,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">present</span>(fdstep)) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            step = fdstep</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            step = 1e-5_real64</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            step = 1e-3_real64</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="keywordflow">        end if</span></div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <span class="comment">! Calculate trial wavefunction at provided point.</span></div>
@@ -772,7 +772,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="comment">! Calculate trial wavefunction in finite difference directions.</span></div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <span class="keywordflow">do</span> i = 1, 3</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            r_temp = r</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            r_temp(:) = r(:)</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            r_temp(i) = r(i) - step</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            diffs(1, i) = h_2_plus_wfn(c, r_temp, r_a, r_b)</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
@@ -786,7 +786,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                     (diffs(1, 3) - wfnx2 + diffs(2, 3))) / (step*step)</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        laplacian = laplacian * (-0.5_real64)</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        coulomb = (-(1  / norm2(r - r_a)) - (1 / norm2(r - r_b))) * wfn</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        coulomb = -(1  / norm2(r - r_a))*wfn - (1 / norm2(r - r_b))*wfn</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        </div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        e_loc = (laplacian + coulomb) / wfn</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        </div>
