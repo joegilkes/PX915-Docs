@@ -26,5 +26,7 @@ var shared__data_8f90 =
     [ "resfile_p", "shared__data_8f90.html#a2c9dff0d6e5a6a82acc57550040c10e2", null ],
     [ "resfile_e", "shared__data_8f90.html#ab86fae5fda93f52fd72630d60616a363", null ],
     [ "resfile_c", "shared__data_8f90.html#acb0f9ce38ebba13221d2ac26bc0894f5", null ],
+    [ "alpha_start", "shared__data_8f90.html#a28246c61bb5db3025877f5369254d399", null ],
+    [ "bond_start", "shared__data_8f90.html#abd55f854da9e9234d715022110bd076a", null ],
     [ "logid", "shared__data_8f90.html#af5798eba5b1c4594d4c3c9648d732e9e", null ]
 ];

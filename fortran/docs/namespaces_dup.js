@@ -15,11 +15,10 @@ var namespaces_dup =
       [ "read_qho", "namespaceinput__parser.html#aa9a77c1395d69d54ce38420acdb3f87f", null ],
       [ "read_h2plus", "namespaceinput__parser.html#a3ebe204fa7f63e19fbf29c36f580ee74", null ],
       [ "read_h2", "namespaceinput__parser.html#a163a65b1b9201a421da32ba2a7c92148", null ],
-      [ "read_restart", "namespaceinput__parser.html#a6ab6b03879dd4cad7ace90b37bdf39a4", null ],
       [ "read_inputs", "namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea", null ]
     ] ],
     [ "restart_fns", "namespacerestart__fns.html", [
-      [ "write_res_params", "namespacerestart__fns.html#a1608dec0135ae48f02a12b3a1b2995be", null ],
+      [ "write_res_params", "namespacerestart__fns.html#a676f50962b057e457db6689d2c06fd62", null ],
       [ "read_res_params", "namespacerestart__fns.html#ad54208aa49a4b7f6637250e484523044", null ],
       [ "error_check", "namespacerestart__fns.html#a23054262d0eeb017dee69fd5f9ca1250", null ],
       [ "read_res_energies", "namespacerestart__fns.html#adfaafcdad6498a59702062d2995cee0b", null ],
