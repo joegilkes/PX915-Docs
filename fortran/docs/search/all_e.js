@@ -2,7 +2,7 @@ var searchData=
 [
   ['ran1_52',['ran1',['../namespacevqmc.html#a01b80444204a0cd0b5cddde82cbc7651',1,'vqmc']]],
   ['random_5fnormal_53',['random_normal',['../namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335',1,'vqmc']]],
-  ['rc_54',['rc',['../namespaceinput__parser.html#a0d29f515c2bc6f306a8576c1b4253c8d',1,'input_parser::rc()'],['../namespacerestart__fns.html#ab386c6b0f14be0090063a054256f5923',1,'restart_fns::rc()']]],
+  ['rc_54',['rc',['../namespacerestart__fns.html#ab386c6b0f14be0090063a054256f5923',1,'restart_fns']]],
   ['rcut_55',['rcut',['../structshared__data_1_1qho__type.html#a39c77f54ab550862e08a78073d69606b',1,'shared_data::qho_type::rcut()'],['../structshared__data_1_1h2plus__type.html#a45e78018edd3283615e8b2a0cddb7fb6',1,'shared_data::h2plus_type::rcut()'],['../structshared__data_1_1h2__type.html#a0c0947d862a86bad2415dc9de78ceb24',1,'shared_data::h2_type::rcut()']]],
   ['read_5fcontrol_56',['read_control',['../namespaceinput__parser.html#ace5694fecca99b0223f02140c750e5f1',1,'input_parser']]],
   ['read_5fh2_57',['read_h2',['../namespaceinput__parser.html#a163a65b1b9201a421da32ba2a7c92148',1,'input_parser']]],

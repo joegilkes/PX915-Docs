@@ -115,35 +115,35 @@ $(document).ready(function(){initNavTree('restart__fns_8f90_source.html',''); in
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">    real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">optional</span>, <span class="keywordtype">intent(in)</span>  :: pos2 <span class="comment">! current position of second electron for H2</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">type</span>(<a class="code" href="structshared__data_1_1restart__type.html">restart_type</a>) :: res</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">! Store the step number and seed</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    res%step = step</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    res%seed = seed</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">! Store positions, if the simulation was midst an MMC run</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span> (step /= 0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        res%pos1 = pos1 </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="comment">! For the second electron of H2 system</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">present</span>(pos2)) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            res%pos2 = pos2</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordflow">        endif</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordflow">    endif</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">! Store the parameter value</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">select case</span> (trim(param))</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">case</span> (<span class="stringliteral">&#39;alpha&#39;</span>)</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        res%alpha = val</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">case</span> (<span class="stringliteral">&#39;c1&#39;</span>)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        res%c1 = val</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">case</span> (<span class="stringliteral">&#39;c2&#39;</span>)</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        res%c2 = val</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">case</span> (<span class="stringliteral">&#39;bond&#39;</span>)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        res%bond = val</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordflow">    case default</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        error stop <span class="stringliteral">&#39;Error: Invalid &quot;param&quot; passed to function write_res_params().&#39;</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordflow">    end select</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">! Define the RESTART namelist</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    namelist /restart/ res</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">! Define the RESTART namelist</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    namelist /restart/ res</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">! Store the step number and seed</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    res%step = step</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    res%seed = seed</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">! Store positions, if the simulation was midst an MMC run</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">if</span> (step /= 0) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        res%pos1 = pos1 </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">! For the second electron of H2 system</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">present</span>(pos2)) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            res%pos2 = pos2</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordflow">        endif</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordflow">    endif</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">! Store the parameter value</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">select case</span> (trim(param))</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">case</span> (<span class="stringliteral">&#39;alpha&#39;</span>)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        res%alpha = val</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">case</span> (<span class="stringliteral">&#39;c1&#39;</span>)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        res%c1 = val</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">case</span> (<span class="stringliteral">&#39;c2&#39;</span>)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        res%c2 = val</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">case</span> (<span class="stringliteral">&#39;bond&#39;</span>)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        res%bond = val</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordflow">    case default</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        error stop <span class="stringliteral">&#39;Error: Invalid &quot;param&quot; passed to function write_res_params().&#39;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordflow">    end select</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">! Open the res_paramts.txt file</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">open</span>(action=<span class="stringliteral">&#39;write&#39;</span>, file=<span class="stringliteral">&#39;res_params.txt&#39;</span>, iostat=<a class="code" href="namespacerestart__fns.html#ab386c6b0f14be0090063a054256f5923">rc</a>, newunit=<a class="code" href="namespacerestart__fns.html#abae4eaf545561c534bc832e303c47b4b">fu</a>)</div>
@@ -166,15 +166,15 @@ $(document).ready(function(){initNavTree('restart__fns_8f90_source.html',''); in
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">! Local variables</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">type</span>(<a class="code" href="structshared__data_1_1restart__type.html">restart_type</a>), <span class="keywordtype">intent(out)</span> :: res</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">! Check if file &#39;res_params.txt&#39; exists</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">inquire</span>(file=<span class="stringliteral">&#39;res_params.txt&#39;</span>, iostat=<a class="code" href="namespacerestart__fns.html#ab386c6b0f14be0090063a054256f5923">rc</a>)</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespacerestart__fns.html#ab386c6b0f14be0090063a054256f5923">rc</a> /= 0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        print*, <span class="stringliteral">&#39;Error: Restart file &quot;res_params.txt&quot; does not exist.&#39;</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordflow">    end if</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">! Define the namelist</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    namelist /restart/ res</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">! Define the namelist</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    namelist /restart/ res</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">! Check if file &#39;res_params.txt&#39; exists</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">inquire</span>(file=<span class="stringliteral">&#39;res_params.txt&#39;</span>, iostat=<a class="code" href="namespacerestart__fns.html#ab386c6b0f14be0090063a054256f5923">rc</a>)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespacerestart__fns.html#ab386c6b0f14be0090063a054256f5923">rc</a> /= 0) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        print*, <span class="stringliteral">&#39;Error: Restart file &quot;res_params.txt&quot; does not exist.&#39;</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keywordflow">    end if</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">! Open the file</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">open</span>(action=<span class="stringliteral">&#39;read&#39;</span>, file=<span class="stringliteral">&#39;res_params.txt&#39;</span>, iostat=<a class="code" href="namespacerestart__fns.html#ab386c6b0f14be0090063a054256f5923">rc</a>, newunit=<a class="code" href="namespacerestart__fns.html#abae4eaf545561c534bc832e303c47b4b">fu</a>)</div>

@@ -16,9 +16,7 @@ var namespaces_dup =
       [ "read_h2plus", "namespaceinput__parser.html#a3ebe204fa7f63e19fbf29c36f580ee74", null ],
       [ "read_h2", "namespaceinput__parser.html#a163a65b1b9201a421da32ba2a7c92148", null ],
       [ "read_restart", "namespaceinput__parser.html#a6ab6b03879dd4cad7ace90b37bdf39a4", null ],
-      [ "read_inputs", "namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea", null ],
-      [ "fu", "namespaceinput__parser.html#a209ae7e3892e6b6dcbe9137fdeb0875f", null ],
-      [ "rc", "namespaceinput__parser.html#a0d29f515c2bc6f306a8576c1b4253c8d", null ]
+      [ "read_inputs", "namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea", null ]
     ] ],
     [ "restart_fns", "namespacerestart__fns.html", [
       [ "write_res_params", "namespacerestart__fns.html#aa9c19f2ebc4fd0db8d7b561ea351f79b", null ],

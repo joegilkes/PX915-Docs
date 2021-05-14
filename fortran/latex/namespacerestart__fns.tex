@@ -39,35 +39,35 @@ Definition at line 13 of file restart\+\_\+fns.\+f90.
 \DoxyCodeLine{21 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(in)}  :: pos2 \textcolor{comment}{! current position of second electron for H2}}
 \DoxyCodeLine{22     \textcolor{keywordtype}{type}(restart\_type) :: res}
 \DoxyCodeLine{23 }
-\DoxyCodeLine{24     \textcolor{comment}{! Store the step number and seed}}
-\DoxyCodeLine{25     res\%step = step}
-\DoxyCodeLine{26     res\%seed = seed}
-\DoxyCodeLine{27 }
-\DoxyCodeLine{28     \textcolor{comment}{! Store positions, if the simulation was midst an MMC run}}
-\DoxyCodeLine{29     \textcolor{keywordflow}{if} (step /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{30         res\%pos1 = pos1 }
-\DoxyCodeLine{31         \textcolor{comment}{! For the second electron of H2 system}}
-\DoxyCodeLine{32         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(pos2)) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{33             res\%pos2 = pos2}
-\DoxyCodeLine{34 \textcolor{keywordflow}{        endif}}
-\DoxyCodeLine{35 \textcolor{keywordflow}{    endif}}
-\DoxyCodeLine{36 }
-\DoxyCodeLine{37     \textcolor{comment}{! Store the parameter value}}
-\DoxyCodeLine{38     \textcolor{keywordflow}{select case} (trim(param))}
-\DoxyCodeLine{39     \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'alpha'})}
-\DoxyCodeLine{40         res\%alpha = val}
-\DoxyCodeLine{41     \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'c1'})}
-\DoxyCodeLine{42         res\%c1 = val}
-\DoxyCodeLine{43     \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'c2'})}
-\DoxyCodeLine{44         res\%c2 = val}
-\DoxyCodeLine{45     \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'bond'})}
-\DoxyCodeLine{46         res\%bond = val}
-\DoxyCodeLine{47 \textcolor{keywordflow}{    case default}}
-\DoxyCodeLine{48         error stop \textcolor{stringliteral}{'Error: Invalid "{}param"{} passed to function write\_res\_params().'}}
-\DoxyCodeLine{49 \textcolor{keywordflow}{    end select}}
-\DoxyCodeLine{50 }
-\DoxyCodeLine{51     \textcolor{comment}{! Define the RESTART namelist}}
-\DoxyCodeLine{52     namelist /restart/ res}
+\DoxyCodeLine{24     \textcolor{comment}{! Define the RESTART namelist}}
+\DoxyCodeLine{25     namelist /restart/ res}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{comment}{! Store the step number and seed}}
+\DoxyCodeLine{28     res\%step = step}
+\DoxyCodeLine{29     res\%seed = seed}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{comment}{! Store positions, if the simulation was midst an MMC run}}
+\DoxyCodeLine{32     \textcolor{keywordflow}{if} (step /= 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{33         res\%pos1 = pos1 }
+\DoxyCodeLine{34         \textcolor{comment}{! For the second electron of H2 system}}
+\DoxyCodeLine{35         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(pos2)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{36             res\%pos2 = pos2}
+\DoxyCodeLine{37 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{38 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{comment}{! Store the parameter value}}
+\DoxyCodeLine{41     \textcolor{keywordflow}{select case} (trim(param))}
+\DoxyCodeLine{42     \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'alpha'})}
+\DoxyCodeLine{43         res\%alpha = val}
+\DoxyCodeLine{44     \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'c1'})}
+\DoxyCodeLine{45         res\%c1 = val}
+\DoxyCodeLine{46     \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'c2'})}
+\DoxyCodeLine{47         res\%c2 = val}
+\DoxyCodeLine{48     \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'bond'})}
+\DoxyCodeLine{49         res\%bond = val}
+\DoxyCodeLine{50 \textcolor{keywordflow}{    case default}}
+\DoxyCodeLine{51         error stop \textcolor{stringliteral}{'Error: Invalid "{}param"{} passed to function write\_res\_params().'}}
+\DoxyCodeLine{52 \textcolor{keywordflow}{    end select}}
 \DoxyCodeLine{53 }
 \DoxyCodeLine{54     \textcolor{comment}{! Open the res\_paramts.txt file}}
 \DoxyCodeLine{55     \textcolor{keyword}{open}(action=\textcolor{stringliteral}{'write'}, file=\textcolor{stringliteral}{'res\_params.txt'}, iostat=rc, newunit=fu)}
@@ -99,15 +99,15 @@ Definition at line 70 of file restart\+\_\+fns.\+f90.
 \DoxyCodeLine{72     \textcolor{comment}{! Local variables}}
 \DoxyCodeLine{73     \textcolor{keywordtype}{type}(restart\_type), \textcolor{keywordtype}{intent(out)} :: res}
 \DoxyCodeLine{74 }
-\DoxyCodeLine{75     \textcolor{comment}{! Check if file 'res\_params.txt' exists}}
-\DoxyCodeLine{76     \textcolor{keyword}{inquire}(file=\textcolor{stringliteral}{'res\_params.txt'}, iostat=rc)}
-\DoxyCodeLine{77     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{78         print*, \textcolor{stringliteral}{'Error: Restart file "{}res\_params.txt"{} does not exist.'}}
-\DoxyCodeLine{79         \textcolor{keywordflow}{return}}
-\DoxyCodeLine{80 \textcolor{keywordflow}{    end if}}
-\DoxyCodeLine{81 }
-\DoxyCodeLine{82     \textcolor{comment}{! Define the namelist}}
-\DoxyCodeLine{83     namelist /restart/ res}
+\DoxyCodeLine{75     \textcolor{comment}{! Define the namelist}}
+\DoxyCodeLine{76     namelist /restart/ res}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \textcolor{comment}{! Check if file 'res\_params.txt' exists}}
+\DoxyCodeLine{79     \textcolor{keyword}{inquire}(file=\textcolor{stringliteral}{'res\_params.txt'}, iostat=rc)}
+\DoxyCodeLine{80     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{81         print*, \textcolor{stringliteral}{'Error: Restart file "{}res\_params.txt"{} does not exist.'}}
+\DoxyCodeLine{82         \textcolor{keywordflow}{return}}
+\DoxyCodeLine{83 \textcolor{keywordflow}{    end if}}
 \DoxyCodeLine{84 }
 \DoxyCodeLine{85     \textcolor{comment}{! Open the file}}
 \DoxyCodeLine{86     \textcolor{keyword}{open}(action=\textcolor{stringliteral}{'read'}, file=\textcolor{stringliteral}{'res\_params.txt'}, iostat=rc, newunit=fu)}
@@ -123,6 +123,14 @@ Definition at line 70 of file restart\+\_\+fns.\+f90.
 \DoxyCodeLine{96 }
 
 \end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacerestart__fns_ad54208aa49a4b7f6637250e484523044_icgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Variable Documentation}
