@@ -440,7 +440,7 @@ Definition at line 305 of file netcdf\+\_\+out.\+f90.
 \DoxyCodeLine{347         ierr = nf90\_def\_var(file\_id, \textcolor{stringliteral}{"{}Alpha\_array"{}}, nf90\_real, dim\_id, var\_id\textcolor{comment}{)}}
 \DoxyCodeLine{348 \textcolor{comment}{}        \textcolor{keyword}{call }error\_check(ierr)}
 \DoxyCodeLine{349     }
-\DoxyCodeLine{350         ierr = nf90\_def\_var(file\_id, \textcolor{stringliteral}{"{}energy\_at\_alphas\_array"{}}, nf90\_real\textcolor{comment}{, dim\_id, var\_id\_)}}
+\DoxyCodeLine{350         ierr = nf90\_def\_var(file\_id, \textcolor{stringliteral}{"{}total\_energies"{}}, nf90\_real, dim\_id\textcolor{comment}{, var\_id\_)}}
 \DoxyCodeLine{351 \textcolor{comment}{}        \textcolor{keyword}{call }error\_check(ierr)}
 \DoxyCodeLine{352     }
 \DoxyCodeLine{353         \textcolor{comment}{! Finish defining metadata}}
@@ -556,7 +556,7 @@ Definition at line 387 of file netcdf\+\_\+out.\+f90.
 \DoxyCodeLine{436         ierr = nf90\_def\_var(file\_id, \textcolor{stringliteral}{"{}Bondlength\_array"{}}, nf90\_real, dim\_id\textcolor{comment}{, var\_id)}}
 \DoxyCodeLine{437 \textcolor{comment}{}        \textcolor{keyword}{call }error\_check(ierr)}
 \DoxyCodeLine{438     }
-\DoxyCodeLine{439         ierr = nf90\_def\_var(file\_id, \textcolor{stringliteral}{"{}energy\_at\_bondlengths\_array"{}}, nf90\_real\textcolor{comment}{, dim\_id, var\_id\_)}}
+\DoxyCodeLine{439         ierr = nf90\_def\_var(file\_id, \textcolor{stringliteral}{"{}total\_energies"{}}, nf90\_real, dim\_id\textcolor{comment}{, var\_id\_)}}
 \DoxyCodeLine{440 \textcolor{comment}{}        \textcolor{keyword}{call }error\_check(ierr)}
 \DoxyCodeLine{441     }
 \DoxyCodeLine{442         \textcolor{comment}{! Finish defining metadata}}
@@ -672,7 +672,7 @@ Definition at line 476 of file netcdf\+\_\+out.\+f90.
 \DoxyCodeLine{525         ierr = nf90\_def\_var(file\_id, \textcolor{stringliteral}{"{}Bondlength\_array"{}}, nf90\_real, dim\_id\textcolor{comment}{, var\_id)}}
 \DoxyCodeLine{526 \textcolor{comment}{}        \textcolor{keyword}{call }error\_check(ierr)}
 \DoxyCodeLine{527     }
-\DoxyCodeLine{528         ierr = nf90\_def\_var(file\_id, \textcolor{stringliteral}{"{}energy\_at\_bondlengths\_array"{}}, nf90\_real\textcolor{comment}{, dim\_id, var\_id\_)}}
+\DoxyCodeLine{528         ierr = nf90\_def\_var(file\_id, \textcolor{stringliteral}{"{}total\_energies"{}}, nf90\_real, dim\_id\textcolor{comment}{, var\_id\_)}}
 \DoxyCodeLine{529 \textcolor{comment}{}        \textcolor{keyword}{call }error\_check(ierr)}
 \DoxyCodeLine{530     }
 \DoxyCodeLine{531         \textcolor{comment}{! Finish defining metadata}}
