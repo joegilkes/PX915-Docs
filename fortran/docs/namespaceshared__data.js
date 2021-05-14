@@ -20,5 +20,9 @@ var namespaceshared__data =
     [ "resfile_c", "namespaceshared__data.html#acb0f9ce38ebba13221d2ac26bc0894f5", null ],
     [ "alpha_start", "namespaceshared__data.html#a28246c61bb5db3025877f5369254d399", null ],
     [ "bond_start", "namespaceshared__data.html#abd55f854da9e9234d715022110bd076a", null ],
+    [ "i_alpha", "namespaceshared__data.html#ad78204b4454629c23740a867244a2f89", null ],
+    [ "i_bond", "namespaceshared__data.html#a6263d962b34a090fa515dc809caf695b", null ],
+    [ "i_c1", "namespaceshared__data.html#a657e95e18cc24105b6d4ebf25b4bfa1a", null ],
+    [ "i_c2", "namespaceshared__data.html#aeff0f22f60575722c8fc6958278a1c50", null ],
     [ "logid", "namespaceshared__data.html#af5798eba5b1c4594d4c3c9648d732e9e", null ]
 ];
