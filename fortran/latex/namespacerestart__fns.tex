@@ -6,6 +6,12 @@
 subroutine \mbox{\hyperlink{namespacerestart__fns_a1608dec0135ae48f02a12b3a1b2995be}{write\+\_\+res\+\_\+params}} (p\+\_\+system, val1, val2, val3, step, seed, pos1, pos2)
 \item 
 subroutine \mbox{\hyperlink{namespacerestart__fns_ad54208aa49a4b7f6637250e484523044}{read\+\_\+res\+\_\+params}} (res)
+\item 
+subroutine \mbox{\hyperlink{namespacerestart__fns_a23054262d0eeb017dee69fd5f9ca1250}{error\+\_\+check}} (ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacerestart__fns_adfaafcdad6498a59702062d2995cee0b}{read\+\_\+res\+\_\+energies}} (total\+\_\+energies, accept\+\_\+rates)
+\item 
+subroutine \mbox{\hyperlink{namespacerestart__fns_a0ea5310bee62dc36fe288cca0df4f709}{read\+\_\+res\+\_\+chains}} (energy\+\_\+chain, accept\+\_\+rate)
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -25,89 +31,89 @@ integer \mbox{\hyperlink{namespacerestart__fns_ab386c6b0f14be0090063a054256f5923
 
 
 
-Definition at line 13 of file restart\+\_\+fns.\+f90.
+Definition at line 14 of file restart\+\_\+fns.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{14 }
-\DoxyCodeLine{15     \textcolor{comment}{! Local variables}}
-\DoxyCodeLine{16     \textcolor{keywordtype}{character(len=10)}, \textcolor{keywordtype}{intent(in)} :: p\_system \textcolor{comment}{! system being simulated}}
-\DoxyCodeLine{17 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{intent(in)} :: val1  \textcolor{comment}{! current value of alpha (for QHO) or bond (for Hyd)}}
-\DoxyCodeLine{18 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(in)} :: val2, val3  \textcolor{comment}{! current value of c1 and c2 (for Hyd)}}
-\DoxyCodeLine{19     \textcolor{keywordtype}{integer(int32)}, \textcolor{keywordtype}{intent(in)} :: step \textcolor{comment}{! current step number}}
-\DoxyCodeLine{20     \textcolor{keywordtype}{integer(int32)}, \textcolor{keywordtype}{intent(in)}  :: seed \textcolor{comment}{! current seed used}}
-\DoxyCodeLine{21 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(in)}  :: pos1 \textcolor{comment}{! current position of electron for QHO \& H2plus}}
-\DoxyCodeLine{22 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(in)}  :: pos2 \textcolor{comment}{! current position of second electron for H2}}
-\DoxyCodeLine{23     \textcolor{keywordtype}{type}(restart\_type) :: res}
-\DoxyCodeLine{24 }
-\DoxyCodeLine{25     \textcolor{comment}{! Define the RESTART namelist}}
-\DoxyCodeLine{26     namelist /restart/ res}
-\DoxyCodeLine{27 }
-\DoxyCodeLine{28     \textcolor{comment}{! Store the step number and seed}}
-\DoxyCodeLine{29     res\%step = step}
-\DoxyCodeLine{30     res\%seed = seed}
-\DoxyCodeLine{31 }
-\DoxyCodeLine{32     \textcolor{comment}{! If the simulation was midst an MMC run}}
-\DoxyCodeLine{33     \textcolor{keywordflow}{if} (step /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{34 }
-\DoxyCodeLine{35         \textcolor{comment}{! Store position of first electron}}
-\DoxyCodeLine{36         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(pos1)) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{37             res\%pos1 = pos1}
-\DoxyCodeLine{38         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{39             error stop \textcolor{stringliteral}{'Error: Electron position ("{}pos1"{}) missing in inputs to write\_res\_params().'}}
-\DoxyCodeLine{40 \textcolor{keywordflow}{        endif}}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{42         \textcolor{comment}{! For H2, store position of second electron as well}}
-\DoxyCodeLine{43         \textcolor{keywordflow}{if} (trim(p\_system)==\textcolor{stringliteral}{'H2'}) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{44             \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(pos2)) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{45                 res\%pos2 = pos2}
-\DoxyCodeLine{46             \textcolor{keywordflow}{else}}
-\DoxyCodeLine{47                 error stop \textcolor{stringliteral}{'Error: Electron position ("{}pos2"{}) missing in inputs to write\_res\_params().'}}
-\DoxyCodeLine{48 \textcolor{keywordflow}{            endif}}
-\DoxyCodeLine{49 \textcolor{keywordflow}{        endif}}
-\DoxyCodeLine{50 }
-\DoxyCodeLine{51 \textcolor{keywordflow}{    endif}}
-\DoxyCodeLine{52 }
-\DoxyCodeLine{53     \textcolor{comment}{! Store the parameter values}}
-\DoxyCodeLine{54     \textcolor{keywordflow}{select case} (trim(p\_system))}
-\DoxyCodeLine{55     \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'QHO'})}
-\DoxyCodeLine{56         res\%alpha = val1}
-\DoxyCodeLine{57     \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'H2plus'})}
-\DoxyCodeLine{58         res\%bond = val1}
-\DoxyCodeLine{59         res\%c1 = val2}
-\DoxyCodeLine{60         \textcolor{keywordflow}{if} (h2plus\%include\_pqn==2) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{61             \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(val3)) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{62                 res\%c2 = val3}
-\DoxyCodeLine{63             \textcolor{keywordflow}{else}}
-\DoxyCodeLine{64                 error stop \textcolor{stringliteral}{'Error: Value of c2 ("{}val3"{}) missing in inputs to write\_res\_params().'}}
-\DoxyCodeLine{65 \textcolor{keywordflow}{            endif}}
-\DoxyCodeLine{66 \textcolor{keywordflow}{        endif}}
-\DoxyCodeLine{67     \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'H2'})}
-\DoxyCodeLine{68         res\%bond = val1}
-\DoxyCodeLine{69         res\%c1 = val2}
-\DoxyCodeLine{70         \textcolor{keywordflow}{if} (h2\%include\_pqn==2) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{71             \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(val3)) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{72                 res\%c2 = val3}
-\DoxyCodeLine{73             \textcolor{keywordflow}{else}}
-\DoxyCodeLine{74                 error stop \textcolor{stringliteral}{'Error: Value of c2 ("{}val3"{}) missing in inputs to write\_res\_params().'}}
-\DoxyCodeLine{75 \textcolor{keywordflow}{            endif}}
-\DoxyCodeLine{76 \textcolor{keywordflow}{        endif}}
-\DoxyCodeLine{77 \textcolor{keywordflow}{    case default}}
-\DoxyCodeLine{78         error stop \textcolor{stringliteral}{'Error: Invalid "{}p\_system"{} passed to function write\_res\_params().'}}
-\DoxyCodeLine{79 \textcolor{keywordflow}{    end select}}
-\DoxyCodeLine{80 }
-\DoxyCodeLine{81     \textcolor{comment}{! Open the res\_paramts.txt file}}
-\DoxyCodeLine{82     \textcolor{keyword}{open}(action=\textcolor{stringliteral}{'write'}, file=\textcolor{stringliteral}{'res\_params.txt'}, iostat=rc, newunit=fu)}
-\DoxyCodeLine{83 }
-\DoxyCodeLine{84     \textcolor{comment}{! Write the RESTART namelist}}
-\DoxyCodeLine{85     \textcolor{keyword}{write}(nml=restart, iostat=rc, unit=fu)}
-\DoxyCodeLine{86     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{87         print*, \textcolor{stringliteral}{'Error: Invalid RESTART namelist defined in function write\_res\_params().'}}
-\DoxyCodeLine{88 \textcolor{keywordflow}{    end if}}
-\DoxyCodeLine{89     }
-\DoxyCodeLine{90     \textcolor{comment}{! Close the res\_paramts.txt file}}
-\DoxyCodeLine{91     \textcolor{keyword}{close}(fu)}
-\DoxyCodeLine{92 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     \textcolor{comment}{! Local variables}}
+\DoxyCodeLine{17     \textcolor{keywordtype}{character(len=10)}, \textcolor{keywordtype}{intent(in)} :: p\_system \textcolor{comment}{! system being simulated}}
+\DoxyCodeLine{18 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{intent(in)} :: val1  \textcolor{comment}{! current value of alpha (for QHO) or bond (for Hyd)}}
+\DoxyCodeLine{19 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(in)} :: val2, val3  \textcolor{comment}{! current value of c1 and c2 (for Hyd)}}
+\DoxyCodeLine{20     \textcolor{keywordtype}{integer(int32)}, \textcolor{keywordtype}{intent(in)} :: step \textcolor{comment}{! current step number}}
+\DoxyCodeLine{21     \textcolor{keywordtype}{integer(int32)}, \textcolor{keywordtype}{intent(in)}  :: seed \textcolor{comment}{! current seed used}}
+\DoxyCodeLine{22 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(in)}  :: pos1 \textcolor{comment}{! current position of electron for QHO \& H2plus}}
+\DoxyCodeLine{23 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{optional}, \textcolor{keywordtype}{intent(in)}  :: pos2 \textcolor{comment}{! current position of second electron for H2}}
+\DoxyCodeLine{24     \textcolor{keywordtype}{type}(restart\_type) :: res}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{comment}{! Define the RESTART namelist}}
+\DoxyCodeLine{27     namelist /restart/ res}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{comment}{! Store the step number and seed}}
+\DoxyCodeLine{30     res\%step = step}
+\DoxyCodeLine{31     res\%seed = seed}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{comment}{! If the simulation was midst an MMC run}}
+\DoxyCodeLine{34     \textcolor{keywordflow}{if} (step /= 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36         \textcolor{comment}{! Store position of first electron}}
+\DoxyCodeLine{37         \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(pos1)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{38             res\%pos1 = pos1}
+\DoxyCodeLine{39         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{40             error stop \textcolor{stringliteral}{'Error: Electron position ("{}pos1"{}) missing in inputs to write\_res\_params().'}}
+\DoxyCodeLine{41 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         \textcolor{comment}{! For H2, store position of second electron as well}}
+\DoxyCodeLine{44         \textcolor{keywordflow}{if} (trim(p\_system)==\textcolor{stringliteral}{'H2'}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{45             \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(pos2)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{46                 res\%pos2 = pos2}
+\DoxyCodeLine{47             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{48                 error stop \textcolor{stringliteral}{'Error: Electron position ("{}pos2"{}) missing in inputs to write\_res\_params().'}}
+\DoxyCodeLine{49 \textcolor{keywordflow}{            endif}}
+\DoxyCodeLine{50 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{comment}{! Store the parameter values}}
+\DoxyCodeLine{55     \textcolor{keywordflow}{select case} (trim(p\_system))}
+\DoxyCodeLine{56     \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'QHO'})}
+\DoxyCodeLine{57         res\%alpha = val1}
+\DoxyCodeLine{58     \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'H2plus'})}
+\DoxyCodeLine{59         res\%bond = val1}
+\DoxyCodeLine{60         res\%c1 = val2}
+\DoxyCodeLine{61         \textcolor{keywordflow}{if} (h2plus\%include\_pqn==2) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{62             \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(val3)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{63                 res\%c2 = val3}
+\DoxyCodeLine{64             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{65                 error stop \textcolor{stringliteral}{'Error: Value of c2 ("{}val3"{}) missing in inputs to write\_res\_params().'}}
+\DoxyCodeLine{66 \textcolor{keywordflow}{            endif}}
+\DoxyCodeLine{67 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{68     \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'H2'})}
+\DoxyCodeLine{69         res\%bond = val1}
+\DoxyCodeLine{70         res\%c1 = val2}
+\DoxyCodeLine{71         \textcolor{keywordflow}{if} (h2\%include\_pqn==2) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{72             \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(val3)) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{73                 res\%c2 = val3}
+\DoxyCodeLine{74             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{75                 error stop \textcolor{stringliteral}{'Error: Value of c2 ("{}val3"{}) missing in inputs to write\_res\_params().'}}
+\DoxyCodeLine{76 \textcolor{keywordflow}{            endif}}
+\DoxyCodeLine{77 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{78 \textcolor{keywordflow}{    case default}}
+\DoxyCodeLine{79         error stop \textcolor{stringliteral}{'Error: Invalid "{}p\_system"{} passed to function write\_res\_params().'}}
+\DoxyCodeLine{80 \textcolor{keywordflow}{    end select}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     \textcolor{comment}{! Open the res\_paramts.txt file}}
+\DoxyCodeLine{83     \textcolor{keyword}{open}(action=\textcolor{stringliteral}{'write'}, file=resfile\_p, iostat=rc, newunit=fu)}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     \textcolor{comment}{! Write the RESTART namelist}}
+\DoxyCodeLine{86     \textcolor{keyword}{write}(nml=restart, iostat=rc, unit=fu)}
+\DoxyCodeLine{87     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{88         print*, \textcolor{stringliteral}{'Error: Invalid RESTART namelist defined in function write\_res\_params().'}}
+\DoxyCodeLine{89 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{90     }
+\DoxyCodeLine{91     \textcolor{comment}{! Close the res\_paramts.txt file}}
+\DoxyCodeLine{92     \textcolor{keyword}{close}(fu)}
+\DoxyCodeLine{93 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespacerestart__fns_ad54208aa49a4b7f6637250e484523044}\label{namespacerestart__fns_ad54208aa49a4b7f6637250e484523044}} 
@@ -118,36 +124,36 @@ Definition at line 13 of file restart\+\_\+fns.\+f90.
 
 
 
-Definition at line 97 of file restart\+\_\+fns.\+f90.
+Definition at line 98 of file restart\+\_\+fns.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{98 }
-\DoxyCodeLine{99     \textcolor{comment}{! Local variables}}
-\DoxyCodeLine{100     \textcolor{keywordtype}{type}(restart\_type), \textcolor{keywordtype}{intent(out)} :: res}
-\DoxyCodeLine{101 }
-\DoxyCodeLine{102     \textcolor{comment}{! Define the namelist}}
-\DoxyCodeLine{103     namelist /restart/ res}
-\DoxyCodeLine{104 }
-\DoxyCodeLine{105     \textcolor{comment}{! Check if file 'res\_params.txt' exists}}
-\DoxyCodeLine{106     \textcolor{keyword}{inquire}(file=\textcolor{stringliteral}{'res\_params.txt'}, iostat=rc)}
-\DoxyCodeLine{107     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{108         print*, \textcolor{stringliteral}{'Error: Restart file "{}res\_params.txt"{} does not exist.'}}
-\DoxyCodeLine{109         \textcolor{keywordflow}{return}}
-\DoxyCodeLine{110 \textcolor{keywordflow}{    end if}}
-\DoxyCodeLine{111 }
-\DoxyCodeLine{112     \textcolor{comment}{! Open the file}}
-\DoxyCodeLine{113     \textcolor{keyword}{open}(action=\textcolor{stringliteral}{'read'}, file=\textcolor{stringliteral}{'res\_params.txt'}, iostat=rc, newunit=fu)}
-\DoxyCodeLine{114 }
-\DoxyCodeLine{115     \textcolor{comment}{! Read the namelist}}
-\DoxyCodeLine{116     \textcolor{keyword}{read}(nml=restart, iostat=rc, unit=fu)}
-\DoxyCodeLine{117     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{118         print*, \textcolor{stringliteral}{'Error: Invalid RESTART namelist in "{}res\_params.txt"{}.'}}
-\DoxyCodeLine{119 \textcolor{keywordflow}{    end if}}
-\DoxyCodeLine{120     }
-\DoxyCodeLine{121     \textcolor{comment}{! Close the file}}
-\DoxyCodeLine{122     \textcolor{keyword}{close}(fu)}
-\DoxyCodeLine{123 }
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100     \textcolor{comment}{! Local variables}}
+\DoxyCodeLine{101     \textcolor{keywordtype}{type}(restart\_type), \textcolor{keywordtype}{intent(out)} :: res}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{comment}{! Define the namelist}}
+\DoxyCodeLine{104     namelist /restart/ res}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106     \textcolor{comment}{! Check if file 'res\_params.txt' exists}}
+\DoxyCodeLine{107     \textcolor{keyword}{inquire}(file=resfile\_p, iostat=rc)}
+\DoxyCodeLine{108     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{109         print*, \textcolor{stringliteral}{'Error: Restart file "{}'}, resfile\_p,\textcolor{stringliteral}{'"{} does not exist.'}}
+\DoxyCodeLine{110         \textcolor{keywordflow}{return}}
+\DoxyCodeLine{111 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     \textcolor{comment}{! Open the file}}
+\DoxyCodeLine{114     \textcolor{keyword}{open}(action=\textcolor{stringliteral}{'read'}, file=resfile\_p, iostat=rc, newunit=fu)}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     \textcolor{comment}{! Read the namelist}}
+\DoxyCodeLine{117     \textcolor{keyword}{read}(nml=restart, iostat=rc, unit=fu)}
+\DoxyCodeLine{118     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{119         print*, \textcolor{stringliteral}{'Error: Invalid RESTART namelist in "{}'}, resfile\_p,\textcolor{stringliteral}{'"{}.'}}
+\DoxyCodeLine{120 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{121     }
+\DoxyCodeLine{122     \textcolor{comment}{! Close the file}}
+\DoxyCodeLine{123     \textcolor{keyword}{close}(fu)}
+\DoxyCodeLine{124 }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -156,6 +162,128 @@ Here is the caller graph for this function\+:
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{namespacerestart__fns_ad54208aa49a4b7f6637250e484523044_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacerestart__fns_a23054262d0eeb017dee69fd5f9ca1250}\label{namespacerestart__fns_a23054262d0eeb017dee69fd5f9ca1250}} 
+\index{restart\_fns@{restart\_fns}!error\_check@{error\_check}}
+\index{error\_check@{error\_check}!restart\_fns@{restart\_fns}}
+\doxysubsubsection{\texorpdfstring{error\_check()}{error\_check()}}
+{\footnotesize\ttfamily subroutine restart\+\_\+fns\+::error\+\_\+check (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ierr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 128 of file restart\+\_\+fns.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{129     \textcolor{keywordtype}{integer},\textcolor{keywordtype}{intent(in)} :: ierr}
+\DoxyCodeLine{130     \textcolor{keywordflow}{if} (ierr /= nf90\_noerr) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{131         print*, trim(nf90\_strerror(ierr))}
+\DoxyCodeLine{132         \textcolor{keywordflow}{return}}
+\DoxyCodeLine{133 \textcolor{keywordflow}{    endif}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{namespacerestart__fns_a23054262d0eeb017dee69fd5f9ca1250_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacerestart__fns_adfaafcdad6498a59702062d2995cee0b}\label{namespacerestart__fns_adfaafcdad6498a59702062d2995cee0b}} 
+\index{restart\_fns@{restart\_fns}!read\_res\_energies@{read\_res\_energies}}
+\index{read\_res\_energies@{read\_res\_energies}!restart\_fns@{restart\_fns}}
+\doxysubsubsection{\texorpdfstring{read\_res\_energies()}{read\_res\_energies()}}
+{\footnotesize\ttfamily subroutine restart\+\_\+fns\+::read\+\_\+res\+\_\+energies (\begin{DoxyParamCaption}\item[{real(real64), dimension(\+:), intent(out), allocatable}]{total\+\_\+energies,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{accept\+\_\+rates }\end{DoxyParamCaption})}
+
+
+
+Definition at line 137 of file restart\+\_\+fns.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139     \textcolor{comment}{! Local variables}}
+\DoxyCodeLine{140 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable}, \textcolor{keywordtype}{intent(out)} :: total\_energies, accept\_rates}
+\DoxyCodeLine{141     \textcolor{keywordtype}{integer} :: ierr, file\_id, var\_id}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143     \textcolor{comment}{! Open restart netCDF file with energies}}
+\DoxyCodeLine{144     ierr = nf90\_open(resfile\_e, nf90\_nowrite, file\_id)}
+\DoxyCodeLine{145     \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147     \textcolor{comment}{! Get var\_id for total\_energies}}
+\DoxyCodeLine{148     ierr = nf90\_inq\_varid(file\_id, \textcolor{stringliteral}{'total\_energies'}, var\_id)}
+\DoxyCodeLine{149     \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151     \textcolor{comment}{! Read the total\_energies}}
+\DoxyCodeLine{152     ierr = nf90\_get\_var(file\_id, var\_id, total\_energies)}
+\DoxyCodeLine{153     \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155     \textcolor{comment}{! Get attribute accept\_rate}}
+\DoxyCodeLine{156     ierr = nf90\_get\_att(file\_id, nf90\_global, \textcolor{stringliteral}{'accept\_rate'}, accept\_rates)}
+\DoxyCodeLine{157     \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{158     }
+\DoxyCodeLine{159     \textcolor{comment}{! Close the file}}
+\DoxyCodeLine{160     ierr = nf90\_close(file\_id)}
+\DoxyCodeLine{161     \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{162 }
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{namespacerestart__fns_adfaafcdad6498a59702062d2995cee0b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacerestart__fns_a0ea5310bee62dc36fe288cca0df4f709}\label{namespacerestart__fns_a0ea5310bee62dc36fe288cca0df4f709}} 
+\index{restart\_fns@{restart\_fns}!read\_res\_chains@{read\_res\_chains}}
+\index{read\_res\_chains@{read\_res\_chains}!restart\_fns@{restart\_fns}}
+\doxysubsubsection{\texorpdfstring{read\_res\_chains()}{read\_res\_chains()}}
+{\footnotesize\ttfamily subroutine restart\+\_\+fns\+::read\+\_\+res\+\_\+chains (\begin{DoxyParamCaption}\item[{real(real64), dimension(\+:), intent(out), allocatable}]{energy\+\_\+chain,  }\item[{real(real64), intent(out)}]{accept\+\_\+rate }\end{DoxyParamCaption})}
+
+
+
+Definition at line 166 of file restart\+\_\+fns.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168     \textcolor{comment}{! Local variables}}
+\DoxyCodeLine{169 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable}, \textcolor{keywordtype}{intent(out)} :: energy\_chain}
+\DoxyCodeLine{170 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{intent(out)} :: accept\_rate}
+\DoxyCodeLine{171     \textcolor{keywordtype}{integer} :: ierr, file\_id, var\_id}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173     \textcolor{comment}{! Open restart netCDF file with chains}}
+\DoxyCodeLine{174     ierr = nf90\_open(resfile\_c, nf90\_nowrite, file\_id)}
+\DoxyCodeLine{175     \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177     \textcolor{comment}{! Get var\_id for energy\_chain -\/ called 'Trace' in the netcdf file}}
+\DoxyCodeLine{178     ierr = nf90\_inq\_varid(file\_id, \textcolor{stringliteral}{"{}Trace"{}}, var\_id)}
+\DoxyCodeLine{179     \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181     \textcolor{comment}{! Read the energy\_chain}}
+\DoxyCodeLine{182     ierr = nf90\_get\_var(file\_id, var\_id, energy\_chain)}
+\DoxyCodeLine{183     \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185     \textcolor{comment}{! Get attribute accept\_rate}}
+\DoxyCodeLine{186     ierr = nf90\_get\_att(file\_id, nf90\_global, \textcolor{stringliteral}{"{}accept\_rate"{}}, accept\_rate)}
+\DoxyCodeLine{187     \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{188     }
+\DoxyCodeLine{189     \textcolor{comment}{! Close the file}}
+\DoxyCodeLine{190     ierr = nf90\_close(file\_id)}
+\DoxyCodeLine{191     \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{192 }
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{namespacerestart__fns_a0ea5310bee62dc36fe288cca0df4f709_cgraph}
 \end{center}
 \end{figure}
 
@@ -169,11 +297,11 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 8 of file restart\+\_\+fns.\+f90.
+Definition at line 9 of file restart\+\_\+fns.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{8     \textcolor{keywordtype}{integer} :: fu, rc}
+\DoxyCodeLine{9     \textcolor{keywordtype}{integer} :: fu, rc}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespacerestart__fns_ab386c6b0f14be0090063a054256f5923}\label{namespacerestart__fns_ab386c6b0f14be0090063a054256f5923}} 
@@ -184,5 +312,5 @@ Definition at line 8 of file restart\+\_\+fns.\+f90.
 
 
 
-Definition at line 8 of file restart\+\_\+fns.\+f90.
+Definition at line 9 of file restart\+\_\+fns.\+f90.
 

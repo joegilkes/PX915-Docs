@@ -36,6 +36,12 @@ type(\mbox{\hyperlink{structshared__data_1_1h2__type}{h2\+\_\+type}}) \mbox{\hyp
 \item 
 type(\mbox{\hyperlink{structshared__data_1_1restart__type}{restart\+\_\+type}}) \mbox{\hyperlink{namespaceshared__data_a2e48217c892c5f716b469fd513ce6c77}{res}}
 \item 
+character(len= $\ast$), parameter \mbox{\hyperlink{namespaceshared__data_a2c9dff0d6e5a6a82acc57550040c10e2}{resfile\+\_\+p}} = \textquotesingle{}res\+\_\+params.\+txt\textquotesingle{}
+\item 
+character(len= $\ast$), parameter \mbox{\hyperlink{namespaceshared__data_ab86fae5fda93f52fd72630d60616a363}{resfile\+\_\+e}} = \textquotesingle{}res\+\_\+energies.\+nc\textquotesingle{}
+\item 
+character(len= $\ast$), parameter \mbox{\hyperlink{namespaceshared__data_acb0f9ce38ebba13221d2ac26bc0894f5}{resfile\+\_\+c}} = \textquotesingle{}res\+\_\+chains.\+nc\textquotesingle{}
+\item 
 integer \mbox{\hyperlink{namespaceshared__data_af5798eba5b1c4594d4c3c9648d732e9e}{logid}}
 \end{DoxyCompactItemize}
 
@@ -206,6 +212,51 @@ Definition at line 109 of file shared\+\_\+data.\+f90.
 \DoxyCodeLine{109     \textcolor{keywordtype}{type}(restart\_type) :: res}
 
 \end{DoxyCode}
+\mbox{\Hypertarget{namespaceshared__data_a2c9dff0d6e5a6a82acc57550040c10e2}\label{namespaceshared__data_a2c9dff0d6e5a6a82acc57550040c10e2}} 
+\index{shared\_data@{shared\_data}!resfile\_p@{resfile\_p}}
+\index{resfile\_p@{resfile\_p}!shared\_data@{shared\_data}}
+\doxysubsubsection{\texorpdfstring{resfile\_p}{resfile\_p}}
+{\footnotesize\ttfamily character(len=$\ast$), parameter shared\+\_\+data\+::resfile\+\_\+p = \textquotesingle{}res\+\_\+params.\+txt\textquotesingle{}}
+
+
+
+Definition at line 110 of file shared\+\_\+data.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{110     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{parameter} :: resfile\_p = \textcolor{stringliteral}{'res\_params.txt'}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceshared__data_ab86fae5fda93f52fd72630d60616a363}\label{namespaceshared__data_ab86fae5fda93f52fd72630d60616a363}} 
+\index{shared\_data@{shared\_data}!resfile\_e@{resfile\_e}}
+\index{resfile\_e@{resfile\_e}!shared\_data@{shared\_data}}
+\doxysubsubsection{\texorpdfstring{resfile\_e}{resfile\_e}}
+{\footnotesize\ttfamily character(len=$\ast$), parameter shared\+\_\+data\+::resfile\+\_\+e = \textquotesingle{}res\+\_\+energies.\+nc\textquotesingle{}}
+
+
+
+Definition at line 111 of file shared\+\_\+data.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{111     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{parameter} :: resfile\_e = \textcolor{stringliteral}{'res\_energies.nc'}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceshared__data_acb0f9ce38ebba13221d2ac26bc0894f5}\label{namespaceshared__data_acb0f9ce38ebba13221d2ac26bc0894f5}} 
+\index{shared\_data@{shared\_data}!resfile\_c@{resfile\_c}}
+\index{resfile\_c@{resfile\_c}!shared\_data@{shared\_data}}
+\doxysubsubsection{\texorpdfstring{resfile\_c}{resfile\_c}}
+{\footnotesize\ttfamily character(len=$\ast$), parameter shared\+\_\+data\+::resfile\+\_\+c = \textquotesingle{}res\+\_\+chains.\+nc\textquotesingle{}}
+
+
+
+Definition at line 112 of file shared\+\_\+data.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{112     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{parameter} :: resfile\_c = \textcolor{stringliteral}{'res\_chains.nc'}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_af5798eba5b1c4594d4c3c9648d732e9e}\label{namespaceshared__data_af5798eba5b1c4594d4c3c9648d732e9e}} 
 \index{shared\_data@{shared\_data}!logid@{logid}}
 \index{logid@{logid}!shared\_data@{shared\_data}}
@@ -214,10 +265,10 @@ Definition at line 109 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 112 of file shared\+\_\+data.\+f90.
+Definition at line 115 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{112     \textcolor{keywordtype}{integer} :: logid}
+\DoxyCodeLine{115     \textcolor{keywordtype}{integer} :: logid}
 
 \end{DoxyCode}

@@ -15,5 +15,8 @@ var namespaceshared__data =
     [ "h2plus", "namespaceshared__data.html#a1e9e95c9ea52c9aa2ec2f05b8d65e4f3", null ],
     [ "h2", "namespaceshared__data.html#a1703912ee00414a4aaf1a41d3c167694", null ],
     [ "res", "namespaceshared__data.html#a2e48217c892c5f716b469fd513ce6c77", null ],
+    [ "resfile_p", "namespaceshared__data.html#a2c9dff0d6e5a6a82acc57550040c10e2", null ],
+    [ "resfile_e", "namespaceshared__data.html#ab86fae5fda93f52fd72630d60616a363", null ],
+    [ "resfile_c", "namespaceshared__data.html#acb0f9ce38ebba13221d2ac26bc0894f5", null ],
     [ "logid", "namespaceshared__data.html#af5798eba5b1c4594d4c3c9648d732e9e", null ]
 ];
