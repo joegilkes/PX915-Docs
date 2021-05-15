@@ -12,7 +12,7 @@ var searchData=
   ['read_5fh2plus_68',['read_h2plus',['../namespaceinput__parser.html#a3ebe204fa7f63e19fbf29c36f580ee74',1,'input_parser']]],
   ['read_5finputs_69',['read_inputs',['../namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea',1,'input_parser']]],
   ['read_5fqho_70',['read_qho',['../namespaceinput__parser.html#aa9a77c1395d69d54ce38420acdb3f87f',1,'input_parser']]],
-  ['read_5fres_5fparams_71',['read_res_params',['../namespacerestart__fns.html#ad54208aa49a4b7f6637250e484523044',1,'restart_fns']]],
+  ['read_5fres_5fnml_71',['read_res_nml',['../namespacerestart__fns.html#a34c01a8b391a8c3a4ba40e9f5ec644d3',1,'restart_fns']]],
   ['readme_2emd_72',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
   ['res_73',['res',['../namespaceshared__data.html#a2e48217c892c5f716b469fd513ce6c77',1,'shared_data']]],
   ['resfile_5fchn_74',['resfile_chn',['../namespaceshared__data.html#adf411355aadabf7c289e7105e57e02d4',1,'shared_data']]],

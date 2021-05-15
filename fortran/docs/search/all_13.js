@@ -9,6 +9,6 @@ var searchData=
   ['write_5fnetcdf_119',['write_netcdf',['../namespacewrite__netcdf.html',1,'']]],
   ['write_5fqho_5fequilibration_120',['write_qho_equilibration',['../namespacewrite__netcdf.html#a4b9b251a06719d1b0470cfc1f03883ab',1,'write_netcdf']]],
   ['write_5fqho_5fmain_121',['write_qho_main',['../namespacewrite__netcdf.html#ae2722e18129ba78f02541fa0ae49f886',1,'write_netcdf']]],
-  ['write_5fres_5fparams_122',['write_res_params',['../namespacerestart__fns.html#a676f50962b057e457db6689d2c06fd62',1,'restart_fns']]],
+  ['write_5fres_5fnml_122',['write_res_nml',['../namespacerestart__fns.html#a11f18611058f7af2ac8e21df6f02afa7',1,'restart_fns']]],
   ['write_5frestart_123',['write_restart',['../namespaceshared__data.html#ade9d4ec979d01a52cdef8fc778abfa1d',1,'shared_data']]]
 ];
