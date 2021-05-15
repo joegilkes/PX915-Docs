@@ -117,11 +117,11 @@ Variables</h2></td></tr>
 <tr class="separator:a2938e794296c80673d3b14040bc92798"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade9d4ec979d01a52cdef8fc778abfa1d"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#ade9d4ec979d01a52cdef8fc778abfa1d">write_restart</a> = .TRUE.</td></tr>
 <tr class="separator:ade9d4ec979d01a52cdef8fc778abfa1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abee3357695dee9120626f1a0c422dd29"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#abee3357695dee9120626f1a0c422dd29">restart_step</a> = 100</td></tr>
+<tr class="memitem:abee3357695dee9120626f1a0c422dd29"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#abee3357695dee9120626f1a0c422dd29">restart_step</a> = 0</td></tr>
 <tr class="separator:abee3357695dee9120626f1a0c422dd29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ea265f2c8a3797c4d1a2b33059e1877"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a3ea265f2c8a3797c4d1a2b33059e1877">write_chains</a> =.TRUE.</td></tr>
+<tr class="memitem:a3ea265f2c8a3797c4d1a2b33059e1877"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a3ea265f2c8a3797c4d1a2b33059e1877">write_chains</a> =.FALSE.</td></tr>
 <tr class="separator:a3ea265f2c8a3797c4d1a2b33059e1877"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf2cbacc5b2b4d8ee26c96dc7062aa9b"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#acf2cbacc5b2b4d8ee26c96dc7062aa9b">write_log</a> = .TRUE.</td></tr>
+<tr class="memitem:acf2cbacc5b2b4d8ee26c96dc7062aa9b"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#acf2cbacc5b2b4d8ee26c96dc7062aa9b">write_log</a> = .FALSE.</td></tr>
 <tr class="separator:acf2cbacc5b2b4d8ee26c96dc7062aa9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7503c2b3bd10f3ee43c4cf9964c42ab2"><td class="memItemLeft" align="right" valign="top">type(<a class="el" href="structshared__data_1_1qho__type.html">qho_type</a>)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a7503c2b3bd10f3ee43c4cf9964c42ab2">qho</a></td></tr>
 <tr class="separator:a7503c2b3bd10f3ee43c4cf9964c42ab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -230,13 +230,13 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">integer(int32) shared_data::restart_step = 100</td>
+          <td class="memname">integer(int32) shared_data::restart_step = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00100">100</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">integer(int32)</span> :: restart_step = 100<span class="comment">! Frequency of writing restart files, within MMC loop</span></div>
+<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">integer(int32)</span> :: restart_step = 0  <span class="comment">! Frequency of writing restart files, within MMC loop</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -247,13 +247,13 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">logical shared_data::write_chains =.TRUE.</td>
+          <td class="memname">logical shared_data::write_chains =.FALSE.</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00101">101</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">logical</span> :: write_chains =.true.     <span class="comment">! Tag to write final MMC chains</span></div>
+<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">logical</span> :: write_chains =.false.    <span class="comment">! Tag to write final MMC chains</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -264,13 +264,13 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">logical shared_data::write_log = .TRUE.</td>
+          <td class="memname">logical shared_data::write_log = .FALSE.</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00102">102</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">logical</span> :: write_log = .true.       <span class="comment">! Tag to write logfile</span></div>
+<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">logical</span> :: write_log = .false.      <span class="comment">! Tag to write logfile</span></div>
 </div><!-- fragment -->
 </div>
 </div>

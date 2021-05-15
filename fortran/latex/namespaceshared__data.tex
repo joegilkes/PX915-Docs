@@ -22,11 +22,11 @@ logical \mbox{\hyperlink{namespaceshared__data_a2938e794296c80673d3b14040bc92798
 \item 
 logical \mbox{\hyperlink{namespaceshared__data_ade9d4ec979d01a52cdef8fc778abfa1d}{write\+\_\+restart}} = .TRUE.
 \item 
-integer(int32) \mbox{\hyperlink{namespaceshared__data_abee3357695dee9120626f1a0c422dd29}{restart\+\_\+step}} = 100
+integer(int32) \mbox{\hyperlink{namespaceshared__data_abee3357695dee9120626f1a0c422dd29}{restart\+\_\+step}} = 0
 \item 
-logical \mbox{\hyperlink{namespaceshared__data_a3ea265f2c8a3797c4d1a2b33059e1877}{write\+\_\+chains}} =.TRUE.
+logical \mbox{\hyperlink{namespaceshared__data_a3ea265f2c8a3797c4d1a2b33059e1877}{write\+\_\+chains}} =.FALSE.
 \item 
-logical \mbox{\hyperlink{namespaceshared__data_acf2cbacc5b2b4d8ee26c96dc7062aa9b}{write\+\_\+log}} = .TRUE.
+logical \mbox{\hyperlink{namespaceshared__data_acf2cbacc5b2b4d8ee26c96dc7062aa9b}{write\+\_\+log}} = .FALSE.
 \item 
 type(\mbox{\hyperlink{structshared__data_1_1qho__type}{qho\+\_\+type}}) \mbox{\hyperlink{namespaceshared__data_a7503c2b3bd10f3ee43c4cf9964c42ab2}{qho}}
 \item 
@@ -125,7 +125,7 @@ Definition at line 99 of file shared\+\_\+data.\+f90.
 \index{shared\_data@{shared\_data}!restart\_step@{restart\_step}}
 \index{restart\_step@{restart\_step}!shared\_data@{shared\_data}}
 \doxysubsubsection{\texorpdfstring{restart\_step}{restart\_step}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::restart\+\_\+step = 100}
+{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::restart\+\_\+step = 0}
 
 
 
@@ -133,14 +133,14 @@ Definition at line 100 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{100     \textcolor{keywordtype}{integer(int32)} :: restart\_step = 100\textcolor{comment}{! Frequency of writing restart files, within MMC loop}}
+\DoxyCodeLine{100     \textcolor{keywordtype}{integer(int32)} :: restart\_step = 0  \textcolor{comment}{! Frequency of writing restart files, within MMC loop}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a3ea265f2c8a3797c4d1a2b33059e1877}\label{namespaceshared__data_a3ea265f2c8a3797c4d1a2b33059e1877}} 
 \index{shared\_data@{shared\_data}!write\_chains@{write\_chains}}
 \index{write\_chains@{write\_chains}!shared\_data@{shared\_data}}
 \doxysubsubsection{\texorpdfstring{write\_chains}{write\_chains}}
-{\footnotesize\ttfamily logical shared\+\_\+data\+::write\+\_\+chains =.TRUE.}
+{\footnotesize\ttfamily logical shared\+\_\+data\+::write\+\_\+chains =.FALSE.}
 
 
 
@@ -148,14 +148,14 @@ Definition at line 101 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{101     \textcolor{keywordtype}{logical} :: write\_chains =.true.     \textcolor{comment}{! Tag to write final MMC chains}}
+\DoxyCodeLine{101     \textcolor{keywordtype}{logical} :: write\_chains =.false.    \textcolor{comment}{! Tag to write final MMC chains}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_acf2cbacc5b2b4d8ee26c96dc7062aa9b}\label{namespaceshared__data_acf2cbacc5b2b4d8ee26c96dc7062aa9b}} 
 \index{shared\_data@{shared\_data}!write\_log@{write\_log}}
 \index{write\_log@{write\_log}!shared\_data@{shared\_data}}
 \doxysubsubsection{\texorpdfstring{write\_log}{write\_log}}
-{\footnotesize\ttfamily logical shared\+\_\+data\+::write\+\_\+log = .TRUE.}
+{\footnotesize\ttfamily logical shared\+\_\+data\+::write\+\_\+log = .FALSE.}
 
 
 
@@ -163,7 +163,7 @@ Definition at line 102 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{102     \textcolor{keywordtype}{logical} :: write\_log = .true.       \textcolor{comment}{! Tag to write logfile}}
+\DoxyCodeLine{102     \textcolor{keywordtype}{logical} :: write\_log = .false.      \textcolor{comment}{! Tag to write logfile}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a7503c2b3bd10f3ee43c4cf9964c42ab2}\label{namespaceshared__data_a7503c2b3bd10f3ee43c4cf9964c42ab2}} 
