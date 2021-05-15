@@ -22,8 +22,8 @@ var namespaces_dup =
       [ "write_res_params", "namespacerestart__fns.html#a676f50962b057e457db6689d2c06fd62", null ],
       [ "read_res_params", "namespacerestart__fns.html#ad54208aa49a4b7f6637250e484523044", null ],
       [ "error_check", "namespacerestart__fns.html#a23054262d0eeb017dee69fd5f9ca1250", null ],
-      [ "read_res_energies", "namespacerestart__fns.html#adfaafcdad6498a59702062d2995cee0b", null ],
-      [ "read_res_chains", "namespacerestart__fns.html#a0ea5310bee62dc36fe288cca0df4f709", null ],
+      [ "read_energies", "namespacerestart__fns.html#a673ea568ef91fc50ac00e24822742301", null ],
+      [ "read_chains", "namespacerestart__fns.html#a2bfef0bcec6193f109b558f89e9cd90d", null ],
       [ "fu", "namespacerestart__fns.html#abae4eaf545561c534bc832e303c47b4b", null ],
       [ "rc", "namespacerestart__fns.html#ab386c6b0f14be0090063a054256f5923", null ]
     ] ],

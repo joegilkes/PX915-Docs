@@ -110,12 +110,12 @@ $(document).ready(function(){initNavTree('structshared__data_1_1restart__type.ht
 Public Attributes</h2></td></tr>
 <tr class="memitem:ad6d5b42f1d080abf1eb7036e2026e4aa"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#ad6d5b42f1d080abf1eb7036e2026e4aa">i_alpha</a></td></tr>
 <tr class="separator:ad6d5b42f1d080abf1eb7036e2026e4aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54a9d4ff1b7da8f1a128cb76feda942b"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#a54a9d4ff1b7da8f1a128cb76feda942b">i_bond</a></td></tr>
+<tr class="separator:a54a9d4ff1b7da8f1a128cb76feda942b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5fb52db630587b4fff9612bc92b18c4"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#ab5fb52db630587b4fff9612bc92b18c4">i_c1</a></td></tr>
 <tr class="separator:ab5fb52db630587b4fff9612bc92b18c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae921a73cbaae847677fc126d8dc36874"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#ae921a73cbaae847677fc126d8dc36874">i_c2</a></td></tr>
 <tr class="separator:ae921a73cbaae847677fc126d8dc36874"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54a9d4ff1b7da8f1a128cb76feda942b"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#a54a9d4ff1b7da8f1a128cb76feda942b">i_bond</a></td></tr>
-<tr class="separator:a54a9d4ff1b7da8f1a128cb76feda942b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af151cf87badda30dc4ff9a092f14fb49"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#af151cf87badda30dc4ff9a092f14fb49">step</a></td></tr>
 <tr class="separator:af151cf87badda30dc4ff9a092f14fb49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e8486dc5ab48891670982e08dad9e2d"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#a8e8486dc5ab48891670982e08dad9e2d">seed</a></td></tr>
@@ -146,6 +146,23 @@ Public Attributes</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a54a9d4ff1b7da8f1a128cb76feda942b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54a9d4ff1b7da8f1a128cb76feda942b">&#9670;&nbsp;</a></span>i_bond</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer(int32) shared_data::restart_type::i_bond</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00086">86</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordtype">integer(int32)</span> :: i_bond   <span class="comment">! index of last bond value evaluated</span></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ab5fb52db630587b4fff9612bc92b18c4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab5fb52db630587b4fff9612bc92b18c4">&#9670;&nbsp;</a></span>i_c1</h2>
 
@@ -158,8 +175,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00086">86</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordtype">integer(int32)</span> :: i_c1     <span class="comment">! index of last c1 value evaluated</span></div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00087">87</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">integer(int32)</span> :: i_c1     <span class="comment">! index of last c1 value evaluated</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -175,25 +192,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00087">87</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">integer(int32)</span> :: i_c2     <span class="comment">! index of last c2 value evaluated</span></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a54a9d4ff1b7da8f1a128cb76feda942b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54a9d4ff1b7da8f1a128cb76feda942b">&#9670;&nbsp;</a></span>i_bond</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">integer(int32) shared_data::restart_type::i_bond</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00088">88</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">integer(int32)</span> :: i_bond   <span class="comment">! index of last bond value evaluated</span></div>
+<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">integer(int32)</span> :: i_c2     <span class="comment">! index of last c2 value evaluated</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -210,7 +210,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00089">89</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">integer(int32)</span> :: step <span class="comment">! last step number evaluated</span></div>
+<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">integer(int32)</span> :: step <span class="comment">! last step number evaluated - TBC</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -227,7 +227,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00090">90</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">integer(int32)</span> :: seed <span class="comment">! last seed used</span></div>
+<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">integer(int32)</span> :: seed <span class="comment">! last seed used - TBC</span></div>
 </div><!-- fragment -->
 </div>
 </div>

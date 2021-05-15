@@ -131,12 +131,14 @@ Variables</h2></td></tr>
 <tr class="separator:a1703912ee00414a4aaf1a41d3c167694"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e48217c892c5f716b469fd513ce6c77"><td class="memItemLeft" align="right" valign="top">type(<a class="el" href="structshared__data_1_1restart__type.html">restart_type</a>)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a2e48217c892c5f716b469fd513ce6c77">res</a></td></tr>
 <tr class="separator:a2e48217c892c5f716b469fd513ce6c77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c9dff0d6e5a6a82acc57550040c10e2"><td class="memItemLeft" align="right" valign="top">character(len= *), parameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a2c9dff0d6e5a6a82acc57550040c10e2">resfile_p</a> = 'res_params.txt'</td></tr>
-<tr class="separator:a2c9dff0d6e5a6a82acc57550040c10e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab86fae5fda93f52fd72630d60616a363"><td class="memItemLeft" align="right" valign="top">character(len= *), parameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#ab86fae5fda93f52fd72630d60616a363">resfile_e</a> = 'res_energies.nc'</td></tr>
-<tr class="separator:ab86fae5fda93f52fd72630d60616a363"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb0f9ce38ebba13221d2ac26bc0894f5"><td class="memItemLeft" align="right" valign="top">character(len= *), parameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#acb0f9ce38ebba13221d2ac26bc0894f5">resfile_c</a> = 'res_chains.nc'</td></tr>
-<tr class="separator:acb0f9ce38ebba13221d2ac26bc0894f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73f57f5cf348bf3d0dd9e0b8eaf8e514"><td class="memItemLeft" align="right" valign="top">character(len= *), parameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a73f57f5cf348bf3d0dd9e0b8eaf8e514">resfile_nml</a> = 'res_nml.txt'</td></tr>
+<tr class="separator:a73f57f5cf348bf3d0dd9e0b8eaf8e514"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92015ef2d63f7ea1e895d120fad6341f"><td class="memItemLeft" align="right" valign="top">character(len= *), parameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a92015ef2d63f7ea1e895d120fad6341f">resfile_etot</a> = 'res_etot.nc'</td></tr>
+<tr class="separator:a92015ef2d63f7ea1e895d120fad6341f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e81757a05da8c837c39bae8e9bcedae"><td class="memItemLeft" align="right" valign="top">character(len= *), parameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a3e81757a05da8c837c39bae8e9bcedae">resfile_epar</a> = 'res_epar.nc'</td></tr>
+<tr class="separator:a3e81757a05da8c837c39bae8e9bcedae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf411355aadabf7c289e7105e57e02d4"><td class="memItemLeft" align="right" valign="top">character(len= *), parameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#adf411355aadabf7c289e7105e57e02d4">resfile_chn</a> = 'res_chains.nc'</td></tr>
+<tr class="separator:adf411355aadabf7c289e7105e57e02d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28246c61bb5db3025877f5369254d399"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a28246c61bb5db3025877f5369254d399">alpha_start</a> =1</td></tr>
 <tr class="separator:a28246c61bb5db3025877f5369254d399"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd55f854da9e9234d715022110bd076a"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#abd55f854da9e9234d715022110bd076a">bond_start</a> =1</td></tr>
@@ -340,54 +342,71 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a2c9dff0d6e5a6a82acc57550040c10e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c9dff0d6e5a6a82acc57550040c10e2">&#9670;&nbsp;</a></span>resfile_p</h2>
+<a id="a73f57f5cf348bf3d0dd9e0b8eaf8e514"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73f57f5cf348bf3d0dd9e0b8eaf8e514">&#9670;&nbsp;</a></span>resfile_nml</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">character(len=*), parameter shared_data::resfile_p = 'res_params.txt'</td>
+          <td class="memname">character(len=*), parameter shared_data::resfile_nml = 'res_nml.txt'</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00111">111</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">parameter</span> :: resfile_p = <span class="stringliteral">&#39;res_params.txt&#39;</span></div>
+<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">parameter</span> :: resfile_nml = <span class="stringliteral">&#39;res_nml.txt&#39;</span></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ab86fae5fda93f52fd72630d60616a363"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab86fae5fda93f52fd72630d60616a363">&#9670;&nbsp;</a></span>resfile_e</h2>
+<a id="a92015ef2d63f7ea1e895d120fad6341f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92015ef2d63f7ea1e895d120fad6341f">&#9670;&nbsp;</a></span>resfile_etot</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">character(len=*), parameter shared_data::resfile_e = 'res_energies.nc'</td>
+          <td class="memname">character(len=*), parameter shared_data::resfile_etot = 'res_etot.nc'</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00112">112</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">parameter</span> :: resfile_e = <span class="stringliteral">&#39;res_energies.nc&#39;</span></div>
+<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">parameter</span> :: resfile_etot = <span class="stringliteral">&#39;res_etot.nc&#39;</span></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="acb0f9ce38ebba13221d2ac26bc0894f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb0f9ce38ebba13221d2ac26bc0894f5">&#9670;&nbsp;</a></span>resfile_c</h2>
+<a id="a3e81757a05da8c837c39bae8e9bcedae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e81757a05da8c837c39bae8e9bcedae">&#9670;&nbsp;</a></span>resfile_epar</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">character(len=*), parameter shared_data::resfile_c = 'res_chains.nc'</td>
+          <td class="memname">character(len=*), parameter shared_data::resfile_epar = 'res_epar.nc'</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00113">113</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">parameter</span> :: resfile_c = <span class="stringliteral">&#39;res_chains.nc&#39;</span></div>
+<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">parameter</span> :: resfile_epar = <span class="stringliteral">&#39;res_epar.nc&#39;</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="adf411355aadabf7c289e7105e57e02d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf411355aadabf7c289e7105e57e02d4">&#9670;&nbsp;</a></span>resfile_chn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">character(len=*), parameter shared_data::resfile_chn = 'res_chains.nc'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00114">114</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">parameter</span> :: resfile_chn = <span class="stringliteral">&#39;res_chains.nc&#39;</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -403,8 +422,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00116">116</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">integer(int32)</span> :: alpha_start=1, bond_start=1 <span class="comment">! Can be &gt;1 for restarts</span></div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00117">117</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">integer(int32)</span> :: alpha_start=1, bond_start=1 <span class="comment">! Can be &gt;1 for restarts</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -420,7 +439,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00116">116</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00117">117</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
 
 </div>
 </div>
@@ -436,8 +455,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00117">117</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">integer(int32)</span> :: i_alpha, i_bond, i_c1, i_c2 <span class="comment">! For writing restart files from VQMC</span></div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00118">118</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">integer(int32)</span> :: i_alpha, i_bond, i_c1, i_c2 <span class="comment">! For writing restart files from VQMC</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -453,7 +472,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00117">117</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00118">118</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
 
 </div>
 </div>
@@ -469,7 +488,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00117">117</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00118">118</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
 
 </div>
 </div>
@@ -485,7 +504,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00117">117</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00118">118</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
 
 </div>
 </div>
@@ -501,8 +520,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00120">120</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">integer</span> :: logid</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00121">121</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">integer</span> :: logid</div>
 </div><!-- fragment -->
 </div>
 </div>
