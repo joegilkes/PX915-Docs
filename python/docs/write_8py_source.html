@@ -94,14 +94,14 @@ $(document).ready(function(){initNavTree('write_8py_source.html',''); initResiza
 <div class="contents">
 <a href="write_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespacewrite.html">    1</a></span>&#160;<span class="comment"># Functions for writing params.txt</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="namespacewrite_1_1py.html">    3</a></span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"># Function to check integer representation</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">def </span>isint(s):</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="namespacewrite.html#a6d208b551e50aabd0cfffdf928852f2e">   21</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacewrite.html#a6d208b551e50aabd0cfffdf928852f2e">isint</a>(s):</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">try</span>: </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        int(s)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        isint=<span class="keyword">True</span></div>
@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('write_8py_source.html',''); initResiza
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"># Function to check float representation</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">def </span>isfloat(s):</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="namespacewrite.html#ab2d5e87a28584993d493d77da00d1bab">   31</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacewrite.html#ab2d5e87a28584993d493d77da00d1bab">isfloat</a>(s):</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">try</span>: </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        float(s)</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">True</span></div>
@@ -120,13 +120,13 @@ $(document).ready(function(){initNavTree('write_8py_source.html',''); initResiza
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"># Function that queries step values, using string &#39;prompt&#39; as a prompt</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">def </span>query_step(prompt):</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="namespacewrite.html#a5301642c79448d29f87b3506f85a01c8">   40</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacewrite.html#a5301642c79448d29f87b3506f85a01c8">query_step</a>(prompt):</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    step = -2</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">while</span> step &lt; -1:</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        print(<span class="stringliteral">&#39;&#39;</span>)</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        step = <a class="code" href="namespaceinput.html">input</a>(<span class="stringliteral">&#39;{:}: &#39;</span>.format(prompt))</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">while</span> not(isint(step)):</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">while</span> not(<a class="code" href="namespacewrite.html#a6d208b551e50aabd0cfffdf928852f2e">isint</a>(step)):</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            print(<span class="stringliteral">&#39;Your response is invalid. Expected an integer.&#39;</span>)</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            step = <a class="code" href="namespaceinput.html">input</a>(<span class="stringliteral">&#39;{:}: &#39;</span>.format(prompt))</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    </div>
@@ -137,13 +137,13 @@ $(document).ready(function(){initNavTree('write_8py_source.html',''); initResiza
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> step</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"># Function that queries a positive float, using string &#39;prompt&#39; as a prompt</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">def </span>query_posfloat(prompt):</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="namespacewrite.html#abcf50fa9f656fcc5938355f67ee6744a">   57</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacewrite.html#abcf50fa9f656fcc5938355f67ee6744a">query_posfloat</a>(prompt):</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    pf = -0.5</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">while</span> pf &lt;= 0.0 <span class="keywordflow">and</span> pf != -1:</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        print(<span class="stringliteral">&#39;&#39;</span>)</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        pf = <a class="code" href="namespaceinput.html">input</a>(<span class="stringliteral">&#39;{:}: &#39;</span>.format(prompt))</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">while</span> not(isfloat(pf)):</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">while</span> not(<a class="code" href="namespacewrite.html#ab2d5e87a28584993d493d77da00d1bab">isfloat</a>(pf)):</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            print(<span class="stringliteral">&#39;Your response is invalid. Expected an positive float, or integer &quot;-1&quot; (without quotes) for default.&#39;</span>)</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            pf = <a class="code" href="namespaceinput.html">input</a>(<span class="stringliteral">&#39;Enter cutoff radial distance (in Bohr) for MMC search: &#39;</span>)</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        </div>
@@ -155,7 +155,7 @@ $(document).ready(function(){initNavTree('write_8py_source.html',''); initResiza
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"># Function that queries if user wants to use default params</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">def </span>query_default(param):</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="namespacewrite.html#a6ead226a81a790198f4fe23e69a7a7e3">   75</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacewrite.html#a6ead226a81a790198f4fe23e69a7a7e3">query_default</a>(param):</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    print(<span class="stringliteral">&#39;Would you like to use default values for the {:} grid? - Yes (y) or No (n)&#39;</span>.format(param))</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    default = <a class="code" href="namespaceinput.html">input</a>(<span class="stringliteral">&#39;Your response (&quot;y&quot; or &quot;n&quot;): &#39;</span>)</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    options = [<span class="stringliteral">&#39;y&#39;</span>,<span class="stringliteral">&#39;n&#39;</span>]</div>
@@ -167,10 +167,10 @@ $(document).ready(function(){initNavTree('write_8py_source.html',''); initResiza
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"># Function that queries grid values</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">def </span>query_grid(param):</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="namespacewrite.html#afa3fbcda7589cff5d02ac8e298ae8b05">   87</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacewrite.html#afa3fbcda7589cff5d02ac8e298ae8b05">query_grid</a>(param):</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;     <span class="comment"># Minimum</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    mini = <a class="code" href="namespaceinput.html">input</a>(<span class="stringliteral">&#39;Enter minimum value for {:} grid: &#39;</span>.format(param))</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">while</span> not(isfloat(mini)):</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">while</span> not(<a class="code" href="namespacewrite.html#ab2d5e87a28584993d493d77da00d1bab">isfloat</a>(mini)):</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        print(<span class="stringliteral">&#39;Your response is invalid. Expected a float.&#39;</span>)</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        mini = <a class="code" href="namespaceinput.html">input</a>(<span class="stringliteral">&#39;Enter minimum value for {:} grid: &#39;</span>.format(param))</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    mini=float(mini)</div>
@@ -179,7 +179,7 @@ $(document).ready(function(){initNavTree('write_8py_source.html',''); initResiza
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    maxi = mini - 1.0</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">while</span> maxi &lt; mini:</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        maxi = <a class="code" href="namespaceinput.html">input</a>(<span class="stringliteral">&#39;Enter maximum value for {:} grid: &#39;</span>.format(param))</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">while</span> not(isfloat(maxi)):</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">while</span> not(<a class="code" href="namespacewrite.html#ab2d5e87a28584993d493d77da00d1bab">isfloat</a>(maxi)):</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            print(<span class="stringliteral">&#39;Your response is invalid. Expected a float.&#39;</span>)</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            maxi = <a class="code" href="namespaceinput.html">input</a>(<span class="stringliteral">&#39;Enter maximum value for {:} grid: &#39;</span>.format(param))</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        maxi = float(maxi)</div>
@@ -190,7 +190,7 @@ $(document).ready(function(){initNavTree('write_8py_source.html',''); initResiza
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    num = 0</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">while</span> num &lt; 1:</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        num = <a class="code" href="namespaceinput.html">input</a>(<span class="stringliteral">&#39;Enter integer number of grid points (inclusive of max &amp; min): &#39;</span>)</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">while</span> not(isint(num)):</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">while</span> not(<a class="code" href="namespacewrite.html#a6d208b551e50aabd0cfffdf928852f2e">isint</a>(num)):</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            print(<span class="stringliteral">&#39;Your response is invalid. Expected a positive integer.&#39;</span>)</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            num = <a class="code" href="namespaceinput.html">input</a>(<span class="stringliteral">&#39;Enter integer number of grid points (inclusive of max &amp; min): &#39;</span>)</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        num = int(num)</div>
@@ -203,7 +203,7 @@ $(document).ready(function(){initNavTree('write_8py_source.html',''); initResiza
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment"># Function to query the user for input data</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="keyword">def </span>query_params():</div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="namespacewrite.html#a2a80b928706bf9c4a0283575b3105dd9">  125</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacewrite.html#a2a80b928706bf9c4a0283575b3105dd9">query_params</a>():</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="comment"># Initialize Dictionaries</span></div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    control, params = {}, {}</div>
@@ -274,7 +274,7 @@ $(document).ready(function(){initNavTree('write_8py_source.html',''); initResiza
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        print(<span class="stringliteral">&#39;Default: Restart files will written after the whole MMC calculation for each point on the parameter grid.&#39;</span>)</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        print(<span class="stringliteral">&#39;If you want the restart files to be written more frequently, enter the required step frequency below.&#39;</span>)</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        print(<span class="stringliteral">&#39;Else, for the default behaviour, enter &quot;-1&quot;.&#39;</span>)</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        steps = query_step(<span class="stringliteral">&#39;Your response&#39;</span>)</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        steps = <a class="code" href="namespacewrite.html#a5301642c79448d29f87b3506f85a01c8">query_step</a>(<span class="stringliteral">&#39;Your response&#39;</span>)</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordflow">if</span> steps == -1:</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            control[<span class="stringliteral">&#39;restart_step&#39;</span>] = 0</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordflow">else</span>:</div>
@@ -324,7 +324,7 @@ $(document).ready(function(){initNavTree('write_8py_source.html',''); initResiza
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="comment"># Query total number of steps</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    steps = query_step(<span class="stringliteral">&#39;Enter total number of MMC steps&#39;</span>)</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    steps = <a class="code" href="namespacewrite.html#a5301642c79448d29f87b3506f85a01c8">query_step</a>(<span class="stringliteral">&#39;Enter total number of MMC steps&#39;</span>)</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordflow">if</span> steps &gt; -1:</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        params[<span class="stringliteral">&#39;steps&#39;</span>] = str(steps)</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
@@ -335,7 +335,7 @@ $(document).ready(function(){initNavTree('write_8py_source.html',''); initResiza
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="comment"># Query step size for burning</span></div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        b_step = steps + 1</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keywordflow">while</span> b_step &gt;= steps:</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            b_step = query_step(<span class="stringliteral">&#39;Enter an integer step-size for burning&#39;</span>)</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            b_step = <a class="code" href="namespacewrite.html#a5301642c79448d29f87b3506f85a01c8">query_step</a>(<span class="stringliteral">&#39;Enter an integer step-size for burning&#39;</span>)</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <span class="keywordflow">if</span> b_step &gt;= steps:</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                print(<span class="stringliteral">&#39;Your response is invalid. Expected burn_steps &lt; {:} as you chose total_steps={:}.&#39;</span>.format(steps,steps))</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                print(<span class="stringliteral">&#39;Alternatively, enter &quot;-1&quot; (without quotes) for default.&#39;</span>)</div>
@@ -346,7 +346,7 @@ $(document).ready(function(){initNavTree('write_8py_source.html',''); initResiza
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        t_max = steps - b_step</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        t_step = t_max + 1</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="keywordflow">while</span> t_step &gt;= t_max:</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            t_step = query_step(<span class="stringliteral">&#39;Enter an integer step-size for thinning&#39;</span>)</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            t_step = <a class="code" href="namespacewrite.html#a5301642c79448d29f87b3506f85a01c8">query_step</a>(<span class="stringliteral">&#39;Enter an integer step-size for thinning&#39;</span>)</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <span class="keywordflow">if</span>  t_step &gt;= t_max:</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                print(<span class="stringliteral">&#39;Your response is invalid. Expected thin_steps &lt; {:} as your chosen total_steps-burn_steps={:}.&#39;</span>.format(t_max,t_max))</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                print(<span class="stringliteral">&#39;Alternatively, enter &quot;-1&quot; (without quotes) for default.&#39;</span>)</div>
@@ -355,13 +355,13 @@ $(document).ready(function(){initNavTree('write_8py_source.html',''); initResiza
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="comment"># Query rcut</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    temp = query_posfloat(<span class="stringliteral">&#39;Enter cutoff radial distance (in Bohr) for MMC search&#39;</span>)</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    temp = <a class="code" href="namespacewrite.html#abcf50fa9f656fcc5938355f67ee6744a">query_posfloat</a>(<span class="stringliteral">&#39;Enter cutoff radial distance (in Bohr) for MMC search&#39;</span>)</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordflow">if</span> temp != -1:</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        params[<span class="stringliteral">&#39;rcut&#39;</span>] = str(temp)</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="comment"># Query sigma</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    temp = query_posfloat(<span class="stringliteral">&#39;Enter standard deviation of the Gaussian used to propose MMC steps&#39;</span>)</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    temp = <a class="code" href="namespacewrite.html#abcf50fa9f656fcc5938355f67ee6744a">query_posfloat</a>(<span class="stringliteral">&#39;Enter standard deviation of the Gaussian used to propose MMC steps&#39;</span>)</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordflow">if</span> temp != -1:</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        params[<span class="stringliteral">&#39;sigma&#39;</span>] = str(temp)</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
@@ -377,11 +377,11 @@ $(document).ready(function(){initNavTree('write_8py_source.html',''); initResiza
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        print(<span class="stringliteral">&#39;&#39;</span>)</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        <span class="comment"># Check if user wants defaults</span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        default = query_default(<span class="stringliteral">&#39;alpha&#39;</span>)</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        default = <a class="code" href="namespacewrite.html#a6ead226a81a790198f4fe23e69a7a7e3">query_default</a>(<span class="stringliteral">&#39;alpha&#39;</span>)</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="comment"># If not defaults, query grid for alpha</span></div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <span class="keywordflow">if</span> default == <span class="stringliteral">&#39;n&#39;</span>:</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            mini, maxi, num = query_grid(<span class="stringliteral">&#39;alpha&#39;</span>)</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            mini, maxi, num = <a class="code" href="namespacewrite.html#afa3fbcda7589cff5d02ac8e298ae8b05">query_grid</a>(<span class="stringliteral">&#39;alpha&#39;</span>)</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            params[<span class="stringliteral">&#39;alpha&#39;</span>] = <span class="stringliteral">&#39;{:}, {:}, {:}&#39;</span>.format(mini, maxi, num)</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    </div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="comment"># Hydrogen Systems</span></div>
@@ -404,11 +404,11 @@ $(document).ready(function(){initNavTree('write_8py_source.html',''); initResiza
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        print(<span class="stringliteral">&#39;&#39;</span>)</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="comment"># Check if user wants defaults</span></div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        default = query_default(<span class="stringliteral">&#39;c1&#39;</span>)</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        default = <a class="code" href="namespacewrite.html#a6ead226a81a790198f4fe23e69a7a7e3">query_default</a>(<span class="stringliteral">&#39;c1&#39;</span>)</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="comment"># If not defaults, query grid for c1</span></div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">if</span> default == <span class="stringliteral">&#39;n&#39;</span>:</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            mini, maxi, num = query_grid(<span class="stringliteral">&#39;c1&#39;</span>)</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            mini, maxi, num = <a class="code" href="namespacewrite.html#afa3fbcda7589cff5d02ac8e298ae8b05">query_grid</a>(<span class="stringliteral">&#39;c1&#39;</span>)</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            params[<span class="stringliteral">&#39;c1&#39;</span>] = <span class="stringliteral">&#39;{:}, {:}, {:}&#39;</span>.format(mini, maxi, num)</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        </div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="keywordflow">if</span> pqn == <span class="stringliteral">&#39;2&#39;</span>:</div>
@@ -419,11 +419,11 @@ $(document).ready(function(){initNavTree('write_8py_source.html',''); initResiza
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            print(<span class="stringliteral">&#39;&#39;</span>)</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            <span class="comment"># Check if user wants defaults</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            default = query_default(<span class="stringliteral">&#39;c2&#39;</span>)</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            default = <a class="code" href="namespacewrite.html#a6ead226a81a790198f4fe23e69a7a7e3">query_default</a>(<span class="stringliteral">&#39;c2&#39;</span>)</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            <span class="comment"># If not defaults, query grid for c2</span></div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            <span class="keywordflow">if</span> default == <span class="stringliteral">&#39;n&#39;</span>:</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                mini, maxi, num = query_grid(<span class="stringliteral">&#39;c2&#39;</span>)</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                mini, maxi, num = <a class="code" href="namespacewrite.html#afa3fbcda7589cff5d02ac8e298ae8b05">query_grid</a>(<span class="stringliteral">&#39;c2&#39;</span>)</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                params[<span class="stringliteral">&#39;c2&#39;</span>] = <span class="stringliteral">&#39;{:}, {:}, {:}&#39;</span>.format(mini, maxi, num)</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="comment"># Parameter information - bond</span></div>
@@ -432,11 +432,11 @@ $(document).ready(function(){initNavTree('write_8py_source.html',''); initResiza
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        print(<span class="stringliteral">&#39;&#39;</span>)</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="comment"># Check if user wants defaults</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        default = query_default(<span class="stringliteral">&#39;bond&#39;</span>)</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        default = <a class="code" href="namespacewrite.html#a6ead226a81a790198f4fe23e69a7a7e3">query_default</a>(<span class="stringliteral">&#39;bond&#39;</span>)</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160; </div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="comment"># If not defaults, query grid for bond</span></div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <span class="keywordflow">if</span> default == <span class="stringliteral">&#39;n&#39;</span>:</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            mini, maxi, num = query_grid(<span class="stringliteral">&#39;bond&#39;</span>)</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            mini, maxi, num = <a class="code" href="namespacewrite.html#afa3fbcda7589cff5d02ac8e298ae8b05">query_grid</a>(<span class="stringliteral">&#39;bond&#39;</span>)</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            params[<span class="stringliteral">&#39;bond&#39;</span>] = <span class="stringliteral">&#39;{:}, {:}, {:}&#39;</span>.format(mini, maxi, num)</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    </div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="comment"># Return dictionaries with user inputs</span></div>
@@ -444,7 +444,7 @@ $(document).ready(function(){initNavTree('write_8py_source.html',''); initResiza
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="comment"># Subroutine to write the file params.txt</span></div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="keyword">def </span>write_params(control,params):</div>
+<div class="line"><a name="l00366"></a><span class="lineno"><a class="line" href="namespacewrite.html#ab06a12b89b6110c4bcf845485c8f4b9b">  366</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacewrite.html#ab06a12b89b6110c4bcf845485c8f4b9b">write_params</a>(control,params):</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    </div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="comment"># Open the file</span></div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    f = open(<span class="stringliteral">&#39;params.txt&#39;</span>,<span class="stringliteral">&#39;w&#39;</span>)</div>
@@ -470,6 +470,14 @@ $(document).ready(function(){initNavTree('write_8py_source.html',''); initResiza
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="comment"># Close the file</span></div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    f.close()</div>
 <div class="ttc" id="anamespaceinput_html"><div class="ttname"><a href="namespaceinput.html">input</a></div><div class="ttdef"><b>Definition:</b> <a href="input_8py_source.html#l00001">input.py:1</a></div></div>
+<div class="ttc" id="anamespacewrite_html_a2a80b928706bf9c4a0283575b3105dd9"><div class="ttname"><a href="namespacewrite.html#a2a80b928706bf9c4a0283575b3105dd9">write.query_params</a></div><div class="ttdeci">def query_params()</div><div class="ttdoc">MAJOR WRITE FUNCTIONS #.</div><div class="ttdef"><b>Definition:</b> <a href="write_8py_source.html#l00125">write.py:125</a></div></div>
+<div class="ttc" id="anamespacewrite_html_a5301642c79448d29f87b3506f85a01c8"><div class="ttname"><a href="namespacewrite.html#a5301642c79448d29f87b3506f85a01c8">write.query_step</a></div><div class="ttdeci">def query_step(prompt)</div><div class="ttdef"><b>Definition:</b> <a href="write_8py_source.html#l00040">write.py:40</a></div></div>
+<div class="ttc" id="anamespacewrite_html_a6d208b551e50aabd0cfffdf928852f2e"><div class="ttname"><a href="namespacewrite.html#a6d208b551e50aabd0cfffdf928852f2e">write.isint</a></div><div class="ttdeci">def isint(s)</div><div class="ttdoc">MINOR FUNCTION DEFINITIONS #.</div><div class="ttdef"><b>Definition:</b> <a href="write_8py_source.html#l00021">write.py:21</a></div></div>
+<div class="ttc" id="anamespacewrite_html_a6ead226a81a790198f4fe23e69a7a7e3"><div class="ttname"><a href="namespacewrite.html#a6ead226a81a790198f4fe23e69a7a7e3">write.query_default</a></div><div class="ttdeci">def query_default(param)</div><div class="ttdef"><b>Definition:</b> <a href="write_8py_source.html#l00075">write.py:75</a></div></div>
+<div class="ttc" id="anamespacewrite_html_ab06a12b89b6110c4bcf845485c8f4b9b"><div class="ttname"><a href="namespacewrite.html#ab06a12b89b6110c4bcf845485c8f4b9b">write.write_params</a></div><div class="ttdeci">def write_params(control, params)</div><div class="ttdef"><b>Definition:</b> <a href="write_8py_source.html#l00366">write.py:366</a></div></div>
+<div class="ttc" id="anamespacewrite_html_ab2d5e87a28584993d493d77da00d1bab"><div class="ttname"><a href="namespacewrite.html#ab2d5e87a28584993d493d77da00d1bab">write.isfloat</a></div><div class="ttdeci">def isfloat(s)</div><div class="ttdef"><b>Definition:</b> <a href="write_8py_source.html#l00031">write.py:31</a></div></div>
+<div class="ttc" id="anamespacewrite_html_abcf50fa9f656fcc5938355f67ee6744a"><div class="ttname"><a href="namespacewrite.html#abcf50fa9f656fcc5938355f67ee6744a">write.query_posfloat</a></div><div class="ttdeci">def query_posfloat(prompt)</div><div class="ttdef"><b>Definition:</b> <a href="write_8py_source.html#l00057">write.py:57</a></div></div>
+<div class="ttc" id="anamespacewrite_html_afa3fbcda7589cff5d02ac8e298ae8b05"><div class="ttname"><a href="namespacewrite.html#afa3fbcda7589cff5d02ac8e298ae8b05">write.query_grid</a></div><div class="ttdeci">def query_grid(param)</div><div class="ttdef"><b>Definition:</b> <a href="write_8py_source.html#l00087">write.py:87</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

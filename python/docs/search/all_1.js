@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['input_2',['input',['../namespaceinput.html',1,'']]],
-  ['input_2epy_3',['input.py',['../input_8py.html',1,'']]]
+  ['boolean_1',['boolean',['../namespacecheck.html#a26944ae06b1c4267e761adca3a568740',1,'check']]]
 ];
