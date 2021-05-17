@@ -1,6 +1,51 @@
-\doxysection*{PX915 Modelling of Heterogeneous Systems Group Project and Peer-\/to-\/peer Project Evaluation}
+\doxysection*{Contents}
 
-\doxysection*{Abstract (tentative)}
+
+\begin{DoxyItemize}
+\item About {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}}
+\item Keywords
+\item Abbreviations
+\item Build Instructions
+\item Contributors
+\item Disclaimer
+\item Acknowledgement
+\item Section 1 -\/ Introduction
+\begin{DoxyItemize}
+\item MD Packages
+\item Features and FUnctions
+\item User Interface
+\item Programming Style and Conventions
+\begin{DoxyItemize}
+\item Units
+\item Reduced Units
+\item Notation
+\item Internal Documentation
+\item Program Dependencies
+\end{DoxyItemize}
+\item Getting Started
+\begin{DoxyItemize}
+\item Setting Up Simulation Environment
+\end{DoxyItemize}
+\item Directory Structure
+\end{DoxyItemize}
+\item Section 2 -\/ VQMC simulations
+\begin{DoxyItemize}
+\item Review of Classic MC Procedure
+\item Algorithms
+\item Calculating System Properties
+\end{DoxyItemize}
+\item Section 3 -\/ Running Typical Calculations
+\begin{DoxyItemize}
+\item Tutorial
+\item Data Output
+\item Running {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}} in Parallel
+\item Error Messages
+\end{DoxyItemize}
+\item Section 4 -\/ Upcoming Features
+\item Section 5 -\/ FAQ
+\end{DoxyItemize}
+
+\doxysection*{About {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}}}
 
 Group A created a piece of software called {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}} to run Variational Quantum Monte Carlo (VQMC) simulations. It is capable of determining the ground state energy and wave functions of the following systems\+: the quantum harmonic oscillator, the hydrogen atom, the hydrogen ion, and the hydrogen molecule. This was achieved with a high-\/performance parallel backend code, written in Fortran and a Python frontend for input generation and results visualisation. The software release date is on Friday 28/08/2021.
 
@@ -30,6 +75,30 @@ Python Dev Documentation   &\href{https://joegilkes.github.io/PX915-Docs/python/
 \doxysection*{Keywords}
 
 {\itshape {\bfseries{Variational Quantum Monte Carlo}}}, {\itshape {\bfseries{Quantum Harmonic Oscillator}}}, {\itshape {\bfseries{Hydrogen Atom}}}, {\itshape {\bfseries{Hydrogen Ion}}}, {\itshape {\bfseries{Hydrogen Molecule}}}, {\itshape {\bfseries{Parallel Computing}}}, {\itshape {\bfseries{Fortran}}}, {\itshape {\bfseries{Python}}}
+
+\doxysection*{Abbreviations}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Abbreviation   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Original Phrase    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Abbreviation   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Original Phrase    }\\\cline{1-2}
+\endhead
+BO   &Born-\/\+Oppenheimer Approximation    \\\cline{1-2}
+FAQ   &Frequently Asked Questions    \\\cline{1-2}
+MCMC   &Markov Chain Monte Carlo    \\\cline{1-2}
+MMC   &Metropolis Monte Carlo    \\\cline{1-2}
+MPI   &Message Passing Interface    \\\cline{1-2}
+\href{https://www.unidata.ucar.edu/software/netcdf/}{\texttt{ Net\+CDF}}   &Network Common Data Form    \\\cline{1-2}
+\href{https://www.openmp.org/}{\texttt{ Open\+MP}}   &Open Multi-\/\+Processing    \\\cline{1-2}
+QHO   &Quantum Harmonic Oscillator    \\\cline{1-2}
+VQMC   &Variational Quantum Monte Carlo   \\\cline{1-2}
+\end{longtabu}
+
 
 \doxysection*{Build Instructions}
 
@@ -63,6 +132,12 @@ Python Dev Documentation   &\href{https://joegilkes.github.io/PX915-Docs/python/
 
 Group Project Supervisor\+: \href{https://warwick.ac.uk/fac/sci/eng/staff/jrk/}{\texttt{ Dr. James Kermode}}
 
+\doxysection*{Disclaimer}
+
+{\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}} is completed to fulfill the module assessment criteria of PX915 Modelling of Heterogeneous Systems Group Project and Peer-\/to-\/peer Project Evaluation. Hence it shall not be used for any commercial purpose.
+
+The contributors declare no conflict of interest.
+
 \doxysection*{Acknowledgement}
 
 Group A would like to show our gratitude to \href{https://epsrc.ukri.org/}{\texttt{ Engineering and Physical Sciences Research Council (EPSRC)}} and \href{https://warwick.ac.uk/fac/sci/hetsys/}{\texttt{ Centre for Doctoral Training in Modelling of Heterogeneous Systems (Het\+Sys)}} for sponsoring us throughout this project. The funding has relieved us from financial hardship which allowed us to solely focus on the project.
@@ -75,31 +150,16 @@ Group A would like to acknowledge all the useful software tips from \href{https:
 
 In addition, Group A would like to thank our families and friends for their unconditional support and sympathetic ears. They have always been there for us by offering pleasant distractions to rest our mind outside of the project.
 
-\doxysection*{Abbreviations}
-
-\tabulinesep=1mm
-\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
-\hline
-\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Abbreviation   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Original Phrase    }\\\cline{1-2}
-\endfirsthead
-\hline
-\endfoot
-\hline
-\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Abbreviation   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Original Phrase    }\\\cline{1-2}
-\endhead
-BO   &Born-\/\+Oppenheimer Approximation    \\\cline{1-2}
-FAQ   &Frequently Asked Questions    \\\cline{1-2}
-MCMC   &Markov Chain Monte Carlo    \\\cline{1-2}
-MMC   &Metropolis Monte Carlo    \\\cline{1-2}
-MPI   &Message Passing Interface    \\\cline{1-2}
-\href{https://www.unidata.ucar.edu/software/netcdf/}{\texttt{ Net\+CDF}}   &Network Common Data Form    \\\cline{1-2}
-\href{https://www.openmp.org/}{\texttt{ Open\+MP}}   &Open Multi-\/\+Processing    \\\cline{1-2}
-QHO   &Quantum Harmonic Oscillator    \\\cline{1-2}
-VQMC   &Variational Quantum Monte Carlo   \\\cline{1-2}
-\end{longtabu}
+\DoxyHorRuler{0}
 
 
-\doxysection*{Upcoming Features}
+\doxysection*{Section 1 -\/ Introduction}
+
+\doxysubsection*{}
+
+\doxysection*{Tutorial}
+
+\doxysection*{Section 4 -\/ Upcoming Features}
 
 New functionalities and performance improvement come with next software updates\+:
 \begin{DoxyItemize}
@@ -115,7 +175,7 @@ New functionalities and performance improvement come with next software updates\
 \item In the HTML documentation pages included in the tarball, they describe the version a user have downloaded.
 \end{DoxyItemize}
 
-\doxysection*{FAQ}
+\doxysection*{Section 5 -\/ FAQ}
 
 {\itshape {\bfseries{Q\+: Where there be any PDF version of the software documentations available?}}}
 
@@ -125,4 +185,4 @@ New functionalities and performance improvement come with next software updates\
 
 {\itshape A\+: Any user who spotted a bug in $\ast$$\ast$\mbox{[}Project Name\mbox{]}$\ast$$\ast$, please notify the developers (anyone in the {\bfseries{contributor}} table) by raising it as an issue in the {\bfseries{Issues}} tab in the relevant branch of the $\ast$$\ast$\mbox{[}Project Name\mbox{]}$\ast$$\ast$’s Git\+Hub repository. Key bug fixes will be documented in the software documentation in the next stable version release.}
 
-This documentation was generated from commit 1fac1ec 
+This documentation was generated from commit d738a0f 
