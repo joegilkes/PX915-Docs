@@ -1,11 +1,9 @@
 var indexSectionsWithContent =
 {
-  0: "[bcdfhipqrstvw",
+  0: "[ciprvw",
   1: "civw",
   2: "ciprvw",
-  3: "cdhipqw",
-  4: "bcdfprst",
-  5: "[p"
+  3: "[p"
 };
 
 var indexSectionNames =
@@ -13,9 +11,7 @@ var indexSectionNames =
   0: "all",
   1: "namespaces",
   2: "files",
-  3: "functions",
-  4: "variables",
-  5: "pages"
+  3: "pages"
 };
 
 var indexSectionLabels =
@@ -23,8 +19,6 @@ var indexSectionLabels =
   0: "All",
   1: "Namespaces",
   2: "Files",
-  3: "Functions",
-  4: "Variables",
-  5: "Pages"
+  3: "Pages"
 };
 

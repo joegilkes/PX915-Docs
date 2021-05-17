@@ -105,12 +105,12 @@ $(document).ready(function(){initNavTree('visualisation_8py_source.html',''); in
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">#possibly read the system info from the metadata and use cases</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"># or dictionaries to run certain functions</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="namespacevisualisation.html#af26cb719b2deb508473e83624f95b374">   14</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacevisualisation.html#af26cb719b2deb508473e83624f95b374">print_global_attr</a>(rootgrp):</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">def </span>print_global_attr(rootgrp):</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">for</span> name <span class="keywordflow">in</span> rootgrp.ncattrs():</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        print(<span class="stringliteral">&quot;{} = {}&quot;</span>.format(name, getattr(rootgrp, name)))</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="namespacevisualisation.html#aa2430a6743d0cdb4960904905c164145">   19</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacevisualisation.html#aa2430a6743d0cdb4960904905c164145">QHO_eng_plot</a>(rootgrp,equil):</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">def </span>QHO_eng_plot(rootgrp,equil):</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;energy_plot()</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="stringliteral">    Plots the energy at each step as the MC converges</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
@@ -139,7 +139,7 @@ $(document).ready(function(){initNavTree('visualisation_8py_source.html',''); in
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="namespacevisualisation.html#afd52b91a5cae34e5aa39f76232b424a7">   48</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacevisualisation.html#afd52b91a5cae34e5aa39f76232b424a7">H2_eng_plot</a>(rootgrp, equil):</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">def </span>H2_eng_plot(rootgrp, equil):</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="stringliteral">&quot;&quot;&quot; H2plus_main_plot()</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="stringliteral">    Plots the wavefunction for the quantum harmonic oscillator case</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="stringliteral"></span> </div>
@@ -156,15 +156,15 @@ $(document).ready(function(){initNavTree('visualisation_8py_source.html',''); in
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    plt.savefig(<span class="stringliteral">&quot;energies.png&quot;</span>)</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="namespacevisualisation.html#a0c5b55c4af26e995abfdee385799d310">   65</a></span>&#160;filename = <span class="stringliteral">&quot;output.nc&quot;</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="namespacevisualisation.html#af7f0bb17ebbd05b61d96a3a749b4afb1">   66</a></span>&#160;rootgrp = Dataset(filename, <span class="stringliteral">&quot;r&quot;</span>, format = <span class="stringliteral">&quot;NETCDF4&quot;</span>)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;filename = <span class="stringliteral">&quot;output.nc&quot;</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;rootgrp = Dataset(filename, <span class="stringliteral">&quot;r&quot;</span>, format = <span class="stringliteral">&quot;NETCDF4&quot;</span>)</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="namespacevisualisation.html#a867077a6be121d77314fdd76d116c6f7">   68</a></span>&#160;system = rootgrp.system</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;system = rootgrp.system</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<a class="code" href="namespacevisualisation.html#af26cb719b2deb508473e83624f95b374">print_global_attr</a>()</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;print_global_attr()</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordflow">if</span> (system == <span class="stringliteral">&#39;QHO&#39;</span>):</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="namespacevisualisation.html#aa2430a6743d0cdb4960904905c164145">QHO_eng_plot</a>()</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    QHO_eng_plot()</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;elif(system == <span class="stringliteral">&#39;H2plus&#39;</span>):</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;elif(system == <span class="stringliteral">&#39;H2&#39;</span>):</div>
@@ -177,9 +177,6 @@ $(document).ready(function(){initNavTree('visualisation_8py_source.html',''); in
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="ttc" id="anamespacevisualisation_html_aa2430a6743d0cdb4960904905c164145"><div class="ttname"><a href="namespacevisualisation.html#aa2430a6743d0cdb4960904905c164145">visualisation.QHO_eng_plot</a></div><div class="ttdeci">def QHO_eng_plot(rootgrp, equil)</div><div class="ttdoc">energy_plot() Plots the energy at each step as the MC converges</div><div class="ttdef"><b>Definition:</b> <a href="visualisation_8py_source.html#l00019">visualisation.py:19</a></div></div>
-<div class="ttc" id="anamespacevisualisation_html_af26cb719b2deb508473e83624f95b374"><div class="ttname"><a href="namespacevisualisation.html#af26cb719b2deb508473e83624f95b374">visualisation.print_global_attr</a></div><div class="ttdeci">def print_global_attr(rootgrp)</div><div class="ttdef"><b>Definition:</b> <a href="visualisation_8py_source.html#l00014">visualisation.py:14</a></div></div>
-<div class="ttc" id="anamespacevisualisation_html_afd52b91a5cae34e5aa39f76232b424a7"><div class="ttname"><a href="namespacevisualisation.html#afd52b91a5cae34e5aa39f76232b424a7">visualisation.H2_eng_plot</a></div><div class="ttdeci">def H2_eng_plot(rootgrp, equil)</div><div class="ttdoc">H2plus_main_plot() Plots the wavefunction for the quantum harmonic oscillator case.</div><div class="ttdef"><b>Definition:</b> <a href="visualisation_8py_source.html#l00048">visualisation.py:48</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
