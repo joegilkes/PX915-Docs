@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_5bproject_20name_5d_20readme_22',['[Project Name] Readme',['../md_repo__r_e_a_d_m_e.html',1,'']]]
+  ['readme_21',['README',['../md_repo__r_e_a_d_m_e.html',1,'']]]
 ];

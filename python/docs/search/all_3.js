@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['python_20documentation_20main_20page_5',['Python Documentation Main Page',['../index.html',1,'']]],
-  ['python_5fmainpage_2emd_6',['PYTHON_MAINPAGE.md',['../_p_y_t_h_o_n___m_a_i_n_p_a_g_e_8md.html',1,'']]]
+  ['readme_5',['README',['../md_repo__r_e_a_d_m_e.html',1,'']]],
+  ['readme_2emd_6',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]]
 ];

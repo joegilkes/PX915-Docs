@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['input_3',['input',['../namespaceinput.html',1,'']]],
-  ['input_2epy_4',['input.py',['../input_8py.html',1,'']]]
+  ['python_5fmainpage_2emd_4',['PYTHON_MAINPAGE.md',['../_p_y_t_h_o_n___m_a_i_n_p_a_g_e_8md.html',1,'']]]
 ];
