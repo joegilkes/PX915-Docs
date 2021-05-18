@@ -1,3 +1,6 @@
+\DoxyHorRuler{0}
+
+
 \doxysection*{Contents}
 
 
@@ -11,39 +14,42 @@
 \item \href{\#Acknowledgement}{\texttt{ Acknowledgement}}
 \item \href{\#Section-1---Introduction}{\texttt{ Section 1 -\/ Introduction}}
 \begin{DoxyItemize}
-\item MD Packages
-\item Features and FUnctions
-\item User Interface
-\item Programming Style and Conventions
+\item 1.\+1 MD Packages
+\item 1.\+2 Features and Functions
+\item 1.\+3 User Interface
+\item 1.\+4 Programming Style and Conventions
 \begin{DoxyItemize}
-\item Units
-\item Reduced Units
-\item Notation
-\item Internal Documentation
-\item Program Dependencies
+\item 1.\+4.\+1 Units
+\item 1.\+4.\+2 Reduced Units
+\item 1.\+4.\+3 Notation
+\item 1.\+4.\+4 Internal Documentation
+\item 1.\+4.\+5 Program Dependencies
 \end{DoxyItemize}
-\item Getting Started
+\item 1.\+5 Getting Started
 \begin{DoxyItemize}
-\item Setting Up Simulation Environment
+\item 1.\+5.\+1 Setting Up Simulation Environment
 \end{DoxyItemize}
-\item Directory Structure
+\item 1.\+6 Directory Structure
 \end{DoxyItemize}
 \item \href{\#Section-2---VQMC-Simulations}{\texttt{ Section 2 -\/ VQMC Simulations}}
 \begin{DoxyItemize}
-\item Review of Classic MC Procedure
-\item Algorithms
-\item Calculating System Properties
+\item 2.\+1 Review of Classic MC Procedure
+\item 2.\+2 Algorithms
+\item 2.\+3 Calculating System Properties
 \end{DoxyItemize}
 \item \href{\#Section-3---Running-Typical-Calculations}{\texttt{ Section 3 -\/ Running Typical Calculations}}
 \begin{DoxyItemize}
-\item Tutorial
-\item Data Output
-\item Running {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}} in Parallel
-\item Error Messages
+\item 3.\+1 Tutorial
+\item 3.\+2 Data Output
+\item 3.\+3 Running {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}} in Parallel
+\item 3.\+4 Error Messages
 \end{DoxyItemize}
 \item \href{\#Section-4---Upcoming-Features}{\texttt{ Section 4 -\/ Upcoming Features}}
 \item \href{\#Section-5---FAQ}{\texttt{ Section 5 -\/ FAQ}}
 \end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
 
 \doxysection*{About}
 
@@ -72,9 +78,15 @@ Python Dev Documentation   &\href{https://joegilkes.github.io/PX915-Docs/python/
 \end{longtabu}
 
 
+\DoxyHorRuler{0}
+
+
 \doxysection*{Keywords}
 
 {\itshape {\bfseries{Variational Quantum Monte Carlo}}}, {\itshape {\bfseries{Quantum Harmonic Oscillator}}}, {\itshape {\bfseries{Hydrogen Atom}}}, {\itshape {\bfseries{Hydrogen Ion}}}, {\itshape {\bfseries{Hydrogen Molecule}}}, {\itshape {\bfseries{Parallel Computing}}}, {\itshape {\bfseries{Fortran}}}, {\itshape {\bfseries{Python}}}
+
+\DoxyHorRuler{0}
+
 
 \doxysection*{Abbreviations}
 
@@ -89,6 +101,7 @@ Python Dev Documentation   &\href{https://joegilkes.github.io/PX915-Docs/python/
 \PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Abbreviation   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Original Phrase    }\\\cline{1-2}
 \endhead
 BO   &Born-\/\+Oppenheimer Approximation    \\\cline{1-2}
+DQMC   &Diffusion Quantum Monte Carlo    \\\cline{1-2}
 FAQ   &Frequently Asked Questions    \\\cline{1-2}
 MCMC   &Markov Chain Monte Carlo    \\\cline{1-2}
 MMC   &Metropolis Monte Carlo    \\\cline{1-2}
@@ -96,8 +109,14 @@ MPI   &Message Passing Interface    \\\cline{1-2}
 \href{https://www.unidata.ucar.edu/software/netcdf/}{\texttt{ Net\+CDF}}   &Network Common Data Form    \\\cline{1-2}
 \href{https://www.openmp.org/}{\texttt{ Open\+MP}}   &Open Multi-\/\+Processing    \\\cline{1-2}
 QHO   &Quantum Harmonic Oscillator    \\\cline{1-2}
-VQMC   &Variational Quantum Monte Carlo   \\\cline{1-2}
+QMC$\ast$   &Quantum Monte Carlo    \\\cline{1-2}
+VQMC$\ast$   &Variational Quantum Monte Carlo   \\\cline{1-2}
 \end{longtabu}
+
+
+$\ast$$\ast$\+Note\+: QMC and VQMC are used interchangeably in this version of the software.$\ast$
+
+\DoxyHorRuler{0}
 
 
 \doxysection*{Build Instructions}
@@ -108,6 +127,9 @@ VQMC   &Variational Quantum Monte Carlo   \\\cline{1-2}
 \item Run the input generator with {\ttfamily python \mbox{\hyperlink{input_8py}{input.\+py}}}
 \item Run the Fortran code with {\ttfamily ./program}
 \end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+
 
 \doxysection*{Contributors}
 
@@ -132,11 +154,17 @@ VQMC   &Variational Quantum Monte Carlo   \\\cline{1-2}
 
 Group Project Supervisor\+: \href{https://warwick.ac.uk/fac/sci/eng/staff/jrk/}{\texttt{ Dr. James Kermode}}
 
+\DoxyHorRuler{0}
+
+
 \doxysection*{Disclaimer}
 
 {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}} is completed to fulfill the module assessment criteria of PX915 Modelling of Heterogeneous Systems Group Project and Peer-\/to-\/peer Project Evaluation. Hence it shall not be used for any commercial purpose.
 
 The contributors declare no conflict of interest.
+
+\DoxyHorRuler{0}
+
 
 \doxysection*{Acknowledgement}
 
@@ -155,9 +183,56 @@ In addition, Group A would like to thank our families and friends for their unco
 
 \doxysection*{Section 1 -\/ Introduction}
 
-\doxysubsection*{}
+\doxysubsection*{1.\+1 MD Packages}
 
-\doxysection*{Tutorial}
+\doxysubsection*{1.\+2 Features and Functions}
+
+\doxysubsection*{1.\+3 User Interface}
+
+\doxysubsection*{1.\+4 Programming Style and Conventions}
+
+\doxysubsubsection*{1.\+4.\+1 Units}
+
+\doxysubsubsection*{1.\+4.\+2 Reduced Units}
+
+\doxysubsubsection*{1.\+4.\+3 Notation}
+
+\doxysubsubsection*{1.\+4.\+4 Internal Documentation}
+
+\doxysubsubsection*{1.\+4.\+5 Program Dependencies}
+
+\doxysubsection*{1.\+5 Getting Started}
+
+\doxysubsubsection*{1.\+5.\+1 Setting Up Simulation Environment}
+
+\doxysubsection*{1.\+6 Directory Structure}
+
+\DoxyHorRuler{0}
+
+
+\doxysection*{Section 2 -\/ VQMC Simulations}
+
+\doxysubsection*{2.\+1 Review of Classic MC Procedure}
+
+\doxysubsection*{2.\+2 Algorithms}
+
+\doxysubsection*{2.\+3 Calculating System Properties}
+
+\DoxyHorRuler{0}
+
+
+\doxysection*{Section 3 -\/ Running Typical Calculations}
+
+\doxysubsection*{3.\+1 Tutorial}
+
+\doxysubsection*{3.\+2 Data Output}
+
+\doxysubsection*{3.\+3 Running {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}} in Parallel}
+
+\doxysubsection*{3.\+4 Error Messages}
+
+\DoxyHorRuler{0}
+
 
 \doxysection*{Section 4 -\/ Upcoming Features}
 
@@ -175,6 +250,9 @@ New functionalities and performance improvement come with next software updates\
 \item In the HTML documentation pages included in the tarball, they describe the version a user have downloaded.
 \end{DoxyItemize}
 
+\DoxyHorRuler{0}
+
+
 \doxysection*{Section 5 -\/ FAQ}
 
 {\itshape {\bfseries{Q\+: Where there be any PDF version of the software documentations available?}}}
@@ -185,4 +263,7 @@ New functionalities and performance improvement come with next software updates\
 
 {\itshape A\+: Any user who spotted a bug in $\ast$$\ast$\mbox{[}Project Name\mbox{]}$\ast$$\ast$, please notify the developers (anyone in the {\bfseries{contributor}} table) by raising it as an issue in the {\bfseries{Issues}} tab in the relevant branch of the $\ast$$\ast$\mbox{[}Project Name\mbox{]}$\ast$$\ast$’s Git\+Hub repository. Key bug fixes will be documented in the software documentation in the next stable version release.}
 
-This documentation was generated from commit 2340829 
+\DoxyHorRuler{0}
+
+
+This documentation was generated from commit 632217f 
