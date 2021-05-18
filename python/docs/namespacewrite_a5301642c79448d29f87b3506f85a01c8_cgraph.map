@@ -1,4 +1,4 @@
 <map id="write.query_step" name="write.query_step">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,121,32"/>
-<area shape="rect" id="node2" href="$namespacewrite.html#a6d208b551e50aabd0cfffdf928852f2e" title="MINOR FUNCTION DEFINITIONS #." alt="" coords="169,5,247,32"/>
+<area shape="rect" id="node1" title="Queries an integer step value, using the input string as a prompt." alt="" coords="5,5,121,32"/>
+<area shape="rect" id="node2" href="$namespacewrite.html#a6d208b551e50aabd0cfffdf928852f2e" title="Checks if the input string represents an integer." alt="" coords="169,5,247,32"/>
 </map>
