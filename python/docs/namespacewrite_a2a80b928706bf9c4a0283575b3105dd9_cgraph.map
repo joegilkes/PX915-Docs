@@ -1,5 +1,5 @@
 <map id="write.query_params" name="write.query_params">
-<area shape="rect" id="node1" title="Major function that queries the user for all the inputs required to assemble $\textit{params...." alt="" coords="5,81,140,108"/>
+<area shape="rect" id="node1" title="Major function that queries the user for all the inputs required to assemble ." alt="" coords="5,81,140,108"/>
 <area shape="rect" id="node2" href="$namespacewrite.html#a6ead226a81a790198f4fe23e69a7a7e3" title="Queries whether the user wants to use default values for a certain parameter." alt="" coords="191,5,321,32"/>
 <area shape="rect" id="node3" href="$namespacewrite.html#afa3fbcda7589cff5d02ac8e298ae8b05" title="Queries user for the minimum, maximum and number of points of a parameter grid." alt="" coords="200,56,312,83"/>
 <area shape="rect" id="node4" href="$namespacewrite.html#abcf50fa9f656fcc5938355f67ee6744a" title="Queries a positive float value, using the input string as a prompt." alt="" coords="188,107,324,133"/>
