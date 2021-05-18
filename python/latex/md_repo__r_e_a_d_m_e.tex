@@ -291,8 +291,6 @@ In addition, Group A would like to thank our families and friends for their unco
 
 \doxysubsection*{3.\+4 Error Messages}
 
-$\ast$$\ast$(Ignore this section for now, might be deleted later)$\ast$$\ast$
-
 Everyone would agree that the best kind of error message is the kind that never shows up. However, regardless of how well-\/designed a software package is, errors are always unavoidable. When users interact with a software package, eventually, something is bound to go wrong.
 
 The error message is a critical component of a good user experience. One way for users to evaluate the quality of a software package is by judging the error messages’ quality. Confusing and non-\/informative error messages are annoying to the user. This is why most developers would agree that good error message can increase the speed of software package learning and increase users’ subjective satisfaction in the process.
@@ -339,46 +337,18 @@ Friendly error message example\+:
 
 Group A designed its error messages based on the error message design guideline in the previous three sub-\/sections. Here are some actual codes that were taken within the software package to be illustrated as examples\+:
 
-{\bfseries{The error messages in the codes need to be updated}}
-
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Error: Invalid CONTROL namelist format in file "{}params.txt"{}.}
+\DoxyCodeLine{Error: Oops, your response is invalid, please enter "{}w"{} or "{}c"{}, without quotes. :-\/(}
+\DoxyCodeLine{}
+\DoxyCodeLine{Please have another go. :-\/)}
 
 \end{DoxyCode}
  
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Error: Invalid PARAMETERS namelist for QHO p\_system in file "{}params.txt"{}.}
-
-\end{DoxyCode}
- 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{Error: Invalid PARAMETERS namelist for H2plus p\_system in file "{}params.txt"{}.}
-
-\end{DoxyCode}
- 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{Error: Invalid PARAMETERS namelist for H2 p\_system in file "{}params.txt"{}.}
-
-\end{DoxyCode}
- 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{Error: Input file "{}params.txt"{} does not exist.}
-
-\end{DoxyCode}
- 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{Error: Invalid system definition.}
-
-\end{DoxyCode}
- 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{Your response is invalid, please enter "{}w"{} or "{}c"{}, without quotes.}
-
-\end{DoxyCode}
- 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{Error: There is no param.txt file in the current working directory.}
+\DoxyCodeLine{Error: Oops, there is no param.txt file in the current working directory. :-\/( }
+\DoxyCodeLine{}
+\DoxyCodeLine{Please have another go. :-\/)}
 
 \end{DoxyCode}
 
@@ -426,4 +396,4 @@ New functionalities and performance improvement come with next software updates\
 \DoxyHorRuler{0}
 
 
-This documentation was generated from commit 29e4d4a 
+This documentation was generated from commit 26255e5 
