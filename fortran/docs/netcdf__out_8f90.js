@@ -7,5 +7,7 @@ var netcdf__out_8f90 =
     [ "write_qho_main", "netcdf__out_8f90.html#ae2722e18129ba78f02541fa0ae49f886", null ],
     [ "write_h2plus_main", "netcdf__out_8f90.html#a818c3a109a649bbf802adaa2a937a458", null ],
     [ "write_h2_main", "netcdf__out_8f90.html#a8b125766a34e4cc2d72228a5bd109ce0", null ],
+    [ "position_output_1d", "netcdf__out_8f90.html#a2bb2db22caee970631d3e9c8f1ee16cc", null ],
+    [ "position_output_3d", "netcdf__out_8f90.html#ad07f7eae9a3f4604743ca2d18addd413", null ],
     [ "append_to_array", "netcdf__out_8f90.html#a6830bd805591aad1ec622d12037dd99d", null ]
 ];
