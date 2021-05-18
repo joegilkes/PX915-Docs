@@ -243,7 +243,7 @@ Definition at line 93 of file check.\+py.
 \DoxyCodeLine{94     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
 \DoxyCodeLine{95         val = params[tag]}
 \DoxyCodeLine{96         \textcolor{keywordflow}{if} not(type(val) \textcolor{keywordflow}{is} float):}
-\DoxyCodeLine{97             print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}=\{:\}\(\backslash\)': Expected positive float for tag \(\backslash\)'\{:\}\(\backslash\)'.'}.format(tag,val,tag))}
+\DoxyCodeLine{97             print(\textcolor{stringliteral}{'Error: Oops, invalid input \(\backslash\)'\{:\}=\{:\}\(\backslash\)': The program is expecting positive float for tag \(\backslash\)'\{:\}\(\backslash\)'.'}.format(tag,val,tag))}
 \DoxyCodeLine{98             \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
 \DoxyCodeLine{99             exit()}
 \DoxyCodeLine{100     \textcolor{keywordflow}{else}:}
@@ -299,31 +299,31 @@ Definition at line 110 of file check.\+py.
 \DoxyCodeLine{113         \textcolor{keywordflow}{if} length == 3:}
 \DoxyCodeLine{114             mini, maxi, num = params[tag]}
 \DoxyCodeLine{115             \textcolor{keywordflow}{if} not(type(mini) \textcolor{keywordflow}{is} float):}
-\DoxyCodeLine{116                 print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}\(\backslash\)' min = \{:\}: Expected positive float for \(\backslash\)'\{:\}\(\backslash\)' grid minimum.'}.format(tag,mini,tag))}
+\DoxyCodeLine{116                 print(\textcolor{stringliteral}{'Error: Oops, invalid input \(\backslash\)'\{:\}\(\backslash\)' min = \{:\}: The program is expecting positive float for \(\backslash\)'\{:\}\(\backslash\)' grid minimum.'}.format(tag,mini,tag))}
 \DoxyCodeLine{117                 \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
 \DoxyCodeLine{118                 exit()}
 \DoxyCodeLine{119             \textcolor{keywordflow}{elif} not(type(maxi) \textcolor{keywordflow}{is} float):}
-\DoxyCodeLine{120                 print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}\(\backslash\)' max = \{:\}: Expected positive float for \(\backslash\)'\{:\}\(\backslash\)' grid maximum.'}.format(tag,maxi,tag))}
+\DoxyCodeLine{120                 print(\textcolor{stringliteral}{'Error: Oops, invalid input \(\backslash\)'\{:\}\(\backslash\)' max = \{:\}: The program is expecting positive float for \(\backslash\)'\{:\}\(\backslash\)' grid maximum.'}.format(tag,maxi,tag))}
 \DoxyCodeLine{121                 \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
 \DoxyCodeLine{122                 exit()}
 \DoxyCodeLine{123             \textcolor{keywordflow}{elif} mini > maxi:}
-\DoxyCodeLine{124                 print(\textcolor{stringliteral}{'Invalid input: Require minimum < maximum for \(\backslash\)'\{:\}\(\backslash\)' grid.'}.format(tag))}
+\DoxyCodeLine{124                 print(\textcolor{stringliteral}{'Error: Oops, invalid input: The program requires minimum < maximum for \(\backslash\)'\{:\}\(\backslash\)' grid.'}.format(tag))}
 \DoxyCodeLine{125                 \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
 \DoxyCodeLine{126                 exit()}
 \DoxyCodeLine{127             \textcolor{keywordflow}{elif} not(type(num) \textcolor{keywordflow}{is} int):}
-\DoxyCodeLine{128                 print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}\(\backslash\)' num = \{:\}: Expected positive integer number of points in \(\backslash\)'\{:\}\(\backslash\)' grid.'}.format(tag,num,tag))}
+\DoxyCodeLine{128                 print(\textcolor{stringliteral}{'Error: Oops, invalid input \(\backslash\)'\{:\}\(\backslash\)' num = \{:\}: The program is expecting positive integer number of points in \(\backslash\)'\{:\}\(\backslash\)' grid.'}.format(tag,num,tag))}
 \DoxyCodeLine{129                 \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
 \DoxyCodeLine{130                 exit()}
 \DoxyCodeLine{131             \textcolor{keywordflow}{elif} num <= 0:}
-\DoxyCodeLine{132                 print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}\(\backslash\)' num = \{:\}: Expected positive integer number of points in \(\backslash\)'\{:\}\(\backslash\)' grid.'}.format(tag,num,tag))}
+\DoxyCodeLine{132                 print(\textcolor{stringliteral}{'Error: Oops, invalid input \(\backslash\)'\{:\}\(\backslash\)' num = \{:\}: The program is expecting positive integer number of points in \(\backslash\)'\{:\}\(\backslash\)' grid.'}.format(tag,num,tag))}
 \DoxyCodeLine{133                 \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
 \DoxyCodeLine{134                 exit()}
 \DoxyCodeLine{135             \textcolor{keywordflow}{elif} mini==maxi \textcolor{keywordflow}{and} num!=1:}
-\DoxyCodeLine{136                 print(\textcolor{stringliteral}{'Invalid input: For \(\backslash\)'\{:\}\(\backslash\)' grid, if minimum=maximum, expected num=1.'}.format(tag))}
+\DoxyCodeLine{136                 print(\textcolor{stringliteral}{'Error: Oops, invalid input: For \(\backslash\)'\{:\}\(\backslash\)' grid, if minimum=maximum, The program is expecting num=1.'}.format(tag))}
 \DoxyCodeLine{137                 \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
 \DoxyCodeLine{138                 exit()}
 \DoxyCodeLine{139         \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{140             print(\textcolor{stringliteral}{'Invalid input: Expected three input values (minimum, maximum, number of points) for grid \(\backslash\)'\{:\}\(\backslash\)'.'}.format(tag))}
+\DoxyCodeLine{140             print(\textcolor{stringliteral}{'Error: Oops, invalid input: The program is expecting three input values (minimum, maximum, number of points) for grid \(\backslash\)'\{:\}\(\backslash\)'.'}.format(tag))}
 \DoxyCodeLine{141             \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
 \DoxyCodeLine{142             exit()}
 \DoxyCodeLine{143     \textcolor{keywordflow}{else}:}
@@ -380,7 +380,7 @@ Definition at line 161 of file check.\+py.
 \DoxyCodeLine{163     \textcolor{comment}{\# Check for CONTROL header}}
 \DoxyCodeLine{164     headers = [header \textcolor{keywordflow}{for} header \textcolor{keywordflow}{in} nml]}
 \DoxyCodeLine{165     \textcolor{keywordflow}{if} \textcolor{keywordflow}{not} (\textcolor{stringliteral}{'control'} \textcolor{keywordflow}{in} headers):}
-\DoxyCodeLine{166         print(\textcolor{stringliteral}{'Invalid format: CONTROL namelist is missing.'})}
+\DoxyCodeLine{166         print(\textcolor{stringliteral}{'Error: Oops, invalid format: CONTROL namelist is missing.'})}
 \DoxyCodeLine{167         print(\textcolor{stringliteral}{'Please have another go.'})}
 \DoxyCodeLine{168         exit()}
 \DoxyCodeLine{169 }
@@ -393,7 +393,7 @@ Definition at line 161 of file check.\+py.
 \DoxyCodeLine{176     \textcolor{comment}{\# Essential tag}}
 \DoxyCodeLine{177     tag = \textcolor{stringliteral}{'p\_system'}}
 \DoxyCodeLine{178     \textcolor{keywordflow}{if} not(tag \textcolor{keywordflow}{in} tags):}
-\DoxyCodeLine{179         print(\textcolor{stringliteral}{'Incomplete params.txt: The \(\backslash\)'\{:\}\(\backslash\)' tag is missing.'}.format(tag))}
+\DoxyCodeLine{179         print(\textcolor{stringliteral}{'Oops, incomplete params.txt: The \(\backslash\)'\{:\}\(\backslash\)' tag is missing.'}.format(tag))}
 \DoxyCodeLine{180         print(\textcolor{stringliteral}{'Please have another go.'})}
 \DoxyCodeLine{181         exit()}
 \DoxyCodeLine{182     p\_system = control[tag]}
@@ -405,7 +405,7 @@ Definition at line 161 of file check.\+py.
 \DoxyCodeLine{188     \textcolor{keywordflow}{else}:}
 \DoxyCodeLine{189         \textcolor{comment}{\# Check for PARAMETERS namelist}}
 \DoxyCodeLine{190         \textcolor{keywordflow}{if} \textcolor{keywordflow}{not} (\textcolor{stringliteral}{'parameters'} \textcolor{keywordflow}{in} headers):}
-\DoxyCodeLine{191             print(\textcolor{stringliteral}{'Invalid format: PARAMETERS namelist is missing.'})}
+\DoxyCodeLine{191             print(\textcolor{stringliteral}{'Error: Oops, invalid format: PARAMETERS namelist is missing.'})}
 \DoxyCodeLine{192             print(\textcolor{stringliteral}{'Please have another go.'})}
 \DoxyCodeLine{193             exit()}
 \DoxyCodeLine{194 }
@@ -444,11 +444,11 @@ Definition at line 161 of file check.\+py.
 \DoxyCodeLine{227         \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
 \DoxyCodeLine{228             rstep = control[tag]}
 \DoxyCodeLine{229             \textcolor{keywordflow}{if} not(type(rstep) \textcolor{keywordflow}{is} int):}
-\DoxyCodeLine{230                 print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}=\{:\}\(\backslash\)': Expected integer >=0 for tag \(\backslash\)'\{:\}\(\backslash\)'.'}.format(tag,rstep,tag))}
+\DoxyCodeLine{230                 print(\textcolor{stringliteral}{'Error: Oops, invalid input \(\backslash\)'\{:\}=\{:\}\(\backslash\)': The program is expecting integer >=0 for tag \(\backslash\)'\{:\}\(\backslash\)'.'}.format(tag,rstep,tag))}
 \DoxyCodeLine{231                 print(\textcolor{stringliteral}{'Please have another go.'})}
 \DoxyCodeLine{232                 exit()}
 \DoxyCodeLine{233             \textcolor{keywordflow}{elif} rstep<0:}
-\DoxyCodeLine{234                 print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}=\{:\}\(\backslash\)': Expected integer >=0 for tag \(\backslash\)'\{:\}\(\backslash\)'.'}.format(tag,rstep,tag))}
+\DoxyCodeLine{234                 print(\textcolor{stringliteral}{'Error: Oops, invalid input \(\backslash\)'\{:\}=\{:\}\(\backslash\)': The program is expecting integer >=0 for tag \(\backslash\)'\{:\}\(\backslash\)'.'}.format(tag,rstep,tag))}
 \DoxyCodeLine{235                 print(\textcolor{stringliteral}{'Please have another go.'})}
 \DoxyCodeLine{236                 exit()}
 \DoxyCodeLine{237         \textcolor{keywordflow}{else}:}
@@ -484,13 +484,13 @@ Definition at line 161 of file check.\+py.
 \DoxyCodeLine{267     sys\_small = [\textcolor{stringliteral}{'qho'},\textcolor{stringliteral}{'h2plus'},\textcolor{stringliteral}{'h2'},\textcolor{stringliteral}{'test'}]}
 \DoxyCodeLine{268     par\_sys = [sys \textcolor{keywordflow}{for} sys \textcolor{keywordflow}{in} parameters]}
 \DoxyCodeLine{269     \textcolor{keywordflow}{if} len(par\_sys)>1:}
-\DoxyCodeLine{270         print(\textcolor{stringliteral}{'Invalid input: Either multiple or no system defitions present in PARAMETERS namelist tags.'})}
-\DoxyCodeLine{271         print(\textcolor{stringliteral}{'Expected one, and only one, of the following strings before a percent symbol:'})}
+\DoxyCodeLine{270         print(\textcolor{stringliteral}{'Error: Oops, invalid input: Either multiple or no system defitions present in PARAMETERS namelist tags.'})}
+\DoxyCodeLine{271         print(\textcolor{stringliteral}{'The program is expecting one, and only one, of the following strings before a percent symbol:'})}
 \DoxyCodeLine{272         print(\textcolor{stringliteral}{'Please have another go.'})}
 \DoxyCodeLine{273         print(systems)}
 \DoxyCodeLine{274         exit()}
 \DoxyCodeLine{275     \textcolor{keywordflow}{elif} \textcolor{keywordflow}{not} (par\_sys[0] \textcolor{keywordflow}{in} sys\_small):}
-\DoxyCodeLine{276         print(\textcolor{stringliteral}{'Invalid system definition in PARAMETERS namelist tags. Expected one of the following strings before a percent symbol:'})}
+\DoxyCodeLine{276         print(\textcolor{stringliteral}{'Error: Oops, invalid system definition in PARAMETERS namelist tags. The program is expecting one of the following strings before a percent symbol:'})}
 \DoxyCodeLine{277         print(\textcolor{stringliteral}{'Please have another go.'})}
 \DoxyCodeLine{278         print(systems)}
 \DoxyCodeLine{279         exit()}
@@ -514,15 +514,15 @@ Definition at line 161 of file check.\+py.
 \DoxyCodeLine{297 }
 \DoxyCodeLine{298     \textcolor{comment}{\# Check compatibility of steps}}
 \DoxyCodeLine{299     \textcolor{keywordflow}{if} bstep >= steps:}
-\DoxyCodeLine{300         print(\textcolor{stringliteral}{'Incompatable inputs steps=\{:\} and burn\_step=\{:\}. Expected burn\_step < step.'}.format(steps,bstep))}
+\DoxyCodeLine{300         print(\textcolor{stringliteral}{'Error: Oops, incompatable inputs steps=\{:\} and burn\_step=\{:\}. The program is expecting burn\_step < step.'}.format(steps,bstep))}
 \DoxyCodeLine{301         print(\textcolor{stringliteral}{'Please have another go.'})}
 \DoxyCodeLine{302         exit()}
 \DoxyCodeLine{303     \textcolor{keywordflow}{if} tstep >= steps-\/bstep:}
-\DoxyCodeLine{304         print(\textcolor{stringliteral}{'Incompatable inputs steps=\{:\}, burn\_step=\{:\} and thin\_step=\{:\}. Expected thinstep < steps -\/ burn\_step.'}.format(steps,bstep,tstep))}
+\DoxyCodeLine{304         print(\textcolor{stringliteral}{'Error: Oops, incompatable inputs steps=\{:\}, burn\_step=\{:\} and thin\_step=\{:\}. The program is expecting thinstep < steps -\/ burn\_step.'}.format(steps,bstep,tstep))}
 \DoxyCodeLine{305         print(\textcolor{stringliteral}{'Please have another go.'})}
 \DoxyCodeLine{306         exit()}
 \DoxyCodeLine{307     \textcolor{keywordflow}{if} (equi \textcolor{keywordflow}{and} bstep!=0) \textcolor{keywordflow}{or} (equi \textcolor{keywordflow}{and} tstep!=1):}
-\DoxyCodeLine{308         print(\textcolor{stringliteral}{'Invalid inputs: For equilibration run (run\_equil=.TRUE.), we require (defaults) burn\_step=0 and thin\_step=1.'})}
+\DoxyCodeLine{308         print(\textcolor{stringliteral}{'Error: Oops, invalid inputs: For equilibration run (run\_equil=.TRUE.), The program requires (defaults) burn\_step=0 and thin\_step=1.'})}
 \DoxyCodeLine{309         print(\textcolor{stringliteral}{'Either specify these values, or just do not specify these tags so that the program uses the defaults.'})}
 \DoxyCodeLine{310         print(\textcolor{stringliteral}{'Please have another go.'})}
 \DoxyCodeLine{311         exit()}
@@ -572,7 +572,7 @@ Definition at line 161 of file check.\+py.
 \DoxyCodeLine{355     \textcolor{comment}{\# Check order of CONTROL namelist}}
 \DoxyCodeLine{356     order = [tag \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} corder \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} ctags]}
 \DoxyCodeLine{357     \textcolor{keywordflow}{if} not(ctags==order):}
-\DoxyCodeLine{358         print(\textcolor{stringliteral}{'Invalid format. The CONTROL namelist tags need to be in the following order:'})}
+\DoxyCodeLine{358         print(\textcolor{stringliteral}{'Error: Oops, invalid format. The CONTROL namelist tags need to be in the following order:'})}
 \DoxyCodeLine{359         print(\textcolor{stringliteral}{'Please have another go.'})}
 \DoxyCodeLine{360         print(order)}
 \DoxyCodeLine{361         exit()}
@@ -584,7 +584,7 @@ Definition at line 161 of file check.\+py.
 \DoxyCodeLine{367         porder = porder\_hyd.copy()}
 \DoxyCodeLine{368     order = [tag \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} porder \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} ptags]}
 \DoxyCodeLine{369     \textcolor{keywordflow}{if} not(ptags==order):}
-\DoxyCodeLine{370         print(\textcolor{stringliteral}{'Invalid format. The PARAMETERS namelist tags need to be in the following order:'})}
+\DoxyCodeLine{370         print(\textcolor{stringliteral}{'Error: Oops, invalid format. The PARAMETERS namelist tags need to be in the following order:'})}
 \DoxyCodeLine{371         print(\textcolor{stringliteral}{'Please have another go.'})}
 \DoxyCodeLine{372         print(order)}
 \DoxyCodeLine{373         exit()}
