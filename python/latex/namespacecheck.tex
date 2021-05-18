@@ -1,5 +1,10 @@
 \hypertarget{namespacecheck}{}\doxysection{check Namespace Reference}
 \label{namespacecheck}\index{check@{check}}
+
+
+Contains functions that check the input file params.\+txt for \mbox{[}PROGRAM NAME\mbox{]}.  
+
+
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -18,7 +23,7 @@ def \mbox{\hyperlink{namespacecheck_af433b760a4dbdb0972d3b43505f2c4b8}{check\+\_
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-list \mbox{\hyperlink{namespacecheck_a1035b765ccc2f332a8486ebb7fbc34c2}{systems}} = \mbox{[}\textquotesingle{}QHO\textquotesingle{},\textquotesingle{}H2plus\textquotesingle{},\textquotesingle{}H2\textquotesingle{},\textquotesingle{}test\textquotesingle{}\mbox{]}
+list \mbox{\hyperlink{namespacecheck_a80daf9cf96a39fa34181b0ef3fcc5750}{systems}} = \mbox{[}\textquotesingle{}QHO\textquotesingle{},\textquotesingle{}H2plus\textquotesingle{},\textquotesingle{}H2\textquotesingle{},\textquotesingle{}test\textquotesingle{}\mbox{]}
 \item 
 list \mbox{\hyperlink{namespacecheck_a26944ae06b1c4267e761adca3a568740}{boolean}} = \mbox{[}True,False\mbox{]}
 \item 
@@ -52,6 +57,9 @@ list \mbox{\hyperlink{namespacecheck_a40ce55cb1cbe818cf23963d5c4236c4e}{porder\+
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Contains functions that check the input file params.\+txt for \mbox{[}PROGRAM NAME\mbox{]}. 
+
 \doxysubsection{Function Documentation}
 \mbox{\Hypertarget{namespacecheck_a32de2011b794306c74af033f77fef367}\label{namespacecheck_a32de2011b794306c74af033f77fef367}} 
 \index{check@{check}!isvalid@{isvalid}}
@@ -74,16 +82,16 @@ Checks the validity of the input value given for a tag prein params.\+txt.
 \end{DoxyParams}
 
 
-Definition at line 48 of file check.\+py.
+Definition at line 43 of file check.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{48 \textcolor{keyword}{def }\mbox{\hyperlink{namespacecheck_a32de2011b794306c74af033f77fef367}{isvalid}}(tag,value,options):}
-\DoxyCodeLine{49     \textcolor{keywordflow}{if} not(value \textcolor{keywordflow}{in} options):}
-\DoxyCodeLine{50         print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}=\{:\}\(\backslash\)'. Expected one of the following inputs:'}.format(tag,value))}
-\DoxyCodeLine{51         print(options)}
-\DoxyCodeLine{52         exit()}
-\DoxyCodeLine{53 }
+\DoxyCodeLine{43 \textcolor{keyword}{def }\mbox{\hyperlink{namespacecheck_a32de2011b794306c74af033f77fef367}{isvalid}}(tag,value,options):}
+\DoxyCodeLine{44     \textcolor{keywordflow}{if} not(value \textcolor{keywordflow}{in} options):}
+\DoxyCodeLine{45         print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}=\{:\}\(\backslash\)'. Expected one of the following inputs:'}.format(tag,value))}
+\DoxyCodeLine{46         print(options)}
+\DoxyCodeLine{47         exit()}
+\DoxyCodeLine{48 }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -113,16 +121,16 @@ Subroutine that notifies the user when defaults are being used for a certain par
 \end{DoxyParams}
 
 
-Definition at line 59 of file check.\+py.
+Definition at line 54 of file check.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{59 \textcolor{keyword}{def }\mbox{\hyperlink{namespacecheck_a94f283ccc6c56cdbb36649cb73c5da7e}{default\_message}}(tag,dval=None):}
-\DoxyCodeLine{60     \textcolor{keywordflow}{if} dval!=\textcolor{keywordtype}{None}:}
-\DoxyCodeLine{61         print(\textcolor{stringliteral}{'Note: Tag \(\backslash\)'\{:\}\(\backslash\)' is not set. Program will use the default \(\backslash\)'\{:\}=\{:\}\(\backslash\)'.'}.format(tag,tag,dval))}
-\DoxyCodeLine{62     \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{63         print(\textcolor{stringliteral}{'Note: Tag \(\backslash\)'\{:\}\(\backslash\)' is not set. Program will use the default \(\backslash\)'\{:\}\(\backslash\)' grid.'}.format(tag,tag))}
-\DoxyCodeLine{64 }
+\DoxyCodeLine{54 \textcolor{keyword}{def }\mbox{\hyperlink{namespacecheck_a94f283ccc6c56cdbb36649cb73c5da7e}{default\_message}}(tag,dval=None):}
+\DoxyCodeLine{55     \textcolor{keywordflow}{if} dval!=\textcolor{keywordtype}{None}:}
+\DoxyCodeLine{56         print(\textcolor{stringliteral}{'Note: Tag \(\backslash\)'\{:\}\(\backslash\)' is not set. Program will use the default \(\backslash\)'\{:\}=\{:\}\(\backslash\)'.'}.format(tag,tag,dval))}
+\DoxyCodeLine{57     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{58         print(\textcolor{stringliteral}{'Note: Tag \(\backslash\)'\{:\}\(\backslash\)' is not set. Program will use the default \(\backslash\)'\{:\}\(\backslash\)' grid.'}.format(tag,tag))}
+\DoxyCodeLine{59 }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -160,28 +168,28 @@ Checks the input value of a parameter that is expected to be an integer step.
 \begin{DoxyRetVals}{Return values}
 {\em val} & Integer step value from params.\+txt \\
 \hline
-{\em val} & Default step value for parameter of interest \\
+{\em dval} & Default step value for parameter of interest \\
 \hline
 \end{DoxyRetVals}
 
 
-Definition at line 75 of file check.\+py.
+Definition at line 70 of file check.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{75 \textcolor{keyword}{def }\mbox{\hyperlink{namespacecheck_ae808077a5a5aa3583bbf20a5fb38131d}{check\_step}}(tag,tags,params,defaults,idx):}
-\DoxyCodeLine{76     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
-\DoxyCodeLine{77         val = params[tag]}
-\DoxyCodeLine{78         \textcolor{keywordflow}{if} not(type(val) \textcolor{keywordflow}{is} int):}
-\DoxyCodeLine{79             print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}=\{:\}\(\backslash\)': Expected positive integer for tag \(\backslash\)'\{:\}\(\backslash\)'.'}.format(tag,val,tag))}
-\DoxyCodeLine{80             exit()}
-\DoxyCodeLine{81         \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{82             \textcolor{keywordflow}{return} val}
-\DoxyCodeLine{83     \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{84         dval = defaults[idx]}
-\DoxyCodeLine{85         \mbox{\hyperlink{namespacecheck_a94f283ccc6c56cdbb36649cb73c5da7e}{default\_message}}(tag,dval)}
-\DoxyCodeLine{86         \textcolor{keywordflow}{return} dval}
-\DoxyCodeLine{87 }
+\DoxyCodeLine{70 \textcolor{keyword}{def }\mbox{\hyperlink{namespacecheck_ae808077a5a5aa3583bbf20a5fb38131d}{check\_step}}(tag,tags,params,defaults,idx):}
+\DoxyCodeLine{71     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
+\DoxyCodeLine{72         val = params[tag]}
+\DoxyCodeLine{73         \textcolor{keywordflow}{if} not(type(val) \textcolor{keywordflow}{is} int):}
+\DoxyCodeLine{74             print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}=\{:\}\(\backslash\)': Expected positive integer for tag \(\backslash\)'\{:\}\(\backslash\)'.'}.format(tag,val,tag))}
+\DoxyCodeLine{75             exit()}
+\DoxyCodeLine{76         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{77             \textcolor{keywordflow}{return} val}
+\DoxyCodeLine{78     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{79         dval = defaults[idx]}
+\DoxyCodeLine{80         \mbox{\hyperlink{namespacecheck_a94f283ccc6c56cdbb36649cb73c5da7e}{default\_message}}(tag,dval)}
+\DoxyCodeLine{81         \textcolor{keywordflow}{return} dval}
+\DoxyCodeLine{82 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -225,20 +233,20 @@ Checks the input value of a parameter that is expected to be a float.
 \end{DoxyParams}
 
 
-Definition at line 96 of file check.\+py.
+Definition at line 91 of file check.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{96 \textcolor{keyword}{def }\mbox{\hyperlink{namespacecheck_a92fcf5aad4145a0f4bbc3d52703a64ab}{check\_float}}(tag,tags,params,defaults,idx):}
-\DoxyCodeLine{97     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
-\DoxyCodeLine{98         val = params[tag]}
-\DoxyCodeLine{99         \textcolor{keywordflow}{if} not(type(val) \textcolor{keywordflow}{is} float):}
-\DoxyCodeLine{100             print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}=\{:\}\(\backslash\)': Expected positive float for tag \(\backslash\)'\{:\}\(\backslash\)'.'}.format(tag,val,tag))}
-\DoxyCodeLine{101             exit()}
-\DoxyCodeLine{102     \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{103         dval = defaults[idx]}
-\DoxyCodeLine{104         \mbox{\hyperlink{namespacecheck_a94f283ccc6c56cdbb36649cb73c5da7e}{default\_message}}(tag,dval)}
-\DoxyCodeLine{105 }
+\DoxyCodeLine{91 \textcolor{keyword}{def }\mbox{\hyperlink{namespacecheck_a92fcf5aad4145a0f4bbc3d52703a64ab}{check\_float}}(tag,tags,params,defaults,idx):}
+\DoxyCodeLine{92     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
+\DoxyCodeLine{93         val = params[tag]}
+\DoxyCodeLine{94         \textcolor{keywordflow}{if} not(type(val) \textcolor{keywordflow}{is} float):}
+\DoxyCodeLine{95             print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}=\{:\}\(\backslash\)': Expected positive float for tag \(\backslash\)'\{:\}\(\backslash\)'.'}.format(tag,val,tag))}
+\DoxyCodeLine{96             exit()}
+\DoxyCodeLine{97     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{98         dval = defaults[idx]}
+\DoxyCodeLine{99         \mbox{\hyperlink{namespacecheck_a94f283ccc6c56cdbb36649cb73c5da7e}{default\_message}}(tag,dval)}
+\DoxyCodeLine{100 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -278,43 +286,44 @@ Checks the input values for a grid parameter.
 \end{DoxyParams}
 
 
-Definition at line 112 of file check.\+py.
+Definition at line 107 of file check.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{112 \textcolor{keyword}{def }\mbox{\hyperlink{namespacecheck_ae45c5a9a85b450aa57fb0afea8d11c59}{check\_grid}}(tag,tags,params):}
-\DoxyCodeLine{113     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
-\DoxyCodeLine{114         length = len(params[tag])}
-\DoxyCodeLine{115         \textcolor{keywordflow}{if} length == 3:}
-\DoxyCodeLine{116             mini, maxi, num = params[tag]}
-\DoxyCodeLine{117             \textcolor{keywordflow}{if} not(type(mini) \textcolor{keywordflow}{is} float):}
-\DoxyCodeLine{118                 print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}\(\backslash\)' min = \{:\}: Expected positive float for \(\backslash\)'\{:\}\(\backslash\)' grid minimum.'}.format(tag,mini,tag))}
-\DoxyCodeLine{119                 exit()}
-\DoxyCodeLine{120             \textcolor{keywordflow}{elif} not(type(maxi) \textcolor{keywordflow}{is} float):}
-\DoxyCodeLine{121                 print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}\(\backslash\)' max = \{:\}: Expected positive float for \(\backslash\)'\{:\}\(\backslash\)' grid maximum.'}.format(tag,maxi,tag))}
-\DoxyCodeLine{122                 exit()}
-\DoxyCodeLine{123             \textcolor{keywordflow}{elif} mini > maxi:}
-\DoxyCodeLine{124                 print(\textcolor{stringliteral}{'Invalid input: Require minimum < maximum for \(\backslash\)'\{:\}\(\backslash\)' grid.'}.format(tag))}
-\DoxyCodeLine{125                 exit()}
-\DoxyCodeLine{126             \textcolor{keywordflow}{elif} not(type(num) \textcolor{keywordflow}{is} int):}
-\DoxyCodeLine{127                 print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}\(\backslash\)' num = \{:\}: Expected positive integer number of points in \(\backslash\)'\{:\}\(\backslash\)' grid.'}.format(tag,num,tag))}
-\DoxyCodeLine{128                 exit()}
-\DoxyCodeLine{129             \textcolor{keywordflow}{elif} num <= 0:}
-\DoxyCodeLine{130                 print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}\(\backslash\)' num = \{:\}: Expected positive integer number of points in \(\backslash\)'\{:\}\(\backslash\)' grid.'}.format(tag,num,tag))}
-\DoxyCodeLine{131                 exit()}
-\DoxyCodeLine{132             \textcolor{keywordflow}{elif} mini==maxi \textcolor{keywordflow}{and} num!=1:}
-\DoxyCodeLine{133                 print(\textcolor{stringliteral}{'Invalid input: For \(\backslash\)'\{:\}\(\backslash\)' grid, if minimum=maximum, expected num=1.'}.format(tag))}
-\DoxyCodeLine{134                 exit()}
-\DoxyCodeLine{135         \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{136             print(\textcolor{stringliteral}{'Invalid input: Expected three input values (minimum, maximum, number of points) for grid \(\backslash\)'\{:\}\(\backslash\)'.'}.format(tag))}
-\DoxyCodeLine{137             exit()}
-\DoxyCodeLine{138     \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{139         \mbox{\hyperlink{namespacecheck_a94f283ccc6c56cdbb36649cb73c5da7e}{default\_message}}(tag)}
+\DoxyCodeLine{107 \textcolor{keyword}{def }\mbox{\hyperlink{namespacecheck_ae45c5a9a85b450aa57fb0afea8d11c59}{check\_grid}}(tag,tags,params):}
+\DoxyCodeLine{108     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
+\DoxyCodeLine{109         length = len(params[tag])}
+\DoxyCodeLine{110         \textcolor{keywordflow}{if} length == 3:}
+\DoxyCodeLine{111             mini, maxi, num = params[tag]}
+\DoxyCodeLine{112             \textcolor{keywordflow}{if} not(type(mini) \textcolor{keywordflow}{is} float):}
+\DoxyCodeLine{113                 print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}\(\backslash\)' min = \{:\}: Expected positive float for \(\backslash\)'\{:\}\(\backslash\)' grid minimum.'}.format(tag,mini,tag))}
+\DoxyCodeLine{114                 exit()}
+\DoxyCodeLine{115             \textcolor{keywordflow}{elif} not(type(maxi) \textcolor{keywordflow}{is} float):}
+\DoxyCodeLine{116                 print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}\(\backslash\)' max = \{:\}: Expected positive float for \(\backslash\)'\{:\}\(\backslash\)' grid maximum.'}.format(tag,maxi,tag))}
+\DoxyCodeLine{117                 exit()}
+\DoxyCodeLine{118             \textcolor{keywordflow}{elif} mini > maxi:}
+\DoxyCodeLine{119                 print(\textcolor{stringliteral}{'Invalid input: Require minimum < maximum for \(\backslash\)'\{:\}\(\backslash\)' grid.'}.format(tag))}
+\DoxyCodeLine{120                 exit()}
+\DoxyCodeLine{121             \textcolor{keywordflow}{elif} not(type(num) \textcolor{keywordflow}{is} int):}
+\DoxyCodeLine{122                 print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}\(\backslash\)' num = \{:\}: Expected positive integer number of points in \(\backslash\)'\{:\}\(\backslash\)' grid.'}.format(tag,num,tag))}
+\DoxyCodeLine{123                 exit()}
+\DoxyCodeLine{124             \textcolor{keywordflow}{elif} num <= 0:}
+\DoxyCodeLine{125                 print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}\(\backslash\)' num = \{:\}: Expected positive integer number of points in \(\backslash\)'\{:\}\(\backslash\)' grid.'}.format(tag,num,tag))}
+\DoxyCodeLine{126                 exit()}
+\DoxyCodeLine{127             \textcolor{keywordflow}{elif} mini==maxi \textcolor{keywordflow}{and} num!=1:}
+\DoxyCodeLine{128                 print(\textcolor{stringliteral}{'Invalid input: For \(\backslash\)'\{:\}\(\backslash\)' grid, if minimum=maximum, expected num=1.'}.format(tag))}
+\DoxyCodeLine{129                 exit()}
+\DoxyCodeLine{130         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{131             print(\textcolor{stringliteral}{'Invalid input: Expected three input values (minimum, maximum, number of points) for grid \(\backslash\)'\{:\}\(\backslash\)'.'}.format(tag))}
+\DoxyCodeLine{132             exit()}
+\DoxyCodeLine{133     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{134         \mbox{\hyperlink{namespacecheck_a94f283ccc6c56cdbb36649cb73c5da7e}{default\_message}}(tag)}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{138 \textcolor{comment}{\# MAJOR CHECK FUNCTIONS -\/}}
+\DoxyCodeLine{139 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
 \DoxyCodeLine{140 }
-\DoxyCodeLine{141 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{142 \textcolor{comment}{\# MAJOR CHECK FUNCTION -\/}}
-\DoxyCodeLine{143 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{144 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -352,212 +361,212 @@ Checks that required namelists are present in params.\+txt. Checks that the tags
 \end{DoxyParams}
 
 
-Definition at line 155 of file check.\+py.
+Definition at line 151 of file check.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{155 \textcolor{keyword}{def }\mbox{\hyperlink{namespacecheck_af433b760a4dbdb0972d3b43505f2c4b8}{check\_inputs}}(nml):}
-\DoxyCodeLine{156 }
-\DoxyCodeLine{157     \textcolor{comment}{\# Check for CONTROL header}}
-\DoxyCodeLine{158     headers = [header \textcolor{keywordflow}{for} header \textcolor{keywordflow}{in} nml]}
-\DoxyCodeLine{159     \textcolor{keywordflow}{if} \textcolor{keywordflow}{not} (\textcolor{stringliteral}{'control'} \textcolor{keywordflow}{in} headers):}
-\DoxyCodeLine{160         print(\textcolor{stringliteral}{'Invalid format: CONTROL namelist is missing.'})}
-\DoxyCodeLine{161         exit()}
-\DoxyCodeLine{162 }
-\DoxyCodeLine{163     \textcolor{comment}{\# Extract tags of CONTROL namelist}}
-\DoxyCodeLine{164     control = nml[\textcolor{stringliteral}{'control'}]}
-\DoxyCodeLine{165     tags = [tag \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} control]}
-\DoxyCodeLine{166     ctags = tags.copy()}
-\DoxyCodeLine{167 }
-\DoxyCodeLine{168     \textcolor{comment}{\# Check system}}
-\DoxyCodeLine{169     \textcolor{comment}{\# Essential tag}}
-\DoxyCodeLine{170     tag = \textcolor{stringliteral}{'p\_system'}}
-\DoxyCodeLine{171     \textcolor{keywordflow}{if} not(tag \textcolor{keywordflow}{in} tags):}
-\DoxyCodeLine{172         print(\textcolor{stringliteral}{'Incomplete params.txt: The \(\backslash\)'\{:\}\(\backslash\)' tag is missing.'}.format(tag))}
-\DoxyCodeLine{173         exit()}
-\DoxyCodeLine{174     p\_system = control[tag]}
-\DoxyCodeLine{175     \mbox{\hyperlink{namespacecheck_a32de2011b794306c74af033f77fef367}{isvalid}}(tag,p\_system,systems)}
-\DoxyCodeLine{176 }
-\DoxyCodeLine{177     \textcolor{comment}{\# Special Test Case}}
-\DoxyCodeLine{178     \textcolor{keywordflow}{if} p\_system == \textcolor{stringliteral}{'test'}:}
-\DoxyCodeLine{179         \textcolor{keywordflow}{return}}
-\DoxyCodeLine{180     \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{181         \textcolor{comment}{\# Check for PARAMETERS namelist}}
-\DoxyCodeLine{182         \textcolor{keywordflow}{if} \textcolor{keywordflow}{not} (\textcolor{stringliteral}{'parameters'} \textcolor{keywordflow}{in} headers):}
-\DoxyCodeLine{183             print(\textcolor{stringliteral}{'Invalid format: PARAMETERS namelist is missing.'})}
-\DoxyCodeLine{184             exit()}
-\DoxyCodeLine{185 }
-\DoxyCodeLine{186     \textcolor{comment}{\# Check run\_equil}}
-\DoxyCodeLine{187     \textcolor{comment}{\# Default run\_equil=.FALSE.}}
-\DoxyCodeLine{188     tag = \textcolor{stringliteral}{'run\_equil'}}
-\DoxyCodeLine{189     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
-\DoxyCodeLine{190         equi = control[tag]}
-\DoxyCodeLine{191         \mbox{\hyperlink{namespacecheck_a32de2011b794306c74af033f77fef367}{isvalid}}(tag,equi,boolean)}
-\DoxyCodeLine{192     \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{193         \mbox{\hyperlink{namespacecheck_a94f283ccc6c56cdbb36649cb73c5da7e}{default\_message}}(tag,d\_equi)}
-\DoxyCodeLine{194 }
-\DoxyCodeLine{195     \textcolor{comment}{\# Check run\_restart}}
-\DoxyCodeLine{196     \textcolor{comment}{\# Default run\_restart=.FALSE.}}
-\DoxyCodeLine{197     tag = \textcolor{stringliteral}{'run\_restart'}}
-\DoxyCodeLine{198     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
-\DoxyCodeLine{199         rres = control[tag]}
-\DoxyCodeLine{200         \mbox{\hyperlink{namespacecheck_a32de2011b794306c74af033f77fef367}{isvalid}}(tag,rres,boolean)}
-\DoxyCodeLine{201     \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{202         \mbox{\hyperlink{namespacecheck_a94f283ccc6c56cdbb36649cb73c5da7e}{default\_message}}(tag,d\_rres)}
-\DoxyCodeLine{203     }
-\DoxyCodeLine{204     \textcolor{comment}{\# Check write\_restart}}
-\DoxyCodeLine{205     \textcolor{comment}{\# Default write\_restart=.TRUE.}}
-\DoxyCodeLine{206     tag = \textcolor{stringliteral}{'write\_restart'}}
-\DoxyCodeLine{207     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
-\DoxyCodeLine{208         wres = control[tag]}
-\DoxyCodeLine{209         \mbox{\hyperlink{namespacecheck_a32de2011b794306c74af033f77fef367}{isvalid}}(tag,wres,boolean)}
-\DoxyCodeLine{210     \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{211         wres = d\_wres}
-\DoxyCodeLine{212         \mbox{\hyperlink{namespacecheck_a94f283ccc6c56cdbb36649cb73c5da7e}{default\_message}}(tag,d\_wres)}
-\DoxyCodeLine{213 }
-\DoxyCodeLine{214     \textcolor{comment}{\# Check restart\_step}}
-\DoxyCodeLine{215     \textcolor{comment}{\# Default restart\_step=0}}
-\DoxyCodeLine{216     \textcolor{keywordflow}{if} wres:}
-\DoxyCodeLine{217         tag = \textcolor{stringliteral}{'restart\_step'}}
-\DoxyCodeLine{218         \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
-\DoxyCodeLine{219             rstep = control[tag]}
-\DoxyCodeLine{220             \textcolor{keywordflow}{if} not(type(rstep) \textcolor{keywordflow}{is} int):}
-\DoxyCodeLine{221                 print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}=\{:\}\(\backslash\)': Expected integer >=0 for tag \(\backslash\)'\{:\}\(\backslash\)'.'}.format(tag,rstep,tag))}
-\DoxyCodeLine{222                 exit()}
-\DoxyCodeLine{223             \textcolor{keywordflow}{elif} rstep<0:}
-\DoxyCodeLine{224                 print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}=\{:\}\(\backslash\)': Expected integer >=0 for tag \(\backslash\)'\{:\}\(\backslash\)'.'}.format(tag,rstep,tag))}
-\DoxyCodeLine{225                 exit()}
-\DoxyCodeLine{226         \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{227             \mbox{\hyperlink{namespacecheck_a94f283ccc6c56cdbb36649cb73c5da7e}{default\_message}}(tag,d\_rstep)}
-\DoxyCodeLine{228 }
-\DoxyCodeLine{229     \textcolor{comment}{\# Check write\_chains}}
-\DoxyCodeLine{230     \textcolor{comment}{\# Default write\_chains=.FALSE. }}
-\DoxyCodeLine{231     tag = \textcolor{stringliteral}{'write\_chains'}}
-\DoxyCodeLine{232     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
-\DoxyCodeLine{233         chn = control[tag]}
-\DoxyCodeLine{234         \mbox{\hyperlink{namespacecheck_a32de2011b794306c74af033f77fef367}{isvalid}}(tag,chn,boolean)}
-\DoxyCodeLine{235         \textcolor{keywordflow}{if} equi \textcolor{keywordflow}{and} chn:}
-\DoxyCodeLine{236             \textcolor{comment}{\# For equilibration runs, it is redundant to set write\_chains=.TRUE.}}
-\DoxyCodeLine{237             print(\textcolor{stringliteral}{'Equilibration runs (run\_equil=.TRUE.) automatically output the Markov chains.'})}
-\DoxyCodeLine{238             print(\textcolor{stringliteral}{'It is hence redundant to set write\_chains=.TRUE. along with run\_equil=.TRUE.,'})}
-\DoxyCodeLine{239             print(\textcolor{stringliteral}{'as that instructs the program to write the Markov chains a second time.'})}
-\DoxyCodeLine{240             print(\textcolor{stringliteral}{'For efficiency, consider removing the tag "{}write\_chains"{} from this CONTROL namelist.'})}
-\DoxyCodeLine{241     \textcolor{keywordflow}{elif} (\textcolor{keywordflow}{not} equi):}
-\DoxyCodeLine{242         \mbox{\hyperlink{namespacecheck_a94f283ccc6c56cdbb36649cb73c5da7e}{default\_message}}(tag,d\_chn)}
-\DoxyCodeLine{243 }
-\DoxyCodeLine{244     \textcolor{comment}{\# Check write\_log}}
-\DoxyCodeLine{245     \textcolor{comment}{\# Default write\_log=.FALSE. }}
-\DoxyCodeLine{246     tag = \textcolor{stringliteral}{'write\_log'}}
-\DoxyCodeLine{247     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
-\DoxyCodeLine{248         wlog = control[tag]}
-\DoxyCodeLine{249         \mbox{\hyperlink{namespacecheck_a32de2011b794306c74af033f77fef367}{isvalid}}(tag,wlog,boolean)}
-\DoxyCodeLine{250     \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{251         \mbox{\hyperlink{namespacecheck_a94f283ccc6c56cdbb36649cb73c5da7e}{default\_message}}(tag,d\_log)}
-\DoxyCodeLine{252 }
-\DoxyCodeLine{253 }
-\DoxyCodeLine{254     \textcolor{comment}{\# Check p\_system of PARAMETERS namelist}}
-\DoxyCodeLine{255     parameters = nml[\textcolor{stringliteral}{'parameters'}]}
-\DoxyCodeLine{256     sys\_small = [\textcolor{stringliteral}{'qho'},\textcolor{stringliteral}{'h2plus'},\textcolor{stringliteral}{'h2'},\textcolor{stringliteral}{'test'}]}
-\DoxyCodeLine{257     par\_sys = [sys \textcolor{keywordflow}{for} sys \textcolor{keywordflow}{in} parameters]}
-\DoxyCodeLine{258     \textcolor{keywordflow}{if} len(par\_sys)>1:}
-\DoxyCodeLine{259         print(\textcolor{stringliteral}{'Invalid input: Either multiple or no system defitions present in PARAMETERS namelist tags.'})}
-\DoxyCodeLine{260         print(\textcolor{stringliteral}{'Expected one, and only one, of the following strings before a percent symbol:'})}
+\DoxyCodeLine{151 \textcolor{keyword}{def }\mbox{\hyperlink{namespacecheck_af433b760a4dbdb0972d3b43505f2c4b8}{check\_inputs}}(nml):}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153     \textcolor{comment}{\# Check for CONTROL header}}
+\DoxyCodeLine{154     headers = [header \textcolor{keywordflow}{for} header \textcolor{keywordflow}{in} nml]}
+\DoxyCodeLine{155     \textcolor{keywordflow}{if} \textcolor{keywordflow}{not} (\textcolor{stringliteral}{'control'} \textcolor{keywordflow}{in} headers):}
+\DoxyCodeLine{156         print(\textcolor{stringliteral}{'Invalid format: CONTROL namelist is missing.'})}
+\DoxyCodeLine{157         exit()}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159     \textcolor{comment}{\# Extract tags of CONTROL namelist}}
+\DoxyCodeLine{160     control = nml[\textcolor{stringliteral}{'control'}]}
+\DoxyCodeLine{161     tags = [tag \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} control]}
+\DoxyCodeLine{162     ctags = tags.copy()}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164     \textcolor{comment}{\# Check system}}
+\DoxyCodeLine{165     \textcolor{comment}{\# Essential tag}}
+\DoxyCodeLine{166     tag = \textcolor{stringliteral}{'p\_system'}}
+\DoxyCodeLine{167     \textcolor{keywordflow}{if} not(tag \textcolor{keywordflow}{in} tags):}
+\DoxyCodeLine{168         print(\textcolor{stringliteral}{'Incomplete params.txt: The \(\backslash\)'\{:\}\(\backslash\)' tag is missing.'}.format(tag))}
+\DoxyCodeLine{169         exit()}
+\DoxyCodeLine{170     p\_system = control[tag]}
+\DoxyCodeLine{171     \mbox{\hyperlink{namespacecheck_a32de2011b794306c74af033f77fef367}{isvalid}}(tag,p\_system,systems)}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173     \textcolor{comment}{\# Special Test Case}}
+\DoxyCodeLine{174     \textcolor{keywordflow}{if} p\_system == \textcolor{stringliteral}{'test'}:}
+\DoxyCodeLine{175         \textcolor{keywordflow}{return}}
+\DoxyCodeLine{176     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{177         \textcolor{comment}{\# Check for PARAMETERS namelist}}
+\DoxyCodeLine{178         \textcolor{keywordflow}{if} \textcolor{keywordflow}{not} (\textcolor{stringliteral}{'parameters'} \textcolor{keywordflow}{in} headers):}
+\DoxyCodeLine{179             print(\textcolor{stringliteral}{'Invalid format: PARAMETERS namelist is missing.'})}
+\DoxyCodeLine{180             exit()}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182     \textcolor{comment}{\# Check run\_equil}}
+\DoxyCodeLine{183     \textcolor{comment}{\# Default run\_equil=.FALSE.}}
+\DoxyCodeLine{184     tag = \textcolor{stringliteral}{'run\_equil'}}
+\DoxyCodeLine{185     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
+\DoxyCodeLine{186         equi = control[tag]}
+\DoxyCodeLine{187         \mbox{\hyperlink{namespacecheck_a32de2011b794306c74af033f77fef367}{isvalid}}(tag,equi,boolean)}
+\DoxyCodeLine{188     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{189         \mbox{\hyperlink{namespacecheck_a94f283ccc6c56cdbb36649cb73c5da7e}{default\_message}}(tag,d\_equi)}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191     \textcolor{comment}{\# Check run\_restart}}
+\DoxyCodeLine{192     \textcolor{comment}{\# Default run\_restart=.FALSE.}}
+\DoxyCodeLine{193     tag = \textcolor{stringliteral}{'run\_restart'}}
+\DoxyCodeLine{194     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
+\DoxyCodeLine{195         rres = control[tag]}
+\DoxyCodeLine{196         \mbox{\hyperlink{namespacecheck_a32de2011b794306c74af033f77fef367}{isvalid}}(tag,rres,boolean)}
+\DoxyCodeLine{197     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{198         \mbox{\hyperlink{namespacecheck_a94f283ccc6c56cdbb36649cb73c5da7e}{default\_message}}(tag,d\_rres)}
+\DoxyCodeLine{199     }
+\DoxyCodeLine{200     \textcolor{comment}{\# Check write\_restart}}
+\DoxyCodeLine{201     \textcolor{comment}{\# Default write\_restart=.TRUE.}}
+\DoxyCodeLine{202     tag = \textcolor{stringliteral}{'write\_restart'}}
+\DoxyCodeLine{203     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
+\DoxyCodeLine{204         wres = control[tag]}
+\DoxyCodeLine{205         \mbox{\hyperlink{namespacecheck_a32de2011b794306c74af033f77fef367}{isvalid}}(tag,wres,boolean)}
+\DoxyCodeLine{206     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{207         wres = d\_wres}
+\DoxyCodeLine{208         \mbox{\hyperlink{namespacecheck_a94f283ccc6c56cdbb36649cb73c5da7e}{default\_message}}(tag,d\_wres)}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210     \textcolor{comment}{\# Check restart\_step}}
+\DoxyCodeLine{211     \textcolor{comment}{\# Default restart\_step=0}}
+\DoxyCodeLine{212     \textcolor{keywordflow}{if} wres:}
+\DoxyCodeLine{213         tag = \textcolor{stringliteral}{'restart\_step'}}
+\DoxyCodeLine{214         \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
+\DoxyCodeLine{215             rstep = control[tag]}
+\DoxyCodeLine{216             \textcolor{keywordflow}{if} not(type(rstep) \textcolor{keywordflow}{is} int):}
+\DoxyCodeLine{217                 print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}=\{:\}\(\backslash\)': Expected integer >=0 for tag \(\backslash\)'\{:\}\(\backslash\)'.'}.format(tag,rstep,tag))}
+\DoxyCodeLine{218                 exit()}
+\DoxyCodeLine{219             \textcolor{keywordflow}{elif} rstep<0:}
+\DoxyCodeLine{220                 print(\textcolor{stringliteral}{'Invalid input \(\backslash\)'\{:\}=\{:\}\(\backslash\)': Expected integer >=0 for tag \(\backslash\)'\{:\}\(\backslash\)'.'}.format(tag,rstep,tag))}
+\DoxyCodeLine{221                 exit()}
+\DoxyCodeLine{222         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{223             \mbox{\hyperlink{namespacecheck_a94f283ccc6c56cdbb36649cb73c5da7e}{default\_message}}(tag,d\_rstep)}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225     \textcolor{comment}{\# Check write\_chains}}
+\DoxyCodeLine{226     \textcolor{comment}{\# Default write\_chains=.FALSE. }}
+\DoxyCodeLine{227     tag = \textcolor{stringliteral}{'write\_chains'}}
+\DoxyCodeLine{228     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
+\DoxyCodeLine{229         chn = control[tag]}
+\DoxyCodeLine{230         \mbox{\hyperlink{namespacecheck_a32de2011b794306c74af033f77fef367}{isvalid}}(tag,chn,boolean)}
+\DoxyCodeLine{231         \textcolor{keywordflow}{if} equi \textcolor{keywordflow}{and} chn:}
+\DoxyCodeLine{232             \textcolor{comment}{\# For equilibration runs, it is redundant to set write\_chains=.TRUE.}}
+\DoxyCodeLine{233             print(\textcolor{stringliteral}{'Equilibration runs (run\_equil=.TRUE.) automatically output the Markov chains.'})}
+\DoxyCodeLine{234             print(\textcolor{stringliteral}{'It is hence redundant to set write\_chains=.TRUE. along with run\_equil=.TRUE.,'})}
+\DoxyCodeLine{235             print(\textcolor{stringliteral}{'as that instructs the program to write the Markov chains a second time.'})}
+\DoxyCodeLine{236             print(\textcolor{stringliteral}{'For efficiency, consider removing the tag "{}write\_chains"{} from this CONTROL namelist.'})}
+\DoxyCodeLine{237     \textcolor{keywordflow}{elif} (\textcolor{keywordflow}{not} equi):}
+\DoxyCodeLine{238         \mbox{\hyperlink{namespacecheck_a94f283ccc6c56cdbb36649cb73c5da7e}{default\_message}}(tag,d\_chn)}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240     \textcolor{comment}{\# Check write\_log}}
+\DoxyCodeLine{241     \textcolor{comment}{\# Default write\_log=.FALSE. }}
+\DoxyCodeLine{242     tag = \textcolor{stringliteral}{'write\_log'}}
+\DoxyCodeLine{243     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
+\DoxyCodeLine{244         wlog = control[tag]}
+\DoxyCodeLine{245         \mbox{\hyperlink{namespacecheck_a32de2011b794306c74af033f77fef367}{isvalid}}(tag,wlog,boolean)}
+\DoxyCodeLine{246     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{247         \mbox{\hyperlink{namespacecheck_a94f283ccc6c56cdbb36649cb73c5da7e}{default\_message}}(tag,d\_log)}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250     \textcolor{comment}{\# Check p\_system of PARAMETERS namelist}}
+\DoxyCodeLine{251     parameters = nml[\textcolor{stringliteral}{'parameters'}]}
+\DoxyCodeLine{252     sys\_small = [\textcolor{stringliteral}{'qho'},\textcolor{stringliteral}{'h2plus'},\textcolor{stringliteral}{'h2'},\textcolor{stringliteral}{'test'}]}
+\DoxyCodeLine{253     par\_sys = [sys \textcolor{keywordflow}{for} sys \textcolor{keywordflow}{in} parameters]}
+\DoxyCodeLine{254     \textcolor{keywordflow}{if} len(par\_sys)>1:}
+\DoxyCodeLine{255         print(\textcolor{stringliteral}{'Invalid input: Either multiple or no system defitions present in PARAMETERS namelist tags.'})}
+\DoxyCodeLine{256         print(\textcolor{stringliteral}{'Expected one, and only one, of the following strings before a percent symbol:'})}
+\DoxyCodeLine{257         print(systems)}
+\DoxyCodeLine{258         exit()}
+\DoxyCodeLine{259     \textcolor{keywordflow}{elif} \textcolor{keywordflow}{not} (par\_sys[0] \textcolor{keywordflow}{in} sys\_small):}
+\DoxyCodeLine{260         print(\textcolor{stringliteral}{'Invalid system definition in PARAMETERS namelist tags. Expected one of the following strings before a percent symbol:'})}
 \DoxyCodeLine{261         print(systems)}
 \DoxyCodeLine{262         exit()}
-\DoxyCodeLine{263     \textcolor{keywordflow}{elif} \textcolor{keywordflow}{not} (par\_sys[0] \textcolor{keywordflow}{in} sys\_small):}
-\DoxyCodeLine{264         print(\textcolor{stringliteral}{'Invalid system definition in PARAMETERS namelist tags. Expected one of the following strings before a percent symbol:'})}
-\DoxyCodeLine{265         print(systems)}
-\DoxyCodeLine{266         exit()}
-\DoxyCodeLine{267 }
-\DoxyCodeLine{268     \textcolor{comment}{\# Extract tags of PARAMETERS namelist}}
-\DoxyCodeLine{269     params = parameters[par\_sys[0]]}
-\DoxyCodeLine{270     tags = [tag \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} params]}
-\DoxyCodeLine{271     ptags = tags.copy()}
-\DoxyCodeLine{272 }
-\DoxyCodeLine{273     \textcolor{comment}{\# Get system index for defaults}}
-\DoxyCodeLine{274     sys\_idx = systems.index(p\_system)}
-\DoxyCodeLine{275 }
-\DoxyCodeLine{276     \textcolor{comment}{\# Check total steps}}
-\DoxyCodeLine{277     steps = \mbox{\hyperlink{namespacecheck_ae808077a5a5aa3583bbf20a5fb38131d}{check\_step}}(\textcolor{stringliteral}{'steps'},tags,params,d\_steps,sys\_idx)}
-\DoxyCodeLine{278 }
-\DoxyCodeLine{279     \textcolor{comment}{\# Check burn steps}}
-\DoxyCodeLine{280     bstep = \mbox{\hyperlink{namespacecheck_ae808077a5a5aa3583bbf20a5fb38131d}{check\_step}}(\textcolor{stringliteral}{'burn\_step'},tags,params,d\_bstep,sys\_idx)}
-\DoxyCodeLine{281 }
-\DoxyCodeLine{282     \textcolor{comment}{\# Check thin steps}}
-\DoxyCodeLine{283     tstep = \mbox{\hyperlink{namespacecheck_ae808077a5a5aa3583bbf20a5fb38131d}{check\_step}}(\textcolor{stringliteral}{'thin\_step'},tags,params,d\_tstep,sys\_idx)}
-\DoxyCodeLine{284 }
-\DoxyCodeLine{285     \textcolor{comment}{\# Check compatibility of steps}}
-\DoxyCodeLine{286     \textcolor{keywordflow}{if} bstep >= steps:}
-\DoxyCodeLine{287         print(\textcolor{stringliteral}{'Incompatable inputs steps=\{:\} and burn\_step=\{:\}. Expected burn\_step < step.'}.format(steps,bstep))}
-\DoxyCodeLine{288         exit()}
-\DoxyCodeLine{289     \textcolor{keywordflow}{if} tstep >= steps-\/bstep:}
-\DoxyCodeLine{290         print(\textcolor{stringliteral}{'Incompatable inputs steps=\{:\}, burn\_step=\{:\} and thin\_step=\{:\}. Expected thinstep < steps -\/ burn\_step.'}.format(steps,bstep,tstep))}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{264     \textcolor{comment}{\# Extract tags of PARAMETERS namelist}}
+\DoxyCodeLine{265     params = parameters[par\_sys[0]]}
+\DoxyCodeLine{266     tags = [tag \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} params]}
+\DoxyCodeLine{267     ptags = tags.copy()}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269     \textcolor{comment}{\# Get system index for defaults}}
+\DoxyCodeLine{270     sys\_idx = systems.index(p\_system)}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272     \textcolor{comment}{\# Check total steps}}
+\DoxyCodeLine{273     steps = \mbox{\hyperlink{namespacecheck_ae808077a5a5aa3583bbf20a5fb38131d}{check\_step}}(\textcolor{stringliteral}{'steps'},tags,params,d\_steps,sys\_idx)}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275     \textcolor{comment}{\# Check burn steps}}
+\DoxyCodeLine{276     bstep = \mbox{\hyperlink{namespacecheck_ae808077a5a5aa3583bbf20a5fb38131d}{check\_step}}(\textcolor{stringliteral}{'burn\_step'},tags,params,d\_bstep,sys\_idx)}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278     \textcolor{comment}{\# Check thin steps}}
+\DoxyCodeLine{279     tstep = \mbox{\hyperlink{namespacecheck_ae808077a5a5aa3583bbf20a5fb38131d}{check\_step}}(\textcolor{stringliteral}{'thin\_step'},tags,params,d\_tstep,sys\_idx)}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281     \textcolor{comment}{\# Check compatibility of steps}}
+\DoxyCodeLine{282     \textcolor{keywordflow}{if} bstep >= steps:}
+\DoxyCodeLine{283         print(\textcolor{stringliteral}{'Incompatable inputs steps=\{:\} and burn\_step=\{:\}. Expected burn\_step < step.'}.format(steps,bstep))}
+\DoxyCodeLine{284         exit()}
+\DoxyCodeLine{285     \textcolor{keywordflow}{if} tstep >= steps-\/bstep:}
+\DoxyCodeLine{286         print(\textcolor{stringliteral}{'Incompatable inputs steps=\{:\}, burn\_step=\{:\} and thin\_step=\{:\}. Expected thinstep < steps -\/ burn\_step.'}.format(steps,bstep,tstep))}
+\DoxyCodeLine{287         exit()}
+\DoxyCodeLine{288     \textcolor{keywordflow}{if} (equi \textcolor{keywordflow}{and} bstep!=0) \textcolor{keywordflow}{or} (equi \textcolor{keywordflow}{and} tstep!=1):}
+\DoxyCodeLine{289         print(\textcolor{stringliteral}{'Invalid inputs: For equilibration run (run\_equil=.TRUE.), we require (defaults) burn\_step=0 and thin\_step=1.'})}
+\DoxyCodeLine{290         print(\textcolor{stringliteral}{'Either specify these values, or just do not specify these tags so that the program uses the defaults.'})}
 \DoxyCodeLine{291         exit()}
-\DoxyCodeLine{292     \textcolor{keywordflow}{if} (equi \textcolor{keywordflow}{and} bstep!=0) \textcolor{keywordflow}{or} (equi \textcolor{keywordflow}{and} tstep!=1):}
-\DoxyCodeLine{293         print(\textcolor{stringliteral}{'Invalid inputs: For equilibration run (run\_equil=.TRUE.), we require (defaults) burn\_step=0 and thin\_step=1.'})}
-\DoxyCodeLine{294         print(\textcolor{stringliteral}{'Either specify these values, or just do not specify these tags so that the program uses the defaults.'})}
-\DoxyCodeLine{295         exit()}
-\DoxyCodeLine{296 }
-\DoxyCodeLine{297     \textcolor{comment}{\# Check rcut}}
-\DoxyCodeLine{298     \mbox{\hyperlink{namespacecheck_a92fcf5aad4145a0f4bbc3d52703a64ab}{check\_float}}(\textcolor{stringliteral}{'rcut'},tags,params,d\_rcut,sys\_idx)}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293     \textcolor{comment}{\# Check rcut}}
+\DoxyCodeLine{294     \mbox{\hyperlink{namespacecheck_a92fcf5aad4145a0f4bbc3d52703a64ab}{check\_float}}(\textcolor{stringliteral}{'rcut'},tags,params,d\_rcut,sys\_idx)}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{296     \textcolor{comment}{\# Check sigma}}
+\DoxyCodeLine{297     \mbox{\hyperlink{namespacecheck_a92fcf5aad4145a0f4bbc3d52703a64ab}{check\_float}}(\textcolor{stringliteral}{'sigma'},tags,params,d\_sigma,sys\_idx)}
+\DoxyCodeLine{298 }
 \DoxyCodeLine{299 }
-\DoxyCodeLine{300     \textcolor{comment}{\# Check sigma}}
-\DoxyCodeLine{301     \mbox{\hyperlink{namespacecheck_a92fcf5aad4145a0f4bbc3d52703a64ab}{check\_float}}(\textcolor{stringliteral}{'sigma'},tags,params,d\_sigma,sys\_idx)}
-\DoxyCodeLine{302 }
-\DoxyCodeLine{303 }
-\DoxyCodeLine{304     \textcolor{comment}{\# System specific parameters}}
-\DoxyCodeLine{305     \textcolor{comment}{\# QHO}}
-\DoxyCodeLine{306     \textcolor{keywordflow}{if} p\_system==\textcolor{stringliteral}{'QHO'}:}
-\DoxyCodeLine{307         }
-\DoxyCodeLine{308         \textcolor{comment}{\# Check alpha}}
-\DoxyCodeLine{309         \mbox{\hyperlink{namespacecheck_ae45c5a9a85b450aa57fb0afea8d11c59}{check\_grid}}(\textcolor{stringliteral}{'alpha'},tags,params)}
-\DoxyCodeLine{310 }
-\DoxyCodeLine{311     \textcolor{comment}{\# Hydrogen Systems}}
-\DoxyCodeLine{312     \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{313 }
-\DoxyCodeLine{314         \textcolor{comment}{\# Check pqn}}
-\DoxyCodeLine{315         tag = \textcolor{stringliteral}{'include\_pqn'}}
-\DoxyCodeLine{316         \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
-\DoxyCodeLine{317             pqn = params[tag]}
-\DoxyCodeLine{318             \mbox{\hyperlink{namespacecheck_a32de2011b794306c74af033f77fef367}{isvalid}}(tag,pqn,[1,2])}
-\DoxyCodeLine{319         \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{320             pqn = 1}
-\DoxyCodeLine{321             \mbox{\hyperlink{namespacecheck_a94f283ccc6c56cdbb36649cb73c5da7e}{default\_message}}(tag,1)}
-\DoxyCodeLine{322 }
-\DoxyCodeLine{323         \textcolor{comment}{\# Check c1}}
-\DoxyCodeLine{324         \mbox{\hyperlink{namespacecheck_ae45c5a9a85b450aa57fb0afea8d11c59}{check\_grid}}(\textcolor{stringliteral}{'c1'},tags,params)}
-\DoxyCodeLine{325 }
-\DoxyCodeLine{326         \textcolor{keywordflow}{if} pqn==2:}
-\DoxyCodeLine{327             \textcolor{comment}{\# Check c2}}
-\DoxyCodeLine{328             \mbox{\hyperlink{namespacecheck_ae45c5a9a85b450aa57fb0afea8d11c59}{check\_grid}}(\textcolor{stringliteral}{'c2'},tags,params)}
-\DoxyCodeLine{329         \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{330             \textcolor{comment}{\# Isuue warning}}
-\DoxyCodeLine{331             \textcolor{keywordflow}{if} \textcolor{stringliteral}{'c2'} \textcolor{keywordflow}{in} tags:}
-\DoxyCodeLine{332                 print(\textcolor{stringliteral}{'Warning: As include\_pqn=1, the program will ignore your input values for \(\backslash\)'c2\(\backslash\)' in the PARAMETERS namelist.'})}
-\DoxyCodeLine{333                 print(\textcolor{stringliteral}{'         If you want to include \(\backslash\)'c2\(\backslash\)' in the calculation, set include\_pqn=2 in the PARAMETERS namelist.'})}
-\DoxyCodeLine{334         }
-\DoxyCodeLine{335         \textcolor{comment}{\# Check bond}}
-\DoxyCodeLine{336         \mbox{\hyperlink{namespacecheck_ae45c5a9a85b450aa57fb0afea8d11c59}{check\_grid}}(\textcolor{stringliteral}{'bond'},tags,params)}
-\DoxyCodeLine{337 }
-\DoxyCodeLine{338 }
-\DoxyCodeLine{339     \textcolor{comment}{\# Check order of CONTROL namelist}}
-\DoxyCodeLine{340     order = [tag \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} corder \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} ctags]}
-\DoxyCodeLine{341     \textcolor{keywordflow}{if} not(ctags==order):}
-\DoxyCodeLine{342         print(\textcolor{stringliteral}{'Invalid format. The CONTROL namelist tags need to be in the following order:'})}
-\DoxyCodeLine{343         print(order)}
-\DoxyCodeLine{344         exit()}
-\DoxyCodeLine{345 }
-\DoxyCodeLine{346     \textcolor{comment}{\# Check order of PARAMETERS namelist}}
-\DoxyCodeLine{347     \textcolor{keywordflow}{if} p\_system==\textcolor{stringliteral}{'QHO'}:}
-\DoxyCodeLine{348         porder = porder\_qho.copy()}
-\DoxyCodeLine{349     \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{350         porder = porder\_hyd.copy()}
-\DoxyCodeLine{351     order = [tag \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} porder \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} ptags]}
-\DoxyCodeLine{352     \textcolor{keywordflow}{if} not(ptags==order):}
-\DoxyCodeLine{353         print(\textcolor{stringliteral}{'Invalid format. The PARAMETERS namelist tags need to be in the following order:'})}
-\DoxyCodeLine{354         print(order)}
-\DoxyCodeLine{355         exit()}
-\DoxyCodeLine{356 }
+\DoxyCodeLine{300     \textcolor{comment}{\# System specific parameters}}
+\DoxyCodeLine{301     \textcolor{comment}{\# QHO}}
+\DoxyCodeLine{302     \textcolor{keywordflow}{if} p\_system==\textcolor{stringliteral}{'QHO'}:}
+\DoxyCodeLine{303         }
+\DoxyCodeLine{304         \textcolor{comment}{\# Check alpha}}
+\DoxyCodeLine{305         \mbox{\hyperlink{namespacecheck_ae45c5a9a85b450aa57fb0afea8d11c59}{check\_grid}}(\textcolor{stringliteral}{'alpha'},tags,params)}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{307     \textcolor{comment}{\# Hydrogen Systems}}
+\DoxyCodeLine{308     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{309 }
+\DoxyCodeLine{310         \textcolor{comment}{\# Check pqn}}
+\DoxyCodeLine{311         tag = \textcolor{stringliteral}{'include\_pqn'}}
+\DoxyCodeLine{312         \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
+\DoxyCodeLine{313             pqn = params[tag]}
+\DoxyCodeLine{314             \mbox{\hyperlink{namespacecheck_a32de2011b794306c74af033f77fef367}{isvalid}}(tag,pqn,[1,2])}
+\DoxyCodeLine{315         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{316             pqn = 1}
+\DoxyCodeLine{317             \mbox{\hyperlink{namespacecheck_a94f283ccc6c56cdbb36649cb73c5da7e}{default\_message}}(tag,1)}
+\DoxyCodeLine{318 }
+\DoxyCodeLine{319         \textcolor{comment}{\# Check c1}}
+\DoxyCodeLine{320         \mbox{\hyperlink{namespacecheck_ae45c5a9a85b450aa57fb0afea8d11c59}{check\_grid}}(\textcolor{stringliteral}{'c1'},tags,params)}
+\DoxyCodeLine{321 }
+\DoxyCodeLine{322         \textcolor{keywordflow}{if} pqn==2:}
+\DoxyCodeLine{323             \textcolor{comment}{\# Check c2}}
+\DoxyCodeLine{324             \mbox{\hyperlink{namespacecheck_ae45c5a9a85b450aa57fb0afea8d11c59}{check\_grid}}(\textcolor{stringliteral}{'c2'},tags,params)}
+\DoxyCodeLine{325         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{326             \textcolor{comment}{\# Isuue warning}}
+\DoxyCodeLine{327             \textcolor{keywordflow}{if} \textcolor{stringliteral}{'c2'} \textcolor{keywordflow}{in} tags:}
+\DoxyCodeLine{328                 print(\textcolor{stringliteral}{'Warning: As include\_pqn=1, the program will ignore your input values for \(\backslash\)'c2\(\backslash\)' in the PARAMETERS namelist.'})}
+\DoxyCodeLine{329                 print(\textcolor{stringliteral}{'         If you want to include \(\backslash\)'c2\(\backslash\)' in the calculation, set include\_pqn=2 in the PARAMETERS namelist.'})}
+\DoxyCodeLine{330         }
+\DoxyCodeLine{331         \textcolor{comment}{\# Check bond}}
+\DoxyCodeLine{332         \mbox{\hyperlink{namespacecheck_ae45c5a9a85b450aa57fb0afea8d11c59}{check\_grid}}(\textcolor{stringliteral}{'bond'},tags,params)}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{334 }
+\DoxyCodeLine{335     \textcolor{comment}{\# Check order of CONTROL namelist}}
+\DoxyCodeLine{336     order = [tag \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} corder \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} ctags]}
+\DoxyCodeLine{337     \textcolor{keywordflow}{if} not(ctags==order):}
+\DoxyCodeLine{338         print(\textcolor{stringliteral}{'Invalid format. The CONTROL namelist tags need to be in the following order:'})}
+\DoxyCodeLine{339         print(order)}
+\DoxyCodeLine{340         exit()}
+\DoxyCodeLine{341 }
+\DoxyCodeLine{342     \textcolor{comment}{\# Check order of PARAMETERS namelist}}
+\DoxyCodeLine{343     \textcolor{keywordflow}{if} p\_system==\textcolor{stringliteral}{'QHO'}:}
+\DoxyCodeLine{344         porder = porder\_qho.copy()}
+\DoxyCodeLine{345     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{346         porder = porder\_hyd.copy()}
+\DoxyCodeLine{347     order = [tag \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} porder \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} ptags]}
+\DoxyCodeLine{348     \textcolor{keywordflow}{if} not(ptags==order):}
+\DoxyCodeLine{349         print(\textcolor{stringliteral}{'Invalid format. The PARAMETERS namelist tags need to be in the following order:'})}
+\DoxyCodeLine{350         print(order)}
+\DoxyCodeLine{351         exit()}
+\DoxyCodeLine{352 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -571,15 +580,15 @@ Here is the call graph for this function\+:
 
 
 \doxysubsection{Variable Documentation}
-\mbox{\Hypertarget{namespacecheck_a1035b765ccc2f332a8486ebb7fbc34c2}\label{namespacecheck_a1035b765ccc2f332a8486ebb7fbc34c2}} 
+\mbox{\Hypertarget{namespacecheck_a80daf9cf96a39fa34181b0ef3fcc5750}\label{namespacecheck_a80daf9cf96a39fa34181b0ef3fcc5750}} 
 \index{check@{check}!systems@{systems}}
 \index{systems@{systems}!check@{check}}
 \doxysubsubsection{\texorpdfstring{systems}{systems}}
-{\footnotesize\ttfamily check.\+systems = \mbox{[}\textquotesingle{}QHO\textquotesingle{},\textquotesingle{}H2plus\textquotesingle{},\textquotesingle{}H2\textquotesingle{},\textquotesingle{}test\textquotesingle{}\mbox{]}}
+{\footnotesize\ttfamily list check.\+systems = \mbox{[}\textquotesingle{}QHO\textquotesingle{},\textquotesingle{}H2plus\textquotesingle{},\textquotesingle{}H2\textquotesingle{},\textquotesingle{}test\textquotesingle{}\mbox{]}}
 
 
 
-Definition at line 8 of file check.\+py.
+Definition at line 9 of file check.\+py.
 
 \mbox{\Hypertarget{namespacecheck_a26944ae06b1c4267e761adca3a568740}\label{namespacecheck_a26944ae06b1c4267e761adca3a568740}} 
 \index{check@{check}!boolean@{boolean}}
@@ -599,7 +608,7 @@ Definition at line 10 of file check.\+py.
 
 
 
-Definition at line 14 of file check.\+py.
+Definition at line 13 of file check.\+py.
 
 \mbox{\Hypertarget{namespacecheck_ae5615b24901d47f7e3c1ecee57ce841d}\label{namespacecheck_ae5615b24901d47f7e3c1ecee57ce841d}} 
 \index{check@{check}!d\_rres@{d\_rres}}
@@ -609,7 +618,7 @@ Definition at line 14 of file check.\+py.
 
 
 
-Definition at line 16 of file check.\+py.
+Definition at line 14 of file check.\+py.
 
 \mbox{\Hypertarget{namespacecheck_a18f020cef3af1bc33ea4341ce354455f}\label{namespacecheck_a18f020cef3af1bc33ea4341ce354455f}} 
 \index{check@{check}!d\_wres@{d\_wres}}
@@ -619,7 +628,7 @@ Definition at line 16 of file check.\+py.
 
 
 
-Definition at line 18 of file check.\+py.
+Definition at line 15 of file check.\+py.
 
 \mbox{\Hypertarget{namespacecheck_a00e1f284e5d80c06137b4ab0da081ba2}\label{namespacecheck_a00e1f284e5d80c06137b4ab0da081ba2}} 
 \index{check@{check}!d\_rstep@{d\_rstep}}
@@ -629,7 +638,7 @@ Definition at line 18 of file check.\+py.
 
 
 
-Definition at line 20 of file check.\+py.
+Definition at line 16 of file check.\+py.
 
 \mbox{\Hypertarget{namespacecheck_a7c28ef5a9bec6904935d9fa7361a5c47}\label{namespacecheck_a7c28ef5a9bec6904935d9fa7361a5c47}} 
 \index{check@{check}!d\_chn@{d\_chn}}
@@ -639,7 +648,7 @@ Definition at line 20 of file check.\+py.
 
 
 
-Definition at line 22 of file check.\+py.
+Definition at line 17 of file check.\+py.
 
 \mbox{\Hypertarget{namespacecheck_ab158083af6270ff724c9dc6dea81d9df}\label{namespacecheck_ab158083af6270ff724c9dc6dea81d9df}} 
 \index{check@{check}!d\_log@{d\_log}}
@@ -649,7 +658,7 @@ Definition at line 22 of file check.\+py.
 
 
 
-Definition at line 24 of file check.\+py.
+Definition at line 18 of file check.\+py.
 
 \mbox{\Hypertarget{namespacecheck_aa2e3c72dd60ea2461a3878d2ce0344f6}\label{namespacecheck_aa2e3c72dd60ea2461a3878d2ce0344f6}} 
 \index{check@{check}!d\_steps@{d\_steps}}
@@ -659,7 +668,7 @@ Definition at line 24 of file check.\+py.
 
 
 
-Definition at line 27 of file check.\+py.
+Definition at line 21 of file check.\+py.
 
 \mbox{\Hypertarget{namespacecheck_a5315731ecbf8ad0aadec6aa5779ded9d}\label{namespacecheck_a5315731ecbf8ad0aadec6aa5779ded9d}} 
 \index{check@{check}!d\_bstep@{d\_bstep}}
@@ -669,7 +678,7 @@ Definition at line 27 of file check.\+py.
 
 
 
-Definition at line 28 of file check.\+py.
+Definition at line 22 of file check.\+py.
 
 \mbox{\Hypertarget{namespacecheck_a2c78287865c27be10beab7a684335a9b}\label{namespacecheck_a2c78287865c27be10beab7a684335a9b}} 
 \index{check@{check}!d\_tstep@{d\_tstep}}
@@ -679,7 +688,7 @@ Definition at line 28 of file check.\+py.
 
 
 
-Definition at line 29 of file check.\+py.
+Definition at line 23 of file check.\+py.
 
 \mbox{\Hypertarget{namespacecheck_ac82e56472aa06b46705e830c3a0e74ee}\label{namespacecheck_ac82e56472aa06b46705e830c3a0e74ee}} 
 \index{check@{check}!d\_sigma@{d\_sigma}}
@@ -689,7 +698,7 @@ Definition at line 29 of file check.\+py.
 
 
 
-Definition at line 30 of file check.\+py.
+Definition at line 24 of file check.\+py.
 
 \mbox{\Hypertarget{namespacecheck_ad62bb8773868aa92924c4c6215db80cc}\label{namespacecheck_ad62bb8773868aa92924c4c6215db80cc}} 
 \index{check@{check}!d\_rcut@{d\_rcut}}
@@ -699,7 +708,7 @@ Definition at line 30 of file check.\+py.
 
 
 
-Definition at line 31 of file check.\+py.
+Definition at line 25 of file check.\+py.
 
 \mbox{\Hypertarget{namespacecheck_a804da4f3d8099c2bd5dc41317210ff13}\label{namespacecheck_a804da4f3d8099c2bd5dc41317210ff13}} 
 \index{check@{check}!corder@{corder}}
@@ -709,7 +718,7 @@ Definition at line 31 of file check.\+py.
 
 
 
-Definition at line 34 of file check.\+py.
+Definition at line 28 of file check.\+py.
 
 \mbox{\Hypertarget{namespacecheck_a7007164677403017cf717d63e116a307}\label{namespacecheck_a7007164677403017cf717d63e116a307}} 
 \index{check@{check}!porder\_qho@{porder\_qho}}
@@ -719,7 +728,7 @@ Definition at line 34 of file check.\+py.
 
 
 
-Definition at line 35 of file check.\+py.
+Definition at line 29 of file check.\+py.
 
 \mbox{\Hypertarget{namespacecheck_a40ce55cb1cbe818cf23963d5c4236c4e}\label{namespacecheck_a40ce55cb1cbe818cf23963d5c4236c4e}} 
 \index{check@{check}!porder\_hyd@{porder\_hyd}}
@@ -729,5 +738,5 @@ Definition at line 35 of file check.\+py.
 
 
 
-Definition at line 36 of file check.\+py.
+Definition at line 30 of file check.\+py.
 
