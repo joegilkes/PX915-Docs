@@ -231,6 +231,62 @@ In addition, Group A would like to thank our families and friends for their unco
 
 \doxysubsection*{3.\+4 Error Messages}
 
+Everyone would agree that the best kind of error message is the kind that never shows up. However, regardless of how well-\/designed a software package is, errors are always unavoidable. When users interact with a software package, eventually, something is bound to go wrong.
+
+The error message is a critical component of a good user experience. One way for users to evaluate the quality of a software package is by judging the error messages’ quality. Confusing and non-\/informative error messages are annoying to the user. This is why most developers would agree that good error message can increase the speed of software package learning and increase users’ subjective satisfaction in the process. \doxysubsubsection*{3.\+4.\+1 Clarity}
+
+Clarity is the top priority when writing error messages. Developers need to describe clearly what had happened, why it happened, and what the user can do to resolve the errors. Hence, developers should always write the error message in plain language to ensure the users could easily understand both the error and the solution.
+
+Developers should never write abstract error messages as they do not contain adequate information regarding the problems. It is no good to state that something went wrong in the software package but does not help users understand its root cause. As a rule, developers should never assume people will fully understand the context of an error message. Hence, it is a good practice to always be explicit and indicate what exactly has gone wrong in the error messages.
+
+Error messages that contain technical terminologies will certainly confuse most users. The error message should always describe the errors in terms of users’ actions. Never assume the users are tech-\/savvy. Hence, it is also a good practice to use non-\/technical terminologies that can easily understand by everyone.
+
+\doxysubsubsection*{3.\+4.\+X Examples}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Error: Invalid CONTROL namelist format in file "{}params.txt"{}.}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Error: Invalid PARAMETERS namelist for QHO p\_system in file "{}params.txt"{}.}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Error: Invalid PARAMETERS namelist for H2plus p\_system in file "{}params.txt"{}.}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Error: Invalid PARAMETERS namelist for H2 p\_system in file "{}params.txt"{}.}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Error: Input file "{}params.txt"{} does not exist.}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Error: Invalid system definition.}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Your response is invalid, please enter "{}w"{} or "{}c"{}, without quotes.}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Error: There is no param.txt file in the current working directory.}
+
+\end{DoxyCode}
+
+
 \DoxyHorRuler{0}
 
 
@@ -266,4 +322,4 @@ New functionalities and performance improvement come with next software updates\
 \DoxyHorRuler{0}
 
 
-This documentation was generated from commit 0043c1d 
+This documentation was generated from commit 7b45b92 
