@@ -4,5 +4,5 @@
 <area shape="rect" id="node3" href="$namespaceinput__parser.html#a163a65b1b9201a421da32ba2a7c92148" title="Reads the PARAMETER namelist in params.txt for the H2 molecule system. Assigns the input data to the ..." alt="" coords="189,71,334,98"/>
 <area shape="rect" id="node4" href="$namespaceinput__parser.html#a3ebe204fa7f63e19fbf29c36f580ee74" title="Reads the PARAMETER namelist in params.txt for the H2 ion system. Assigns the input data to the corre..." alt="" coords="199,123,323,164"/>
 <area shape="rect" id="node5" href="$namespaceinput__parser.html#aa9a77c1395d69d54ce38420acdb3f87f" title="Reads the PARAMETER namelist in params.txt for the QHO system. Assigns the input data to the correspo..." alt="" coords="185,189,337,215"/>
-<area shape="rect" id="node6" href="$namespacerestart__fns.html#a34c01a8b391a8c3a4ba40e9f5ec644d3" title=" " alt="" coords="177,239,345,266"/>
+<area shape="rect" id="node6" href="$namespacerestart__fns.html#a34c01a8b391a8c3a4ba40e9f5ec644d3" title="Reads the RESTART namelist in res_nml.txt. Assigns the input data to the corresponding variables in t..." alt="" coords="177,239,345,266"/>
 </map>
