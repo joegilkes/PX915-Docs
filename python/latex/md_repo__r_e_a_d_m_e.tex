@@ -46,6 +46,8 @@
 \begin{DoxyItemize}
 \item \href{\#341-Clarity}{\texttt{ 3.\+4.\+1 Clarity}}
 \item \href{\#342-Be-Concise-and-Precise}{\texttt{ 3.\+4.\+2 Be Concise and Precise}}
+\item \href{\#343-Never-Blame-Users}{\texttt{ 3.\+4.\+3 Never Blame Users}}
+\item \href{\#344-Error-Messages-Examples}{\texttt{ 3.\+4.\+4 Error Messages Examples}}
 \end{DoxyItemize}
 \end{DoxyItemize}
 \item \href{\#Section-4---Upcoming-Features}{\texttt{ Section 4 -\/ Upcoming Features}}
@@ -313,7 +315,27 @@ Error messages should enable users to resolve errors efficiently by only contain
 
 \href{\#Contents}{\texttt{ \&\#8593; Back to Contents}}
 
-\doxysubsubsection*{3.\+4.\+X Examples}
+\doxysubsubsection*{3.\+4.\+3 Never Blame Users}
+
+Tones play a tremendous impact on how users comprehend the error message. Developers should adopt a more friendly tone to help users relate better to a situation and understand the errors. It is essential to avoid phrases that involve second-\/person pronouns.
+
+Poorly written error messages often accuse the user of making errors. Errors are frustrating enough, and there is no need to add to the frustration with unintended judgment from the developers. Developers need to acknowledge that these error messages are essential to communicate and build relationships with the users.
+
+Remember never to use upper case text and exclamation mark in the error messages, as they both will contribute to an awful user experience.
+
+Bad error message example\+:
+
+{\ttfamily ERROR\+: You have entered an incorrect login or password!}
+
+Friendly error message example\+:
+
+{\ttfamily Error\+: Oops, login and password do not match. Maybe check if the ‘caps lock’ key is on?}
+
+\doxysubsubsection*{3.\+4.\+4 Error Messages Examples}
+
+Group A designed its error messages based on the error message design guideline in the previous three sub-\/sections. Here are some actual codes that were taken within the software package to be illustrated as examples\+:
+
+{\bfseries{The error messages in the codes need to be updated}}
 
 
 \begin{DoxyCode}{0}
@@ -345,9 +367,7 @@ Error messages should enable users to resolve errors efficiently by only contain
 \DoxyCodeLine{Error: Invalid system definition.}
 
 \end{DoxyCode}
-
-
-
+ 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{Your response is invalid, please enter "{}w"{} or "{}c"{}, without quotes.}
 
@@ -402,4 +422,4 @@ New functionalities and performance improvement come with next software updates\
 \DoxyHorRuler{0}
 
 
-This documentation was generated from commit 12a75cf 
+This documentation was generated from commit aa59d32 

@@ -134,6 +134,8 @@ $(document).ready(function(){initNavTree('md_repo__r_e_a_d_m_e.html',''); initRe
 <li><a href="#34-Error-Messages">3.4 Error Messages</a><ul>
 <li><a href="#341-Clarity">3.4.1 Clarity</a></li>
 <li><a href="#342-Be-Concise-and-Precise">3.4.2 Be Concise and Precise</a></li>
+<li><a href="#343-Never-Blame-Users">3.4.3 Never Blame Users</a></li>
+<li><a href="#344-Error-Messages-Examples">3.4.4 Error Messages Examples</a></li>
 </ul>
 </li>
 </ul>
@@ -292,14 +294,24 @@ $(document).ready(function(){initNavTree('md_repo__r_e_a_d_m_e.html',''); initRe
 <p>The majority of users rarely read technical software documents word-by-word. The more text on a page, the more likely the users will not read the text at all. This is why it is vital to reduce the text down, including error messages. Developers’ goal is to write concise but precise error messages.</p>
 <p>Error messages should enable users to resolve errors efficiently by only containing the information required to help users. Hence, developers should eliminate unnecessary details that do not help the users achieve this objective.</p>
 <p><a href="#Contents">&amp;#8593; Back to Contents</a></p>
-<h3>3.4.X Examples</h3>
+<h3>3.4.3 Never Blame Users</h3>
+<p>Tones play a tremendous impact on how users comprehend the error message. Developers should adopt a more friendly tone to help users relate better to a situation and understand the errors. It is essential to avoid phrases that involve second-person pronouns.</p>
+<p>Poorly written error messages often accuse the user of making errors. Errors are frustrating enough, and there is no need to add to the frustration with unintended judgment from the developers. Developers need to acknowledge that these error messages are essential to communicate and build relationships with the users.</p>
+<p>Remember never to use upper case text and exclamation mark in the error messages, as they both will contribute to an awful user experience.</p>
+<p>Bad error message example:</p>
+<p><code>ERROR: You have entered an incorrect login or password!</code></p>
+<p>Friendly error message example:</p>
+<p><code>Error: Oops, login and password do not match. Maybe check if the ‘caps lock’ key is on?</code></p>
+<h3>3.4.4 Error Messages Examples</h3>
+<p>Group A designed its error messages based on the error message design guideline in the previous three sub-sections. Here are some actual codes that were taken within the software package to be illustrated as examples:</p>
+<p><b>The error messages in the codes need to be updated</b></p>
 <div class="fragment"><div class="line">Error: Invalid CONTROL namelist format in file &quot;params.txt&quot;.</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">Error: Invalid PARAMETERS namelist for QHO p_system in file &quot;params.txt&quot;.</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">Error: Invalid PARAMETERS namelist for H2plus p_system in file &quot;params.txt&quot;.</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">Error: Invalid PARAMETERS namelist for H2 p_system in file &quot;params.txt&quot;.</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">Error: Input file &quot;params.txt&quot; does not exist.</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">Error: Invalid system definition.</div>
-</div><!-- fragment --><div class="fragment"><div class="line">Your response is invalid, please enter &quot;w&quot; or &quot;c&quot;, without quotes.</div>
+</div><!-- fragment --> <div class="fragment"><div class="line">Your response is invalid, please enter &quot;w&quot; or &quot;c&quot;, without quotes.</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">Error: There is no param.txt file in the current working directory.</div>
 </div><!-- fragment --><p><a href="#Contents">&amp;#8593; Back to Contents</a></p>
 <hr  />
@@ -324,7 +336,7 @@ $(document).ready(function(){initNavTree('md_repo__r_e_a_d_m_e.html',''); initRe
 <p><em>A: Any user who spotted a bug in **[Project Name]**, please notify the developers (anyone in the <b>contributor</b> table) by raising it as an issue in the <b>Issues</b> tab in the relevant branch of the **[Project Name]**’s GitHub repository. Key bug fixes will be documented in the software documentation in the next stable version release.</em></p>
 <p><a href="#Contents">&amp;#8593; Back to Contents</a></p>
 <hr  />
-<p>This documentation was generated from commit 12a75cf </p>
+<p>This documentation was generated from commit aa59d32 </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
