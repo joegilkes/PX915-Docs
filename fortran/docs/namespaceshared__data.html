@@ -161,9 +161,10 @@ Variables</h2></td></tr>
 <tr class="memdesc:adf411355aadabf7c289e7105e57e02d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of restart file storing energy chains.  <a href="namespaceshared__data.html#adf411355aadabf7c289e7105e57e02d4">More...</a><br /></td></tr>
 <tr class="separator:adf411355aadabf7c289e7105e57e02d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28246c61bb5db3025877f5369254d399"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a28246c61bb5db3025877f5369254d399">alpha_start</a> =1</td></tr>
+<tr class="memdesc:a28246c61bb5db3025877f5369254d399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start value for alpha grid, can be &gt;1 for restarts.  <a href="namespaceshared__data.html#a28246c61bb5db3025877f5369254d399">More...</a><br /></td></tr>
 <tr class="separator:a28246c61bb5db3025877f5369254d399"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd55f854da9e9234d715022110bd076a"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#abd55f854da9e9234d715022110bd076a">bond_start</a> =1</td></tr>
-<tr class="memdesc:abd55f854da9e9234d715022110bd076a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be &gt;1 for restarts.  <a href="namespaceshared__data.html#abd55f854da9e9234d715022110bd076a">More...</a><br /></td></tr>
+<tr class="memdesc:abd55f854da9e9234d715022110bd076a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start value for bondlength grid, can be &gt;1 for restarts.  <a href="namespaceshared__data.html#abd55f854da9e9234d715022110bd076a">More...</a><br /></td></tr>
 <tr class="separator:abd55f854da9e9234d715022110bd076a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5798eba5b1c4594d4c3c9648d732e9e"><td class="memItemLeft" align="right" valign="top">integer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#af5798eba5b1c4594d4c3c9648d732e9e">logid</a></td></tr>
 <tr class="memdesc:af5798eba5b1c4594d4c3c9648d732e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">To store logfile unit.  <a href="namespaceshared__data.html#af5798eba5b1c4594d4c3c9648d732e9e">More...</a><br /></td></tr>
@@ -467,8 +468,10 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Start value for alpha grid, can be &gt;1 for restarts. </p>
+
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00140">140</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">integer(int32)</span> :: alpha_start=1, bond_start=1 </div>
+<div class="fragment"><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">integer(int32)</span> :: alpha_start=1</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -484,10 +487,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Can be &gt;1 for restarts. </p>
+<p>Start value for bondlength grid, can be &gt;1 for restarts. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00140">140</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00141">141</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordtype">integer(int32)</span> :: bond_start=1</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="af5798eba5b1c4594d4c3c9648d732e9e"></a>
@@ -504,8 +508,8 @@ Variables</h2></td></tr>
 
 <p>To store logfile unit. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00141">141</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordtype">integer</span> :: logid</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00142">142</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordtype">integer</span> :: logid</div>
 </div><!-- fragment -->
 </div>
 </div>

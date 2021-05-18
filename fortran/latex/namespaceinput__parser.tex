@@ -1,19 +1,29 @@
 \hypertarget{namespaceinput__parser}{}\doxysection{input\+\_\+parser Module Reference}
 \label{namespaceinput__parser}\index{input\_parser@{input\_parser}}
+
+
+Contains functions that read the namelists in input file params.\+txt.  
+
+
 \doxysubsection*{Functions/\+Subroutines}
 \begin{DoxyCompactItemize}
 \item 
 subroutine \mbox{\hyperlink{namespaceinput__parser_ace5694fecca99b0223f02140c750e5f1}{read\+\_\+control}} (p\+\_\+system, run\+\_\+equil, run\+\_\+restart, write\+\_\+restart, restart\+\_\+step, write\+\_\+chains, write\+\_\+log)
-\item 
+\begin{DoxyCompactList}\small\item\em Reads the CONTROL namelist in params.\+txt and assigns its data to the corresponding global variables defined in the \mbox{\hyperlink{namespaceshared__data}{shared\+\_\+data}} module. \end{DoxyCompactList}\item 
 subroutine \mbox{\hyperlink{namespaceinput__parser_aa9a77c1395d69d54ce38420acdb3f87f}{read\+\_\+qho}} (QHO)
-\item 
+\begin{DoxyCompactList}\small\item\em Reads the PARAMETER namelist in params.\+txt for the QHO system. Assigns the input data to the corresponding variables in the QHO derived type. \end{DoxyCompactList}\item 
 subroutine \mbox{\hyperlink{namespaceinput__parser_a3ebe204fa7f63e19fbf29c36f580ee74}{read\+\_\+h2plus}} (H2plus)
-\item 
+\begin{DoxyCompactList}\small\item\em Reads the PARAMETER namelist in params.\+txt for the H2 ion system. Assigns the input data to the corresponding variables in the QHO derived type. \end{DoxyCompactList}\item 
 subroutine \mbox{\hyperlink{namespaceinput__parser_a163a65b1b9201a421da32ba2a7c92148}{read\+\_\+h2}} (H2)
-\item 
+\begin{DoxyCompactList}\small\item\em Reads the PARAMETER namelist in params.\+txt for the H2 molecule system. Assigns the input data to the corresponding variables in the QHO derived type. \end{DoxyCompactList}\item 
 subroutine \mbox{\hyperlink{namespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d74ea}{read\+\_\+inputs}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Main input parser function that reads the input file params.\+txt and calls the required namelist reader subroutines, depending on the system. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Contains functions that read the namelists in input file params.\+txt. 
+
+Contains functions to read the CONTROL namelist, the PARAMETERS namelist for each system, and a driver function that handles the input file params.\+txt. The driver function also reads the RESTART namelist from file res\+\_\+nml.\+txt for restart runs. 
 
 \doxysubsection{Function/\+Subroutine Documentation}
 \mbox{\Hypertarget{namespaceinput__parser_ace5694fecca99b0223f02140c750e5f1}\label{namespaceinput__parser_ace5694fecca99b0223f02140c750e5f1}} 
@@ -24,31 +34,46 @@ subroutine \mbox{\hyperlink{namespaceinput__parser_a3c35b8a909f420e7aa4f19d1392d
 
 
 
-Definition at line 14 of file input\+\_\+parser.\+f90.
+Reads the CONTROL namelist in params.\+txt and assigns its data to the corresponding global variables defined in the \mbox{\hyperlink{namespaceshared__data}{shared\+\_\+data}} module. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+\_\+system} & System of interest\+: QHO, H2plus, H2 \\
+\hline
+\mbox{\texttt{ in}}  & {\em run\+\_\+equil} & Tag for equilibration runs \\
+\hline
+\mbox{\texttt{ in}}  & {\em run\+\_\+restart} & Tag for restart runs \\
+\hline
+\mbox{\texttt{ in}}  & {\em write\+\_\+restart} & Tag for writing restart files \\
+\hline
+\mbox{\texttt{ in}}  & {\em restart\+\_\+step} & Frequency of writing restart files, within MMC loop \\
+\hline
+\mbox{\texttt{ in}}  & {\em write\+\_\+chains} & Tag to write final MMC chains \\
+\hline
+\mbox{\texttt{ in}}  & {\em write\+\_\+log} & Tag to write logfile \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 48 of file input\+\_\+parser.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{15 }
-\DoxyCodeLine{16     \textcolor{comment}{! Local variables}}
-\DoxyCodeLine{17     \textcolor{keywordtype}{character(len=10)}, \textcolor{keywordtype}{intent(out)} :: p\_system}
-\DoxyCodeLine{18     \textcolor{keywordtype}{logical}, \textcolor{keywordtype}{intent(out)} :: run\_equil, run\_restart, write\_restart, write\_chains, write\_log}
-\DoxyCodeLine{19     \textcolor{keywordtype}{integer(int32)}, \textcolor{keywordtype}{intent(out)} :: restart\_step    }
-\DoxyCodeLine{20 }
-\DoxyCodeLine{21     \textcolor{comment}{! Define the namelist}}
-\DoxyCodeLine{22     namelist /control/ p\_system, run\_equil, run\_restart, write\_restart, restart\_step, write\_chains, write\_log}
-\DoxyCodeLine{23 }
-\DoxyCodeLine{24     \textcolor{comment}{! Open the file}}
-\DoxyCodeLine{25     \textcolor{keyword}{open}(action=\textcolor{stringliteral}{'read'}, file=\textcolor{stringliteral}{'params.txt'}, iostat=rc, newunit=fu)}
-\DoxyCodeLine{26 }
-\DoxyCodeLine{27     \textcolor{comment}{! Read the namelist}}
-\DoxyCodeLine{28     \textcolor{keyword}{read}(nml=control, iostat=rc, unit=fu)}
-\DoxyCodeLine{29     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{30         error stop \textcolor{stringliteral}{'Error: Invalid CONTROL namelist format in file "{}params.txt"{}.'}}
-\DoxyCodeLine{31 \textcolor{keywordflow}{    end if}}
-\DoxyCodeLine{32     }
-\DoxyCodeLine{33     \textcolor{comment}{! Close the file}}
-\DoxyCodeLine{34     \textcolor{keyword}{close}(fu)}
-\DoxyCodeLine{35 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \textcolor{comment}{! Local variables}}
+\DoxyCodeLine{51     \textcolor{keywordtype}{character(len=10)}, \textcolor{keywordtype}{intent(out)} :: p\_system}
+\DoxyCodeLine{52     \textcolor{keywordtype}{logical}, \textcolor{keywordtype}{intent(out)} :: run\_equil, run\_restart, write\_restart, write\_chains, write\_log}
+\DoxyCodeLine{53     \textcolor{keywordtype}{integer(int32)}, \textcolor{keywordtype}{intent(out)} :: restart\_step    }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55     \textcolor{comment}{! Define the namelist}}
+\DoxyCodeLine{56     namelist /control/ p\_system, run\_equil, run\_restart, write\_restart, restart\_step, write\_chains, write\_log}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{comment}{! Read the namelist}}
+\DoxyCodeLine{59     \textcolor{keyword}{read}(nml=control, iostat=rc, unit=fu)}
+\DoxyCodeLine{60     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{61         error stop \textcolor{stringliteral}{'Error: Invalid CONTROL namelist format in file "{}params.txt"{}.'}}
+\DoxyCodeLine{62 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{63     }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -67,28 +92,32 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 39 of file input\+\_\+parser.\+f90.
+Reads the PARAMETER namelist in params.\+txt for the QHO system. Assigns the input data to the corresponding variables in the QHO derived type. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em QHO} & Instance of QHO\+\_\+type, to store input parameter values \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 77 of file input\+\_\+parser.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{40 }
-\DoxyCodeLine{41     \textcolor{comment}{! Local variables}}
-\DoxyCodeLine{42     \textcolor{keywordtype}{type}(QHO\_type), \textcolor{keywordtype}{intent(out)} :: QHO}
-\DoxyCodeLine{43 }
-\DoxyCodeLine{44     \textcolor{comment}{! Define the namelist}}
-\DoxyCodeLine{45     namelist /parameters/ qho}
-\DoxyCodeLine{46 }
-\DoxyCodeLine{47     \textcolor{comment}{! Open the file}}
-\DoxyCodeLine{48     \textcolor{keyword}{open}(action=\textcolor{stringliteral}{'read'}, file=\textcolor{stringliteral}{'params.txt'}, iostat=rc, newunit=fu)}
-\DoxyCodeLine{49 }
-\DoxyCodeLine{50     \textcolor{comment}{! Read the namelist}}
-\DoxyCodeLine{51     \textcolor{keyword}{read}(nml=parameters, iostat=rc, unit=fu)}
-\DoxyCodeLine{52     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{53         error stop \textcolor{stringliteral}{'Error: Invalid PARAMETERS namelist for QHO p\_system in file "{}params.txt"{}.'}}
-\DoxyCodeLine{54 \textcolor{keywordflow}{    end if}}
-\DoxyCodeLine{55     }
-\DoxyCodeLine{56     \textcolor{comment}{! Close the file}}
-\DoxyCodeLine{57     \textcolor{keyword}{close}(fu)}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \textcolor{comment}{! Local variables}}
+\DoxyCodeLine{80     \textcolor{keywordtype}{type}(QHO\_type), \textcolor{keywordtype}{intent(out)} :: QHO}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     \textcolor{comment}{! Define the namelist}}
+\DoxyCodeLine{83     namelist /parameters/ qho}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     \textcolor{comment}{! Read the namelist}}
+\DoxyCodeLine{86     \textcolor{keyword}{read}(nml=parameters, iostat=rc, unit=fu)}
+\DoxyCodeLine{87     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{88         error stop \textcolor{stringliteral}{'Error: Invalid PARAMETERS namelist for QHO p\_system in file "{}params.txt"{}.'}}
+\DoxyCodeLine{89 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{90     }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -107,28 +136,32 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 61 of file input\+\_\+parser.\+f90.
+Reads the PARAMETER namelist in params.\+txt for the H2 ion system. Assigns the input data to the corresponding variables in the QHO derived type. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em QHO} & Instance of QHO\+\_\+type, to store input parameter values \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 104 of file input\+\_\+parser.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{62 }
-\DoxyCodeLine{63     \textcolor{comment}{! Local variables}}
-\DoxyCodeLine{64     \textcolor{keywordtype}{type}(H2plus\_type), \textcolor{keywordtype}{intent(out)} :: H2plus}
-\DoxyCodeLine{65 }
-\DoxyCodeLine{66     \textcolor{comment}{! Define the namelist}}
-\DoxyCodeLine{67     namelist /parameters/ h2plus}
-\DoxyCodeLine{68 }
-\DoxyCodeLine{69     \textcolor{comment}{! Open the file}}
-\DoxyCodeLine{70     \textcolor{keyword}{open}(action=\textcolor{stringliteral}{'read'}, file=\textcolor{stringliteral}{'params.txt'}, iostat=rc, newunit=fu)}
-\DoxyCodeLine{71 }
-\DoxyCodeLine{72     \textcolor{comment}{! Read the namelist}}
-\DoxyCodeLine{73     \textcolor{keyword}{read}(nml=parameters, iostat=rc, unit=fu)}
-\DoxyCodeLine{74     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{75         error stop \textcolor{stringliteral}{'Error: Invalid PARAMETERS namelist for H2plus p\_system in file "{}params.txt"{}.'}}
-\DoxyCodeLine{76 \textcolor{keywordflow}{    end if}}
-\DoxyCodeLine{77     }
-\DoxyCodeLine{78     \textcolor{comment}{! Close the file}}
-\DoxyCodeLine{79     \textcolor{keyword}{close}(fu)}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106     \textcolor{comment}{! Local variables}}
+\DoxyCodeLine{107     \textcolor{keywordtype}{type}(H2plus\_type), \textcolor{keywordtype}{intent(out)} :: H2plus}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109     \textcolor{comment}{! Define the namelist}}
+\DoxyCodeLine{110     namelist /parameters/ h2plus}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112     \textcolor{comment}{! Read the namelist}}
+\DoxyCodeLine{113     \textcolor{keyword}{read}(nml=parameters, iostat=rc, unit=fu)}
+\DoxyCodeLine{114     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{115         error stop \textcolor{stringliteral}{'Error: Invalid PARAMETERS namelist for H2plus p\_system in file "{}params.txt"{}.'}}
+\DoxyCodeLine{116 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{117     }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -147,28 +180,32 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 83 of file input\+\_\+parser.\+f90.
+Reads the PARAMETER namelist in params.\+txt for the H2 molecule system. Assigns the input data to the corresponding variables in the QHO derived type. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em QHO} & Instance of QHO\+\_\+type, to store input parameter values \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 131 of file input\+\_\+parser.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{84 }
-\DoxyCodeLine{85     \textcolor{comment}{! Local variables}}
-\DoxyCodeLine{86     \textcolor{keywordtype}{type}(H2\_type), \textcolor{keywordtype}{intent(out)} :: H2}
-\DoxyCodeLine{87 }
-\DoxyCodeLine{88     \textcolor{comment}{! Define the namelist}}
-\DoxyCodeLine{89     namelist /parameters/ h2}
-\DoxyCodeLine{90 }
-\DoxyCodeLine{91     \textcolor{comment}{! Open the file}}
-\DoxyCodeLine{92     \textcolor{keyword}{open}(action=\textcolor{stringliteral}{'read'}, file=\textcolor{stringliteral}{'params.txt'}, iostat=rc, newunit=fu)}
-\DoxyCodeLine{93 }
-\DoxyCodeLine{94     \textcolor{comment}{! Read the namelist}}
-\DoxyCodeLine{95     \textcolor{keyword}{read}(nml=parameters, iostat=rc, unit=fu)}
-\DoxyCodeLine{96     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{97         error stop \textcolor{stringliteral}{'Error: Invalid PARAMETERS namelist for H2 p\_system in file "{}params.txt"{}.'}}
-\DoxyCodeLine{98 \textcolor{keywordflow}{    end if}}
-\DoxyCodeLine{99     }
-\DoxyCodeLine{100     \textcolor{comment}{! Close the file}}
-\DoxyCodeLine{101     \textcolor{keyword}{close}(fu)}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133     \textcolor{comment}{! Local variables}}
+\DoxyCodeLine{134     \textcolor{keywordtype}{type}(H2\_type), \textcolor{keywordtype}{intent(out)} :: H2}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136     \textcolor{comment}{! Define the namelist}}
+\DoxyCodeLine{137     namelist /parameters/ h2}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139     \textcolor{comment}{! Read the namelist}}
+\DoxyCodeLine{140     \textcolor{keyword}{read}(nml=parameters, iostat=rc, unit=fu)}
+\DoxyCodeLine{141     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{142         error stop \textcolor{stringliteral}{'Error: Invalid PARAMETERS namelist for H2 p\_system in file "{}params.txt"{}.'}}
+\DoxyCodeLine{143 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{144     }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -187,86 +224,96 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 105 of file input\+\_\+parser.\+f90.
+Main input parser function that reads the input file params.\+txt and calls the required namelist reader subroutines, depending on the system. 
+
+This sunroutine also sets the default parameters for equilibration runs, and calls the restart namelist reader when required. 
+
+Definition at line 159 of file input\+\_\+parser.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{106 }
-\DoxyCodeLine{107     \textcolor{comment}{! Check if file 'params.txt' exists}}
-\DoxyCodeLine{108     \textcolor{keyword}{inquire}(file=\textcolor{stringliteral}{'params.txt'}, iostat=rc)}
-\DoxyCodeLine{109     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{110         error stop \textcolor{stringliteral}{'Error: Input file "{}params.txt"{} does not exist.'}}
-\DoxyCodeLine{111 \textcolor{keywordflow}{    end if}}
-\DoxyCodeLine{112 }
-\DoxyCodeLine{113     \textcolor{comment}{! Read CONTROL namelist}}
-\DoxyCodeLine{114     \textcolor{keyword}{call }read\_control(p\_system, run\_equil, run\_restart, write\_restart, restart\_step, write\_chains, write\_log)}
-\DoxyCodeLine{115 }
-\DoxyCodeLine{116     \textcolor{comment}{! If p\_system='test', return to main}}
-\DoxyCodeLine{117     \textcolor{keywordflow}{if} (trim(p\_system)==\textcolor{stringliteral}{'test'}) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{118         \textcolor{keywordflow}{return}}
-\DoxyCodeLine{119 \textcolor{keywordflow}{    endif}}
-\DoxyCodeLine{120     }
-\DoxyCodeLine{121     \textcolor{comment}{! For equilibration runs, modify the defaults}}
-\DoxyCodeLine{122     \textcolor{keywordflow}{if} (run\_equil) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{123         \textcolor{keywordflow}{select case} (trim(p\_system))}
-\DoxyCodeLine{124         \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'QHO'})}
-\DoxyCodeLine{125             qho\%steps = 20000}
-\DoxyCodeLine{126             qho\%burn\_step = 0}
-\DoxyCodeLine{127             qho\%thin\_step = 1}
-\DoxyCodeLine{128         \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'H2plus'})}
-\DoxyCodeLine{129             h2plus\%steps = 20000}
-\DoxyCodeLine{130             h2plus\%burn\_step = 0}
-\DoxyCodeLine{131             h2plus\%thin\_step = 1}
-\DoxyCodeLine{132         \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'H2'})}
-\DoxyCodeLine{133             h2\%steps = 20000}
-\DoxyCodeLine{134             h2\%burn\_step = 0}
-\DoxyCodeLine{135             h2\%thin\_step = 1}
-\DoxyCodeLine{136 \textcolor{keywordflow}{        case default}}
-\DoxyCodeLine{137             error stop \textcolor{stringliteral}{'Error: Invalid system definition.'}}
-\DoxyCodeLine{138 \textcolor{keywordflow}{        end select}}
-\DoxyCodeLine{139 \textcolor{keywordflow}{    endif}}
-\DoxyCodeLine{140 }
-\DoxyCodeLine{141     \textcolor{comment}{! Read PARAMETERS namelist of the defined problem}}
-\DoxyCodeLine{142     \textcolor{keywordflow}{select case} (trim(p\_system))}
-\DoxyCodeLine{143     \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'QHO'})}
-\DoxyCodeLine{144         \textcolor{keyword}{call }read\_qho(qho)}
-\DoxyCodeLine{145     \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'H2plus'})}
-\DoxyCodeLine{146         \textcolor{keyword}{call }read\_h2plus(h2plus)}
-\DoxyCodeLine{147     \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'H2'})}
-\DoxyCodeLine{148         \textcolor{keyword}{call }read\_h2(h2)}
-\DoxyCodeLine{149 \textcolor{keywordflow}{    case default}}
-\DoxyCodeLine{150         error stop \textcolor{stringliteral}{'Error: Invalid system definition.'}}
-\DoxyCodeLine{151 \textcolor{keywordflow}{    end select}}
-\DoxyCodeLine{152 }
-\DoxyCodeLine{153     \textcolor{comment}{! For restart runs}}
-\DoxyCodeLine{154     \textcolor{keywordflow}{if} (run\_restart) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{155 }
-\DoxyCodeLine{156         \textcolor{comment}{! Read RESTART namelist}}
-\DoxyCodeLine{157         \textcolor{keyword}{call }read\_res\_nml(res)}
-\DoxyCodeLine{158 }
-\DoxyCodeLine{159         \textcolor{comment}{! Update grid-\/loop start values}}
-\DoxyCodeLine{160         \textcolor{comment}{! TO DO: Remove res\%step if James confirms that chain-\/restarts are not required.}}
-\DoxyCodeLine{161         \textcolor{keywordflow}{if} (trim(p\_system) == \textcolor{stringliteral}{'QHO'}) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{162             \textcolor{keywordflow}{if} (res\%step == 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{163                 alpha\_start = res\%i\_alpha}
-\DoxyCodeLine{164             \textcolor{keywordflow}{else} }
-\DoxyCodeLine{165                 alpha\_start = res\%i\_alpha+1}
-\DoxyCodeLine{166 \textcolor{keywordflow}{            endif} }
-\DoxyCodeLine{167         \textcolor{keywordflow}{else} }
-\DoxyCodeLine{168             \textcolor{keywordflow}{if} (res\%step == 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{169                 bond\_start = res\%i\_bond}
-\DoxyCodeLine{170             \textcolor{keywordflow}{else} }
-\DoxyCodeLine{171                 bond\_start = res\%i\_bond+1}
-\DoxyCodeLine{172 \textcolor{keywordflow}{            endif} }
-\DoxyCodeLine{173 \textcolor{keywordflow}{        endif}}
-\DoxyCodeLine{174 }
-\DoxyCodeLine{175         \textcolor{comment}{! Print restarts header.}}
-\DoxyCodeLine{176         \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Restarted Program -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}})}
-\DoxyCodeLine{177         \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{178 }
-\DoxyCodeLine{179 \textcolor{keywordflow}{    end if} }
-\DoxyCodeLine{180 }
-\DoxyCodeLine{181 }
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161     \textcolor{comment}{! Check if file 'params.txt' exists}}
+\DoxyCodeLine{162     \textcolor{keyword}{inquire}(file=\textcolor{stringliteral}{'params.txt'}, iostat=rc)}
+\DoxyCodeLine{163     \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{164         error stop \textcolor{stringliteral}{'Error: Input file "{}params.txt"{} does not exist.'}}
+\DoxyCodeLine{165 \textcolor{keywordflow}{    end if}}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167     \textcolor{comment}{! Open the params.txt file}}
+\DoxyCodeLine{168     \textcolor{keyword}{open}(action=\textcolor{stringliteral}{'read'}, file=\textcolor{stringliteral}{'params.txt'}, iostat=rc, newunit=fu)}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170     \textcolor{comment}{! Read CONTROL namelist}}
+\DoxyCodeLine{171     \textcolor{keyword}{call }read\_control(p\_system, run\_equil, run\_restart, write\_restart, restart\_step, write\_chains, write\_log)}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173     \textcolor{comment}{! If p\_system='test', return to main}}
+\DoxyCodeLine{174     \textcolor{keywordflow}{if} (trim(p\_system)==\textcolor{stringliteral}{'test'}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{175         \textcolor{keywordflow}{return}}
+\DoxyCodeLine{176 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{177     }
+\DoxyCodeLine{178     \textcolor{comment}{! For equilibration runs, modify the defaults}}
+\DoxyCodeLine{179     \textcolor{keywordflow}{if} (run\_equil) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{180         \textcolor{keywordflow}{select case} (trim(p\_system))}
+\DoxyCodeLine{181         \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'QHO'})}
+\DoxyCodeLine{182             qho\%steps = 20000}
+\DoxyCodeLine{183             qho\%burn\_step = 0}
+\DoxyCodeLine{184             qho\%thin\_step = 1}
+\DoxyCodeLine{185         \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'H2plus'})}
+\DoxyCodeLine{186             h2plus\%steps = 20000}
+\DoxyCodeLine{187             h2plus\%burn\_step = 0}
+\DoxyCodeLine{188             h2plus\%thin\_step = 1}
+\DoxyCodeLine{189         \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'H2'})}
+\DoxyCodeLine{190             h2\%steps = 20000}
+\DoxyCodeLine{191             h2\%burn\_step = 0}
+\DoxyCodeLine{192             h2\%thin\_step = 1}
+\DoxyCodeLine{193 \textcolor{keywordflow}{        case default}}
+\DoxyCodeLine{194             error stop \textcolor{stringliteral}{'Error: Invalid system definition.'}}
+\DoxyCodeLine{195 \textcolor{keywordflow}{        end select}}
+\DoxyCodeLine{196 \textcolor{keywordflow}{    endif}}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198     \textcolor{comment}{! Read PARAMETERS namelist of the defined problem}}
+\DoxyCodeLine{199     \textcolor{keywordflow}{select case} (trim(p\_system))}
+\DoxyCodeLine{200     \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'QHO'})}
+\DoxyCodeLine{201         \textcolor{keyword}{call }read\_qho(qho)}
+\DoxyCodeLine{202     \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'H2plus'})}
+\DoxyCodeLine{203         \textcolor{keyword}{call }read\_h2plus(h2plus)}
+\DoxyCodeLine{204     \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'H2'})}
+\DoxyCodeLine{205         \textcolor{keyword}{call }read\_h2(h2)}
+\DoxyCodeLine{206 \textcolor{keywordflow}{    case default}}
+\DoxyCodeLine{207         error stop \textcolor{stringliteral}{'Error: Invalid system definition.'}}
+\DoxyCodeLine{208 \textcolor{keywordflow}{    end select}}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210     \textcolor{comment}{! Close the params.txt file}}
+\DoxyCodeLine{211     \textcolor{keyword}{close}(fu)}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213     \textcolor{comment}{! For restart runs}}
+\DoxyCodeLine{214     \textcolor{keywordflow}{if} (run\_restart) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216         \textcolor{comment}{! Read RESTART namelist}}
+\DoxyCodeLine{217         \textcolor{keyword}{call }read\_res\_nml(res)}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219         \textcolor{comment}{! Update grid-\/loop start values}}
+\DoxyCodeLine{220         \textcolor{comment}{! TO DO: Remove res\%step if James confirms that chain-\/restarts are not required.}}
+\DoxyCodeLine{221         \textcolor{keywordflow}{if} (trim(p\_system) == \textcolor{stringliteral}{'QHO'}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{222             \textcolor{keywordflow}{if} (res\%step == 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{223                 alpha\_start = res\%i\_alpha}
+\DoxyCodeLine{224             \textcolor{keywordflow}{else} }
+\DoxyCodeLine{225                 alpha\_start = res\%i\_alpha+1}
+\DoxyCodeLine{226 \textcolor{keywordflow}{            endif} }
+\DoxyCodeLine{227         \textcolor{keywordflow}{else} }
+\DoxyCodeLine{228             \textcolor{keywordflow}{if} (res\%step == 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{229                 bond\_start = res\%i\_bond}
+\DoxyCodeLine{230             \textcolor{keywordflow}{else} }
+\DoxyCodeLine{231                 bond\_start = res\%i\_bond+1}
+\DoxyCodeLine{232 \textcolor{keywordflow}{            endif} }
+\DoxyCodeLine{233 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235         \textcolor{comment}{! Print restarts header.}}
+\DoxyCodeLine{236         \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Restarted Program -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}})}
+\DoxyCodeLine{237         \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239 \textcolor{keywordflow}{    end if} }
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:

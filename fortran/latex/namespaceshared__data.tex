@@ -50,9 +50,9 @@ character(len= $\ast$), parameter \mbox{\hyperlink{namespaceshared__data_a3e8175
 character(len= $\ast$), parameter \mbox{\hyperlink{namespaceshared__data_adf411355aadabf7c289e7105e57e02d4}{resfile\+\_\+chn}} = \textquotesingle{}res\+\_\+chains.\+nc\textquotesingle{}
 \begin{DoxyCompactList}\small\item\em Name of restart file storing energy chains. \end{DoxyCompactList}\item 
 integer(int32) \mbox{\hyperlink{namespaceshared__data_a28246c61bb5db3025877f5369254d399}{alpha\+\_\+start}} =1
-\item 
+\begin{DoxyCompactList}\small\item\em Start value for alpha grid, can be $>$1 for restarts. \end{DoxyCompactList}\item 
 integer(int32) \mbox{\hyperlink{namespaceshared__data_abd55f854da9e9234d715022110bd076a}{bond\+\_\+start}} =1
-\begin{DoxyCompactList}\small\item\em Can be $>$1 for restarts. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Start value for bondlength grid, can be $>$1 for restarts. \end{DoxyCompactList}\item 
 integer \mbox{\hyperlink{namespaceshared__data_af5798eba5b1c4594d4c3c9648d732e9e}{logid}}
 \begin{DoxyCompactList}\small\item\em To store logfile unit. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -350,11 +350,15 @@ Definition at line 137 of file shared\+\_\+data.\+f90.
 
 
 
+Start value for alpha grid, can be $>$1 for restarts. 
+
+
+
 Definition at line 140 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{140     \textcolor{keywordtype}{integer(int32)} :: alpha\_start=1, bond\_start=1 }
+\DoxyCodeLine{140     \textcolor{keywordtype}{integer(int32)} :: alpha\_start=1}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_abd55f854da9e9234d715022110bd076a}\label{namespaceshared__data_abd55f854da9e9234d715022110bd076a}} 
@@ -365,12 +369,17 @@ Definition at line 140 of file shared\+\_\+data.\+f90.
 
 
 
-Can be $>$1 for restarts. 
+Start value for bondlength grid, can be $>$1 for restarts. 
 
 
 
-Definition at line 140 of file shared\+\_\+data.\+f90.
+Definition at line 141 of file shared\+\_\+data.\+f90.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{141     \textcolor{keywordtype}{integer(int32)} :: bond\_start=1}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_af5798eba5b1c4594d4c3c9648d732e9e}\label{namespaceshared__data_af5798eba5b1c4594d4c3c9648d732e9e}} 
 \index{shared\_data@{shared\_data}!logid@{logid}}
 \index{logid@{logid}!shared\_data@{shared\_data}}
@@ -383,10 +392,10 @@ To store logfile unit.
 
 
 
-Definition at line 141 of file shared\+\_\+data.\+f90.
+Definition at line 142 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{141     \textcolor{keywordtype}{integer} :: logid}
+\DoxyCodeLine{142     \textcolor{keywordtype}{integer} :: logid}
 
 \end{DoxyCode}
