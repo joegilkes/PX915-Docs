@@ -1,0 +1,4 @@
+<map id="write.write_params" name="write.write_params">
+<area shape="rect" id="node1" title="Major subroutine that writes the input file params.txt." alt="" coords="160,5,291,32"/>
+<area shape="rect" id="node2" href="$namespaceinput.html#a3d7818a4f120b1f0ada5a32dc5476fa3" title="Enquires whether the user would like to write a new params.txt file, or check an existing params...." alt="" coords="5,5,112,32"/>
+</map>

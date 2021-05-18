@@ -25,11 +25,7 @@ var namespaces_dup =
       [ "porder_hyd", "namespacecheck.html#a40ce55cb1cbe818cf23963d5c4236c4e", null ]
     ] ],
     [ "input", "namespaceinput.html", [
-      [ "task", "namespaceinput.html#a5bbb05bb995b54ba85c2cac3e953b34b", null ],
-      [ "control", "namespaceinput.html#ae1f6a54f2f318ee28ca6cd061a4f998a", null ],
-      [ "params", "namespaceinput.html#ae05e5faabb387b386a5a98bb0476103d", null ],
-      [ "f", "namespaceinput.html#a085e6a62f65ee795500e711e5fefceba", null ],
-      [ "nml", "namespaceinput.html#adfbf7f2951d8e1ec988b6947e1407610", null ]
+      [ "step_one", "namespaceinput.html#a3d7818a4f120b1f0ada5a32dc5476fa3", null ]
     ] ],
     [ "visualisation", "namespacevisualisation.html", [
       [ "print_global_attr", "namespacevisualisation.html#af26cb719b2deb508473e83624f95b374", null ],

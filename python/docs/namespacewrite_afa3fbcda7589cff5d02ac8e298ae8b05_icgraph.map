@@ -1,4 +1,5 @@
 <map id="write.query_grid" name="write.query_grid">
-<area shape="rect" id="node1" title="Queries user for the minimum, maximum and number of points of a parameter grid." alt="" coords="188,5,300,32"/>
-<area shape="rect" id="node2" href="$namespacewrite.html#a2a80b928706bf9c4a0283575b3105dd9" title="Major function that queries the user for all the inputs required to assemble params...." alt="" coords="5,5,140,32"/>
+<area shape="rect" id="node1" title="Queries user for the minimum, maximum and number of points of a parameter grid." alt="" coords="343,5,455,32"/>
+<area shape="rect" id="node2" href="$namespacewrite.html#a2a80b928706bf9c4a0283575b3105dd9" title="Major function that queries the user for all the inputs required to assemble params...." alt="" coords="160,5,295,32"/>
+<area shape="rect" id="node3" href="$namespaceinput.html#a3d7818a4f120b1f0ada5a32dc5476fa3" title="Enquires whether the user would like to write a new params.txt file, or check an existing params...." alt="" coords="5,5,112,32"/>
 </map>
