@@ -131,7 +131,11 @@ $(document).ready(function(){initNavTree('md_repo__r_e_a_d_m_e.html',''); initRe
 <li>3.1 Tutorial</li>
 <li>3.2 Data Output</li>
 <li>3.3 Running <em><b>[Project Name]</b></em> in Parallel</li>
-<li>3.4 Error Messages</li>
+<li><a href="#34-Error-Messages">3.4 Error Messages</a><ul>
+<li><a href="#341-Clarity">3.4.1 Clarity</a></li>
+<li><a href="#342-Be-Concise-and-Precise">3.4.2 Be Concise and Precise</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#Section-4---Upcoming-Features">Section 4 - Upcoming Features</a></li>
@@ -256,6 +260,8 @@ $(document).ready(function(){initNavTree('md_repo__r_e_a_d_m_e.html',''); initRe
 <p>Developers should never write abstract error messages as they do not contain adequate information regarding the problems. It is no good to state that something went wrong in the software package but does not help users understand its root cause. As a rule, developers should never assume people will fully understand the context of an error message. Hence, it is a good practice to always be explicit and indicate what exactly has gone wrong in the error messages.</p>
 <p>Error messages that contain technical terminologies will certainly confuse most users. The error message should always describe the errors in terms of users’ actions. Never assume the users are tech-savvy. Hence, it is also a good practice to use non-technical terminologies that can easily understand by everyone.</p>
 <h3>3.4.2 Be Concise and Precise</h3>
+<p>The majority of users rarely read technical software documents word-by-word. The more text on a page, the more likely the users will not read the text at all. This is why it is vital to reduce the text down, including error messages. Developers’ goal is to write concise but precise error messages.</p>
+<p>Error messages should enable users to resolve errors efficiently by only containing the information required to help users. Hence, developers should eliminate unnecessary details that do not help the users achieve this objective.</p>
 <h3>3.4.X Examples</h3>
 <div class="fragment"><div class="line">Error: Invalid CONTROL namelist format in file &quot;params.txt&quot;.</div>
 </div><!-- fragment --> <div class="fragment"><div class="line">Error: Invalid PARAMETERS namelist for QHO p_system in file &quot;params.txt&quot;.</div>
@@ -285,7 +291,7 @@ $(document).ready(function(){initNavTree('md_repo__r_e_a_d_m_e.html',''); initRe
 <p><em><b>Q: What could I do if I spot a bug in the software?</b></em></p>
 <p><em>A: Any user who spotted a bug in **[Project Name]**, please notify the developers (anyone in the <b>contributor</b> table) by raising it as an issue in the <b>Issues</b> tab in the relevant branch of the **[Project Name]**’s GitHub repository. Key bug fixes will be documented in the software documentation in the next stable version release.</em></p>
 <hr  />
-<p>This documentation was generated from commit f9b02bf </p>
+<p>This documentation was generated from commit a62544e </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
