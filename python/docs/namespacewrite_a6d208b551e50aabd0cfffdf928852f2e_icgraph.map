@@ -1,5 +1,5 @@
 <map id="write.isint" name="write.isint">
 <area shape="rect" id="node1" title="Checks if the input string represents an integer." alt="" coords="352,5,429,32"/>
 <area shape="rect" id="node2" href="$namespacewrite.html#a5301642c79448d29f87b3506f85a01c8" title="Queries an integer step value, using the input string as a prompt." alt="" coords="188,5,304,32"/>
-<area shape="rect" id="node3" href="$namespacewrite.html#a2a80b928706bf9c4a0283575b3105dd9" title="Major function that queries the user for all the inputs required to assemble ." alt="" coords="5,5,140,32"/>
+<area shape="rect" id="node3" href="$namespacewrite.html#a2a80b928706bf9c4a0283575b3105dd9" title="Major function that queries the user for all the inputs required to assemble params...." alt="" coords="5,5,140,32"/>
 </map>

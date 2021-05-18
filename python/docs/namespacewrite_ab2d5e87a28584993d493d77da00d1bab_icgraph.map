@@ -1,5 +1,5 @@
 <map id="write.isfloat" name="write.isfloat">
 <area shape="rect" id="node1" title="Checks if the input string represents a float." alt="" coords="372,5,459,32"/>
 <area shape="rect" id="node2" href="$namespacewrite.html#abcf50fa9f656fcc5938355f67ee6744a" title="Queries a positive float value, using the input string as a prompt." alt="" coords="188,5,324,32"/>
-<area shape="rect" id="node3" href="$namespacewrite.html#a2a80b928706bf9c4a0283575b3105dd9" title="Major function that queries the user for all the inputs required to assemble ." alt="" coords="5,5,140,32"/>
+<area shape="rect" id="node3" href="$namespacewrite.html#a2a80b928706bf9c4a0283575b3105dd9" title="Major function that queries the user for all the inputs required to assemble params...." alt="" coords="5,5,140,32"/>
 </map>
