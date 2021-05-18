@@ -1,4 +1,4 @@
 <map id="check.check_float" name="check.check_float">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,132,32"/>
-<area shape="rect" id="node2" href="$namespacecheck.html#a94f283ccc6c56cdbb36649cb73c5da7e" title=" " alt="" coords="180,5,339,32"/>
+<area shape="rect" id="node1" title="Checks the input value of a parameter that is expected to be a float." alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node2" href="$namespacecheck.html#a94f283ccc6c56cdbb36649cb73c5da7e" title="Subroutine that notifies the user when defaults are being used for a certain parameter." alt="" coords="180,5,339,32"/>
 </map>

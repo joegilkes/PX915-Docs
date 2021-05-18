@@ -6,7 +6,7 @@ var namespaces_dup =
       [ "check_step", "namespacecheck.html#ae808077a5a5aa3583bbf20a5fb38131d", null ],
       [ "check_float", "namespacecheck.html#a92fcf5aad4145a0f4bbc3d52703a64ab", null ],
       [ "check_grid", "namespacecheck.html#ae45c5a9a85b450aa57fb0afea8d11c59", null ],
-      [ "check_inputs", "namespacecheck.html#a5b0dd2e5ed1623ec423746d802f34e7a", null ],
+      [ "check_inputs", "namespacecheck.html#af433b760a4dbdb0972d3b43505f2c4b8", null ],
       [ "systems", "namespacecheck.html#a80daf9cf96a39fa34181b0ef3fcc5750", null ],
       [ "boolean", "namespacecheck.html#a26944ae06b1c4267e761adca3a568740", null ],
       [ "d_equi", "namespacecheck.html#aa48003eacf7aca280afc3a85c95e629a", null ],
@@ -28,7 +28,8 @@ var namespaces_dup =
       [ "task", "namespaceinput.html#a5bbb05bb995b54ba85c2cac3e953b34b", null ],
       [ "control", "namespaceinput.html#ae1f6a54f2f318ee28ca6cd061a4f998a", null ],
       [ "params", "namespaceinput.html#ae05e5faabb387b386a5a98bb0476103d", null ],
-      [ "f", "namespaceinput.html#a085e6a62f65ee795500e711e5fefceba", null ]
+      [ "f", "namespaceinput.html#a085e6a62f65ee795500e711e5fefceba", null ],
+      [ "nml", "namespaceinput.html#adfbf7f2951d8e1ec988b6947e1407610", null ]
     ] ],
     [ "visualisation", "namespacevisualisation.html", [
       [ "print_global_attr", "namespacevisualisation.html#af26cb719b2deb508473e83624f95b374", null ],

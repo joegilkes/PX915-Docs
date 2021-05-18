@@ -1,7 +1,7 @@
 <map id="check.default_message" name="check.default_message">
-<area shape="rect" id="node1" title=" " alt="" coords="365,81,524,108"/>
-<area shape="rect" id="node2" href="$namespacecheck.html#a92fcf5aad4145a0f4bbc3d52703a64ab" title=" " alt="" coords="191,5,317,32"/>
-<area shape="rect" id="node3" href="$namespacecheck.html#a5b0dd2e5ed1623ec423746d802f34e7a" title="MAJOR CHECK FUNCTION #." alt="" coords="5,81,143,108"/>
-<area shape="rect" id="node4" href="$namespacecheck.html#ae45c5a9a85b450aa57fb0afea8d11c59" title=" " alt="" coords="193,107,315,133"/>
-<area shape="rect" id="node5" href="$namespacecheck.html#ae808077a5a5aa3583bbf20a5fb38131d" title=" " alt="" coords="191,157,317,184"/>
+<area shape="rect" id="node1" title="Subroutine that notifies the user when defaults are being used for a certain parameter." alt="" coords="365,81,524,108"/>
+<area shape="rect" id="node2" href="$namespacecheck.html#a92fcf5aad4145a0f4bbc3d52703a64ab" title="Checks the input value of a parameter that is expected to be a float." alt="" coords="191,5,317,32"/>
+<area shape="rect" id="node3" href="$namespacecheck.html#af433b760a4dbdb0972d3b43505f2c4b8" title="Major subroutine that checks the inputs of file params.txt." alt="" coords="5,81,143,108"/>
+<area shape="rect" id="node4" href="$namespacecheck.html#ae45c5a9a85b450aa57fb0afea8d11c59" title="Checks the input values for a grid parameter." alt="" coords="193,107,315,133"/>
+<area shape="rect" id="node5" href="$namespacecheck.html#ae808077a5a5aa3583bbf20a5fb38131d" title="Checks the input value of a parameter that is expected to be an integer step." alt="" coords="191,157,317,184"/>
 </map>

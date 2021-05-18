@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['write_55',['write',['../namespacewrite.html',1,'']]]
+  ['write_56',['write',['../namespacewrite.html',1,'']]]
 ];
