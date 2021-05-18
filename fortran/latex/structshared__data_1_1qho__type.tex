@@ -2,6 +2,11 @@
 \label{structshared__data_1_1qho__type}\index{shared\_data::qho\_type@{shared\_data::qho\_type}}
 
 
+Derived Type for Quantum Harmonic Oscillator, including VQMC defaults.  
+
+
+
+
 Collaboration diagram for shared\+\_\+data\+::qho\+\_\+type\+:
 \nopagebreak
 \begin{figure}[H]
@@ -13,24 +18,24 @@ Collaboration diagram for shared\+\_\+data\+::qho\+\_\+type\+:
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-integer(int32) \mbox{\hyperlink{structshared__data_1_1qho__type_abb2147cd07714d43f682599d2b4cfd09}{steps}} =1000
-\item 
-integer(int32) \mbox{\hyperlink{structshared__data_1_1qho__type_a914a539afdc5758886f341b2d5ad227b}{burn\+\_\+step}} =100
-\item 
-integer(int32) \mbox{\hyperlink{structshared__data_1_1qho__type_a209d4e3c4910ba329506ba6e39a1d3de}{thin\+\_\+step}} =1
-\item 
+integer(int32) \mbox{\hyperlink{structshared__data_1_1qho__type_abb2147cd07714d43f682599d2b4cfd09}{steps}} =100000
+\begin{DoxyCompactList}\small\item\em Total number of steps for each MMC chain. \end{DoxyCompactList}\item 
+integer(int32) \mbox{\hyperlink{structshared__data_1_1qho__type_a914a539afdc5758886f341b2d5ad227b}{burn\+\_\+step}} =1000
+\begin{DoxyCompactList}\small\item\em Number of steps to be burnt from the start of the MMC chain. \end{DoxyCompactList}\item 
+integer(int32) \mbox{\hyperlink{structshared__data_1_1qho__type_a209d4e3c4910ba329506ba6e39a1d3de}{thin\+\_\+step}} =10
+\begin{DoxyCompactList}\small\item\em Interval of steps by which the MMC chain is thinned. \end{DoxyCompactList}\item 
 real(real64) \mbox{\hyperlink{structshared__data_1_1qho__type_a39c77f54ab550862e08a78073d69606b}{rcut}} =3
-\item 
+\begin{DoxyCompactList}\small\item\em Maximum radius of search around the Hydrogen atoms. \end{DoxyCompactList}\item 
 real(real64) \mbox{\hyperlink{structshared__data_1_1qho__type_ae2a36c67d15fece7562440b75c74da04}{sigma}} =0.\+1
-\item 
+\begin{DoxyCompactList}\small\item\em Standard deviation in MMC transition probability. \end{DoxyCompactList}\item 
 real(real64), dimension(3) \mbox{\hyperlink{structshared__data_1_1qho__type_a617a3bd7ad00f08ff22fa999db1d52b1}{alpha}} = (/0,1,10/)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Derived Type for Quantum Harmonic Oscillator, including VQMC defaults. 
 
-
-Definition at line 48 of file shared\+\_\+data.\+f90.
+Definition at line 61 of file shared\+\_\+data.\+f90.
 
 
 
@@ -39,45 +44,57 @@ Definition at line 48 of file shared\+\_\+data.\+f90.
 \index{shared\_data::qho\_type@{shared\_data::qho\_type}!steps@{steps}}
 \index{steps@{steps}!shared\_data::qho\_type@{shared\_data::qho\_type}}
 \doxysubsubsection{\texorpdfstring{steps}{steps}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::qho\+\_\+type\+::steps =1000}
+{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::qho\+\_\+type\+::steps =100000}
 
 
 
-Definition at line 49 of file shared\+\_\+data.\+f90.
+Total number of steps for each MMC chain. 
+
+
+
+Definition at line 62 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{49         \textcolor{keywordtype}{integer(int32)} :: steps=1000}
+\DoxyCodeLine{62         \textcolor{keywordtype}{integer(int32)} :: steps=100000}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1qho__type_a914a539afdc5758886f341b2d5ad227b}\label{structshared__data_1_1qho__type_a914a539afdc5758886f341b2d5ad227b}} 
 \index{shared\_data::qho\_type@{shared\_data::qho\_type}!burn\_step@{burn\_step}}
 \index{burn\_step@{burn\_step}!shared\_data::qho\_type@{shared\_data::qho\_type}}
 \doxysubsubsection{\texorpdfstring{burn\_step}{burn\_step}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::qho\+\_\+type\+::burn\+\_\+step =100}
+{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::qho\+\_\+type\+::burn\+\_\+step =1000}
 
 
 
-Definition at line 50 of file shared\+\_\+data.\+f90.
+Number of steps to be burnt from the start of the MMC chain. 
+
+
+
+Definition at line 63 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{50         \textcolor{keywordtype}{integer(int32)} :: burn\_step=100}
+\DoxyCodeLine{63         \textcolor{keywordtype}{integer(int32)} :: burn\_step=1000}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1qho__type_a209d4e3c4910ba329506ba6e39a1d3de}\label{structshared__data_1_1qho__type_a209d4e3c4910ba329506ba6e39a1d3de}} 
 \index{shared\_data::qho\_type@{shared\_data::qho\_type}!thin\_step@{thin\_step}}
 \index{thin\_step@{thin\_step}!shared\_data::qho\_type@{shared\_data::qho\_type}}
 \doxysubsubsection{\texorpdfstring{thin\_step}{thin\_step}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::qho\+\_\+type\+::thin\+\_\+step =1}
+{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::qho\+\_\+type\+::thin\+\_\+step =10}
 
 
 
-Definition at line 51 of file shared\+\_\+data.\+f90.
+Interval of steps by which the MMC chain is thinned. 
+
+
+
+Definition at line 64 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{51         \textcolor{keywordtype}{integer(int32)} :: thin\_step=1}
+\DoxyCodeLine{64         \textcolor{keywordtype}{integer(int32)} :: thin\_step=10}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1qho__type_a39c77f54ab550862e08a78073d69606b}\label{structshared__data_1_1qho__type_a39c77f54ab550862e08a78073d69606b}} 
@@ -88,11 +105,15 @@ Definition at line 51 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 52 of file shared\+\_\+data.\+f90.
+Maximum radius of search around the Hydrogen atoms. 
+
+
+
+Definition at line 65 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{52 \textcolor{keywordtype}{        real}(real64) :: rcut=3}
+\DoxyCodeLine{65 \textcolor{keywordtype}{        real}(real64) :: rcut=3}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1qho__type_ae2a36c67d15fece7562440b75c74da04}\label{structshared__data_1_1qho__type_ae2a36c67d15fece7562440b75c74da04}} 
@@ -103,11 +124,15 @@ Definition at line 52 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 53 of file shared\+\_\+data.\+f90.
+Standard deviation in MMC transition probability. 
+
+
+
+Definition at line 66 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{53 \textcolor{keywordtype}{        real}(real64) :: sigma=0.1}
+\DoxyCodeLine{66 \textcolor{keywordtype}{        real}(real64) :: sigma=0.1}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1qho__type_a617a3bd7ad00f08ff22fa999db1d52b1}\label{structshared__data_1_1qho__type_a617a3bd7ad00f08ff22fa999db1d52b1}} 
@@ -118,11 +143,11 @@ Definition at line 53 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 54 of file shared\+\_\+data.\+f90.
+Definition at line 67 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{54 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: alpha = (/0,1,10/)}
+\DoxyCodeLine{67 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: alpha = (/0,1,10/) \textcolor{comment}{! Grid of alpha values, format: [min, max, grid points]}}
 
 \end{DoxyCode}
 

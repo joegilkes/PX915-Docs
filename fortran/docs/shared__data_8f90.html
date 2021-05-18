@@ -102,12 +102,16 @@ $(document).ready(function(){initNavTree('shared__data_8f90.html',''); initResiz
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Types</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">type &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1qho__type.html">shared_data::qho_type</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Derived Type for Quantum Harmonic Oscillator, including VQMC defaults.  <a href="structshared__data_1_1qho__type.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">type &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1h2plus__type.html">shared_data::h2plus_type</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Derived Type for Hydrogen Ion, including VQMC defaults.  <a href="structshared__data_1_1h2plus__type.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">type &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1h2__type.html">shared_data::h2_type</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Derived Type for Hydrogen Molecule, including VQMC defaults.  <a href="structshared__data_1_1h2__type.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">type &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html">shared_data::restart_type</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Derived Type to store restart data.  <a href="structshared__data_1_1restart__type.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -116,6 +120,7 @@ Modules</h2></td></tr>
 <tr class="memdesc:namespaceconstants"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains mathematical constants needed throughout the code, all of which are globally accessible. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceshared__data"><td class="memItemLeft" align="right" valign="top">module &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html">shared_data</a></td></tr>
+<tr class="memdesc:namespaceshared__data"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains derived types for the systems of interest (QHO, H2 ion, H2 molecule) and for the restart data. Also includes globally accessible variables that store the data from the input file params.txt. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -148,48 +153,56 @@ Variables</h2></td></tr>
 <tr class="memdesc:a1bac0d0e628245595f9abe2bdd4de9c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">sqrt(2)/2  <a href="namespaceconstants.html#a1bac0d0e628245595f9abe2bdd4de9c0">More...</a><br /></td></tr>
 <tr class="separator:a1bac0d0e628245595f9abe2bdd4de9c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4c86b6f875f575f5b7194f9a5d2ddf4"><td class="memItemLeft" align="right" valign="top">character(len=10)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#ac4c86b6f875f575f5b7194f9a5d2ddf4">shared_data::p_system</a></td></tr>
+<tr class="memdesc:ac4c86b6f875f575f5b7194f9a5d2ddf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">System of interest: QHO, H2plus, H2.  <a href="namespaceshared__data.html#ac4c86b6f875f575f5b7194f9a5d2ddf4">More...</a><br /></td></tr>
 <tr class="separator:ac4c86b6f875f575f5b7194f9a5d2ddf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9285af0408bde68c647a77c75900929d"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a9285af0408bde68c647a77c75900929d">shared_data::run_equil</a> =.FALSE.</td></tr>
+<tr class="memdesc:a9285af0408bde68c647a77c75900929d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tag for equilibration runs.  <a href="namespaceshared__data.html#a9285af0408bde68c647a77c75900929d">More...</a><br /></td></tr>
 <tr class="separator:a9285af0408bde68c647a77c75900929d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2938e794296c80673d3b14040bc92798"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a2938e794296c80673d3b14040bc92798">shared_data::run_restart</a> =.FALSE.</td></tr>
+<tr class="memdesc:a2938e794296c80673d3b14040bc92798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tag for restart runs.  <a href="namespaceshared__data.html#a2938e794296c80673d3b14040bc92798">More...</a><br /></td></tr>
 <tr class="separator:a2938e794296c80673d3b14040bc92798"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade9d4ec979d01a52cdef8fc778abfa1d"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#ade9d4ec979d01a52cdef8fc778abfa1d">shared_data::write_restart</a> = .TRUE.</td></tr>
+<tr class="memdesc:ade9d4ec979d01a52cdef8fc778abfa1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tag for writing restart files.  <a href="namespaceshared__data.html#ade9d4ec979d01a52cdef8fc778abfa1d">More...</a><br /></td></tr>
 <tr class="separator:ade9d4ec979d01a52cdef8fc778abfa1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abee3357695dee9120626f1a0c422dd29"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#abee3357695dee9120626f1a0c422dd29">shared_data::restart_step</a> = 0</td></tr>
+<tr class="memdesc:abee3357695dee9120626f1a0c422dd29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frequency of writing restart files, within MMC loop.  <a href="namespaceshared__data.html#abee3357695dee9120626f1a0c422dd29">More...</a><br /></td></tr>
 <tr class="separator:abee3357695dee9120626f1a0c422dd29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ea265f2c8a3797c4d1a2b33059e1877"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a3ea265f2c8a3797c4d1a2b33059e1877">shared_data::write_chains</a> =.FALSE.</td></tr>
+<tr class="memdesc:a3ea265f2c8a3797c4d1a2b33059e1877"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tag to write final MMC chains.  <a href="namespaceshared__data.html#a3ea265f2c8a3797c4d1a2b33059e1877">More...</a><br /></td></tr>
 <tr class="separator:a3ea265f2c8a3797c4d1a2b33059e1877"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf2cbacc5b2b4d8ee26c96dc7062aa9b"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#acf2cbacc5b2b4d8ee26c96dc7062aa9b">shared_data::write_log</a> = .FALSE.</td></tr>
+<tr class="memdesc:acf2cbacc5b2b4d8ee26c96dc7062aa9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tag to write logfile.  <a href="namespaceshared__data.html#acf2cbacc5b2b4d8ee26c96dc7062aa9b">More...</a><br /></td></tr>
 <tr class="separator:acf2cbacc5b2b4d8ee26c96dc7062aa9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7503c2b3bd10f3ee43c4cf9964c42ab2"><td class="memItemLeft" align="right" valign="top">type(qho_type)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a7503c2b3bd10f3ee43c4cf9964c42ab2">shared_data::qho</a></td></tr>
+<tr class="memdesc:a7503c2b3bd10f3ee43c4cf9964c42ab2"><td class="mdescLeft">&#160;</td><td class="mdescRight">To store inputs for QHO system.  <a href="namespaceshared__data.html#a7503c2b3bd10f3ee43c4cf9964c42ab2">More...</a><br /></td></tr>
 <tr class="separator:a7503c2b3bd10f3ee43c4cf9964c42ab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e9e95c9ea52c9aa2ec2f05b8d65e4f3"><td class="memItemLeft" align="right" valign="top">type(h2plus_type)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a1e9e95c9ea52c9aa2ec2f05b8d65e4f3">shared_data::h2plus</a></td></tr>
+<tr class="memdesc:a1e9e95c9ea52c9aa2ec2f05b8d65e4f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">To store inputs for H2 ion system.  <a href="namespaceshared__data.html#a1e9e95c9ea52c9aa2ec2f05b8d65e4f3">More...</a><br /></td></tr>
 <tr class="separator:a1e9e95c9ea52c9aa2ec2f05b8d65e4f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1703912ee00414a4aaf1a41d3c167694"><td class="memItemLeft" align="right" valign="top">type(h2_type)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a1703912ee00414a4aaf1a41d3c167694">shared_data::h2</a></td></tr>
+<tr class="memdesc:a1703912ee00414a4aaf1a41d3c167694"><td class="mdescLeft">&#160;</td><td class="mdescRight">To store inputs for H2 molecule system.  <a href="namespaceshared__data.html#a1703912ee00414a4aaf1a41d3c167694">More...</a><br /></td></tr>
 <tr class="separator:a1703912ee00414a4aaf1a41d3c167694"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e48217c892c5f716b469fd513ce6c77"><td class="memItemLeft" align="right" valign="top">type(restart_type)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a2e48217c892c5f716b469fd513ce6c77">shared_data::res</a></td></tr>
 <tr class="separator:a2e48217c892c5f716b469fd513ce6c77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73f57f5cf348bf3d0dd9e0b8eaf8e514"><td class="memItemLeft" align="right" valign="top">character(len= *), parameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a73f57f5cf348bf3d0dd9e0b8eaf8e514">shared_data::resfile_nml</a> = 'res_nml.txt'</td></tr>
+<tr class="memdesc:a73f57f5cf348bf3d0dd9e0b8eaf8e514"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of restart file storing RESTART namelist.  <a href="namespaceshared__data.html#a73f57f5cf348bf3d0dd9e0b8eaf8e514">More...</a><br /></td></tr>
 <tr class="separator:a73f57f5cf348bf3d0dd9e0b8eaf8e514"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92015ef2d63f7ea1e895d120fad6341f"><td class="memItemLeft" align="right" valign="top">character(len= *), parameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a92015ef2d63f7ea1e895d120fad6341f">shared_data::resfile_etot</a> = 'res_etot.nc'</td></tr>
+<tr class="memdesc:a92015ef2d63f7ea1e895d120fad6341f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of restart file storing total energies.  <a href="namespaceshared__data.html#a92015ef2d63f7ea1e895d120fad6341f">More...</a><br /></td></tr>
 <tr class="separator:a92015ef2d63f7ea1e895d120fad6341f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e81757a05da8c837c39bae8e9bcedae"><td class="memItemLeft" align="right" valign="top">character(len= *), parameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a3e81757a05da8c837c39bae8e9bcedae">shared_data::resfile_epar</a> = 'res_epar.nc'</td></tr>
+<tr class="memdesc:a3e81757a05da8c837c39bae8e9bcedae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of restart file storing parameter energies.  <a href="namespaceshared__data.html#a3e81757a05da8c837c39bae8e9bcedae">More...</a><br /></td></tr>
 <tr class="separator:a3e81757a05da8c837c39bae8e9bcedae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf411355aadabf7c289e7105e57e02d4"><td class="memItemLeft" align="right" valign="top">character(len= *), parameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#adf411355aadabf7c289e7105e57e02d4">shared_data::resfile_chn</a> = 'res_chains.nc'</td></tr>
+<tr class="memdesc:adf411355aadabf7c289e7105e57e02d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of restart file storing energy chains.  <a href="namespaceshared__data.html#adf411355aadabf7c289e7105e57e02d4">More...</a><br /></td></tr>
 <tr class="separator:adf411355aadabf7c289e7105e57e02d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28246c61bb5db3025877f5369254d399"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a28246c61bb5db3025877f5369254d399">shared_data::alpha_start</a> =1</td></tr>
 <tr class="separator:a28246c61bb5db3025877f5369254d399"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd55f854da9e9234d715022110bd076a"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#abd55f854da9e9234d715022110bd076a">shared_data::bond_start</a> =1</td></tr>
+<tr class="memdesc:abd55f854da9e9234d715022110bd076a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be &gt;1 for restarts.  <a href="namespaceshared__data.html#abd55f854da9e9234d715022110bd076a">More...</a><br /></td></tr>
 <tr class="separator:abd55f854da9e9234d715022110bd076a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad78204b4454629c23740a867244a2f89"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#ad78204b4454629c23740a867244a2f89">shared_data::i_alpha</a></td></tr>
-<tr class="separator:ad78204b4454629c23740a867244a2f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6263d962b34a090fa515dc809caf695b"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a6263d962b34a090fa515dc809caf695b">shared_data::i_bond</a></td></tr>
-<tr class="separator:a6263d962b34a090fa515dc809caf695b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a657e95e18cc24105b6d4ebf25b4bfa1a"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a657e95e18cc24105b6d4ebf25b4bfa1a">shared_data::i_c1</a></td></tr>
-<tr class="separator:a657e95e18cc24105b6d4ebf25b4bfa1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeff0f22f60575722c8fc6958278a1c50"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#aeff0f22f60575722c8fc6958278a1c50">shared_data::i_c2</a></td></tr>
-<tr class="separator:aeff0f22f60575722c8fc6958278a1c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5798eba5b1c4594d4c3c9648d732e9e"><td class="memItemLeft" align="right" valign="top">integer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#af5798eba5b1c4594d4c3c9648d732e9e">shared_data::logid</a></td></tr>
+<tr class="memdesc:af5798eba5b1c4594d4c3c9648d732e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">To store logfile unit.  <a href="namespaceshared__data.html#af5798eba5b1c4594d4c3c9648d732e9e">More...</a><br /></td></tr>
 <tr class="separator:af5798eba5b1c4594d4c3c9648d732e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

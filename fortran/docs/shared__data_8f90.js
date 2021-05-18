@@ -30,9 +30,5 @@ var shared__data_8f90 =
     [ "resfile_chn", "shared__data_8f90.html#adf411355aadabf7c289e7105e57e02d4", null ],
     [ "alpha_start", "shared__data_8f90.html#a28246c61bb5db3025877f5369254d399", null ],
     [ "bond_start", "shared__data_8f90.html#abd55f854da9e9234d715022110bd076a", null ],
-    [ "i_alpha", "shared__data_8f90.html#ad78204b4454629c23740a867244a2f89", null ],
-    [ "i_bond", "shared__data_8f90.html#a6263d962b34a090fa515dc809caf695b", null ],
-    [ "i_c1", "shared__data_8f90.html#a657e95e18cc24105b6d4ebf25b4bfa1a", null ],
-    [ "i_c2", "shared__data_8f90.html#aeff0f22f60575722c8fc6958278a1c50", null ],
     [ "logid", "shared__data_8f90.html#af5798eba5b1c4594d4c3c9648d732e9e", null ]
 ];

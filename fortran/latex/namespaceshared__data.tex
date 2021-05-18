@@ -1,64 +1,64 @@
 \hypertarget{namespaceshared__data}{}\doxysection{shared\+\_\+data Module Reference}
 \label{namespaceshared__data}\index{shared\_data@{shared\_data}}
+
+
+Contains derived types for the systems of interest (QHO, H2 ion, H2 molecule) and for the restart data. Also includes globally accessible variables that store the data from the input file params.\+txt.  
+
+
 \doxysubsection*{Data Types}
 \begin{DoxyCompactItemize}
 \item 
 type \mbox{\hyperlink{structshared__data_1_1qho__type}{qho\+\_\+type}}
-\item 
+\begin{DoxyCompactList}\small\item\em Derived Type for Quantum Harmonic Oscillator, including VQMC defaults. \end{DoxyCompactList}\item 
 type \mbox{\hyperlink{structshared__data_1_1h2plus__type}{h2plus\+\_\+type}}
-\item 
+\begin{DoxyCompactList}\small\item\em Derived Type for Hydrogen Ion, including VQMC defaults. \end{DoxyCompactList}\item 
 type \mbox{\hyperlink{structshared__data_1_1h2__type}{h2\+\_\+type}}
-\item 
+\begin{DoxyCompactList}\small\item\em Derived Type for Hydrogen Molecule, including VQMC defaults. \end{DoxyCompactList}\item 
 type \mbox{\hyperlink{structshared__data_1_1restart__type}{restart\+\_\+type}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Derived Type to store restart data. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 character(len=10) \mbox{\hyperlink{namespaceshared__data_ac4c86b6f875f575f5b7194f9a5d2ddf4}{p\+\_\+system}}
-\item 
+\begin{DoxyCompactList}\small\item\em System of interest\+: QHO, H2plus, H2. \end{DoxyCompactList}\item 
 logical \mbox{\hyperlink{namespaceshared__data_a9285af0408bde68c647a77c75900929d}{run\+\_\+equil}} =.FALSE.
-\item 
+\begin{DoxyCompactList}\small\item\em Tag for equilibration runs. \end{DoxyCompactList}\item 
 logical \mbox{\hyperlink{namespaceshared__data_a2938e794296c80673d3b14040bc92798}{run\+\_\+restart}} =.FALSE.
-\item 
+\begin{DoxyCompactList}\small\item\em Tag for restart runs. \end{DoxyCompactList}\item 
 logical \mbox{\hyperlink{namespaceshared__data_ade9d4ec979d01a52cdef8fc778abfa1d}{write\+\_\+restart}} = .TRUE.
-\item 
+\begin{DoxyCompactList}\small\item\em Tag for writing restart files. \end{DoxyCompactList}\item 
 integer(int32) \mbox{\hyperlink{namespaceshared__data_abee3357695dee9120626f1a0c422dd29}{restart\+\_\+step}} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em Frequency of writing restart files, within MMC loop. \end{DoxyCompactList}\item 
 logical \mbox{\hyperlink{namespaceshared__data_a3ea265f2c8a3797c4d1a2b33059e1877}{write\+\_\+chains}} =.FALSE.
-\item 
+\begin{DoxyCompactList}\small\item\em Tag to write final MMC chains. \end{DoxyCompactList}\item 
 logical \mbox{\hyperlink{namespaceshared__data_acf2cbacc5b2b4d8ee26c96dc7062aa9b}{write\+\_\+log}} = .FALSE.
-\item 
+\begin{DoxyCompactList}\small\item\em Tag to write logfile. \end{DoxyCompactList}\item 
 type(\mbox{\hyperlink{structshared__data_1_1qho__type}{qho\+\_\+type}}) \mbox{\hyperlink{namespaceshared__data_a7503c2b3bd10f3ee43c4cf9964c42ab2}{qho}}
-\item 
+\begin{DoxyCompactList}\small\item\em To store inputs for QHO system. \end{DoxyCompactList}\item 
 type(\mbox{\hyperlink{structshared__data_1_1h2plus__type}{h2plus\+\_\+type}}) \mbox{\hyperlink{namespaceshared__data_a1e9e95c9ea52c9aa2ec2f05b8d65e4f3}{h2plus}}
-\item 
+\begin{DoxyCompactList}\small\item\em To store inputs for H2 ion system. \end{DoxyCompactList}\item 
 type(\mbox{\hyperlink{structshared__data_1_1h2__type}{h2\+\_\+type}}) \mbox{\hyperlink{namespaceshared__data_a1703912ee00414a4aaf1a41d3c167694}{h2}}
-\item 
+\begin{DoxyCompactList}\small\item\em To store inputs for H2 molecule system. \end{DoxyCompactList}\item 
 type(\mbox{\hyperlink{structshared__data_1_1restart__type}{restart\+\_\+type}}) \mbox{\hyperlink{namespaceshared__data_a2e48217c892c5f716b469fd513ce6c77}{res}}
 \item 
 character(len= $\ast$), parameter \mbox{\hyperlink{namespaceshared__data_a73f57f5cf348bf3d0dd9e0b8eaf8e514}{resfile\+\_\+nml}} = \textquotesingle{}res\+\_\+nml.\+txt\textquotesingle{}
-\item 
+\begin{DoxyCompactList}\small\item\em Name of restart file storing RESTART namelist. \end{DoxyCompactList}\item 
 character(len= $\ast$), parameter \mbox{\hyperlink{namespaceshared__data_a92015ef2d63f7ea1e895d120fad6341f}{resfile\+\_\+etot}} = \textquotesingle{}res\+\_\+etot.\+nc\textquotesingle{}
-\item 
+\begin{DoxyCompactList}\small\item\em Name of restart file storing total energies. \end{DoxyCompactList}\item 
 character(len= $\ast$), parameter \mbox{\hyperlink{namespaceshared__data_a3e81757a05da8c837c39bae8e9bcedae}{resfile\+\_\+epar}} = \textquotesingle{}res\+\_\+epar.\+nc\textquotesingle{}
-\item 
+\begin{DoxyCompactList}\small\item\em Name of restart file storing parameter energies. \end{DoxyCompactList}\item 
 character(len= $\ast$), parameter \mbox{\hyperlink{namespaceshared__data_adf411355aadabf7c289e7105e57e02d4}{resfile\+\_\+chn}} = \textquotesingle{}res\+\_\+chains.\+nc\textquotesingle{}
-\item 
+\begin{DoxyCompactList}\small\item\em Name of restart file storing energy chains. \end{DoxyCompactList}\item 
 integer(int32) \mbox{\hyperlink{namespaceshared__data_a28246c61bb5db3025877f5369254d399}{alpha\+\_\+start}} =1
 \item 
 integer(int32) \mbox{\hyperlink{namespaceshared__data_abd55f854da9e9234d715022110bd076a}{bond\+\_\+start}} =1
-\item 
-integer(int32) \mbox{\hyperlink{namespaceshared__data_ad78204b4454629c23740a867244a2f89}{i\+\_\+alpha}}
-\item 
-integer(int32) \mbox{\hyperlink{namespaceshared__data_a6263d962b34a090fa515dc809caf695b}{i\+\_\+bond}}
-\item 
-integer(int32) \mbox{\hyperlink{namespaceshared__data_a657e95e18cc24105b6d4ebf25b4bfa1a}{i\+\_\+c1}}
-\item 
-integer(int32) \mbox{\hyperlink{namespaceshared__data_aeff0f22f60575722c8fc6958278a1c50}{i\+\_\+c2}}
-\item 
+\begin{DoxyCompactList}\small\item\em Can be $>$1 for restarts. \end{DoxyCompactList}\item 
 integer \mbox{\hyperlink{namespaceshared__data_af5798eba5b1c4594d4c3c9648d732e9e}{logid}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em To store logfile unit. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Contains derived types for the systems of interest (QHO, H2 ion, H2 molecule) and for the restart data. Also includes globally accessible variables that store the data from the input file params.\+txt. 
 
 \doxysubsection{Variable Documentation}
 \mbox{\Hypertarget{namespaceshared__data_ac4c86b6f875f575f5b7194f9a5d2ddf4}\label{namespaceshared__data_ac4c86b6f875f575f5b7194f9a5d2ddf4}} 
@@ -69,11 +69,15 @@ integer \mbox{\hyperlink{namespaceshared__data_af5798eba5b1c4594d4c3c9648d732e9e
 
 
 
-Definition at line 96 of file shared\+\_\+data.\+f90.
+System of interest\+: QHO, H2plus, H2. 
+
+
+
+Definition at line 119 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{96     \textcolor{keywordtype}{character(len=10)} :: p\_system       \textcolor{comment}{! System of interest: QHO, H2plus, H2}}
+\DoxyCodeLine{119     \textcolor{keywordtype}{character(len=10)} :: p\_system}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a9285af0408bde68c647a77c75900929d}\label{namespaceshared__data_a9285af0408bde68c647a77c75900929d}} 
@@ -84,11 +88,15 @@ Definition at line 96 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 97 of file shared\+\_\+data.\+f90.
+Tag for equilibration runs. 
+
+
+
+Definition at line 120 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{97     \textcolor{keywordtype}{logical} :: run\_equil=.false.        \textcolor{comment}{! Tag for equilibration runs}}
+\DoxyCodeLine{120     \textcolor{keywordtype}{logical} :: run\_equil=.false.        }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a2938e794296c80673d3b14040bc92798}\label{namespaceshared__data_a2938e794296c80673d3b14040bc92798}} 
@@ -99,11 +107,15 @@ Definition at line 97 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 98 of file shared\+\_\+data.\+f90.
+Tag for restart runs. 
+
+
+
+Definition at line 121 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{98     \textcolor{keywordtype}{logical} :: run\_restart =.false.     \textcolor{comment}{! Tag for restart runs}}
+\DoxyCodeLine{121     \textcolor{keywordtype}{logical} :: run\_restart =.false.     }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_ade9d4ec979d01a52cdef8fc778abfa1d}\label{namespaceshared__data_ade9d4ec979d01a52cdef8fc778abfa1d}} 
@@ -114,11 +126,15 @@ Definition at line 98 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 99 of file shared\+\_\+data.\+f90.
+Tag for writing restart files. 
+
+
+
+Definition at line 122 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{99     \textcolor{keywordtype}{logical} :: write\_restart = .true.   \textcolor{comment}{! Tag for writing restart files}}
+\DoxyCodeLine{122     \textcolor{keywordtype}{logical} :: write\_restart = .true.   }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_abee3357695dee9120626f1a0c422dd29}\label{namespaceshared__data_abee3357695dee9120626f1a0c422dd29}} 
@@ -129,11 +145,15 @@ Definition at line 99 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 100 of file shared\+\_\+data.\+f90.
+Frequency of writing restart files, within MMC loop. 
+
+
+
+Definition at line 123 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{100     \textcolor{keywordtype}{integer(int32)} :: restart\_step = 0  \textcolor{comment}{! Frequency of writing restart files, within MMC loop}}
+\DoxyCodeLine{123     \textcolor{keywordtype}{integer(int32)} :: restart\_step = 0}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a3ea265f2c8a3797c4d1a2b33059e1877}\label{namespaceshared__data_a3ea265f2c8a3797c4d1a2b33059e1877}} 
@@ -144,11 +164,15 @@ Definition at line 100 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 101 of file shared\+\_\+data.\+f90.
+Tag to write final MMC chains. 
+
+
+
+Definition at line 124 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{101     \textcolor{keywordtype}{logical} :: write\_chains =.false.    \textcolor{comment}{! Tag to write final MMC chains}}
+\DoxyCodeLine{124     \textcolor{keywordtype}{logical} :: write\_chains =.false.    }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_acf2cbacc5b2b4d8ee26c96dc7062aa9b}\label{namespaceshared__data_acf2cbacc5b2b4d8ee26c96dc7062aa9b}} 
@@ -159,11 +183,15 @@ Definition at line 101 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 102 of file shared\+\_\+data.\+f90.
+Tag to write logfile. 
+
+
+
+Definition at line 125 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{102     \textcolor{keywordtype}{logical} :: write\_log = .false.      \textcolor{comment}{! Tag to write logfile}}
+\DoxyCodeLine{125     \textcolor{keywordtype}{logical} :: write\_log = .false.      }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a7503c2b3bd10f3ee43c4cf9964c42ab2}\label{namespaceshared__data_a7503c2b3bd10f3ee43c4cf9964c42ab2}} 
@@ -174,11 +202,15 @@ Definition at line 102 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 105 of file shared\+\_\+data.\+f90.
+To store inputs for QHO system. 
+
+
+
+Definition at line 128 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{105     \textcolor{keywordtype}{type}(QHO\_type) :: QHO}
+\DoxyCodeLine{128     \textcolor{keywordtype}{type}(QHO\_type) :: QHO}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a1e9e95c9ea52c9aa2ec2f05b8d65e4f3}\label{namespaceshared__data_a1e9e95c9ea52c9aa2ec2f05b8d65e4f3}} 
@@ -189,11 +221,15 @@ Definition at line 105 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 106 of file shared\+\_\+data.\+f90.
+To store inputs for H2 ion system. 
+
+
+
+Definition at line 129 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{106     \textcolor{keywordtype}{type}(H2plus\_type) :: H2plus}
+\DoxyCodeLine{129     \textcolor{keywordtype}{type}(H2plus\_type) :: H2plus}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a1703912ee00414a4aaf1a41d3c167694}\label{namespaceshared__data_a1703912ee00414a4aaf1a41d3c167694}} 
@@ -204,11 +240,15 @@ Definition at line 106 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 107 of file shared\+\_\+data.\+f90.
+To store inputs for H2 molecule system. 
+
+
+
+Definition at line 130 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{107     \textcolor{keywordtype}{type}(H2\_type) :: H2}
+\DoxyCodeLine{130     \textcolor{keywordtype}{type}(H2\_type) :: H2}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a2e48217c892c5f716b469fd513ce6c77}\label{namespaceshared__data_a2e48217c892c5f716b469fd513ce6c77}} 
@@ -219,11 +259,11 @@ Definition at line 107 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 110 of file shared\+\_\+data.\+f90.
+Definition at line 133 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{110     \textcolor{keywordtype}{type}(restart\_type) :: res}
+\DoxyCodeLine{133     \textcolor{keywordtype}{type}(restart\_type) :: res}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a73f57f5cf348bf3d0dd9e0b8eaf8e514}\label{namespaceshared__data_a73f57f5cf348bf3d0dd9e0b8eaf8e514}} 
@@ -234,11 +274,15 @@ Definition at line 110 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 111 of file shared\+\_\+data.\+f90.
+Name of restart file storing RESTART namelist. 
+
+
+
+Definition at line 134 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{111     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{parameter} :: resfile\_nml = \textcolor{stringliteral}{'res\_nml.txt'}}
+\DoxyCodeLine{134     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{parameter} :: resfile\_nml = \textcolor{stringliteral}{'res\_nml.txt'}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a92015ef2d63f7ea1e895d120fad6341f}\label{namespaceshared__data_a92015ef2d63f7ea1e895d120fad6341f}} 
@@ -249,11 +293,15 @@ Definition at line 111 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 112 of file shared\+\_\+data.\+f90.
+Name of restart file storing total energies. 
+
+
+
+Definition at line 135 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{112     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{parameter} :: resfile\_etot = \textcolor{stringliteral}{'res\_etot.nc'}}
+\DoxyCodeLine{135     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{parameter} :: resfile\_etot = \textcolor{stringliteral}{'res\_etot.nc'}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a3e81757a05da8c837c39bae8e9bcedae}\label{namespaceshared__data_a3e81757a05da8c837c39bae8e9bcedae}} 
@@ -264,11 +312,15 @@ Definition at line 112 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 113 of file shared\+\_\+data.\+f90.
+Name of restart file storing parameter energies. 
+
+
+
+Definition at line 136 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{113     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{parameter} :: resfile\_epar = \textcolor{stringliteral}{'res\_epar.nc'}}
+\DoxyCodeLine{136     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{parameter} :: resfile\_epar = \textcolor{stringliteral}{'res\_epar.nc'}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_adf411355aadabf7c289e7105e57e02d4}\label{namespaceshared__data_adf411355aadabf7c289e7105e57e02d4}} 
@@ -279,11 +331,15 @@ Definition at line 113 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 114 of file shared\+\_\+data.\+f90.
+Name of restart file storing energy chains. 
+
+
+
+Definition at line 137 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{114     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{parameter} :: resfile\_chn = \textcolor{stringliteral}{'res\_chains.nc'}}
+\DoxyCodeLine{137     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{parameter} :: resfile\_chn = \textcolor{stringliteral}{'res\_chains.nc'}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a28246c61bb5db3025877f5369254d399}\label{namespaceshared__data_a28246c61bb5db3025877f5369254d399}} 
@@ -294,11 +350,11 @@ Definition at line 114 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 117 of file shared\+\_\+data.\+f90.
+Definition at line 140 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{117     \textcolor{keywordtype}{integer(int32)} :: alpha\_start=1, bond\_start=1 \textcolor{comment}{! Can be >1 for restarts}}
+\DoxyCodeLine{140     \textcolor{keywordtype}{integer(int32)} :: alpha\_start=1, bond\_start=1 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_abd55f854da9e9234d715022110bd076a}\label{namespaceshared__data_abd55f854da9e9234d715022110bd076a}} 
@@ -309,52 +365,11 @@ Definition at line 117 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 117 of file shared\+\_\+data.\+f90.
-
-\mbox{\Hypertarget{namespaceshared__data_ad78204b4454629c23740a867244a2f89}\label{namespaceshared__data_ad78204b4454629c23740a867244a2f89}} 
-\index{shared\_data@{shared\_data}!i\_alpha@{i\_alpha}}
-\index{i\_alpha@{i\_alpha}!shared\_data@{shared\_data}}
-\doxysubsubsection{\texorpdfstring{i\_alpha}{i\_alpha}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::i\+\_\+alpha}
+Can be $>$1 for restarts. 
 
 
 
-Definition at line 118 of file shared\+\_\+data.\+f90.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{118     \textcolor{keywordtype}{integer(int32)} :: i\_alpha, i\_bond, i\_c1, i\_c2 \textcolor{comment}{! For writing restart files from VQMC}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{namespaceshared__data_a6263d962b34a090fa515dc809caf695b}\label{namespaceshared__data_a6263d962b34a090fa515dc809caf695b}} 
-\index{shared\_data@{shared\_data}!i\_bond@{i\_bond}}
-\index{i\_bond@{i\_bond}!shared\_data@{shared\_data}}
-\doxysubsubsection{\texorpdfstring{i\_bond}{i\_bond}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::i\+\_\+bond}
-
-
-
-Definition at line 118 of file shared\+\_\+data.\+f90.
-
-\mbox{\Hypertarget{namespaceshared__data_a657e95e18cc24105b6d4ebf25b4bfa1a}\label{namespaceshared__data_a657e95e18cc24105b6d4ebf25b4bfa1a}} 
-\index{shared\_data@{shared\_data}!i\_c1@{i\_c1}}
-\index{i\_c1@{i\_c1}!shared\_data@{shared\_data}}
-\doxysubsubsection{\texorpdfstring{i\_c1}{i\_c1}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::i\+\_\+c1}
-
-
-
-Definition at line 118 of file shared\+\_\+data.\+f90.
-
-\mbox{\Hypertarget{namespaceshared__data_aeff0f22f60575722c8fc6958278a1c50}\label{namespaceshared__data_aeff0f22f60575722c8fc6958278a1c50}} 
-\index{shared\_data@{shared\_data}!i\_c2@{i\_c2}}
-\index{i\_c2@{i\_c2}!shared\_data@{shared\_data}}
-\doxysubsubsection{\texorpdfstring{i\_c2}{i\_c2}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::i\+\_\+c2}
-
-
-
-Definition at line 118 of file shared\+\_\+data.\+f90.
+Definition at line 140 of file shared\+\_\+data.\+f90.
 
 \mbox{\Hypertarget{namespaceshared__data_af5798eba5b1c4594d4c3c9648d732e9e}\label{namespaceshared__data_af5798eba5b1c4594d4c3c9648d732e9e}} 
 \index{shared\_data@{shared\_data}!logid@{logid}}
@@ -364,10 +379,14 @@ Definition at line 118 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 121 of file shared\+\_\+data.\+f90.
+To store logfile unit. 
+
+
+
+Definition at line 141 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{121     \textcolor{keywordtype}{integer} :: logid}
+\DoxyCodeLine{141     \textcolor{keywordtype}{integer} :: logid}
 
 \end{DoxyCode}

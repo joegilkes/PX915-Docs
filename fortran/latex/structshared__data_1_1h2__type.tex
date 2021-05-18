@@ -2,6 +2,11 @@
 \label{structshared__data_1_1h2__type}\index{shared\_data::h2\_type@{shared\_data::h2\_type}}
 
 
+Derived Type for Hydrogen Molecule, including VQMC defaults.  
+
+
+
+
 Collaboration diagram for shared\+\_\+data\+::h2\+\_\+type\+:
 \nopagebreak
 \begin{figure}[H]
@@ -14,29 +19,29 @@ Collaboration diagram for shared\+\_\+data\+::h2\+\_\+type\+:
 \begin{DoxyCompactItemize}
 \item 
 integer(int32) \mbox{\hyperlink{structshared__data_1_1h2__type_a56d33fbcabafbbc64e1e7aad9c794f68}{steps}} =100000
-\item 
+\begin{DoxyCompactList}\small\item\em Total number of steps for each MMC chain. \end{DoxyCompactList}\item 
 integer(int32) \mbox{\hyperlink{structshared__data_1_1h2__type_a3b0fc9e9b3524742ed36b9e35ff63307}{burn\+\_\+step}} =1000
-\item 
+\begin{DoxyCompactList}\small\item\em Number of steps to be burnt from the start of the MMC chain. \end{DoxyCompactList}\item 
 integer(int32) \mbox{\hyperlink{structshared__data_1_1h2__type_a9e0a5d93f25547fa8cf9826be998d6fb}{thin\+\_\+step}} =10
-\item 
+\begin{DoxyCompactList}\small\item\em Interval of steps by which the MMC chain is thinned. \end{DoxyCompactList}\item 
 real(real64) \mbox{\hyperlink{structshared__data_1_1h2__type_a0c0947d862a86bad2415dc9de78ceb24}{rcut}} =3
-\item 
+\begin{DoxyCompactList}\small\item\em Maximum radius of search around the Hydrogen atoms. \end{DoxyCompactList}\item 
 real(real64) \mbox{\hyperlink{structshared__data_1_1h2__type_a7b888b906b985b9c88e6e8752b73f97a}{sigma}} =0.\+1
-\item 
+\begin{DoxyCompactList}\small\item\em Standard deviation in MMC transition probability. \end{DoxyCompactList}\item 
 integer(int32) \mbox{\hyperlink{structshared__data_1_1h2__type_a744c3ee751f297dea44d698de3998214}{include\+\_\+pqn}} =1
-\item 
+\begin{DoxyCompactList}\small\item\em Number of Princle Quantum NUmbers (pqn) to include in the trial wavefunction. \end{DoxyCompactList}\item 
 real(real64), dimension(3) \mbox{\hyperlink{structshared__data_1_1h2__type_a838fd133825003a8d0c79e850e4ad8da}{c1}} = (/0,1,10/)
-\item 
+\begin{DoxyCompactList}\small\item\em Grid of c1 values, format\+: \mbox{[}min, max, grid points\mbox{]}. \end{DoxyCompactList}\item 
 real(real64), dimension(3) \mbox{\hyperlink{structshared__data_1_1h2__type_a0e5a041e59da88a44ea4ba8ce732eeb1}{c2}} = (/0,1,10/)
-\item 
+\begin{DoxyCompactList}\small\item\em Grid of c2 values, format\+: \mbox{[}min, max, grid points\mbox{]}. \end{DoxyCompactList}\item 
 real(real64), dimension(3) \mbox{\hyperlink{structshared__data_1_1h2__type_af37043d2de3ce1c6ab700a88764e0ba4}{bond}} = (/1,3,10/)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Grid of bondlength values, format\+: \mbox{[}min, max, grid points\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Derived Type for Hydrogen Molecule, including VQMC defaults. 
 
-
-Definition at line 71 of file shared\+\_\+data.\+f90.
+Definition at line 88 of file shared\+\_\+data.\+f90.
 
 
 
@@ -49,11 +54,15 @@ Definition at line 71 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 72 of file shared\+\_\+data.\+f90.
+Total number of steps for each MMC chain. 
+
+
+
+Definition at line 89 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{72         \textcolor{keywordtype}{integer(int32)} :: steps=100000}
+\DoxyCodeLine{89         \textcolor{keywordtype}{integer(int32)} :: steps=100000}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2__type_a3b0fc9e9b3524742ed36b9e35ff63307}\label{structshared__data_1_1h2__type_a3b0fc9e9b3524742ed36b9e35ff63307}} 
@@ -64,11 +73,15 @@ Definition at line 72 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 73 of file shared\+\_\+data.\+f90.
+Number of steps to be burnt from the start of the MMC chain. 
+
+
+
+Definition at line 90 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{73         \textcolor{keywordtype}{integer(int32)} :: burn\_step=1000}
+\DoxyCodeLine{90         \textcolor{keywordtype}{integer(int32)} :: burn\_step=1000}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2__type_a9e0a5d93f25547fa8cf9826be998d6fb}\label{structshared__data_1_1h2__type_a9e0a5d93f25547fa8cf9826be998d6fb}} 
@@ -79,11 +92,15 @@ Definition at line 73 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 74 of file shared\+\_\+data.\+f90.
+Interval of steps by which the MMC chain is thinned. 
+
+
+
+Definition at line 91 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{74         \textcolor{keywordtype}{integer(int32)} :: thin\_step=10}
+\DoxyCodeLine{91         \textcolor{keywordtype}{integer(int32)} :: thin\_step=10}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2__type_a0c0947d862a86bad2415dc9de78ceb24}\label{structshared__data_1_1h2__type_a0c0947d862a86bad2415dc9de78ceb24}} 
@@ -94,11 +111,15 @@ Definition at line 74 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 75 of file shared\+\_\+data.\+f90.
+Maximum radius of search around the Hydrogen atoms. 
+
+
+
+Definition at line 92 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{75 \textcolor{keywordtype}{        real}(real64) :: rcut=3}
+\DoxyCodeLine{92 \textcolor{keywordtype}{        real}(real64) :: rcut=3}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2__type_a7b888b906b985b9c88e6e8752b73f97a}\label{structshared__data_1_1h2__type_a7b888b906b985b9c88e6e8752b73f97a}} 
@@ -109,11 +130,15 @@ Definition at line 75 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 76 of file shared\+\_\+data.\+f90.
+Standard deviation in MMC transition probability. 
+
+
+
+Definition at line 93 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{76 \textcolor{keywordtype}{        real}(real64) :: sigma=0.1}
+\DoxyCodeLine{93 \textcolor{keywordtype}{        real}(real64) :: sigma=0.1}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2__type_a744c3ee751f297dea44d698de3998214}\label{structshared__data_1_1h2__type_a744c3ee751f297dea44d698de3998214}} 
@@ -124,11 +149,15 @@ Definition at line 76 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 77 of file shared\+\_\+data.\+f90.
+Number of Princle Quantum NUmbers (pqn) to include in the trial wavefunction. 
+
+
+
+Definition at line 94 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{77         \textcolor{keywordtype}{integer(int32)} :: include\_pqn=1}
+\DoxyCodeLine{94         \textcolor{keywordtype}{integer(int32)} :: include\_pqn=1}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2__type_a838fd133825003a8d0c79e850e4ad8da}\label{structshared__data_1_1h2__type_a838fd133825003a8d0c79e850e4ad8da}} 
@@ -139,11 +168,15 @@ Definition at line 77 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 78 of file shared\+\_\+data.\+f90.
+Grid of c1 values, format\+: \mbox{[}min, max, grid points\mbox{]}. 
+
+
+
+Definition at line 95 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{78 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: c1 = (/0,1,10/)}
+\DoxyCodeLine{95 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: c1 = (/0,1,10/)}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2__type_a0e5a041e59da88a44ea4ba8ce732eeb1}\label{structshared__data_1_1h2__type_a0e5a041e59da88a44ea4ba8ce732eeb1}} 
@@ -154,11 +187,15 @@ Definition at line 78 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 79 of file shared\+\_\+data.\+f90.
+Grid of c2 values, format\+: \mbox{[}min, max, grid points\mbox{]}. 
+
+
+
+Definition at line 96 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{79 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: c2 = (/0,1,10/)}
+\DoxyCodeLine{96 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: c2 = (/0,1,10/)}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2__type_af37043d2de3ce1c6ab700a88764e0ba4}\label{structshared__data_1_1h2__type_af37043d2de3ce1c6ab700a88764e0ba4}} 
@@ -169,11 +206,15 @@ Definition at line 79 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 80 of file shared\+\_\+data.\+f90.
+Grid of bondlength values, format\+: \mbox{[}min, max, grid points\mbox{]}. 
+
+
+
+Definition at line 97 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{80 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: bond = (/1,3,10/)}
+\DoxyCodeLine{97 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: bond = (/1,3,10/)}
 
 \end{DoxyCode}
 
