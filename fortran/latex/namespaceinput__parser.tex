@@ -71,7 +71,7 @@ Definition at line 48 of file input\+\_\+parser.\+f90.
 \DoxyCodeLine{58         \textcolor{comment}{! Read the namelist}}
 \DoxyCodeLine{59         \textcolor{keyword}{read}(nml=control, iostat=rc, unit=fu)}
 \DoxyCodeLine{60         \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{61             error stop \textcolor{stringliteral}{'Error: Invalid CONTROL namelist format in file "{}params.txt"{}.'}}
+\DoxyCodeLine{61             error stop \textcolor{stringliteral}{'Error: Oops, invalid CONTROL namelist format in file "{}params.txt"{}.'}}
 \DoxyCodeLine{62 \textcolor{keywordflow}{        end if}}
 \DoxyCodeLine{63         }
 
@@ -115,7 +115,7 @@ Definition at line 77 of file input\+\_\+parser.\+f90.
 \DoxyCodeLine{85         \textcolor{comment}{! Read the namelist}}
 \DoxyCodeLine{86         \textcolor{keyword}{read}(nml=parameters, iostat=rc, unit=fu)}
 \DoxyCodeLine{87         \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{88             error stop \textcolor{stringliteral}{'Error: Invalid PARAMETERS namelist for QHO p\_system in file "{}params.txt"{}.'}}
+\DoxyCodeLine{88             error stop \textcolor{stringliteral}{'Error: Oops, invalid PARAMETERS namelist for QHO p\_system in file "{}params.txt"{}.'}}
 \DoxyCodeLine{89 \textcolor{keywordflow}{        end if}}
 \DoxyCodeLine{90         }
 
@@ -159,7 +159,7 @@ Definition at line 104 of file input\+\_\+parser.\+f90.
 \DoxyCodeLine{112         \textcolor{comment}{! Read the namelist}}
 \DoxyCodeLine{113         \textcolor{keyword}{read}(nml=parameters, iostat=rc, unit=fu)}
 \DoxyCodeLine{114         \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{115             error stop \textcolor{stringliteral}{'Error: Invalid PARAMETERS namelist for H2plus p\_system in file "{}params.txt"{}.'}}
+\DoxyCodeLine{115             error stop \textcolor{stringliteral}{'Error: Oops, invalid PARAMETERS namelist for H2plus p\_system in file "{}params.txt"{}.'}}
 \DoxyCodeLine{116 \textcolor{keywordflow}{        end if}}
 \DoxyCodeLine{117         }
 
@@ -203,7 +203,7 @@ Definition at line 131 of file input\+\_\+parser.\+f90.
 \DoxyCodeLine{139         \textcolor{comment}{! Read the namelist}}
 \DoxyCodeLine{140         \textcolor{keyword}{read}(nml=parameters, iostat=rc, unit=fu)}
 \DoxyCodeLine{141         \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{142             error stop \textcolor{stringliteral}{'Error: Invalid PARAMETERS namelist for H2 p\_system in file "{}params.txt"{}.'}}
+\DoxyCodeLine{142             error stop \textcolor{stringliteral}{'Error: Oops, invalid PARAMETERS namelist for H2 p\_system in file "{}params.txt"{}.'}}
 \DoxyCodeLine{143 \textcolor{keywordflow}{        end if}}
 \DoxyCodeLine{144         }
 
@@ -236,7 +236,7 @@ Definition at line 164 of file input\+\_\+parser.\+f90.
 \DoxyCodeLine{166         \textcolor{comment}{! Check if file 'params.txt' exists}}
 \DoxyCodeLine{167         \textcolor{keyword}{inquire}(file=\textcolor{stringliteral}{'params.txt'}, iostat=rc)}
 \DoxyCodeLine{168         \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{169             error stop \textcolor{stringliteral}{'Error: Input file "{}params.txt"{} does not exist.'}}
+\DoxyCodeLine{169             error stop \textcolor{stringliteral}{'Error: Oops, input file "{}params.txt"{} does not exist.'}}
 \DoxyCodeLine{170 \textcolor{keywordflow}{        end if}}
 \DoxyCodeLine{171 }
 \DoxyCodeLine{172         \textcolor{comment}{! Open the params.txt file}}
@@ -266,7 +266,7 @@ Definition at line 164 of file input\+\_\+parser.\+f90.
 \DoxyCodeLine{196                 h2\%burn\_step = 0}
 \DoxyCodeLine{197                 h2\%thin\_step = 1}
 \DoxyCodeLine{198 \textcolor{keywordflow}{            case default}}
-\DoxyCodeLine{199                 error stop \textcolor{stringliteral}{'Error: Invalid system definition.'}}
+\DoxyCodeLine{199                 error stop \textcolor{stringliteral}{'Error: Oops, invalid system definition.'}}
 \DoxyCodeLine{200 \textcolor{keywordflow}{            end select}}
 \DoxyCodeLine{201 \textcolor{keywordflow}{        endif}}
 \DoxyCodeLine{202 }
@@ -279,7 +279,7 @@ Definition at line 164 of file input\+\_\+parser.\+f90.
 \DoxyCodeLine{209         \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'H2'})}
 \DoxyCodeLine{210             \textcolor{keyword}{call }read\_h2(h2)}
 \DoxyCodeLine{211 \textcolor{keywordflow}{        case default}}
-\DoxyCodeLine{212             error stop \textcolor{stringliteral}{'Error: Invalid system definition.'}}
+\DoxyCodeLine{212             error stop \textcolor{stringliteral}{'Error: Oops, invalid system definition.'}}
 \DoxyCodeLine{213 \textcolor{keywordflow}{        end select}}
 \DoxyCodeLine{214 }
 \DoxyCodeLine{215         \textcolor{comment}{! Close the params.txt file}}
