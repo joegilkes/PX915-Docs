@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['write_49',['write',['../namespacewrite.html',1,'']]],
-  ['write_2epy_50',['write.py',['../write_8py.html',1,'']]],
-  ['write_5fparams_51',['write_params',['../namespacewrite.html#ab06a12b89b6110c4bcf845485c8f4b9b',1,'write']]]
+  ['theta_52',['theta',['../namespacevisualisation.html#a9548b7d7055d3497111cc5a23dc6e6c3',1,'visualisation']]],
+  ['theta_53',['Theta',['../namespacevisualisation.html#a6a4dec9bf1bebf8eceb61d09a2f27c7b',1,'visualisation']]]
 ];
