@@ -9,24 +9,15 @@
 \item \href{\#Keywords}{\texttt{ Keywords}}
 \item \href{\#Abbreviations}{\texttt{ Abbreviations}}
 \item \href{\#Build-Instructions}{\texttt{ Build Instructions}}
-\item \href{\#Contributors}{\texttt{ Contributors}}
-\item \href{\#Disclaimer}{\texttt{ Disclaimer}}
-\item \href{\#Acknowledgement}{\texttt{ Acknowledgement}}
 \item \href{\#Design-Document}{\texttt{ Design Document}}
 \item \href{\#Software-Specification}{\texttt{ Software Specification}}
 \item \href{\#Work-Plan}{\texttt{ Work Plan}}
-\item \href{\#Units}{\texttt{ Units}}
-\item \href{\#Notation}{\texttt{ Notation}}
 \item \href{\#Tutorial}{\texttt{ Tutorial}}
-\item \href{\#Error-Messages}{\texttt{ Error Messages}}
-\begin{DoxyItemize}
-\item \href{\#Clarity}{\texttt{ Clarity}}
-\item \href{\#Be-Concise-and-Precise}{\texttt{ Be Concise and Precise}}
-\item \href{\#Never-Blame-Users}{\texttt{ Never Blame Users}}
-\item \href{\#Error-Messages-Examples}{\texttt{ Error Messages Examples}}
-\end{DoxyItemize}
 \item \href{\#Upcoming-Features}{\texttt{ Upcoming Features}}
 \item \href{\#FAQ}{\texttt{ FAQ}}
+\item \href{\#Contributors}{\texttt{ Contributors}}
+\item \href{\#Disclaimer}{\texttt{ Disclaimer}}
+\item \href{\#Acknowledgement}{\texttt{ Acknowledgement}}
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
@@ -92,7 +83,6 @@ MCMC   &Markov Chain Monte Carlo    \\\cline{1-2}
 MMC   &Metropolis Monte Carlo    \\\cline{1-2}
 MPI   &Message Passing Interface    \\\cline{1-2}
 \href{https://www.unidata.ucar.edu/software/netcdf/}{\texttt{ Net\+CDF}}   &Network Common Data Form    \\\cline{1-2}
-\href{https://www.openmp.org/}{\texttt{ Open\+MP}}   &Open Multi-\/\+Processing    \\\cline{1-2}
 QHO   &Quantum Harmonic Oscillator    \\\cline{1-2}
 QMC$\ast$   &Quantum Monte Carlo    \\\cline{1-2}
 VQMC$\ast$   &Variational Quantum Monte Carlo   \\\cline{1-2}
@@ -114,6 +104,85 @@ $\ast$\+Note\+: QMC and VQMC are used interchangeably in this version of the sof
 \item Run the input generator with {\ttfamily python \mbox{\hyperlink{input_8py}{input.\+py}}}
 \item Run the Fortran code with {\ttfamily ./program}
 \end{DoxyEnumerate}
+
+\href{\#Contents}{\texttt{ \&\#8593; Back to Contents}}
+
+\DoxyHorRuler{0}
+
+
+\doxysection*{Design Document}
+
+The \href{https://github.com/HetSys/PX915_2021_A/files/6503937/PX915.Group.Project.Design.Document.-.Group.A.pdf}{\texttt{ Design Document}} for {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}} explains the following topics in details\+:
+\begin{DoxyItemize}
+\item Code Structure
+\item Algorithms
+\item Parallelism methods
+\item Error Handling
+\item Documentation
+\item Collaboration mechanisms
+\end{DoxyItemize}
+
+\href{\#Contents}{\texttt{ \&\#8593; Back to Contents}}
+
+\DoxyHorRuler{0}
+
+
+\doxysection*{Software Specification}
+
+The \href{https://github.com/HetSys/PX915_2021_A/files/6503938/PX915.Group.Project.Software.Specification.-.Group.A.pdf}{\texttt{ Software Specification}} document will discuss {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}}\textquotesingle{}s\textquotesingle{} {\itshape Performance}, {\itshape Input}, {\itshape Output}, {\itshape Engine}, {\itshape Analysis} and {\itshape Extensions} in details.
+
+\href{\#Contents}{\texttt{ \&\#8593; Back to Contents}}
+
+\DoxyHorRuler{0}
+
+
+\doxysection*{Work Plan}
+
+The initial work plan for {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}} can be found in details in \href{https://github.com/HetSys/PX915_2021_A/files/6503942/PX915.Group.Project.Workplan.Explanation.-.Group.A.pdf}{\texttt{ Work Plan Explanation}}. This document has shown a clear division of labour during the five weeks that Group A will have to work on the project.
+
+\href{\#Contents}{\texttt{ \&\#8593; Back to Contents}}
+
+\DoxyHorRuler{0}
+
+
+\doxysection*{Tutorial}
+
+\href{\#Contents}{\texttt{ \&\#8593; Back to Contents}}
+
+\DoxyHorRuler{0}
+
+
+\doxysection*{Upcoming Features}
+
+New functionalities and performance improvement come with next software updates\+:
+\begin{DoxyItemize}
+\item The input file needed to run {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}} will be generated interactively avoiding tedious formatting for the user
+\item Introduce troubleshooters and step-\/by-\/step instructions for errors that are difficult to explain in a single sentence.
+\item Introduce the use of progressive disclosure to provide information. The error messages will contain steps hidden by default, and when the users want to learn more about the error, they could click “\+How to fix it” to explore more.
+\end{DoxyItemize}
+
+{\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}} is updated continuously. Every time Group A fix a bug or add a feature, Group A will release it immediately. Each dated copy of {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}} contains all the features and bug-\/fixes up to and including that version date. The version date is printed to the screen and logfile every time when a user runs {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}}. It is on the first page of the HTML version of the manual. It is also in the file src/version.\+h and in the {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}} directory name created when a user unpacks a tarball.
+
+
+\begin{DoxyItemize}
+\item In the HTML documentation pages accessed on the Git\+Hub site, they always describe the most current version of {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}}.
+\item In the HTML documentation pages included in the tarball, they describe the version a user have downloaded.
+\end{DoxyItemize}
+
+\href{\#Contents}{\texttt{ \&\#8593; Back to Contents}}
+
+\DoxyHorRuler{0}
+
+
+\doxysection*{FAQ}
+
+{\itshape {\bfseries{Q\+: Where there be any PDF version of the software documentations available?}}}
+
+{\itshape A\+: There will not be any PDF version of the software documentations. The software documentations are extremely detailed and will be cumbersome to read linearly as PDF files. This is why Group A presented the software documentations as HTML files to help users to navigate through the contents much quicker.}
+
+{\itshape {\bfseries{Q\+: What could I do if I spot a bug in the software?}}}
+
+{\itshape A\+: Any user who spotted a bug in $\ast$$\ast$\mbox{[}Project Name\mbox{]}$\ast$$\ast$, please notify the developers (anyone in the {\bfseries{contributor}} table) by raising it as an issue in the {\bfseries{Issues}} tab in the relevant branch of the $\ast$$\ast$\mbox{[}Project Name\mbox{]}$\ast$$\ast$’s Git\+Hub repository. Key bug fixes will be documented in the software documentation in the next stable version release.}
 
 \href{\#Contents}{\texttt{ \&\#8593; Back to Contents}}
 
@@ -176,169 +245,4 @@ In addition, Group A would like to thank our families and friends for their unco
 \DoxyHorRuler{0}
 
 
-\doxysection*{Design Document}
-
-The \href{https://github.com/HetSys/PX915_2021_A/files/6503937/PX915.Group.Project.Design.Document.-.Group.A.pdf}{\texttt{ Design Document}} for {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}} explains the following topics in details\+:
-\begin{DoxyItemize}
-\item Code Structure
-\item Algorithms
-\item Parallelism methods
-\item Error Handling
-\item Documentation
-\item Collaboration mechanisms
-\end{DoxyItemize}
-
-\href{\#Contents}{\texttt{ \&\#8593; Back to Contents}}
-
-\DoxyHorRuler{0}
-
-
-\doxysection*{Software Specification}
-
-The \href{https://github.com/HetSys/PX915_2021_A/files/6503938/PX915.Group.Project.Software.Specification.-.Group.A.pdf}{\texttt{ Software Specification}} document will discuss {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}}\textquotesingle{}s\textquotesingle{} {\itshape Performance}, {\itshape Input}, {\itshape Output}, {\itshape Engine}, {\itshape Analysis} and {\itshape Extensions} in details.
-
-\href{\#Contents}{\texttt{ \&\#8593; Back to Contents}}
-
-\DoxyHorRuler{0}
-
-
-\doxysection*{Work Plan}
-
-The initial work plan for {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}} can be found in details in \href{https://github.com/HetSys/PX915_2021_A/files/6503942/PX915.Group.Project.Workplan.Explanation.-.Group.A.pdf}{\texttt{ Work Plan Explanation}}. This document has shown a clear division of labour during the five weeks that Group A will have to work on the project.
-
-\href{\#Contents}{\texttt{ \&\#8593; Back to Contents}}
-
-\DoxyHorRuler{0}
-
-
-\doxysection*{Units}
-
-\href{\#Contents}{\texttt{ \&\#8593; Back to Contents}}
-
-\DoxyHorRuler{0}
-
-
-\doxysection*{Notation}
-
-\href{\#Contents}{\texttt{ \&\#8593; Back to Contents}}
-
-\DoxyHorRuler{0}
-
-
-\doxysection*{Tutorial}
-
-\href{\#Contents}{\texttt{ \&\#8593; Back to Contents}}
-
-\DoxyHorRuler{0}
-
-
-\doxysection*{Error Messages}
-
-Everyone would agree that the best kind of error message is the kind that never shows up. However, regardless of how well-\/designed a software package is, errors are always unavoidable. When users interact with a software package, eventually, something is bound to go wrong.
-
-The error message is a critical component of a good user experience. One way for users to evaluate the quality of a software package is by judging the error messages’ quality. Confusing and non-\/informative error messages are annoying to the user. This is why most developers would agree that good error message can increase the speed of software package learning and increase users’ subjective satisfaction in the process.
-
-\href{\#Contents}{\texttt{ \&\#8593; Back to Contents}}
-
-\doxysubsection*{Clarity}
-
-Clarity is the top priority when writing error messages. Developers need to describe clearly what had happened, why it happened, and what the user can do to resolve the errors. Hence, developers should always write the error message in plain language to ensure the users could easily understand both the error and the solution.
-
-Developers should never write abstract error messages as they do not contain adequate information regarding the problems. It is no good to state that something went wrong in the software package but does not help users understand its root cause. As a rule, developers should never assume people will fully understand the context of an error message. Hence, it is a good practice to always be explicit and indicate what exactly has gone wrong in the error messages.
-
-Error messages that contain technical terminologies will certainly confuse most users. The error message should always describe the errors in terms of users’ actions. Never assume the users are tech-\/savvy. Hence, it is also a good practice to use non-\/technical terminologies that can easily understand by everyone.
-
-\href{\#Contents}{\texttt{ \&\#8593; Back to Contents}}
-
-\doxysubsection*{Be Concise and Precise}
-
-The majority of users rarely read technical software documents word-\/by-\/word. The more text on a page, the more likely the users will not read the text at all. This is why it is vital to reduce the text down, including error messages. Developers’ goal is to write concise but precise error messages.
-
-Error messages should enable users to resolve errors efficiently by only containing the information required to help users. Hence, developers should eliminate unnecessary details that do not help the users achieve this objective.
-
-\href{\#Contents}{\texttt{ \&\#8593; Back to Contents}}
-
-\doxysubsection*{Never Blame Users}
-
-Tones play a tremendous impact on how users comprehend the error message. Developers should adopt a more friendly tone to help users relate better to a situation and understand the errors. It is essential to avoid phrases that involve second-\/person pronouns.
-
-Poorly written error messages often accuse the user of making errors. Errors are frustrating enough, and there is no need to add to the frustration with unintended judgment from the developers. Developers need to acknowledge that these error messages are essential to communicate and build relationships with the users.
-
-Remember never to use upper case text and exclamation mark in the error messages, as they both will contribute to an awful user experience.
-
-Bad error message example\+:
-
-{\ttfamily ERROR\+: You have entered an incorrect login or password!}
-
-Friendly error message example\+:
-
-{\ttfamily Error\+: Oops, login and password do not match. \+:-\/(}
-
-\href{\#Contents}{\texttt{ \&\#8593; Back to Contents}}
-
-\doxysubsection*{Error Messages Examples}
-
-Group A designed its error messages based on the error message design guideline in the previous three sub-\/sections. Here are some actual codes that were taken within the software package to be illustrated as examples\+:
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{Error: Oops, your response is invalid, please enter "{}w"{} or "{}c"{}, without quotes. :-\/(}
-\DoxyCodeLine{}
-\DoxyCodeLine{Please have another go. :-\/)}
-
-\end{DoxyCode}
-
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{Error: Oops, there is no param.txt file in the current working directory. :-\/( }
-\DoxyCodeLine{}
-\DoxyCodeLine{Please have another go. :-\/)}
-
-\end{DoxyCode}
-
-
-\href{\#Contents}{\texttt{ \&\#8593; Back to Contents}}
-
-\DoxyHorRuler{0}
-
-
-\doxysection*{Upcoming Features}
-
-New functionalities and performance improvement come with next software updates\+:
-\begin{DoxyItemize}
-\item The input file needed to run {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}} will be generated interactively avoiding tedious formatting for the user
-\item {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}} will be faster and consumes less memory compared to the previous versions.
-\item Introduce troubleshooters and step-\/by-\/step instructions for errors that are difficult to explain in a single sentence.
-\item Introduce the use of progressive disclosure to provide information. The error messages will contain steps hidden by default, and when the users want to learn more about the error, they could click “\+How to fix it” to explore more.
-\end{DoxyItemize}
-
-{\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}} is updated continuously. Every time Group A fix a bug or add a feature, Group A will release it immediately. Each dated copy of {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}} contains all the features and bug-\/fixes up to and including that version date. The version date is printed to the screen and logfile every time when a user runs {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}}. It is on the first page of the HTML version of the manual. It is also in the file src/version.\+h and in the {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}} directory name created when a user unpacks a tarball.
-
-
-\begin{DoxyItemize}
-\item In the HTML documentation pages accessed on the Git\+Hub site, they always describe the most current version of {\itshape {\bfseries{\mbox{[}Project Name\mbox{]}}}}.
-\item In the HTML documentation pages included in the tarball, they describe the version a user have downloaded.
-\end{DoxyItemize}
-
-\href{\#Contents}{\texttt{ \&\#8593; Back to Contents}}
-
-\DoxyHorRuler{0}
-
-
-\doxysection*{FAQ}
-
-{\itshape {\bfseries{Q\+: Where there be any PDF version of the software documentations available?}}}
-
-{\itshape A\+: There will not be any PDF version of the software documentations. The software documentations are extremely detailed and will be cumbersome to read linearly as PDF files. This is why Group A presented the software documentations as HTML files to help users to navigate through the contents much quicker.}
-
-{\itshape {\bfseries{Q\+: What could I do if I spot a bug in the software?}}}
-
-{\itshape A\+: Any user who spotted a bug in $\ast$$\ast$\mbox{[}Project Name\mbox{]}$\ast$$\ast$, please notify the developers (anyone in the {\bfseries{contributor}} table) by raising it as an issue in the {\bfseries{Issues}} tab in the relevant branch of the $\ast$$\ast$\mbox{[}Project Name\mbox{]}$\ast$$\ast$’s Git\+Hub repository. Key bug fixes will be documented in the software documentation in the next stable version release.}
-
-\href{\#Contents}{\texttt{ \&\#8593; Back to Contents}}
-
-\DoxyHorRuler{0}
-
-
-This documentation was generated from commit a0b8bd9 
+This documentation was generated from commit bf17f57 

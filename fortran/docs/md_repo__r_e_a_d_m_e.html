@@ -99,24 +99,15 @@ $(document).ready(function(){initNavTree('md_repo__r_e_a_d_m_e.html',''); initRe
 <li><a href="#Keywords">Keywords</a></li>
 <li><a href="#Abbreviations">Abbreviations</a></li>
 <li><a href="#Build-Instructions">Build Instructions</a></li>
-<li><a href="#Contributors">Contributors</a></li>
-<li><a href="#Disclaimer">Disclaimer</a></li>
-<li><a href="#Acknowledgement">Acknowledgement</a></li>
 <li><a href="#Design-Document">Design Document</a></li>
 <li><a href="#Software-Specification">Software Specification</a></li>
 <li><a href="#Work-Plan">Work Plan</a></li>
-<li><a href="#Units">Units</a></li>
-<li><a href="#Notation">Notation</a></li>
 <li><a href="#Tutorial">Tutorial</a></li>
-<li><a href="#Error-Messages">Error Messages</a><ul>
-<li><a href="#Clarity">Clarity</a></li>
-<li><a href="#Be-Concise-and-Precise">Be Concise and Precise</a></li>
-<li><a href="#Never-Blame-Users">Never Blame Users</a></li>
-<li><a href="#Error-Messages-Examples">Error Messages Examples</a></li>
-</ul>
-</li>
 <li><a href="#Upcoming-Features">Upcoming Features</a></li>
 <li><a href="#FAQ">FAQ</a></li>
+<li><a href="#Contributors">Contributors</a></li>
+<li><a href="#Disclaimer">Disclaimer</a></li>
+<li><a href="#Acknowledgement">Acknowledgement</a></li>
 </ul>
 <hr  />
 <h1>About</h1>
@@ -161,12 +152,10 @@ $(document).ready(function(){initNavTree('md_repo__r_e_a_d_m_e.html',''); initRe
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><a href="https://www.unidata.ucar.edu/software/netcdf/">NetCDF</a>   </td><td class="markdownTableBodyNone">Network Common Data Form    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><a href="https://www.openmp.org/">OpenMP</a>   </td><td class="markdownTableBodyNone">Open Multi-Processing    </td></tr>
-<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">QHO   </td><td class="markdownTableBodyNone">Quantum Harmonic Oscillator    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">QMC*   </td><td class="markdownTableBodyNone">Quantum Monte Carlo    </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">QMC*   </td><td class="markdownTableBodyNone">Quantum Monte Carlo    </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">VQMC*   </td><td class="markdownTableBodyNone">Variational Quantum Monte Carlo   </td></tr>
 </table>
 <p>*Note: QMC and VQMC are used interchangeably in this version of the software.</p>
@@ -178,6 +167,48 @@ $(document).ready(function(){initNavTree('md_repo__r_e_a_d_m_e.html',''); initRe
 <li>Run the input generator with <code>python input.py</code></li>
 <li>Run the Fortran code with <code>./program</code></li>
 </ol>
+<p><a href="#Contents">&amp;#8593; Back to Contents</a></p>
+<hr  />
+<h1>Design Document</h1>
+<p>The <a href="https://github.com/HetSys/PX915_2021_A/files/6503937/PX915.Group.Project.Design.Document.-.Group.A.pdf">Design Document</a> for <em><b>[Project Name]</b></em> explains the following topics in details:</p><ul>
+<li>Code Structure</li>
+<li>Algorithms</li>
+<li>Parallelism methods</li>
+<li>Error Handling</li>
+<li>Documentation</li>
+<li>Collaboration mechanisms</li>
+</ul>
+<p><a href="#Contents">&amp;#8593; Back to Contents</a></p>
+<hr  />
+<h1>Software Specification</h1>
+<p>The <a href="https://github.com/HetSys/PX915_2021_A/files/6503938/PX915.Group.Project.Software.Specification.-.Group.A.pdf">Software Specification</a> document will discuss <em><b>[Project Name]</b></em>'s' <em>Performance</em>, <em>Input</em>, <em>Output</em>, <em>Engine</em>, <em>Analysis</em> and <em>Extensions</em> in details.</p>
+<p><a href="#Contents">&amp;#8593; Back to Contents</a></p>
+<hr  />
+<h1>Work Plan</h1>
+<p>The initial work plan for <em><b>[Project Name]</b></em> can be found in details in <a href="https://github.com/HetSys/PX915_2021_A/files/6503942/PX915.Group.Project.Workplan.Explanation.-.Group.A.pdf">Work Plan Explanation</a>. This document has shown a clear division of labour during the five weeks that Group A will have to work on the project.</p>
+<p><a href="#Contents">&amp;#8593; Back to Contents</a></p>
+<hr  />
+<h1>Tutorial</h1>
+<p><a href="#Contents">&amp;#8593; Back to Contents</a></p>
+<hr  />
+<h1>Upcoming Features</h1>
+<p>New functionalities and performance improvement come with next software updates:</p><ul>
+<li>The input file needed to run <em><b>[Project Name]</b></em> will be generated interactively avoiding tedious formatting for the user</li>
+<li>Introduce troubleshooters and step-by-step instructions for errors that are difficult to explain in a single sentence.</li>
+<li>Introduce the use of progressive disclosure to provide information. The error messages will contain steps hidden by default, and when the users want to learn more about the error, they could click “How to fix it” to explore more.</li>
+</ul>
+<p><em><b>[Project Name]</b></em> is updated continuously. Every time Group A fix a bug or add a feature, Group A will release it immediately. Each dated copy of <em><b>[Project Name]</b></em> contains all the features and bug-fixes up to and including that version date. The version date is printed to the screen and logfile every time when a user runs <em><b>[Project Name]</b></em>. It is on the first page of the HTML version of the manual. It is also in the file src/version.h and in the <em><b>[Project Name]</b></em> directory name created when a user unpacks a tarball.</p>
+<ul>
+<li>In the HTML documentation pages accessed on the GitHub site, they always describe the most current version of <em><b>[Project Name]</b></em>.</li>
+<li>In the HTML documentation pages included in the tarball, they describe the version a user have downloaded.</li>
+</ul>
+<p><a href="#Contents">&amp;#8593; Back to Contents</a></p>
+<hr  />
+<h1>FAQ</h1>
+<p><em><b>Q: Where there be any PDF version of the software documentations available?</b></em></p>
+<p><em>A: There will not be any PDF version of the software documentations. The software documentations are extremely detailed and will be cumbersome to read linearly as PDF files. This is why Group A presented the software documentations as HTML files to help users to navigate through the contents much quicker.</em></p>
+<p><em><b>Q: What could I do if I spot a bug in the software?</b></em></p>
+<p><em>A: Any user who spotted a bug in **[Project Name]**, please notify the developers (anyone in the <b>contributor</b> table) by raising it as an issue in the <b>Issues</b> tab in the relevant branch of the **[Project Name]**’s GitHub repository. Key bug fixes will be documented in the software documentation in the next stable version release.</em></p>
 <p><a href="#Contents">&amp;#8593; Back to Contents</a></p>
 <hr  />
 <h1>Contributors</h1>
@@ -213,88 +244,7 @@ $(document).ready(function(){initNavTree('md_repo__r_e_a_d_m_e.html',''); initRe
 <p>In addition, Group A would like to thank our families and friends for their unconditional support and sympathetic ears. They have always been there for us by offering pleasant distractions to rest our mind outside of the project.</p>
 <p><a href="#Contents">&amp;#8593; Back to Contents</a></p>
 <hr  />
-<h1>Design Document</h1>
-<p>The <a href="https://github.com/HetSys/PX915_2021_A/files/6503937/PX915.Group.Project.Design.Document.-.Group.A.pdf">Design Document</a> for <em><b>[Project Name]</b></em> explains the following topics in details:</p><ul>
-<li>Code Structure</li>
-<li>Algorithms</li>
-<li>Parallelism methods</li>
-<li>Error Handling</li>
-<li>Documentation</li>
-<li>Collaboration mechanisms</li>
-</ul>
-<p><a href="#Contents">&amp;#8593; Back to Contents</a></p>
-<hr  />
-<h1>Software Specification</h1>
-<p>The <a href="https://github.com/HetSys/PX915_2021_A/files/6503938/PX915.Group.Project.Software.Specification.-.Group.A.pdf">Software Specification</a> document will discuss <em><b>[Project Name]</b></em>'s' <em>Performance</em>, <em>Input</em>, <em>Output</em>, <em>Engine</em>, <em>Analysis</em> and <em>Extensions</em> in details.</p>
-<p><a href="#Contents">&amp;#8593; Back to Contents</a></p>
-<hr  />
-<h1>Work Plan</h1>
-<p>The initial work plan for <em><b>[Project Name]</b></em> can be found in details in <a href="https://github.com/HetSys/PX915_2021_A/files/6503942/PX915.Group.Project.Workplan.Explanation.-.Group.A.pdf">Work Plan Explanation</a>. This document has shown a clear division of labour during the five weeks that Group A will have to work on the project.</p>
-<p><a href="#Contents">&amp;#8593; Back to Contents</a></p>
-<hr  />
-<h1>Units</h1>
-<p><a href="#Contents">&amp;#8593; Back to Contents</a></p>
-<hr  />
-<h1>Notation</h1>
-<p><a href="#Contents">&amp;#8593; Back to Contents</a></p>
-<hr  />
-<h1>Tutorial</h1>
-<p><a href="#Contents">&amp;#8593; Back to Contents</a></p>
-<hr  />
-<h1>Error Messages</h1>
-<p>Everyone would agree that the best kind of error message is the kind that never shows up. However, regardless of how well-designed a software package is, errors are always unavoidable. When users interact with a software package, eventually, something is bound to go wrong.</p>
-<p>The error message is a critical component of a good user experience. One way for users to evaluate the quality of a software package is by judging the error messages’ quality. Confusing and non-informative error messages are annoying to the user. This is why most developers would agree that good error message can increase the speed of software package learning and increase users’ subjective satisfaction in the process.</p>
-<p><a href="#Contents">&amp;#8593; Back to Contents</a></p>
-<h2>Clarity</h2>
-<p>Clarity is the top priority when writing error messages. Developers need to describe clearly what had happened, why it happened, and what the user can do to resolve the errors. Hence, developers should always write the error message in plain language to ensure the users could easily understand both the error and the solution.</p>
-<p>Developers should never write abstract error messages as they do not contain adequate information regarding the problems. It is no good to state that something went wrong in the software package but does not help users understand its root cause. As a rule, developers should never assume people will fully understand the context of an error message. Hence, it is a good practice to always be explicit and indicate what exactly has gone wrong in the error messages.</p>
-<p>Error messages that contain technical terminologies will certainly confuse most users. The error message should always describe the errors in terms of users’ actions. Never assume the users are tech-savvy. Hence, it is also a good practice to use non-technical terminologies that can easily understand by everyone.</p>
-<p><a href="#Contents">&amp;#8593; Back to Contents</a></p>
-<h2>Be Concise and Precise</h2>
-<p>The majority of users rarely read technical software documents word-by-word. The more text on a page, the more likely the users will not read the text at all. This is why it is vital to reduce the text down, including error messages. Developers’ goal is to write concise but precise error messages.</p>
-<p>Error messages should enable users to resolve errors efficiently by only containing the information required to help users. Hence, developers should eliminate unnecessary details that do not help the users achieve this objective.</p>
-<p><a href="#Contents">&amp;#8593; Back to Contents</a></p>
-<h2>Never Blame Users</h2>
-<p>Tones play a tremendous impact on how users comprehend the error message. Developers should adopt a more friendly tone to help users relate better to a situation and understand the errors. It is essential to avoid phrases that involve second-person pronouns.</p>
-<p>Poorly written error messages often accuse the user of making errors. Errors are frustrating enough, and there is no need to add to the frustration with unintended judgment from the developers. Developers need to acknowledge that these error messages are essential to communicate and build relationships with the users.</p>
-<p>Remember never to use upper case text and exclamation mark in the error messages, as they both will contribute to an awful user experience.</p>
-<p>Bad error message example:</p>
-<p><code>ERROR: You have entered an incorrect login or password!</code></p>
-<p>Friendly error message example:</p>
-<p><code>Error: Oops, login and password do not match. :-(</code></p>
-<p><a href="#Contents">&amp;#8593; Back to Contents</a></p>
-<h2>Error Messages Examples</h2>
-<p>Group A designed its error messages based on the error message design guideline in the previous three sub-sections. Here are some actual codes that were taken within the software package to be illustrated as examples:</p>
-<div class="fragment"><div class="line">Error: Oops, your response is invalid, please enter &quot;w&quot; or &quot;c&quot;, without quotes. :-(</div>
-<div class="line"> </div>
-<div class="line">Please have another go. :-)</div>
-</div><!-- fragment --><div class="fragment"><div class="line">Error: Oops, there is no param.txt file in the current working directory. :-( </div>
-<div class="line"> </div>
-<div class="line">Please have another go. :-)</div>
-</div><!-- fragment --><p><a href="#Contents">&amp;#8593; Back to Contents</a></p>
-<hr  />
-<h1>Upcoming Features</h1>
-<p>New functionalities and performance improvement come with next software updates:</p><ul>
-<li>The input file needed to run <em><b>[Project Name]</b></em> will be generated interactively avoiding tedious formatting for the user</li>
-<li><em><b>[Project Name]</b></em> will be faster and consumes less memory compared to the previous versions.</li>
-<li>Introduce troubleshooters and step-by-step instructions for errors that are difficult to explain in a single sentence.</li>
-<li>Introduce the use of progressive disclosure to provide information. The error messages will contain steps hidden by default, and when the users want to learn more about the error, they could click “How to fix it” to explore more.</li>
-</ul>
-<p><em><b>[Project Name]</b></em> is updated continuously. Every time Group A fix a bug or add a feature, Group A will release it immediately. Each dated copy of <em><b>[Project Name]</b></em> contains all the features and bug-fixes up to and including that version date. The version date is printed to the screen and logfile every time when a user runs <em><b>[Project Name]</b></em>. It is on the first page of the HTML version of the manual. It is also in the file src/version.h and in the <em><b>[Project Name]</b></em> directory name created when a user unpacks a tarball.</p>
-<ul>
-<li>In the HTML documentation pages accessed on the GitHub site, they always describe the most current version of <em><b>[Project Name]</b></em>.</li>
-<li>In the HTML documentation pages included in the tarball, they describe the version a user have downloaded.</li>
-</ul>
-<p><a href="#Contents">&amp;#8593; Back to Contents</a></p>
-<hr  />
-<h1>FAQ</h1>
-<p><em><b>Q: Where there be any PDF version of the software documentations available?</b></em></p>
-<p><em>A: There will not be any PDF version of the software documentations. The software documentations are extremely detailed and will be cumbersome to read linearly as PDF files. This is why Group A presented the software documentations as HTML files to help users to navigate through the contents much quicker.</em></p>
-<p><em><b>Q: What could I do if I spot a bug in the software?</b></em></p>
-<p><em>A: Any user who spotted a bug in **[Project Name]**, please notify the developers (anyone in the <b>contributor</b> table) by raising it as an issue in the <b>Issues</b> tab in the relevant branch of the **[Project Name]**’s GitHub repository. Key bug fixes will be documented in the software documentation in the next stable version release.</em></p>
-<p><a href="#Contents">&amp;#8593; Back to Contents</a></p>
-<hr  />
-<p>This documentation was generated from commit a0b8bd9 </p>
+<p>This documentation was generated from commit bf17f57 </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
