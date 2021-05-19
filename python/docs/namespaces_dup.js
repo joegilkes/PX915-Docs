@@ -31,10 +31,13 @@ var namespaces_dup =
       [ "print_global_attr", "namespacevisualisation.html#af26cb719b2deb508473e83624f95b374", null ],
       [ "QHO_eng_plot", "namespacevisualisation.html#aa2430a6743d0cdb4960904905c164145", null ],
       [ "H2_eng_plot", "namespacevisualisation.html#afd52b91a5cae34e5aa39f76232b424a7", null ],
+      [ "view_original_trace", "namespacevisualisation.html#a125cde5ab41fad7aaed30b720dd95318", null ],
+      [ "get_autocorrelation_time", "namespacevisualisation.html#a701fd174c3547d52cc346056e71525da", null ],
       [ "filename", "namespacevisualisation.html#a0c5b55c4af26e995abfdee385799d310", null ],
       [ "rootgrp", "namespacevisualisation.html#af7f0bb17ebbd05b61d96a3a749b4afb1", null ],
       [ "system", "namespacevisualisation.html#a867077a6be121d77314fdd76d116c6f7", null ]
     ] ],
+    [ "visualization", "namespacevisualization.html", null ],
     [ "write", "namespacewrite.html", [
       [ "isint", "namespacewrite.html#a6d208b551e50aabd0cfffdf928852f2e", null ],
       [ "isfloat", "namespacewrite.html#ab2d5e87a28584993d493d77da00d1bab", null ],

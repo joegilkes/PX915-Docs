@@ -106,6 +106,12 @@ Functions</h2></td></tr>
 <tr class="memitem:afd52b91a5cae34e5aa39f76232b424a7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevisualisation.html#afd52b91a5cae34e5aa39f76232b424a7">H2_eng_plot</a> (<a class="el" href="namespacevisualisation.html#af7f0bb17ebbd05b61d96a3a749b4afb1">rootgrp</a>, equil)</td></tr>
 <tr class="memdesc:afd52b91a5cae34e5aa39f76232b424a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">H2plus_main_plot() Plots the wavefunction for the quantum harmonic oscillator case.  <a href="namespacevisualisation.html#afd52b91a5cae34e5aa39f76232b424a7">More...</a><br /></td></tr>
 <tr class="separator:afd52b91a5cae34e5aa39f76232b424a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a125cde5ab41fad7aaed30b720dd95318"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevisualisation.html#a125cde5ab41fad7aaed30b720dd95318">view_original_trace</a> (chain)</td></tr>
+<tr class="memdesc:a125cde5ab41fad7aaed30b720dd95318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plots the original trace of an MCMC run.  <a href="namespacevisualisation.html#a125cde5ab41fad7aaed30b720dd95318">More...</a><br /></td></tr>
+<tr class="separator:a125cde5ab41fad7aaed30b720dd95318"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a701fd174c3547d52cc346056e71525da"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevisualisation.html#a701fd174c3547d52cc346056e71525da">get_autocorrelation_time</a> (chain, burn, tuning)</td></tr>
+<tr class="memdesc:a701fd174c3547d52cc346056e71525da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function which suggests a thinning parameter for a MCMC chain.  <a href="namespacevisualisation.html#a701fd174c3547d52cc346056e71525da">More...</a><br /></td></tr>
+<tr class="separator:a701fd174c3547d52cc346056e71525da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -133,13 +139,13 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="visualisation_8py_source.html#l00014">14</a> of file <a class="el" href="visualisation_8py_source.html">visualisation.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">def </span><a class="code" href="namespacevisualisation.html#af26cb719b2deb508473e83624f95b374">print_global_attr</a>(rootgrp):</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">for</span> name <span class="keywordflow">in</span> rootgrp.ncattrs():</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        print(<span class="stringliteral">&quot;{} = {}&quot;</span>.format(name, getattr(rootgrp, name)))</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="ttc" id="anamespacevisualisation_html_af26cb719b2deb508473e83624f95b374"><div class="ttname"><a href="namespacevisualisation.html#af26cb719b2deb508473e83624f95b374">visualisation.print_global_attr</a></div><div class="ttdeci">def print_global_attr(rootgrp)</div><div class="ttdef"><b>Definition:</b> <a href="visualisation_8py_source.html#l00014">visualisation.py:14</a></div></div>
+<p class="definition">Definition at line <a class="el" href="visualisation_8py_source.html#l00019">19</a> of file <a class="el" href="visualisation_8py_source.html">visualisation.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">def </span><a class="code" href="namespacevisualisation.html#af26cb719b2deb508473e83624f95b374">print_global_attr</a>(rootgrp):</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">for</span> name <span class="keywordflow">in</span> rootgrp.ncattrs():</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        print(<span class="stringliteral">&quot;{} = {}&quot;</span>.format(name, getattr(rootgrp, name)))</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="ttc" id="anamespacevisualisation_html_af26cb719b2deb508473e83624f95b374"><div class="ttname"><a href="namespacevisualisation.html#af26cb719b2deb508473e83624f95b374">visualisation.print_global_attr</a></div><div class="ttdeci">def print_global_attr(rootgrp)</div><div class="ttdef"><b>Definition:</b> <a href="visualisation_8py_source.html#l00019">visualisation.py:19</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -171,37 +177,37 @@ Variables</h2></td></tr>
 
 <p>energy_plot() Plots the energy at each step as the MC converges </p>
 
-<p class="definition">Definition at line <a class="el" href="visualisation_8py_source.html#l00019">19</a> of file <a class="el" href="visualisation_8py_source.html">visualisation.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">def </span><a class="code" href="namespacevisualisation.html#aa2430a6743d0cdb4960904905c164145">QHO_eng_plot</a>(rootgrp,equil):</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;energy_plot()</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="stringliteral">    Plots the energy at each step as the MC converges</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    energies = np.array(rootgrp.variables[<span class="stringliteral">&#39;energy_at_alphas_array&#39;</span>][:])</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    r = np.array((rootgrp.variables[<span class="stringliteral">&#39;Alpha_array&#39;</span>][:]))</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment"># if (equil):</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">#     energies = energies[getattr(rootgrp,&#39;burn_step&#39;)::rootgrp,&#39;thin_step&#39;)]</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">#     r = alphas[getattr(rootgrp,&#39;burn_step&#39;)::rootgrp,&#39;thin_step&#39;)]</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="visualisation_8py_source.html#l00024">24</a> of file <a class="el" href="visualisation_8py_source.html">visualisation.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">def </span><a class="code" href="namespacevisualisation.html#aa2430a6743d0cdb4960904905c164145">QHO_eng_plot</a>(rootgrp,equil):</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;energy_plot()</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="stringliteral">    Plots the energy at each step as the MC converges</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    energies = np.array(rootgrp.variables[<span class="stringliteral">&#39;energy_at_alphas_array&#39;</span>][:])</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    r = np.array((rootgrp.variables[<span class="stringliteral">&#39;Alpha_array&#39;</span>][:]))</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    plt.figure()</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    plt.axes()</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    plt.axis(<span class="stringliteral">&quot;square&quot;</span>)</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    plt.scatter(alphas[0],energies[0],1, marker = <span class="stringliteral">&quot;.&quot;</span>)</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    plt.xlabel(<span class="stringliteral">&quot;alpha&quot;</span>)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    plt.ylabel(<span class="stringliteral">&quot;energy&quot;</span>)</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">#plt.title(&quot;Energy vs Alpha&quot;)</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    plt.savefig(<span class="stringliteral">&quot;energies.png&quot;</span>)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment"># if (equil):</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">#     energies = energies[getattr(rootgrp,&#39;burn_step&#39;)::rootgrp,&#39;thin_step&#39;)]</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">#     r = alphas[getattr(rootgrp,&#39;burn_step&#39;)::rootgrp,&#39;thin_step&#39;)]</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    plt.figure()</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    plt.axes()</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    plt.axis(<span class="stringliteral">&quot;square&quot;</span>)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    plt.scatter(alphas[0],energies[0],1, marker = <span class="stringliteral">&quot;.&quot;</span>)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    plt.xlabel(<span class="stringliteral">&quot;alpha&quot;</span>)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    plt.ylabel(<span class="stringliteral">&quot;energy&quot;</span>)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">#plt.title(&quot;Energy vs Alpha&quot;)</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="ttc" id="anamespacevisualisation_html_aa2430a6743d0cdb4960904905c164145"><div class="ttname"><a href="namespacevisualisation.html#aa2430a6743d0cdb4960904905c164145">visualisation.QHO_eng_plot</a></div><div class="ttdeci">def QHO_eng_plot(rootgrp, equil)</div><div class="ttdoc">energy_plot() Plots the energy at each step as the MC converges</div><div class="ttdef"><b>Definition:</b> <a href="visualisation_8py_source.html#l00019">visualisation.py:19</a></div></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    plt.savefig(<span class="stringliteral">&quot;energies.png&quot;</span>)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="ttc" id="anamespacevisualisation_html_aa2430a6743d0cdb4960904905c164145"><div class="ttname"><a href="namespacevisualisation.html#aa2430a6743d0cdb4960904905c164145">visualisation.QHO_eng_plot</a></div><div class="ttdeci">def QHO_eng_plot(rootgrp, equil)</div><div class="ttdoc">energy_plot() Plots the energy at each step as the MC converges</div><div class="ttdef"><b>Definition:</b> <a href="visualisation_8py_source.html#l00024">visualisation.py:24</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -233,25 +239,158 @@ Variables</h2></td></tr>
 
 <p>H2plus_main_plot() Plots the wavefunction for the quantum harmonic oscillator case. </p>
 
-<p class="definition">Definition at line <a class="el" href="visualisation_8py_source.html#l00048">48</a> of file <a class="el" href="visualisation_8py_source.html">visualisation.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">def </span><a class="code" href="namespacevisualisation.html#afd52b91a5cae34e5aa39f76232b424a7">H2_eng_plot</a>(rootgrp, equil):</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="stringliteral">&quot;&quot;&quot; H2plus_main_plot()</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="stringliteral">    Plots the wavefunction for the quantum harmonic oscillator case</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    energies = np.array(rootgrp.variables[<span class="stringliteral">&#39;energy_at_bondlengths_array&#39;</span>][:])</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    bondlength = np.array(rootgrp.variables[<span class="stringliteral">&#39;Bondlength_array&#39;</span>][:])</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    plt.figure()</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    plt.axes()</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        plt.axis(<span class="stringliteral">&quot;square&quot;</span>)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    plt.scatter(bondlength[0],energies[0],1, marker = <span class="stringliteral">&quot;.&quot;</span>)</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    plt.xlabel(<span class="stringliteral">&quot;r&quot;</span>)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    plt.ylabel(<span class="stringliteral">&quot;energy&quot;</span>)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    plt.savefig(<span class="stringliteral">&quot;energies.png&quot;</span>)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="ttc" id="anamespacevisualisation_html_afd52b91a5cae34e5aa39f76232b424a7"><div class="ttname"><a href="namespacevisualisation.html#afd52b91a5cae34e5aa39f76232b424a7">visualisation.H2_eng_plot</a></div><div class="ttdeci">def H2_eng_plot(rootgrp, equil)</div><div class="ttdoc">H2plus_main_plot() Plots the wavefunction for the quantum harmonic oscillator case.</div><div class="ttdef"><b>Definition:</b> <a href="visualisation_8py_source.html#l00048">visualisation.py:48</a></div></div>
+<p class="definition">Definition at line <a class="el" href="visualisation_8py_source.html#l00053">53</a> of file <a class="el" href="visualisation_8py_source.html">visualisation.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">def </span><a class="code" href="namespacevisualisation.html#afd52b91a5cae34e5aa39f76232b424a7">H2_eng_plot</a>(rootgrp, equil):</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="stringliteral">&quot;&quot;&quot; H2plus_main_plot()</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="stringliteral">    Plots the wavefunction for the quantum harmonic oscillator case</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    energies = np.array(rootgrp.variables[<span class="stringliteral">&#39;energy_at_bondlengths_array&#39;</span>][:])</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    bondlength = np.array(rootgrp.variables[<span class="stringliteral">&#39;Bondlength_array&#39;</span>][:])</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    plt.figure()</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    plt.axes()</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        plt.axis(<span class="stringliteral">&quot;square&quot;</span>)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    plt.scatter(bondlength[0],energies[0],1, marker = <span class="stringliteral">&quot;.&quot;</span>)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    plt.xlabel(<span class="stringliteral">&quot;r&quot;</span>)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    plt.ylabel(<span class="stringliteral">&quot;energy&quot;</span>)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    plt.savefig(<span class="stringliteral">&quot;energies.png&quot;</span>)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">#------------------------------------</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"># Burn / Thin FUNCTION DEFINITIONS -</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">#------------------------------------</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="ttc" id="anamespacevisualisation_html_afd52b91a5cae34e5aa39f76232b424a7"><div class="ttname"><a href="namespacevisualisation.html#afd52b91a5cae34e5aa39f76232b424a7">visualisation.H2_eng_plot</a></div><div class="ttdeci">def H2_eng_plot(rootgrp, equil)</div><div class="ttdoc">H2plus_main_plot() Plots the wavefunction for the quantum harmonic oscillator case.</div><div class="ttdef"><b>Definition:</b> <a href="visualisation_8py_source.html#l00053">visualisation.py:53</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a125cde5ab41fad7aaed30b720dd95318"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a125cde5ab41fad7aaed30b720dd95318">&#9670;&nbsp;</a></span>view_original_trace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def visualisation.view_original_trace </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>chain</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Plots the original trace of an MCMC run. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">chain</td><td>1D array from MCMC to be plotted </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="visualisation_8py_source.html#l00078">78</a> of file <a class="el" href="visualisation_8py_source.html">visualisation.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">def </span><a class="code" href="namespacevisualisation.html#a125cde5ab41fad7aaed30b720dd95318">view_original_trace</a>(chain):</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    plt.plot(range(len(chain)), chain)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    plt.xlabel(<span class="stringliteral">&quot;Position in chain&quot;</span>)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    plt.ylabel(<span class="stringliteral">&quot;Chain value&quot;</span>)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    plt.title(<span class="stringliteral">&quot;Original Chain&quot;</span>)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    plt.show()</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="ttc" id="anamespacevisualisation_html_a125cde5ab41fad7aaed30b720dd95318"><div class="ttname"><a href="namespacevisualisation.html#a125cde5ab41fad7aaed30b720dd95318">visualisation.view_original_trace</a></div><div class="ttdeci">def view_original_trace(chain)</div><div class="ttdoc">Plots the original trace of an MCMC run.</div><div class="ttdef"><b>Definition:</b> <a href="visualisation_8py_source.html#l00078">visualisation.py:78</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a701fd174c3547d52cc346056e71525da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a701fd174c3547d52cc346056e71525da">&#9670;&nbsp;</a></span>get_autocorrelation_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def visualisation.get_autocorrelation_time </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>chain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>burn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>tuning</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function which suggests a thinning parameter for a MCMC chain. </p>
+<p>Takes as input a burning parameter and a tuning parameter which controls how aggressively you tune out autocorrelation in the trace, and prints a suggested thinning parameter (if one was found). Intention is to use interactively, to illustrate procedure for burning and thinning, as default values are provided. Plots generated are the autocorrelation as a function of lag time, and the burnt and thinned trace / chain.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">chain</td><td>1D array from MCMC </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">burn</td><td>Number of samples from chain to burn / discard </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tuning</td><td>Parameter which controls aggression of thinning </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="visualisation_8py_source.html#l00103">103</a> of file <a class="el" href="visualisation_8py_source.html">visualisation.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">def </span><a class="code" href="namespacevisualisation.html#a701fd174c3547d52cc346056e71525da">get_autocorrelation_time</a>(chain, burn, tuning):</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    acp = np.correlate(chain,chain,mode=<span class="stringliteral">&#39;full&#39;</span>)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    acp = acp[int(acp.size / 2):]</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    acp = acp / max(acp)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    acp = acp[burn:]</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">#tuning = 1e-2</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">#print(&quot;tuning = &quot;, tuning)</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    thin = np.argmax(abs(acp) &lt; tuning)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">if</span> thin == 0:</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        print(<span class="stringliteral">&quot;No thinning value found - tuning may be too aggressive. Defaulting to no thinning, thin=1.&quot;</span>)</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        print()</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        thin = 1</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    print(<span class="stringliteral">&quot;burning parameter = &quot;</span>, burn)</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    print()</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    print(<span class="stringliteral">&quot;tuning parameter = &quot;</span>, tuning)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    print()</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    print(<span class="stringliteral">&quot;proposed thinning parameter = &quot;</span>, thin)</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    print()</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    chain_new = chain[burn::thin]</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    print(<span class="stringliteral">&quot;length of new chain = &quot;</span>, len(chain_new))</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    plt.plot(range(len(acp)), acp)</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    plt.xlabel(<span class="stringliteral">&quot;Position in chain / Lag time&quot;</span>)</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    plt.ylabel(<span class="stringliteral">&quot;ACF&quot;</span>)</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    plt.title(<span class="stringliteral">&quot;Autocorrelation function vs lag time&quot;</span>)</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    plt.show()</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    plt.plot(range(len(chain_new)), chain_new)</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    plt.xlabel(<span class="stringliteral">&quot;Position in chain&quot;</span>)</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    plt.ylabel(<span class="stringliteral">&quot;Chain value&quot;</span>)</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    plt.title(<span class="stringliteral">&quot;New Chain&quot;</span>)</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    plt.show()</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">return</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="ttc" id="anamespacevisualisation_html_a701fd174c3547d52cc346056e71525da"><div class="ttname"><a href="namespacevisualisation.html#a701fd174c3547d52cc346056e71525da">visualisation.get_autocorrelation_time</a></div><div class="ttdeci">def get_autocorrelation_time(chain, burn, tuning)</div><div class="ttdoc">Function which suggests a thinning parameter for a MCMC chain.</div><div class="ttdef"><b>Definition:</b> <a href="visualisation_8py_source.html#l00103">visualisation.py:103</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -268,7 +407,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="visualisation_8py_source.html#l00065">65</a> of file <a class="el" href="visualisation_8py_source.html">visualisation.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="visualisation_8py_source.html#l00145">145</a> of file <a class="el" href="visualisation_8py_source.html">visualisation.py</a>.</p>
 
 </div>
 </div>
@@ -284,7 +423,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="visualisation_8py_source.html#l00066">66</a> of file <a class="el" href="visualisation_8py_source.html">visualisation.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="visualisation_8py_source.html#l00146">146</a> of file <a class="el" href="visualisation_8py_source.html">visualisation.py</a>.</p>
 
 </div>
 </div>
@@ -300,7 +439,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="visualisation_8py_source.html#l00068">68</a> of file <a class="el" href="visualisation_8py_source.html">visualisation.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="visualisation_8py_source.html#l00148">148</a> of file <a class="el" href="visualisation_8py_source.html">visualisation.py</a>.</p>
 
 </div>
 </div>

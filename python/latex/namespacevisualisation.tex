@@ -8,7 +8,11 @@ def \mbox{\hyperlink{namespacevisualisation_af26cb719b2deb508473e83624f95b374}{p
 def \mbox{\hyperlink{namespacevisualisation_aa2430a6743d0cdb4960904905c164145}{QHO\+\_\+eng\+\_\+plot}} (\mbox{\hyperlink{namespacevisualisation_af7f0bb17ebbd05b61d96a3a749b4afb1}{rootgrp}}, equil)
 \begin{DoxyCompactList}\small\item\em energy\+\_\+plot() Plots the energy at each step as the MC converges \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacevisualisation_afd52b91a5cae34e5aa39f76232b424a7}{H2\+\_\+eng\+\_\+plot}} (\mbox{\hyperlink{namespacevisualisation_af7f0bb17ebbd05b61d96a3a749b4afb1}{rootgrp}}, equil)
-\begin{DoxyCompactList}\small\item\em H2plus\+\_\+main\+\_\+plot() Plots the wavefunction for the quantum harmonic oscillator case. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em H2plus\+\_\+main\+\_\+plot() Plots the wavefunction for the quantum harmonic oscillator case. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacevisualisation_a125cde5ab41fad7aaed30b720dd95318}{view\+\_\+original\+\_\+trace}} (chain)
+\begin{DoxyCompactList}\small\item\em Plots the original trace of an MCMC run. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacevisualisation_a701fd174c3547d52cc346056e71525da}{get\+\_\+autocorrelation\+\_\+time}} (chain, burn, tuning)
+\begin{DoxyCompactList}\small\item\em Function which suggests a thinning parameter for a MCMC chain. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -29,15 +33,15 @@ string \mbox{\hyperlink{namespacevisualisation_a0c5b55c4af26e995abfdee385799d310
 
 
 
-Definition at line 14 of file visualisation.\+py.
+Definition at line 19 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{14 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_af26cb719b2deb508473e83624f95b374}{print\_global\_attr}}(rootgrp):}
-\DoxyCodeLine{15     \textcolor{keywordflow}{for} name \textcolor{keywordflow}{in} rootgrp.ncattrs():}
-\DoxyCodeLine{16         print(\textcolor{stringliteral}{"{}\{\} = \{\}"{}}.format(name, getattr(rootgrp, name)))}
-\DoxyCodeLine{17 }
-\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_af26cb719b2deb508473e83624f95b374}{print\_global\_attr}}(rootgrp):}
+\DoxyCodeLine{20     \textcolor{keywordflow}{for} name \textcolor{keywordflow}{in} rootgrp.ncattrs():}
+\DoxyCodeLine{21         print(\textcolor{stringliteral}{"{}\{\} = \{\}"{}}.format(name, getattr(rootgrp, name)))}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespacevisualisation_aa2430a6743d0cdb4960904905c164145}\label{namespacevisualisation_aa2430a6743d0cdb4960904905c164145}} 
@@ -52,39 +56,39 @@ energy\+\_\+plot() Plots the energy at each step as the MC converges
 
 
 
-Definition at line 19 of file visualisation.\+py.
+Definition at line 24 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{19 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_aa2430a6743d0cdb4960904905c164145}{QHO\_eng\_plot}}(rootgrp,equil):}
-\DoxyCodeLine{20     \textcolor{stringliteral}{"{}"{}"{}energy\_plot()}}
-\DoxyCodeLine{21 \textcolor{stringliteral}{    Plots the energy at each step as the MC converges}}
-\DoxyCodeLine{22 \textcolor{stringliteral}{    "{}"{}"{}}}
-\DoxyCodeLine{23 }
-\DoxyCodeLine{24     energies = np.array(rootgrp.variables[\textcolor{stringliteral}{'energy\_at\_alphas\_array'}][:])}
-\DoxyCodeLine{25 }
-\DoxyCodeLine{26     r = np.array((rootgrp.variables[\textcolor{stringliteral}{'Alpha\_array'}][:]))}
-\DoxyCodeLine{27 }
-\DoxyCodeLine{28     \textcolor{comment}{\# if (equil):}}
-\DoxyCodeLine{29     \textcolor{comment}{\#     energies = energies[getattr(rootgrp,'burn\_step')::rootgrp,'thin\_step')]}}
-\DoxyCodeLine{30     \textcolor{comment}{\#     r = alphas[getattr(rootgrp,'burn\_step')::rootgrp,'thin\_step')]}}
-\DoxyCodeLine{31 }
+\DoxyCodeLine{24 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_aa2430a6743d0cdb4960904905c164145}{QHO\_eng\_plot}}(rootgrp,equil):}
+\DoxyCodeLine{25     \textcolor{stringliteral}{"{}"{}"{}energy\_plot()}}
+\DoxyCodeLine{26 \textcolor{stringliteral}{    Plots the energy at each step as the MC converges}}
+\DoxyCodeLine{27 \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     energies = np.array(rootgrp.variables[\textcolor{stringliteral}{'energy\_at\_alphas\_array'}][:])}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     r = np.array((rootgrp.variables[\textcolor{stringliteral}{'Alpha\_array'}][:]))}
 \DoxyCodeLine{32 }
-\DoxyCodeLine{33 }
-\DoxyCodeLine{34     plt.figure()}
-\DoxyCodeLine{35     plt.axes()}
-\DoxyCodeLine{36     plt.axis(\textcolor{stringliteral}{"{}square"{}})}
-\DoxyCodeLine{37     plt.scatter(alphas[0],energies[0],1, marker = \textcolor{stringliteral}{"{}."{}})}
-\DoxyCodeLine{38     plt.xlabel(\textcolor{stringliteral}{"{}alpha"{}})}
-\DoxyCodeLine{39     plt.ylabel(\textcolor{stringliteral}{"{}energy"{}})}
-\DoxyCodeLine{40     \textcolor{comment}{\#plt.title("{}Energy vs Alpha"{})}}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{42     plt.savefig(\textcolor{stringliteral}{"{}energies.png"{}})}
-\DoxyCodeLine{43 }
-\DoxyCodeLine{44 }
-\DoxyCodeLine{45 }
+\DoxyCodeLine{33     \textcolor{comment}{\# if (equil):}}
+\DoxyCodeLine{34     \textcolor{comment}{\#     energies = energies[getattr(rootgrp,'burn\_step')::rootgrp,'thin\_step')]}}
+\DoxyCodeLine{35     \textcolor{comment}{\#     r = alphas[getattr(rootgrp,'burn\_step')::rootgrp,'thin\_step')]}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     plt.figure()}
+\DoxyCodeLine{40     plt.axes()}
+\DoxyCodeLine{41     plt.axis(\textcolor{stringliteral}{"{}square"{}})}
+\DoxyCodeLine{42     plt.scatter(alphas[0],energies[0],1, marker = \textcolor{stringliteral}{"{}."{}})}
+\DoxyCodeLine{43     plt.xlabel(\textcolor{stringliteral}{"{}alpha"{}})}
+\DoxyCodeLine{44     plt.ylabel(\textcolor{stringliteral}{"{}energy"{}})}
+\DoxyCodeLine{45     \textcolor{comment}{\#plt.title("{}Energy vs Alpha"{})}}
 \DoxyCodeLine{46 }
-\DoxyCodeLine{47 }
+\DoxyCodeLine{47     plt.savefig(\textcolor{stringliteral}{"{}energies.png"{}})}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespacevisualisation_afd52b91a5cae34e5aa39f76232b424a7}\label{namespacevisualisation_afd52b91a5cae34e5aa39f76232b424a7}} 
@@ -99,27 +103,135 @@ H2plus\+\_\+main\+\_\+plot() Plots the wavefunction for the quantum harmonic osc
 
 
 
-Definition at line 48 of file visualisation.\+py.
+Definition at line 53 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{48 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_afd52b91a5cae34e5aa39f76232b424a7}{H2\_eng\_plot}}(rootgrp, equil):}
-\DoxyCodeLine{49     \textcolor{stringliteral}{"{}"{}"{} H2plus\_main\_plot()}}
-\DoxyCodeLine{50 \textcolor{stringliteral}{    Plots the wavefunction for the quantum harmonic oscillator case}}
-\DoxyCodeLine{51 \textcolor{stringliteral}{}}
-\DoxyCodeLine{52 \textcolor{stringliteral}{    "{}"{}"{}}}
-\DoxyCodeLine{53     energies = np.array(rootgrp.variables[\textcolor{stringliteral}{'energy\_at\_bondlengths\_array'}][:])}
-\DoxyCodeLine{54     bondlength = np.array(rootgrp.variables[\textcolor{stringliteral}{'Bondlength\_array'}][:])}
-\DoxyCodeLine{55 }
-\DoxyCodeLine{56     plt.figure()}
-\DoxyCodeLine{57     plt.axes()}
-\DoxyCodeLine{58         plt.axis(\textcolor{stringliteral}{"{}square"{}})}
-\DoxyCodeLine{59     plt.scatter(bondlength[0],energies[0],1, marker = \textcolor{stringliteral}{"{}."{}})}
-\DoxyCodeLine{60     plt.xlabel(\textcolor{stringliteral}{"{}r"{}})}
-\DoxyCodeLine{61     plt.ylabel(\textcolor{stringliteral}{"{}energy"{}})}
-\DoxyCodeLine{62     plt.savefig(\textcolor{stringliteral}{"{}energies.png"{}})}
-\DoxyCodeLine{63 }
-\DoxyCodeLine{64 }
+\DoxyCodeLine{53 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_afd52b91a5cae34e5aa39f76232b424a7}{H2\_eng\_plot}}(rootgrp, equil):}
+\DoxyCodeLine{54     \textcolor{stringliteral}{"{}"{}"{} H2plus\_main\_plot()}}
+\DoxyCodeLine{55 \textcolor{stringliteral}{    Plots the wavefunction for the quantum harmonic oscillator case}}
+\DoxyCodeLine{56 \textcolor{stringliteral}{}}
+\DoxyCodeLine{57 \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{58     energies = np.array(rootgrp.variables[\textcolor{stringliteral}{'energy\_at\_bondlengths\_array'}][:])}
+\DoxyCodeLine{59     bondlength = np.array(rootgrp.variables[\textcolor{stringliteral}{'Bondlength\_array'}][:])}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     plt.figure()}
+\DoxyCodeLine{62     plt.axes()}
+\DoxyCodeLine{63         plt.axis(\textcolor{stringliteral}{"{}square"{}})}
+\DoxyCodeLine{64     plt.scatter(bondlength[0],energies[0],1, marker = \textcolor{stringliteral}{"{}."{}})}
+\DoxyCodeLine{65     plt.xlabel(\textcolor{stringliteral}{"{}r"{}})}
+\DoxyCodeLine{66     plt.ylabel(\textcolor{stringliteral}{"{}energy"{}})}
+\DoxyCodeLine{67     plt.savefig(\textcolor{stringliteral}{"{}energies.png"{}})}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{71 \textcolor{comment}{\# Burn / Thin FUNCTION DEFINITIONS -\/}}
+\DoxyCodeLine{72 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{73 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacevisualisation_a125cde5ab41fad7aaed30b720dd95318}\label{namespacevisualisation_a125cde5ab41fad7aaed30b720dd95318}} 
+\index{visualisation@{visualisation}!view\_original\_trace@{view\_original\_trace}}
+\index{view\_original\_trace@{view\_original\_trace}!visualisation@{visualisation}}
+\doxysubsubsection{\texorpdfstring{view\_original\_trace()}{view\_original\_trace()}}
+{\footnotesize\ttfamily def visualisation.\+view\+\_\+original\+\_\+trace (\begin{DoxyParamCaption}\item[{}]{chain }\end{DoxyParamCaption})}
+
+
+
+Plots the original trace of an MCMC run. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chain} & 1D array from MCMC to be plotted \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 78 of file visualisation.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{78 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a125cde5ab41fad7aaed30b720dd95318}{view\_original\_trace}}(chain):}
+\DoxyCodeLine{79     }
+\DoxyCodeLine{80     plt.plot(range(len(chain)), chain)}
+\DoxyCodeLine{81     plt.xlabel(\textcolor{stringliteral}{"{}Position in chain"{}})}
+\DoxyCodeLine{82     plt.ylabel(\textcolor{stringliteral}{"{}Chain value"{}})}
+\DoxyCodeLine{83     plt.title(\textcolor{stringliteral}{"{}Original Chain"{}})}
+\DoxyCodeLine{84     plt.show()}
+\DoxyCodeLine{85     }
+\DoxyCodeLine{86     \textcolor{keywordflow}{return}}
+\DoxyCodeLine{87 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacevisualisation_a701fd174c3547d52cc346056e71525da}\label{namespacevisualisation_a701fd174c3547d52cc346056e71525da}} 
+\index{visualisation@{visualisation}!get\_autocorrelation\_time@{get\_autocorrelation\_time}}
+\index{get\_autocorrelation\_time@{get\_autocorrelation\_time}!visualisation@{visualisation}}
+\doxysubsubsection{\texorpdfstring{get\_autocorrelation\_time()}{get\_autocorrelation\_time()}}
+{\footnotesize\ttfamily def visualisation.\+get\+\_\+autocorrelation\+\_\+time (\begin{DoxyParamCaption}\item[{}]{chain,  }\item[{}]{burn,  }\item[{}]{tuning }\end{DoxyParamCaption})}
+
+
+
+Function which suggests a thinning parameter for a MCMC chain. 
+
+Takes as input a burning parameter and a tuning parameter which controls how aggressively you tune out autocorrelation in the trace, and prints a suggested thinning parameter (if one was found). Intention is to use interactively, to illustrate procedure for burning and thinning, as default values are provided. Plots generated are the autocorrelation as a function of lag time, and the burnt and thinned trace / chain.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em chain} & 1D array from MCMC \\
+\hline
+\mbox{\texttt{ in}}  & {\em burn} & Number of samples from chain to burn / discard \\
+\hline
+\mbox{\texttt{ in}}  & {\em tuning} & Parameter which controls aggression of thinning \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 103 of file visualisation.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{103 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a701fd174c3547d52cc346056e71525da}{get\_autocorrelation\_time}}(chain, burn, tuning):}
+\DoxyCodeLine{104     }
+\DoxyCodeLine{105     acp = np.correlate(chain,chain,mode=\textcolor{stringliteral}{'full'})}
+\DoxyCodeLine{106     acp = acp[int(acp.size / 2):]}
+\DoxyCodeLine{107     acp = acp / max(acp)}
+\DoxyCodeLine{108     acp = acp[burn:]}
+\DoxyCodeLine{109     }
+\DoxyCodeLine{110     \textcolor{comment}{\#tuning = 1e-\/2}}
+\DoxyCodeLine{111     \textcolor{comment}{\#print("{}tuning = "{}, tuning)}}
+\DoxyCodeLine{112     }
+\DoxyCodeLine{113     thin = np.argmax(abs(acp) < tuning)}
+\DoxyCodeLine{114     \textcolor{keywordflow}{if} thin == 0:}
+\DoxyCodeLine{115         print(\textcolor{stringliteral}{"{}No thinning value found -\/ tuning may be too aggressive. Defaulting to no thinning, thin=1."{}})}
+\DoxyCodeLine{116         print()}
+\DoxyCodeLine{117         thin = 1}
+\DoxyCodeLine{118     }
+\DoxyCodeLine{119     print(\textcolor{stringliteral}{"{}burning parameter = "{}}, burn)}
+\DoxyCodeLine{120     print()}
+\DoxyCodeLine{121     print(\textcolor{stringliteral}{"{}tuning parameter = "{}}, tuning)}
+\DoxyCodeLine{122     print()}
+\DoxyCodeLine{123     print(\textcolor{stringliteral}{"{}proposed thinning parameter = "{}}, thin)}
+\DoxyCodeLine{124     print()}
+\DoxyCodeLine{125     }
+\DoxyCodeLine{126     chain\_new = chain[burn::thin]}
+\DoxyCodeLine{127     print(\textcolor{stringliteral}{"{}length of new chain = "{}}, len(chain\_new))}
+\DoxyCodeLine{128     }
+\DoxyCodeLine{129     }
+\DoxyCodeLine{130     plt.plot(range(len(acp)), acp)}
+\DoxyCodeLine{131     plt.xlabel(\textcolor{stringliteral}{"{}Position in chain / Lag time"{}})}
+\DoxyCodeLine{132     plt.ylabel(\textcolor{stringliteral}{"{}ACF"{}})}
+\DoxyCodeLine{133     plt.title(\textcolor{stringliteral}{"{}Autocorrelation function vs lag time"{}})}
+\DoxyCodeLine{134     plt.show()}
+\DoxyCodeLine{135     }
+\DoxyCodeLine{136     plt.plot(range(len(chain\_new)), chain\_new)}
+\DoxyCodeLine{137     plt.xlabel(\textcolor{stringliteral}{"{}Position in chain"{}})}
+\DoxyCodeLine{138     plt.ylabel(\textcolor{stringliteral}{"{}Chain value"{}})}
+\DoxyCodeLine{139     plt.title(\textcolor{stringliteral}{"{}New Chain"{}})}
+\DoxyCodeLine{140     plt.show()}
+\DoxyCodeLine{141     }
+\DoxyCodeLine{142     \textcolor{keywordflow}{return}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 }
 
 \end{DoxyCode}
 
@@ -133,7 +245,7 @@ Definition at line 48 of file visualisation.\+py.
 
 
 
-Definition at line 65 of file visualisation.\+py.
+Definition at line 145 of file visualisation.\+py.
 
 \mbox{\Hypertarget{namespacevisualisation_af7f0bb17ebbd05b61d96a3a749b4afb1}\label{namespacevisualisation_af7f0bb17ebbd05b61d96a3a749b4afb1}} 
 \index{visualisation@{visualisation}!rootgrp@{rootgrp}}
@@ -143,7 +255,7 @@ Definition at line 65 of file visualisation.\+py.
 
 
 
-Definition at line 66 of file visualisation.\+py.
+Definition at line 146 of file visualisation.\+py.
 
 \mbox{\Hypertarget{namespacevisualisation_a867077a6be121d77314fdd76d116c6f7}\label{namespacevisualisation_a867077a6be121d77314fdd76d116c6f7}} 
 \index{visualisation@{visualisation}!system@{system}}
@@ -153,5 +265,5 @@ Definition at line 66 of file visualisation.\+py.
 
 
 
-Definition at line 68 of file visualisation.\+py.
+Definition at line 148 of file visualisation.\+py.
 
