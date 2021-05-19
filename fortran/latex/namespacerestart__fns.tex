@@ -93,7 +93,7 @@ Definition at line 51 of file restart\+\_\+fns.\+f90.
 \DoxyCodeLine{74             \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(pos1)) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{75                 res\%pos1 = pos1}
 \DoxyCodeLine{76             \textcolor{keywordflow}{else}}
-\DoxyCodeLine{77                 error stop \textcolor{stringliteral}{'Error: Electron position ("{}pos1"{}) missing in inputs to write\_res\_params().'}}
+\DoxyCodeLine{77                 error stop \textcolor{stringliteral}{'Error: Oops, electron position ("{}pos1"{}) missing in inputs to write\_res\_params(). :-\/( '}}
 \DoxyCodeLine{78 \textcolor{keywordflow}{            endif}}
 \DoxyCodeLine{79 }
 \DoxyCodeLine{80             \textcolor{comment}{! For H2, store position of second electron as well}}
@@ -101,7 +101,7 @@ Definition at line 51 of file restart\+\_\+fns.\+f90.
 \DoxyCodeLine{82                 \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(pos2)) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{83                     res\%pos2 = pos2}
 \DoxyCodeLine{84                 \textcolor{keywordflow}{else}}
-\DoxyCodeLine{85                     error stop \textcolor{stringliteral}{'Error: Electron position ("{}pos2"{}) missing in inputs to write\_res\_params().'}}
+\DoxyCodeLine{85                     error stop \textcolor{stringliteral}{'Error: Oops, electron position ("{}pos2"{}) missing in inputs to write\_res\_params(). :-\/( '}}
 \DoxyCodeLine{86 \textcolor{keywordflow}{                endif}}
 \DoxyCodeLine{87 \textcolor{keywordflow}{            endif}}
 \DoxyCodeLine{88 }
@@ -118,7 +118,7 @@ Definition at line 51 of file restart\+\_\+fns.\+f90.
 \DoxyCodeLine{99                 \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(i3)) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{100                     res\%i\_c2 = i3}
 \DoxyCodeLine{101                 \textcolor{keywordflow}{else}}
-\DoxyCodeLine{102                     error stop \textcolor{stringliteral}{'Error: Value of c2 ("{}val3"{}) missing in inputs to write\_res\_params().'}}
+\DoxyCodeLine{102                     error stop \textcolor{stringliteral}{'Error: Oops, value of c2 ("{}val3"{}) missing in inputs to write\_res\_params(). :-\/( '}}
 \DoxyCodeLine{103 \textcolor{keywordflow}{                endif}}
 \DoxyCodeLine{104 \textcolor{keywordflow}{            endif}}
 \DoxyCodeLine{105         \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'H2'})}
@@ -128,11 +128,11 @@ Definition at line 51 of file restart\+\_\+fns.\+f90.
 \DoxyCodeLine{109                 \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(i3)) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{110                     res\%i\_c2 = i3}
 \DoxyCodeLine{111                 \textcolor{keywordflow}{else}}
-\DoxyCodeLine{112                     error stop \textcolor{stringliteral}{'Error: Value of c2 ("{}val3"{}) missing in inputs to write\_res\_params().'}}
+\DoxyCodeLine{112                     error stop \textcolor{stringliteral}{'Error: Oops, value of c2 ("{}val3"{}) missing in inputs to write\_res\_params(). :-\/( '}}
 \DoxyCodeLine{113 \textcolor{keywordflow}{                endif}}
 \DoxyCodeLine{114 \textcolor{keywordflow}{            endif}}
 \DoxyCodeLine{115 \textcolor{keywordflow}{        case default}}
-\DoxyCodeLine{116             error stop \textcolor{stringliteral}{'Error: Invalid "{}p\_system"{} passed to function write\_res\_params().'}}
+\DoxyCodeLine{116             error stop \textcolor{stringliteral}{'Error: Oops, invalid "{}p\_system"{} passed to function write\_res\_params(). :-\/( '}}
 \DoxyCodeLine{117 \textcolor{keywordflow}{        end select}}
 \DoxyCodeLine{118 }
 \DoxyCodeLine{119         \textcolor{comment}{! Open the res\_paramts.txt file}}
@@ -141,7 +141,7 @@ Definition at line 51 of file restart\+\_\+fns.\+f90.
 \DoxyCodeLine{122         \textcolor{comment}{! Write the RESTART namelist}}
 \DoxyCodeLine{123         \textcolor{keyword}{write}(nml=restart, iostat=rc, unit=fu)}
 \DoxyCodeLine{124         \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{125             error stop \textcolor{stringliteral}{'Error: Invalid RESTART namelist defined in function write\_res\_params().'}}
+\DoxyCodeLine{125             error stop \textcolor{stringliteral}{'Error: Oops, invalid RESTART namelist defined in function write\_res\_params(). :-\/( '}}
 \DoxyCodeLine{126 \textcolor{keywordflow}{        end if}}
 \DoxyCodeLine{127         }
 \DoxyCodeLine{128         \textcolor{comment}{! Close the res\_paramts.txt file}}
@@ -181,7 +181,7 @@ Definition at line 150 of file restart\+\_\+fns.\+f90.
 \DoxyCodeLine{159         \textcolor{keyword}{inquire}(file=resfile\_nml, iostat=rc)}
 \DoxyCodeLine{160         \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{161             print*, \textcolor{stringliteral}{'Searched for file '}, resfile\_nml, \textcolor{stringliteral}{' .'}}
-\DoxyCodeLine{162             error stop \textcolor{stringliteral}{'Error: This restart file is not present in the current directory.'}}
+\DoxyCodeLine{162             error stop \textcolor{stringliteral}{'Error: Oops, this restart file is not present in the current directory. :-\/( '}}
 \DoxyCodeLine{163 \textcolor{keywordflow}{        end if}}
 \DoxyCodeLine{164 }
 \DoxyCodeLine{165         \textcolor{comment}{! Open the file}}
@@ -190,7 +190,7 @@ Definition at line 150 of file restart\+\_\+fns.\+f90.
 \DoxyCodeLine{168         \textcolor{comment}{! Read the namelist}}
 \DoxyCodeLine{169         \textcolor{keyword}{read}(nml=restart, iostat=rc, unit=fu)}
 \DoxyCodeLine{170         \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{171             error stop \textcolor{stringliteral}{'Error: Invalid RESTART namelist in "{}res\_nml.txt"{}.'}}
+\DoxyCodeLine{171             error stop \textcolor{stringliteral}{'Error: Oops, invalid RESTART namelist in "{}res\_nml.txt"{}. :-\/( '}}
 \DoxyCodeLine{172 \textcolor{keywordflow}{        end if}}
 \DoxyCodeLine{173         }
 \DoxyCodeLine{174         \textcolor{comment}{! Close the file}}
@@ -277,7 +277,7 @@ Definition at line 215 of file restart\+\_\+fns.\+f90.
 \DoxyCodeLine{223         \textcolor{keyword}{inquire}(file=filename, iostat=rc)}
 \DoxyCodeLine{224         \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{225             print*, \textcolor{stringliteral}{'Searched for file '}, filename, \textcolor{stringliteral}{' .'}}
-\DoxyCodeLine{226             error stop \textcolor{stringliteral}{'Error: This restart file is not present in the current directory.'}}
+\DoxyCodeLine{226             error stop \textcolor{stringliteral}{'Error: Oops, this restart file is not present in the current directory. :-\/( '}}
 \DoxyCodeLine{227 \textcolor{keywordflow}{        end if}}
 \DoxyCodeLine{228 }
 \DoxyCodeLine{229         \textcolor{comment}{! Open restart netCDF file with energies}}
@@ -340,7 +340,7 @@ Definition at line 253 of file restart\+\_\+fns.\+f90.
 \DoxyCodeLine{261         \textcolor{keyword}{inquire}(file=resfile\_chn, iostat=rc)}
 \DoxyCodeLine{262         \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{263             print*, \textcolor{stringliteral}{'Searched for file '}, resfile\_chn, \textcolor{stringliteral}{' .'}}
-\DoxyCodeLine{264             error stop \textcolor{stringliteral}{'Error: This restart file is not present in the current directory.'}}
+\DoxyCodeLine{264             error stop \textcolor{stringliteral}{'Error: Oops, this restart file is not present in the current directory. :-\/( '}}
 \DoxyCodeLine{265 \textcolor{keywordflow}{        end if}}
 \DoxyCodeLine{266 }
 \DoxyCodeLine{267         \textcolor{comment}{! Open restart netCDF file with chains}}

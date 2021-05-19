@@ -153,7 +153,7 @@ $(document).ready(function(){initNavTree('restart__fns_8f90_source.html',''); in
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">if</span> (<span class="keyword">present</span>(pos1)) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                res%pos1 = pos1</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                error stop <span class="stringliteral">&#39;Error: Electron position (&quot;pos1&quot;) missing in inputs to write_res_params().&#39;</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                error stop <span class="stringliteral">&#39;Error: Oops, electron position (&quot;pos1&quot;) missing in inputs to write_res_params(). :-( &#39;</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keywordflow">            endif</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="comment">! For H2, store position of second electron as well</span></div>
@@ -161,7 +161,7 @@ $(document).ready(function(){initNavTree('restart__fns_8f90_source.html',''); in
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keywordflow">if</span> (<span class="keyword">present</span>(pos2)) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                    res%pos2 = pos2</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    error stop <span class="stringliteral">&#39;Error: Electron position (&quot;pos2&quot;) missing in inputs to write_res_params().&#39;</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    error stop <span class="stringliteral">&#39;Error: Oops, electron position (&quot;pos2&quot;) missing in inputs to write_res_params(). :-( &#39;</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keywordflow">                endif</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordflow">            endif</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
@@ -178,7 +178,7 @@ $(document).ready(function(){initNavTree('restart__fns_8f90_source.html',''); in
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <span class="keywordflow">if</span> (<span class="keyword">present</span>(i3)) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                    res%i_c2 = i3</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                    error stop <span class="stringliteral">&#39;Error: Value of c2 (&quot;val3&quot;) missing in inputs to write_res_params().&#39;</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                    error stop <span class="stringliteral">&#39;Error: Oops, value of c2 (&quot;val3&quot;) missing in inputs to write_res_params(). :-( &#39;</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keywordflow">                endif</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keywordflow">            endif</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">case</span> (<span class="stringliteral">&#39;H2&#39;</span>)</div>
@@ -188,11 +188,11 @@ $(document).ready(function(){initNavTree('restart__fns_8f90_source.html',''); in
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keywordflow">if</span> (<span class="keyword">present</span>(i3)) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                    res%i_c2 = i3</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    error stop <span class="stringliteral">&#39;Error: Value of c2 (&quot;val3&quot;) missing in inputs to write_res_params().&#39;</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    error stop <span class="stringliteral">&#39;Error: Oops, value of c2 (&quot;val3&quot;) missing in inputs to write_res_params(). :-( &#39;</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keywordflow">                endif</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keywordflow">            endif</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keywordflow">        case default</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            error stop <span class="stringliteral">&#39;Error: Invalid &quot;p_system&quot; passed to function write_res_params().&#39;</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            error stop <span class="stringliteral">&#39;Error: Oops, invalid &quot;p_system&quot; passed to function write_res_params(). :-( &#39;</span></div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keywordflow">        end select</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="comment">! Open the res_paramts.txt file</span></div>
@@ -201,7 +201,7 @@ $(document).ready(function(){initNavTree('restart__fns_8f90_source.html',''); in
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="comment">! Write the RESTART namelist</span></div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keyword">write</span>(nml=restart, iostat=<a class="code" href="namespacerestart__fns.html#ab386c6b0f14be0090063a054256f5923">rc</a>, unit=<a class="code" href="namespacerestart__fns.html#abae4eaf545561c534bc832e303c47b4b">fu</a>)</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespacerestart__fns.html#ab386c6b0f14be0090063a054256f5923">rc</a> /= 0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            error stop <span class="stringliteral">&#39;Error: Invalid RESTART namelist defined in function write_res_params().&#39;</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            error stop <span class="stringliteral">&#39;Error: Oops, invalid RESTART namelist defined in function write_res_params(). :-( &#39;</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keywordflow">        end if</span></div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        </div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="comment">! Close the res_paramts.txt file</span></div>
@@ -234,7 +234,7 @@ $(document).ready(function(){initNavTree('restart__fns_8f90_source.html',''); in
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keyword">inquire</span>(file=<a class="code" href="namespaceshared__data.html#a73f57f5cf348bf3d0dd9e0b8eaf8e514">resfile_nml</a>, iostat=<a class="code" href="namespacerestart__fns.html#ab386c6b0f14be0090063a054256f5923">rc</a>)</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespacerestart__fns.html#ab386c6b0f14be0090063a054256f5923">rc</a> /= 0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            print*, <span class="stringliteral">&#39;Searched for file &#39;</span>, <a class="code" href="namespaceshared__data.html#a73f57f5cf348bf3d0dd9e0b8eaf8e514">resfile_nml</a>, <span class="stringliteral">&#39; .&#39;</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            error stop <span class="stringliteral">&#39;Error: This restart file is not present in the current directory.&#39;</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            error stop <span class="stringliteral">&#39;Error: Oops, this restart file is not present in the current directory. :-( &#39;</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="keywordflow">        end if</span></div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="comment">! Open the file</span></div>
@@ -243,7 +243,7 @@ $(document).ready(function(){initNavTree('restart__fns_8f90_source.html',''); in
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="comment">! Read the namelist</span></div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keyword">read</span>(nml=restart, iostat=<a class="code" href="namespacerestart__fns.html#ab386c6b0f14be0090063a054256f5923">rc</a>, unit=<a class="code" href="namespacerestart__fns.html#abae4eaf545561c534bc832e303c47b4b">fu</a>)</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespacerestart__fns.html#ab386c6b0f14be0090063a054256f5923">rc</a> /= 0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            error stop <span class="stringliteral">&#39;Error: Invalid RESTART namelist in &quot;res_nml.txt&quot;.&#39;</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            error stop <span class="stringliteral">&#39;Error: Oops, invalid RESTART namelist in &quot;res_nml.txt&quot;. :-( &#39;</span></div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="keywordflow">        end if</span></div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        </div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="comment">! Close the file</span></div>
@@ -287,7 +287,7 @@ $(document).ready(function(){initNavTree('restart__fns_8f90_source.html',''); in
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keyword">inquire</span>(file=filename, iostat=<a class="code" href="namespacerestart__fns.html#ab386c6b0f14be0090063a054256f5923">rc</a>)</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespacerestart__fns.html#ab386c6b0f14be0090063a054256f5923">rc</a> /= 0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            print*, <span class="stringliteral">&#39;Searched for file &#39;</span>, filename, <span class="stringliteral">&#39; .&#39;</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            error stop <span class="stringliteral">&#39;Error: This restart file is not present in the current directory.&#39;</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            error stop <span class="stringliteral">&#39;Error: Oops, this restart file is not present in the current directory. :-( &#39;</span></div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="keywordflow">        end if</span></div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="comment">! Open restart netCDF file with energies</span></div>
@@ -325,7 +325,7 @@ $(document).ready(function(){initNavTree('restart__fns_8f90_source.html',''); in
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keyword">inquire</span>(file=<a class="code" href="namespaceshared__data.html#adf411355aadabf7c289e7105e57e02d4">resfile_chn</a>, iostat=<a class="code" href="namespacerestart__fns.html#ab386c6b0f14be0090063a054256f5923">rc</a>)</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespacerestart__fns.html#ab386c6b0f14be0090063a054256f5923">rc</a> /= 0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            print*, <span class="stringliteral">&#39;Searched for file &#39;</span>, <a class="code" href="namespaceshared__data.html#adf411355aadabf7c289e7105e57e02d4">resfile_chn</a>, <span class="stringliteral">&#39; .&#39;</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            error stop <span class="stringliteral">&#39;Error: This restart file is not present in the current directory.&#39;</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            error stop <span class="stringliteral">&#39;Error: Oops, this restart file is not present in the current directory. :-( &#39;</span></div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="keywordflow">        end if</span></div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="comment">! Open restart netCDF file with chains</span></div>
@@ -350,7 +350,7 @@ $(document).ready(function(){initNavTree('restart__fns_8f90_source.html',''); in
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keyword">end subroutine </span><a class="code" href="namespacerestart__fns.html#a2bfef0bcec6193f109b558f89e9cd90d">read_chains</a></div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="keyword">end module </span>restart_fns</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="keyword">end module </span><a class="code" href="namespacerestart__fns.html">restart_fns</a></div>
 <div class="ttc" id="anamespacerestart__fns_html"><div class="ttname"><a href="namespacerestart__fns.html">restart_fns</a></div><div class="ttdoc">Contains routines to read and write restart files.</div><div class="ttdef"><b>Definition:</b> <a href="restart__fns_8f90_source.html#l00015">restart_fns.f90:15</a></div></div>
 <div class="ttc" id="anamespacerestart__fns_html_a11f18611058f7af2ac8e21df6f02afa7"><div class="ttname"><a href="namespacerestart__fns.html#a11f18611058f7af2ac8e21df6f02afa7">restart_fns::write_res_nml</a></div><div class="ttdeci">subroutine write_res_nml(p_system, i1, i2, i3, step, seed, pos1, pos2)</div><div class="ttdoc">Writes the restart file res_nml.txt, using the current states of simulation variables.</div><div class="ttdef"><b>Definition:</b> <a href="restart__fns_8f90_source.html#l00051">restart_fns.f90:52</a></div></div>
 <div class="ttc" id="anamespacerestart__fns_html_a23054262d0eeb017dee69fd5f9ca1250"><div class="ttname"><a href="namespacerestart__fns.html#a23054262d0eeb017dee69fd5f9ca1250">restart_fns::error_check</a></div><div class="ttdeci">subroutine error_check(ierr)</div><div class="ttdoc">Checks error status at each point of the NetCDF read.</div><div class="ttdef"><b>Definition:</b> <a href="restart__fns_8f90_source.html#l00192">restart_fns.f90:193</a></div></div>
