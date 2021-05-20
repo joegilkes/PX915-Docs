@@ -484,7 +484,7 @@ Definition at line 264 of file vqmc.\+f90.
 \DoxyCodeLine{410 }
 \DoxyCodeLine{411 \textcolor{keywordflow}{            end do} }
 \DoxyCodeLine{412         \textcolor{comment}{! Loop to advance the chain to the final burn step and not save any of the outputs}}
-\DoxyCodeLine{413         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (burn >= 2)}
+\DoxyCodeLine{413         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (burn >= 2) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{414             \textcolor{keywordflow}{do} i = 2, burn}
 \DoxyCodeLine{415                 \textcolor{comment}{! Propose the next step}}
 \DoxyCodeLine{416                 \textcolor{keyword}{call }random\_normal(1, sample\_normal)}
