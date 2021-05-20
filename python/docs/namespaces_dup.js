@@ -46,7 +46,6 @@ var namespaces_dup =
       [ "Theta", "namespacevisualisation.html#a6a4dec9bf1bebf8eceb61d09a2f27c7b", null ],
       [ "Phi", "namespacevisualisation.html#a3be4408789be044a8cae825a974d348f", null ]
     ] ],
-    [ "visualization", "namespacevisualization.html", null ],
     [ "write", "namespacewrite.html", [
       [ "isint", "namespacewrite.html#a6d208b551e50aabd0cfffdf928852f2e", null ],
       [ "isfloat", "namespacewrite.html#ab2d5e87a28584993d493d77da00d1bab", null ],
