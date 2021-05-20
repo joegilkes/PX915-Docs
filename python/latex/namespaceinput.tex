@@ -63,35 +63,39 @@ Definition at line 27 of file input.\+py.
 \DoxyCodeLine{57         \textcolor{comment}{\# Write the params.txt file}}
 \DoxyCodeLine{58         \mbox{\hyperlink{namespacewrite_ab06a12b89b6110c4bcf845485c8f4b9b}{write\_params}}(control,params)}
 \DoxyCodeLine{59 }
-\DoxyCodeLine{60     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{60         \textcolor{comment}{\# Notify user}}
 \DoxyCodeLine{61         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{62         print(\textcolor{stringliteral}{'Alright! I shall check the input file in this directory. :-\/) '})}
+\DoxyCodeLine{62         print(\textcolor{stringliteral}{'Your params.txt file is ready! You are all set to run the next step on Fortran :-\/) '})}
 \DoxyCodeLine{63 }
-\DoxyCodeLine{64         \textcolor{comment}{\# Check that params.txt exits}}
-\DoxyCodeLine{65         \textcolor{keywordflow}{try}: }
-\DoxyCodeLine{66             f = open(\textcolor{stringliteral}{'params.txt'})}
-\DoxyCodeLine{67         \textcolor{keywordflow}{except} FileNotFoundError:}
-\DoxyCodeLine{68             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{69             print(\textcolor{stringliteral}{'Error: Oops, there is no param.txt file in the current working directory. :-\/( '})}
-\DoxyCodeLine{70             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{71             print(\textcolor{stringliteral}{'Please have another go. :-\/) '})}
-\DoxyCodeLine{72             exit()}
-\DoxyCodeLine{73         f.close()}
-\DoxyCodeLine{74 }
-\DoxyCodeLine{75         \textcolor{comment}{\# Reading Namelists}}
-\DoxyCodeLine{76         \textcolor{keyword}{import} f90nml}
-\DoxyCodeLine{77         nml = f90nml.read(\textcolor{stringliteral}{'params.txt'})}
+\DoxyCodeLine{64     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{65         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{66         print(\textcolor{stringliteral}{'Alright! I shall check the input file in this directory. :-\/) '})}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68         \textcolor{comment}{\# Check that params.txt exits}}
+\DoxyCodeLine{69         \textcolor{keywordflow}{try}: }
+\DoxyCodeLine{70             f = open(\textcolor{stringliteral}{'params.txt'})}
+\DoxyCodeLine{71         \textcolor{keywordflow}{except} FileNotFoundError:}
+\DoxyCodeLine{72             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{73             print(\textcolor{stringliteral}{'Error: Oops, there is no param.txt file in the current working directory. :-\/( '})}
+\DoxyCodeLine{74             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{75             print(\textcolor{stringliteral}{'Please have another go. :-\/) '})}
+\DoxyCodeLine{76             exit()}
+\DoxyCodeLine{77         f.close()}
 \DoxyCodeLine{78 }
-\DoxyCodeLine{79         \textcolor{comment}{\# Check content of params.txt}}
-\DoxyCodeLine{80         \mbox{\hyperlink{namespacecheck_af433b760a4dbdb0972d3b43505f2c4b8}{check\_inputs}}(nml)}
-\DoxyCodeLine{81 }
-\DoxyCodeLine{82         \textcolor{comment}{\# Notify user}}
-\DoxyCodeLine{83         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{84         print(\textcolor{stringliteral}{'Your params.txt file is correct! You are all set to run the next step on Fortran :-\/) '})}
+\DoxyCodeLine{79         \textcolor{comment}{\# Reading Namelists}}
+\DoxyCodeLine{80         \textcolor{keyword}{import} f90nml}
+\DoxyCodeLine{81         nml = f90nml.read(\textcolor{stringliteral}{'params.txt'})}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83         \textcolor{comment}{\# Check content of params.txt}}
+\DoxyCodeLine{84         \mbox{\hyperlink{namespacecheck_af433b760a4dbdb0972d3b43505f2c4b8}{check\_inputs}}(nml)}
 \DoxyCodeLine{85 }
-\DoxyCodeLine{86 \textcolor{comment}{\# For users running the program directly on the terminal,}}
-\DoxyCodeLine{87 \textcolor{comment}{\# call the input routine defined above}}
-\DoxyCodeLine{88 \mbox{\hyperlink{namespaceinput_a3d7818a4f120b1f0ada5a32dc5476fa3}{step\_one}}()}
+\DoxyCodeLine{86         \textcolor{comment}{\# Notify user}}
+\DoxyCodeLine{87         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{88         print(\textcolor{stringliteral}{'Your params.txt file is correct! You are all set to run the next step on Fortran :-\/) '})}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{comment}{\# For users running the program directly on the terminal,}}
+\DoxyCodeLine{91 \textcolor{comment}{\# call the input routine defined above}}
+\DoxyCodeLine{92 \mbox{\hyperlink{namespaceinput_a3d7818a4f120b1f0ada5a32dc5476fa3}{step\_one}}()}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
