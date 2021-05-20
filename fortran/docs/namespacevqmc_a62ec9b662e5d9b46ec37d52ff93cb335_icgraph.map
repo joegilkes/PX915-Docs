@@ -1,9 +1,17 @@
 <map id="vqmc::random_normal" name="vqmc::random_normal">
-<area shape="rect" id="node1" title="Draws a sample from a normal distribution." alt="" coords="489,97,639,123"/>
-<area shape="rect" id="node2" href="$namespacetesting.html#acbf13e7eaa077016d7d1712b58fc5223" title="Tests the random_normal function in the vqmc module." alt="" coords="303,5,441,47"/>
-<area shape="rect" id="node5" href="$namespacevqmc.html#ac00c311b77347b5ed6258bb64214dd9f" title="Performs VQMC for H_2" alt="" coords="312,71,432,98"/>
-<area shape="rect" id="node6" href="$namespacevqmc.html#adef1f40504be89d534ea89658a169aad" title="Performs VQMC for H_2_plus" alt="" coords="104,122,255,149"/>
-<area shape="rect" id="node7" href="$namespacevqmc.html#ac8a07ca12229e28074bf9088be5c2b5c" title="Performs VQMC for QHO." alt="" coords="119,173,239,199"/>
-<area shape="rect" id="node3" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="117,42,241,69"/>
-<area shape="rect" id="node4" href="$driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="Driver code for the VQMC program." alt="" coords="5,122,56,149"/>
+<area shape="rect" id="node1" title="Draws a sample from a normal distribution." alt="" coords="497,183,647,209"/>
+<area shape="rect" id="node2" href="$namespacetesting.html#acbf13e7eaa077016d7d1712b58fc5223" title="Tests the random_normal function in the vqmc module." alt="" coords="305,22,443,63"/>
+<area shape="rect" id="node5" href="$namespacevqmc.html#a12f60b20a934a7eb8c6e3cdaaac0b1cc" title="Performs VQMC for H_2" alt="" coords="314,135,434,161"/>
+<area shape="rect" id="node9" href="$namespacevqmc.html#a8213f95bb390d7a9eff8260f527c00b8" title="Performs VQMC for H_2_plus" alt="" coords="299,233,449,260"/>
+<area shape="rect" id="node13" href="$namespacevqmc.html#a05315751002a983c9976851c9f21f0f0" title="Performs VQMC for QHO." alt="" coords="314,360,434,387"/>
+<area shape="rect" id="node3" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="115,5,239,32"/>
+<area shape="rect" id="node4" href="$driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="Driver code for the VQMC program." alt="" coords="5,208,56,235"/>
+<area shape="rect" id="node6" href="$namespacevqmc.html#a70dc752a6b037f137c1264dd8753bac2" title=" " alt="" coords="121,56,234,83"/>
+<area shape="rect" id="node7" href="$namespacevqmc.html#ab066adc59fec1fcaaba764a46128c935" title=" " alt="" coords="120,107,235,133"/>
+<area shape="rect" id="node8" href="$namespacevqmc.html#a08bc46270707aab6c2d5114b589c176c" title=" " alt="" coords="123,157,232,184"/>
+<area shape="rect" id="node10" href="$namespacevqmc.html#a0a07ef5b098cdc478b253de26c49aadc" title=" " alt="" coords="105,208,249,235"/>
+<area shape="rect" id="node11" href="$namespacevqmc.html#a169c06cb168984ca6285231ad80a0243" title=" " alt="" coords="104,259,251,285"/>
+<area shape="rect" id="node12" href="$namespacevqmc.html#a70c9fcecdf5f2a6ffea7dd3c4f0c1eeb" title=" " alt="" coords="107,309,247,336"/>
+<area shape="rect" id="node14" href="$namespacevqmc.html#a5d73324fcbe9c3ef7fe11309581af529" title=" " alt="" coords="120,360,235,387"/>
+<area shape="rect" id="node15" href="$namespacevqmc.html#a4856736e8ffc45caa57893a6b96318d3" title=" " alt="" coords="123,411,232,437"/>
 </map>

@@ -11,6 +11,8 @@ var namespaceshared__data =
     [ "restart_step", "namespaceshared__data.html#abee3357695dee9120626f1a0c422dd29", null ],
     [ "write_chains", "namespaceshared__data.html#a3ea265f2c8a3797c4d1a2b33059e1877", null ],
     [ "write_log", "namespaceshared__data.html#acf2cbacc5b2b4d8ee26c96dc7062aa9b", null ],
+    [ "outfile", "namespaceshared__data.html#a2901a107f2659faf5c03f8c35f64e68f", null ],
+    [ "logfile", "namespaceshared__data.html#ad4da3a0a55e0563861cee8b2e6799be0", null ],
     [ "qho", "namespaceshared__data.html#a7503c2b3bd10f3ee43c4cf9964c42ab2", null ],
     [ "h2plus", "namespaceshared__data.html#a1e9e95c9ea52c9aa2ec2f05b8d65e4f3", null ],
     [ "h2", "namespaceshared__data.html#a1703912ee00414a4aaf1a41d3c167694", null ],

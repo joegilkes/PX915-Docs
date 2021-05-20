@@ -21,13 +21,13 @@ integer function \mbox{\hyperlink{namespacetesting_ad1d0b5a5ff6ea4b8b8f29cc2a0e1
 integer function \mbox{\hyperlink{namespacetesting_a15f3412ac40e1145572a5269c6f1b971}{test\+\_\+h\+\_\+2\+\_\+plus\+\_\+prob}} ()
 \begin{DoxyCompactList}\small\item\em Tests the \mbox{\hyperlink{namespacesolvers_a5695d107239a7a8fb1f8b096786af028}{H\+\_\+2\+\_\+plus\+\_\+\+Prob}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. \end{DoxyCompactList}\item 
 integer function \mbox{\hyperlink{namespacetesting_a95de4751adddb42c59a3c44f9076db8d}{test\+\_\+h\+\_\+2\+\_\+plus\+\_\+energy}} ()
-\begin{DoxyCompactList}\small\item\em Tests the \mbox{\hyperlink{namespacesolvers_a1f21386928aadfc3dd6bc5cfb82fb94f}{H\+\_\+2\+\_\+plus\+\_\+\+Energy}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Tests the \mbox{\hyperlink{namespacesolvers_a9cc5ffb282a9d15708307d84f6cf147f}{H\+\_\+2\+\_\+plus\+\_\+\+Energy}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. \end{DoxyCompactList}\item 
 integer function \mbox{\hyperlink{namespacetesting_a70f58338fe8165f65417781dae734e68}{test\+\_\+h\+\_\+2\+\_\+wfn}} ()
-\begin{DoxyCompactList}\small\item\em Tests the \mbox{\hyperlink{namespacesolvers_aa0515876b10a8cebd7f381e14b1ff856}{H\+\_\+2\+\_\+wfn}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Tests the \mbox{\hyperlink{namespacesolvers_ac603f31a67286a6e89588cf4de29bd1b}{H\+\_\+2\+\_\+wfn}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. \end{DoxyCompactList}\item 
 integer function \mbox{\hyperlink{namespacetesting_ad02da7e5d742236c571c965b4f80992c}{test\+\_\+h\+\_\+2\+\_\+prob}} ()
-\begin{DoxyCompactList}\small\item\em Tests the \mbox{\hyperlink{namespacesolvers_a0d0f254ede019bb0bf743397cd0069f7}{H\+\_\+2\+\_\+\+Prob}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Tests the \mbox{\hyperlink{namespacesolvers_ac30d1c7141f673647e837524ecb26b07}{H\+\_\+2\+\_\+\+Prob}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. \end{DoxyCompactList}\item 
 integer function \mbox{\hyperlink{namespacetesting_a313d78f649070a104e89a7535811d6a5}{test\+\_\+h\+\_\+2\+\_\+energy}} ()
-\begin{DoxyCompactList}\small\item\em Tests the \mbox{\hyperlink{namespacesolvers_ab21b7ec07e33a8417b62ecb75c327a6f}{H\+\_\+2\+\_\+\+Energy}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Tests the \mbox{\hyperlink{namespacesolvers_a9afbcdcc0405d544d4441e9786f440a2}{H\+\_\+2\+\_\+\+Energy}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. \end{DoxyCompactList}\item 
 integer function \mbox{\hyperlink{namespacetesting_adb38a97b7ceaad408410367f1510e997}{test\+\_\+ran1}} ()
 \begin{DoxyCompactList}\small\item\em Tests the \mbox{\hyperlink{namespacevqmc_a01b80444204a0cd0b5cddde82cbc7651}{ran1}} function in the \mbox{\hyperlink{namespacevqmc}{vqmc}} module. \end{DoxyCompactList}\item 
 integer function \mbox{\hyperlink{namespacetesting_acbf13e7eaa077016d7d1712b58fc5223}{test\+\_\+random\+\_\+normal}} ()
@@ -303,34 +303,23 @@ Definition at line 193 of file testing.\+f90.
 \DoxyCodeLine{194 }
 \DoxyCodeLine{195         \textcolor{keywordtype}{implicit none}}
 \DoxyCodeLine{196 }
-\DoxyCodeLine{197 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(1)} :: c\_test1 = 0.5\_real64}
-\DoxyCodeLine{198 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(2)} :: c\_test2 = (/0.5\_real64, 0.5\_real64\textcolor{comment}{/)}}
-\DoxyCodeLine{199 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r = (/1.5\_real64, 0.2\_real64, -\/0.5\_real64\textcolor{comment}{/)}}
-\DoxyCodeLine{200 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_a = (/1.0\_real64, 0.0\_real64, 0.\textcolor{comment}{0\_real64/)}}
-\DoxyCodeLine{201 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_b = (/-\/1.0\_real64, 0.0\_real64, 0\textcolor{comment}{.0\_real64/)}}
-\DoxyCodeLine{202 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64) :: res\_expected\_test1 = 0.1731585063\_real64}
-\DoxyCodeLine{203 \textcolor{keywordtype}{        real}(real64) :: res\_expected\_test2 = 0.203447215\_real64}
-\DoxyCodeLine{204 }
-\DoxyCodeLine{205 \textcolor{keywordtype}{        real}(real64) :: res\_actual\_test1, res\_actual\_test2}
-\DoxyCodeLine{206         \textcolor{keywordtype}{integer} :: ierr}
-\DoxyCodeLine{207     }
-\DoxyCodeLine{208         res\_actual\_test1 = h\_2\_plus\_wfn(c\_test1, r, r\_a, r\_b)}
-\DoxyCodeLine{209         h2plus\%include\_pqn = 2}
-\DoxyCodeLine{210         res\_actual\_test2 = h\_2\_plus\_wfn(c\_test2, r, r\_a, r\_b)}
-\DoxyCodeLine{211         h2plus\%include\_pqn = 1}
-\DoxyCodeLine{212 }
-\DoxyCodeLine{213         ierr = 0}
-\DoxyCodeLine{214         \textcolor{keywordflow}{if} (abs(res\_actual\_test1 -\/ res\_expected\_test1) .ge. tol) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{215             ierr = 1}
-\DoxyCodeLine{216 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{217         \textcolor{keywordflow}{if} (abs(res\_actual\_test2 -\/ res\_expected\_test2) .ge. tol) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{218             \textcolor{keywordflow}{if} (ierr .eq. 1) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{219                 ierr = 3}
-\DoxyCodeLine{220             \textcolor{keywordflow}{else}}
-\DoxyCodeLine{221                 ierr = 2}
-\DoxyCodeLine{222 \textcolor{keywordflow}{            end if}}
-\DoxyCodeLine{223 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{224 }
+\DoxyCodeLine{197 \textcolor{keywordtype}{        real}(real64) :: c = 0.5\_real64}
+\DoxyCodeLine{198 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r = (/1.5\_real64, 0.2\_real64, -\/0.5\_real64\textcolor{comment}{/)}}
+\DoxyCodeLine{199 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_a = (/1.0\_real64, 0.0\_real64, 0.\textcolor{comment}{0\_real64/)}}
+\DoxyCodeLine{200 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_b = (/-\/1.0\_real64, 0.0\_real64, 0\textcolor{comment}{.0\_real64/)}}
+\DoxyCodeLine{201 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64) :: res\_expected = 0.1731585063\_real64}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203 \textcolor{keywordtype}{        real}(real64) :: res\_actual}
+\DoxyCodeLine{204         \textcolor{keywordtype}{integer} :: ierr}
+\DoxyCodeLine{205     }
+\DoxyCodeLine{206         res\_actual= h\_2\_plus\_wfn(c, r, r\_a, r\_b)}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{209             ierr = 1}
+\DoxyCodeLine{210         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{211             ierr = 0}
+\DoxyCodeLine{212 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{213 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -366,31 +355,31 @@ Returns a value of 0 if the test is successful, returns a value of 1 if the resu
 \end{DoxyRetVals}
 
 
-Definition at line 241 of file testing.\+f90.
+Definition at line 230 of file testing.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{242 }
-\DoxyCodeLine{243         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{244 }
-\DoxyCodeLine{245 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(1)} :: c = 0.5\_real64}
-\DoxyCodeLine{246 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_current = (/1.5\_real64, 0.2\_real64\textcolor{comment}{, -\/0.5\_real64/)}}
-\DoxyCodeLine{247 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_next = (/1.2\_real64, -\/0.4\_real64\textcolor{comment}{, -\/0.8\_real64/)}}
-\DoxyCodeLine{248 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_a = (/1.0\_real64, 0.0\_real64, 0.\textcolor{comment}{0\_real64/)}}
-\DoxyCodeLine{249 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_b = (/-\/1.0\_real64, 0.0\_real64, 0\textcolor{comment}{.0\_real64/)}}
-\DoxyCodeLine{250 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64) :: res\_expected = 0.913993166290697\_real64}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234 \textcolor{keywordtype}{        real}(real64) :: c = 0.5\_real64}
+\DoxyCodeLine{235 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_current = (/1.5\_real64, 0.2\_real64\textcolor{comment}{, -\/0.5\_real64/)}}
+\DoxyCodeLine{236 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_next = (/1.2\_real64, -\/0.4\_real64\textcolor{comment}{, -\/0.8\_real64/)}}
+\DoxyCodeLine{237 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_a = (/1.0\_real64, 0.0\_real64, 0.\textcolor{comment}{0\_real64/)}}
+\DoxyCodeLine{238 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_b = (/-\/1.0\_real64, 0.0\_real64, 0\textcolor{comment}{.0\_real64/)}}
+\DoxyCodeLine{239 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64) :: res\_expected = 0.913993166290697\_real64}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241 \textcolor{keywordtype}{        real}(real64) :: res\_actual}
+\DoxyCodeLine{242         \textcolor{keywordtype}{integer} :: ierr}
+\DoxyCodeLine{243     }
+\DoxyCodeLine{244         res\_actual = h\_2\_plus\_prob(c, r\_current, r\_next, r\_a, r\_b)}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{247             ierr = 1}
+\DoxyCodeLine{248         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{249             ierr = 0}
+\DoxyCodeLine{250 \textcolor{keywordflow}{        end if}}
 \DoxyCodeLine{251 }
-\DoxyCodeLine{252 \textcolor{keywordtype}{        real}(real64) :: res\_actual}
-\DoxyCodeLine{253         \textcolor{keywordtype}{integer} :: ierr}
-\DoxyCodeLine{254     }
-\DoxyCodeLine{255         res\_actual = h\_2\_plus\_prob(c, r\_current, r\_next, r\_a, r\_b)}
-\DoxyCodeLine{256 }
-\DoxyCodeLine{257         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{258             ierr = 1}
-\DoxyCodeLine{259         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{260             ierr = 0}
-\DoxyCodeLine{261 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{262 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -417,7 +406,7 @@ Here is the caller graph for this function\+:
 
 
 
-Tests the \mbox{\hyperlink{namespacesolvers_a1f21386928aadfc3dd6bc5cfb82fb94f}{H\+\_\+2\+\_\+plus\+\_\+\+Energy}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. 
+Tests the \mbox{\hyperlink{namespacesolvers_a9cc5ffb282a9d15708307d84f6cf147f}{H\+\_\+2\+\_\+plus\+\_\+\+Energy}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. 
 
 Returns a value of 0 if the test is successful, returns a value of 1 if the result of the test falls outside tolerances. 
 \begin{DoxyRetVals}{Return values}
@@ -426,30 +415,30 @@ Returns a value of 0 if the test is successful, returns a value of 1 if the resu
 \end{DoxyRetVals}
 
 
-Definition at line 279 of file testing.\+f90.
+Definition at line 268 of file testing.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{280 }
-\DoxyCodeLine{281         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272 \textcolor{keywordtype}{        real}(real64) :: c = 0.5\_real64}
+\DoxyCodeLine{273 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r = (/1.5\_real64, 0.2\_real64, -\/0.5\_real64\textcolor{comment}{/)}}
+\DoxyCodeLine{274 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_a = (/1.0\_real64, 0.0\_real64, 0.\textcolor{comment}{0\_real64/)}}
+\DoxyCodeLine{275 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_b = (/-\/1.0\_real64, 0.0\_real64, 0\textcolor{comment}{.0\_real64/)}}
+\DoxyCodeLine{276 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64) :: res\_expected = -\/1.10313643400746\_real64}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278 \textcolor{keywordtype}{        real}(real64) :: res\_actual, dummy}
+\DoxyCodeLine{279         \textcolor{keywordtype}{integer} :: ierr}
+\DoxyCodeLine{280     }
+\DoxyCodeLine{281         \textcolor{keyword}{call }h\_2\_plus\_energy(c, r, r\_a, r\_b, res\_actual, dummy)}
 \DoxyCodeLine{282 }
-\DoxyCodeLine{283 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(1)} :: c = 0.5\_real64}
-\DoxyCodeLine{284 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r = (/1.5\_real64, 0.2\_real64, -\/0.5\_real64\textcolor{comment}{/)}}
-\DoxyCodeLine{285 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_a = (/1.0\_real64, 0.0\_real64, 0.\textcolor{comment}{0\_real64/)}}
-\DoxyCodeLine{286 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_b = (/-\/1.0\_real64, 0.0\_real64, 0\textcolor{comment}{.0\_real64/)}}
-\DoxyCodeLine{287 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64) :: res\_expected = -\/1.10313643400746\_real64}
+\DoxyCodeLine{283         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{284             ierr = 1}
+\DoxyCodeLine{285         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{286             ierr = 0}
+\DoxyCodeLine{287 \textcolor{keywordflow}{        end if}}
 \DoxyCodeLine{288 }
-\DoxyCodeLine{289 \textcolor{keywordtype}{        real}(real64) :: res\_actual}
-\DoxyCodeLine{290         \textcolor{keywordtype}{integer} :: ierr}
-\DoxyCodeLine{291     }
-\DoxyCodeLine{292         res\_actual = h\_2\_plus\_energy(c, r, r\_a, r\_b)}
-\DoxyCodeLine{293 }
-\DoxyCodeLine{294         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{295             ierr = 1}
-\DoxyCodeLine{296         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{297             ierr = 0}
-\DoxyCodeLine{298 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{299 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -476,7 +465,7 @@ Here is the caller graph for this function\+:
 
 
 
-Tests the \mbox{\hyperlink{namespacesolvers_aa0515876b10a8cebd7f381e14b1ff856}{H\+\_\+2\+\_\+wfn}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. 
+Tests the \mbox{\hyperlink{namespacesolvers_ac603f31a67286a6e89588cf4de29bd1b}{H\+\_\+2\+\_\+wfn}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. 
 
 Returns a value of 0 if the test is successful. ~\newline
  Returns a value of 1 if the result of the test with \mbox{\hyperlink{structshared__data_1_1h2__type_a744c3ee751f297dea44d698de3998214}{H2\%include\+\_\+pqn}} = 1 falls outside tolerances. ~\newline
@@ -488,42 +477,31 @@ Returns a value of 0 if the test is successful. ~\newline
 \end{DoxyRetVals}
 
 
-Definition at line 322 of file testing.\+f90.
+Definition at line 311 of file testing.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{323 }
-\DoxyCodeLine{324         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{325 }
-\DoxyCodeLine{326 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(1)} :: c\_test1 = 0.5\_real64}
-\DoxyCodeLine{327 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(2)} :: c\_test2 = (/0.5\_real64, 0.5\_real64\textcolor{comment}{/)}}
-\DoxyCodeLine{328 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_1 = (/1.5\_real64, 0.2\_real64, -\/0\textcolor{comment}{.5\_real64/)}}
-\DoxyCodeLine{329 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_2 = (/0.5\_real64, -\/0.2\_real64, 1\textcolor{comment}{.4\_real64/)}}
-\DoxyCodeLine{330 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_a = (/1.0\_real64, 0.0\_real64, 0.\textcolor{comment}{0\_real64/)}}
-\DoxyCodeLine{331 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_b = (/-\/1.0\_real64, 0.0\_real64, 0\textcolor{comment}{.0\_real64/)}}
-\DoxyCodeLine{332 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64) :: res\_expected\_test1 = 1.246570127256954e-\/2\_real64}
-\DoxyCodeLine{333 \textcolor{keywordtype}{        real}(real64) :: res\_expected\_test2 = 1.218774653030789e-\/2\_real64}
-\DoxyCodeLine{334 }
-\DoxyCodeLine{335 \textcolor{keywordtype}{        real}(real64) :: res\_actual\_test1, res\_actual\_test2}
-\DoxyCodeLine{336         \textcolor{keywordtype}{integer} :: ierr}
-\DoxyCodeLine{337     }
-\DoxyCodeLine{338         res\_actual\_test1 = h\_2\_wfn(c\_test1, r\_1, r\_2, r\_a, r\_b)}
-\DoxyCodeLine{339         h2\%include\_pqn = 2}
-\DoxyCodeLine{340         res\_actual\_test2 = h\_2\_wfn(c\_test2, r\_1, r\_2, r\_a, r\_b)}
-\DoxyCodeLine{341         h2\%include\_pqn = 1}
-\DoxyCodeLine{342 }
-\DoxyCodeLine{343         ierr = 0}
-\DoxyCodeLine{344         \textcolor{keywordflow}{if} (abs(res\_actual\_test1 -\/ res\_expected\_test1) .ge. tol) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{345             ierr = 1}
-\DoxyCodeLine{346 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{347         \textcolor{keywordflow}{if} (abs(res\_actual\_test2 -\/ res\_expected\_test2) .ge. tol) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{348             \textcolor{keywordflow}{if} (ierr .eq. 1) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{349                 ierr = 3}
-\DoxyCodeLine{350             \textcolor{keywordflow}{else}}
-\DoxyCodeLine{351                 ierr = 2}
-\DoxyCodeLine{352 \textcolor{keywordflow}{            end if}}
-\DoxyCodeLine{353 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{354 }
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{314 }
+\DoxyCodeLine{315 \textcolor{keywordtype}{        real}(real64) :: a = 1.0\_real64}
+\DoxyCodeLine{316 \textcolor{keywordtype}{        real}(real64) :: beta = 0.4\_real64}
+\DoxyCodeLine{317 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_1 = (/1.5\_real64, 0.2\_real64, -\/0\textcolor{comment}{.5\_real64/)}}
+\DoxyCodeLine{318 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_2 = (/0.5\_real64, -\/0.2\_real64, 1\textcolor{comment}{.4\_real64/)}}
+\DoxyCodeLine{319 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_a = (/1.0\_real64, 0.0\_real64, 0.\textcolor{comment}{0\_real64/)}}
+\DoxyCodeLine{320 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_b = (/-\/1.0\_real64, 0.0\_real64, 0\textcolor{comment}{.0\_real64/)}}
+\DoxyCodeLine{321 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64) :: res\_expected = 1.246570127256954e-\/2\_real64}
+\DoxyCodeLine{322 \textcolor{keywordtype}{        real}(real64) :: res\_actual}
+\DoxyCodeLine{323         \textcolor{keywordtype}{integer} :: ierr}
+\DoxyCodeLine{324     }
+\DoxyCodeLine{325         res\_actual = h\_2\_wfn(a, beta, r\_1, r\_2, r\_a, r\_b)}
+\DoxyCodeLine{326 }
+\DoxyCodeLine{327         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{328             ierr = 1}
+\DoxyCodeLine{329         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{330             ierr = 0}
+\DoxyCodeLine{331 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{332 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -531,7 +509,7 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespacetesting_a70f58338fe8165f65417781dae734e68_cgraph}
+\includegraphics[width=314pt]{namespacetesting_a70f58338fe8165f65417781dae734e68_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:
@@ -550,7 +528,7 @@ Here is the caller graph for this function\+:
 
 
 
-Tests the \mbox{\hyperlink{namespacesolvers_a0d0f254ede019bb0bf743397cd0069f7}{H\+\_\+2\+\_\+\+Prob}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. 
+Tests the \mbox{\hyperlink{namespacesolvers_ac30d1c7141f673647e837524ecb26b07}{H\+\_\+2\+\_\+\+Prob}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. 
 
 Returns a value of 0 if the test is successful, returns a value of 1 if the result of the test falls outside tolerances. 
 \begin{DoxyRetVals}{Return values}
@@ -559,33 +537,33 @@ Returns a value of 0 if the test is successful, returns a value of 1 if the resu
 \end{DoxyRetVals}
 
 
-Definition at line 371 of file testing.\+f90.
+Definition at line 349 of file testing.\+f90.
 
 
 \begin{DoxyCode}{0}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{351         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{352 }
+\DoxyCodeLine{353 \textcolor{keywordtype}{        real}(real64) :: a = 0.1, beta = 0.4}
+\DoxyCodeLine{354 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_1\_current = (/1.5\_real64, 0.2\_real64\textcolor{comment}{, -\/0.5\_real64/)}}
+\DoxyCodeLine{355 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_2\_current = (/1.1\_real64, -\/0.5\_real64\textcolor{comment}{, 2.1\_real64/)}}
+\DoxyCodeLine{356 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_1\_next = (/1.2\_real64, -\/0.4\_real64\textcolor{comment}{, -\/0.8\_real64/)}}
+\DoxyCodeLine{357 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_2\_next = (/-\/0.2\_real64, -\/1.3\_real64\textcolor{comment}{, 1.0\_real64/)}}
+\DoxyCodeLine{358 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_a = (/1.0\_real64, 0.0\_real64, 0.\textcolor{comment}{0\_real64/)}}
+\DoxyCodeLine{359 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_b = (/-\/1.0\_real64, 0.0\_real64, 0\textcolor{comment}{.0\_real64/)}}
+\DoxyCodeLine{360 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64) :: res\_expected = 2.35700844912226\_real64}
+\DoxyCodeLine{361 }
+\DoxyCodeLine{362 \textcolor{keywordtype}{        real}(real64) :: res\_actual}
+\DoxyCodeLine{363         \textcolor{keywordtype}{integer} :: ierr}
+\DoxyCodeLine{364     }
+\DoxyCodeLine{365         res\_actual = h\_2\_prob(a, beta, r\_1\_current, r\_2\_current, r\_1\_next\textcolor{comment}{, r\_2\_next, r\_a, r\_b)}}
+\DoxyCodeLine{366 \textcolor{comment}{}}
+\DoxyCodeLine{367         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{368             ierr = 1}
+\DoxyCodeLine{369         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{370             ierr = 0}
+\DoxyCodeLine{371 \textcolor{keywordflow}{        end if}}
 \DoxyCodeLine{372 }
-\DoxyCodeLine{373         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{374 }
-\DoxyCodeLine{375 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(1)} :: c = 0.5\_real64}
-\DoxyCodeLine{376 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_1\_current = (/1.5\_real64, 0.2\_real64\textcolor{comment}{, -\/0.5\_real64/)}}
-\DoxyCodeLine{377 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_2\_current = (/1.1\_real64, -\/0.5\_real64\textcolor{comment}{, 2.1\_real64/)}}
-\DoxyCodeLine{378 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_1\_next = (/1.2\_real64, -\/0.4\_real64\textcolor{comment}{, -\/0.8\_real64/)}}
-\DoxyCodeLine{379 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_2\_next = (/-\/0.2\_real64, -\/1.3\_real64\textcolor{comment}{, 1.0\_real64/)}}
-\DoxyCodeLine{380 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_a = (/1.0\_real64, 0.0\_real64, 0.\textcolor{comment}{0\_real64/)}}
-\DoxyCodeLine{381 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_b = (/-\/1.0\_real64, 0.0\_real64, 0\textcolor{comment}{.0\_real64/)}}
-\DoxyCodeLine{382 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64) :: res\_expected = 2.35700844912226\_real64}
-\DoxyCodeLine{383 }
-\DoxyCodeLine{384 \textcolor{keywordtype}{        real}(real64) :: res\_actual}
-\DoxyCodeLine{385         \textcolor{keywordtype}{integer} :: ierr}
-\DoxyCodeLine{386     }
-\DoxyCodeLine{387         res\_actual = h\_2\_prob(c, r\_1\_current, r\_2\_current, r\_1\_next, r\_2\_next\textcolor{comment}{, r\_a, r\_b)}}
-\DoxyCodeLine{388 \textcolor{comment}{}}
-\DoxyCodeLine{389         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{390             ierr = 1}
-\DoxyCodeLine{391         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{392             ierr = 0}
-\DoxyCodeLine{393 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{394 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -612,7 +590,7 @@ Here is the caller graph for this function\+:
 
 
 
-Tests the \mbox{\hyperlink{namespacesolvers_ab21b7ec07e33a8417b62ecb75c327a6f}{H\+\_\+2\+\_\+\+Energy}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. 
+Tests the \mbox{\hyperlink{namespacesolvers_a9afbcdcc0405d544d4441e9786f440a2}{H\+\_\+2\+\_\+\+Energy}} function in the \mbox{\hyperlink{namespacesolvers}{solvers}} module. 
 
 Returns a value of 0 if the test is successful, returns a value of 1 if the result of the test falls outside tolerances. 
 \begin{DoxyRetVals}{Return values}
@@ -621,31 +599,32 @@ Returns a value of 0 if the test is successful, returns a value of 1 if the resu
 \end{DoxyRetVals}
 
 
-Definition at line 411 of file testing.\+f90.
+Definition at line 389 of file testing.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{412 }
-\DoxyCodeLine{413         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{414 }
-\DoxyCodeLine{415 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(1)} :: c = 0.5\_real64}
-\DoxyCodeLine{416 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_1 = (/1.5\_real64, 0.2\_real64, -\/0\textcolor{comment}{.5\_real64/)}}
-\DoxyCodeLine{417 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_2 = (/1.1\_real64, -\/0.5\_real64, 2\textcolor{comment}{.1\_real64/)}}
-\DoxyCodeLine{418 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_a = (/1.0\_real64, 0.0\_real64, 0.\textcolor{comment}{0\_real64/)}}
-\DoxyCodeLine{419 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_b = (/-\/1.0\_real64, 0.0\_real64, 0\textcolor{comment}{.0\_real64/)}}
-\DoxyCodeLine{420 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64) :: res\_expected = -\/1.71675481809379\_real64}
-\DoxyCodeLine{421 }
-\DoxyCodeLine{422 \textcolor{keywordtype}{        real}(real64) :: res\_actual}
-\DoxyCodeLine{423         \textcolor{keywordtype}{integer} :: ierr}
-\DoxyCodeLine{424     }
-\DoxyCodeLine{425         res\_actual = h\_2\_energy(c, r\_1, r\_2, r\_a, r\_b)}
-\DoxyCodeLine{426 }
-\DoxyCodeLine{427         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{428             ierr = 1}
-\DoxyCodeLine{429         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{430             ierr = 0}
-\DoxyCodeLine{431 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{432 }
+\DoxyCodeLine{390 }
+\DoxyCodeLine{391         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{392 }
+\DoxyCodeLine{393 \textcolor{keywordtype}{        real}(real64) :: a = 0.1, beta = 0.4}
+\DoxyCodeLine{394 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_1 = (/1.5\_real64, 0.2\_real64, -\/0\textcolor{comment}{.5\_real64/)}}
+\DoxyCodeLine{395 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_2 = (/1.1\_real64, -\/0.5\_real64, 2\textcolor{comment}{.1\_real64/)}}
+\DoxyCodeLine{396 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_a = (/1.0\_real64, 0.0\_real64, 0.\textcolor{comment}{0\_real64/)}}
+\DoxyCodeLine{397 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: R\_b = (/-\/1.0\_real64, 0.0\_real64, 0\textcolor{comment}{.0\_real64/)}}
+\DoxyCodeLine{398 \textcolor{comment}{}\textcolor{keywordtype}{        real}(real64) :: res\_expected = -\/1.71675481809379\_real64}
+\DoxyCodeLine{399 }
+\DoxyCodeLine{400 \textcolor{keywordtype}{        real}(real64) :: dummy}
+\DoxyCodeLine{401 \textcolor{keywordtype}{        real}(real64) :: res\_actual}
+\DoxyCodeLine{402         \textcolor{keywordtype}{integer} :: ierr}
+\DoxyCodeLine{403     }
+\DoxyCodeLine{404         \textcolor{keyword}{call }h\_2\_energy(a, beta, r\_1, r\_2, r\_a, r\_b, res\_actual, dummy)}
+\DoxyCodeLine{405 }
+\DoxyCodeLine{406         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{407             ierr = 1}
+\DoxyCodeLine{408         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{409             ierr = 0}
+\DoxyCodeLine{410 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{411 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -653,7 +632,7 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespacetesting_a313d78f649070a104e89a7535811d6a5_cgraph}
+\includegraphics[width=340pt]{namespacetesting_a313d78f649070a104e89a7535811d6a5_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:
@@ -682,28 +661,28 @@ Returns a value of 0 if the test is successful, returns a value of 1 if the resu
 \end{DoxyRetVals}
 
 
-Definition at line 454 of file testing.\+f90.
+Definition at line 433 of file testing.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{455 }
-\DoxyCodeLine{456         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{457 }
-\DoxyCodeLine{458         \textcolor{keywordtype}{integer(int64)} :: seed\_set = -\/1}
-\DoxyCodeLine{459 \textcolor{keywordtype}{        real}(real64) :: res\_expected = 0.41599935685098144\_real64}
-\DoxyCodeLine{460 }
-\DoxyCodeLine{461 \textcolor{keywordtype}{        real}(real64) :: res\_actual}
-\DoxyCodeLine{462         \textcolor{keywordtype}{integer} :: ierr}
-\DoxyCodeLine{463 }
-\DoxyCodeLine{464         seed = seed\_set}
-\DoxyCodeLine{465         \textcolor{keyword}{call }ran1(res\_actual, seed)}
-\DoxyCodeLine{466         }
-\DoxyCodeLine{467         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{468             ierr = 1}
-\DoxyCodeLine{469         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{470             ierr = 0}
-\DoxyCodeLine{471 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{472         }
+\DoxyCodeLine{434 }
+\DoxyCodeLine{435         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{436 }
+\DoxyCodeLine{437         \textcolor{keywordtype}{integer(int64)} :: seed\_set = -\/1}
+\DoxyCodeLine{438 \textcolor{keywordtype}{        real}(real64) :: res\_expected = 0.41599935685098144\_real64}
+\DoxyCodeLine{439 }
+\DoxyCodeLine{440 \textcolor{keywordtype}{        real}(real64) :: res\_actual}
+\DoxyCodeLine{441         \textcolor{keywordtype}{integer} :: ierr}
+\DoxyCodeLine{442 }
+\DoxyCodeLine{443         seed = seed\_set}
+\DoxyCodeLine{444         \textcolor{keyword}{call }ran1(res\_actual, seed)}
+\DoxyCodeLine{445         }
+\DoxyCodeLine{446         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{447             ierr = 1}
+\DoxyCodeLine{448         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{449             ierr = 0}
+\DoxyCodeLine{450 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{451         }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -740,29 +719,29 @@ Returns a value of 0 if the test is successful, returns a value of 1 if the resu
 \end{DoxyRetVals}
 
 
-Definition at line 491 of file testing.\+f90.
+Definition at line 470 of file testing.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{492 }
-\DoxyCodeLine{493         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{494 }
-\DoxyCodeLine{495         \textcolor{keywordtype}{integer} :: dim = 3}
-\DoxyCodeLine{496 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: res\_expected = (/8.797014511103271\textcolor{comment}{0e-\/2, \&}}
-\DoxyCodeLine{497 \textcolor{comment}{}                                                       1.021357403926326\textcolor{comment}{7, \&}}
-\DoxyCodeLine{498 \textcolor{comment}{}                                                       -\/0.78596025695422\textcolor{comment}{178/)}}
-\DoxyCodeLine{499 \textcolor{comment}{}}
-\DoxyCodeLine{500 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: res\_actual}
-\DoxyCodeLine{501         \textcolor{keywordtype}{integer} :: ierr}
-\DoxyCodeLine{502     }
-\DoxyCodeLine{503         \textcolor{keyword}{call }random\_normal(dim, res\_actual)}
-\DoxyCodeLine{504 }
-\DoxyCodeLine{505         \textcolor{keywordflow}{if} (norm2(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{506             ierr = 1}
-\DoxyCodeLine{507         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{508             ierr = 0}
-\DoxyCodeLine{509 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{510 }
+\DoxyCodeLine{471 }
+\DoxyCodeLine{472         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{473 }
+\DoxyCodeLine{474         \textcolor{keywordtype}{integer} :: dim = 3}
+\DoxyCodeLine{475 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: res\_expected = (/8.797014511103271\textcolor{comment}{0e-\/2, \&}}
+\DoxyCodeLine{476 \textcolor{comment}{}                                                       1.021357403926326\textcolor{comment}{7, \&}}
+\DoxyCodeLine{477 \textcolor{comment}{}                                                       -\/0.78596025695422\textcolor{comment}{178/)}}
+\DoxyCodeLine{478 \textcolor{comment}{}}
+\DoxyCodeLine{479 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: res\_actual}
+\DoxyCodeLine{480         \textcolor{keywordtype}{integer} :: ierr}
+\DoxyCodeLine{481     }
+\DoxyCodeLine{482         \textcolor{keyword}{call }random\_normal(dim, res\_actual)}
+\DoxyCodeLine{483 }
+\DoxyCodeLine{484         \textcolor{keywordflow}{if} (norm2(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{485             ierr = 1}
+\DoxyCodeLine{486         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{487             ierr = 0}
+\DoxyCodeLine{488 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{489 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -793,176 +772,176 @@ Runs all of the unit tests, reporting successes and failures.
 
 Subroutine to work through all of the unit tests, reporting successes and alerting users in the case of failures. 
 
-Definition at line 527 of file testing.\+f90.
+Definition at line 506 of file testing.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{528 }
-\DoxyCodeLine{529         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{530 }
-\DoxyCodeLine{531         \textcolor{keywordtype}{integer} :: ierr}
-\DoxyCodeLine{532         \textcolor{keywordtype}{integer} :: total\_tests = 12}
-\DoxyCodeLine{533         \textcolor{keywordtype}{integer} :: fail\_counter, test\_counter}
-\DoxyCodeLine{534 }
-\DoxyCodeLine{535         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{536         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}}\textcolor{comment}{)}}
-\DoxyCodeLine{537 \textcolor{comment}{}        \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[PROGRAM NAME] Unit Testing Suite')"{}})}
-\DoxyCodeLine{538         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}}\textcolor{comment}{)}}
-\DoxyCodeLine{539 \textcolor{comment}{}        \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('*** ', I2, ' function tests implemented, starting... ***')"{}}\textcolor{comment}{) total\_tests}}
-\DoxyCodeLine{540 \textcolor{comment}{}        \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{541 }
-\DoxyCodeLine{542         fail\_counter = 0}
-\DoxyCodeLine{543         test\_counter = 0}
-\DoxyCodeLine{544 }
-\DoxyCodeLine{545         test\_counter = test\_counter + 1}
-\DoxyCodeLine{546         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[', I2, '/', I2, ']  test\_ran1')"{}}) test\_counter, total\_tests}
-\DoxyCodeLine{547         ierr = test\_ran1()}
-\DoxyCodeLine{548         \textcolor{keywordflow}{if} (ierr .eq. 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{549             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    Unit test successful.')"{}})}
-\DoxyCodeLine{550         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{551             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed. ***')"{}})}
-\DoxyCodeLine{552             fail\_counter = fail\_counter + 1}
-\DoxyCodeLine{553 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{554 }
-\DoxyCodeLine{555         test\_counter = test\_counter + 1}
-\DoxyCodeLine{556         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[', I2, '/', I2, ']  test\_QHO\_Prob')"{}}) test\_counter,\textcolor{comment}{ total\_tests}}
-\DoxyCodeLine{557 \textcolor{comment}{}        ierr = test\_random\_normal()}
-\DoxyCodeLine{558         \textcolor{keywordflow}{if} (ierr .eq. 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{559             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    Unit test successful.')"{}})}
-\DoxyCodeLine{560         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{561             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed. ***')"{}})}
-\DoxyCodeLine{562             fail\_counter = fail\_counter + 1}
-\DoxyCodeLine{563 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{564 }
-\DoxyCodeLine{565         test\_counter = test\_counter + 1}
-\DoxyCodeLine{566         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[', I2, '/', I2, ']  test\_QHO\_Prob')"{}}) test\_counter,\textcolor{comment}{ total\_tests}}
-\DoxyCodeLine{567 \textcolor{comment}{}        ierr = test\_qho\_prob()}
-\DoxyCodeLine{568         \textcolor{keywordflow}{if} (ierr .eq. 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{569             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    Unit test successful.')"{}})}
-\DoxyCodeLine{570         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{571             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed. ***')"{}})}
-\DoxyCodeLine{572             fail\_counter = fail\_counter + 1}
-\DoxyCodeLine{573 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{574 }
-\DoxyCodeLine{575         test\_counter = test\_counter + 1}
-\DoxyCodeLine{576         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[', I2, '/', I2, ']  test\_QHO\_Energy')"{}}) test\_counter\textcolor{comment}{, total\_tests}}
-\DoxyCodeLine{577 \textcolor{comment}{}        ierr = test\_qho\_energy()}
-\DoxyCodeLine{578         \textcolor{keywordflow}{if} (ierr .eq. 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{579             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    Unit test successful.')"{}})}
-\DoxyCodeLine{580         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{581             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed. ***')"{}})}
-\DoxyCodeLine{582             fail\_counter = fail\_counter + 1}
-\DoxyCodeLine{583 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{584         }
-\DoxyCodeLine{585         test\_counter = test\_counter + 1}
-\DoxyCodeLine{586         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[', I2, '/', I2, ']  test\_H1s\_wfn')"{}}) test\_counter, total\_tests}
-\DoxyCodeLine{587         ierr = test\_h1s\_wfn()}
-\DoxyCodeLine{588         \textcolor{keywordflow}{if} (ierr .eq. 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{589             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    Unit test successful.')"{}})}
-\DoxyCodeLine{590         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{591             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed. ***')"{}})}
-\DoxyCodeLine{592             fail\_counter = fail\_counter + 1}
-\DoxyCodeLine{593 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{594 }
-\DoxyCodeLine{595         test\_counter = test\_counter + 1}
-\DoxyCodeLine{596         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[', I2, '/', I2, ']  test\_H2s\_wfn')"{}}) test\_counter, total\_tests}
-\DoxyCodeLine{597         ierr = test\_h2s\_wfn()}
-\DoxyCodeLine{598         \textcolor{keywordflow}{if} (ierr .eq. 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{599             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    Unit test successful.')"{}})}
-\DoxyCodeLine{600         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{601             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed. ***')"{}})}
-\DoxyCodeLine{602             fail\_counter = fail\_counter + 1}
-\DoxyCodeLine{603 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{604 }
-\DoxyCodeLine{605         test\_counter = test\_counter + 1}
-\DoxyCodeLine{606         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[', I2, '/', I2, ']  test\_H\_2\_plus\_wfn')"{}}) test\_counter\textcolor{comment}{, total\_tests}}
-\DoxyCodeLine{607 \textcolor{comment}{}        ierr = test\_h\_2\_plus\_wfn()}
-\DoxyCodeLine{608         \textcolor{keywordflow}{if} (ierr .eq. 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{609             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    Unit test successful.')"{}})}
-\DoxyCodeLine{610         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ierr .eq. 1) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{611             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test partially successful.                        ***')"{}}\textcolor{comment}{)}}
-\DoxyCodeLine{612 \textcolor{comment}{}            \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed for condition H2plus\%include\_pqn = 1. ***')"{}}\textcolor{comment}{)}}
-\DoxyCodeLine{613 \textcolor{comment}{}            fail\_counter = fail\_counter + 1}
-\DoxyCodeLine{614         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ierr .eq. 2) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{615             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test partially successful.                        ***')"{}}\textcolor{comment}{)}}
-\DoxyCodeLine{616 \textcolor{comment}{}            \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed for condition H2plus\%include\_pqn = 2. ***')"{}}\textcolor{comment}{)}}
-\DoxyCodeLine{617 \textcolor{comment}{}            fail\_counter = fail\_counter + 1}
-\DoxyCodeLine{618         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ierr .eq. 3) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{619             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed under both conditions. ***')"{}}\textcolor{comment}{)}}
-\DoxyCodeLine{620 \textcolor{comment}{}            fail\_counter = fail\_counter + 1}
-\DoxyCodeLine{621 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{622 }
-\DoxyCodeLine{623         test\_counter = test\_counter + 1}
-\DoxyCodeLine{624         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[', I2, '/', I2, ']  test\_H\_2\_plus\_Prob')"{}}) test\_counter\textcolor{comment}{, total\_tests}}
-\DoxyCodeLine{625 \textcolor{comment}{}        ierr = test\_h\_2\_plus\_prob()}
-\DoxyCodeLine{626         \textcolor{keywordflow}{if} (ierr .eq. 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{627             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    Unit test successful.')"{}})}
-\DoxyCodeLine{628         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{629             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed. ***')"{}})}
-\DoxyCodeLine{630             fail\_counter = fail\_counter + 1}
-\DoxyCodeLine{631 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{632 }
-\DoxyCodeLine{633         test\_counter = test\_counter + 1}
-\DoxyCodeLine{634         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[', I2, '/', I2, ']  test\_H\_2\_plus\_Energy')"{}}) test\_counter\textcolor{comment}{, total\_tests}}
-\DoxyCodeLine{635 \textcolor{comment}{}        ierr = test\_h\_2\_plus\_energy()}
-\DoxyCodeLine{636         \textcolor{keywordflow}{if} (ierr .eq. 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{637             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    Unit test successful.')"{}})}
-\DoxyCodeLine{638         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{639             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed. ***')"{}})}
-\DoxyCodeLine{640             fail\_counter = fail\_counter + 1}
-\DoxyCodeLine{641 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{642 }
-\DoxyCodeLine{643         test\_counter = test\_counter + 1}
-\DoxyCodeLine{644         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[', I2, '/', I2, ']  test\_H\_2\_wfn')"{}}) test\_counter, total\_tests}
-\DoxyCodeLine{645         ierr = test\_h\_2\_wfn()}
-\DoxyCodeLine{646         \textcolor{keywordflow}{if} (ierr .eq. 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{647             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    Unit test successful.')"{}})}
-\DoxyCodeLine{648         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ierr .eq. 1) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{649             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test partially successful.                        ***')"{}}\textcolor{comment}{)}}
-\DoxyCodeLine{650 \textcolor{comment}{}            \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed for condition H2\%include\_pqn = 1. ***')"{}}\textcolor{comment}{)}}
-\DoxyCodeLine{651 \textcolor{comment}{}            fail\_counter = fail\_counter + 1}
-\DoxyCodeLine{652         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ierr .eq. 2) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{653             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test partially successful.                        ***')"{}}\textcolor{comment}{)}}
-\DoxyCodeLine{654 \textcolor{comment}{}            \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed for condition H2\%include\_pqn = 2. ***')"{}}\textcolor{comment}{)}}
-\DoxyCodeLine{655 \textcolor{comment}{}            fail\_counter = fail\_counter + 1}
-\DoxyCodeLine{656         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ierr .eq. 3) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{657             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed under both conditions. ***')"{}}\textcolor{comment}{)}}
-\DoxyCodeLine{658 \textcolor{comment}{}            fail\_counter = fail\_counter + 1}
-\DoxyCodeLine{659 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{660 }
-\DoxyCodeLine{661         test\_counter = test\_counter + 1}
-\DoxyCodeLine{662         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[', I2, '/', I2, ']  test\_H\_2\_Prob')"{}}) test\_counter,\textcolor{comment}{ total\_tests}}
-\DoxyCodeLine{663 \textcolor{comment}{}        ierr = test\_h\_2\_prob()}
-\DoxyCodeLine{664         \textcolor{keywordflow}{if} (ierr .eq. 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{665             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    Unit test successful.')"{}})}
-\DoxyCodeLine{666         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{667             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed. ***')"{}})}
-\DoxyCodeLine{668             fail\_counter = fail\_counter + 1}
-\DoxyCodeLine{669 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{670 }
-\DoxyCodeLine{671         test\_counter = test\_counter + 1}
-\DoxyCodeLine{672         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[', I2, '/', I2, ']  test\_H\_2\_Energy')"{}}) test\_counter\textcolor{comment}{, total\_tests}}
-\DoxyCodeLine{673 \textcolor{comment}{}        ierr = test\_h\_2\_energy()}
-\DoxyCodeLine{674         \textcolor{keywordflow}{if} (ierr .eq. 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{675             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    Unit test successful.')"{}})}
-\DoxyCodeLine{676         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{677             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed. ***')"{}})}
-\DoxyCodeLine{678             fail\_counter = fail\_counter + 1}
-\DoxyCodeLine{679 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{680 }
-\DoxyCodeLine{681         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{682         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}}\textcolor{comment}{)}}
-\DoxyCodeLine{683 \textcolor{comment}{}        \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('Unit testing results:')"{}})}
-\DoxyCodeLine{684         \textcolor{keywordflow}{if} (fail\_counter .eq. 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{685             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}(I2, '/', I2, ' unit tests passed!')"{}}) test\_counter\textcolor{comment}{, total\_tests}}
-\DoxyCodeLine{686 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
-\DoxyCodeLine{687             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}(I2, 'of ', I2, ' unit tests failed!')"{}}) fail\_counter\textcolor{comment}{, total\_tests}}
-\DoxyCodeLine{688 \textcolor{comment}{}\textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{689         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}}\textcolor{comment}{)}}
-\DoxyCodeLine{690 \textcolor{comment}{}}
-\DoxyCodeLine{691         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{692         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('Unit testing complete, exiting program...')"{}})}
-\DoxyCodeLine{693 }
+\DoxyCodeLine{507 }
+\DoxyCodeLine{508         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{509 }
+\DoxyCodeLine{510         \textcolor{keywordtype}{integer} :: ierr}
+\DoxyCodeLine{511         \textcolor{keywordtype}{integer} :: total\_tests = 12}
+\DoxyCodeLine{512         \textcolor{keywordtype}{integer} :: fail\_counter, test\_counter}
+\DoxyCodeLine{513 }
+\DoxyCodeLine{514         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{515         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}}\textcolor{comment}{)}}
+\DoxyCodeLine{516 \textcolor{comment}{}        \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[PROGRAM NAME] Unit Testing Suite')"{}})}
+\DoxyCodeLine{517         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}}\textcolor{comment}{)}}
+\DoxyCodeLine{518 \textcolor{comment}{}        \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('*** ', I2, ' function tests implemented, starting... ***')"{}}\textcolor{comment}{) total\_tests}}
+\DoxyCodeLine{519 \textcolor{comment}{}        \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{520 }
+\DoxyCodeLine{521         fail\_counter = 0}
+\DoxyCodeLine{522         test\_counter = 0}
+\DoxyCodeLine{523 }
+\DoxyCodeLine{524         test\_counter = test\_counter + 1}
+\DoxyCodeLine{525         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[', I2, '/', I2, ']  test\_ran1')"{}}) test\_counter, total\_tests}
+\DoxyCodeLine{526         ierr = test\_ran1()}
+\DoxyCodeLine{527         \textcolor{keywordflow}{if} (ierr .eq. 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{528             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    Unit test successful.')"{}})}
+\DoxyCodeLine{529         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{530             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed. ***')"{}})}
+\DoxyCodeLine{531             fail\_counter = fail\_counter + 1}
+\DoxyCodeLine{532 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{533 }
+\DoxyCodeLine{534         test\_counter = test\_counter + 1}
+\DoxyCodeLine{535         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[', I2, '/', I2, ']  test\_QHO\_Prob')"{}}) test\_counter,\textcolor{comment}{ total\_tests}}
+\DoxyCodeLine{536 \textcolor{comment}{}        ierr = test\_random\_normal()}
+\DoxyCodeLine{537         \textcolor{keywordflow}{if} (ierr .eq. 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{538             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    Unit test successful.')"{}})}
+\DoxyCodeLine{539         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{540             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed. ***')"{}})}
+\DoxyCodeLine{541             fail\_counter = fail\_counter + 1}
+\DoxyCodeLine{542 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{543 }
+\DoxyCodeLine{544         test\_counter = test\_counter + 1}
+\DoxyCodeLine{545         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[', I2, '/', I2, ']  test\_QHO\_Prob')"{}}) test\_counter,\textcolor{comment}{ total\_tests}}
+\DoxyCodeLine{546 \textcolor{comment}{}        ierr = test\_qho\_prob()}
+\DoxyCodeLine{547         \textcolor{keywordflow}{if} (ierr .eq. 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{548             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    Unit test successful.')"{}})}
+\DoxyCodeLine{549         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{550             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed. ***')"{}})}
+\DoxyCodeLine{551             fail\_counter = fail\_counter + 1}
+\DoxyCodeLine{552 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{553 }
+\DoxyCodeLine{554         test\_counter = test\_counter + 1}
+\DoxyCodeLine{555         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[', I2, '/', I2, ']  test\_QHO\_Energy')"{}}) test\_counter\textcolor{comment}{, total\_tests}}
+\DoxyCodeLine{556 \textcolor{comment}{}        ierr = test\_qho\_energy()}
+\DoxyCodeLine{557         \textcolor{keywordflow}{if} (ierr .eq. 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{558             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    Unit test successful.')"{}})}
+\DoxyCodeLine{559         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{560             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed. ***')"{}})}
+\DoxyCodeLine{561             fail\_counter = fail\_counter + 1}
+\DoxyCodeLine{562 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{563         }
+\DoxyCodeLine{564         test\_counter = test\_counter + 1}
+\DoxyCodeLine{565         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[', I2, '/', I2, ']  test\_H1s\_wfn')"{}}) test\_counter, total\_tests}
+\DoxyCodeLine{566         ierr = test\_h1s\_wfn()}
+\DoxyCodeLine{567         \textcolor{keywordflow}{if} (ierr .eq. 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{568             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    Unit test successful.')"{}})}
+\DoxyCodeLine{569         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{570             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed. ***')"{}})}
+\DoxyCodeLine{571             fail\_counter = fail\_counter + 1}
+\DoxyCodeLine{572 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{573 }
+\DoxyCodeLine{574         test\_counter = test\_counter + 1}
+\DoxyCodeLine{575         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[', I2, '/', I2, ']  test\_H2s\_wfn')"{}}) test\_counter, total\_tests}
+\DoxyCodeLine{576         ierr = test\_h2s\_wfn()}
+\DoxyCodeLine{577         \textcolor{keywordflow}{if} (ierr .eq. 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{578             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    Unit test successful.')"{}})}
+\DoxyCodeLine{579         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{580             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed. ***')"{}})}
+\DoxyCodeLine{581             fail\_counter = fail\_counter + 1}
+\DoxyCodeLine{582 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{583 }
+\DoxyCodeLine{584         test\_counter = test\_counter + 1}
+\DoxyCodeLine{585         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[', I2, '/', I2, ']  test\_H\_2\_plus\_wfn')"{}}) test\_counter\textcolor{comment}{, total\_tests}}
+\DoxyCodeLine{586 \textcolor{comment}{}        ierr = test\_h\_2\_plus\_wfn()}
+\DoxyCodeLine{587         \textcolor{keywordflow}{if} (ierr .eq. 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{588             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    Unit test successful.')"{}})}
+\DoxyCodeLine{589         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ierr .eq. 1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{590             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test partially successful.                        ***')"{}}\textcolor{comment}{)}}
+\DoxyCodeLine{591 \textcolor{comment}{}            \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed for condition H2plus\%include\_pqn = 1. ***')"{}}\textcolor{comment}{)}}
+\DoxyCodeLine{592 \textcolor{comment}{}            fail\_counter = fail\_counter + 1}
+\DoxyCodeLine{593         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ierr .eq. 2) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{594             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test partially successful.                        ***')"{}}\textcolor{comment}{)}}
+\DoxyCodeLine{595 \textcolor{comment}{}            \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed for condition H2plus\%include\_pqn = 2. ***')"{}}\textcolor{comment}{)}}
+\DoxyCodeLine{596 \textcolor{comment}{}            fail\_counter = fail\_counter + 1}
+\DoxyCodeLine{597         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ierr .eq. 3) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{598             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed under both conditions. ***')"{}}\textcolor{comment}{)}}
+\DoxyCodeLine{599 \textcolor{comment}{}            fail\_counter = fail\_counter + 1}
+\DoxyCodeLine{600 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{601 }
+\DoxyCodeLine{602         test\_counter = test\_counter + 1}
+\DoxyCodeLine{603         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[', I2, '/', I2, ']  test\_H\_2\_plus\_Prob')"{}}) test\_counter\textcolor{comment}{, total\_tests}}
+\DoxyCodeLine{604 \textcolor{comment}{}        ierr = test\_h\_2\_plus\_prob()}
+\DoxyCodeLine{605         \textcolor{keywordflow}{if} (ierr .eq. 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{606             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    Unit test successful.')"{}})}
+\DoxyCodeLine{607         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{608             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed. ***')"{}})}
+\DoxyCodeLine{609             fail\_counter = fail\_counter + 1}
+\DoxyCodeLine{610 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{611 }
+\DoxyCodeLine{612         test\_counter = test\_counter + 1}
+\DoxyCodeLine{613         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[', I2, '/', I2, ']  test\_H\_2\_plus\_Energy')"{}}) test\_counter\textcolor{comment}{, total\_tests}}
+\DoxyCodeLine{614 \textcolor{comment}{}        ierr = test\_h\_2\_plus\_energy()}
+\DoxyCodeLine{615         \textcolor{keywordflow}{if} (ierr .eq. 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{616             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    Unit test successful.')"{}})}
+\DoxyCodeLine{617         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{618             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed. ***')"{}})}
+\DoxyCodeLine{619             fail\_counter = fail\_counter + 1}
+\DoxyCodeLine{620 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{621 }
+\DoxyCodeLine{622         test\_counter = test\_counter + 1}
+\DoxyCodeLine{623         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[', I2, '/', I2, ']  test\_H\_2\_wfn')"{}}) test\_counter, total\_tests}
+\DoxyCodeLine{624         ierr = test\_h\_2\_wfn()}
+\DoxyCodeLine{625         \textcolor{keywordflow}{if} (ierr .eq. 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{626             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    Unit test successful.')"{}})}
+\DoxyCodeLine{627         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ierr .eq. 1) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{628             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test partially successful.                        ***')"{}}\textcolor{comment}{)}}
+\DoxyCodeLine{629 \textcolor{comment}{}            \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed for condition H2\%include\_pqn = 1. ***')"{}}\textcolor{comment}{)}}
+\DoxyCodeLine{630 \textcolor{comment}{}            fail\_counter = fail\_counter + 1}
+\DoxyCodeLine{631         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ierr .eq. 2) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{632             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test partially successful.                        ***')"{}}\textcolor{comment}{)}}
+\DoxyCodeLine{633 \textcolor{comment}{}            \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed for condition H2\%include\_pqn = 2. ***')"{}}\textcolor{comment}{)}}
+\DoxyCodeLine{634 \textcolor{comment}{}            fail\_counter = fail\_counter + 1}
+\DoxyCodeLine{635         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ierr .eq. 3) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{636             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed under both conditions. ***')"{}}\textcolor{comment}{)}}
+\DoxyCodeLine{637 \textcolor{comment}{}            fail\_counter = fail\_counter + 1}
+\DoxyCodeLine{638 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{639 }
+\DoxyCodeLine{640         test\_counter = test\_counter + 1}
+\DoxyCodeLine{641         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[', I2, '/', I2, ']  test\_H\_2\_Prob')"{}}) test\_counter,\textcolor{comment}{ total\_tests}}
+\DoxyCodeLine{642 \textcolor{comment}{}        ierr = test\_h\_2\_prob()}
+\DoxyCodeLine{643         \textcolor{keywordflow}{if} (ierr .eq. 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{644             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    Unit test successful.')"{}})}
+\DoxyCodeLine{645         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{646             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed. ***')"{}})}
+\DoxyCodeLine{647             fail\_counter = fail\_counter + 1}
+\DoxyCodeLine{648 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{649 }
+\DoxyCodeLine{650         test\_counter = test\_counter + 1}
+\DoxyCodeLine{651         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('[', I2, '/', I2, ']  test\_H\_2\_Energy')"{}}) test\_counter\textcolor{comment}{, total\_tests}}
+\DoxyCodeLine{652 \textcolor{comment}{}        ierr = test\_h\_2\_energy()}
+\DoxyCodeLine{653         \textcolor{keywordflow}{if} (ierr .eq. 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{654             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    Unit test successful.')"{}})}
+\DoxyCodeLine{655         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{656             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('    *** Unit test failed. ***')"{}})}
+\DoxyCodeLine{657             fail\_counter = fail\_counter + 1}
+\DoxyCodeLine{658 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{659 }
+\DoxyCodeLine{660         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{661         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}}\textcolor{comment}{)}}
+\DoxyCodeLine{662 \textcolor{comment}{}        \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('Unit testing results:')"{}})}
+\DoxyCodeLine{663         \textcolor{keywordflow}{if} (fail\_counter .eq. 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{664             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}(I2, '/', I2, ' unit tests passed!')"{}}) test\_counter\textcolor{comment}{, total\_tests}}
+\DoxyCodeLine{665 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
+\DoxyCodeLine{666             \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}(I2, 'of ', I2, ' unit tests failed!')"{}}) fail\_counter\textcolor{comment}{, total\_tests}}
+\DoxyCodeLine{667 \textcolor{comment}{}\textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{668         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}}\textcolor{comment}{)}}
+\DoxyCodeLine{669 \textcolor{comment}{}}
+\DoxyCodeLine{670         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{671         \textcolor{keyword}{write}(0, \textcolor{stringliteral}{"{}('Unit testing complete, exiting program...')"{}})}
+\DoxyCodeLine{672 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:

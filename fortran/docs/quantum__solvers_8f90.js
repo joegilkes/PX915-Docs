@@ -6,8 +6,11 @@ var quantum__solvers_8f90 =
     [ "h2s_wfn", "quantum__solvers_8f90.html#a89943685e3d86544f0261f24fac44419", null ],
     [ "h_2_plus_wfn", "quantum__solvers_8f90.html#a6d705d11696b64991f1624e298067bed", null ],
     [ "h_2_plus_prob", "quantum__solvers_8f90.html#a5695d107239a7a8fb1f8b096786af028", null ],
-    [ "h_2_plus_energy", "quantum__solvers_8f90.html#a1f21386928aadfc3dd6bc5cfb82fb94f", null ],
-    [ "h_2_wfn", "quantum__solvers_8f90.html#aa0515876b10a8cebd7f381e14b1ff856", null ],
-    [ "h_2_prob", "quantum__solvers_8f90.html#a0d0f254ede019bb0bf743397cd0069f7", null ],
-    [ "h_2_energy", "quantum__solvers_8f90.html#ab21b7ec07e33a8417b62ecb75c327a6f", null ]
+    [ "h_2_plus_energy", "quantum__solvers_8f90.html#a9cc5ffb282a9d15708307d84f6cf147f", null ],
+    [ "h_2_plus_update_c", "quantum__solvers_8f90.html#acb91c2bfc7ae441b3e24f83d0f49d55a", null ],
+    [ "h_2_cusp", "quantum__solvers_8f90.html#a38259c21a02a250a91f45d79e4165742", null ],
+    [ "h_2_wfn", "quantum__solvers_8f90.html#ac603f31a67286a6e89588cf4de29bd1b", null ],
+    [ "h_2_prob", "quantum__solvers_8f90.html#ac30d1c7141f673647e837524ecb26b07", null ],
+    [ "h_2_energy", "quantum__solvers_8f90.html#a9afbcdcc0405d544d4441e9786f440a2", null ],
+    [ "h_2_update_beta", "quantum__solvers_8f90.html#a4b4d370a4ee50b231f53058ab62e4084", null ]
 ];

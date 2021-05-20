@@ -20,6 +20,8 @@ var shared__data_8f90 =
     [ "restart_step", "shared__data_8f90.html#abee3357695dee9120626f1a0c422dd29", null ],
     [ "write_chains", "shared__data_8f90.html#a3ea265f2c8a3797c4d1a2b33059e1877", null ],
     [ "write_log", "shared__data_8f90.html#acf2cbacc5b2b4d8ee26c96dc7062aa9b", null ],
+    [ "outfile", "shared__data_8f90.html#a2901a107f2659faf5c03f8c35f64e68f", null ],
+    [ "logfile", "shared__data_8f90.html#ad4da3a0a55e0563861cee8b2e6799be0", null ],
     [ "qho", "shared__data_8f90.html#a7503c2b3bd10f3ee43c4cf9964c42ab2", null ],
     [ "h2plus", "shared__data_8f90.html#a1e9e95c9ea52c9aa2ec2f05b8d65e4f3", null ],
     [ "h2", "shared__data_8f90.html#a1703912ee00414a4aaf1a41d3c167694", null ],

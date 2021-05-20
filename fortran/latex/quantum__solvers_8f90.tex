@@ -20,11 +20,17 @@ real(real64) function \mbox{\hyperlink{namespacesolvers_a6d705d11696b64991f1624e
 \begin{DoxyCompactList}\small\item\em Calculates trial wavefunction for the $ H_{2}^{+} $ problem. \end{DoxyCompactList}\item 
 real(real64) function \mbox{\hyperlink{namespacesolvers_a5695d107239a7a8fb1f8b096786af028}{solvers\+::h\+\_\+2\+\_\+plus\+\_\+prob}} (c, r\+\_\+current, r\+\_\+next, R\+\_\+a, R\+\_\+b)
 \begin{DoxyCompactList}\small\item\em Calculates transition probability for the $ H_{2}^{+} $ problem. \end{DoxyCompactList}\item 
-real(real64) function \mbox{\hyperlink{namespacesolvers_a1f21386928aadfc3dd6bc5cfb82fb94f}{solvers\+::h\+\_\+2\+\_\+plus\+\_\+energy}} (c, r, R\+\_\+a, R\+\_\+b, fdstep)
+subroutine \mbox{\hyperlink{namespacesolvers_a9cc5ffb282a9d15708307d84f6cf147f}{solvers\+::h\+\_\+2\+\_\+plus\+\_\+energy}} (c, r, R\+\_\+a, R\+\_\+b, E\+\_\+loc, gradient)
 \begin{DoxyCompactList}\small\item\em Calculates local energy for the $ H_{2}^{+} $ problem. \end{DoxyCompactList}\item 
-real(real64) function \mbox{\hyperlink{namespacesolvers_aa0515876b10a8cebd7f381e14b1ff856}{solvers\+::h\+\_\+2\+\_\+wfn}} (c, r\+\_\+1, r\+\_\+2, R\+\_\+a, R\+\_\+b)
-\begin{DoxyCompactList}\small\item\em Calculates trial wavefunction for the $ H_{2} $ problem. \end{DoxyCompactList}\item 
-real(real64) function \mbox{\hyperlink{namespacesolvers_a0d0f254ede019bb0bf743397cd0069f7}{solvers\+::h\+\_\+2\+\_\+prob}} (c, r\+\_\+1\+\_\+current, r\+\_\+2\+\_\+current, r\+\_\+1\+\_\+next, r\+\_\+2\+\_\+next, R\+\_\+a, R\+\_\+b)
+subroutine \mbox{\hyperlink{namespacesolvers_acb91c2bfc7ae441b3e24f83d0f49d55a}{solvers\+::h\+\_\+2\+\_\+plus\+\_\+update\+\_\+c}} (c\+\_\+old, gradient, c\+\_\+new)
+\item 
+real(real64) function \mbox{\hyperlink{namespacesolvers_a38259c21a02a250a91f45d79e4165742}{solvers\+::h\+\_\+2\+\_\+cusp}} (s)
+\item 
+real(real64) function \mbox{\hyperlink{namespacesolvers_ac603f31a67286a6e89588cf4de29bd1b}{solvers\+::h\+\_\+2\+\_\+wfn}} (a, beta, r\+\_\+1, r\+\_\+2, R\+\_\+a, R\+\_\+b)
+\begin{DoxyCompactList}\small\item\em \{UPDATE ME\} Calculates trial wavefunction for the $ H_{2} $ problem. \end{DoxyCompactList}\item 
+real(real64) function \mbox{\hyperlink{namespacesolvers_ac30d1c7141f673647e837524ecb26b07}{solvers\+::h\+\_\+2\+\_\+prob}} (a, beta, r\+\_\+1\+\_\+current, r\+\_\+2\+\_\+current, r\+\_\+1\+\_\+next, r\+\_\+2\+\_\+next, R\+\_\+a, R\+\_\+b)
 \begin{DoxyCompactList}\small\item\em Calculates transition probability for the $ H_{2} $ problem. \end{DoxyCompactList}\item 
-real(real64) function \mbox{\hyperlink{namespacesolvers_ab21b7ec07e33a8417b62ecb75c327a6f}{solvers\+::h\+\_\+2\+\_\+energy}} (c, r\+\_\+1, r\+\_\+2, R\+\_\+a, R\+\_\+b, fdstep)
-\begin{DoxyCompactList}\small\item\em Calculates local energy for the $ H_{2} $ problem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+subroutine \mbox{\hyperlink{namespacesolvers_a9afbcdcc0405d544d4441e9786f440a2}{solvers\+::h\+\_\+2\+\_\+energy}} (a, beta, r\+\_\+1, r\+\_\+2, R\+\_\+a, R\+\_\+b, E\+\_\+loc, Dphi\+Dbeta)
+\begin{DoxyCompactList}\small\item\em Calculates local energy for the $ H_{2} $ problem. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacesolvers_a4b4d370a4ee50b231f53058ab62e4084}{solvers\+::h\+\_\+2\+\_\+update\+\_\+beta}} (beta\+\_\+old, gradient, beta\+\_\+new)
+\end{DoxyCompactItemize}

@@ -1,6 +1,0 @@
-<map id="solvers::h_2_energy" name="solvers::h_2_energy">
-<area shape="rect" id="node1" title="Calculates local energy for the &#160;problem." alt="" coords="5,31,141,57"/>
-<area shape="rect" id="node2" href="$namespacesolvers.html#aa0515876b10a8cebd7f381e14b1ff856" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="189,31,308,57"/>
-<area shape="rect" id="node3" href="$namespacesolvers.html#a7d32620a8f8a8780a0b0ef83c490e8f7" title="Calculates value of the wavefunction of a hydrogen 1s orbital." alt="" coords="356,5,475,32"/>
-<area shape="rect" id="node4" href="$namespacesolvers.html#a89943685e3d86544f0261f24fac44419" title="Calculates value of the wavefunction of a hydrogen 2s orbital." alt="" coords="356,56,475,83"/>
-</map>

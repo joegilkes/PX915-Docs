@@ -16,14 +16,30 @@ real(real64) function, dimension(\+:), allocatable \mbox{\hyperlink{namespacevqm
 \begin{DoxyCompactList}\small\item\em Adaptation of numpy\textquotesingle{}s linspace function. \end{DoxyCompactList}\item 
 subroutine \mbox{\hyperlink{namespacevqmc_a62ec9b662e5d9b46ec37d52ff93cb335}{vqmc\+::random\+\_\+normal}} (dim, x)
 \begin{DoxyCompactList}\small\item\em Draws a sample from a normal distribution. \end{DoxyCompactList}\item 
-subroutine \mbox{\hyperlink{namespacevqmc_ac8a07ca12229e28074bf9088be5c2b5c}{vqmc\+::vqmc\+\_\+qho}} (sigma, N, burn, thin, alpha\+\_\+const, X\+\_\+burnt, accept\+\_\+rate, energy\+\_\+chain, x\+\_\+start)
+subroutine \mbox{\hyperlink{namespacevqmc_a05315751002a983c9976851c9f21f0f0}{vqmc\+::vqmc\+\_\+qho}} (sigma, N, burn, thin, alpha\+\_\+const, X\+\_\+burnt, accept\+\_\+rate, energy\+\_\+chain, energy\+\_\+mean, energy\+\_\+variance, x\+\_\+start)
 \begin{DoxyCompactList}\small\item\em Performs VQMC for QHO. \end{DoxyCompactList}\item 
-subroutine \mbox{\hyperlink{namespacevqmc_adef1f40504be89d534ea89658a169aad}{vqmc\+::vqmc\+\_\+h\+\_\+2\+\_\+plus}} (sigma, N, burn, thin, c\+\_\+const, R\+\_\+a, R\+\_\+b, X\+\_\+burnt, accept\+\_\+rate, energy\+\_\+chain, x\+\_\+start)
+subroutine \mbox{\hyperlink{namespacevqmc_a4856736e8ffc45caa57893a6b96318d3}{vqmc\+::grid\+\_\+qho}} (alpha\+\_\+array, energies, acc\+\_\+rates)
+\item 
+subroutine \mbox{\hyperlink{namespacevqmc_a5d73324fcbe9c3ef7fe11309581af529}{vqmc\+::equil\+\_\+qho}} (alpha\+\_\+array)
+\item 
+subroutine \mbox{\hyperlink{namespacevqmc_a8213f95bb390d7a9eff8260f527c00b8}{vqmc\+::vqmc\+\_\+h\+\_\+2\+\_\+plus}} (sigma, N, burn, thin, c\+\_\+const, R\+\_\+a, R\+\_\+b, X\+\_\+burnt, accept\+\_\+rate, energy\+\_\+chain, energy\+\_\+mean, energy\+\_\+variance, Dphi\+Dc\+\_\+chain, x\+\_\+start)
 \begin{DoxyCompactList}\small\item\em Performs VQMC for H\+\_\+2\+\_\+plus ~\newline
  \end{DoxyCompactList}\item 
-subroutine \mbox{\hyperlink{namespacevqmc_ac00c311b77347b5ed6258bb64214dd9f}{vqmc\+::vqmc\+\_\+h\+\_\+2}} (sigma, N, burn, thin, c\+\_\+const, R\+\_\+a, R\+\_\+b, X\+\_\+1\+\_\+burnt, X\+\_\+2\+\_\+burnt, accept\+\_\+rate, energy\+\_\+chain, x\+\_\+start\+\_\+1, x\+\_\+start\+\_\+2)
+subroutine \mbox{\hyperlink{namespacevqmc_a0a07ef5b098cdc478b253de26c49aadc}{vqmc\+::auto\+\_\+h\+\_\+2\+\_\+plus}} (c\+\_\+in, bond\+\_\+length, c\+\_\+out, energy\+\_\+out, variance\+\_\+out, accept\+\_\+out, converged)
+\item 
+subroutine \mbox{\hyperlink{namespacevqmc_a70c9fcecdf5f2a6ffea7dd3c4f0c1eeb}{vqmc\+::grid\+\_\+h\+\_\+2\+\_\+plus}} (c\+\_\+array, bond\+\_\+length, c\+\_\+out, energy\+\_\+out, variance\+\_\+out, accept\+\_\+out)
+\item 
+subroutine \mbox{\hyperlink{namespacevqmc_a169c06cb168984ca6285231ad80a0243}{vqmc\+::equil\+\_\+h\+\_\+2\+\_\+plus}} (c\+\_\+array, bond\+\_\+length, bonds\+\_\+pos)
+\item 
+subroutine \mbox{\hyperlink{namespacevqmc_a12f60b20a934a7eb8c6e3cdaaac0b1cc}{vqmc\+::vqmc\+\_\+h\+\_\+2}} (sigma, N, burn, thin, a, beta, R\+\_\+a, R\+\_\+b, X\+\_\+1\+\_\+burnt, X\+\_\+2\+\_\+burnt, accept\+\_\+rate, energy\+\_\+chain, energy\+\_\+mean, energy\+\_\+variance, Dphi\+Dbeta\+\_\+chain, x\+\_\+start\+\_\+1, x\+\_\+start\+\_\+2)
 \begin{DoxyCompactList}\small\item\em Performs VQMC for H\+\_\+2 ~\newline
- \end{DoxyCompactList}\end{DoxyCompactItemize}
+ \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacevqmc_a70dc752a6b037f137c1264dd8753bac2}{vqmc\+::auto\+\_\+h\+\_\+2}} (a, beta\+\_\+in, bond\+\_\+length, beta\+\_\+out, energy\+\_\+out, variance\+\_\+out, accept\+\_\+out, converged)
+\item 
+subroutine \mbox{\hyperlink{namespacevqmc_a08bc46270707aab6c2d5114b589c176c}{vqmc\+::grid\+\_\+h\+\_\+2}} (a, beta\+\_\+array, bond\+\_\+length, beta\+\_\+out, energy\+\_\+out, variance\+\_\+out, accept\+\_\+out)
+\item 
+subroutine \mbox{\hyperlink{namespacevqmc_ab066adc59fec1fcaaba764a46128c935}{vqmc\+::equil\+\_\+h\+\_\+2}} (a, beta\+\_\+array, bond\+\_\+length, bonds\+\_\+pos)
+\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 

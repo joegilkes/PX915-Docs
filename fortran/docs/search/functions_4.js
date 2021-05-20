@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['linspace_159',['linspace',['../namespacevqmc.html#a6b89c5b7a64a3e438695787b90a62359',1,'vqmc']]]
+  ['init_5fran1_188',['init_ran1',['../namespacevqmc.html#aed182179994b5465f5466b4d909a764e',1,'vqmc']]]
 ];
