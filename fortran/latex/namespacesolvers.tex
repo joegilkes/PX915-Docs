@@ -281,7 +281,7 @@ Definition at line 192 of file quantum\+\_\+solvers.\+f90.
 \DoxyCodeLine{205             wfn = (c(1) * h1s\_wfn(r, r\_a)) + (sqrt(1 -\/ (c(1)*c(1))) * h1s\_wfn\textcolor{comment}{(r, r\_b)) \&}}
 \DoxyCodeLine{206 \textcolor{comment}{}                    + (c(2) * h2s\_wfn(r, r\_a)) + (sqrt(1 -\/ (c(2)*c(2))) \textcolor{comment}{* h2s\_wfn(r, r\_b))}}
 \DoxyCodeLine{207 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
-\DoxyCodeLine{208             error stop \textcolor{stringliteral}{'Error: Oops, global include\_pqn can only take values 1 or 2.'}}
+\DoxyCodeLine{208             error stop \textcolor{stringliteral}{'Global include\_pqn can only take values 1 or 2.'}}
 \DoxyCodeLine{209 \textcolor{keywordflow}{        end if}}
 \DoxyCodeLine{210 }
 
@@ -519,7 +519,7 @@ Definition at line 358 of file quantum\+\_\+solvers.\+f90.
 \DoxyCodeLine{374                   c(2) * ((h2s\_wfn(r\_1, r\_a) * h2s\_wfn(r\_2, r\_b)) \&}
 \DoxyCodeLine{375                   + (h2s\_wfn(r\_2, r\_a) * h2s\_wfn(r\_1, r\_b)))}
 \DoxyCodeLine{376         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{377             error stop \textcolor{stringliteral}{'Error: Oops, global include\_pqn can only take values 1 or 2.'}}
+\DoxyCodeLine{377             error stop \textcolor{stringliteral}{'Global include\_pqn can only take values 1 or 2.'}}
 \DoxyCodeLine{378 \textcolor{keywordflow}{        end if}}
 \DoxyCodeLine{379 }
 
