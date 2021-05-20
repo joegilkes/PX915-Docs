@@ -153,7 +153,7 @@ Definition at line 40 of file write.\+py.
 \DoxyCodeLine{44     options = [\textcolor{stringliteral}{'y'},\textcolor{stringliteral}{'n'}]}
 \DoxyCodeLine{45     \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (default \textcolor{keywordflow}{in} options):}
 \DoxyCodeLine{46         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{47         print(\textcolor{stringliteral}{'Error: Oops,your response is invalid, please enter "{}y"{} or "{}n"{}, without quotes.'})}
+\DoxyCodeLine{47         print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}y"{} or "{}n"{}, without quotes.'})}
 \DoxyCodeLine{48         default = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
 \DoxyCodeLine{49     }
 \DoxyCodeLine{50     \textcolor{keywordflow}{return} default}
@@ -204,21 +204,17 @@ Definition at line 58 of file write.\+py.
 \DoxyCodeLine{63 }
 \DoxyCodeLine{64         \textcolor{keywordflow}{while} not(\mbox{\hyperlink{namespacewrite_a6d208b551e50aabd0cfffdf928852f2e}{isint}}(step)):}
 \DoxyCodeLine{65             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{66             print(\textcolor{stringliteral}{'Error: Oops,your response is invalid. The program is expecting an integer.'})}
-\DoxyCodeLine{67             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{68             \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
-\DoxyCodeLine{69             step = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'\{:\}: '}.format(prompt))}
-\DoxyCodeLine{70     }
-\DoxyCodeLine{71         step = int(step)  }
-\DoxyCodeLine{72         \textcolor{keywordflow}{if} step < -\/1:}
-\DoxyCodeLine{73             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{74             print(\textcolor{stringliteral}{'Error: Oops,your response is invalid. The program is expecting an integer >= -\/1.'})}
-\DoxyCodeLine{75             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{76             \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
-\DoxyCodeLine{77             }
-\DoxyCodeLine{78     \textcolor{keywordflow}{return} step}
-\DoxyCodeLine{79 }
-\DoxyCodeLine{80 }
+\DoxyCodeLine{66             print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting an integer.'})            }
+\DoxyCodeLine{67             step = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'\{:\}: '}.format(prompt))}
+\DoxyCodeLine{68     }
+\DoxyCodeLine{69         step = int(step)  }
+\DoxyCodeLine{70         \textcolor{keywordflow}{if} step < -\/1:}
+\DoxyCodeLine{71             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{72             print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting an integer >= -\/1.'})           }
+\DoxyCodeLine{73             }
+\DoxyCodeLine{74     \textcolor{keywordflow}{return} step}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -261,33 +257,29 @@ Checks the validity of the user input.
 \end{DoxyRetVals}
 
 
-Definition at line 87 of file write.\+py.
+Definition at line 83 of file write.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{87 \textcolor{keyword}{def }\mbox{\hyperlink{namespacewrite_abcf50fa9f656fcc5938355f67ee6744a}{query\_posfloat}}(prompt):}
-\DoxyCodeLine{88     pf = -\/0.5}
-\DoxyCodeLine{89     \textcolor{keywordflow}{while} pf <= 0.0 \textcolor{keywordflow}{and} pf != -\/1:}
-\DoxyCodeLine{90         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{91         pf = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'\{:\}: '}.format(prompt))}
-\DoxyCodeLine{92 }
-\DoxyCodeLine{93         \textcolor{keywordflow}{while} not(\mbox{\hyperlink{namespacewrite_ab2d5e87a28584993d493d77da00d1bab}{isfloat}}(pf)):}
-\DoxyCodeLine{94             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{95             print(\textcolor{stringliteral}{'Error: Oops, your response is invalid. The program is expecting an positive float, or integer "{}-\/1"{} (without quotes) for default.'})}
+\DoxyCodeLine{83 \textcolor{keyword}{def }\mbox{\hyperlink{namespacewrite_abcf50fa9f656fcc5938355f67ee6744a}{query\_posfloat}}(prompt):}
+\DoxyCodeLine{84     pf = -\/0.5}
+\DoxyCodeLine{85     \textcolor{keywordflow}{while} pf <= 0.0 \textcolor{keywordflow}{and} pf != -\/1:}
+\DoxyCodeLine{86         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{87         pf = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'\{:\}: '}.format(prompt))}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89         \textcolor{keywordflow}{while} not(\mbox{\hyperlink{namespacewrite_ab2d5e87a28584993d493d77da00d1bab}{isfloat}}(pf)):}
+\DoxyCodeLine{90             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{91             print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting an positive float, or integer "{}-\/1"{} (without quotes) for default.'})            }
+\DoxyCodeLine{92             pf = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Enter cutoff radial distance (in Bohr) for MMC search: '})}
+\DoxyCodeLine{93         }
+\DoxyCodeLine{94         pf = float(pf)}
+\DoxyCodeLine{95         \textcolor{keywordflow}{if} pf <= 0.0 \textcolor{keywordflow}{and} pf != -\/1:}
 \DoxyCodeLine{96             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{97             \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
-\DoxyCodeLine{98             pf = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Enter cutoff radial distance (in Bohr) for MMC search: '})}
-\DoxyCodeLine{99         }
-\DoxyCodeLine{100         pf = float(pf)}
-\DoxyCodeLine{101         \textcolor{keywordflow}{if} pf <= 0.0 \textcolor{keywordflow}{and} pf != -\/1:}
-\DoxyCodeLine{102             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{103             print(\textcolor{stringliteral}{'Error: Oops, your response is invalid. The program is expecting an positive float, or integer "{}-\/1"{} (without quotes) for default.'})}
-\DoxyCodeLine{104             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{105             \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
-\DoxyCodeLine{106     }
-\DoxyCodeLine{107     \textcolor{keywordflow}{return} pf}
-\DoxyCodeLine{108 }
-\DoxyCodeLine{109 }
+\DoxyCodeLine{97             print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting an positive float, or integer "{}-\/1"{} (without quotes) for default.'})}
+\DoxyCodeLine{98                 }
+\DoxyCodeLine{99     \textcolor{keywordflow}{return} pf}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -334,62 +326,52 @@ Checks the validity of the user input.
 \end{DoxyRetVals}
 
 
-Definition at line 118 of file write.\+py.
+Definition at line 110 of file write.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{118 \textcolor{keyword}{def }\mbox{\hyperlink{namespacewrite_afa3fbcda7589cff5d02ac8e298ae8b05}{query\_grid}}(param):}
-\DoxyCodeLine{119      \textcolor{comment}{\# Minimum}}
-\DoxyCodeLine{120     mini = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Enter minimum value for \{:\} grid: '}.format(param))}
-\DoxyCodeLine{121     \textcolor{keywordflow}{while} not(\mbox{\hyperlink{namespacewrite_ab2d5e87a28584993d493d77da00d1bab}{isfloat}}(mini)):}
-\DoxyCodeLine{122         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{123         print(\textcolor{stringliteral}{'Error: Oops, your response is invalid. The program is expecting a float.'})}
-\DoxyCodeLine{124         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{125         \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
-\DoxyCodeLine{126         mini = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Enter minimum value for \{:\} grid: '}.format(param))}
-\DoxyCodeLine{127     mini=float(mini)}
-\DoxyCodeLine{128 }
-\DoxyCodeLine{129     \textcolor{comment}{\# Maximum}}
-\DoxyCodeLine{130     maxi = mini -\/ 1.0}
-\DoxyCodeLine{131     \textcolor{keywordflow}{while} maxi < mini:}
-\DoxyCodeLine{132         maxi = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Enter maximum value for \{:\} grid: '}.format(param))}
-\DoxyCodeLine{133         \textcolor{keywordflow}{while} not(\mbox{\hyperlink{namespacewrite_ab2d5e87a28584993d493d77da00d1bab}{isfloat}}(maxi)):}
-\DoxyCodeLine{134             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{135             print(\textcolor{stringliteral}{'Error: Oops, your response is invalid. The program is expecting a float.'})}
-\DoxyCodeLine{136             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{137             \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
-\DoxyCodeLine{138             maxi = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Enter maximum value for \{:\} grid: '}.format(param))}
-\DoxyCodeLine{139         maxi = float(maxi)}
-\DoxyCodeLine{140         \textcolor{keywordflow}{if} maxi < mini:}
-\DoxyCodeLine{141             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{142             print(\textcolor{stringliteral}{'Error: Oops, your response is invalid. Choose a maximum value that is larger than your chosen minimum=\{:\}.'}.format(mini))}
-\DoxyCodeLine{143             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{144             \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
-\DoxyCodeLine{145     }
-\DoxyCodeLine{146     \textcolor{comment}{\# Number of grid points}}
-\DoxyCodeLine{147     num = 0}
-\DoxyCodeLine{148     \textcolor{keywordflow}{while} num < 1:}
-\DoxyCodeLine{149         num = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Enter integer number of grid points (inclusive of max \& min): '})}
-\DoxyCodeLine{150         \textcolor{keywordflow}{while} not(\mbox{\hyperlink{namespacewrite_a6d208b551e50aabd0cfffdf928852f2e}{isint}}(num)):}
-\DoxyCodeLine{151             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{152             print(\textcolor{stringliteral}{'Error: Oops, your response is invalid. The program is expecting a positive integer.'})}
-\DoxyCodeLine{153             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{154             \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
-\DoxyCodeLine{155             num = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Enter integer number of grid points (inclusive of max \& min): '})}
-\DoxyCodeLine{156         num = int(num)}
-\DoxyCodeLine{157         \textcolor{keywordflow}{if} num < 1:}
-\DoxyCodeLine{158             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{159             print(\textcolor{stringliteral}{'Error: Oops, your response is invalid. The program is expecting a positive integer.'})}
-\DoxyCodeLine{160             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{161             \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
-\DoxyCodeLine{162     }
-\DoxyCodeLine{163     \textcolor{comment}{\# Return values as strings}}
-\DoxyCodeLine{164     \textcolor{keywordflow}{return} str(mini), str(maxi), str(num)}
-\DoxyCodeLine{165 }
-\DoxyCodeLine{166 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{167 \textcolor{comment}{\# MAJOR WRITE FUNCTIONS -\/}}
-\DoxyCodeLine{168 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{169 }
+\DoxyCodeLine{110 \textcolor{keyword}{def }\mbox{\hyperlink{namespacewrite_afa3fbcda7589cff5d02ac8e298ae8b05}{query\_grid}}(param):}
+\DoxyCodeLine{111      \textcolor{comment}{\# Minimum}}
+\DoxyCodeLine{112     mini = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Enter minimum value for \{:\} grid: '}.format(param))}
+\DoxyCodeLine{113     \textcolor{keywordflow}{while} not(\mbox{\hyperlink{namespacewrite_ab2d5e87a28584993d493d77da00d1bab}{isfloat}}(mini)):}
+\DoxyCodeLine{114         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{115         print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting a float.'})        }
+\DoxyCodeLine{116         mini = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Enter minimum value for \{:\} grid: '}.format(param))}
+\DoxyCodeLine{117     mini=float(mini)}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     \textcolor{comment}{\# Maximum}}
+\DoxyCodeLine{120     maxi = mini -\/ 1.0}
+\DoxyCodeLine{121     \textcolor{keywordflow}{while} maxi < mini:}
+\DoxyCodeLine{122         maxi = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Enter maximum value for \{:\} grid: '}.format(param))}
+\DoxyCodeLine{123         \textcolor{keywordflow}{while} not(\mbox{\hyperlink{namespacewrite_ab2d5e87a28584993d493d77da00d1bab}{isfloat}}(maxi)):}
+\DoxyCodeLine{124             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{125             print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting a float.'})            }
+\DoxyCodeLine{126             maxi = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Enter maximum value for \{:\} grid: '}.format(param))}
+\DoxyCodeLine{127         maxi = float(maxi)}
+\DoxyCodeLine{128         \textcolor{keywordflow}{if} maxi < mini:}
+\DoxyCodeLine{129             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{130             print(\textcolor{stringliteral}{'Error: Invalid response. Choose a maximum value that is larger than your chosen minimum=\{:\}.'}.format(mini))}
+\DoxyCodeLine{131             }
+\DoxyCodeLine{132     \textcolor{comment}{\# Number of grid points}}
+\DoxyCodeLine{133     num = 0}
+\DoxyCodeLine{134     \textcolor{keywordflow}{while} num < 1:}
+\DoxyCodeLine{135         num = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Enter integer number of grid points (inclusive of max \& min): '})}
+\DoxyCodeLine{136         \textcolor{keywordflow}{while} not(\mbox{\hyperlink{namespacewrite_a6d208b551e50aabd0cfffdf928852f2e}{isint}}(num)):}
+\DoxyCodeLine{137             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{138             print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting a positive integer.'})}
+\DoxyCodeLine{139             num = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Enter integer number of grid points (inclusive of max \& min): '})}
+\DoxyCodeLine{140         num = int(num)}
+\DoxyCodeLine{141         \textcolor{keywordflow}{if} num < 1:}
+\DoxyCodeLine{142             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{143             print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting a positive integer.'})}
+\DoxyCodeLine{144     }
+\DoxyCodeLine{145     \textcolor{comment}{\# Return values as strings}}
+\DoxyCodeLine{146     \textcolor{keywordflow}{return} str(mini), str(maxi), str(num)}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{149 \textcolor{comment}{\# MAJOR WRITE FUNCTIONS -\/}}
+\DoxyCodeLine{150 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{151 }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -419,277 +401,267 @@ Major function that queries the user for all the inputs required to assemble par
 \end{DoxyRetVals}
 
 
-Definition at line 175 of file write.\+py.
+Definition at line 157 of file write.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{175 \textcolor{keyword}{def }\mbox{\hyperlink{namespacewrite_a2a80b928706bf9c4a0283575b3105dd9}{query\_params}}():}
-\DoxyCodeLine{176 }
-\DoxyCodeLine{177     \textcolor{comment}{\# Initialize Dictionaries}}
-\DoxyCodeLine{178     control, params = \{\}, \{\}}
-\DoxyCodeLine{179 }
-\DoxyCodeLine{180     \textcolor{comment}{\# Query the System}}
-\DoxyCodeLine{181     print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{182     print(\textcolor{stringliteral}{'Which system would you like to solve?'})}
-\DoxyCodeLine{183     print(\textcolor{stringliteral}{'a) Quantum Harmonic Oscillator'})}
-\DoxyCodeLine{184     print(\textcolor{stringliteral}{'b) Hydrogen Molecule Ion H2+'})}
-\DoxyCodeLine{185     print(\textcolor{stringliteral}{'c) Hydrogen Molecule H2'})}
-\DoxyCodeLine{186     print(\textcolor{stringliteral}{'d) Run Test Cases'})}
-\DoxyCodeLine{187     sys = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}a"{}, "{}b"{}, "{}c"{} or "{}d"{}): '})}
-\DoxyCodeLine{188     \textcolor{comment}{\# Check system value}}
-\DoxyCodeLine{189     options = [\textcolor{stringliteral}{'a'},\textcolor{stringliteral}{'b'},\textcolor{stringliteral}{'c'},\textcolor{stringliteral}{'d'}]}
-\DoxyCodeLine{190     \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (sys \textcolor{keywordflow}{in} options):}
-\DoxyCodeLine{191         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{192         print(\textcolor{stringliteral}{'Error: Oops, your response is invalid, please enter "{}a"{}, "{}b"{}, "{}c"{} or "{}d"{}, without quotes.'})}
-\DoxyCodeLine{193         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{194         \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
-\DoxyCodeLine{195         sys = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
-\DoxyCodeLine{196     \textcolor{comment}{\# Report system setting}}
-\DoxyCodeLine{197     settings = [\textcolor{stringliteral}{"{}'QHO'"{}},\textcolor{stringliteral}{"{}'H2plus'"{}},\textcolor{stringliteral}{"{}'H2'"{}},\textcolor{stringliteral}{"{}'test'"{}}]}
-\DoxyCodeLine{198     messages = [\textcolor{stringliteral}{'Quantum Harmonic Oscillator'},\textcolor{stringliteral}{'Hydrogen Molecule Ion'},\textcolor{stringliteral}{'Hydrogen Molecule'},\textcolor{stringliteral}{'Test Cases'}]}
-\DoxyCodeLine{199     control[\textcolor{stringliteral}{'p\_system'}] = settings[options.index(sys)]}
-\DoxyCodeLine{200     print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{201     print(\textcolor{stringliteral}{'You have chosen the '} + messages[options.index(sys)] + \textcolor{stringliteral}{'.'})}
-\DoxyCodeLine{202     print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{203     \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
-\DoxyCodeLine{204 }
-\DoxyCodeLine{205 }
-\DoxyCodeLine{206     \textcolor{comment}{\# For Test Cases (d), no more parameters are required}}
-\DoxyCodeLine{207     \textcolor{keywordflow}{if} sys==\textcolor{stringliteral}{'d'}:}
-\DoxyCodeLine{208         \textcolor{keywordflow}{return} control,\textcolor{stringliteral}{'test'}}
+\DoxyCodeLine{157 \textcolor{keyword}{def }\mbox{\hyperlink{namespacewrite_a2a80b928706bf9c4a0283575b3105dd9}{query\_params}}():}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159     \textcolor{comment}{\# Initialize Dictionaries}}
+\DoxyCodeLine{160     control, params = \{\}, \{\}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162     \textcolor{comment}{\# Query the System}}
+\DoxyCodeLine{163     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{164     print(\textcolor{stringliteral}{'Which system would you like to solve?'})}
+\DoxyCodeLine{165     print(\textcolor{stringliteral}{'a) Quantum Harmonic Oscillator'})}
+\DoxyCodeLine{166     print(\textcolor{stringliteral}{'b) Hydrogen Molecule Ion H2+'})}
+\DoxyCodeLine{167     print(\textcolor{stringliteral}{'c) Hydrogen Molecule H2'})}
+\DoxyCodeLine{168     print(\textcolor{stringliteral}{'d) Run Test Cases'})}
+\DoxyCodeLine{169     sys = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}a"{}, "{}b"{}, "{}c"{} or "{}d"{}): '})}
+\DoxyCodeLine{170     \textcolor{comment}{\# Check system value}}
+\DoxyCodeLine{171     options = [\textcolor{stringliteral}{'a'},\textcolor{stringliteral}{'b'},\textcolor{stringliteral}{'c'},\textcolor{stringliteral}{'d'}]}
+\DoxyCodeLine{172     \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (sys \textcolor{keywordflow}{in} options):}
+\DoxyCodeLine{173         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{174         print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}a"{}, "{}b"{}, "{}c"{} or "{}d"{}, without quotes.'})}
+\DoxyCodeLine{175         sys = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{176     \textcolor{comment}{\# Report system setting}}
+\DoxyCodeLine{177     settings = [\textcolor{stringliteral}{"{}'QHO'"{}},\textcolor{stringliteral}{"{}'H2plus'"{}},\textcolor{stringliteral}{"{}'H2'"{}},\textcolor{stringliteral}{"{}'test'"{}}]}
+\DoxyCodeLine{178     messages = [\textcolor{stringliteral}{'Quantum Harmonic Oscillator'},\textcolor{stringliteral}{'Hydrogen Molecule Ion'},\textcolor{stringliteral}{'Hydrogen Molecule'},\textcolor{stringliteral}{'Test Cases'}]}
+\DoxyCodeLine{179     control[\textcolor{stringliteral}{'p\_system'}] = settings[options.index(sys)]}
+\DoxyCodeLine{180     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{181     print(\textcolor{stringliteral}{'You have chosen the '} + messages[options.index(sys)] + \textcolor{stringliteral}{'.'})}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184     \textcolor{comment}{\# For Test Cases (d), no more parameters are required}}
+\DoxyCodeLine{185     \textcolor{keywordflow}{if} sys==\textcolor{stringliteral}{'d'}:}
+\DoxyCodeLine{186         \textcolor{keywordflow}{return} control,\textcolor{stringliteral}{'test'}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189     \textcolor{comment}{\# Query the Calculation}}
+\DoxyCodeLine{190     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{191     print(\textcolor{stringliteral}{'What type of calculation would you like to perform?'})}
+\DoxyCodeLine{192     print(\textcolor{stringliteral}{'a) Equilibration run, to determine burning \& thinning step sizes'})}
+\DoxyCodeLine{193     print(\textcolor{stringliteral}{'b) QMC calculation'})}
+\DoxyCodeLine{194     calc = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}a"{} or "{}b"{}): '})}
+\DoxyCodeLine{195     \textcolor{comment}{\# Check calculation value}}
+\DoxyCodeLine{196     options = [\textcolor{stringliteral}{'a'},\textcolor{stringliteral}{'b'}]}
+\DoxyCodeLine{197     \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (calc \textcolor{keywordflow}{in} options):}
+\DoxyCodeLine{198         print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}a"{} or "{}b"{}, without quotes.'})}
+\DoxyCodeLine{199         calc = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{200     \textcolor{comment}{\# Report calculation setting}}
+\DoxyCodeLine{201     settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
+\DoxyCodeLine{202     messages = [\textcolor{stringliteral}{'an Equilibration run.'},\textcolor{stringliteral}{'a QMC calculation.'},]}
+\DoxyCodeLine{203     control[\textcolor{stringliteral}{'run\_equil'}] = settings[options.index(calc)]}
+\DoxyCodeLine{204     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{205     print(\textcolor{stringliteral}{'You have chosen to do '} + messages[options.index(calc)])}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207     \textcolor{comment}{\# Assume this is not a restart run}}
+\DoxyCodeLine{208     control[\textcolor{stringliteral}{'run\_restart'}] = \textcolor{stringliteral}{'.FALSE.'}}
 \DoxyCodeLine{209 }
-\DoxyCodeLine{210 }
-\DoxyCodeLine{211     \textcolor{comment}{\# Query the Calculation}}
-\DoxyCodeLine{212     print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{213     print(\textcolor{stringliteral}{'What type of calculation would you like to perform?'})}
-\DoxyCodeLine{214     print(\textcolor{stringliteral}{'a) Equilibration run, to determine burning \& thinning step sizes'})}
-\DoxyCodeLine{215     print(\textcolor{stringliteral}{'b) QMC calculation'})}
-\DoxyCodeLine{216     calc = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}a"{} or "{}b"{}): '})}
-\DoxyCodeLine{217     \textcolor{comment}{\# Check calculation value}}
-\DoxyCodeLine{218     options = [\textcolor{stringliteral}{'a'},\textcolor{stringliteral}{'b'}]}
-\DoxyCodeLine{219     \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (calc \textcolor{keywordflow}{in} options):}
-\DoxyCodeLine{220         print(\textcolor{stringliteral}{'Error: Oops, your response is invalid, please enter "{}a"{} or "{}b"{}, without quotes.'})}
-\DoxyCodeLine{221         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{222         \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
-\DoxyCodeLine{223         calc = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
-\DoxyCodeLine{224     \textcolor{comment}{\# Report calculation setting}}
-\DoxyCodeLine{225     settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
-\DoxyCodeLine{226     messages = [\textcolor{stringliteral}{'an Equilibration run.'},\textcolor{stringliteral}{'a QMC calculation.'},]}
-\DoxyCodeLine{227     control[\textcolor{stringliteral}{'run\_equil'}] = settings[options.index(calc)]}
-\DoxyCodeLine{228     print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{229     print(\textcolor{stringliteral}{'You have chosen to do '} + messages[options.index(calc)])}
-\DoxyCodeLine{230 }
-\DoxyCodeLine{231     \textcolor{comment}{\# Assume this is not a restart run}}
-\DoxyCodeLine{232     control[\textcolor{stringliteral}{'run\_restart'}] = \textcolor{stringliteral}{'.FALSE.'}}
-\DoxyCodeLine{233 }
-\DoxyCodeLine{234     \textcolor{comment}{\# Query if restart files should be written}}
-\DoxyCodeLine{235     print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{236     print(\textcolor{stringliteral}{'Would you like the program to write restart files? -\/ Yes (y) or No (n)'})}
-\DoxyCodeLine{237     w\_res = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}y"{} or "{}n"{}): '})}
-\DoxyCodeLine{238     \textcolor{comment}{\# Check response}}
-\DoxyCodeLine{239     options = [\textcolor{stringliteral}{'y'},\textcolor{stringliteral}{'n'}]}
-\DoxyCodeLine{240     \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (w\_res \textcolor{keywordflow}{in} options):}
-\DoxyCodeLine{241         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{242         print(\textcolor{stringliteral}{'Error: Oops, your response is invalid, please enter "{}y"{} or "{}n"{}, without quotes.'})}
-\DoxyCodeLine{243         w\_res = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
-\DoxyCodeLine{244     \textcolor{comment}{\# Report response}}
-\DoxyCodeLine{245     settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
-\DoxyCodeLine{246     messages = [\textcolor{stringliteral}{'to'},\textcolor{stringliteral}{'not to'},]}
-\DoxyCodeLine{247     control[\textcolor{stringliteral}{'write\_restart'}] = settings[options.index(w\_res)]}
-\DoxyCodeLine{248     print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{249     print(\textcolor{stringliteral}{'You have requested the program \{:\} write restart files.'}. format(messages[options.index(w\_res)]))}
-\DoxyCodeLine{250 }
-\DoxyCodeLine{251     \textcolor{comment}{\# Query restart frequency}}
-\DoxyCodeLine{252     \textcolor{keywordflow}{if} w\_res==\textcolor{stringliteral}{'y'}:}
-\DoxyCodeLine{253         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{254         print(\textcolor{stringliteral}{'Default: Restart files will written after the whole MMC calculation for each point on the parameter grid.'})}
-\DoxyCodeLine{255         print(\textcolor{stringliteral}{'If you want the restart files to be written more frequently, enter the required step frequency below.'})}
-\DoxyCodeLine{256         print(\textcolor{stringliteral}{'Else, for the default behaviour, enter "{}-\/1"{}.'})}
-\DoxyCodeLine{257         steps = \mbox{\hyperlink{namespacewrite_a5301642c79448d29f87b3506f85a01c8}{query\_step}}(\textcolor{stringliteral}{'Your response'})}
-\DoxyCodeLine{258         \textcolor{keywordflow}{if} steps == -\/1:}
-\DoxyCodeLine{259             control[\textcolor{stringliteral}{'restart\_step'}] = 0}
-\DoxyCodeLine{260         \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{261             control[\textcolor{stringliteral}{'restart\_step'}] = str(steps)}
-\DoxyCodeLine{262 }
-\DoxyCodeLine{263     \textcolor{comment}{\# For QMC calculations, query if Markov chains should be written}}
-\DoxyCodeLine{264     \textcolor{keywordflow}{if} calc==\textcolor{stringliteral}{'b'}:}
-\DoxyCodeLine{265         \textcolor{comment}{\# Query the Output Verbosity}}
-\DoxyCodeLine{266         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{267         print(\textcolor{stringliteral}{'Would you like the program to save the Markov chains (after burning \& thinning)?'})}
-\DoxyCodeLine{268         print(\textcolor{stringliteral}{'y) Yes, I would like a detailed ouput.'})}
-\DoxyCodeLine{269         print(\textcolor{stringliteral}{'n) No, just give me the final energies and optimized parameters.'})}
-\DoxyCodeLine{270         temp = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}y"{} or "{}n"{}): '})}
-\DoxyCodeLine{271         \textcolor{comment}{\# Check verbosity value}}
-\DoxyCodeLine{272         options = [\textcolor{stringliteral}{'y'},\textcolor{stringliteral}{'n'}]}
-\DoxyCodeLine{273         \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (temp \textcolor{keywordflow}{in} options):}
-\DoxyCodeLine{274             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{275             print(\textcolor{stringliteral}{'Error: Oops, your response is invalid, please enter "{}y"{} or "{}n"{}, without quotes.'})}
-\DoxyCodeLine{276             temp = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
-\DoxyCodeLine{277         \textcolor{comment}{\# Report verbosity setting}}
-\DoxyCodeLine{278         settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
-\DoxyCodeLine{279         messages = [\textcolor{stringliteral}{'output'}, \textcolor{stringliteral}{'not output'}]}
-\DoxyCodeLine{280         control[\textcolor{stringliteral}{'write\_chains'}] = settings[options.index(temp)]}
-\DoxyCodeLine{281         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{282         print(\textcolor{stringliteral}{'Your have requested the program to \{:\} the Markov chains.'}.format(messages[options.index(temp)]))}
-\DoxyCodeLine{283 }
-\DoxyCodeLine{284     \textcolor{comment}{\# Query if logfile should be written}}
-\DoxyCodeLine{285     print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{286     print(\textcolor{stringliteral}{'Would you like the program to write a logfile? -\/ Yes (y) or No (n)'})}
-\DoxyCodeLine{287     temp = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}y"{} or "{}n"{}): '})}
-\DoxyCodeLine{288     \textcolor{comment}{\# Check response}}
-\DoxyCodeLine{289     options = [\textcolor{stringliteral}{'y'},\textcolor{stringliteral}{'n'}]}
-\DoxyCodeLine{290     \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (temp \textcolor{keywordflow}{in} options):}
-\DoxyCodeLine{291         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{292         print(\textcolor{stringliteral}{'Error: Oops, your response is invalid, please enter "{}y"{} or "{}n"{}, without quotes.'})}
-\DoxyCodeLine{293         temp = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
-\DoxyCodeLine{294     \textcolor{comment}{\# Report response}}
-\DoxyCodeLine{295     settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
-\DoxyCodeLine{296     messages = [\textcolor{stringliteral}{'to'},\textcolor{stringliteral}{'not to'},]}
-\DoxyCodeLine{297     control[\textcolor{stringliteral}{'write\_log'}] = settings[options.index(temp)]}
-\DoxyCodeLine{298     print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{299     print(\textcolor{stringliteral}{'You have requested the program \{:\} write a logfile.'}. format(messages[options.index(temp)]))}
-\DoxyCodeLine{300 }
-\DoxyCodeLine{301 }
-\DoxyCodeLine{302     \textcolor{comment}{\# Message on defaults}}
-\DoxyCodeLine{303     print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{304     print(\textcolor{stringliteral}{'\#\#\#'})}
-\DoxyCodeLine{305     print(\textcolor{stringliteral}{'For the prompts that follow, enter "{}-\/1"{} if you wish to use the default values.'})}
-\DoxyCodeLine{306     print(\textcolor{stringliteral}{'\#\#\#'})}
-\DoxyCodeLine{307     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{210     \textcolor{comment}{\# Query if restart files should be written}}
+\DoxyCodeLine{211     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{212     print(\textcolor{stringliteral}{'Would you like the program to write restart files? -\/ Yes (y) or No (n)'})}
+\DoxyCodeLine{213     w\_res = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}y"{} or "{}n"{}): '})}
+\DoxyCodeLine{214     \textcolor{comment}{\# Check response}}
+\DoxyCodeLine{215     options = [\textcolor{stringliteral}{'y'},\textcolor{stringliteral}{'n'}]}
+\DoxyCodeLine{216     \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (w\_res \textcolor{keywordflow}{in} options):}
+\DoxyCodeLine{217         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{218         print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}y"{} or "{}n"{}, without quotes.'})}
+\DoxyCodeLine{219         w\_res = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{220     \textcolor{comment}{\# Report response}}
+\DoxyCodeLine{221     settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
+\DoxyCodeLine{222     messages = [\textcolor{stringliteral}{'to'},\textcolor{stringliteral}{'not to'},]}
+\DoxyCodeLine{223     control[\textcolor{stringliteral}{'write\_restart'}] = settings[options.index(w\_res)]}
+\DoxyCodeLine{224     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{225     print(\textcolor{stringliteral}{'You have requested the program \{:\} write restart files.'}. format(messages[options.index(w\_res)]))}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227     \textcolor{comment}{\# Query restart frequency}}
+\DoxyCodeLine{228     \textcolor{keywordflow}{if} w\_res==\textcolor{stringliteral}{'y'}:}
+\DoxyCodeLine{229         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{230         print(\textcolor{stringliteral}{'Default: Restart files will written after the whole MMC calculation for each point on the parameter grid.'})}
+\DoxyCodeLine{231         print(\textcolor{stringliteral}{'If you want the restart files to be written more frequently, enter the required step frequency below.'})}
+\DoxyCodeLine{232         print(\textcolor{stringliteral}{'Else, for the default behaviour, enter "{}-\/1"{}.'})}
+\DoxyCodeLine{233         steps = \mbox{\hyperlink{namespacewrite_a5301642c79448d29f87b3506f85a01c8}{query\_step}}(\textcolor{stringliteral}{'Your response'})}
+\DoxyCodeLine{234         \textcolor{keywordflow}{if} steps == -\/1:}
+\DoxyCodeLine{235             control[\textcolor{stringliteral}{'restart\_step'}] = 0}
+\DoxyCodeLine{236         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{237             control[\textcolor{stringliteral}{'restart\_step'}] = str(steps)}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239     \textcolor{comment}{\# For QMC calculations, query if Markov chains should be written}}
+\DoxyCodeLine{240     \textcolor{keywordflow}{if} calc==\textcolor{stringliteral}{'b'}:}
+\DoxyCodeLine{241         \textcolor{comment}{\# Query the Output Verbosity}}
+\DoxyCodeLine{242         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{243         print(\textcolor{stringliteral}{'Would you like the program to save the Markov chains (after burning \& thinning)?'})}
+\DoxyCodeLine{244         print(\textcolor{stringliteral}{'y) Yes, I would like a detailed ouput.'})}
+\DoxyCodeLine{245         print(\textcolor{stringliteral}{'n) No, just give me the final energies and optimized parameters.'})}
+\DoxyCodeLine{246         temp = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}y"{} or "{}n"{}): '})}
+\DoxyCodeLine{247         \textcolor{comment}{\# Check verbosity value}}
+\DoxyCodeLine{248         options = [\textcolor{stringliteral}{'y'},\textcolor{stringliteral}{'n'}]}
+\DoxyCodeLine{249         \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (temp \textcolor{keywordflow}{in} options):}
+\DoxyCodeLine{250             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{251             print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}y"{} or "{}n"{}, without quotes.'})}
+\DoxyCodeLine{252             temp = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{253         \textcolor{comment}{\# Report verbosity setting}}
+\DoxyCodeLine{254         settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
+\DoxyCodeLine{255         messages = [\textcolor{stringliteral}{'output'}, \textcolor{stringliteral}{'not output'}]}
+\DoxyCodeLine{256         control[\textcolor{stringliteral}{'write\_chains'}] = settings[options.index(temp)]}
+\DoxyCodeLine{257         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{258         print(\textcolor{stringliteral}{'Your have requested the program to \{:\} the Markov chains.'}.format(messages[options.index(temp)]))}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260     \textcolor{comment}{\# Query if logfile should be written}}
+\DoxyCodeLine{261     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{262     print(\textcolor{stringliteral}{'Would you like the program to write a logfile? -\/ Yes (y) or No (n)'})}
+\DoxyCodeLine{263     temp = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}y"{} or "{}n"{}): '})}
+\DoxyCodeLine{264     \textcolor{comment}{\# Check response}}
+\DoxyCodeLine{265     options = [\textcolor{stringliteral}{'y'},\textcolor{stringliteral}{'n'}]}
+\DoxyCodeLine{266     \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (temp \textcolor{keywordflow}{in} options):}
+\DoxyCodeLine{267         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{268         print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}y"{} or "{}n"{}, without quotes.'})}
+\DoxyCodeLine{269         temp = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{270     \textcolor{comment}{\# Report response}}
+\DoxyCodeLine{271     settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
+\DoxyCodeLine{272     messages = [\textcolor{stringliteral}{'to'},\textcolor{stringliteral}{'not to'},]}
+\DoxyCodeLine{273     control[\textcolor{stringliteral}{'write\_log'}] = settings[options.index(temp)]}
+\DoxyCodeLine{274     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{275     print(\textcolor{stringliteral}{'You have requested the program \{:\} write a logfile.'}. format(messages[options.index(temp)]))}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278     \textcolor{comment}{\# Message on defaults}}
+\DoxyCodeLine{279     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{280     print(\textcolor{stringliteral}{'\#\#\#'})}
+\DoxyCodeLine{281     print(\textcolor{stringliteral}{'For the prompts that follow, enter "{}-\/1"{} if you wish to use the default values.'})}
+\DoxyCodeLine{282     print(\textcolor{stringliteral}{'\#\#\#'})}
+\DoxyCodeLine{283     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{284 }
+\DoxyCodeLine{285 }
+\DoxyCodeLine{286     \textcolor{comment}{\# Query total number of steps}}
+\DoxyCodeLine{287     steps = \mbox{\hyperlink{namespacewrite_a5301642c79448d29f87b3506f85a01c8}{query\_step}}(\textcolor{stringliteral}{'Enter total number of MMC steps'})}
+\DoxyCodeLine{288     \textcolor{keywordflow}{if} steps > -\/1:}
+\DoxyCodeLine{289         params[\textcolor{stringliteral}{'steps'}] = str(steps)}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{291 }
+\DoxyCodeLine{292     \textcolor{comment}{\# For QMC calculations only, include burning \& thinning steps}}
+\DoxyCodeLine{293     \textcolor{keywordflow}{if} calc==\textcolor{stringliteral}{'b'}:}
+\DoxyCodeLine{294 }
+\DoxyCodeLine{295         \textcolor{comment}{\# Query step size for burning}}
+\DoxyCodeLine{296         b\_step = steps + 1}
+\DoxyCodeLine{297         \textcolor{keywordflow}{while} b\_step >= steps:}
+\DoxyCodeLine{298             b\_step = \mbox{\hyperlink{namespacewrite_a5301642c79448d29f87b3506f85a01c8}{query\_step}}(\textcolor{stringliteral}{'Enter an integer step-\/size for burning'})}
+\DoxyCodeLine{299             \textcolor{keywordflow}{if} b\_step >= steps:}
+\DoxyCodeLine{300                 print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{301                 print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting burn\_steps < \{:\} as you chose total\_steps=\{:\}.'}.format(steps,steps))}
+\DoxyCodeLine{302                 print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{303                 print(\textcolor{stringliteral}{'Alternatively, enter "{}-\/1"{} (without quotes) for default.'})}
+\DoxyCodeLine{304                 print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{305                 \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
+\DoxyCodeLine{306         \textcolor{keywordflow}{if} b\_step > -\/1:}
+\DoxyCodeLine{307             params[\textcolor{stringliteral}{'burn\_step'}] = str(b\_step)}
 \DoxyCodeLine{308 }
-\DoxyCodeLine{309 }
-\DoxyCodeLine{310     \textcolor{comment}{\# Query total number of steps}}
-\DoxyCodeLine{311     steps = \mbox{\hyperlink{namespacewrite_a5301642c79448d29f87b3506f85a01c8}{query\_step}}(\textcolor{stringliteral}{'Enter total number of MMC steps'})}
-\DoxyCodeLine{312     \textcolor{keywordflow}{if} steps > -\/1:}
-\DoxyCodeLine{313         params[\textcolor{stringliteral}{'steps'}] = str(steps)}
-\DoxyCodeLine{314 }
-\DoxyCodeLine{315 }
-\DoxyCodeLine{316     \textcolor{comment}{\# For QMC calculations only, include burning \& thinning steps}}
-\DoxyCodeLine{317     \textcolor{keywordflow}{if} calc==\textcolor{stringliteral}{'b'}:}
-\DoxyCodeLine{318 }
-\DoxyCodeLine{319         \textcolor{comment}{\# Query step size for burning}}
-\DoxyCodeLine{320         b\_step = steps + 1}
-\DoxyCodeLine{321         \textcolor{keywordflow}{while} b\_step >= steps:}
-\DoxyCodeLine{322             b\_step = \mbox{\hyperlink{namespacewrite_a5301642c79448d29f87b3506f85a01c8}{query\_step}}(\textcolor{stringliteral}{'Enter an integer step-\/size for burning'})}
-\DoxyCodeLine{323             \textcolor{keywordflow}{if} b\_step >= steps:}
-\DoxyCodeLine{324                 print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{325                 print(\textcolor{stringliteral}{'Error: Oops, your response is invalid. The program is expecting burn\_steps < \{:\} as you chose total\_steps=\{:\}.'}.format(steps,steps))}
-\DoxyCodeLine{326                 print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{327                 print(\textcolor{stringliteral}{'Alternatively, enter "{}-\/1"{} (without quotes) for default.'})}
-\DoxyCodeLine{328                 print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{329                 \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
-\DoxyCodeLine{330         \textcolor{keywordflow}{if} b\_step > -\/1:}
-\DoxyCodeLine{331             params[\textcolor{stringliteral}{'burn\_step'}] = str(b\_step)}
-\DoxyCodeLine{332 }
-\DoxyCodeLine{333         \textcolor{comment}{\# Query step size for thinning}}
-\DoxyCodeLine{334         t\_max = steps -\/ b\_step}
-\DoxyCodeLine{335         t\_step = t\_max + 1}
-\DoxyCodeLine{336         \textcolor{keywordflow}{while} t\_step >= t\_max:}
-\DoxyCodeLine{337             t\_step = \mbox{\hyperlink{namespacewrite_a5301642c79448d29f87b3506f85a01c8}{query\_step}}(\textcolor{stringliteral}{'Enter an integer step-\/size for thinning'})}
-\DoxyCodeLine{338             \textcolor{keywordflow}{if}  t\_step >= t\_max:}
-\DoxyCodeLine{339                 print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{340                 print(\textcolor{stringliteral}{'Error: Oops, your response is invalid. The program is expecting thin\_steps < \{:\} as your chosen total\_steps-\/burn\_steps=\{:\}.'}.format(t\_max,t\_max))}
-\DoxyCodeLine{341                 print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{342                 print(\textcolor{stringliteral}{'Alternatively, enter "{}-\/1"{} (without quotes) for default.'})}
-\DoxyCodeLine{343                 print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{344                 \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
-\DoxyCodeLine{345         \textcolor{keywordflow}{if} t\_step > -\/1:}
-\DoxyCodeLine{346             params[\textcolor{stringliteral}{'thin\_step'}] = str(t\_step)}
+\DoxyCodeLine{309         \textcolor{comment}{\# Query step size for thinning}}
+\DoxyCodeLine{310         t\_max = steps -\/ b\_step}
+\DoxyCodeLine{311         t\_step = t\_max + 1}
+\DoxyCodeLine{312         \textcolor{keywordflow}{while} t\_step >= t\_max:}
+\DoxyCodeLine{313             t\_step = \mbox{\hyperlink{namespacewrite_a5301642c79448d29f87b3506f85a01c8}{query\_step}}(\textcolor{stringliteral}{'Enter an integer step-\/size for thinning'})}
+\DoxyCodeLine{314             \textcolor{keywordflow}{if}  t\_step >= t\_max:}
+\DoxyCodeLine{315                 print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{316                 print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting thin\_steps < \{:\} as your chosen total\_steps-\/burn\_steps=\{:\}.'}.format(t\_max,t\_max))}
+\DoxyCodeLine{317                 print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{318                 print(\textcolor{stringliteral}{'Alternatively, enter "{}-\/1"{} (without quotes) for default.'})}
+\DoxyCodeLine{319         \textcolor{keywordflow}{if} t\_step > -\/1:}
+\DoxyCodeLine{320             params[\textcolor{stringliteral}{'thin\_step'}] = str(t\_step)}
+\DoxyCodeLine{321 }
+\DoxyCodeLine{322 }
+\DoxyCodeLine{323     \textcolor{comment}{\# Query rcut}}
+\DoxyCodeLine{324     temp = \mbox{\hyperlink{namespacewrite_abcf50fa9f656fcc5938355f67ee6744a}{query\_posfloat}}(\textcolor{stringliteral}{'Enter cutoff radial distance (in Bohr) for MMC search'})}
+\DoxyCodeLine{325     \textcolor{keywordflow}{if} temp != -\/1:}
+\DoxyCodeLine{326         params[\textcolor{stringliteral}{'rcut'}] = str(temp)}
+\DoxyCodeLine{327 }
+\DoxyCodeLine{328 }
+\DoxyCodeLine{329     \textcolor{comment}{\# Query sigma}}
+\DoxyCodeLine{330     temp = \mbox{\hyperlink{namespacewrite_abcf50fa9f656fcc5938355f67ee6744a}{query\_posfloat}}(\textcolor{stringliteral}{'Enter standard deviation of the Gaussian used to propose MMC steps'})}
+\DoxyCodeLine{331     \textcolor{keywordflow}{if} temp != -\/1:}
+\DoxyCodeLine{332         params[\textcolor{stringliteral}{'sigma'}] = str(temp)}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{334 }
+\DoxyCodeLine{335     \textcolor{comment}{\# Problem specific parameters}}
+\DoxyCodeLine{336 }
+\DoxyCodeLine{337     \textcolor{comment}{\# Quantum Harmonic Oscillator}}
+\DoxyCodeLine{338     \textcolor{keywordflow}{if} sys==\textcolor{stringliteral}{'a'}:}
+\DoxyCodeLine{339 }
+\DoxyCodeLine{340         \textcolor{comment}{\# Parameter information -\/ alpha}}
+\DoxyCodeLine{341         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{342         print(\textcolor{stringliteral}{'Parameter "{}alpha"{} is the factor in the exponent of the Quantum Harmonic Oscillator system.'})}
+\DoxyCodeLine{343         }
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345         \textcolor{comment}{\# Check if user wants defaults}}
+\DoxyCodeLine{346         default = \mbox{\hyperlink{namespacewrite_a6ead226a81a790198f4fe23e69a7a7e3}{query\_default}}(\textcolor{stringliteral}{'alpha'})}
 \DoxyCodeLine{347 }
-\DoxyCodeLine{348 }
-\DoxyCodeLine{349     \textcolor{comment}{\# Query rcut}}
-\DoxyCodeLine{350     temp = \mbox{\hyperlink{namespacewrite_abcf50fa9f656fcc5938355f67ee6744a}{query\_posfloat}}(\textcolor{stringliteral}{'Enter cutoff radial distance (in Bohr) for MMC search'})}
-\DoxyCodeLine{351     \textcolor{keywordflow}{if} temp != -\/1:}
-\DoxyCodeLine{352         params[\textcolor{stringliteral}{'rcut'}] = str(temp)}
-\DoxyCodeLine{353 }
-\DoxyCodeLine{354 }
-\DoxyCodeLine{355     \textcolor{comment}{\# Query sigma}}
-\DoxyCodeLine{356     temp = \mbox{\hyperlink{namespacewrite_abcf50fa9f656fcc5938355f67ee6744a}{query\_posfloat}}(\textcolor{stringliteral}{'Enter standard deviation of the Gaussian used to propose MMC steps'})}
-\DoxyCodeLine{357     \textcolor{keywordflow}{if} temp != -\/1:}
-\DoxyCodeLine{358         params[\textcolor{stringliteral}{'sigma'}] = str(temp)}
-\DoxyCodeLine{359 }
-\DoxyCodeLine{360 }
-\DoxyCodeLine{361     \textcolor{comment}{\# Problem specific parameters}}
-\DoxyCodeLine{362 }
-\DoxyCodeLine{363     \textcolor{comment}{\# Quantum Harmonic Oscillator}}
-\DoxyCodeLine{364     \textcolor{keywordflow}{if} sys==\textcolor{stringliteral}{'a'}:}
-\DoxyCodeLine{365 }
-\DoxyCodeLine{366         \textcolor{comment}{\# Parameter information -\/ alpha}}
-\DoxyCodeLine{367         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{368         print(\textcolor{stringliteral}{'Parameter "{}alpha"{} is the factor in the exponent of the Quantum Harmonic Oscillator system.'})}
-\DoxyCodeLine{369         }
-\DoxyCodeLine{370 }
-\DoxyCodeLine{371         \textcolor{comment}{\# Check if user wants defaults}}
-\DoxyCodeLine{372         default = \mbox{\hyperlink{namespacewrite_a6ead226a81a790198f4fe23e69a7a7e3}{query\_default}}(\textcolor{stringliteral}{'alpha'})}
+\DoxyCodeLine{348         \textcolor{comment}{\# If not defaults, query grid for alpha}}
+\DoxyCodeLine{349         \textcolor{keywordflow}{if} default == \textcolor{stringliteral}{'n'}:}
+\DoxyCodeLine{350             mini, maxi, num = \mbox{\hyperlink{namespacewrite_afa3fbcda7589cff5d02ac8e298ae8b05}{query\_grid}}(\textcolor{stringliteral}{'alpha'})}
+\DoxyCodeLine{351             params[\textcolor{stringliteral}{'alpha'}] = \textcolor{stringliteral}{'\{:\}, \{:\}, \{:\}'}.format(mini, maxi, num)}
+\DoxyCodeLine{352     }
+\DoxyCodeLine{353     \textcolor{comment}{\# Hydrogen Systems}}
+\DoxyCodeLine{354     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{355 }
+\DoxyCodeLine{356         \textcolor{comment}{\# Check number of Principal Quantum Numbers}}
+\DoxyCodeLine{357         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{358         print(\textcolor{stringliteral}{'How many principal quantum numbers (1 or 2) would you like to include in your calculation?'})}
+\DoxyCodeLine{359         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{360         print(\textcolor{stringliteral}{'(Default: include\_pqn=1)'})}
+\DoxyCodeLine{361         pqn = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response (1 or 2): '})}
+\DoxyCodeLine{362         options = [\textcolor{stringliteral}{'1'},\textcolor{stringliteral}{'2'}]}
+\DoxyCodeLine{363         \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (pqn \textcolor{keywordflow}{in} options):}
+\DoxyCodeLine{364             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{365             print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}1"{} or "{}2"{}, without quotes.'})}
+\DoxyCodeLine{366             pqn = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{367         params[\textcolor{stringliteral}{'include\_pqn'}] = pqn}
+\DoxyCodeLine{368 }
+\DoxyCodeLine{369         \textcolor{comment}{\# Parameter information -\/ c1}}
+\DoxyCodeLine{370         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{371         print(\textcolor{stringliteral}{'Parameter "{}c1"{} is a coefficient in the Hydrogen wavefunctions.'})}
+\DoxyCodeLine{372         print(\textcolor{stringliteral}{''})}
 \DoxyCodeLine{373 }
-\DoxyCodeLine{374         \textcolor{comment}{\# If not defaults, query grid for alpha}}
-\DoxyCodeLine{375         \textcolor{keywordflow}{if} default == \textcolor{stringliteral}{'n'}:}
-\DoxyCodeLine{376             mini, maxi, num = \mbox{\hyperlink{namespacewrite_afa3fbcda7589cff5d02ac8e298ae8b05}{query\_grid}}(\textcolor{stringliteral}{'alpha'})}
-\DoxyCodeLine{377             params[\textcolor{stringliteral}{'alpha'}] = \textcolor{stringliteral}{'\{:\}, \{:\}, \{:\}'}.format(mini, maxi, num)}
-\DoxyCodeLine{378     }
-\DoxyCodeLine{379     \textcolor{comment}{\# Hydrogen Systems}}
-\DoxyCodeLine{380     \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{381 }
-\DoxyCodeLine{382         \textcolor{comment}{\# Check number of Principal Quantum Numbers}}
-\DoxyCodeLine{383         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{384         print(\textcolor{stringliteral}{'How many principal quantum numbers (1 or 2) would you like to include in your calculation?'})}
-\DoxyCodeLine{385         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{386         print(\textcolor{stringliteral}{'(Default: include\_pqn=1)'})}
-\DoxyCodeLine{387         pqn = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response (1 or 2): '})}
-\DoxyCodeLine{388         options = [\textcolor{stringliteral}{'1'},\textcolor{stringliteral}{'2'}]}
-\DoxyCodeLine{389         \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (pqn \textcolor{keywordflow}{in} options):}
-\DoxyCodeLine{390             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{391             print(\textcolor{stringliteral}{'Error: Oops, your response is invalid, please enter "{}1"{} or "{}2"{}, without quotes.'})}
-\DoxyCodeLine{392             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{393             \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
-\DoxyCodeLine{394             pqn = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
-\DoxyCodeLine{395         params[\textcolor{stringliteral}{'include\_pqn'}] = pqn}
+\DoxyCodeLine{374         \textcolor{comment}{\# Check if user wants defaults}}
+\DoxyCodeLine{375         default = \mbox{\hyperlink{namespacewrite_a6ead226a81a790198f4fe23e69a7a7e3}{query\_default}}(\textcolor{stringliteral}{'c1'})}
+\DoxyCodeLine{376 }
+\DoxyCodeLine{377         \textcolor{comment}{\# If not defaults, query grid for c1}}
+\DoxyCodeLine{378         \textcolor{keywordflow}{if} default == \textcolor{stringliteral}{'n'}:}
+\DoxyCodeLine{379             mini, maxi, num = \mbox{\hyperlink{namespacewrite_afa3fbcda7589cff5d02ac8e298ae8b05}{query\_grid}}(\textcolor{stringliteral}{'c1'})}
+\DoxyCodeLine{380             params[\textcolor{stringliteral}{'c1'}] = \textcolor{stringliteral}{'\{:\}, \{:\}, \{:\}'}.format(mini, maxi, num)}
+\DoxyCodeLine{381         }
+\DoxyCodeLine{382         \textcolor{keywordflow}{if} pqn == \textcolor{stringliteral}{'2'}:}
+\DoxyCodeLine{383 }
+\DoxyCodeLine{384             \textcolor{comment}{\# Parameter information -\/ c2}}
+\DoxyCodeLine{385             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{386             print(\textcolor{stringliteral}{'Parameter "{}c2"{} is a coefficient in the Hydrogen wavefunctions, required when pqn=2.'})}
+\DoxyCodeLine{387             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{388 }
+\DoxyCodeLine{389             \textcolor{comment}{\# Check if user wants defaults}}
+\DoxyCodeLine{390             default = \mbox{\hyperlink{namespacewrite_a6ead226a81a790198f4fe23e69a7a7e3}{query\_default}}(\textcolor{stringliteral}{'c2'})}
+\DoxyCodeLine{391 }
+\DoxyCodeLine{392             \textcolor{comment}{\# If not defaults, query grid for c2}}
+\DoxyCodeLine{393             \textcolor{keywordflow}{if} default == \textcolor{stringliteral}{'n'}:}
+\DoxyCodeLine{394                 mini, maxi, num = \mbox{\hyperlink{namespacewrite_afa3fbcda7589cff5d02ac8e298ae8b05}{query\_grid}}(\textcolor{stringliteral}{'c2'})}
+\DoxyCodeLine{395                 params[\textcolor{stringliteral}{'c2'}] = \textcolor{stringliteral}{'\{:\}, \{:\}, \{:\}'}.format(mini, maxi, num)}
 \DoxyCodeLine{396 }
-\DoxyCodeLine{397         \textcolor{comment}{\# Parameter information -\/ c1}}
+\DoxyCodeLine{397         \textcolor{comment}{\# Parameter information -\/ bond}}
 \DoxyCodeLine{398         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{399         print(\textcolor{stringliteral}{'Parameter "{}c1"{} is a coefficient in the Hydrogen wavefunctions.'})}
+\DoxyCodeLine{399         print(\textcolor{stringliteral}{'Parameter "{}bond"{} is is the Hydrogen bondlength in Bohr units.'})}
 \DoxyCodeLine{400         print(\textcolor{stringliteral}{''})}
 \DoxyCodeLine{401 }
 \DoxyCodeLine{402         \textcolor{comment}{\# Check if user wants defaults}}
-\DoxyCodeLine{403         default = \mbox{\hyperlink{namespacewrite_a6ead226a81a790198f4fe23e69a7a7e3}{query\_default}}(\textcolor{stringliteral}{'c1'})}
+\DoxyCodeLine{403         default = \mbox{\hyperlink{namespacewrite_a6ead226a81a790198f4fe23e69a7a7e3}{query\_default}}(\textcolor{stringliteral}{'bond'})}
 \DoxyCodeLine{404 }
-\DoxyCodeLine{405         \textcolor{comment}{\# If not defaults, query grid for c1}}
+\DoxyCodeLine{405         \textcolor{comment}{\# If not defaults, query grid for bond}}
 \DoxyCodeLine{406         \textcolor{keywordflow}{if} default == \textcolor{stringliteral}{'n'}:}
-\DoxyCodeLine{407             mini, maxi, num = \mbox{\hyperlink{namespacewrite_afa3fbcda7589cff5d02ac8e298ae8b05}{query\_grid}}(\textcolor{stringliteral}{'c1'})}
-\DoxyCodeLine{408             params[\textcolor{stringliteral}{'c1'}] = \textcolor{stringliteral}{'\{:\}, \{:\}, \{:\}'}.format(mini, maxi, num)}
-\DoxyCodeLine{409         }
-\DoxyCodeLine{410         \textcolor{keywordflow}{if} pqn == \textcolor{stringliteral}{'2'}:}
-\DoxyCodeLine{411 }
-\DoxyCodeLine{412             \textcolor{comment}{\# Parameter information -\/ c2}}
-\DoxyCodeLine{413             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{414             print(\textcolor{stringliteral}{'Parameter "{}c2"{} is a coefficient in the Hydrogen wavefunctions, required when pqn=2.'})}
-\DoxyCodeLine{415             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{416 }
-\DoxyCodeLine{417             \textcolor{comment}{\# Check if user wants defaults}}
-\DoxyCodeLine{418             default = \mbox{\hyperlink{namespacewrite_a6ead226a81a790198f4fe23e69a7a7e3}{query\_default}}(\textcolor{stringliteral}{'c2'})}
-\DoxyCodeLine{419 }
-\DoxyCodeLine{420             \textcolor{comment}{\# If not defaults, query grid for c2}}
-\DoxyCodeLine{421             \textcolor{keywordflow}{if} default == \textcolor{stringliteral}{'n'}:}
-\DoxyCodeLine{422                 mini, maxi, num = \mbox{\hyperlink{namespacewrite_afa3fbcda7589cff5d02ac8e298ae8b05}{query\_grid}}(\textcolor{stringliteral}{'c2'})}
-\DoxyCodeLine{423                 params[\textcolor{stringliteral}{'c2'}] = \textcolor{stringliteral}{'\{:\}, \{:\}, \{:\}'}.format(mini, maxi, num)}
-\DoxyCodeLine{424 }
-\DoxyCodeLine{425         \textcolor{comment}{\# Parameter information -\/ bond}}
-\DoxyCodeLine{426         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{427         print(\textcolor{stringliteral}{'Parameter "{}bond"{} is is the Hydrogen bondlength in Bohr units.'})}
-\DoxyCodeLine{428         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{429 }
-\DoxyCodeLine{430         \textcolor{comment}{\# Check if user wants defaults}}
-\DoxyCodeLine{431         default = \mbox{\hyperlink{namespacewrite_a6ead226a81a790198f4fe23e69a7a7e3}{query\_default}}(\textcolor{stringliteral}{'bond'})}
-\DoxyCodeLine{432 }
-\DoxyCodeLine{433         \textcolor{comment}{\# If not defaults, query grid for bond}}
-\DoxyCodeLine{434         \textcolor{keywordflow}{if} default == \textcolor{stringliteral}{'n'}:}
-\DoxyCodeLine{435             mini, maxi, num = \mbox{\hyperlink{namespacewrite_afa3fbcda7589cff5d02ac8e298ae8b05}{query\_grid}}(\textcolor{stringliteral}{'bond'})}
-\DoxyCodeLine{436             params[\textcolor{stringliteral}{'bond'}] = \textcolor{stringliteral}{'\{:\}, \{:\}, \{:\}'}.format(mini, maxi, num)}
-\DoxyCodeLine{437     }
-\DoxyCodeLine{438     \textcolor{comment}{\# Return dictionaries with user inputs}}
-\DoxyCodeLine{439     \textcolor{keywordflow}{return} control, params}
-\DoxyCodeLine{440 }
-\DoxyCodeLine{441 }
+\DoxyCodeLine{407             mini, maxi, num = \mbox{\hyperlink{namespacewrite_afa3fbcda7589cff5d02ac8e298ae8b05}{query\_grid}}(\textcolor{stringliteral}{'bond'})}
+\DoxyCodeLine{408             params[\textcolor{stringliteral}{'bond'}] = \textcolor{stringliteral}{'\{:\}, \{:\}, \{:\}'}.format(mini, maxi, num)}
+\DoxyCodeLine{409     }
+\DoxyCodeLine{410     \textcolor{comment}{\# Return dictionaries with user inputs}}
+\DoxyCodeLine{411     \textcolor{keywordflow}{return} control, params}
+\DoxyCodeLine{412 }
+\DoxyCodeLine{413 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -727,35 +699,35 @@ Major subroutine that writes the input file params.\+txt.
 \end{DoxyParams}
 
 
-Definition at line 447 of file write.\+py.
+Definition at line 419 of file write.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{447 \textcolor{keyword}{def }\mbox{\hyperlink{namespacewrite_ab06a12b89b6110c4bcf845485c8f4b9b}{write\_params}}(control,params):}
-\DoxyCodeLine{448     }
-\DoxyCodeLine{449     \textcolor{comment}{\# Open the file}}
-\DoxyCodeLine{450     f = open(\textcolor{stringliteral}{'params.txt'},\textcolor{stringliteral}{'w'})}
-\DoxyCodeLine{451 }
-\DoxyCodeLine{452     \textcolor{comment}{\# CONTROL namelist}}
-\DoxyCodeLine{453     f.write(\textcolor{stringliteral}{'\&CONTROL\(\backslash\)n'})}
-\DoxyCodeLine{454     \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} control.keys():}
-\DoxyCodeLine{455         f.write(tag+\textcolor{stringliteral}{' \(\backslash\)t= '}+control[tag]+\textcolor{stringliteral}{'\(\backslash\)n'})}
-\DoxyCodeLine{456     f.write(\textcolor{stringliteral}{'/\(\backslash\)n'})}
-\DoxyCodeLine{457 }
-\DoxyCodeLine{458     \textcolor{comment}{\# PARAMETERS namelist}}
-\DoxyCodeLine{459     \textcolor{keywordflow}{if} params == \textcolor{stringliteral}{'test'}:}
-\DoxyCodeLine{460         f.write(\textcolor{stringliteral}{'\&PARAMETERS\(\backslash\)n'})}
-\DoxyCodeLine{461         f.write(\textcolor{stringliteral}{'\(\backslash\)\(\backslash\) \(\backslash\)n'})}
-\DoxyCodeLine{462     \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{463         f.write(\textcolor{stringliteral}{'\&PARAMETERS\(\backslash\)n'})}
-\DoxyCodeLine{464         sys = control[\textcolor{stringliteral}{'p\_system'}].replace(\textcolor{stringliteral}{"{}'"{}},\textcolor{stringliteral}{"{}"{}})}
-\DoxyCodeLine{465 }
-\DoxyCodeLine{466         \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} params.keys():}
-\DoxyCodeLine{467             f.write(sys+\textcolor{stringliteral}{'\%'}+tag+\textcolor{stringliteral}{' \(\backslash\)t= '}+params[tag]+\textcolor{stringliteral}{'\(\backslash\)n'})}
-\DoxyCodeLine{468         f.write(\textcolor{stringliteral}{'/\(\backslash\)n'})}
-\DoxyCodeLine{469 }
-\DoxyCodeLine{470     \textcolor{comment}{\# Close the file}}
-\DoxyCodeLine{471     f.close()}
+\DoxyCodeLine{419 \textcolor{keyword}{def }\mbox{\hyperlink{namespacewrite_ab06a12b89b6110c4bcf845485c8f4b9b}{write\_params}}(control,params):}
+\DoxyCodeLine{420     }
+\DoxyCodeLine{421     \textcolor{comment}{\# Open the file}}
+\DoxyCodeLine{422     f = open(\textcolor{stringliteral}{'params.txt'},\textcolor{stringliteral}{'w'})}
+\DoxyCodeLine{423 }
+\DoxyCodeLine{424     \textcolor{comment}{\# CONTROL namelist}}
+\DoxyCodeLine{425     f.write(\textcolor{stringliteral}{'\&CONTROL\(\backslash\)n'})}
+\DoxyCodeLine{426     \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} control.keys():}
+\DoxyCodeLine{427         f.write(tag+\textcolor{stringliteral}{' \(\backslash\)t= '}+control[tag]+\textcolor{stringliteral}{'\(\backslash\)n'})}
+\DoxyCodeLine{428     f.write(\textcolor{stringliteral}{'/\(\backslash\)n'})}
+\DoxyCodeLine{429 }
+\DoxyCodeLine{430     \textcolor{comment}{\# PARAMETERS namelist}}
+\DoxyCodeLine{431     \textcolor{keywordflow}{if} params == \textcolor{stringliteral}{'test'}:}
+\DoxyCodeLine{432         f.write(\textcolor{stringliteral}{'\&PARAMETERS\(\backslash\)n'})}
+\DoxyCodeLine{433         f.write(\textcolor{stringliteral}{'\(\backslash\)\(\backslash\) \(\backslash\)n'})}
+\DoxyCodeLine{434     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{435         f.write(\textcolor{stringliteral}{'\&PARAMETERS\(\backslash\)n'})}
+\DoxyCodeLine{436         sys = control[\textcolor{stringliteral}{'p\_system'}].replace(\textcolor{stringliteral}{"{}'"{}},\textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{437 }
+\DoxyCodeLine{438         \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} params.keys():}
+\DoxyCodeLine{439             f.write(sys+\textcolor{stringliteral}{'\%'}+tag+\textcolor{stringliteral}{' \(\backslash\)t= '}+params[tag]+\textcolor{stringliteral}{'\(\backslash\)n'})}
+\DoxyCodeLine{440         f.write(\textcolor{stringliteral}{'/\(\backslash\)n'})}
+\DoxyCodeLine{441 }
+\DoxyCodeLine{442     \textcolor{comment}{\# Close the file}}
+\DoxyCodeLine{443     f.close()}
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
