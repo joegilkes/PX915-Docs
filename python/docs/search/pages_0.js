@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_3cem_3e_3cstrong_3e_5bproject_20name_5d_3c_2fstrong_3e_3c_2fem_3e_20readme_118',['&lt;em&gt;&lt;strong&gt;[Project Name]&lt;/strong&gt;&lt;/em&gt; README',['../md_repo__r_e_a_d_m_e.html',1,'']]]
+  ['project_20name_20readme_118',['Project Name README',['../md_repo__r_e_a_d_m_e.html',1,'']]],
+  ['python_20documentation_20main_20page_119',['Python Documentation Main Page',['../index.html',1,'']]]
 ];
