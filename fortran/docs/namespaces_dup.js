@@ -87,8 +87,8 @@ var namespaces_dup =
       [ "write_h2plus_equilibration", "namespacewrite__netcdf.html#a45c5f8affdc7b8d275bc35f8b70337f4", null ],
       [ "write_h2_equilibration", "namespacewrite__netcdf.html#adc83694755df0f3d9228fb9aa0874452", null ],
       [ "write_qho_main", "namespacewrite__netcdf.html#a52defafffa63a95ffa92b26d2cb73b63", null ],
-      [ "write_h2plus_main", "namespacewrite__netcdf.html#accb73605be2b95f9e6e7e2b39b62c0b6", null ],
-      [ "write_h2_main", "namespacewrite__netcdf.html#adf301f52f20c062efd625273263426e0", null ],
+      [ "write_h2plus_main", "namespacewrite__netcdf.html#a4bf61fdf7f8ca9add5bb9b1663906542", null ],
+      [ "write_h2_main", "namespacewrite__netcdf.html#a8d49ffe8b78e85c17f3127d8dc89a83b", null ],
       [ "position_output_1d", "namespacewrite__netcdf.html#a2bb2db22caee970631d3e9c8f1ee16cc", null ],
       [ "position_output_3d", "namespacewrite__netcdf.html#ad07f7eae9a3f4604743ca2d18addd413", null ],
       [ "append_to_array", "namespacewrite__netcdf.html#a6830bd805591aad1ec622d12037dd99d", null ]
