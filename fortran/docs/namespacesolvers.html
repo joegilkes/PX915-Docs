@@ -110,7 +110,7 @@ Functions/Subroutines</h2></td></tr>
 <tr class="memdesc:a7d32620a8f8a8780a0b0ef83c490e8f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates value of the wavefunction of a hydrogen 1s orbital.  <a href="namespacesolvers.html#a7d32620a8f8a8780a0b0ef83c490e8f7">More...</a><br /></td></tr>
 <tr class="separator:a7d32620a8f8a8780a0b0ef83c490e8f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89943685e3d86544f0261f24fac44419"><td class="memItemLeft" align="right" valign="top">real(real64) function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesolvers.html#a89943685e3d86544f0261f24fac44419">h2s_wfn</a> (r_elec, R_nuc)</td></tr>
-<tr class="memdesc:a89943685e3d86544f0261f24fac44419"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates value of the wavefunction of a hydrogen 2s orbital.  <a href="namespacesolvers.html#a89943685e3d86544f0261f24fac44419">More...</a><br /></td></tr>
+<tr class="memdesc:a89943685e3d86544f0261f24fac44419"><td class="mdescLeft">&#160;</td><td class="mdescRight">[DEPRECATED] Calculates value of the wavefunction of a hydrogen 2s orbital.  <a href="namespacesolvers.html#a89943685e3d86544f0261f24fac44419">More...</a><br /></td></tr>
 <tr class="separator:a89943685e3d86544f0261f24fac44419"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d705d11696b64991f1624e298067bed"><td class="memItemLeft" align="right" valign="top">real(real64) function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesolvers.html#a6d705d11696b64991f1624e298067bed">h_2_plus_wfn</a> (c, r, R_a, R_b)</td></tr>
 <tr class="memdesc:a6d705d11696b64991f1624e298067bed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates trial wavefunction for the \( H_{2}^{+} \) problem.  <a href="namespacesolvers.html#a6d705d11696b64991f1624e298067bed">More...</a><br /></td></tr>
@@ -122,19 +122,22 @@ Functions/Subroutines</h2></td></tr>
 <tr class="memdesc:a9cc5ffb282a9d15708307d84f6cf147f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates local energy for the \( H_{2}^{+} \) problem.  <a href="namespacesolvers.html#a9cc5ffb282a9d15708307d84f6cf147f">More...</a><br /></td></tr>
 <tr class="separator:a9cc5ffb282a9d15708307d84f6cf147f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb91c2bfc7ae441b3e24f83d0f49d55a"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesolvers.html#acb91c2bfc7ae441b3e24f83d0f49d55a">h_2_plus_update_c</a> (c_old, gradient, c_new)</td></tr>
+<tr class="memdesc:acb91c2bfc7ae441b3e24f83d0f49d55a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the c parameter in the \( H_{2}^{+} \) problem by dampened steepest descent.  <a href="namespacesolvers.html#acb91c2bfc7ae441b3e24f83d0f49d55a">More...</a><br /></td></tr>
 <tr class="separator:acb91c2bfc7ae441b3e24f83d0f49d55a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38259c21a02a250a91f45d79e4165742"><td class="memItemLeft" align="right" valign="top">real(real64) function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesolvers.html#a38259c21a02a250a91f45d79e4165742">h_2_cusp</a> (s)</td></tr>
+<tr class="memdesc:a38259c21a02a250a91f45d79e4165742"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates a value for <b>a</b> given the bond length <b>s</b> by Newton-Raphson iteration.  <a href="namespacesolvers.html#a38259c21a02a250a91f45d79e4165742">More...</a><br /></td></tr>
 <tr class="separator:a38259c21a02a250a91f45d79e4165742"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac603f31a67286a6e89588cf4de29bd1b"><td class="memItemLeft" align="right" valign="top">real(real64) function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesolvers.html#ac603f31a67286a6e89588cf4de29bd1b">h_2_wfn</a> (a, beta, r_1, r_2, R_a, R_b)</td></tr>
-<tr class="memdesc:ac603f31a67286a6e89588cf4de29bd1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">{UPDATE ME} Calculates trial wavefunction for the \( H_{2} \) problem.  <a href="namespacesolvers.html#ac603f31a67286a6e89588cf4de29bd1b">More...</a><br /></td></tr>
+<tr class="memdesc:ac603f31a67286a6e89588cf4de29bd1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates trial wavefunction for the \( H_{2} \) problem.  <a href="namespacesolvers.html#ac603f31a67286a6e89588cf4de29bd1b">More...</a><br /></td></tr>
 <tr class="separator:ac603f31a67286a6e89588cf4de29bd1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac30d1c7141f673647e837524ecb26b07"><td class="memItemLeft" align="right" valign="top">real(real64) function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesolvers.html#ac30d1c7141f673647e837524ecb26b07">h_2_prob</a> (a, beta, r_1_current, r_2_current, r_1_next, r_2_next, R_a, R_b)</td></tr>
 <tr class="memdesc:ac30d1c7141f673647e837524ecb26b07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates transition probability for the \( H_{2} \) problem.  <a href="namespacesolvers.html#ac30d1c7141f673647e837524ecb26b07">More...</a><br /></td></tr>
 <tr class="separator:ac30d1c7141f673647e837524ecb26b07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9afbcdcc0405d544d4441e9786f440a2"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesolvers.html#a9afbcdcc0405d544d4441e9786f440a2">h_2_energy</a> (a, beta, r_1, r_2, R_a, R_b, E_loc, DphiDbeta)</td></tr>
-<tr class="memdesc:a9afbcdcc0405d544d4441e9786f440a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates local energy for the \( H_{2} \) problem.  <a href="namespacesolvers.html#a9afbcdcc0405d544d4441e9786f440a2">More...</a><br /></td></tr>
+<tr class="memdesc:a9afbcdcc0405d544d4441e9786f440a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">{UPDATE ME} Calculates local energy for the \( H_{2} \) problem.  <a href="namespacesolvers.html#a9afbcdcc0405d544d4441e9786f440a2">More...</a><br /></td></tr>
 <tr class="separator:a9afbcdcc0405d544d4441e9786f440a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b4d370a4ee50b231f53058ab62e4084"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesolvers.html#a4b4d370a4ee50b231f53058ab62e4084">h_2_update_beta</a> (beta_old, gradient, beta_new)</td></tr>
+<tr class="memdesc:a4b4d370a4ee50b231f53058ab62e4084"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the \( \beta \) parameter in the \( H_{2}^{+} \) problem by dampened steepest descent.  <a href="namespacesolvers.html#a4b4d370a4ee50b231f53058ab62e4084">More...</a><br /></td></tr>
 <tr class="separator:a4b4d370a4ee50b231f53058ab62e4084"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -397,11 +400,12 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Calculates value of the wavefunction of a hydrogen 2s orbital. </p>
-<p>Function to calculate the wavefunction of an electron at position \( \mathbf{r} \) in a hydrogenic 2s atomic orbital, centred on nuclear position \( \mathbf{R}_{nuc}. \) Computes </p><p class="formulaDsp">
+<p>[DEPRECATED] Calculates value of the wavefunction of a hydrogen 2s orbital. </p>
+<p>Function to calculate the wavefunction of an electron at position \( \mathbf{r} \) in a hydrogenic 2s atomic orbital, centred on nuclear position \( \mathbf{R}_{nuc}. \)</p>
+<p>Computes </p><p class="formulaDsp">
 \[ \psi^{A}_{2s} = \frac{1}{4\sqrt{2\pi}}\left [ 2 - \left |\mathbf{r-\mathbf{R}_{nuc}} \right | \right ] e^{-\frac{\left |\mathbf{r-\mathbf{R}_{nuc}} \right |}{2}} \]
 </p>
- <dl class="params"><dt>Parameters</dt><dd>
+<p>@ remark NOTE - this function is now deprecated, and has been left here in case it is needed again in the future. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">r_elec</td><td>Electron position </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">R_nuc</td><td>Nuclear position </td></tr>
@@ -415,20 +419,20 @@ Functions/Subroutines</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="quantum__solvers_8f90_source.html#l00147">147</a> of file <a class="el" href="quantum__solvers_8f90_source.html">quantum_solvers.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: r_elec, R_nuc</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="keywordtype">        real</span>(real64) :: H2s_wfn, prefac, expfac, r_norm</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        r_norm = norm2(r_elec - r_nuc)</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        prefac = pi_dash_2 * (2 - r_norm)</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        expfac = -(r_norm / 2)</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        h2s_wfn = prefac * exp(expfac)</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="quantum__solvers_8f90_source.html#l00152">152</a> of file <a class="el" href="quantum__solvers_8f90_source.html">quantum_solvers.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordtype">implicit none</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: r_elec, R_nuc</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="keywordtype">        real</span>(real64) :: H2s_wfn, prefac, expfac, r_norm</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        r_norm = norm2(r_elec - r_nuc)</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        prefac = pi_dash_2 * (2 - r_norm)</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        expfac = -(r_norm / 2)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        h2s_wfn = prefac * exp(expfac)</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
 </div><!-- fragment --><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -436,7 +440,7 @@ Functions/Subroutines</h2></td></tr>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespacesolvers_a89943685e3d86544f0261f24fac44419_icgraph.png" border="0" usemap="#anamespacesolvers_a89943685e3d86544f0261f24fac44419_icgraph" alt=""/></div>
 <map name="anamespacesolvers_a89943685e3d86544f0261f24fac44419_icgraph" id="anamespacesolvers_a89943685e3d86544f0261f24fac44419_icgraph">
-<area shape="rect" title="Calculates value of the wavefunction of a hydrogen 2s orbital." alt="" coords="572,5,691,32"/>
+<area shape="rect" title="[DEPRECATED] Calculates value of the wavefunction of a hydrogen 2s orbital." alt="" coords="572,5,691,32"/>
 <area shape="rect" href="namespacetesting.html#abe0f62bb50fbee5f3ebd52fcd43bf1e6" title="Tests the H2s_wfn function in the solvers module." alt="" coords="379,5,524,32"/>
 <area shape="rect" href="namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="207,5,331,32"/>
 <area shape="rect" href="driver_8f90.html#aae94725eafaedc467ab9bfefcae9769e" title="Subroutine for running the main code (needed for Doxygen compatability)." alt="" coords="104,5,159,32"/>
@@ -507,24 +511,24 @@ Functions/Subroutines</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="quantum__solvers_8f90_source.html#l00192">192</a> of file <a class="el" href="quantum__solvers_8f90_source.html">quantum_solvers.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: c</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: r</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: R_a, R_b</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="keywordtype">        real</span>(real64) :: bond_dist, overlap_fac, wfn</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="comment">! wfn = c * (H1s_wfn(r, R_a) + H1s_wfn(r, R_b))</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="comment">! wfn = c * (H1s_wfn(r, R_a) - H1s_wfn(r, R_b))</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="comment">! wfn = r2o2 * (H1s_wfn_mod(c, r, R_a) + H1s_wfn_mod(c, r, R_b))</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        bond_dist = norm2(r_a - r_b)</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="comment">!overlap = exp(-bond_dist) * (1.0_real64 + bond_dist + (1.0_real64 / 3.0_real64)*bond_dist*bond_dist)</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        overlap_fac = 1.0_real64 / sqrt(2 * (1.0_real64 + c)) <span class="comment">! here, c takes the place of the overlap integral</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        wfn = overlap_fac * (h1s_wfn(r, r_a) + h1s_wfn(r, r_b))</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="quantum__solvers_8f90_source.html#l00197">197</a> of file <a class="el" href="quantum__solvers_8f90_source.html">quantum_solvers.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordtype">implicit none</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: c</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: r</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: R_a, R_b</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="keywordtype">        real</span>(real64) :: bond_dist, overlap_fac, wfn</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="comment">! wfn = c * (H1s_wfn(r, R_a) + H1s_wfn(r, R_b))</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="comment">! wfn = c * (H1s_wfn(r, R_a) - H1s_wfn(r, R_b))</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="comment">! wfn = r2o2 * (H1s_wfn_mod(c, r, R_a) + H1s_wfn_mod(c, r, R_b))</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        bond_dist = norm2(r_a - r_b)</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="comment">!overlap = exp(-bond_dist) * (1.0_real64 + bond_dist + (1.0_real64 / 3.0_real64)*bond_dist*bond_dist)</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        overlap_fac = 1.0_real64 / sqrt(2 * (1.0_real64 + c)) <span class="comment">! here, c takes the place of the overlap integral</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        wfn = overlap_fac * (h1s_wfn(r, r_a) + h1s_wfn(r, r_b))</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
 </div><!-- fragment --><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -603,11 +607,11 @@ Functions/Subroutines</h2></td></tr>
 
 <p>Calculates transition probability for the \( H_{2}^{+} \) problem. </p>
 <p>Function to calculate transition probability for walkers in the \( H_{2}^{+} \) problem. Computes </p><p class="formulaDsp">
-\[ \frac{P(x_{i+1})}{P(x)} = \frac{\psi^{c}_{T}(\mathbf{r}_{i+1})}{\psi^{c}_{T}(\mathbf{r})} \]
+\[ \frac{P(x_{i+1})}{P(x)} = \left (\frac{\psi^{c}_{T}(\mathbf{r}_{i+1})} {\psi^{c}_{T}(\mathbf{r})} \right ) ^{2} \]
 </p>
  <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>Parameter(s) of trial wavefunction </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>Parameter of trial wavefunction </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">r_current</td><td>Current position of walker </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">r_next</td><td>Proposed position of walker </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">R_a</td><td>Position of hydrogen atom A </td></tr>
@@ -622,19 +626,19 @@ Functions/Subroutines</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="quantum__solvers_8f90_source.html#l00232">232</a> of file <a class="el" href="quantum__solvers_8f90_source.html">quantum_solvers.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: c</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: r_current, r_next</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: R_a, R_b</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="keywordtype">        real</span>(real64) :: Prob</div>
+<p class="definition">Definition at line <a class="el" href="quantum__solvers_8f90_source.html#l00238">238</a> of file <a class="el" href="quantum__solvers_8f90_source.html">quantum_solvers.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="keywordtype">implicit none</span></div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        prob = abs(h_2_plus_wfn(c, r_next, r_a, r_b) / &amp;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            h_2_plus_wfn(c, r_current, r_a, r_b))**2</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: c</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: r_current, r_next</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: R_a, R_b</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="keywordtype">        real</span>(real64) :: Prob</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        prob = (h_2_plus_wfn(c, r_next, r_a, r_b) / &amp;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            h_2_plus_wfn(c, r_current, r_a, r_b))**2</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
 </div><!-- fragment --><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
@@ -715,82 +719,85 @@ Functions/Subroutines</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Calculates local energy for the \( H_{2}^{+} \) problem. </p>
-<p>Function to calculate the local energy of a walker in the \( H_{2}^{+} \) problem. Computes </p><p class="formulaDsp">
+<p>Function to calculate the local energy of a walker in the \( H_{2}^{+} \) problem.</p>
+<p>Computes </p><p class="formulaDsp">
 \[ E^{c}_{L}(\mathbf{r}) = \frac{\hat{H}\psi^{c}_{T}(\mathbf{r})}{\psi^{c}_{T}(\mathbf{r})} \]
 </p>
 <p> where </p><p class="formulaDsp">
 \[ \hat{H} = -\frac{1}{2}\nabla^{2} - \frac{1}{\left | \mathbf{r}-\mathbf{R}_{A} \right |} - \frac{1}{\left | \mathbf{r}-\mathbf{R}_{B} \right |} \]
 </p>
- <dl class="params"><dt>Parameters</dt><dd>
+<p> by means of a second order central difference calculation.</p>
+<p>Also calculates the gradient with respect to the parameter value c by means of a first order central difference calculation, provided <a class="el" href="structshared__data_1_1h2plus__type.html#a216705c18dec2984227a17ef587ed0e9">auto_params</a> for this problem is set to <em>TRUE</em>.</p>
+<p>Finite difference step sizes for the calculation of both <b>E_loc</b> and <b>gradient</b> can be controlled by setting <a class="el" href="structshared__data_1_1h2plus__type.html#ac9850ee368bd929cfcd435a1ad6178ca">H2plus%ham_fdstep</a> and <a class="el" href="structshared__data_1_1h2plus__type.html#a93cd67fa7602dee85356a7a3cbe80b7b">H2plus%c_fdstep</a> respectively, by giving them a value in the <em>params.txt</em> input file. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>Parameter(s) of trial wavefunction </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>Parameter of trial wavefunction </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>Position of walker </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">R_a</td><td>Position of hydrogen atom A </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">R_b</td><td>Position of hydrogen atom B </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">fdstep</td><td>Finite difference step size (optional, default = 1e-3 Bohr) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">E_loc</td><td>Local energy </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">E_loc</td><td>Local energy </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">gradient</td><td>Gradient wrt parameter c </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="quantum__solvers_8f90_source.html#l00271">271</a> of file <a class="el" href="quantum__solvers_8f90_source.html">quantum_solvers.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: c</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: r</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: R_a, R_b</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span> :: E_loc</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span> :: gradient</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  </div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="keywordtype">        real</span>(real64) :: laplacian               <span class="comment">! 2nd derivative of trial wavefunction</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="keywordtype">        real</span>(real64) :: coulomb                 <span class="comment">! Coulomb terms of Hamiltonian</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: r_temp</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="keywordtype">        real</span>(real64) :: c_temp</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(2, 3)</span> :: r_diffs  <span class="comment">! Wavefunction finite differences</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(2)</span> :: c_diffs</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="keywordtype">        real</span>(real64) :: wfn, wfnx2              <span class="comment">! Wavefunction at walker position</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="keywordtype">integer</span> :: i</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="comment">! Calculate trial wavefunction at provided point.</span></div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        wfn = h_2_plus_wfn(c, r, r_a, r_b)</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        wfnx2 = 2 * wfn</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="comment">! Calculate trial wavefunction in finite difference directions.</span></div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="keywordflow">do</span> i = 1, 3</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            r_temp(:) = r(:)</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            r_temp(i) = r(i) - h2plus%ham_fdstep</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            r_diffs(1, i) = h_2_plus_wfn(c, r_temp, r_a, r_b)</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            r_temp(i) = r(i) + h2plus%ham_fdstep</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            r_diffs(2, i) = h_2_plus_wfn(c, r_temp, r_a, r_b)</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="keywordflow">        end do</span></div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <span class="comment">! Assemble Hamiltonian</span></div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        laplacian = ((r_diffs(1, 1) - wfnx2 + r_diffs(2, 1)) + &amp;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                     (r_diffs(1, 2) - wfnx2 + r_diffs(2, 2)) + &amp;</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                     (r_diffs(1, 3) - wfnx2 + r_diffs(2, 3))) / (h2plus%ham_fdstep<span class="comment">**2)</span></div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="comment"></span>        laplacian = laplacian * (-0.5_real64)</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        coulomb = -(1  / norm2(r - r_a))*wfn - (1 / norm2(r - r_b))*wfn</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        </div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        e_loc = ((laplacian + coulomb) / wfn) + (1 / norm2(r_a - r_b))</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="comment">! Calculate wavefunction gradient wrt c</span></div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        c_temp = c - h2plus%c_fdstep</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        c_diffs(1) = h_2_plus_wfn(c_temp, r, r_a, r_b)</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        c_temp = c + h2plus%c_fdstep</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        c_diffs(2) = h_2_plus_wfn(c_temp, r, r_a, r_b)</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        gradient = (c_diffs(2) - c_diffs(1)) / (2.0_real64 * h2plus%c_fdstep<span class="comment">)</span></div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="comment"></span>        </div>
+<p class="definition">Definition at line <a class="el" href="quantum__solvers_8f90_source.html#l00290">290</a> of file <a class="el" href="quantum__solvers_8f90_source.html">quantum_solvers.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordtype">implicit none</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: c</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: r</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: R_a, R_b</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span> :: E_loc</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span> :: gradient</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  </div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(2, 3)</span> :: r_diffs    <span class="comment">! Wavefunction finite differences wrt position</span></div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(2)</span> :: c_diffs       <span class="comment">! Wavefunction finite differences wrt parameter</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: r_temp        <span class="comment">! Temporary position for finite differences</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="keywordtype">        real</span>(real64) :: laplacian                   <span class="comment">! 2nd derivative of trial wavefunction</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="keywordtype">        real</span>(real64) :: coulomb                     <span class="comment">! Coulomb terms of Hamiltonian</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="keywordtype">        real</span>(real64) :: c_temp                      <span class="comment">! Temporary parameter value for finite differences</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="keywordtype">        real</span>(real64) :: wfn, wfnx2                  <span class="comment">! Wavefunction at current walker position</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="keywordtype">integer</span> :: i                                <span class="comment">! Loop integer</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <span class="comment">! Calculate trial wavefunction at provided point.</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        wfn = h_2_plus_wfn(c, r, r_a, r_b)</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        wfnx2 = 2 * wfn</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="comment">! Calculate trial wavefunction in finite difference directions.</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="keywordflow">do</span> i = 1, 3</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            r_temp(:) = r(:)</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            r_temp(i) = r(i) - h2plus%ham_fdstep</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            r_diffs(1, i) = h_2_plus_wfn(c, r_temp, r_a, r_b)</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            r_temp(i) = r(i) + h2plus%ham_fdstep</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            r_diffs(2, i) = h_2_plus_wfn(c, r_temp, r_a, r_b)</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="keywordflow">        end do</span></div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="comment">! Assemble Hamiltonian</span></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        laplacian = ((r_diffs(1, 1) - wfnx2 + r_diffs(2, 1)) + &amp;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                     (r_diffs(1, 2) - wfnx2 + r_diffs(2, 2)) + &amp;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                     (r_diffs(1, 3) - wfnx2 + r_diffs(2, 3))) / (h2plus%ham_fdstep<span class="comment">**2)</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="comment"></span>        laplacian = laplacian * (-0.5_real64)</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        coulomb = -(1  / norm2(r - r_a))*wfn - (1 / norm2(r - r_b))*wfn</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        </div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        e_loc = ((laplacian + coulomb) / wfn) + (1 / norm2(r_a - r_b))</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="comment">! Check if gradient is needed</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="keywordflow">if</span> (h2plus%auto_params) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            <span class="comment">! Calculate wavefunction gradient wrt c by central difference.</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            c_temp = c - h2plus%c_fdstep</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            c_diffs(1) = h_2_plus_wfn(c_temp, r, r_a, r_b)</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            c_temp = c + h2plus%c_fdstep</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            c_diffs(2) = h_2_plus_wfn(c_temp, r, r_a, r_b)</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            gradient = (c_diffs(2) - c_diffs(1)) / (2.0_real64 * h2plus%c_fdstep<span class="comment">)</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<span class="comment"></span>        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            gradient = 0.0_real64</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="keywordflow">        end if</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        </div>
 </div><!-- fragment --><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
@@ -852,18 +859,29 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="quantum__solvers_8f90_source.html#l00328">328</a> of file <a class="el" href="quantum__solvers_8f90_source.html">quantum_solvers.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: c_old</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: gradient</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span> :: c_new</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="keywordtype">        real</span>(real64) :: damping = 1.0_real64</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        c_new = c_old + (damping * gradient)</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
+<p>Updates the c parameter in the \( H_{2}^{+} \) problem by dampened steepest descent. </p>
+<p>Uses the gradient calculated by <a class="el" href="namespacesolvers.html#a9cc5ffb282a9d15708307d84f6cf147f">solvers::h_2_plus_energy</a> to propose a new value for the parameter <b>c</b>, based on its current value. Step size can be adjusted by modifying the <b>damping</b> variable. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">c_old</td><td>Parameter to be updated </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">gradient</td><td>Gradient at current parameter </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">c_new</td><td>New updated parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="quantum__solvers_8f90_source.html#l00367">367</a> of file <a class="el" href="quantum__solvers_8f90_source.html">quantum_solvers.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keywordtype">implicit none</span></div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: c_old</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: gradient</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span> :: c_new</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="keywordtype">        real</span>(real64) :: damping = 1.0_real64</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        <span class="comment">! Update c by dampened steepest descent.</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        c_new = c_old + (damping * gradient)</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -883,53 +901,83 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="quantum__solvers_8f90_source.html#l00349">349</a> of file <a class="el" href="quantum__solvers_8f90_source.html">quantum_solvers.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: s</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="keywordtype">        real</span>(real64) :: a</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160; </div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="keywordtype">        real</span>(real64) :: f, f_dash, emsoa</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <span class="keywordtype">integer</span> :: maxiter = 1000</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="keywordtype">        real</span>(real64) :: tol = 1e-5_real64</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        <span class="keywordtype">integer</span> :: k</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        a = 0.5_real64 <span class="comment">! guess based on s=0 solution</span></div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;Starting Newton-Raphson search for parameter a...&#39;)&quot;</span><span class="comment">)</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="comment"></span>            <span class="keyword">write</span>(logid, *) <span class="stringliteral">&#39;a               abs(f)&#39;</span></div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="keywordflow">        end if</span></div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        f = (1.0_real64 / (1.0_real64 + exp(-s/a))) - a</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keywordflow">do</span> k = 1, maxiter</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;            <span class="keywordflow">if</span> (abs(f) .lt. tol) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                    <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;Value of parameter a converged.&#39;)&quot;</span>)</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                    <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;&#39;)&quot;</span>)</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="keywordflow">                end if</span></div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                <span class="keywordflow">exit</span></div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="keywordflow">            end if</span></div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            emsoa = exp(-s/a)</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            f = (1.0_real64 / (1.0_real64 + emsoa)) - a</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            f_dash = (-s * emsoa) / ((1.0_real64 + emsoa*emsoa * a*a)) -<span class="comment"> 1</span></div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            a = a - (f / f_dash)</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(F12.8, &#39;    &#39;, F12.8)&quot;</span>) a, abs(f)</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="keywordflow">            end if</span></div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;<span class="keywordflow">        end do</span></div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <span class="comment">! Crash out if not converged</span></div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="keywordflow">if</span> (k .ge. maxiter) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            error stop <span class="stringliteral">&quot;Newton-Raphson search for parameter a has failed to converge.&quot;</span></div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;<span class="keywordflow">        end if</span></div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
+<p>Calculates a value for <b>a</b> given the bond length <b>s</b> by Newton-Raphson iteration. </p>
+<p>Solves the Coulomb cusp condition for the \( H_{2} \) wavefunction, which is defined by the equation </p><p class="formulaDsp">
+\[ a \left ( 1 + e^{-\frac{s}{a}} \right ) = 1 \]
+</p>
+<p> where <b>s</b> is the H-H bond length and <b>a</b> is a parameter of the wavefunction.</p>
+<p>The value of this parameter is found by Newton-Raphson iteration over the resulting product log equation </p><p class="formulaDsp">
+\[ \frac{1}{1 + e^{-\frac{s}{a}}} - a = 0 \]
+</p>
+ <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>Bond length </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">a</td><td>Optimised wavefunction parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="quantum__solvers_8f90_source.html#l00409">409</a> of file <a class="el" href="quantum__solvers_8f90_source.html">quantum_solvers.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; </div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <span class="keywordtype">implicit none</span></div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: s</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;<span class="keywordtype">        real</span>(real64) :: a</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160; </div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;<span class="keywordtype">        real</span>(real64) :: f           <span class="comment">! Value of function at current iteration</span></div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;<span class="keywordtype">        real</span>(real64) :: f_dash      <span class="comment">! Value of derivative at current iteration</span></div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;<span class="keywordtype">        real</span>(real64) :: emsoa       <span class="comment">! e^(-s/a)</span></div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;<span class="keywordtype">        real</span>(real64) :: tol         <span class="comment">! Tolerance for stopping iteration</span></div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        <span class="keywordtype">integer</span> :: maxiter          <span class="comment">! Maximum number of iterations</span></div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="keywordtype">integer</span> :: k                <span class="comment">! Loop integer</span></div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        a = 0.5_real64 <span class="comment">! guess based on s=0 solution</span></div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        maxiter = 100</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        tol = 1e-5_real64</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160; </div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;            <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;Starting Newton-Raphson search for parameter a...&#39;)&quot;</span><span class="comment">)</span></div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;<span class="comment"></span>            <span class="keyword">write</span>(logid, *) <span class="stringliteral">&#39;a               abs(f)&#39;</span></div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;<span class="keywordflow">        end if</span></div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160; </div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        <span class="comment">! Calculate initial value of function based on guess</span></div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        f = (1.0_real64 / (1.0_real64 + exp(-s/a))) - a</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        <span class="comment">! Iterate until converged</span></div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        <span class="keywordflow">do</span> k = 1, maxiter</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160; </div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            <span class="keywordflow">if</span> (abs(f) .lt. tol) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                    <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;Value of parameter a converged.&#39;)&quot;</span>)</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;                    <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;&#39;)&quot;</span>)</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;<span class="keywordflow">                end if</span></div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                <span class="keywordflow">exit</span></div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;<span class="keywordflow">            end if</span></div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160; </div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;            <span class="comment">! Calculate new values</span></div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;            emsoa = exp(-s/a)</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            f = (1.0_real64 / (1.0_real64 + emsoa)) - a</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;            f_dash = (-s * emsoa) / ((1.0_real64 + emsoa*emsoa * a*a)) -<span class="comment"> 1</span></div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;            <span class="comment">! Update value of a</span></div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            a = a - (f / f_dash)</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160; </div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;            <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(F12.8, &#39;    &#39;, F12.8)&quot;</span>) a, abs(f)</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;<span class="keywordflow">            end if</span></div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160; </div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;<span class="keywordflow">        end do</span></div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160; </div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;        <span class="comment">! Crash out if not converged</span></div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;        <span class="keywordflow">if</span> (k .ge. maxiter) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;            error stop <span class="stringliteral">&quot;Newton-Raphson search for parameter a has failed to converge.&quot;</span></div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;<span class="keywordflow">        end if</span></div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160; </div>
 </div><!-- fragment --><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
@@ -937,7 +985,7 @@ Functions/Subroutines</h2></td></tr>
 <div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespacesolvers_a38259c21a02a250a91f45d79e4165742_icgraph.png" border="0" usemap="#anamespacesolvers_a38259c21a02a250a91f45d79e4165742_icgraph" alt=""/></div>
 <map name="anamespacesolvers_a38259c21a02a250a91f45d79e4165742_icgraph" id="anamespacesolvers_a38259c21a02a250a91f45d79e4165742_icgraph">
-<area shape="rect" title=" " alt="" coords="207,5,333,32"/>
+<area shape="rect" title="Calculates a value for a given the bond length s by Newton&#45;Raphson iteration." alt="" coords="207,5,333,32"/>
 <area shape="rect" href="driver_8f90.html#aae94725eafaedc467ab9bfefcae9769e" title="Subroutine for running the main code (needed for Doxygen compatability)." alt="" coords="104,5,159,32"/>
 <area shape="rect" href="driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="Main program, contains the driver subroutine that runs all other code." alt="" coords="5,5,56,32"/>
 </map>
@@ -995,10 +1043,24 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>{UPDATE ME} Calculates trial wavefunction for the \( H_{2} \) problem. </p>
-<p>Function to calculate the wavefunction of two electrons at positions \( \mathbf{r}_{1} \) and \( \mathbf{r}_{2} \) in the hydrogen molecule \( H_{2} \). </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Calculates trial wavefunction for the \( H_{2} \) problem. </p>
+<p>Function to calculate the wavefunction of two electrons at positions \( \mathbf{r}_{1} \) and \( \mathbf{r}_{2} \) in the hydrogen molecule \( H_{2} \).</p>
+<p>Takes the functional form </p><p class="formulaDsp">
+\[ \Psi_{T}(\mathbf{r}_1, \mathbf{r}_{2}) = \phi(\mathbf{r}_{1}) \phi(\mathbf{r}_{2}) \psi(\mathbf{r}_1, \mathbf{r}_{2}) \]
+</p>
+<p> where </p><p class="formulaDsp">
+\[ \phi(\mathbf{r}_{1}) = e^{-\frac{\left | \mathbf{r}_{1A} \right |}{a}} + e^{-\frac{\left | \mathbf{r}_{1B} \right |}{a}} = \phi_{1A} + \phi_{1B} \]
+</p>
+ <p class="formulaDsp">
+\[ \phi(\mathbf{r}_{2}) = e^{-\frac{\left | \mathbf{r}_{2A} \right |}{a}} + e^{-\frac{\left | \mathbf{r}_{2B} \right |}{a}} = \phi_{2A} + \phi_{2B} \]
+</p>
+<p> and \( \psi(\mathbf{r}_1, \mathbf{r}_{2}) \) is the Jastrow function with the form </p><p class="formulaDsp">
+\[ \psi(\mathbf{r}_1, \mathbf{r}_{2}) = e^{\frac{\left | \mathbf{r}_{12} \right |} {\alpha \left ( 1 + \beta \left | \mathbf{r}_{12} \right | \right )}} \]
+</p>
+ <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>Parameter(s) of trial wavefunction </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>Parameter \( a \) of trial wavefunction </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">beta</td><td>Parameter \( \beta \) of trial wavefunction </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">r_1</td><td>Position of electron 1 </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">r_2</td><td>Position of electron 2 </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">R_a</td><td>Position of hydrogen atom A </td></tr>
@@ -1013,30 +1075,31 @@ Functions/Subroutines</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="quantum__solvers_8f90_source.html#l00417">417</a> of file <a class="el" href="quantum__solvers_8f90_source.html">quantum_solvers.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160; </div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160; </div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: a</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: beta</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: r_1, r_2</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: R_a, R_b</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; </div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<span class="keywordtype">        real</span>(real64) :: wfn</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160; </div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;<span class="keywordtype">        real</span>(real64) :: s, alpha</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;<span class="keywordtype">        real</span>(real64) :: phi_r1, phi_r2, jastrow</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        s = norm2(r_a - r_b)</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;        alpha = 2.0_real64</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160; </div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        phi_r1 = exp(-norm2(r_1 - r_a) / a) + exp(-norm2(r_1 - r_b) / a)</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        phi_r2 = exp(-norm2(r_2 - r_a) / a) + exp(-norm2(r_2 - r_b) / a)</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160; </div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        jastrow = exp(norm2(r_1 - r_2) / (alpha * (1.0_real64 + beta*norm2<span class="comment">(r_1 - r_2))))</span></div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        wfn = phi_r1 * phi_r2 * jastrow</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="quantum__solvers_8f90_source.html#l00501">501</a> of file <a class="el" href="quantum__solvers_8f90_source.html">quantum_solvers.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160; </div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;        <span class="keywordtype">implicit none</span></div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160; </div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: a</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: beta</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: r_1, r_2</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: R_a, R_b</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160; </div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;<span class="keywordtype">        real</span>(real64) :: wfn</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160; </div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;<span class="keywordtype">        real</span>(real64) :: s                           <span class="comment">! Bond length</span></div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;<span class="keywordtype">        real</span>(real64) :: alpha                       <span class="comment">! Wavefunction parameter, set to 2</span></div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;<span class="keywordtype">        real</span>(real64) :: phi_r1, phi_r2, jastrow     <span class="comment">! Wavefunction components</span></div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160; </div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;        s = norm2(r_a - r_b)</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;        alpha = 2.0_real64</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160; </div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;        phi_r1 = exp(-norm2(r_1 - r_a) / a) + exp(-norm2(r_1 - r_b) / a)</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;        phi_r2 = exp(-norm2(r_2 - r_a) / a) + exp(-norm2(r_2 - r_b) / a)</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160; </div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;        jastrow = exp(norm2(r_1 - r_2) / (alpha * (1.0_real64 + beta*norm2<span class="comment">(r_1 - r_2))))</span></div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;        wfn = phi_r1 * phi_r2 * jastrow</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160; </div>
 </div><!-- fragment --><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">
@@ -1044,7 +1107,7 @@ Functions/Subroutines</h2></td></tr>
 <div id="dynsection-11-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespacesolvers_ac603f31a67286a6e89588cf4de29bd1b_icgraph.png" border="0" usemap="#anamespacesolvers_ac603f31a67286a6e89588cf4de29bd1b_icgraph" alt=""/></div>
 <map name="anamespacesolvers_ac603f31a67286a6e89588cf4de29bd1b_icgraph" id="anamespacesolvers_ac603f31a67286a6e89588cf4de29bd1b_icgraph">
-<area shape="rect" title="{UPDATE ME} Calculates trial wavefunction for the &#160;problem." alt="" coords="747,31,865,57"/>
+<area shape="rect" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="747,31,865,57"/>
 <area shape="rect" href="namespacesolvers.html#ac30d1c7141f673647e837524ecb26b07" title="Calculates transition probability for the &#160;problem." alt="" coords="576,5,699,32"/>
 <area shape="rect" href="namespacetesting.html#a70f58338fe8165f65417781dae734e68" title="Tests the H_2_wfn function in the solvers module." alt="" coords="381,56,526,83"/>
 <area shape="rect" href="namespacetesting.html#ad02da7e5d742236c571c965b4f80992c" title="Tests the H_2_Prob function in the solvers module." alt="" coords="379,5,528,32"/>
@@ -1120,11 +1183,12 @@ Functions/Subroutines</h2></td></tr>
 
 <p>Calculates transition probability for the \( H_{2} \) problem. </p>
 <p>Function to calculate transition probability for walkers in the \( H_{2} \) problem. Computes </p><p class="formulaDsp">
-\[ \frac{P(x_{i+1})}{P(x)} = \frac{\psi^{c}_{T}(\mathbf{r}_{1}^{i+1}, \mathbf{r}_{2}^{i+1})} {\psi^{c}_{T}(\mathbf{r}_{1}^{i}, \mathbf{r}_{2}^{i})} \]
+\[\frac{P(x_{i+1})}{P(x)} = \left (\frac{\psi^{c}_{T}(\mathbf{r}_{1}^{i+1}, \mathbf{r}_{2}^{i+1})} {\psi^{c}_{T}(\mathbf{r}_{1}^{i}, \mathbf{r}_{2}^{i})} \right )^{2} \]
 </p>
  <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>Parameter(s) of trial wavefunction </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>Parameter \( a \) of trial wavefunction </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">beta</td><td>Parameter \( \beta \) of trial wavefunction </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">r_1_current</td><td>Current position of walker 1 </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">r_2_current</td><td>Current position of walker 2 </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">r_1_next</td><td>Proposed position of walker 1 </td></tr>
@@ -1141,21 +1205,21 @@ Functions/Subroutines</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="quantum__solvers_8f90_source.html#l00466">466</a> of file <a class="el" href="quantum__solvers_8f90_source.html">quantum_solvers.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160; </div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;        <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160; </div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: a</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: beta</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: r_1_current, r_2_current</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: r_1_next, r_2_next</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: R_a, R_b</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160; </div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;<span class="keywordtype">        real</span>(real64) :: Prob</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160; </div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;        prob = abs(h_2_wfn(a, beta, r_1_next, r_2_next, r_a, r_b) / &amp;</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;               h_2_wfn(a, beta, r_1_current, r_2_current, r_a, r_b))**2</div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="quantum__solvers_8f90_source.html#l00552">552</a> of file <a class="el" href="quantum__solvers_8f90_source.html">quantum_solvers.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160; </div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;        <span class="keywordtype">implicit none</span></div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160; </div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: a</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: beta</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: r_1_current, r_2_current</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: r_1_next, r_2_next</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: R_a, R_b</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160; </div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;<span class="keywordtype">        real</span>(real64) :: Prob</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160; </div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        prob = (h_2_wfn(a, beta, r_1_next, r_2_next, r_a, r_b) / &amp;</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;               h_2_wfn(a, beta, r_1_current, r_2_current, r_a, r_b))**2</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160; </div>
 </div><!-- fragment --><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
@@ -1164,7 +1228,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="center"><img src="namespacesolvers_ac30d1c7141f673647e837524ecb26b07_cgraph.png" border="0" usemap="#anamespacesolvers_ac30d1c7141f673647e837524ecb26b07_cgraph" alt=""/></div>
 <map name="anamespacesolvers_ac30d1c7141f673647e837524ecb26b07_cgraph" id="anamespacesolvers_ac30d1c7141f673647e837524ecb26b07_cgraph">
 <area shape="rect" title="Calculates transition probability for the &#160;problem." alt="" coords="5,5,128,32"/>
-<area shape="rect" href="namespacesolvers.html#ac603f31a67286a6e89588cf4de29bd1b" title="{UPDATE ME} Calculates trial wavefunction for the &#160;problem." alt="" coords="176,5,295,32"/>
+<area shape="rect" href="namespacesolvers.html#ac603f31a67286a6e89588cf4de29bd1b" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="176,5,295,32"/>
 </map>
 </div>
 <div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1246,7 +1310,7 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Calculates local energy for the \( H_{2} \) problem. </p>
+<p>{UPDATE ME} Calculates local energy for the \( H_{2} \) problem. </p>
 <p>Function to calculate the local energy of two walkers in the \( H_{2} \) problem. Computes </p><p class="formulaDsp">
 \[ E^{c}_{L}(\mathbf{r}_{1}, \mathbf{r}_{2}) = \frac{\hat{H}\psi^{c}_{T}(\mathbf{r}_{1}, \mathbf{r}_{2})} {\psi^{c}_{T}(\mathbf{r}_{1}, \mathbf{r}_{2})} \]
 </p>
@@ -1271,62 +1335,62 @@ Functions/Subroutines</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="quantum__solvers_8f90_source.html#l00513">513</a> of file <a class="el" href="quantum__solvers_8f90_source.html">quantum_solvers.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160; </div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;        <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160; </div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: a</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: beta</div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: r_1, r_2</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: R_a, R_b</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160; </div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span> :: E_loc</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span> :: DphiDbeta</div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160; </div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;<span class="keywordtype">        real</span>(real64) :: E1, E2, E3, E4, E5, E6, E7, E8</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;<span class="keywordtype">        real</span>(real64) :: phi_1a, phi_1b, phi_1</div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;<span class="keywordtype">        real</span>(real64) :: phi_2a, phi_2b, phi_2</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;<span class="keywordtype">        real</span>(real64) :: r_1a, r_1b, r_2a, r_2b, r_12</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: r_1a_hat, r_1b_hat, r_2a_hat, r_2b_hat<span class="comment">, r_12_hat</span></div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;<span class="comment">        r_1a = norm2(r_1 - r_a)</span></div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;<span class="comment"></span>        r_1b = norm2(r_1 - r_b)</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;        r_2a = norm2(r_2 - r_a)</div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        r_2b = norm2(r_2 - r_b)</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        r_12 = norm2(r_1 - r_2)</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160; </div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;        r_1a_hat = (r_1 - r_a) / spread(r_1a, 1, 3)</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;        r_1b_hat = (r_1 - r_b) / spread(r_1b, 1, 3)</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        r_2a_hat = (r_2 - r_a) / spread(r_2a, 1, 3)</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        r_2b_hat = (r_2 - r_b) / spread(r_2b, 1, 3)</div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;        r_12_hat = (r_1 - r_2) / spread(r_12, 1, 3)</div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160; </div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;        phi_1a = exp(-r_1a / a)</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;        phi_1b = exp(-r_1b / a)</div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;        phi_2a = exp(-r_2a / a)</div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;        phi_2b = exp(-r_2b / a)</div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160; </div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;        phi_1 = phi_1a + phi_1b</div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;        phi_2 = phi_2a + phi_2b</div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160; </div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;        e1 = 1.0_real64 / (a*a)</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;        e2 = ((phi_1a / r_1a) + (phi_1b / r_1b)) / (a * phi_1)</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;        e3 = ((phi_2a / r_2a) + (phi_2b / r_2b)) / (a * phi_2)</div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;        e4 = (1.0_real64 / r_1a) + (1.0_real64 / r_1b) + (1.0_real64 / r_2a<span class="comment">) + (1.0_real64 / r_2b)</span></div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;<span class="comment"></span>        e5 = 1.0_real64 / r_12</div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;        e6 = ((((phi_1a * sum(r_1a_hat * r_12_hat, dim=1)) + (phi_1b * sum<span class="comment">(r_1b_hat * r_12_hat, dim=1))) / phi_1) &amp;</span></div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;<span class="comment"></span>            - (((phi_2a * sum(r_2a_hat * r_12_hat, dim=1)) + (phi_2b * sum<span class="comment">(r_2b_hat * r_12_hat, dim=1))) / phi_2)) &amp;</span></div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;<span class="comment"></span>            / (2.0_real64 * a * (1.0_real64 + beta*r_12)**2)</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;        e7 = (((4.0_real64*beta + 1.0_real64) * r_12) + 4.0_real64) &amp;</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;            / (4.0_real64 * r_12 * (1.0_real64 + beta*r_12)**4)</div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;        e8 = (1.0_real64 / norm2(r_a - r_b))</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;        </div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;        <span class="comment">! E_loc = -E1 + E2 + E3 - E4 + E5 + E6 - E7 + (1.0_real64 / norm2(R_a - R_b))</span></div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;        <span class="comment">! E_loc = -E1 + E2 + E3 - E4 + E5 + E6 - E7</span></div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        e_loc = -e1 + e2 + e3 - e4 + e5 + e6 - e7 + e8</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160; </div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;        dphidbeta = -(r_12*r_12) / (2.0_real64*(1.0_real64 + beta*r_12)*<span class="comment">*2)</span></div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;<span class="comment"></span> </div>
+<p class="definition">Definition at line <a class="el" href="quantum__solvers_8f90_source.html#l00599">599</a> of file <a class="el" href="quantum__solvers_8f90_source.html">quantum_solvers.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160; </div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;        <span class="keywordtype">implicit none</span></div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160; </div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: a</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: beta</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: r_1, r_2</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: R_a, R_b</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160; </div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span> :: E_loc</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span> :: DphiDbeta</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160; </div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;<span class="keywordtype">        real</span>(real64) :: E1, E2, E3, E4, E5, E6, E7, E8</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;<span class="keywordtype">        real</span>(real64) :: phi_1a, phi_1b, phi_1</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;<span class="keywordtype">        real</span>(real64) :: phi_2a, phi_2b, phi_2</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;<span class="keywordtype">        real</span>(real64) :: r_1a, r_1b, r_2a, r_2b, r_12</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: r_1a_hat, r_1b_hat, r_2a_hat, r_2b_hat<span class="comment">, r_12_hat</span></div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;<span class="comment">        r_1a = norm2(r_1 - r_a)</span></div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;<span class="comment"></span>        r_1b = norm2(r_1 - r_b)</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;        r_2a = norm2(r_2 - r_a)</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;        r_2b = norm2(r_2 - r_b)</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;        r_12 = norm2(r_1 - r_2)</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160; </div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;        r_1a_hat = (r_1 - r_a) / spread(r_1a, 1, 3)</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;        r_1b_hat = (r_1 - r_b) / spread(r_1b, 1, 3)</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;        r_2a_hat = (r_2 - r_a) / spread(r_2a, 1, 3)</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        r_2b_hat = (r_2 - r_b) / spread(r_2b, 1, 3)</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;        r_12_hat = (r_1 - r_2) / spread(r_12, 1, 3)</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160; </div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;        phi_1a = exp(-r_1a / a)</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;        phi_1b = exp(-r_1b / a)</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;        phi_2a = exp(-r_2a / a)</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;        phi_2b = exp(-r_2b / a)</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160; </div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;        phi_1 = phi_1a + phi_1b</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;        phi_2 = phi_2a + phi_2b</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160; </div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;        e1 = 1.0_real64 / (a*a)</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;        e2 = ((phi_1a / r_1a) + (phi_1b / r_1b)) / (a * phi_1)</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;        e3 = ((phi_2a / r_2a) + (phi_2b / r_2b)) / (a * phi_2)</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;        e4 = (1.0_real64 / r_1a) + (1.0_real64 / r_1b) + (1.0_real64 / r_2a<span class="comment">) + (1.0_real64 / r_2b)</span></div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;<span class="comment"></span>        e5 = 1.0_real64 / r_12</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;        e6 = ((((phi_1a * sum(r_1a_hat * r_12_hat, dim=1)) + (phi_1b * sum<span class="comment">(r_1b_hat * r_12_hat, dim=1))) / phi_1) &amp;</span></div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;<span class="comment"></span>            - (((phi_2a * sum(r_2a_hat * r_12_hat, dim=1)) + (phi_2b * sum<span class="comment">(r_2b_hat * r_12_hat, dim=1))) / phi_2)) &amp;</span></div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;<span class="comment"></span>            / (2.0_real64 * a * (1.0_real64 + beta*r_12)**2)</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;        e7 = (((4.0_real64*beta + 1.0_real64) * r_12) + 4.0_real64) &amp;</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;            / (4.0_real64 * r_12 * (1.0_real64 + beta*r_12)**4)</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;        e8 = (1.0_real64 / norm2(r_a - r_b))</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;        </div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;        <span class="comment">! E_loc = -E1 + E2 + E3 - E4 + E5 + E6 - E7 + (1.0_real64 / norm2(R_a - R_b))</span></div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;        <span class="comment">! E_loc = -E1 + E2 + E3 - E4 + E5 + E6 - E7</span></div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;        e_loc = -e1 + e2 + e3 - e4 + e5 + e6 - e7 + e8</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160; </div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;        dphidbeta = -(r_12*r_12) / (2.0_real64*(1.0_real64 + beta*r_12)*<span class="comment">*2)</span></div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;<span class="comment"></span> </div>
 </div><!-- fragment --><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-14-summary" class="dynsummary" style="display:block;">
@@ -1334,7 +1398,7 @@ Functions/Subroutines</h2></td></tr>
 <div id="dynsection-14-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="namespacesolvers_a9afbcdcc0405d544d4441e9786f440a2_icgraph.png" border="0" usemap="#anamespacesolvers_a9afbcdcc0405d544d4441e9786f440a2_icgraph" alt=""/></div>
 <map name="anamespacesolvers_a9afbcdcc0405d544d4441e9786f440a2_icgraph" id="anamespacesolvers_a9afbcdcc0405d544d4441e9786f440a2_icgraph">
-<area shape="rect" title="Calculates local energy for the &#160;problem." alt="" coords="589,5,725,32"/>
+<area shape="rect" title="{UPDATE ME} Calculates local energy for the &#160;problem." alt="" coords="589,5,725,32"/>
 <area shape="rect" href="namespacetesting.html#a313d78f649070a104e89a7535811d6a5" title="Tests the H_2_Energy function in the solvers module." alt="" coords="379,5,541,32"/>
 <area shape="rect" href="namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="207,5,331,32"/>
 <area shape="rect" href="driver_8f90.html#aae94725eafaedc467ab9bfefcae9769e" title="Subroutine for running the main code (needed for Doxygen compatability)." alt="" coords="104,5,159,32"/>
@@ -1376,18 +1440,28 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="quantum__solvers_8f90_source.html#l00573">573</a> of file <a class="el" href="quantum__solvers_8f90_source.html">quantum_solvers.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160; </div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;        <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160; </div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: beta_old</div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: gradient</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span> :: beta_new</div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160; </div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;<span class="keywordtype">        real</span>(real64) :: damping = 1.0_real64</div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160; </div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;        beta_new = beta_old - (damping * gradient)</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160; </div>
+<p>Updates the \( \beta \) parameter in the \( H_{2}^{+} \) problem by dampened steepest descent. </p>
+<p>Uses the gradient calculated by <a class="el" href="namespacesolvers.html#a9afbcdcc0405d544d4441e9786f440a2">solvers::h_2_energy</a> to propose a new value for the parameter \( \beta \), based on its current value. Step size can be adjusted by modifying the <b>damping</b> variable. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">c_old</td><td>Parameter to be updated </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">gradient</td><td>Gradient at current parameter </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">c_new</td><td>New updated parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="quantum__solvers_8f90_source.html#l00674">674</a> of file <a class="el" href="quantum__solvers_8f90_source.html">quantum_solvers.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160; </div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;        <span class="keywordtype">implicit none</span></div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160; </div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: beta_old</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: gradient</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span> :: beta_new</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160; </div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;<span class="keywordtype">        real</span>(real64) :: damping = 1.0_real64</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160; </div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;        beta_new = beta_old - (damping * gradient)</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>

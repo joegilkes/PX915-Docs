@@ -9,7 +9,7 @@
 <area shape="rect" id="node13" href="$namespacevqmc.html#a08bc46270707aab6c2d5114b589c176c" title=" " alt="" coords="237,5,347,32"/>
 <area shape="rect" id="node14" href="$namespacevqmc.html#a70c9fcecdf5f2a6ffea7dd3c4f0c1eeb" title=" " alt="" coords="222,157,362,184"/>
 <area shape="rect" id="node15" href="$namespacevqmc.html#a4856736e8ffc45caa57893a6b96318d3" title=" " alt="" coords="237,360,347,387"/>
-<area shape="rect" id="node16" href="$namespacesolvers.html#a38259c21a02a250a91f45d79e4165742" title=" " alt="" coords="229,461,355,488"/>
+<area shape="rect" id="node16" href="$namespacesolvers.html#a38259c21a02a250a91f45d79e4165742" title="Calculates a value for a given the bond length s by Newton&#45;Raphson iteration." alt="" coords="229,461,355,488"/>
 <area shape="rect" id="node17" href="$namespacevqmc.html#aed182179994b5465f5466b4d909a764e" title="Initialise random number generator by drawing a seed from /dev/urandom." alt="" coords="237,512,347,539"/>
 <area shape="rect" id="node18" href="$namespacevqmc.html#a6b89c5b7a64a3e438695787b90a62359" title="Adaptation of numpy&#39;s linspace function." alt="" coords="238,563,346,589"/>
 <area shape="rect" id="node19" href="$namespacerestart__fns.html#a673ea568ef91fc50ac00e24822742301" title="Reads restart files with energies (res_ene_tot.nc or res_ene_par.nc)" alt="" coords="207,709,377,736"/>
@@ -41,12 +41,12 @@
 <area shape="rect" id="node46" href="$namespacetesting.html#adb38a97b7ceaad408410367f1510e997" title="Tests the ran1 function in the vqmc module." alt="" coords="681,233,802,260"/>
 <area shape="rect" id="node47" href="$namespacetesting.html#acbf13e7eaa077016d7d1712b58fc5223" title="Tests the random_normal function in the vqmc module." alt="" coords="446,175,585,217"/>
 <area shape="rect" id="node29" href="$namespacesolvers.html#a7d32620a8f8a8780a0b0ef83c490e8f7" title="Calculates value of the wavefunction of a hydrogen 1s orbital." alt="" coords="1076,491,1195,517"/>
-<area shape="rect" id="node31" href="$namespacesolvers.html#a89943685e3d86544f0261f24fac44419" title="Calculates value of the wavefunction of a hydrogen 2s orbital." alt="" coords="682,343,801,369"/>
-<area shape="rect" id="node33" href="$namespacesolvers.html#a9afbcdcc0405d544d4441e9786f440a2" title="Calculates local energy for the &#160;problem." alt="" coords="673,495,809,521"/>
+<area shape="rect" id="node31" href="$namespacesolvers.html#a89943685e3d86544f0261f24fac44419" title="[DEPRECATED] Calculates value of the wavefunction of a hydrogen 2s orbital." alt="" coords="682,343,801,369"/>
+<area shape="rect" id="node33" href="$namespacesolvers.html#a9afbcdcc0405d544d4441e9786f440a2" title="{UPDATE ME} Calculates local energy for the &#160;problem." alt="" coords="673,495,809,521"/>
 <area shape="rect" id="node35" href="$namespacesolvers.html#a9cc5ffb282a9d15708307d84f6cf147f" title="Calculates local energy for the &#160;problem." alt="" coords="658,555,825,581"/>
 <area shape="rect" id="node36" href="$namespacesolvers.html#a6d705d11696b64991f1624e298067bed" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="877,581,1028,608"/>
 <area shape="rect" id="node38" href="$namespacesolvers.html#a5695d107239a7a8fb1f8b096786af028" title="Calculates transition probability for the &#160;problem." alt="" coords="664,607,819,633"/>
 <area shape="rect" id="node41" href="$namespacesolvers.html#ac30d1c7141f673647e837524ecb26b07" title="Calculates transition probability for the &#160;problem." alt="" coords="680,713,803,740"/>
-<area shape="rect" id="node42" href="$namespacesolvers.html#ac603f31a67286a6e89588cf4de29bd1b" title="{UPDATE ME} Calculates trial wavefunction for the &#160;problem." alt="" coords="893,739,1012,765"/>
+<area shape="rect" id="node42" href="$namespacesolvers.html#ac603f31a67286a6e89588cf4de29bd1b" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="893,739,1012,765"/>
 <area shape="rect" id="node49" href="$namespacewrite__netcdf.html#aca2bb13e88c9dbfc7d0027b1bd83d9d0" title="Checks error status at each point of NetCDF file build." alt="" coords="453,1167,578,1209"/>
 </map>

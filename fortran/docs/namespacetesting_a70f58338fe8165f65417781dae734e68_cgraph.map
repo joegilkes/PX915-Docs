@@ -1,4 +1,4 @@
 <map id="testing::test_h_2_wfn" name="testing::test_h_2_wfn">
 <area shape="rect" id="node1" title="Tests the H_2_wfn function in the solvers module." alt="" coords="5,5,151,32"/>
-<area shape="rect" id="node2" href="$namespacesolvers.html#ac603f31a67286a6e89588cf4de29bd1b" title="{UPDATE ME} Calculates trial wavefunction for the &#160;problem." alt="" coords="199,5,317,32"/>
+<area shape="rect" id="node2" href="$namespacesolvers.html#ac603f31a67286a6e89588cf4de29bd1b" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="199,5,317,32"/>
 </map>

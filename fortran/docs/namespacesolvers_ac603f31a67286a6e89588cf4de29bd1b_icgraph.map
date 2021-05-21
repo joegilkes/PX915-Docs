@@ -1,5 +1,5 @@
 <map id="solvers::h_2_wfn" name="solvers::h_2_wfn">
-<area shape="rect" id="node1" title="{UPDATE ME} Calculates trial wavefunction for the &#160;problem." alt="" coords="747,31,865,57"/>
+<area shape="rect" id="node1" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="747,31,865,57"/>
 <area shape="rect" id="node2" href="$namespacesolvers.html#ac30d1c7141f673647e837524ecb26b07" title="Calculates transition probability for the &#160;problem." alt="" coords="576,5,699,32"/>
 <area shape="rect" id="node7" href="$namespacetesting.html#a70f58338fe8165f65417781dae734e68" title="Tests the H_2_wfn function in the solvers module." alt="" coords="381,56,526,83"/>
 <area shape="rect" id="node3" href="$namespacetesting.html#ad02da7e5d742236c571c965b4f80992c" title="Tests the H_2_Prob function in the solvers module." alt="" coords="379,5,528,32"/>

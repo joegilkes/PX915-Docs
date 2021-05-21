@@ -1,5 +1,5 @@
 <map id="testing::test_h_2_prob" name="testing::test_h_2_prob">
 <area shape="rect" id="node1" title="Tests the H_2_Prob function in the solvers module." alt="" coords="5,5,155,32"/>
 <area shape="rect" id="node2" href="$namespacesolvers.html#ac30d1c7141f673647e837524ecb26b07" title="Calculates transition probability for the &#160;problem." alt="" coords="203,5,325,32"/>
-<area shape="rect" id="node3" href="$namespacesolvers.html#ac603f31a67286a6e89588cf4de29bd1b" title="{UPDATE ME} Calculates trial wavefunction for the &#160;problem." alt="" coords="373,5,492,32"/>
+<area shape="rect" id="node3" href="$namespacesolvers.html#ac603f31a67286a6e89588cf4de29bd1b" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="373,5,492,32"/>
 </map>

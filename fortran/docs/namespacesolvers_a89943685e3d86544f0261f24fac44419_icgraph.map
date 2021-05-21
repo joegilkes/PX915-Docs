@@ -1,5 +1,5 @@
 <map id="solvers::h2s_wfn" name="solvers::h2s_wfn">
-<area shape="rect" id="node1" title="Calculates value of the wavefunction of a hydrogen 2s orbital." alt="" coords="572,5,691,32"/>
+<area shape="rect" id="node1" title="[DEPRECATED] Calculates value of the wavefunction of a hydrogen 2s orbital." alt="" coords="572,5,691,32"/>
 <area shape="rect" id="node2" href="$namespacetesting.html#abe0f62bb50fbee5f3ebd52fcd43bf1e6" title="Tests the H2s_wfn function in the solvers module." alt="" coords="379,5,524,32"/>
 <area shape="rect" id="node3" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="207,5,331,32"/>
 <area shape="rect" id="node4" href="$driver_8f90.html#aae94725eafaedc467ab9bfefcae9769e" title="Subroutine for running the main code (needed for Doxygen compatability)." alt="" coords="104,5,159,32"/>
