@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['theta_59',['Theta',['../namespacevisualisation.html#a6a4dec9bf1bebf8eceb61d09a2f27c7b',1,'visualisation']]],
-  ['theta_60',['theta',['../namespacevisualisation.html#a9548b7d7055d3497111cc5a23dc6e6c3',1,'visualisation']]]
+  ['view_5foriginal_5ftrace_53',['view_original_trace',['../namespacevisualisation.html#a125cde5ab41fad7aaed30b720dd95318',1,'visualisation']]],
+  ['visualisation_54',['visualisation',['../namespacevisualisation.html',1,'']]],
+  ['visualisation_2epy_55',['visualisation.py',['../visualisation_8py.html',1,'']]]
 ];

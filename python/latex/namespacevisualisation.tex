@@ -8,23 +8,23 @@ Contains functions for burning/thinning and visualization for \mbox{[}PROGRAM NA
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \mbox{\hyperlink{namespacevisualisation_af26cb719b2deb508473e83624f95b374}{print\+\_\+global\+\_\+attr}} (\mbox{\hyperlink{namespacevisualisation_af7f0bb17ebbd05b61d96a3a749b4afb1}{rootgrp}})
+def \mbox{\hyperlink{namespacevisualisation_af26cb719b2deb508473e83624f95b374}{print\+\_\+global\+\_\+attr}} (rootgrp)
 \item 
-def \mbox{\hyperlink{namespacevisualisation_a9e23aabdaf405841cfdfd7c6cc2800e0}{QHO\+\_\+eng\+\_\+plot}} (\mbox{\hyperlink{namespacevisualisation_af7f0bb17ebbd05b61d96a3a749b4afb1}{rootgrp}}, equil=False)
+def \mbox{\hyperlink{namespacevisualisation_a9e23aabdaf405841cfdfd7c6cc2800e0}{QHO\+\_\+eng\+\_\+plot}} (rootgrp, equil=False)
 \begin{DoxyCompactList}\small\item\em energy\+\_\+plot() Plots the energy at each step as the MC converges \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacevisualisation_ad727a435fed6e71da862d749a6169558}{QHO\+\_\+prob\+\_\+plot}} (\mbox{\hyperlink{namespacevisualisation_af7f0bb17ebbd05b61d96a3a749b4afb1}{rootgrp}})
+def \mbox{\hyperlink{namespacevisualisation_ad727a435fed6e71da862d749a6169558}{QHO\+\_\+prob\+\_\+plot}} (rootgrp)
 \item 
-def \mbox{\hyperlink{namespacevisualisation_a9b6373542137aecb35f5db5805f15e7f}{H2\+\_\+eng\+\_\+plot}} (\mbox{\hyperlink{namespacevisualisation_af7f0bb17ebbd05b61d96a3a749b4afb1}{rootgrp}})
+def \mbox{\hyperlink{namespacevisualisation_a9b6373542137aecb35f5db5805f15e7f}{H2\+\_\+eng\+\_\+plot}} (rootgrp)
 \item 
 def \mbox{\hyperlink{namespacevisualisation_a665238431e964d48ad871c62f97c0eeb}{H2\+\_\+prob\+\_\+plot}} (X, Y, Z, R1, R2)
 \begin{DoxyCompactList}\small\item\em H2plus\+\_\+main\+\_\+plot() Plots the wavefunction for the quantum harmonic oscillator case. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacevisualisation_a059f09b786545f0743961251db26ec5d}{read\+\_\+\+NCDF\+\_\+out}} (\mbox{\hyperlink{namespacevisualisation_a0c5b55c4af26e995abfdee385799d310}{filename}})
+def \mbox{\hyperlink{namespacevisualisation_a059f09b786545f0743961251db26ec5d}{read\+\_\+\+NCDF\+\_\+out}} (filename)
 \item 
 def \mbox{\hyperlink{namespacevisualisation_aee22ef0385ad565e03cc2c8aae5c10c2}{orb\+\_\+1s}} (X, Y, Z, R\+\_\+a)
 \begin{DoxyCompactList}\small\item\em functions plotting the wavefunction ab initio \#\#\#\#\#\#\# \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacevisualisation_a743bddc459f615e3e4a8bf41430296d5}{orb\+\_\+2s}} (r, R\+\_\+a)
+def \mbox{\hyperlink{namespacevisualisation_a622c163e8aa656ccc9b1745a3bfe545b}{orb\+\_\+2s}} (r, R\+\_\+a)
 \item 
-def \mbox{\hyperlink{namespacevisualisation_ac4d45f0892f26bb4e27ce8a238de70bf}{polar\+\_\+to\+\_\+cart}} (r, \mbox{\hyperlink{namespacevisualisation_a9548b7d7055d3497111cc5a23dc6e6c3}{theta}}, \mbox{\hyperlink{namespacevisualisation_aef5ceca5048ab0e9d235711f42ee7174}{phi}})
+def \mbox{\hyperlink{namespacevisualisation_aa711c68ba9bc3ff10d2589890a785ed2}{polar\+\_\+to\+\_\+cart}} (r, theta, phi)
 \item 
 def \mbox{\hyperlink{namespacevisualisation_a8518056c83c83befbb585f14d97497d8}{lcao\+\_\+wfn}} (X, Y, Z, R1, R2, pqn=1)
 \item 
@@ -35,33 +35,13 @@ def \mbox{\hyperlink{namespacevisualisation_a73a6709541da1825e8af407b3558240e}{e
 def \mbox{\hyperlink{namespacevisualisation_a125cde5ab41fad7aaed30b720dd95318}{view\+\_\+original\+\_\+trace}} (chain)
 \begin{DoxyCompactList}\small\item\em Plots the original trace of an MCMC run. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacevisualisation_a701fd174c3547d52cc346056e71525da}{get\+\_\+autocorrelation\+\_\+time}} (chain, burn, tuning)
-\begin{DoxyCompactList}\small\item\em Function which suggests a thinning parameter for a MCMC chain. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacevisualisation_a92043de8643abe2942d2f2caaf5f4444}{orb\+\_\+1s}} (r, R\+\_\+a)
-\item 
-def \mbox{\hyperlink{namespacevisualisation_ae8a4cc7f592582bc05a5684cbfafdfca}{plot\+\_\+3D}} (energies, bond\+\_\+lengths)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Function which suggests a thinning parameter for a MCMC chain. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{namespacevisualisation_a046456973173620f623fad7687ae0629}{data1}} = go.\+Scatter(x=alphas, y=energies, mode=\textquotesingle{}markers\textquotesingle{})
 \begin{DoxyCompactList}\small\item\em Matplotlib implementation. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespacevisualisation_a40a49644828770b16212ef416b876eea}{fig1}} = go.\+Figure(data)
-\item 
-string \mbox{\hyperlink{namespacevisualisation_a0c5b55c4af26e995abfdee385799d310}{filename}} = \char`\"{}output.\+nc\char`\"{}
-\item 
-\mbox{\hyperlink{namespacevisualisation_af7f0bb17ebbd05b61d96a3a749b4afb1}{rootgrp}} = Dataset(\mbox{\hyperlink{namespacevisualisation_a0c5b55c4af26e995abfdee385799d310}{filename}}, \char`\"{}r\char`\"{}, format = \char`\"{}NETCDF4\char`\"{})
-\item 
-\mbox{\hyperlink{namespacevisualisation_a867077a6be121d77314fdd76d116c6f7}{system}} = rootgrp.\+system
-\item 
-int \mbox{\hyperlink{namespacevisualisation_a9548b7d7055d3497111cc5a23dc6e6c3}{theta}} = np.\+linspace(0,1,50) $\ast$2$\ast$np.\+pi
-\item 
-int \mbox{\hyperlink{namespacevisualisation_aef5ceca5048ab0e9d235711f42ee7174}{phi}} = np.\+linspace(0,1,50) $\ast$2$\ast$np.\+pi
-\item 
-\mbox{\hyperlink{namespacevisualisation_ae0b298a703c1f658cb912fb6cdcf9f9a}{R}}
-\item 
-\mbox{\hyperlink{namespacevisualisation_a6a4dec9bf1bebf8eceb61d09a2f27c7b}{Theta}}
-\item 
-\mbox{\hyperlink{namespacevisualisation_a3be4408789be044a8cae825a974d348f}{Phi}}
 \end{DoxyCompactItemize}
 
 
@@ -322,7 +302,7 @@ Here is the call graph for this function\+:
 \mbox{\Hypertarget{namespacevisualisation_aee22ef0385ad565e03cc2c8aae5c10c2}\label{namespacevisualisation_aee22ef0385ad565e03cc2c8aae5c10c2}} 
 \index{visualisation@{visualisation}!orb\_1s@{orb\_1s}}
 \index{orb\_1s@{orb\_1s}!visualisation@{visualisation}}
-\doxysubsubsection{\texorpdfstring{orb\_1s()}{orb\_1s()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{orb\_1s()}{orb\_1s()}}
 {\footnotesize\ttfamily def visualisation.\+orb\+\_\+1s (\begin{DoxyParamCaption}\item[{}]{X,  }\item[{}]{Y,  }\item[{}]{Z,  }\item[{}]{R\+\_\+a }\end{DoxyParamCaption})}
 
 
@@ -335,7 +315,7 @@ Definition at line 174 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{174 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a92043de8643abe2942d2f2caaf5f4444}{orb\_1s}}(X,Y,Z, R\_a): \textcolor{comment}{\#R\_a is the location of the atoms}}
+\DoxyCodeLine{174 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_aee22ef0385ad565e03cc2c8aae5c10c2}{orb\_1s}}(X,Y,Z, R\_a): \textcolor{comment}{\#R\_a is the location of the atoms}}
 \DoxyCodeLine{175     x\_a,y\_a,z\_a = R\_a}
 \DoxyCodeLine{176     a0 = 1}
 \DoxyCodeLine{177     orbital = 1/(((a0**1.5)*(np.sqrt(np.pi)))*\(\backslash\)}
@@ -352,7 +332,7 @@ Here is the caller graph for this function\+:
 \includegraphics[width=350pt]{namespacevisualisation_aee22ef0385ad565e03cc2c8aae5c10c2_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespacevisualisation_a743bddc459f615e3e4a8bf41430296d5}\label{namespacevisualisation_a743bddc459f615e3e4a8bf41430296d5}} 
+\mbox{\Hypertarget{namespacevisualisation_a622c163e8aa656ccc9b1745a3bfe545b}\label{namespacevisualisation_a622c163e8aa656ccc9b1745a3bfe545b}} 
 \index{visualisation@{visualisation}!orb\_2s@{orb\_2s}}
 \index{orb\_2s@{orb\_2s}!visualisation@{visualisation}}
 \doxysubsubsection{\texorpdfstring{orb\_2s()}{orb\_2s()}}
@@ -364,22 +344,14 @@ Definition at line 181 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{181 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a743bddc459f615e3e4a8bf41430296d5}{orb\_2s}}(r,R\_a):}
+\DoxyCodeLine{181 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a622c163e8aa656ccc9b1745a3bfe545b}{orb\_2s}}(r,R\_a):}
 \DoxyCodeLine{182     a0 = 1}
 \DoxyCodeLine{183     orbital = (2-\/np.linalg.norm(r-\/R\_a)()/a0)/((4*(a0**1.5)*(np.sqrt(2*np.pi)))*np.exp(np.linalg.norm(r-\/R\_a)/(2*a0)))}
 \DoxyCodeLine{184     \textcolor{keywordflow}{return} orbital}
 \DoxyCodeLine{185 }
 
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=320pt]{namespacevisualisation_a743bddc459f615e3e4a8bf41430296d5_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{namespacevisualisation_ac4d45f0892f26bb4e27ce8a238de70bf}\label{namespacevisualisation_ac4d45f0892f26bb4e27ce8a238de70bf}} 
+\mbox{\Hypertarget{namespacevisualisation_aa711c68ba9bc3ff10d2589890a785ed2}\label{namespacevisualisation_aa711c68ba9bc3ff10d2589890a785ed2}} 
 \index{visualisation@{visualisation}!polar\_to\_cart@{polar\_to\_cart}}
 \index{polar\_to\_cart@{polar\_to\_cart}!visualisation@{visualisation}}
 \doxysubsubsection{\texorpdfstring{polar\_to\_cart()}{polar\_to\_cart()}}
@@ -391,7 +363,7 @@ Definition at line 186 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{186 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_ac4d45f0892f26bb4e27ce8a238de70bf}{polar\_to\_cart}}(r,theta, phi):}
+\DoxyCodeLine{186 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_aa711c68ba9bc3ff10d2589890a785ed2}{polar\_to\_cart}}(r,theta, phi):}
 \DoxyCodeLine{187     X = r*np.sin(phi)*np.cos(theta)}
 \DoxyCodeLine{188     Y = r*np.sin(phi)*np.sin(theta)}
 \DoxyCodeLine{189     Z = r*np.cos(phi)}
@@ -401,14 +373,6 @@ Definition at line 186 of file visualisation.\+py.
 \DoxyCodeLine{193 }
 
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=312pt]{namespacevisualisation_ac4d45f0892f26bb4e27ce8a238de70bf_icgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{namespacevisualisation_a8518056c83c83befbb585f14d97497d8}\label{namespacevisualisation_a8518056c83c83befbb585f14d97497d8}} 
 \index{visualisation@{visualisation}!lcao\_wfn@{lcao\_wfn}}
 \index{lcao\_wfn@{lcao\_wfn}!visualisation@{visualisation}}
@@ -424,7 +388,7 @@ Definition at line 194 of file visualisation.\+py.
 \DoxyCodeLine{194 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a8518056c83c83befbb585f14d97497d8}{lcao\_wfn}}(X,Y,Z, R1, R2, pqn = 1):}
 \DoxyCodeLine{195     \textcolor{comment}{\#for the linear combination of wavefunctions, to be added to and to be remove}}
 \DoxyCodeLine{196     \textcolor{keywordflow}{if} pqn == 1:}
-\DoxyCodeLine{197          wfn = np.sqrt(2)*\mbox{\hyperlink{namespacevisualisation_a92043de8643abe2942d2f2caaf5f4444}{orb\_1s}}(X,Y,Z,R1) + np.sqrt(2)*\mbox{\hyperlink{namespacevisualisation_a92043de8643abe2942d2f2caaf5f4444}{orb\_1s}}(X,Y,Z,R2)}
+\DoxyCodeLine{197          wfn = np.sqrt(2)*\mbox{\hyperlink{namespacevisualisation_aee22ef0385ad565e03cc2c8aae5c10c2}{orb\_1s}}(X,Y,Z,R1) + np.sqrt(2)*\mbox{\hyperlink{namespacevisualisation_aee22ef0385ad565e03cc2c8aae5c10c2}{orb\_1s}}(X,Y,Z,R2)}
 \DoxyCodeLine{198     \textcolor{keywordflow}{if} pqn == 2:}
 \DoxyCodeLine{199         \textcolor{keywordflow}{pass}}
 \DoxyCodeLine{200 }
@@ -455,7 +419,7 @@ Here is the caller graph for this function\+:
 \mbox{\Hypertarget{namespacevisualisation_a9756d369d218ccf60a488ec02542eac6}\label{namespacevisualisation_a9756d369d218ccf60a488ec02542eac6}} 
 \index{visualisation@{visualisation}!plot\_3D@{plot\_3D}}
 \index{plot\_3D@{plot\_3D}!visualisation@{visualisation}}
-\doxysubsubsection{\texorpdfstring{plot\_3D()}{plot\_3D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{plot\_3D()}{plot\_3D()}}
 {\footnotesize\ttfamily def visualisation.\+plot\+\_\+3D (\begin{DoxyParamCaption}\item[{}]{X,  }\item[{}]{Y,  }\item[{}]{Z,  }\item[{}]{wfn,  }\item[{}]{R1,  }\item[{}]{R2 }\end{DoxyParamCaption})}
 
 
@@ -464,7 +428,7 @@ Definition at line 207 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{207 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_ae8a4cc7f592582bc05a5684cbfafdfca}{plot\_3D}}(X,Y,Z,wfn,R1,R2):}
+\DoxyCodeLine{207 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a9756d369d218ccf60a488ec02542eac6}{plot\_3D}}(X,Y,Z,wfn,R1,R2):}
 \DoxyCodeLine{208       }
 \DoxyCodeLine{209     fig = go.Figure()}
 \DoxyCodeLine{210     \textcolor{comment}{\#for plotting wavefunctions, to be removed}}
@@ -530,7 +494,7 @@ Definition at line 240 of file visualisation.\+py.
 \DoxyCodeLine{248     wfn = \mbox{\hyperlink{namespacevisualisation_a8518056c83c83befbb585f14d97497d8}{lcao\_wfn}}(x,y,z,R\_1,R\_2)}
 \DoxyCodeLine{249     density = wfn**2}
 \DoxyCodeLine{250     }
-\DoxyCodeLine{251     density\_plot = \mbox{\hyperlink{namespacevisualisation_ae8a4cc7f592582bc05a5684cbfafdfca}{plot\_3D}}(x,y,z,density,R\_1,R\_2)}
+\DoxyCodeLine{251     density\_plot = \mbox{\hyperlink{namespacevisualisation_a9756d369d218ccf60a488ec02542eac6}{plot\_3D}}(x,y,z,density,R\_1,R\_2)}
 \DoxyCodeLine{252     \textcolor{keywordflow}{return} density\_plot}
 \DoxyCodeLine{253 }
 \DoxyCodeLine{254     }
@@ -658,62 +622,12 @@ Definition at line 293 of file visualisation.\+py.
 \DoxyCodeLine{335     \textcolor{keywordflow}{return}}
 \DoxyCodeLine{336 }
 \DoxyCodeLine{337 }
+\DoxyCodeLine{338 }
+\DoxyCodeLine{339 }
+\DoxyCodeLine{340 }
+\DoxyCodeLine{341 }
 
 \end{DoxyCode}
-\mbox{\Hypertarget{namespacevisualisation_a92043de8643abe2942d2f2caaf5f4444}\label{namespacevisualisation_a92043de8643abe2942d2f2caaf5f4444}} 
-\index{visualisation@{visualisation}!orb\_1s@{orb\_1s}}
-\index{orb\_1s@{orb\_1s}!visualisation@{visualisation}}
-\doxysubsubsection{\texorpdfstring{orb\_1s()}{orb\_1s()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily def visualisation.\+orb\+\_\+1s (\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{R\+\_\+a }\end{DoxyParamCaption})}
-
-
-
-Definition at line 356 of file visualisation.\+py.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{356 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a92043de8643abe2942d2f2caaf5f4444}{orb\_1s}}(r, R\_a):}
-\DoxyCodeLine{357     a0 = 1}
-\DoxyCodeLine{358     orbital = 1/(((a0**1.5)*(np.sqrt(np.pi)))*np.exp(np.abs(r-\/R\_a)/a0))}
-\DoxyCodeLine{359     \textcolor{keywordflow}{return} orbital}
-\DoxyCodeLine{360 }
-
-\end{DoxyCode}
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=320pt]{namespacevisualisation_a92043de8643abe2942d2f2caaf5f4444_cgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{namespacevisualisation_ae8a4cc7f592582bc05a5684cbfafdfca}\label{namespacevisualisation_ae8a4cc7f592582bc05a5684cbfafdfca}} 
-\index{visualisation@{visualisation}!plot\_3D@{plot\_3D}}
-\index{plot\_3D@{plot\_3D}!visualisation@{visualisation}}
-\doxysubsubsection{\texorpdfstring{plot\_3D()}{plot\_3D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily def visualisation.\+plot\+\_\+3D (\begin{DoxyParamCaption}\item[{}]{energies,  }\item[{}]{bond\+\_\+lengths }\end{DoxyParamCaption})}
-
-
-
-Definition at line 384 of file visualisation.\+py.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{384 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_ae8a4cc7f592582bc05a5684cbfafdfca}{plot\_3D}}(energies, bond\_lengths):}
-\DoxyCodeLine{385 }
-\DoxyCodeLine{386 }
-\DoxyCodeLine{387 }
-\DoxyCodeLine{388 }
-
-\end{DoxyCode}
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=328pt]{namespacevisualisation_ae8a4cc7f592582bc05a5684cbfafdfca_cgraph}
-\end{center}
-\end{figure}
 
 
 \doxysubsection{Variable Documentation}
@@ -740,84 +654,4 @@ Definition at line 58 of file visualisation.\+py.
 
 
 Definition at line 59 of file visualisation.\+py.
-
-\mbox{\Hypertarget{namespacevisualisation_a0c5b55c4af26e995abfdee385799d310}\label{namespacevisualisation_a0c5b55c4af26e995abfdee385799d310}} 
-\index{visualisation@{visualisation}!filename@{filename}}
-\index{filename@{filename}!visualisation@{visualisation}}
-\doxysubsubsection{\texorpdfstring{filename}{filename}}
-{\footnotesize\ttfamily string visualisation.\+filename = \char`\"{}output.\+nc\char`\"{}}
-
-
-
-Definition at line 338 of file visualisation.\+py.
-
-\mbox{\Hypertarget{namespacevisualisation_af7f0bb17ebbd05b61d96a3a749b4afb1}\label{namespacevisualisation_af7f0bb17ebbd05b61d96a3a749b4afb1}} 
-\index{visualisation@{visualisation}!rootgrp@{rootgrp}}
-\index{rootgrp@{rootgrp}!visualisation@{visualisation}}
-\doxysubsubsection{\texorpdfstring{rootgrp}{rootgrp}}
-{\footnotesize\ttfamily visualisation.\+rootgrp = Dataset(\mbox{\hyperlink{namespacevisualisation_a0c5b55c4af26e995abfdee385799d310}{filename}}, \char`\"{}r\char`\"{}, format = \char`\"{}NETCDF4\char`\"{})}
-
-
-
-Definition at line 339 of file visualisation.\+py.
-
-\mbox{\Hypertarget{namespacevisualisation_a867077a6be121d77314fdd76d116c6f7}\label{namespacevisualisation_a867077a6be121d77314fdd76d116c6f7}} 
-\index{visualisation@{visualisation}!system@{system}}
-\index{system@{system}!visualisation@{visualisation}}
-\doxysubsubsection{\texorpdfstring{system}{system}}
-{\footnotesize\ttfamily visualisation.\+system = rootgrp.\+system}
-
-
-
-Definition at line 341 of file visualisation.\+py.
-
-\mbox{\Hypertarget{namespacevisualisation_a9548b7d7055d3497111cc5a23dc6e6c3}\label{namespacevisualisation_a9548b7d7055d3497111cc5a23dc6e6c3}} 
-\index{visualisation@{visualisation}!theta@{theta}}
-\index{theta@{theta}!visualisation@{visualisation}}
-\doxysubsubsection{\texorpdfstring{theta}{theta}}
-{\footnotesize\ttfamily int visualisation.\+theta = np.\+linspace(0,1,50) $\ast$2$\ast$np.\+pi}
-
-
-
-Definition at line 373 of file visualisation.\+py.
-
-\mbox{\Hypertarget{namespacevisualisation_aef5ceca5048ab0e9d235711f42ee7174}\label{namespacevisualisation_aef5ceca5048ab0e9d235711f42ee7174}} 
-\index{visualisation@{visualisation}!phi@{phi}}
-\index{phi@{phi}!visualisation@{visualisation}}
-\doxysubsubsection{\texorpdfstring{phi}{phi}}
-{\footnotesize\ttfamily int visualisation.\+phi = np.\+linspace(0,1,50) $\ast$2$\ast$np.\+pi}
-
-
-
-Definition at line 374 of file visualisation.\+py.
-
-\mbox{\Hypertarget{namespacevisualisation_ae0b298a703c1f658cb912fb6cdcf9f9a}\label{namespacevisualisation_ae0b298a703c1f658cb912fb6cdcf9f9a}} 
-\index{visualisation@{visualisation}!R@{R}}
-\index{R@{R}!visualisation@{visualisation}}
-\doxysubsubsection{\texorpdfstring{R}{R}}
-{\footnotesize\ttfamily visualisation.\+R}
-
-
-
-Definition at line 377 of file visualisation.\+py.
-
-\mbox{\Hypertarget{namespacevisualisation_a6a4dec9bf1bebf8eceb61d09a2f27c7b}\label{namespacevisualisation_a6a4dec9bf1bebf8eceb61d09a2f27c7b}} 
-\index{visualisation@{visualisation}!Theta@{Theta}}
-\index{Theta@{Theta}!visualisation@{visualisation}}
-\doxysubsubsection{\texorpdfstring{Theta}{Theta}}
-{\footnotesize\ttfamily visualisation.\+Theta}
-
-
-
-Definition at line 377 of file visualisation.\+py.
-
-\mbox{\Hypertarget{namespacevisualisation_a3be4408789be044a8cae825a974d348f}\label{namespacevisualisation_a3be4408789be044a8cae825a974d348f}} 
-\index{visualisation@{visualisation}!Phi@{Phi}}
-\index{Phi@{Phi}!visualisation@{visualisation}}
-\doxysubsubsection{\texorpdfstring{Phi}{Phi}}
-{\footnotesize\ttfamily visualisation.\+Phi}
-
-
-
-Definition at line 377 of file visualisation.\+py.
 
