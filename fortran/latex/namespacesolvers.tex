@@ -254,9 +254,9 @@ Here is the caller graph for this function\+:
 
 Calculates trial wavefunction for the $ H_{2}^{+} $ problem. 
 
-Function to calculate the wavefunction of an electron at position $ \mathbf{r} $ in the hydrogen molecular ion $ H_{2}^{+} $. Depending on the value of variable {\itshape include\+\_\+pqn}, will either calculate \[ \psi^{c}_{T}(\mathbf{r}) = c\phi_{1s}^{A}(\mathbf{r}) + \sqrt{1-c^{2}}\phi_{1s}^{B}(\mathbf{r}) \] if {\itshape include\+\_\+pqn} in \mbox{\hyperlink{structshared__data_1_1h2plus__type}{H2plus }} is set to 1, or \[ \psi^{\mathbf{c}}_{T}(\mathbf{r}) = c_{1}\phi_{1s}^{A} + \sqrt{1-c_{1}^{2}}\phi_{1s}^{B} + c_{2}\phi_{2s}^{A} + \sqrt{1-c_{2}^{2}}\phi_{2s}^{B} \] if {\itshape include\+\_\+pqn} in \mbox{\hyperlink{structshared__data_1_1h2plus__type}{H2plus }} is set to 2. 
+Function to calculate the wavefunction of an electron at position $ \mathbf{r} $ in the hydrogen molecular ion $ H_{2}^{+} $. Computes \[ \psi^{c}_{T}(\mathbf{r}) = c\phi_{1s}^{A}(\mathbf{r}) + \sqrt{1-c^{2}}\phi_{1s}^{B}(\mathbf{r}) \] for a given value of the parameter $ c $. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em c} & Parameter(s) of trial wavefunction \\
+\mbox{\texttt{ in}}  & {\em c} & Parameter of trial wavefunction \\
 \hline
 \mbox{\texttt{ in}}  & {\em r} & Electron position \\
 \hline
@@ -272,27 +272,21 @@ Function to calculate the wavefunction of an electron at position $ \mathbf{r} $
 \end{DoxyRetVals}
 
 
-Definition at line 197 of file quantum\+\_\+solvers.\+f90.
+Definition at line 193 of file quantum\+\_\+solvers.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{198 }
-\DoxyCodeLine{199         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: c}
+\DoxyCodeLine{198 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r}
+\DoxyCodeLine{199 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
 \DoxyCodeLine{200 }
-\DoxyCodeLine{201 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: c}
-\DoxyCodeLine{202 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r}
-\DoxyCodeLine{203 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
-\DoxyCodeLine{204 }
-\DoxyCodeLine{205 \textcolor{keywordtype}{        real}(real64) :: bond\_dist, overlap\_fac, wfn}
-\DoxyCodeLine{206 }
-\DoxyCodeLine{207         \textcolor{comment}{! wfn = c * (H1s\_wfn(r, R\_a) + H1s\_wfn(r, R\_b))}}
-\DoxyCodeLine{208         \textcolor{comment}{! wfn = c * (H1s\_wfn(r, R\_a) -\/ H1s\_wfn(r, R\_b))}}
-\DoxyCodeLine{209         \textcolor{comment}{! wfn = r2o2 * (H1s\_wfn\_mod(c, r, R\_a) + H1s\_wfn\_mod(c, r, R\_b))}}
-\DoxyCodeLine{210         bond\_dist = norm2(r\_a -\/ r\_b)}
-\DoxyCodeLine{211         \textcolor{comment}{!overlap = exp(-\/bond\_dist) * (1.0\_real64 + bond\_dist + (1.0\_real64 / 3.0\_real64)*bond\_dist*bond\_dist)}}
-\DoxyCodeLine{212         overlap\_fac = 1.0\_real64 / sqrt(2 * (1.0\_real64 + c)) \textcolor{comment}{! here, c takes the place of the overlap integral}}
-\DoxyCodeLine{213         wfn = overlap\_fac * (h1s\_wfn(r, r\_a) + h1s\_wfn(r, r\_b))}
-\DoxyCodeLine{214 }
+\DoxyCodeLine{201 \textcolor{keywordtype}{        real}(real64) :: wfn}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203         wfn = (c * h1s\_wfn(r, r\_a)) + (sqrt(1 -\/ (c*c)) * h1s\_wfn(r, r\_b)\textcolor{comment}{)}}
+\DoxyCodeLine{204 \textcolor{comment}{}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -341,22 +335,22 @@ Function to calculate transition probability for walkers in the $ H_{2}^{+} $ pr
 \end{DoxyRetVals}
 
 
-Definition at line 238 of file quantum\+\_\+solvers.\+f90.
+Definition at line 228 of file quantum\+\_\+solvers.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{239 }
-\DoxyCodeLine{240         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{241 }
-\DoxyCodeLine{242 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: c}
-\DoxyCodeLine{243 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_current, r\_next}
-\DoxyCodeLine{244 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
-\DoxyCodeLine{245 }
-\DoxyCodeLine{246 \textcolor{keywordtype}{        real}(real64) :: Prob}
-\DoxyCodeLine{247 }
-\DoxyCodeLine{248         prob = (h\_2\_plus\_wfn(c, r\_next, r\_a, r\_b) / \&}
-\DoxyCodeLine{249             h\_2\_plus\_wfn(c, r\_current, r\_a, r\_b))**2}
-\DoxyCodeLine{250 }
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: c}
+\DoxyCodeLine{233 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_current, r\_next}
+\DoxyCodeLine{234 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236 \textcolor{keywordtype}{        real}(real64) :: Prob}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238         prob = (h\_2\_plus\_wfn(c, r\_next, r\_a, r\_b) / \&}
+\DoxyCodeLine{239             h\_2\_plus\_wfn(c, r\_current, r\_a, r\_b))**2}
+\DoxyCodeLine{240 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -408,67 +402,67 @@ Finite difference step sizes for the calculation of both {\bfseries{E\+\_\+loc}}
 \end{DoxyParams}
 
 
-Definition at line 290 of file quantum\+\_\+solvers.\+f90.
+Definition at line 280 of file quantum\+\_\+solvers.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{291 }
-\DoxyCodeLine{292         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{293 }
-\DoxyCodeLine{294 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: c}
-\DoxyCodeLine{295 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r}
-\DoxyCodeLine{296 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
-\DoxyCodeLine{297 }
-\DoxyCodeLine{298 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: E\_loc}
-\DoxyCodeLine{299 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: gradient}
-\DoxyCodeLine{300   }
-\DoxyCodeLine{301 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(2, 3)} :: r\_diffs    \textcolor{comment}{! Wavefunction finite differences wrt position}}
-\DoxyCodeLine{302 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(2)} :: c\_diffs       \textcolor{comment}{! Wavefunction finite differences wrt parameter}}
-\DoxyCodeLine{303 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_temp        \textcolor{comment}{! Temporary position for finite differences}}
-\DoxyCodeLine{304 \textcolor{keywordtype}{        real}(real64) :: laplacian                   \textcolor{comment}{! 2nd derivative of trial wavefunction}}
-\DoxyCodeLine{305 \textcolor{keywordtype}{        real}(real64) :: coulomb                     \textcolor{comment}{! Coulomb terms of Hamiltonian}}
-\DoxyCodeLine{306 \textcolor{keywordtype}{        real}(real64) :: c\_temp                      \textcolor{comment}{! Temporary parameter value for finite differences}}
-\DoxyCodeLine{307 \textcolor{keywordtype}{        real}(real64) :: wfn, wfnx2                  \textcolor{comment}{! Wavefunction at current walker position}}
-\DoxyCodeLine{308         \textcolor{keywordtype}{integer} :: i                                \textcolor{comment}{! Loop integer}}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{283 }
+\DoxyCodeLine{284 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: c}
+\DoxyCodeLine{285 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r}
+\DoxyCodeLine{286 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{288 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: E\_loc}
+\DoxyCodeLine{289 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: gradient}
+\DoxyCodeLine{290   }
+\DoxyCodeLine{291 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(2, 3)} :: r\_diffs    \textcolor{comment}{! Wavefunction finite differences wrt position}}
+\DoxyCodeLine{292 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(2)} :: c\_diffs       \textcolor{comment}{! Wavefunction finite differences wrt parameter}}
+\DoxyCodeLine{293 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_temp        \textcolor{comment}{! Temporary position for finite differences}}
+\DoxyCodeLine{294 \textcolor{keywordtype}{        real}(real64) :: laplacian                   \textcolor{comment}{! 2nd derivative of trial wavefunction}}
+\DoxyCodeLine{295 \textcolor{keywordtype}{        real}(real64) :: coulomb                     \textcolor{comment}{! Coulomb terms of Hamiltonian}}
+\DoxyCodeLine{296 \textcolor{keywordtype}{        real}(real64) :: c\_temp                      \textcolor{comment}{! Temporary parameter value for finite differences}}
+\DoxyCodeLine{297 \textcolor{keywordtype}{        real}(real64) :: wfn, wfnx2                  \textcolor{comment}{! Wavefunction at current walker position}}
+\DoxyCodeLine{298         \textcolor{keywordtype}{integer} :: i                                \textcolor{comment}{! Loop integer}}
+\DoxyCodeLine{299 }
+\DoxyCodeLine{300         \textcolor{comment}{! Calculate trial wavefunction at provided point.}}
+\DoxyCodeLine{301         wfn = h\_2\_plus\_wfn(c, r, r\_a, r\_b)}
+\DoxyCodeLine{302         wfnx2 = 2 * wfn}
+\DoxyCodeLine{303 }
+\DoxyCodeLine{304         \textcolor{comment}{! Calculate trial wavefunction in finite difference directions.}}
+\DoxyCodeLine{305         \textcolor{keywordflow}{do} i = 1, 3}
+\DoxyCodeLine{306             r\_temp(:) = r(:)}
+\DoxyCodeLine{307             r\_temp(i) = r(i) -\/ h2plus\%ham\_fdstep}
+\DoxyCodeLine{308             r\_diffs(1, i) = h\_2\_plus\_wfn(c, r\_temp, r\_a, r\_b)}
 \DoxyCodeLine{309 }
-\DoxyCodeLine{310         \textcolor{comment}{! Calculate trial wavefunction at provided point.}}
-\DoxyCodeLine{311         wfn = h\_2\_plus\_wfn(c, r, r\_a, r\_b)}
-\DoxyCodeLine{312         wfnx2 = 2 * wfn}
+\DoxyCodeLine{310             r\_temp(i) = r(i) + h2plus\%ham\_fdstep}
+\DoxyCodeLine{311             r\_diffs(2, i) = h\_2\_plus\_wfn(c, r\_temp, r\_a, r\_b)}
+\DoxyCodeLine{312 \textcolor{keywordflow}{        end do}}
 \DoxyCodeLine{313 }
-\DoxyCodeLine{314         \textcolor{comment}{! Calculate trial wavefunction in finite difference directions.}}
-\DoxyCodeLine{315         \textcolor{keywordflow}{do} i = 1, 3}
-\DoxyCodeLine{316             r\_temp(:) = r(:)}
-\DoxyCodeLine{317             r\_temp(i) = r(i) -\/ h2plus\%ham\_fdstep}
-\DoxyCodeLine{318             r\_diffs(1, i) = h\_2\_plus\_wfn(c, r\_temp, r\_a, r\_b)}
+\DoxyCodeLine{314         \textcolor{comment}{! Assemble Hamiltonian}}
+\DoxyCodeLine{315         laplacian = ((r\_diffs(1, 1) -\/ wfnx2 + r\_diffs(2, 1)) + \&}
+\DoxyCodeLine{316                      (r\_diffs(1, 2) -\/ wfnx2 + r\_diffs(2, 2)) + \&}
+\DoxyCodeLine{317                      (r\_diffs(1, 3) -\/ wfnx2 + r\_diffs(2, 3))) / (h2plus\%ham\_fdstep\textcolor{comment}{**2)}}
+\DoxyCodeLine{318 \textcolor{comment}{}        laplacian = laplacian * (-\/0.5\_real64)}
 \DoxyCodeLine{319 }
-\DoxyCodeLine{320             r\_temp(i) = r(i) + h2plus\%ham\_fdstep}
-\DoxyCodeLine{321             r\_diffs(2, i) = h\_2\_plus\_wfn(c, r\_temp, r\_a, r\_b)}
-\DoxyCodeLine{322 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{320         coulomb = -\/(1  / norm2(r -\/ r\_a))*wfn -\/ (1 / norm2(r -\/ r\_b))*wfn}
+\DoxyCodeLine{321         }
+\DoxyCodeLine{322         e\_loc = ((laplacian + coulomb) / wfn) + (1 / norm2(r\_a -\/ r\_b))}
 \DoxyCodeLine{323 }
-\DoxyCodeLine{324         \textcolor{comment}{! Assemble Hamiltonian}}
-\DoxyCodeLine{325         laplacian = ((r\_diffs(1, 1) -\/ wfnx2 + r\_diffs(2, 1)) + \&}
-\DoxyCodeLine{326                      (r\_diffs(1, 2) -\/ wfnx2 + r\_diffs(2, 2)) + \&}
-\DoxyCodeLine{327                      (r\_diffs(1, 3) -\/ wfnx2 + r\_diffs(2, 3))) / (h2plus\%ham\_fdstep\textcolor{comment}{**2)}}
-\DoxyCodeLine{328 \textcolor{comment}{}        laplacian = laplacian * (-\/0.5\_real64)}
+\DoxyCodeLine{324         \textcolor{comment}{! Check if gradient is needed}}
+\DoxyCodeLine{325         \textcolor{keywordflow}{if} (h2plus\%auto\_params) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{326             \textcolor{comment}{! Calculate wavefunction gradient wrt c by central difference.}}
+\DoxyCodeLine{327             c\_temp = c -\/ h2plus\%c\_fdstep}
+\DoxyCodeLine{328             c\_diffs(1) = h\_2\_plus\_wfn(c\_temp, r, r\_a, r\_b)}
 \DoxyCodeLine{329 }
-\DoxyCodeLine{330         coulomb = -\/(1  / norm2(r -\/ r\_a))*wfn -\/ (1 / norm2(r -\/ r\_b))*wfn}
-\DoxyCodeLine{331         }
-\DoxyCodeLine{332         e\_loc = ((laplacian + coulomb) / wfn) + (1 / norm2(r\_a -\/ r\_b))}
-\DoxyCodeLine{333 }
-\DoxyCodeLine{334         \textcolor{comment}{! Check if gradient is needed}}
-\DoxyCodeLine{335         \textcolor{keywordflow}{if} (h2plus\%auto\_params) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{336             \textcolor{comment}{! Calculate wavefunction gradient wrt c by central difference.}}
-\DoxyCodeLine{337             c\_temp = c -\/ h2plus\%c\_fdstep}
-\DoxyCodeLine{338             c\_diffs(1) = h\_2\_plus\_wfn(c\_temp, r, r\_a, r\_b)}
-\DoxyCodeLine{339 }
-\DoxyCodeLine{340             c\_temp = c + h2plus\%c\_fdstep}
-\DoxyCodeLine{341             c\_diffs(2) = h\_2\_plus\_wfn(c\_temp, r, r\_a, r\_b)}
-\DoxyCodeLine{342 }
-\DoxyCodeLine{343             gradient = (c\_diffs(2) -\/ c\_diffs(1)) / (2.0\_real64 * h2plus\%c\_fdstep\textcolor{comment}{)}}
-\DoxyCodeLine{344 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
-\DoxyCodeLine{345             gradient = 0.0\_real64}
-\DoxyCodeLine{346 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{347         }
+\DoxyCodeLine{330             c\_temp = c + h2plus\%c\_fdstep}
+\DoxyCodeLine{331             c\_diffs(2) = h\_2\_plus\_wfn(c\_temp, r, r\_a, r\_b)}
+\DoxyCodeLine{332 }
+\DoxyCodeLine{333             gradient = (c\_diffs(2) -\/ c\_diffs(1)) / (2.0\_real64 * h2plus\%c\_fdstep\textcolor{comment}{)}}
+\DoxyCodeLine{334 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
+\DoxyCodeLine{335             gradient = 0.0\_real64}
+\DoxyCodeLine{336 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{337         }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -508,22 +502,22 @@ Uses the gradient calculated by \mbox{\hyperlink{namespacesolvers_a9cc5ffb282a9d
 \end{DoxyParams}
 
 
-Definition at line 367 of file quantum\+\_\+solvers.\+f90.
+Definition at line 357 of file quantum\+\_\+solvers.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{368 }
-\DoxyCodeLine{369         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{370 }
-\DoxyCodeLine{371 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: c\_old}
-\DoxyCodeLine{372 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: gradient}
-\DoxyCodeLine{373 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: c\_new}
-\DoxyCodeLine{374 }
-\DoxyCodeLine{375 \textcolor{keywordtype}{        real}(real64) :: damping = 1.0\_real64}
-\DoxyCodeLine{376 }
-\DoxyCodeLine{377         \textcolor{comment}{! Update c by dampened steepest descent.}}
-\DoxyCodeLine{378         c\_new = c\_old + (damping * gradient)}
-\DoxyCodeLine{379 }
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{360 }
+\DoxyCodeLine{361 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: c\_old}
+\DoxyCodeLine{362 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: gradient}
+\DoxyCodeLine{363 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: c\_new}
+\DoxyCodeLine{364 }
+\DoxyCodeLine{365 \textcolor{keywordtype}{        real}(real64) :: damping = 1.0\_real64}
+\DoxyCodeLine{366 }
+\DoxyCodeLine{367         \textcolor{comment}{! Update c by dampened steepest descent.}}
+\DoxyCodeLine{368         c\_new = c\_old -\/ (damping * gradient)}
+\DoxyCodeLine{369 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespacesolvers_a38259c21a02a250a91f45d79e4165742}\label{namespacesolvers_a38259c21a02a250a91f45d79e4165742}} 
@@ -550,65 +544,65 @@ The value of this parameter is found by Newton-\/\+Raphson iteration over the re
 \end{DoxyRetVals}
 
 
-Definition at line 409 of file quantum\+\_\+solvers.\+f90.
+Definition at line 399 of file quantum\+\_\+solvers.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{410 }
-\DoxyCodeLine{411         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{412 }
-\DoxyCodeLine{413 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: s}
-\DoxyCodeLine{414 }
-\DoxyCodeLine{415 \textcolor{keywordtype}{        real}(real64) :: a}
-\DoxyCodeLine{416 }
-\DoxyCodeLine{417 \textcolor{keywordtype}{        real}(real64) :: f           \textcolor{comment}{! Value of function at current iteration}}
-\DoxyCodeLine{418 \textcolor{keywordtype}{        real}(real64) :: f\_dash      \textcolor{comment}{! Value of derivative at current iteration}}
-\DoxyCodeLine{419 \textcolor{keywordtype}{        real}(real64) :: emsoa       \textcolor{comment}{! e\string^(-\/s/a)}}
-\DoxyCodeLine{420 \textcolor{keywordtype}{        real}(real64) :: tol         \textcolor{comment}{! Tolerance for stopping iteration}}
-\DoxyCodeLine{421         \textcolor{keywordtype}{integer} :: maxiter          \textcolor{comment}{! Maximum number of iterations}}
-\DoxyCodeLine{422         \textcolor{keywordtype}{integer} :: k                \textcolor{comment}{! Loop integer}}
-\DoxyCodeLine{423 }
-\DoxyCodeLine{424         a = 0.5\_real64 \textcolor{comment}{! guess based on s=0 solution}}
-\DoxyCodeLine{425         maxiter = 100}
-\DoxyCodeLine{426         tol = 1e-\/5\_real64}
+\DoxyCodeLine{400 }
+\DoxyCodeLine{401         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{402 }
+\DoxyCodeLine{403 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: s}
+\DoxyCodeLine{404 }
+\DoxyCodeLine{405 \textcolor{keywordtype}{        real}(real64) :: a}
+\DoxyCodeLine{406 }
+\DoxyCodeLine{407 \textcolor{keywordtype}{        real}(real64) :: f           \textcolor{comment}{! Value of function at current iteration}}
+\DoxyCodeLine{408 \textcolor{keywordtype}{        real}(real64) :: f\_dash      \textcolor{comment}{! Value of derivative at current iteration}}
+\DoxyCodeLine{409 \textcolor{keywordtype}{        real}(real64) :: emsoa       \textcolor{comment}{! e\string^(-\/s/a)}}
+\DoxyCodeLine{410 \textcolor{keywordtype}{        real}(real64) :: tol         \textcolor{comment}{! Tolerance for stopping iteration}}
+\DoxyCodeLine{411         \textcolor{keywordtype}{integer} :: maxiter          \textcolor{comment}{! Maximum number of iterations}}
+\DoxyCodeLine{412         \textcolor{keywordtype}{integer} :: k                \textcolor{comment}{! Loop integer}}
+\DoxyCodeLine{413 }
+\DoxyCodeLine{414         a = 0.5\_real64 \textcolor{comment}{! guess based on s=0 solution}}
+\DoxyCodeLine{415         maxiter = 100}
+\DoxyCodeLine{416         tol = 1e-\/5\_real64}
+\DoxyCodeLine{417 }
+\DoxyCodeLine{418         \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{419             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Starting Newton-\/Raphson search for parameter a...')"{}}\textcolor{comment}{)}}
+\DoxyCodeLine{420 \textcolor{comment}{}            \textcolor{keyword}{write}(logid, *) \textcolor{stringliteral}{'a               abs(f)'}}
+\DoxyCodeLine{421 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{422 }
+\DoxyCodeLine{423         \textcolor{comment}{! Calculate initial value of function based on guess}}
+\DoxyCodeLine{424         f = (1.0\_real64 / (1.0\_real64 + exp(-\/s/a))) -\/ a}
+\DoxyCodeLine{425         \textcolor{comment}{! Iterate until converged}}
+\DoxyCodeLine{426         \textcolor{keywordflow}{do} k = 1, maxiter}
 \DoxyCodeLine{427 }
-\DoxyCodeLine{428         \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{429             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Starting Newton-\/Raphson search for parameter a...')"{}}\textcolor{comment}{)}}
-\DoxyCodeLine{430 \textcolor{comment}{}            \textcolor{keyword}{write}(logid, *) \textcolor{stringliteral}{'a               abs(f)'}}
-\DoxyCodeLine{431 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{432 }
-\DoxyCodeLine{433         \textcolor{comment}{! Calculate initial value of function based on guess}}
-\DoxyCodeLine{434         f = (1.0\_real64 / (1.0\_real64 + exp(-\/s/a))) -\/ a}
-\DoxyCodeLine{435         \textcolor{comment}{! Iterate until converged}}
-\DoxyCodeLine{436         \textcolor{keywordflow}{do} k = 1, maxiter}
-\DoxyCodeLine{437 }
-\DoxyCodeLine{438             \textcolor{keywordflow}{if} (abs(f) .lt. tol) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{439                 \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{440                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Value of parameter a converged.')"{}})}
-\DoxyCodeLine{441                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{442 \textcolor{keywordflow}{                end if}}
-\DoxyCodeLine{443                 \textcolor{keywordflow}{exit}}
-\DoxyCodeLine{444 \textcolor{keywordflow}{            end if}}
-\DoxyCodeLine{445 }
-\DoxyCodeLine{446             \textcolor{comment}{! Calculate new values}}
-\DoxyCodeLine{447             emsoa = exp(-\/s/a)}
-\DoxyCodeLine{448             f = (1.0\_real64 / (1.0\_real64 + emsoa)) -\/ a}
-\DoxyCodeLine{449             f\_dash = (-\/s * emsoa) / ((1.0\_real64 + emsoa*emsoa * a*a)) -\/\textcolor{comment}{ 1}}
-\DoxyCodeLine{450 \textcolor{comment}{}}
-\DoxyCodeLine{451             \textcolor{comment}{! Update value of a}}
-\DoxyCodeLine{452             a = a -\/ (f / f\_dash)}
-\DoxyCodeLine{453 }
-\DoxyCodeLine{454             \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{455                 \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(F12.8, '    ', F12.8)"{}}) a, abs(f)}
-\DoxyCodeLine{456 \textcolor{keywordflow}{            end if}}
-\DoxyCodeLine{457 }
-\DoxyCodeLine{458 \textcolor{keywordflow}{        end do}}
-\DoxyCodeLine{459 }
-\DoxyCodeLine{460         \textcolor{comment}{! Crash out if not converged}}
-\DoxyCodeLine{461         \textcolor{keywordflow}{if} (k .ge. maxiter) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{462             error stop \textcolor{stringliteral}{"{}Newton-\/Raphson search for parameter a has failed to converge."{}}}
-\DoxyCodeLine{463 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{464 }
+\DoxyCodeLine{428             \textcolor{keywordflow}{if} (abs(f) .lt. tol) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{429                 \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{430                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Value of parameter a converged.')"{}})}
+\DoxyCodeLine{431                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{432 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{433                 \textcolor{keywordflow}{exit}}
+\DoxyCodeLine{434 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{435 }
+\DoxyCodeLine{436             \textcolor{comment}{! Calculate new values}}
+\DoxyCodeLine{437             emsoa = exp(-\/s/a)}
+\DoxyCodeLine{438             f = (1.0\_real64 / (1.0\_real64 + emsoa)) -\/ a}
+\DoxyCodeLine{439             f\_dash = (-\/s * emsoa) / ((1.0\_real64 + emsoa*emsoa * a*a)) -\/\textcolor{comment}{ 1}}
+\DoxyCodeLine{440 \textcolor{comment}{}}
+\DoxyCodeLine{441             \textcolor{comment}{! Update value of a}}
+\DoxyCodeLine{442             a = a -\/ (f / f\_dash)}
+\DoxyCodeLine{443 }
+\DoxyCodeLine{444             \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{445                 \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(F12.8, '    ', F12.8)"{}}) a, abs(f)}
+\DoxyCodeLine{446 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{447 }
+\DoxyCodeLine{448 \textcolor{keywordflow}{        end do}}
+\DoxyCodeLine{449 }
+\DoxyCodeLine{450         \textcolor{comment}{! Crash out if not converged}}
+\DoxyCodeLine{451         \textcolor{keywordflow}{if} (k .ge. maxiter) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{452             error stop \textcolor{stringliteral}{"{}Newton-\/Raphson search for parameter a has failed to converge."{}}}
+\DoxyCodeLine{453 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{454 }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -653,34 +647,34 @@ Takes the functional form \[ \Psi_{T}(\mathbf{r}_1, \mathbf{r}_{2}) = \phi(\math
 \end{DoxyRetVals}
 
 
-Definition at line 501 of file quantum\+\_\+solvers.\+f90.
+Definition at line 491 of file quantum\+\_\+solvers.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{502 }
-\DoxyCodeLine{503         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{504 }
-\DoxyCodeLine{505 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: a}
-\DoxyCodeLine{506 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: beta}
-\DoxyCodeLine{507 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_1, r\_2}
-\DoxyCodeLine{508 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
-\DoxyCodeLine{509 }
-\DoxyCodeLine{510 \textcolor{keywordtype}{        real}(real64) :: wfn}
+\DoxyCodeLine{492 }
+\DoxyCodeLine{493         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{494 }
+\DoxyCodeLine{495 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: a}
+\DoxyCodeLine{496 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: beta}
+\DoxyCodeLine{497 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_1, r\_2}
+\DoxyCodeLine{498 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
+\DoxyCodeLine{499 }
+\DoxyCodeLine{500 \textcolor{keywordtype}{        real}(real64) :: wfn}
+\DoxyCodeLine{501 }
+\DoxyCodeLine{502 \textcolor{keywordtype}{        real}(real64) :: s                           \textcolor{comment}{! Bond length}}
+\DoxyCodeLine{503 \textcolor{keywordtype}{        real}(real64) :: alpha                       \textcolor{comment}{! Wavefunction parameter, set to 2}}
+\DoxyCodeLine{504 \textcolor{keywordtype}{        real}(real64) :: phi\_r1, phi\_r2, jastrow     \textcolor{comment}{! Wavefunction components}}
+\DoxyCodeLine{505 }
+\DoxyCodeLine{506         s = norm2(r\_a -\/ r\_b)}
+\DoxyCodeLine{507         alpha = 2.0\_real64}
+\DoxyCodeLine{508 }
+\DoxyCodeLine{509         phi\_r1 = exp(-\/norm2(r\_1 -\/ r\_a) / a) + exp(-\/norm2(r\_1 -\/ r\_b) / a)}
+\DoxyCodeLine{510         phi\_r2 = exp(-\/norm2(r\_2 -\/ r\_a) / a) + exp(-\/norm2(r\_2 -\/ r\_b) / a)}
 \DoxyCodeLine{511 }
-\DoxyCodeLine{512 \textcolor{keywordtype}{        real}(real64) :: s                           \textcolor{comment}{! Bond length}}
-\DoxyCodeLine{513 \textcolor{keywordtype}{        real}(real64) :: alpha                       \textcolor{comment}{! Wavefunction parameter, set to 2}}
-\DoxyCodeLine{514 \textcolor{keywordtype}{        real}(real64) :: phi\_r1, phi\_r2, jastrow     \textcolor{comment}{! Wavefunction components}}
+\DoxyCodeLine{512         jastrow = exp(norm2(r\_1 -\/ r\_2) / (alpha * (1.0\_real64 + beta*norm2\textcolor{comment}{(r\_1 -\/ r\_2))))}}
+\DoxyCodeLine{513 \textcolor{comment}{}}
+\DoxyCodeLine{514         wfn = phi\_r1 * phi\_r2 * jastrow}
 \DoxyCodeLine{515 }
-\DoxyCodeLine{516         s = norm2(r\_a -\/ r\_b)}
-\DoxyCodeLine{517         alpha = 2.0\_real64}
-\DoxyCodeLine{518 }
-\DoxyCodeLine{519         phi\_r1 = exp(-\/norm2(r\_1 -\/ r\_a) / a) + exp(-\/norm2(r\_1 -\/ r\_b) / a)}
-\DoxyCodeLine{520         phi\_r2 = exp(-\/norm2(r\_2 -\/ r\_a) / a) + exp(-\/norm2(r\_2 -\/ r\_b) / a)}
-\DoxyCodeLine{521 }
-\DoxyCodeLine{522         jastrow = exp(norm2(r\_1 -\/ r\_2) / (alpha * (1.0\_real64 + beta*norm2\textcolor{comment}{(r\_1 -\/ r\_2))))}}
-\DoxyCodeLine{523 \textcolor{comment}{}}
-\DoxyCodeLine{524         wfn = phi\_r1 * phi\_r2 * jastrow}
-\DoxyCodeLine{525 }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -727,24 +721,24 @@ Function to calculate transition probability for walkers in the $ H_{2} $ proble
 \end{DoxyRetVals}
 
 
-Definition at line 552 of file quantum\+\_\+solvers.\+f90.
+Definition at line 542 of file quantum\+\_\+solvers.\+f90.
 
 
 \begin{DoxyCode}{0}
+\DoxyCodeLine{544 }
+\DoxyCodeLine{545         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{546 }
+\DoxyCodeLine{547 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: a}
+\DoxyCodeLine{548 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: beta}
+\DoxyCodeLine{549 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_1\_current, r\_2\_current}
+\DoxyCodeLine{550 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_1\_next, r\_2\_next}
+\DoxyCodeLine{551 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
+\DoxyCodeLine{552 }
+\DoxyCodeLine{553 \textcolor{keywordtype}{        real}(real64) :: Prob}
 \DoxyCodeLine{554 }
-\DoxyCodeLine{555         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{556 }
-\DoxyCodeLine{557 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: a}
-\DoxyCodeLine{558 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: beta}
-\DoxyCodeLine{559 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_1\_current, r\_2\_current}
-\DoxyCodeLine{560 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_1\_next, r\_2\_next}
-\DoxyCodeLine{561 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
-\DoxyCodeLine{562 }
-\DoxyCodeLine{563 \textcolor{keywordtype}{        real}(real64) :: Prob}
-\DoxyCodeLine{564 }
-\DoxyCodeLine{565         prob = (h\_2\_wfn(a, beta, r\_1\_next, r\_2\_next, r\_a, r\_b) / \&}
-\DoxyCodeLine{566                h\_2\_wfn(a, beta, r\_1\_current, r\_2\_current, r\_a, r\_b))**2}
-\DoxyCodeLine{567 }
+\DoxyCodeLine{555         prob = (h\_2\_wfn(a, beta, r\_1\_next, r\_2\_next, r\_a, r\_b) / \&}
+\DoxyCodeLine{556                h\_2\_wfn(a, beta, r\_1\_current, r\_2\_current, r\_a, r\_b))**2}
+\DoxyCodeLine{557 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -795,65 +789,65 @@ Function to calculate the local energy of two walkers in the $ H_{2} $ problem. 
 \end{DoxyRetVals}
 
 
-Definition at line 599 of file quantum\+\_\+solvers.\+f90.
+Definition at line 589 of file quantum\+\_\+solvers.\+f90.
 
 
 \begin{DoxyCode}{0}
+\DoxyCodeLine{590 }
+\DoxyCodeLine{591         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{592 }
+\DoxyCodeLine{593 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: a}
+\DoxyCodeLine{594 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: beta}
+\DoxyCodeLine{595 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_1, r\_2}
+\DoxyCodeLine{596 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
+\DoxyCodeLine{597 }
+\DoxyCodeLine{598 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: E\_loc}
+\DoxyCodeLine{599 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: DphiDbeta}
 \DoxyCodeLine{600 }
-\DoxyCodeLine{601         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{602 }
-\DoxyCodeLine{603 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: a}
-\DoxyCodeLine{604 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: beta}
-\DoxyCodeLine{605 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_1, r\_2}
-\DoxyCodeLine{606 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
-\DoxyCodeLine{607 }
-\DoxyCodeLine{608 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: E\_loc}
-\DoxyCodeLine{609 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: DphiDbeta}
-\DoxyCodeLine{610 }
-\DoxyCodeLine{611 \textcolor{keywordtype}{        real}(real64) :: E1, E2, E3, E4, E5, E6, E7, E8}
-\DoxyCodeLine{612 \textcolor{keywordtype}{        real}(real64) :: phi\_1a, phi\_1b, phi\_1}
-\DoxyCodeLine{613 \textcolor{keywordtype}{        real}(real64) :: phi\_2a, phi\_2b, phi\_2}
-\DoxyCodeLine{614 \textcolor{keywordtype}{        real}(real64) :: r\_1a, r\_1b, r\_2a, r\_2b, r\_12}
-\DoxyCodeLine{615 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_1a\_hat, r\_1b\_hat, r\_2a\_hat, r\_2b\_hat\textcolor{comment}{, r\_12\_hat}}
-\DoxyCodeLine{616 \textcolor{comment}{}}
-\DoxyCodeLine{617 \textcolor{comment}{        r\_1a = norm2(r\_1 -\/ r\_a)}}
-\DoxyCodeLine{618 \textcolor{comment}{}        r\_1b = norm2(r\_1 -\/ r\_b)}
-\DoxyCodeLine{619         r\_2a = norm2(r\_2 -\/ r\_a)}
-\DoxyCodeLine{620         r\_2b = norm2(r\_2 -\/ r\_b)}
-\DoxyCodeLine{621         r\_12 = norm2(r\_1 -\/ r\_2)}
-\DoxyCodeLine{622 }
-\DoxyCodeLine{623         r\_1a\_hat = (r\_1 -\/ r\_a) / spread(r\_1a, 1, 3)}
-\DoxyCodeLine{624         r\_1b\_hat = (r\_1 -\/ r\_b) / spread(r\_1b, 1, 3)}
-\DoxyCodeLine{625         r\_2a\_hat = (r\_2 -\/ r\_a) / spread(r\_2a, 1, 3)}
-\DoxyCodeLine{626         r\_2b\_hat = (r\_2 -\/ r\_b) / spread(r\_2b, 1, 3)}
-\DoxyCodeLine{627         r\_12\_hat = (r\_1 -\/ r\_2) / spread(r\_12, 1, 3)}
-\DoxyCodeLine{628 }
-\DoxyCodeLine{629         phi\_1a = exp(-\/r\_1a / a)}
-\DoxyCodeLine{630         phi\_1b = exp(-\/r\_1b / a)}
-\DoxyCodeLine{631         phi\_2a = exp(-\/r\_2a / a)}
-\DoxyCodeLine{632         phi\_2b = exp(-\/r\_2b / a)}
-\DoxyCodeLine{633 }
-\DoxyCodeLine{634         phi\_1 = phi\_1a + phi\_1b}
-\DoxyCodeLine{635         phi\_2 = phi\_2a + phi\_2b}
-\DoxyCodeLine{636 }
-\DoxyCodeLine{637         e1 = 1.0\_real64 / (a*a)}
-\DoxyCodeLine{638         e2 = ((phi\_1a / r\_1a) + (phi\_1b / r\_1b)) / (a * phi\_1)}
-\DoxyCodeLine{639         e3 = ((phi\_2a / r\_2a) + (phi\_2b / r\_2b)) / (a * phi\_2)}
-\DoxyCodeLine{640         e4 = (1.0\_real64 / r\_1a) + (1.0\_real64 / r\_1b) + (1.0\_real64 / r\_2a\textcolor{comment}{) + (1.0\_real64 / r\_2b)}}
-\DoxyCodeLine{641 \textcolor{comment}{}        e5 = 1.0\_real64 / r\_12}
-\DoxyCodeLine{642         e6 = ((((phi\_1a * sum(r\_1a\_hat * r\_12\_hat, dim=1)) + (phi\_1b * sum\textcolor{comment}{(r\_1b\_hat * r\_12\_hat, dim=1))) / phi\_1) \&}}
-\DoxyCodeLine{643 \textcolor{comment}{}            -\/ (((phi\_2a * sum(r\_2a\_hat * r\_12\_hat, dim=1)) + (phi\_2b * sum\textcolor{comment}{(r\_2b\_hat * r\_12\_hat, dim=1))) / phi\_2)) \&}}
-\DoxyCodeLine{644 \textcolor{comment}{}            / (2.0\_real64 * a * (1.0\_real64 + beta*r\_12)**2)}
-\DoxyCodeLine{645         e7 = (((4.0\_real64*beta + 1.0\_real64) * r\_12) + 4.0\_real64) \&}
-\DoxyCodeLine{646             / (4.0\_real64 * r\_12 * (1.0\_real64 + beta*r\_12)**4)}
-\DoxyCodeLine{647         e8 = (1.0\_real64 / norm2(r\_a -\/ r\_b))}
-\DoxyCodeLine{648         }
-\DoxyCodeLine{649         \textcolor{comment}{! E\_loc = -\/E1 + E2 + E3 -\/ E4 + E5 + E6 -\/ E7 + (1.0\_real64 / norm2(R\_a -\/ R\_b))}}
-\DoxyCodeLine{650         \textcolor{comment}{! E\_loc = -\/E1 + E2 + E3 -\/ E4 + E5 + E6 -\/ E7}}
-\DoxyCodeLine{651         e\_loc = -\/e1 + e2 + e3 -\/ e4 + e5 + e6 -\/ e7 + e8}
-\DoxyCodeLine{652 }
-\DoxyCodeLine{653         dphidbeta = -\/(r\_12*r\_12) / (2.0\_real64*(1.0\_real64 + beta*r\_12)*\textcolor{comment}{*2)}}
-\DoxyCodeLine{654 \textcolor{comment}{}}
+\DoxyCodeLine{601 \textcolor{keywordtype}{        real}(real64) :: E1, E2, E3, E4, E5, E6, E7, E8}
+\DoxyCodeLine{602 \textcolor{keywordtype}{        real}(real64) :: phi\_1a, phi\_1b, phi\_1}
+\DoxyCodeLine{603 \textcolor{keywordtype}{        real}(real64) :: phi\_2a, phi\_2b, phi\_2}
+\DoxyCodeLine{604 \textcolor{keywordtype}{        real}(real64) :: r\_1a, r\_1b, r\_2a, r\_2b, r\_12}
+\DoxyCodeLine{605 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_1a\_hat, r\_1b\_hat, r\_2a\_hat, r\_2b\_hat\textcolor{comment}{, r\_12\_hat}}
+\DoxyCodeLine{606 \textcolor{comment}{}}
+\DoxyCodeLine{607 \textcolor{comment}{        r\_1a = norm2(r\_1 -\/ r\_a)}}
+\DoxyCodeLine{608 \textcolor{comment}{}        r\_1b = norm2(r\_1 -\/ r\_b)}
+\DoxyCodeLine{609         r\_2a = norm2(r\_2 -\/ r\_a)}
+\DoxyCodeLine{610         r\_2b = norm2(r\_2 -\/ r\_b)}
+\DoxyCodeLine{611         r\_12 = norm2(r\_1 -\/ r\_2)}
+\DoxyCodeLine{612 }
+\DoxyCodeLine{613         r\_1a\_hat = (r\_1 -\/ r\_a) / spread(r\_1a, 1, 3)}
+\DoxyCodeLine{614         r\_1b\_hat = (r\_1 -\/ r\_b) / spread(r\_1b, 1, 3)}
+\DoxyCodeLine{615         r\_2a\_hat = (r\_2 -\/ r\_a) / spread(r\_2a, 1, 3)}
+\DoxyCodeLine{616         r\_2b\_hat = (r\_2 -\/ r\_b) / spread(r\_2b, 1, 3)}
+\DoxyCodeLine{617         r\_12\_hat = (r\_1 -\/ r\_2) / spread(r\_12, 1, 3)}
+\DoxyCodeLine{618 }
+\DoxyCodeLine{619         phi\_1a = exp(-\/r\_1a / a)}
+\DoxyCodeLine{620         phi\_1b = exp(-\/r\_1b / a)}
+\DoxyCodeLine{621         phi\_2a = exp(-\/r\_2a / a)}
+\DoxyCodeLine{622         phi\_2b = exp(-\/r\_2b / a)}
+\DoxyCodeLine{623 }
+\DoxyCodeLine{624         phi\_1 = phi\_1a + phi\_1b}
+\DoxyCodeLine{625         phi\_2 = phi\_2a + phi\_2b}
+\DoxyCodeLine{626 }
+\DoxyCodeLine{627         e1 = 1.0\_real64 / (a*a)}
+\DoxyCodeLine{628         e2 = ((phi\_1a / r\_1a) + (phi\_1b / r\_1b)) / (a * phi\_1)}
+\DoxyCodeLine{629         e3 = ((phi\_2a / r\_2a) + (phi\_2b / r\_2b)) / (a * phi\_2)}
+\DoxyCodeLine{630         e4 = (1.0\_real64 / r\_1a) + (1.0\_real64 / r\_1b) + (1.0\_real64 / r\_2a\textcolor{comment}{) + (1.0\_real64 / r\_2b)}}
+\DoxyCodeLine{631 \textcolor{comment}{}        e5 = 1.0\_real64 / r\_12}
+\DoxyCodeLine{632         e6 = ((((phi\_1a * sum(r\_1a\_hat * r\_12\_hat, dim=1)) + (phi\_1b * sum\textcolor{comment}{(r\_1b\_hat * r\_12\_hat, dim=1))) / phi\_1) \&}}
+\DoxyCodeLine{633 \textcolor{comment}{}            -\/ (((phi\_2a * sum(r\_2a\_hat * r\_12\_hat, dim=1)) + (phi\_2b * sum\textcolor{comment}{(r\_2b\_hat * r\_12\_hat, dim=1))) / phi\_2)) \&}}
+\DoxyCodeLine{634 \textcolor{comment}{}            / (2.0\_real64 * a * (1.0\_real64 + beta*r\_12)**2)}
+\DoxyCodeLine{635         e7 = (((4.0\_real64*beta + 1.0\_real64) * r\_12) + 4.0\_real64) \&}
+\DoxyCodeLine{636             / (4.0\_real64 * r\_12 * (1.0\_real64 + beta*r\_12)**4)}
+\DoxyCodeLine{637         e8 = (1.0\_real64 / norm2(r\_a -\/ r\_b))}
+\DoxyCodeLine{638         }
+\DoxyCodeLine{639         \textcolor{comment}{! E\_loc = -\/E1 + E2 + E3 -\/ E4 + E5 + E6 -\/ E7 + (1.0\_real64 / norm2(R\_a -\/ R\_b))}}
+\DoxyCodeLine{640         \textcolor{comment}{! E\_loc = -\/E1 + E2 + E3 -\/ E4 + E5 + E6 -\/ E7}}
+\DoxyCodeLine{641         e\_loc = -\/e1 + e2 + e3 -\/ e4 + e5 + e6 -\/ e7 + e8}
+\DoxyCodeLine{642 }
+\DoxyCodeLine{643         dphidbeta = -\/(r\_12*r\_12) / (2.0\_real64*(1.0\_real64 + beta*r\_12)*\textcolor{comment}{*2)}}
+\DoxyCodeLine{644 \textcolor{comment}{}}
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -885,20 +879,20 @@ Uses the gradient calculated by \mbox{\hyperlink{namespacesolvers_a9afbcdcc0405d
 \end{DoxyParams}
 
 
-Definition at line 674 of file quantum\+\_\+solvers.\+f90.
+Definition at line 664 of file quantum\+\_\+solvers.\+f90.
 
 
 \begin{DoxyCode}{0}
+\DoxyCodeLine{665 }
+\DoxyCodeLine{666         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{667 }
+\DoxyCodeLine{668 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: beta\_old}
+\DoxyCodeLine{669 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: gradient}
+\DoxyCodeLine{670 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: beta\_new}
+\DoxyCodeLine{671 }
+\DoxyCodeLine{672 \textcolor{keywordtype}{        real}(real64) :: damping = 1.0\_real64}
+\DoxyCodeLine{673 }
+\DoxyCodeLine{674         beta\_new = beta\_old -\/ (damping * gradient)}
 \DoxyCodeLine{675 }
-\DoxyCodeLine{676         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{677 }
-\DoxyCodeLine{678 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: beta\_old}
-\DoxyCodeLine{679 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: gradient}
-\DoxyCodeLine{680 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: beta\_new}
-\DoxyCodeLine{681 }
-\DoxyCodeLine{682 \textcolor{keywordtype}{        real}(real64) :: damping = 1.0\_real64}
-\DoxyCodeLine{683 }
-\DoxyCodeLine{684         beta\_new = beta\_old -\/ (damping * gradient)}
-\DoxyCodeLine{685 }
 
 \end{DoxyCode}
