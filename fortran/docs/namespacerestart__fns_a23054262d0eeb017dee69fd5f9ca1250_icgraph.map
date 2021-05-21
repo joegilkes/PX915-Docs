@@ -1,6 +1,7 @@
 <map id="restart_fns::error_check" name="restart_fns::error_check">
-<area shape="rect" id="node1" title="Checks error status at each point of the NetCDF read." alt="" coords="323,23,439,65"/>
-<area shape="rect" id="node2" href="$namespacerestart__fns.html#a2bfef0bcec6193f109b558f89e9cd90d" title=" " alt="" coords="109,5,269,32"/>
-<area shape="rect" id="node3" href="$namespacerestart__fns.html#a673ea568ef91fc50ac00e24822742301" title="Reads restart files with energies (res_ene_tot.nc or res_ene_par.nc)" alt="" coords="104,56,275,83"/>
-<area shape="rect" id="node4" href="$driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="Driver code for the VQMC program." alt="" coords="5,56,56,83"/>
+<area shape="rect" id="node1" title="Checks error status at each point of the NetCDF read." alt="" coords="425,23,541,65"/>
+<area shape="rect" id="node2" href="$namespacerestart__fns.html#a2bfef0bcec6193f109b558f89e9cd90d" title=" " alt="" coords="212,5,372,32"/>
+<area shape="rect" id="node3" href="$namespacerestart__fns.html#a673ea568ef91fc50ac00e24822742301" title="Reads restart files with energies (res_ene_tot.nc or res_ene_par.nc)" alt="" coords="207,56,377,83"/>
+<area shape="rect" id="node4" href="$driver_8f90.html#aae94725eafaedc467ab9bfefcae9769e" title="Subroutine for running the main code (needed for Doxygen compatability)." alt="" coords="104,56,159,83"/>
+<area shape="rect" id="node5" href="$driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="Main program, contains the driver subroutine that runs all other code." alt="" coords="5,56,56,83"/>
 </map>

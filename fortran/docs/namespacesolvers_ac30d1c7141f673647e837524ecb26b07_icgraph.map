@@ -1,6 +1,7 @@
 <map id="solvers::h_2_prob" name="solvers::h_2_prob">
-<area shape="rect" id="node1" title="Calculates transition probability for the &#160;problem." alt="" coords="473,5,596,32"/>
-<area shape="rect" id="node2" href="$namespacetesting.html#ad02da7e5d742236c571c965b4f80992c" title="Tests the H_2_Prob function in the solvers module." alt="" coords="276,5,425,32"/>
-<area shape="rect" id="node3" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="104,5,228,32"/>
-<area shape="rect" id="node4" href="$driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="Driver code for the VQMC program." alt="" coords="5,5,56,32"/>
+<area shape="rect" id="node1" title="Calculates transition probability for the &#160;problem." alt="" coords="576,5,699,32"/>
+<area shape="rect" id="node2" href="$namespacetesting.html#ad02da7e5d742236c571c965b4f80992c" title="Tests the H_2_Prob function in the solvers module." alt="" coords="379,5,528,32"/>
+<area shape="rect" id="node3" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="207,5,331,32"/>
+<area shape="rect" id="node4" href="$driver_8f90.html#aae94725eafaedc467ab9bfefcae9769e" title="Subroutine for running the main code (needed for Doxygen compatability)." alt="" coords="104,5,159,32"/>
+<area shape="rect" id="node5" href="$driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="Main program, contains the driver subroutine that runs all other code." alt="" coords="5,5,56,32"/>
 </map>

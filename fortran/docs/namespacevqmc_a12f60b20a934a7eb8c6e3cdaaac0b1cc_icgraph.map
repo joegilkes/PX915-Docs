@@ -1,7 +1,8 @@
 <map id="vqmc::vqmc_h_2" name="vqmc::vqmc_h_2">
-<area shape="rect" id="node1" title="Performs VQMC for H_2" alt="" coords="267,56,387,83"/>
-<area shape="rect" id="node2" href="$namespacevqmc.html#a70dc752a6b037f137c1264dd8753bac2" title=" " alt="" coords="105,5,218,32"/>
-<area shape="rect" id="node4" href="$namespacevqmc.html#ab066adc59fec1fcaaba764a46128c935" title=" " alt="" coords="104,56,219,83"/>
-<area shape="rect" id="node5" href="$namespacevqmc.html#a08bc46270707aab6c2d5114b589c176c" title=" " alt="" coords="107,107,216,133"/>
-<area shape="rect" id="node3" href="$driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="Driver code for the VQMC program." alt="" coords="5,56,56,83"/>
+<area shape="rect" id="node1" title="Performs VQMC for H_2" alt="" coords="369,56,489,83"/>
+<area shape="rect" id="node2" href="$namespacevqmc.html#a70dc752a6b037f137c1264dd8753bac2" title=" " alt="" coords="207,5,321,32"/>
+<area shape="rect" id="node5" href="$namespacevqmc.html#ab066adc59fec1fcaaba764a46128c935" title=" " alt="" coords="207,56,321,83"/>
+<area shape="rect" id="node6" href="$namespacevqmc.html#a08bc46270707aab6c2d5114b589c176c" title=" " alt="" coords="209,107,319,133"/>
+<area shape="rect" id="node3" href="$driver_8f90.html#aae94725eafaedc467ab9bfefcae9769e" title="Subroutine for running the main code (needed for Doxygen compatability)." alt="" coords="104,56,159,83"/>
+<area shape="rect" id="node4" href="$driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="Main program, contains the driver subroutine that runs all other code." alt="" coords="5,56,56,83"/>
 </map>
