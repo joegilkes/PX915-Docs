@@ -114,39 +114,25 @@ Definition at line 51 of file restart\+\_\+fns.\+f90.
 \DoxyCodeLine{95         \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'H2plus'})}
 \DoxyCodeLine{96             res\%i\_bond = i1}
 \DoxyCodeLine{97             res\%i\_c1 = i2}
-\DoxyCodeLine{98             \textcolor{keywordflow}{if} (h2plus\%include\_pqn==2) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{99                 \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(i3)) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{100                     res\%i\_c2 = i3}
-\DoxyCodeLine{101                 \textcolor{keywordflow}{else}}
-\DoxyCodeLine{102                     error stop \textcolor{stringliteral}{'Error: Value of c2 ("{}val3"{}) missing in inputs to write\_res\_params().'}}
-\DoxyCodeLine{103 \textcolor{keywordflow}{                endif}}
-\DoxyCodeLine{104 \textcolor{keywordflow}{            endif}}
-\DoxyCodeLine{105         \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'H2'})}
-\DoxyCodeLine{106             res\%i\_bond = i1}
-\DoxyCodeLine{107             res\%i\_c1 = i2}
-\DoxyCodeLine{108             \textcolor{keywordflow}{if} (h2\%include\_pqn==2) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{109                 \textcolor{keywordflow}{if} (\textcolor{keyword}{present}(i3)) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{110                     res\%i\_c2 = i3}
-\DoxyCodeLine{111                 \textcolor{keywordflow}{else}}
-\DoxyCodeLine{112                     error stop \textcolor{stringliteral}{'Error: Value of c2 ("{}val3"{}) missing in inputs to write\_res\_params().'}}
-\DoxyCodeLine{113 \textcolor{keywordflow}{                endif}}
-\DoxyCodeLine{114 \textcolor{keywordflow}{            endif}}
-\DoxyCodeLine{115 \textcolor{keywordflow}{        case default}}
-\DoxyCodeLine{116             error stop \textcolor{stringliteral}{'Error: Invalid "{}p\_system"{} passed to function write\_res\_params().'}}
-\DoxyCodeLine{117 \textcolor{keywordflow}{        end select}}
-\DoxyCodeLine{118 }
-\DoxyCodeLine{119         \textcolor{comment}{! Open the res\_paramts.txt file}}
-\DoxyCodeLine{120         \textcolor{keyword}{open}(action=\textcolor{stringliteral}{'write'}, file=resfile\_nml, iostat=rc, newunit=fu)}
-\DoxyCodeLine{121 }
-\DoxyCodeLine{122         \textcolor{comment}{! Write the RESTART namelist}}
-\DoxyCodeLine{123         \textcolor{keyword}{write}(nml=restart, iostat=rc, unit=fu)}
-\DoxyCodeLine{124         \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{125             error stop \textcolor{stringliteral}{'Error: Invalid RESTART namelist defined in function write\_res\_params().'}}
-\DoxyCodeLine{126 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{127         }
-\DoxyCodeLine{128         \textcolor{comment}{! Close the res\_paramts.txt file}}
-\DoxyCodeLine{129         \textcolor{keyword}{close}(fu)}
-\DoxyCodeLine{130 }
+\DoxyCodeLine{98         \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'H2'})}
+\DoxyCodeLine{99             res\%i\_bond = i1}
+\DoxyCodeLine{100             res\%i\_c1 = i2}
+\DoxyCodeLine{101 \textcolor{keywordflow}{        case default}}
+\DoxyCodeLine{102             error stop \textcolor{stringliteral}{'Error: Invalid "{}p\_system"{} passed to function write\_res\_params().'}}
+\DoxyCodeLine{103 \textcolor{keywordflow}{        end select}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105         \textcolor{comment}{! Open the res\_paramts.txt file}}
+\DoxyCodeLine{106         \textcolor{keyword}{open}(action=\textcolor{stringliteral}{'write'}, file=resfile\_nml, iostat=rc, newunit=fu)}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108         \textcolor{comment}{! Write the RESTART namelist}}
+\DoxyCodeLine{109         \textcolor{keyword}{write}(nml=restart, iostat=rc, unit=fu)}
+\DoxyCodeLine{110         \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{111             error stop \textcolor{stringliteral}{'Error: Invalid RESTART namelist defined in function write\_res\_params().'}}
+\DoxyCodeLine{112 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{113         }
+\DoxyCodeLine{114         \textcolor{comment}{! Close the res\_paramts.txt file}}
+\DoxyCodeLine{115         \textcolor{keyword}{close}(fu)}
+\DoxyCodeLine{116 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespacerestart__fns_a34c01a8b391a8c3a4ba40e9f5ec644d3}\label{namespacerestart__fns_a34c01a8b391a8c3a4ba40e9f5ec644d3}} 
@@ -166,36 +152,36 @@ Reads the RESTART namelist in res\+\_\+nml.\+txt. Assigns the input data to the 
 \end{DoxyParams}
 
 
-Definition at line 150 of file restart\+\_\+fns.\+f90.
+Definition at line 136 of file restart\+\_\+fns.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{151 }
-\DoxyCodeLine{152         \textcolor{comment}{! Local variables}}
-\DoxyCodeLine{153         \textcolor{keywordtype}{type}(restart\_type), \textcolor{keywordtype}{intent(out)} :: res}
-\DoxyCodeLine{154 }
-\DoxyCodeLine{155         \textcolor{comment}{! Define the namelist}}
-\DoxyCodeLine{156         namelist /restart/ res}
-\DoxyCodeLine{157 }
-\DoxyCodeLine{158         \textcolor{comment}{! Check if file exists}}
-\DoxyCodeLine{159         \textcolor{keyword}{inquire}(file=resfile\_nml, iostat=rc)}
-\DoxyCodeLine{160         \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{161             print*, \textcolor{stringliteral}{'Searched for file '}, resfile\_nml, \textcolor{stringliteral}{' .'}}
-\DoxyCodeLine{162             error stop \textcolor{stringliteral}{'Error: This restart file is not present in the current directory.'}}
-\DoxyCodeLine{163 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{164 }
-\DoxyCodeLine{165         \textcolor{comment}{! Open the file}}
-\DoxyCodeLine{166         \textcolor{keyword}{open}(action=\textcolor{stringliteral}{'read'}, file=resfile\_nml, iostat=rc, newunit=fu)}
-\DoxyCodeLine{167 }
-\DoxyCodeLine{168         \textcolor{comment}{! Read the namelist}}
-\DoxyCodeLine{169         \textcolor{keyword}{read}(nml=restart, iostat=rc, unit=fu)}
-\DoxyCodeLine{170         \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{171             error stop \textcolor{stringliteral}{'Error: Invalid RESTART namelist in "{}res\_nml.txt"{}.'}}
-\DoxyCodeLine{172 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{173         }
-\DoxyCodeLine{174         \textcolor{comment}{! Close the file}}
-\DoxyCodeLine{175         \textcolor{keyword}{close}(fu)}
-\DoxyCodeLine{176 }
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138         \textcolor{comment}{! Local variables}}
+\DoxyCodeLine{139         \textcolor{keywordtype}{type}(restart\_type), \textcolor{keywordtype}{intent(out)} :: res}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141         \textcolor{comment}{! Define the namelist}}
+\DoxyCodeLine{142         namelist /restart/ res}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144         \textcolor{comment}{! Check if file exists}}
+\DoxyCodeLine{145         \textcolor{keyword}{inquire}(file=resfile\_nml, iostat=rc)}
+\DoxyCodeLine{146         \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{147             print*, \textcolor{stringliteral}{'Searched for file '}, resfile\_nml, \textcolor{stringliteral}{' .'}}
+\DoxyCodeLine{148             error stop \textcolor{stringliteral}{'Error: This restart file is not present in the current directory.'}}
+\DoxyCodeLine{149 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151         \textcolor{comment}{! Open the file}}
+\DoxyCodeLine{152         \textcolor{keyword}{open}(action=\textcolor{stringliteral}{'read'}, file=resfile\_nml, iostat=rc, newunit=fu)}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154         \textcolor{comment}{! Read the namelist}}
+\DoxyCodeLine{155         \textcolor{keyword}{read}(nml=restart, iostat=rc, unit=fu)}
+\DoxyCodeLine{156         \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{157             error stop \textcolor{stringliteral}{'Error: Invalid RESTART namelist in "{}res\_nml.txt"{}.'}}
+\DoxyCodeLine{158 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{159         }
+\DoxyCodeLine{160         \textcolor{comment}{! Close the file}}
+\DoxyCodeLine{161         \textcolor{keyword}{close}(fu)}
+\DoxyCodeLine{162 }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -223,15 +209,15 @@ Will print error message/code corresponding to ierr input. Copied from module ne
 \end{DoxyParams}
 
 
-Definition at line 192 of file restart\+\_\+fns.\+f90.
+Definition at line 178 of file restart\+\_\+fns.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{193         \textcolor{keywordtype}{integer},\textcolor{keywordtype}{intent(in)} :: ierr}
-\DoxyCodeLine{194         \textcolor{keywordflow}{if} (ierr /= nf90\_noerr) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{195             print*, trim(nf90\_strerror(ierr))}
-\DoxyCodeLine{196             \textcolor{keywordflow}{return}}
-\DoxyCodeLine{197 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{179         \textcolor{keywordtype}{integer},\textcolor{keywordtype}{intent(in)} :: ierr}
+\DoxyCodeLine{180         \textcolor{keywordflow}{if} (ierr /= nf90\_noerr) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{181             print*, trim(nf90\_strerror(ierr))}
+\DoxyCodeLine{182             \textcolor{keywordflow}{return}}
+\DoxyCodeLine{183 \textcolor{keywordflow}{        endif}}
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -263,43 +249,43 @@ Assigns the data arrays it reads to the corresponding array variables passed to 
 \end{DoxyParams}
 
 
-Definition at line 215 of file restart\+\_\+fns.\+f90.
+Definition at line 201 of file restart\+\_\+fns.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{216 }
-\DoxyCodeLine{217         \textcolor{comment}{! Local variables}}
-\DoxyCodeLine{218         \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{intent(in)} :: filename}
-\DoxyCodeLine{219 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable}, \textcolor{keywordtype}{intent(out)} :: energies, accept\_rates}
-\DoxyCodeLine{220         \textcolor{keywordtype}{integer} :: ierr, file\_id, var\_id}
-\DoxyCodeLine{221 }
-\DoxyCodeLine{222         \textcolor{comment}{! Check if file exists}}
-\DoxyCodeLine{223         \textcolor{keyword}{inquire}(file=filename, iostat=rc)}
-\DoxyCodeLine{224         \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{225             print*, \textcolor{stringliteral}{'Searched for file '}, filename, \textcolor{stringliteral}{' .'}}
-\DoxyCodeLine{226             error stop \textcolor{stringliteral}{'Error: This restart file is not present in the current directory.'}}
-\DoxyCodeLine{227 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{228 }
-\DoxyCodeLine{229         \textcolor{comment}{! Open restart netCDF file with energies}}
-\DoxyCodeLine{230         ierr = nf90\_open(filename, nf90\_nowrite, file\_id)}
-\DoxyCodeLine{231         \textcolor{keyword}{call }error\_check(ierr)}
-\DoxyCodeLine{232 }
-\DoxyCodeLine{233         \textcolor{comment}{! Get var\_id for total\_energies}}
-\DoxyCodeLine{234         ierr = nf90\_inq\_varid(file\_id, \textcolor{stringliteral}{"{}total\_energies"{}}, var\_id)}
-\DoxyCodeLine{235         \textcolor{keyword}{call }error\_check(ierr)}
-\DoxyCodeLine{236 }
-\DoxyCodeLine{237         \textcolor{comment}{! Read the total\_energies}}
-\DoxyCodeLine{238         ierr = nf90\_get\_var(file\_id, var\_id, energies)}
-\DoxyCodeLine{239         \textcolor{keyword}{call }error\_check(ierr)}
-\DoxyCodeLine{240 }
-\DoxyCodeLine{241         \textcolor{comment}{! Get attribute accept\_rate}}
-\DoxyCodeLine{242         ierr = nf90\_get\_att(file\_id, nf90\_global, \textcolor{stringliteral}{"{}accept\_rate"{}}, accept\_rates)}
-\DoxyCodeLine{243         \textcolor{keyword}{call }error\_check(ierr)}
-\DoxyCodeLine{244         }
-\DoxyCodeLine{245         \textcolor{comment}{! Close the file}}
-\DoxyCodeLine{246         ierr = nf90\_close(file\_id)}
-\DoxyCodeLine{247         \textcolor{keyword}{call }error\_check(ierr)}
-\DoxyCodeLine{248 }
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203         \textcolor{comment}{! Local variables}}
+\DoxyCodeLine{204         \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{intent(in)} :: filename}
+\DoxyCodeLine{205 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable}, \textcolor{keywordtype}{intent(out)} :: energies, accept\_rates}
+\DoxyCodeLine{206         \textcolor{keywordtype}{integer} :: ierr, file\_id, var\_id}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208         \textcolor{comment}{! Check if file exists}}
+\DoxyCodeLine{209         \textcolor{keyword}{inquire}(file=filename, iostat=rc)}
+\DoxyCodeLine{210         \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{211             print*, \textcolor{stringliteral}{'Searched for file '}, filename, \textcolor{stringliteral}{' .'}}
+\DoxyCodeLine{212             error stop \textcolor{stringliteral}{'Error: This restart file is not present in the current directory.'}}
+\DoxyCodeLine{213 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215         \textcolor{comment}{! Open restart netCDF file with energies}}
+\DoxyCodeLine{216         ierr = nf90\_open(filename, nf90\_nowrite, file\_id)}
+\DoxyCodeLine{217         \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219         \textcolor{comment}{! Get var\_id for total\_energies}}
+\DoxyCodeLine{220         ierr = nf90\_inq\_varid(file\_id, \textcolor{stringliteral}{"{}total\_energies"{}}, var\_id)}
+\DoxyCodeLine{221         \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223         \textcolor{comment}{! Read the total\_energies}}
+\DoxyCodeLine{224         ierr = nf90\_get\_var(file\_id, var\_id, energies)}
+\DoxyCodeLine{225         \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227         \textcolor{comment}{! Get attribute accept\_rate}}
+\DoxyCodeLine{228         ierr = nf90\_get\_att(file\_id, nf90\_global, \textcolor{stringliteral}{"{}accept\_rate"{}}, accept\_rates)}
+\DoxyCodeLine{229         \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{230         }
+\DoxyCodeLine{231         \textcolor{comment}{! Close the file}}
+\DoxyCodeLine{232         ierr = nf90\_close(file\_id)}
+\DoxyCodeLine{233         \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{234 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -326,43 +312,43 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 253 of file restart\+\_\+fns.\+f90.
+Definition at line 239 of file restart\+\_\+fns.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{254 }
-\DoxyCodeLine{255         \textcolor{comment}{! Local variables}}
-\DoxyCodeLine{256 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable}, \textcolor{keywordtype}{intent(out)} :: energy\_chain}
-\DoxyCodeLine{257 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: accept\_rate}
-\DoxyCodeLine{258         \textcolor{keywordtype}{integer} :: ierr, file\_id, var\_id}
-\DoxyCodeLine{259 }
-\DoxyCodeLine{260         \textcolor{comment}{! Check if file exists}}
-\DoxyCodeLine{261         \textcolor{keyword}{inquire}(file=resfile\_chn, iostat=rc)}
-\DoxyCodeLine{262         \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{263             print*, \textcolor{stringliteral}{'Searched for file '}, resfile\_chn, \textcolor{stringliteral}{' .'}}
-\DoxyCodeLine{264             error stop \textcolor{stringliteral}{'Error: This restart file is not present in the current directory.'}}
-\DoxyCodeLine{265 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{266 }
-\DoxyCodeLine{267         \textcolor{comment}{! Open restart netCDF file with chains}}
-\DoxyCodeLine{268         ierr = nf90\_open(resfile\_chn, nf90\_nowrite, file\_id)}
-\DoxyCodeLine{269         \textcolor{keyword}{call }error\_check(ierr)}
-\DoxyCodeLine{270 }
-\DoxyCodeLine{271         \textcolor{comment}{!! Get var\_id for energy\_chain -\/ called 'Trace' in the netcdf file}}
-\DoxyCodeLine{272         ierr = nf90\_inq\_varid(file\_id, \textcolor{stringliteral}{"{}Trace"{}}, var\_id)}
-\DoxyCodeLine{273         \textcolor{keyword}{call }error\_check(ierr)}
-\DoxyCodeLine{274 }
-\DoxyCodeLine{275         \textcolor{comment}{! Read the energy\_chain}}
-\DoxyCodeLine{276         ierr = nf90\_get\_var(file\_id, var\_id, energy\_chain)}
-\DoxyCodeLine{277         \textcolor{keyword}{call }error\_check(ierr)}
-\DoxyCodeLine{278 }
-\DoxyCodeLine{279         \textcolor{comment}{! Get attribute accept\_rate}}
-\DoxyCodeLine{280         ierr = nf90\_get\_att(file\_id, nf90\_global, \textcolor{stringliteral}{"{}accept\_rate"{}}, accept\_rate\textcolor{comment}{)}}
-\DoxyCodeLine{281 \textcolor{comment}{}        \textcolor{keyword}{call }error\_check(ierr)}
-\DoxyCodeLine{282         }
-\DoxyCodeLine{283         \textcolor{comment}{! Close the file}}
-\DoxyCodeLine{284         ierr = nf90\_close(file\_id)}
-\DoxyCodeLine{285         \textcolor{keyword}{call }error\_check(ierr)}
-\DoxyCodeLine{286 }
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241         \textcolor{comment}{! Local variables}}
+\DoxyCodeLine{242 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable}, \textcolor{keywordtype}{intent(out)} :: energy\_chain}
+\DoxyCodeLine{243 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: accept\_rate}
+\DoxyCodeLine{244         \textcolor{keywordtype}{integer} :: ierr, file\_id, var\_id}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246         \textcolor{comment}{! Check if file exists}}
+\DoxyCodeLine{247         \textcolor{keyword}{inquire}(file=resfile\_chn, iostat=rc)}
+\DoxyCodeLine{248         \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{249             print*, \textcolor{stringliteral}{'Searched for file '}, resfile\_chn, \textcolor{stringliteral}{' .'}}
+\DoxyCodeLine{250             error stop \textcolor{stringliteral}{'Error: This restart file is not present in the current directory.'}}
+\DoxyCodeLine{251 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253         \textcolor{comment}{! Open restart netCDF file with chains}}
+\DoxyCodeLine{254         ierr = nf90\_open(resfile\_chn, nf90\_nowrite, file\_id)}
+\DoxyCodeLine{255         \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257         \textcolor{comment}{!! Get var\_id for energy\_chain -\/ called 'Trace' in the netcdf file}}
+\DoxyCodeLine{258         ierr = nf90\_inq\_varid(file\_id, \textcolor{stringliteral}{"{}Trace"{}}, var\_id)}
+\DoxyCodeLine{259         \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261         \textcolor{comment}{! Read the energy\_chain}}
+\DoxyCodeLine{262         ierr = nf90\_get\_var(file\_id, var\_id, energy\_chain)}
+\DoxyCodeLine{263         \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265         \textcolor{comment}{! Get attribute accept\_rate}}
+\DoxyCodeLine{266         ierr = nf90\_get\_att(file\_id, nf90\_global, \textcolor{stringliteral}{"{}accept\_rate"{}}, accept\_rate\textcolor{comment}{)}}
+\DoxyCodeLine{267 \textcolor{comment}{}        \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{268         }
+\DoxyCodeLine{269         \textcolor{comment}{! Close the file}}
+\DoxyCodeLine{270         ierr = nf90\_close(file\_id)}
+\DoxyCodeLine{271         \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{272 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:

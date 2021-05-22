@@ -1,6 +1,6 @@
 <map id="vqmc::equil_qho" name="vqmc::equil_qho">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,120,32"/>
-<area shape="rect" id="node2" href="$namespacevqmc.html#a05315751002a983c9976851c9f21f0f0" title="Performs VQMC for QHO." alt="" coords="168,5,288,32"/>
-<area shape="rect" id="node3" href="$namespacevqmc.html#a01b80444204a0cd0b5cddde82cbc7651" title="Implementation of David Quigley&#39;s random number generator." alt="" coords="533,5,619,32"/>
-<area shape="rect" id="node4" href="$namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335" title="Draws a sample from a normal distribution." alt="" coords="336,31,485,57"/>
+<area shape="rect" id="node1" title="Performs VQMC on an array of values for the variational parameter , outputting energy traces for each..." alt="" coords="5,5,120,32"/>
+<area shape="rect" id="node2" href="$namespacevqmc.html#a05315751002a983c9976851c9f21f0f0" title="Performs VQMC for the QHO system." alt="" coords="168,5,288,32"/>
+<area shape="rect" id="node3" href="$namespacevqmc.html#a01b80444204a0cd0b5cddde82cbc7651" title="Implementation of Press et al&#39;s random number generator." alt="" coords="533,5,619,32"/>
+<area shape="rect" id="node4" href="$namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335" title="Draws a sample from a normal distribution using the Box&#45;Muller transform." alt="" coords="336,31,485,57"/>
 </map>

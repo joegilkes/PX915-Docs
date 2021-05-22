@@ -1,5 +1,5 @@
 <map id="vqmc::grid_h_2" name="vqmc::grid_h_2">
-<area shape="rect" id="node1" title=" " alt="" coords="207,5,316,32"/>
+<area shape="rect" id="node1" title="Performs a grid search to find the optimal value for the variational parameter &#160;in the &#160;problem." alt="" coords="207,5,316,32"/>
 <area shape="rect" id="node2" href="$driver_8f90.html#aae94725eafaedc467ab9bfefcae9769e" title="Subroutine for running the main code (needed for Doxygen compatability)." alt="" coords="104,5,159,32"/>
 <area shape="rect" id="node3" href="$driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="Main program, contains the driver subroutine that runs all other code." alt="" coords="5,5,56,32"/>
 </map>

@@ -22,6 +22,6 @@
 <area shape="rect" id="node16" href="$namespacesolvers.html#ac603f31a67286a6e89588cf4de29bd1b" title="Calculates trial wavefunction for the &#160;problem." alt="" coords="645,364,764,390"/>
 <area shape="rect" id="node19" href="$namespacesolvers.html#a4f0054c0d0d2f5080c92a04557feaf52" title="Calculates local energy for quantum harmonic oscillator problem." alt="" coords="425,440,561,466"/>
 <area shape="rect" id="node21" href="$namespacesolvers.html#a722edf182d188ad1db7fa6a675fea13c" title="Calculates transition probability for quantum harmonic oscillator problem." alt="" coords="432,490,555,517"/>
-<area shape="rect" id="node23" href="$namespacevqmc.html#a01b80444204a0cd0b5cddde82cbc7651" title="Implementation of David Quigley&#39;s random number generator." alt="" coords="662,568,747,594"/>
-<area shape="rect" id="node25" href="$namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335" title="Draws a sample from a normal distribution." alt="" coords="419,597,568,624"/>
+<area shape="rect" id="node23" href="$namespacevqmc.html#a01b80444204a0cd0b5cddde82cbc7651" title="Implementation of Press et al&#39;s random number generator." alt="" coords="662,568,747,594"/>
+<area shape="rect" id="node25" href="$namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335" title="Draws a sample from a normal distribution using the Box&#45;Muller transform." alt="" coords="419,597,568,624"/>
 </map>
