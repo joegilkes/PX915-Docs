@@ -26,76 +26,75 @@ This program can generate a new params.\+txt input file, using user input collat
 
 
 
-Definition at line 27 of file input.\+py.
+Definition at line 25 of file input.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{27 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceinput_a3d7818a4f120b1f0ada5a32dc5476fa3}{step\_one}}():}
-\DoxyCodeLine{28 }
-\DoxyCodeLine{29     \textcolor{comment}{\# Welcome Message}}
-\DoxyCodeLine{30     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{25 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceinput_a3d7818a4f120b1f0ada5a32dc5476fa3}{step\_one}}():}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{comment}{\# Welcome Message}}
+\DoxyCodeLine{28     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{29     print(\textcolor{stringliteral}{'-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/'})}
+\DoxyCodeLine{30     print(\textcolor{stringliteral}{'[PROGRAM NAME]'})}
 \DoxyCodeLine{31     print(\textcolor{stringliteral}{'-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/'})}
-\DoxyCodeLine{32     print(\textcolor{stringliteral}{'[PROGRAM NAME]'})}
-\DoxyCodeLine{33     print(\textcolor{stringliteral}{'-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/'})}
-\DoxyCodeLine{34     print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{35     print(\textcolor{stringliteral}{'Hello! I\(\backslash\)'m here to help you with the input file for your VQMC simulation. :-\/) '})}
-\DoxyCodeLine{36 }
-\DoxyCodeLine{37     \textcolor{comment}{\# Query the Task}}
-\DoxyCodeLine{38     print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{39     print(\textcolor{stringliteral}{'Would you like me to write (w) or check (c) your input file? :-\/) '})}
-\DoxyCodeLine{40     task = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}w"{} or "{}c"{}, without quotes): '})}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{42     \textcolor{comment}{\# Check}}
-\DoxyCodeLine{43     \textcolor{keywordflow}{while} task!=\textcolor{stringliteral}{'w'} \textcolor{keywordflow}{and} task!=\textcolor{stringliteral}{'c'}:}
-\DoxyCodeLine{44         print(\textcolor{stringliteral}{'Error: Oops, your response is invalid, please enter "{}w"{} or "{}c"{}, without quotes. :-\/('})}
-\DoxyCodeLine{45         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{46         print(\textcolor{stringliteral}{'Please have another go. :-\/) '})}
-\DoxyCodeLine{47         task = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
-\DoxyCodeLine{48 }
-\DoxyCodeLine{49     \textcolor{comment}{\# Report}}
-\DoxyCodeLine{50     \textcolor{keywordflow}{if} task==\textcolor{stringliteral}{'w'}:}
-\DoxyCodeLine{51         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{52         print(\textcolor{stringliteral}{'Alright! I shall write out a new input file for you. :-\/) '})}
-\DoxyCodeLine{53 }
-\DoxyCodeLine{54         \textcolor{comment}{\# Query the user for data}}
-\DoxyCodeLine{55         control, params = \mbox{\hyperlink{namespacewrite_a2a80b928706bf9c4a0283575b3105dd9}{query\_params}}()}
-\DoxyCodeLine{56 }
-\DoxyCodeLine{57         \textcolor{comment}{\# Write the params.txt file}}
-\DoxyCodeLine{58         \mbox{\hyperlink{namespacewrite_ab06a12b89b6110c4bcf845485c8f4b9b}{write\_params}}(control,params)}
-\DoxyCodeLine{59 }
-\DoxyCodeLine{60         \textcolor{comment}{\# Notify user}}
-\DoxyCodeLine{61         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{62         print(\textcolor{stringliteral}{'Your params.txt file is ready! You are all set to run the next step on Fortran :-\/) '})}
-\DoxyCodeLine{63 }
-\DoxyCodeLine{64     \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{65         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{66         print(\textcolor{stringliteral}{'Alright! I shall check the input file in this directory. :-\/) '})}
-\DoxyCodeLine{67 }
-\DoxyCodeLine{68         \textcolor{comment}{\# Check that params.txt exits}}
-\DoxyCodeLine{69         \textcolor{keywordflow}{try}: }
-\DoxyCodeLine{70             f = open(\textcolor{stringliteral}{'params.txt'})}
-\DoxyCodeLine{71         \textcolor{keywordflow}{except} FileNotFoundError:}
+\DoxyCodeLine{32     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{33     print(\textcolor{stringliteral}{'Hello! I\(\backslash\)'m here to help you with the input file for your VQMC simulation. :-\/) '})}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{comment}{\# Query the Task}}
+\DoxyCodeLine{36     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{37     print(\textcolor{stringliteral}{'Would you like me to write (w) or check (c) your input file? :-\/) '})}
+\DoxyCodeLine{38     task = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}w"{} or "{}c"{}, without quotes): '})}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{comment}{\# Check}}
+\DoxyCodeLine{41     \textcolor{keywordflow}{while} task!=\textcolor{stringliteral}{'w'} \textcolor{keywordflow}{and} task!=\textcolor{stringliteral}{'c'}:}
+\DoxyCodeLine{42         print(\textcolor{stringliteral}{'Error: Oops, your response is invalid, please enter "{}w"{} or "{}c"{}, without quotes. :-\/('})}
+\DoxyCodeLine{43         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{44         print(\textcolor{stringliteral}{'Please have another go. :-\/) '})}
+\DoxyCodeLine{45         task = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     \textcolor{comment}{\# Report}}
+\DoxyCodeLine{48     \textcolor{keywordflow}{if} task==\textcolor{stringliteral}{'w'}:}
+\DoxyCodeLine{49         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{50         print(\textcolor{stringliteral}{'Alright! I shall write out a new input file for you. :-\/) '})}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52         \textcolor{comment}{\# Query the user for data}}
+\DoxyCodeLine{53         control, params = \mbox{\hyperlink{namespacewrite_a2a80b928706bf9c4a0283575b3105dd9}{query\_params}}()}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         \textcolor{comment}{\# Write the params.txt file}}
+\DoxyCodeLine{56         \mbox{\hyperlink{namespacewrite_ab06a12b89b6110c4bcf845485c8f4b9b}{write\_params}}(control,params)}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58         \textcolor{comment}{\# Notify user}}
+\DoxyCodeLine{59         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{60         print(\textcolor{stringliteral}{'Your params.txt file is ready! You are all set to run the next step on Fortran :-\/) '})}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{63         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{64         print(\textcolor{stringliteral}{'Alright! I shall check the input file in this directory. :-\/) '})}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66         \textcolor{comment}{\# Check that params.txt exits}}
+\DoxyCodeLine{67         \textcolor{keywordflow}{try}: }
+\DoxyCodeLine{68             f = open(\textcolor{stringliteral}{'params.txt'})}
+\DoxyCodeLine{69         \textcolor{keywordflow}{except} FileNotFoundError:}
+\DoxyCodeLine{70             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{71             print(\textcolor{stringliteral}{'Error: Oops, there is no param.txt file in the current working directory. :-\/( '})}
 \DoxyCodeLine{72             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{73             print(\textcolor{stringliteral}{'Error: Oops, there is no param.txt file in the current working directory. :-\/( '})}
-\DoxyCodeLine{74             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{75             print(\textcolor{stringliteral}{'Please have another go. :-\/) '})}
-\DoxyCodeLine{76             exit()}
-\DoxyCodeLine{77         f.close()}
-\DoxyCodeLine{78 }
-\DoxyCodeLine{79         \textcolor{comment}{\# Reading Namelists}}
-\DoxyCodeLine{80         \textcolor{keyword}{import} f90nml}
-\DoxyCodeLine{81         nml = f90nml.read(\textcolor{stringliteral}{'params.txt'})}
-\DoxyCodeLine{82 }
-\DoxyCodeLine{83         \textcolor{comment}{\# Check content of params.txt}}
-\DoxyCodeLine{84         \mbox{\hyperlink{namespacecheck_af433b760a4dbdb0972d3b43505f2c4b8}{check\_inputs}}(nml)}
-\DoxyCodeLine{85 }
-\DoxyCodeLine{86         \textcolor{comment}{\# Notify user}}
-\DoxyCodeLine{87         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{88         print(\textcolor{stringliteral}{'Your params.txt file is correct! You are all set to run the next step on Fortran :-\/) '})}
-\DoxyCodeLine{89 }
-\DoxyCodeLine{90 \textcolor{comment}{\# For users running the program directly on the terminal,}}
-\DoxyCodeLine{91 \textcolor{comment}{\# call the input routine defined above}}
-\DoxyCodeLine{92 \mbox{\hyperlink{namespaceinput_a3d7818a4f120b1f0ada5a32dc5476fa3}{step\_one}}()}
+\DoxyCodeLine{73             print(\textcolor{stringliteral}{'Please have another go. :-\/) '})}
+\DoxyCodeLine{74             exit()}
+\DoxyCodeLine{75         f.close()}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77         \textcolor{comment}{\# Reading Namelists}}
+\DoxyCodeLine{78         \textcolor{keyword}{import} f90nml}
+\DoxyCodeLine{79         nml = f90nml.read(\textcolor{stringliteral}{'params.txt'})}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81         \textcolor{comment}{\# Check content of params.txt}}
+\DoxyCodeLine{82         \mbox{\hyperlink{namespacecheck_af433b760a4dbdb0972d3b43505f2c4b8}{check\_inputs}}(nml)}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84         \textcolor{comment}{\# Notify user}}
+\DoxyCodeLine{85         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{86         print(\textcolor{stringliteral}{'Your params.txt file is correct! You are all set to run the next step on Fortran :-\/) '})}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{comment}{\# For users running the program directly on the terminal,}}
+\DoxyCodeLine{89 \textcolor{comment}{\# call the input routine defined above}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
