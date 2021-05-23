@@ -1,5 +1,5 @@
 <map id="input.step_one" name="input.step_one">
-<area shape="rect" id="node1" title=" " alt="" coords="5,309,112,336"/>
+<area shape="rect" id="node1" title="Enquires whether the user would like to write a new params.txt file, or check an existing params...." alt="" coords="5,309,112,336"/>
 <area shape="rect" id="node2" href="$namespacecheck.html#af433b760a4dbdb0972d3b43505f2c4b8" title="Major subroutine that checks the inputs of file params.txt." alt="" coords="160,132,297,159"/>
 <area shape="rect" id="node8" href="$namespacewrite.html#a2a80b928706bf9c4a0283575b3105dd9" title="Major function that queries the user for all the inputs required to assemble params...." alt="" coords="161,309,296,336"/>
 <area shape="rect" id="node15" href="$namespacewrite.html#ab06a12b89b6110c4bcf845485c8f4b9b" title="Major subroutine that writes the input file params.txt." alt="" coords="163,360,294,387"/>

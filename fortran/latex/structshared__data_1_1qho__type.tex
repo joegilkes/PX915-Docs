@@ -18,18 +18,18 @@ Collaboration diagram for shared\+\_\+data\+::qho\+\_\+type\+:
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-integer(int32) \mbox{\hyperlink{structshared__data_1_1qho__type_abb2147cd07714d43f682599d2b4cfd09}{steps}} =100000
+integer(int32) \mbox{\hyperlink{structshared__data_1_1qho__type_abb2147cd07714d43f682599d2b4cfd09}{steps}} =1000000
 \begin{DoxyCompactList}\small\item\em Total number of steps for each MMC chain. \end{DoxyCompactList}\item 
-integer(int32) \mbox{\hyperlink{structshared__data_1_1qho__type_a914a539afdc5758886f341b2d5ad227b}{burn\+\_\+step}} =1000
+integer(int32) \mbox{\hyperlink{structshared__data_1_1qho__type_a914a539afdc5758886f341b2d5ad227b}{burn\+\_\+step}} =10000
 \begin{DoxyCompactList}\small\item\em Number of steps to be burnt from the start of the MMC chain. \end{DoxyCompactList}\item 
 integer(int32) \mbox{\hyperlink{structshared__data_1_1qho__type_a209d4e3c4910ba329506ba6e39a1d3de}{thin\+\_\+step}} =10
 \begin{DoxyCompactList}\small\item\em Interval of steps by which the MMC chain is thinned. \end{DoxyCompactList}\item 
 real(real64) \mbox{\hyperlink{structshared__data_1_1qho__type_a39c77f54ab550862e08a78073d69606b}{rcut}} =3
 \begin{DoxyCompactList}\small\item\em Maximum radius of search around the Hydrogen atoms. \end{DoxyCompactList}\item 
-real(real64) \mbox{\hyperlink{structshared__data_1_1qho__type_ae2a36c67d15fece7562440b75c74da04}{sigma}} =0.\+1
+real(real64) \mbox{\hyperlink{structshared__data_1_1qho__type_ae2a36c67d15fece7562440b75c74da04}{sigma}} =5.\+5
 \begin{DoxyCompactList}\small\item\em Standard deviation in MMC transition probability. \end{DoxyCompactList}\item 
-real(real64), dimension(3) \mbox{\hyperlink{structshared__data_1_1qho__type_a617a3bd7ad00f08ff22fa999db1d52b1}{alpha}} = (/0,1,10/)
-\end{DoxyCompactItemize}
+real(real64), dimension(3) \mbox{\hyperlink{structshared__data_1_1qho__type_a617a3bd7ad00f08ff22fa999db1d52b1}{alpha}} = (/0.\+1,1.\+0,10.\+0/)
+\begin{DoxyCompactList}\small\item\em Grid of alpha values, format\+: \mbox{[}min, max, grid points\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -44,7 +44,7 @@ Definition at line 66 of file shared\+\_\+data.\+f90.
 \index{shared\_data::qho\_type@{shared\_data::qho\_type}!steps@{steps}}
 \index{steps@{steps}!shared\_data::qho\_type@{shared\_data::qho\_type}}
 \doxysubsubsection{\texorpdfstring{steps}{steps}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::qho\+\_\+type\+::steps =100000}
+{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::qho\+\_\+type\+::steps =1000000}
 
 
 
@@ -56,14 +56,14 @@ Definition at line 67 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{67         \textcolor{keywordtype}{integer(int32)} :: steps=100000}
+\DoxyCodeLine{67         \textcolor{keywordtype}{integer(int32)} :: steps=1000000}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1qho__type_a914a539afdc5758886f341b2d5ad227b}\label{structshared__data_1_1qho__type_a914a539afdc5758886f341b2d5ad227b}} 
 \index{shared\_data::qho\_type@{shared\_data::qho\_type}!burn\_step@{burn\_step}}
 \index{burn\_step@{burn\_step}!shared\_data::qho\_type@{shared\_data::qho\_type}}
 \doxysubsubsection{\texorpdfstring{burn\_step}{burn\_step}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::qho\+\_\+type\+::burn\+\_\+step =1000}
+{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::qho\+\_\+type\+::burn\+\_\+step =10000}
 
 
 
@@ -75,7 +75,7 @@ Definition at line 68 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{68         \textcolor{keywordtype}{integer(int32)} :: burn\_step=1000}
+\DoxyCodeLine{68         \textcolor{keywordtype}{integer(int32)} :: burn\_step=10000}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1qho__type_a209d4e3c4910ba329506ba6e39a1d3de}\label{structshared__data_1_1qho__type_a209d4e3c4910ba329506ba6e39a1d3de}} 
@@ -120,7 +120,7 @@ Definition at line 70 of file shared\+\_\+data.\+f90.
 \index{shared\_data::qho\_type@{shared\_data::qho\_type}!sigma@{sigma}}
 \index{sigma@{sigma}!shared\_data::qho\_type@{shared\_data::qho\_type}}
 \doxysubsubsection{\texorpdfstring{sigma}{sigma}}
-{\footnotesize\ttfamily real(real64) shared\+\_\+data\+::qho\+\_\+type\+::sigma =0.\+1}
+{\footnotesize\ttfamily real(real64) shared\+\_\+data\+::qho\+\_\+type\+::sigma =5.\+5}
 
 
 
@@ -132,14 +132,18 @@ Definition at line 71 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{71 \textcolor{keywordtype}{        real}(real64) :: sigma=0.1}
+\DoxyCodeLine{71 \textcolor{keywordtype}{        real}(real64) :: sigma=5.5}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1qho__type_a617a3bd7ad00f08ff22fa999db1d52b1}\label{structshared__data_1_1qho__type_a617a3bd7ad00f08ff22fa999db1d52b1}} 
 \index{shared\_data::qho\_type@{shared\_data::qho\_type}!alpha@{alpha}}
 \index{alpha@{alpha}!shared\_data::qho\_type@{shared\_data::qho\_type}}
 \doxysubsubsection{\texorpdfstring{alpha}{alpha}}
-{\footnotesize\ttfamily real(real64), dimension(3) shared\+\_\+data\+::qho\+\_\+type\+::alpha = (/0,1,10/)}
+{\footnotesize\ttfamily real(real64), dimension(3) shared\+\_\+data\+::qho\+\_\+type\+::alpha = (/0.\+1,1.\+0,10.\+0/)}
+
+
+
+Grid of alpha values, format\+: \mbox{[}min, max, grid points\mbox{]}. 
 
 
 
@@ -147,7 +151,7 @@ Definition at line 72 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{72 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: alpha = (/0,1,10/) \textcolor{comment}{! Grid of alpha values, format: [min, max, grid points]}}
+\DoxyCodeLine{72 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: alpha = (/0.1,1.0,10.0/)}
 
 \end{DoxyCode}
 

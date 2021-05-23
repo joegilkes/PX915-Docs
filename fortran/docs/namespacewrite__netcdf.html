@@ -121,8 +121,8 @@ Functions/Subroutines</h2></td></tr>
 <tr class="memitem:a8d49ffe8b78e85c17f3127d8dc89a83b"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacewrite__netcdf.html#a8d49ffe8b78e85c17f3127d8dc89a83b">write_h2_main</a> (param_a_array, param_beta_array, bondlength_array, energy_array, uncertainty_array, filename, ierr, H2, accept_rate)</td></tr>
 <tr class="memdesc:a8d49ffe8b78e85c17f3127d8dc89a83b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output results of H2 MCMC run.  <a href="namespacewrite__netcdf.html#a8d49ffe8b78e85c17f3127d8dc89a83b">More...</a><br /></td></tr>
 <tr class="separator:a8d49ffe8b78e85c17f3127d8dc89a83b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bb2db22caee970631d3e9c8f1ee16cc"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacewrite__netcdf.html#a2bb2db22caee970631d3e9c8f1ee16cc">position_output_1d</a> (position_array, filename, ierr)</td></tr>
-<tr class="separator:a2bb2db22caee970631d3e9c8f1ee16cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbc78c0b592ef703a9e83b22b0fff0ae"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacewrite__netcdf.html#adbc78c0b592ef703a9e83b22b0fff0ae">chain_output_1d</a> (position_array, energy_array, filename, ierr)</td></tr>
+<tr class="separator:adbc78c0b592ef703a9e83b22b0fff0ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad07f7eae9a3f4604743ca2d18addd413"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacewrite__netcdf.html#ad07f7eae9a3f4604743ca2d18addd413">position_output_3d</a> (position_array_3d, filename, ierr)</td></tr>
 <tr class="separator:ad07f7eae9a3f4604743ca2d18addd413"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6830bd805591aad1ec622d12037dd99d"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacewrite__netcdf.html#a6830bd805591aad1ec622d12037dd99d">append_to_array</a> (array, filename, ierr)</td></tr>
@@ -171,7 +171,7 @@ Functions/Subroutines</h2></td></tr>
 <map name="anamespacewrite__netcdf_aca2bb13e88c9dbfc7d0027b1bd83d9d0_icgraph" id="anamespacewrite__netcdf_aca2bb13e88c9dbfc7d0027b1bd83d9d0_icgraph">
 <area shape="rect" title="Checks error status at each point of NetCDF file build." alt="" coords="399,267,524,308"/>
 <area shape="rect" href="namespacewrite__netcdf.html#a6830bd805591aad1ec622d12037dd99d" title=" " alt="" coords="208,5,349,47"/>
-<area shape="rect" href="namespacewrite__netcdf.html#a2bb2db22caee970631d3e9c8f1ee16cc" title=" " alt="" coords="207,71,351,112"/>
+<area shape="rect" href="namespacewrite__netcdf.html#adbc78c0b592ef703a9e83b22b0fff0ae" title=" " alt="" coords="213,71,344,112"/>
 <area shape="rect" href="namespacewrite__netcdf.html#ad07f7eae9a3f4604743ca2d18addd413" title=" " alt="" coords="207,136,351,177"/>
 <area shape="rect" href="namespacewrite__netcdf.html#adc83694755df0f3d9228fb9aa0874452" title="Output H2 system trace for equilibration." alt="" coords="215,201,342,243"/>
 <area shape="rect" href="namespacewrite__netcdf.html#a8d49ffe8b78e85c17f3127d8dc89a83b" title="Output results of H2 MCMC run." alt="" coords="215,267,342,308"/>
@@ -1092,17 +1092,23 @@ Functions/Subroutines</h2></td></tr>
 
 </div>
 </div>
-<a id="a2bb2db22caee970631d3e9c8f1ee16cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2bb2db22caee970631d3e9c8f1ee16cc">&#9670;&nbsp;</a></span>position_output_1d()</h2>
+<a id="adbc78c0b592ef703a9e83b22b0fff0ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbc78c0b592ef703a9e83b22b0fff0ae">&#9670;&nbsp;</a></span>chain_output_1d()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">subroutine write_netcdf::position_output_1d </td>
+          <td class="memname">subroutine write_netcdf::chain_output_1d </td>
           <td>(</td>
           <td class="paramtype">real(real64), dimension(:), intent(in)&#160;</td>
           <td class="paramname"><em>position_array</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real(real64), dimension(:), intent(in)&#160;</td>
+          <td class="paramname"><em>energy_array</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1126,53 +1132,61 @@ Functions/Subroutines</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="netcdf__out_8f90_source.html#l00580">580</a> of file <a class="el" href="netcdf__out_8f90_source.html">netcdf_out.f90</a>.</p>
 <div class="fragment"><div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    <span class="comment">! Declaring input variables</span></div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;<span class="keywordtype">    real</span>(real64), <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: position_array</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;<span class="keywordtype">    real</span>(real64), <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: position_array, energy_array</div>
 <div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">intent(in)</span> :: filename</div>
 <div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160; </div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    <span class="comment">! Declaring other variables</span></div>
 <div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    <span class="keywordtype">integer</span>, <span class="keywordtype">parameter</span> :: ndims=1  <span class="comment">! Dimension of array (1D)</span></div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    <span class="keywordtype">integer</span>, <span class="keywordtype">dimension(ndims)</span> :: dim_id  <span class="comment">! Size of array and dimension ID</span></div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    <span class="keywordtype">character(len=1)</span>, <span class="keywordtype">dimension(ndims)</span> :: dims=(/<span class="stringliteral">&quot;t&quot;</span>/)  <span class="comment">! Write along t axis</span></div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    <span class="keywordtype">integer</span> :: ierr, file_id, var_id, i  <span class="comment">! Error check status, file and variable ID(s), iterator</span></div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160; </div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    <span class="comment">! Create file, overwrite if existing  </span></div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    ierr = nf90_create(filename, nf90_clobber, file_id)</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160; </div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    <span class="comment">! 1D array, define dimension </span></div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    <span class="keywordflow">do</span> i = 1, ndims</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;        ierr = nf90_def_dim(file_id, dims(i), nf90_unlimited, dim_id(i))</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;        <span class="keyword">call </span>error_check(ierr)</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;<span class="keywordflow">    enddo</span></div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160; </div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    <span class="comment">! Global metadata</span></div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    <span class="comment">! TO DO</span></div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160; </div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    <span class="comment">! Define variable types from 1D array (real)</span></div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    ierr = nf90_def_var(file_id, <span class="stringliteral">&quot;Position array&quot;</span>, nf90_double, dim_id, var_id)</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160; </div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    <span class="comment">! Finish defining metadata</span></div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;    ierr = nf90_enddef(file_id)</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160; </div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    <span class="comment">! Actually write 1D array(s)</span></div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    ierr = nf90_put_var(file_id, var_id, position_array) </div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160; </div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    <span class="comment">! Close file</span></div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    ierr = nf90_close(file_id)</div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160; </div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    <span class="keywordtype">integer</span>, <span class="keywordtype">parameter</span> :: n_arrays = 5  <span class="comment">! Number of arrays to output</span></div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    <span class="keywordtype">integer</span>, <span class="keywordtype">dimension(ndims)</span> :: dim_id  <span class="comment">! Size of array and dimension ID</span></div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    <span class="keywordtype">character(len=1)</span>, <span class="keywordtype">dimension(ndims)</span> :: dims=(/<span class="stringliteral">&quot;t&quot;</span>/)  <span class="comment">! Write along t axis</span></div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    <span class="keywordtype">integer</span>, <span class="keywordtype">dimension(n_arrays)</span> :: var_id  <span class="comment">! Variable IDs</span></div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    <span class="keywordtype">integer</span> :: ierr, file_id, i  <span class="comment">! Error check status, file ID, iterator</span></div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160; </div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    <span class="comment">! Create file, overwrite if existing  </span></div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    ierr = nf90_create(filename, nf90_clobber, file_id)</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160; </div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    <span class="comment">! 1D array, define dimension </span></div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    <span class="keywordflow">do</span> i = 1, ndims</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;        ierr = nf90_def_dim(file_id, dims(i), nf90_unlimited, dim_id(i))</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;        <span class="keyword">call </span>error_check(ierr)</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;<span class="keywordflow">    enddo</span></div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160; </div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    <span class="comment">! Global metadata</span></div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    <span class="comment">! TO DO</span></div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160; </div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    <span class="comment">! Define variable types from 1D array (real)</span></div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    ierr = nf90_def_var(file_id, <span class="stringliteral">&quot;Positions&quot;</span>, nf90_double, dim_id, var_id(1))</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160; </div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    ierr = nf90_def_var(file_id, <span class="stringliteral">&quot;Energies&quot;</span>, nf90_double, dim_id, var_id(2))</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160; </div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    <span class="comment">! Finish defining metadata</span></div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    ierr = nf90_enddef(file_id)</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160; </div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    <span class="comment">! Actually write 1D array(s)</span></div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    ierr = nf90_put_var(file_id, var_id(1), position_array) </div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160; </div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    ierr = nf90_put_var(file_id, var_id(2), energy_array) </div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160; </div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    <span class="comment">! Close file</span></div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    ierr = nf90_close(file_id)</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160; </div>
 </div><!-- fragment --><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="namespacewrite__netcdf_a2bb2db22caee970631d3e9c8f1ee16cc_cgraph.png" border="0" usemap="#anamespacewrite__netcdf_a2bb2db22caee970631d3e9c8f1ee16cc_cgraph" alt=""/></div>
-<map name="anamespacewrite__netcdf_a2bb2db22caee970631d3e9c8f1ee16cc_cgraph" id="anamespacewrite__netcdf_a2bb2db22caee970631d3e9c8f1ee16cc_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,149,47"/>
-<area shape="rect" href="namespacewrite__netcdf.html#aca2bb13e88c9dbfc7d0027b1bd83d9d0" title="Checks error status at each point of NetCDF file build." alt="" coords="197,5,323,47"/>
+<div class="center"><img src="namespacewrite__netcdf_adbc78c0b592ef703a9e83b22b0fff0ae_cgraph.png" border="0" usemap="#anamespacewrite__netcdf_adbc78c0b592ef703a9e83b22b0fff0ae_cgraph" alt=""/></div>
+<map name="anamespacewrite__netcdf_adbc78c0b592ef703a9e83b22b0fff0ae_cgraph" id="anamespacewrite__netcdf_adbc78c0b592ef703a9e83b22b0fff0ae_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,136,47"/>
+<area shape="rect" href="namespacewrite__netcdf.html#aca2bb13e88c9dbfc7d0027b1bd83d9d0" title="Checks error status at each point of NetCDF file build." alt="" coords="184,5,309,47"/>
 </map>
 </div>
 
@@ -1210,47 +1224,47 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="netcdf__out_8f90_source.html#l00623">623</a> of file <a class="el" href="netcdf__out_8f90_source.html">netcdf_out.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160; </div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    <span class="comment">! Declaring input variables</span></div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;<span class="keywordtype">    real</span>(real64), <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:,:)</span> :: position_array_3d</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">intent(in)</span> :: filename</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160; </div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    <span class="comment">! Declaring other variables</span></div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    <span class="keywordtype">integer</span>, <span class="keywordtype">parameter</span> :: ndims=2  <span class="comment">! Dimension of array (2D)</span></div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    <span class="keywordtype">integer</span>, <span class="keywordtype">dimension(ndims)</span> :: dim_id  <span class="comment">! Size of array and dimension ID</span></div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    <span class="keywordtype">character(len=1)</span>, <span class="keywordtype">dimension(ndims)</span> :: dims=(/<span class="stringliteral">&quot;y&quot;</span>, <span class="stringliteral">&quot;t&quot;</span>/)  <span class="comment">! Write along t,y axes</span></div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;    <span class="keywordtype">integer</span> :: ierr, file_id, var_id, i  <span class="comment">! Error check status, file and variable ID(s), iterator</span></div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160; </div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    <span class="comment">! Create file, overwrite if existing  </span></div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;    ierr = nf90_create(filename, nf90_clobber, file_id)</div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160; </div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;    <span class="comment">! 2D array, define dimensions </span></div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;    <span class="keywordflow">do</span> i = 1, ndims</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;        ierr = nf90_def_dim(file_id, dims(i), nf90_unlimited, dim_id(i))</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;        <span class="keyword">call </span>error_check(ierr)</div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;<span class="keywordflow">    enddo</span></div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160; </div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    <span class="comment">! Global metadata</span></div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    <span class="comment">! TO DO</span></div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160; </div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;    <span class="comment">! Define variable types from 2D array (real)</span></div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;    ierr = nf90_def_var(file_id, <span class="stringliteral">&quot;3D Position array&quot;</span>, nf90_double, dim_id, var_id)</div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160; </div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;    <span class="comment">! Finish defining metadata</span></div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;    ierr = nf90_enddef(file_id)</div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
+<p class="definition">Definition at line <a class="el" href="netcdf__out_8f90_source.html#l00631">631</a> of file <a class="el" href="netcdf__out_8f90_source.html">netcdf_out.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160; </div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;    <span class="comment">! Declaring input variables</span></div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;<span class="keywordtype">    real</span>(real64), <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:,:)</span> :: position_array_3d</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">intent(in)</span> :: filename</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160; </div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    <span class="comment">! Declaring other variables</span></div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;    <span class="keywordtype">integer</span>, <span class="keywordtype">parameter</span> :: ndims=2  <span class="comment">! Dimension of array (2D)</span></div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;    <span class="keywordtype">integer</span>, <span class="keywordtype">dimension(ndims)</span> :: dim_id  <span class="comment">! Size of array and dimension ID</span></div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;    <span class="keywordtype">character(len=1)</span>, <span class="keywordtype">dimension(ndims)</span> :: dims=(/<span class="stringliteral">&quot;y&quot;</span>, <span class="stringliteral">&quot;t&quot;</span>/)  <span class="comment">! Write along t,y axes</span></div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    <span class="keywordtype">integer</span> :: ierr, file_id, var_id, i  <span class="comment">! Error check status, file and variable ID(s), iterator</span></div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160; </div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;    <span class="comment">! Create file, overwrite if existing  </span></div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;    ierr = nf90_create(filename, nf90_clobber, file_id)</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160; </div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;    <span class="comment">! 2D array, define dimensions </span></div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;    <span class="keywordflow">do</span> i = 1, ndims</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;        ierr = nf90_def_dim(file_id, dims(i), nf90_unlimited, dim_id(i))</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;        <span class="keyword">call </span>error_check(ierr)</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;<span class="keywordflow">    enddo</span></div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160; </div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;    <span class="comment">! Global metadata</span></div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    <span class="comment">! TO DO</span></div>
 <div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160; </div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;    <span class="comment">! Actually write 2D array(s)</span></div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;    ierr = nf90_put_var(file_id, var_id, position_array_3d) </div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;    <span class="comment">! Define variable types from 2D array (real)</span></div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;    ierr = nf90_def_var(file_id, <span class="stringliteral">&quot;3D Position array&quot;</span>, nf90_double, dim_id, var_id)</div>
 <div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
 <div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160; </div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    <span class="comment">! Close file</span></div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;    ierr = nf90_close(file_id)</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    <span class="comment">! Finish defining metadata</span></div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;    ierr = nf90_enddef(file_id)</div>
 <div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
 <div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160; </div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    <span class="comment">! Actually write 2D array(s)</span></div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;    ierr = nf90_put_var(file_id, var_id, position_array_3d) </div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160; </div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    <span class="comment">! Close file</span></div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    ierr = nf90_close(file_id)</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160; </div>
 </div><!-- fragment --><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
@@ -1297,47 +1311,47 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="netcdf__out_8f90_source.html#l00670">670</a> of file <a class="el" href="netcdf__out_8f90_source.html">netcdf_out.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;    <span class="comment">! Declaring inpit variables</span></div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: array</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">intent(in)</span> :: filename</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160; </div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    <span class="comment">! Declaring other variables</span></div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    <span class="keywordtype">integer</span>, <span class="keywordtype">parameter</span> :: ndims=1  <span class="comment">! Dimension of array (1D)</span></div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    <span class="keywordtype">integer</span>, <span class="keywordtype">dimension(ndims)</span> :: dim_id  <span class="comment">! Size of array and dimension ID</span></div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <span class="keywordtype">character(len=1)</span>, <span class="keywordtype">dimension(ndims)</span> :: dims=(/<span class="stringliteral">&quot;t&quot;</span>/)  <span class="comment">! Write along t axis</span></div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <span class="keywordtype">integer</span> :: ierr, file_id, var_id, i, array_length  <span class="comment">! Error check status, file and variable ID, iterator</span></div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    <span class="keywordtype">integer</span>, <span class="keywordtype">dimension(1)</span> :: start_array</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="netcdf__out_8f90_source.html#l00678">678</a> of file <a class="el" href="netcdf__out_8f90_source.html">netcdf_out.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <span class="comment">! Declaring inpit variables</span></div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: array</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">intent(in)</span> :: filename</div>
 <div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160; </div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    <span class="comment">! Open existing NetCDF file in read / write mode</span></div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    ierr = nf90_open(filename, nf90_write, file_id)</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160; </div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    <span class="comment">! Grab variable ID of Trace / 1D array</span></div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    ierr = nf90_inq_varid(file_id, <span class="stringliteral">&quot;Trace&quot;</span>, var_id)</div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    <span class="comment">! Declaring other variables</span></div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    <span class="keywordtype">integer</span>, <span class="keywordtype">parameter</span> :: ndims=1  <span class="comment">! Dimension of array (1D)</span></div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    <span class="keywordtype">integer</span>, <span class="keywordtype">dimension(ndims)</span> :: dim_id  <span class="comment">! Size of array and dimension ID</span></div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    <span class="keywordtype">character(len=1)</span>, <span class="keywordtype">dimension(ndims)</span> :: dims=(/<span class="stringliteral">&quot;t&quot;</span>/)  <span class="comment">! Write along t axis</span></div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    <span class="keywordtype">integer</span> :: ierr, file_id, var_id, i, array_length  <span class="comment">! Error check status, file and variable ID, iterator</span></div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    <span class="keywordtype">integer</span>, <span class="keywordtype">dimension(1)</span> :: start_array</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160; </div>
 <div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160; </div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    <span class="comment">! Grab dimension ID of Trace / 1D array (&quot;t&quot;)</span></div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <span class="keywordflow">do</span> i = 1, ndims</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;        ierr = nf90_inq_dimid(file_id, dims(i), dim_id(i))</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;        <span class="keyword">call </span>error_check(ierr)</div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;<span class="keywordflow">    enddo</span></div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160; </div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    <span class="comment">! Grab length of dimension / 1D array</span></div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    ierr = nf90_inquire_dimension(file_id, dim_id(1), dims(1), array_length)</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160; </div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    start_array(1) = array_length</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160; </div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    <span class="comment">! Write new data to end of 1D array </span></div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    ierr = nf90_put_var(file_id, var_id, array, start=start_array)</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160; </div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    <span class="comment">! Close file</span></div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    ierr = nf90_close(file_id)</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    <span class="comment">! Open existing NetCDF file in read / write mode</span></div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    ierr = nf90_open(filename, nf90_write, file_id)</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160; </div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    <span class="comment">! Grab variable ID of Trace / 1D array</span></div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    ierr = nf90_inq_varid(file_id, <span class="stringliteral">&quot;Trace&quot;</span>, var_id)</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160; </div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    <span class="comment">! Grab dimension ID of Trace / 1D array (&quot;t&quot;)</span></div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    <span class="keywordflow">do</span> i = 1, ndims</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;        ierr = nf90_inq_dimid(file_id, dims(i), dim_id(i))</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        <span class="keyword">call </span>error_check(ierr)</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;<span class="keywordflow">    enddo</span></div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160; </div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    <span class="comment">! Grab length of dimension / 1D array</span></div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    ierr = nf90_inquire_dimension(file_id, dim_id(1), dims(1), array_length)</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160; </div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    start_array(1) = array_length</div>
 <div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160; </div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    <span class="comment">! Write new data to end of 1D array </span></div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    ierr = nf90_put_var(file_id, var_id, array, start=start_array)</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160; </div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    <span class="comment">! Close file</span></div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    ierr = nf90_close(file_id)</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    <span class="keyword">call </span>error_check(ierr)</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160; </div>
 </div><!-- fragment --><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">

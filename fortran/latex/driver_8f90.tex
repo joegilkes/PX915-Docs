@@ -102,8 +102,8 @@ Definition at line 52 of file driver.\+f90.
 \DoxyCodeLine{101 }
 \DoxyCodeLine{102     \textcolor{comment}{! Same directory check as above for write\_chains.}}
 \DoxyCodeLine{103     \textcolor{keywordflow}{if} (write\_chains) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{104         \textcolor{keyword}{call }system(\textcolor{stringliteral}{'mkdir ./traces\_out 2>/dev/null'})}
-\DoxyCodeLine{105         \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Program started in full VQMC mode with additional trace outputting')"{}}) }
+\DoxyCodeLine{104         \textcolor{keyword}{call }system(\textcolor{stringliteral}{'mkdir ./chains\_out 2>/dev/null'})}
+\DoxyCodeLine{105         \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Program started in full VQMC mode with additional Markov chain outputting')"{}}) }
 \DoxyCodeLine{106 \textcolor{keywordflow}{    end if}}
 \DoxyCodeLine{107 }
 \DoxyCodeLine{108     \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
