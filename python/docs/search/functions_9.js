@@ -2,7 +2,7 @@ var searchData=
 [
   ['qho_5feng_5fplot_97',['QHO_eng_plot',['../namespacevisualisation.html#a9e23aabdaf405841cfdfd7c6cc2800e0',1,'visualisation']]],
   ['qho_5fprob_5fplot_98',['QHO_prob_plot',['../namespacevisualisation.html#ad727a435fed6e71da862d749a6169558',1,'visualisation']]],
-  ['qhoenergyplot_99',['QHOEnergyPlot',['../namespacevis2.html#a2f3779834967d71c748aff9a5f30ad0b',1,'vis2']]],
+  ['qhoenergyplot_99',['QHOEnergyPlot',['../namespacevis2.html#a9daac64c8c06f7a07c3cb1608b6bb36d',1,'vis2']]],
   ['qhowfnplot_100',['QHOWfnPlot',['../namespacevis2.html#acf71426b090a0d1218ce65a7fd66afec',1,'vis2']]],
   ['query_5fdefault_101',['query_default',['../namespacewrite.html#a6ead226a81a790198f4fe23e69a7a7e3',1,'write']]],
   ['query_5fgrid_102',['query_grid',['../namespacewrite.html#afa3fbcda7589cff5d02ac8e298ae8b05',1,'write']]],

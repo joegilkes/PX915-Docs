@@ -24,8 +24,8 @@
 */
 var NAVTREE =
 [
-  [ "[Project Name] Python Frontend Documentation", "index.html", [
-    [ "Python Documentation Main Page", "index.html", null ],
+  [ "Dice Python Frontend Documentation", "index.html", [
+    [ "Python Developer Documentation Main Page", "index.html", null ],
     [ "Dice README", "md_repo__r_e_a_d_m_e.html", null ],
     [ "Packages", "namespaces.html", [
       [ "Packages", "namespaces.html", "namespaces_dup" ],

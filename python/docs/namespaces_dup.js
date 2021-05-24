@@ -28,10 +28,10 @@ var namespaces_dup =
       [ "step_one", "namespaceinput.html#a3d7818a4f120b1f0ada5a32dc5476fa3", null ]
     ] ],
     [ "vis2", "namespacevis2.html", [
-      [ "QHOEnergyPlot", "namespacevis2.html#a2f3779834967d71c748aff9a5f30ad0b", null ],
+      [ "QHOEnergyPlot", "namespacevis2.html#a9daac64c8c06f7a07c3cb1608b6bb36d", null ],
       [ "QHOWfnPlot", "namespacevis2.html#acf71426b090a0d1218ce65a7fd66afec", null ],
-      [ "H2plusEnergyPlot", "namespacevis2.html#aee64c8500c0d66f819ae5b02a6e622b0", null ],
-      [ "H2EnergyPlot", "namespacevis2.html#aeae9ef75e5221ae5504abe4894988757", null ]
+      [ "H2plusEnergyPlot", "namespacevis2.html#a08a68539d8dbe6e5231936ca9967e1f2", null ],
+      [ "H2EnergyPlot", "namespacevis2.html#a7d278aa9a718e17bfdbff1f5ee1db529", null ]
     ] ],
     [ "visualisation", "namespacevisualisation.html", [
       [ "print_global_attr", "namespacevisualisation.html#af26cb719b2deb508473e83624f95b374", null ],

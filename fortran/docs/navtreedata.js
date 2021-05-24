@@ -24,8 +24,8 @@
 */
 var NAVTREE =
 [
-  [ "[Project Name] Fortran Backend Documentation", "index.html", [
-    [ "Fortran Documentation Main Page", "index.html", null ],
+  [ "Dice Fortran Backend Documentation", "index.html", [
+    [ "Fortran Developer Documentation Main Page", "index.html", null ],
     [ "Dice README", "md_repo__r_e_a_d_m_e.html", null ],
     [ "Modules", "namespaces.html", [
       [ "Modules List", "namespaces.html", "namespaces_dup" ],
