@@ -1228,7 +1228,7 @@ Definition at line 787 of file vqmc.\+f90.
 \DoxyCodeLine{1079             energy2\_mean = energy2\_mean + energy\_chain(i)*energy\_chain(i\textcolor{comment}{) }}
 \DoxyCodeLine{1080 \textcolor{comment}{}\textcolor{keywordflow}{        end do}}
 \DoxyCodeLine{1081         energy\_variance = ((1.0\_real64 / real(re\_size, kind=real64)) * \&\textcolor{comment}{ }}
-\DoxyCodeLine{1082 \textcolor{comment}{}            (energy2\_mean)) -\/ (energy\_mean * energy\_mean)}
+\DoxyCodeLine{1082 \textcolor{comment}{}            energy2\_mean) -\/ (energy\_mean * energy\_mean)}
 \DoxyCodeLine{1083 }
 \DoxyCodeLine{1084         \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{1085             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Local energy = ', F12.8)"{}}) energy\_mean}
@@ -1978,9 +1978,9 @@ Definition at line 1410 of file vqmc.\+f90.
 \DoxyCodeLine{1732         \textcolor{keywordflow}{do} i = 1, re\_size}
 \DoxyCodeLine{1733             energy2\_mean = energy2\_mean + energy\_chain(i)*energy\_chain(i\textcolor{comment}{) }}
 \DoxyCodeLine{1734 \textcolor{comment}{}\textcolor{keywordflow}{        end do}}
-\DoxyCodeLine{1735         energy\_variance = (1.0\_real64 / real(re\_size-\/1, kind=real64)) * \textcolor{comment}{\& }}
-\DoxyCodeLine{1736 \textcolor{comment}{}            (energy2\_mean -\/ (1/real(re\_size, kind=real64)) * energy\_mean\textcolor{comment}{ * energy\_mean)}}
-\DoxyCodeLine{1737 \textcolor{comment}{}}
+\DoxyCodeLine{1735         energy\_variance = ((1.0\_real64 / real(re\_size, kind=real64)) * \&\textcolor{comment}{ }}
+\DoxyCodeLine{1736 \textcolor{comment}{}            energy2\_mean) -\/ (energy\_mean * energy\_mean)}
+\DoxyCodeLine{1737 }
 \DoxyCodeLine{1738         \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{1739             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Local energy = ', F12.8)"{}}) energy\_mean}
 \DoxyCodeLine{1740             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Variance = ', F12.8)"{}}) energy\_variance}
