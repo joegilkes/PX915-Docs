@@ -1610,9 +1610,9 @@ Variables</h2></td></tr>
 <div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;        <span class="keywordflow">do</span> i = 1, re_size</div>
 <div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;            energy2_mean = energy2_mean + energy_chain(i)*energy_chain(i<span class="comment">) </span></div>
 <div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;<span class="comment"></span><span class="keywordflow">        end do</span></div>
-<div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;        energy_variance = (1.0_real64 / real(re_size-1, kind=real64)) * <span class="comment">&amp; </span></div>
-<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;<span class="comment"></span>            (energy2_mean - (1/real(re_size, kind=real64)) * energy_mean<span class="comment"> * energy_mean)</span></div>
-<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;        energy_variance = ((1.0_real64 / real(re_size, kind=real64)) * &amp;<span class="comment"> </span></div>
+<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;<span class="comment"></span>            (energy2_mean)) - (energy_mean * energy_mean)</div>
+<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160; </div>
 <div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;        <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;            <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;Local energy = &#39;, F12.8)&quot;</span>) energy_mean</div>
 <div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;            <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;Variance = &#39;, F12.8)&quot;</span>) energy_variance</div>
