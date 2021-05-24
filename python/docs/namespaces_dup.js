@@ -46,6 +46,7 @@ var namespaces_dup =
       [ "lcao_wfn", "namespacevisualisation.html#a8518056c83c83befbb585f14d97497d8", null ],
       [ "plot_3D", "namespacevisualisation.html#a9756d369d218ccf60a488ec02542eac6", null ],
       [ "example_H1s_wfn", "namespacevisualisation.html#a73a6709541da1825e8af407b3558240e", null ],
+      [ "plot_3D", "namespacevisualisation.html#a58db1c83502abb038c648f3bb1076432", null ],
       [ "view_original_trace", "namespacevisualisation.html#a125cde5ab41fad7aaed30b720dd95318", null ],
       [ "get_autocorrelation_time", "namespacevisualisation.html#a701fd174c3547d52cc346056e71525da", null ],
       [ "data1", "namespacevisualisation.html#a046456973173620f623fad7687ae0629", null ],

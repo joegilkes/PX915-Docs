@@ -32,6 +32,8 @@ def \mbox{\hyperlink{namespacevisualisation_a9756d369d218ccf60a488ec02542eac6}{p
 \item 
 def \mbox{\hyperlink{namespacevisualisation_a73a6709541da1825e8af407b3558240e}{example\+\_\+\+H1s\+\_\+wfn}} (bond\+\_\+length=2.\+0)
 \item 
+def \mbox{\hyperlink{namespacevisualisation_a58db1c83502abb038c648f3bb1076432}{plot\+\_\+3D}} (X, Y, Z, wfn)
+\item 
 def \mbox{\hyperlink{namespacevisualisation_a125cde5ab41fad7aaed30b720dd95318}{view\+\_\+original\+\_\+trace}} (chain)
 \begin{DoxyCompactList}\small\item\em Plots the original trace of an MCMC run. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacevisualisation_a701fd174c3547d52cc346056e71525da}{get\+\_\+autocorrelation\+\_\+time}} (chain, burn, tuning)
@@ -57,15 +59,15 @@ Contains functions for burning/thinning and visualization for \mbox{[}PROGRAM NA
 
 
 
-Definition at line 24 of file visualisation.\+py.
+Definition at line 25 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{24 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_af26cb719b2deb508473e83624f95b374}{print\_global\_attr}}(rootgrp):}
-\DoxyCodeLine{25     \textcolor{keywordflow}{for} name \textcolor{keywordflow}{in} rootgrp.ncattrs():}
-\DoxyCodeLine{26         print(\textcolor{stringliteral}{"{}\{\} = \{\}"{}}.format(name, getattr(rootgrp, name)))}
-\DoxyCodeLine{27 }
+\DoxyCodeLine{25 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_af26cb719b2deb508473e83624f95b374}{print\_global\_attr}}(rootgrp):}
+\DoxyCodeLine{26     \textcolor{keywordflow}{for} name \textcolor{keywordflow}{in} rootgrp.ncattrs():}
+\DoxyCodeLine{27         print(\textcolor{stringliteral}{"{}\{\} = \{\}"{}}.format(name, getattr(rootgrp, name)))}
 \DoxyCodeLine{28 }
+\DoxyCodeLine{29 }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -88,24 +90,24 @@ energy\+\_\+plot() Plots the energy at each step as the MC converges
 
 
 
-Definition at line 29 of file visualisation.\+py.
+Definition at line 30 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{29 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a9e23aabdaf405841cfdfd7c6cc2800e0}{QHO\_eng\_plot}}(rootgrp,equil=False):}
-\DoxyCodeLine{30     \textcolor{stringliteral}{"{}"{}"{}energy\_plot()}}
-\DoxyCodeLine{31 \textcolor{stringliteral}{    Plots the energy at each step as the MC converges}}
-\DoxyCodeLine{32 \textcolor{stringliteral}{    "{}"{}"{}}}
-\DoxyCodeLine{33 }
-\DoxyCodeLine{34     energies = np.array(rootgrp.variables[\textcolor{stringliteral}{'energy\_at\_alphas\_array'}][:])}
-\DoxyCodeLine{35 }
-\DoxyCodeLine{36     alphas = np.array((rootgrp.variables[\textcolor{stringliteral}{'Alpha\_array'}][:]))}
-\DoxyCodeLine{37 }
-\DoxyCodeLine{38     \textcolor{keywordflow}{if} (equil):}
-\DoxyCodeLine{39         \textcolor{keywordflow}{pass}}
-\DoxyCodeLine{40 \textcolor{comment}{\#         energies = energies[getattr(rootgrp,'burn\_step')::rootgrp,'thin\_step')]}}
-\DoxyCodeLine{41 \textcolor{comment}{\#         r = alphas[getattr(rootgrp,'burn\_step')::rootgrp,'thin\_step')]}}
-\DoxyCodeLine{42 }
+\DoxyCodeLine{30 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a9e23aabdaf405841cfdfd7c6cc2800e0}{QHO\_eng\_plot}}(rootgrp,equil=False):}
+\DoxyCodeLine{31     \textcolor{stringliteral}{"{}"{}"{}energy\_plot()}}
+\DoxyCodeLine{32 \textcolor{stringliteral}{    Plots the energy at each step as the MC converges}}
+\DoxyCodeLine{33 \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     energies = np.array(rootgrp.variables[\textcolor{stringliteral}{'energy\_at\_alphas\_array'}][:])}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     alphas = np.array((rootgrp.variables[\textcolor{stringliteral}{'Alpha\_array'}][:]))}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{keywordflow}{if} (equil):}
+\DoxyCodeLine{40         \textcolor{keywordflow}{pass}}
+\DoxyCodeLine{41 \textcolor{comment}{\#         energies = energies[getattr(rootgrp,'burn\_step')::rootgrp,'thin\_step')]}}
+\DoxyCodeLine{42 \textcolor{comment}{\#         r = alphas[getattr(rootgrp,'burn\_step')::rootgrp,'thin\_step')]}}
+\DoxyCodeLine{43 }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -124,18 +126,18 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 67 of file visualisation.\+py.
+Definition at line 68 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{67 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_ad727a435fed6e71da862d749a6169558}{QHO\_prob\_plot}}(rootgrp):}
-\DoxyCodeLine{68     }
-\DoxyCodeLine{69     positions = np.array((rootgrp.variables[\textcolor{stringliteral}{'Alpha\_array'}][:]))}
-\DoxyCodeLine{70     \textcolor{comment}{\#data2 =  trying to figure out how to do a histogram using the go package. If not possible, switch to mpl}}
-\DoxyCodeLine{71     }
-\DoxyCodeLine{72     fig2 = ff.create\_distplot(positions, \textcolor{stringliteral}{'distribution'}, colors=\textcolor{stringliteral}{'\#FF0000'},bin\_size=bin\_size, show\_rug=\textcolor{keyword}{False})}
-\DoxyCodeLine{73     fig2.show()}
-\DoxyCodeLine{74 }
+\DoxyCodeLine{68 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_ad727a435fed6e71da862d749a6169558}{QHO\_prob\_plot}}(rootgrp):}
+\DoxyCodeLine{69     }
+\DoxyCodeLine{70     positions = np.array((rootgrp.variables[\textcolor{stringliteral}{'Alpha\_array'}][:]))}
+\DoxyCodeLine{71     \textcolor{comment}{\#data2 =  trying to figure out how to do a histogram using the go package. If not possible, switch to mpl}}
+\DoxyCodeLine{72     }
+\DoxyCodeLine{73     fig2 = ff.create\_distplot(positions, \textcolor{stringliteral}{'distribution'}, colors=\textcolor{stringliteral}{'\#FF0000'},bin\_size=bin\_size, show\_rug=\textcolor{keyword}{False})}
+\DoxyCodeLine{74     fig2.show()}
+\DoxyCodeLine{75 }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -154,16 +156,16 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 75 of file visualisation.\+py.
+Definition at line 76 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{75 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a9b6373542137aecb35f5db5805f15e7f}{H2\_eng\_plot}}(rootgrp):}
-\DoxyCodeLine{76     \textcolor{keywordflow}{pass}}
-\DoxyCodeLine{77     }
-\DoxyCodeLine{78     \textcolor{comment}{\#function due to change depending on how complicated our grid parameter search is}}
-\DoxyCodeLine{79 }
+\DoxyCodeLine{76 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a9b6373542137aecb35f5db5805f15e7f}{H2\_eng\_plot}}(rootgrp):}
+\DoxyCodeLine{77     \textcolor{keywordflow}{pass}}
+\DoxyCodeLine{78     }
+\DoxyCodeLine{79     \textcolor{comment}{\#function due to change depending on how complicated our grid parameter search is}}
 \DoxyCodeLine{80 }
+\DoxyCodeLine{81 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespacevisualisation_a665238431e964d48ad871c62f97c0eeb}\label{namespacevisualisation_a665238431e964d48ad871c62f97c0eeb}} 
@@ -180,73 +182,73 @@ X\+: Array of the x values in the markov chain Y\+: Array of the y values in the
 
 R1\+: The location of the first atom R2\+: The location of the second atom 
 
-Definition at line 81 of file visualisation.\+py.
+Definition at line 82 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{81 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a665238431e964d48ad871c62f97c0eeb}{H2\_prob\_plot}}(X,Y,Z, R1, R2):}
-\DoxyCodeLine{82 }
-\DoxyCodeLine{83     \textcolor{stringliteral}{"{}"{}"{} H2plus\_main\_plot()}}
-\DoxyCodeLine{84 \textcolor{stringliteral}{    Plots the wavefunction for the quantum harmonic oscillator case}}
-\DoxyCodeLine{85 \textcolor{stringliteral}{    }}
-\DoxyCodeLine{86 \textcolor{stringliteral}{    X: Array of the x values in the markov chain}}
-\DoxyCodeLine{87 \textcolor{stringliteral}{    Y: Array of the y values in the markov chain}}
-\DoxyCodeLine{88 \textcolor{stringliteral}{    Z: Array of the z values in the markov chain}}
-\DoxyCodeLine{89 \textcolor{stringliteral}{    }}
-\DoxyCodeLine{90 \textcolor{stringliteral}{    R1: The location of the first atom}}
-\DoxyCodeLine{91 \textcolor{stringliteral}{    R2: The location of the second atom}}
-\DoxyCodeLine{92 \textcolor{stringliteral}{}}
-\DoxyCodeLine{93 \textcolor{stringliteral}{    "{}"{}"{}}   }
-\DoxyCodeLine{94     \textcolor{comment}{\#data=[go.Scatter3d(x=X, y=Y, z=Z,mode='markers')]}}
-\DoxyCodeLine{95     }
-\DoxyCodeLine{96     fig = go.Figure()}
-\DoxyCodeLine{97     }
+\DoxyCodeLine{82 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a665238431e964d48ad871c62f97c0eeb}{H2\_prob\_plot}}(X,Y,Z, R1, R2):}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{stringliteral}{"{}"{}"{} H2plus\_main\_plot()}}
+\DoxyCodeLine{85 \textcolor{stringliteral}{    Plots the wavefunction for the quantum harmonic oscillator case}}
+\DoxyCodeLine{86 \textcolor{stringliteral}{    }}
+\DoxyCodeLine{87 \textcolor{stringliteral}{    X: Array of the x values in the markov chain}}
+\DoxyCodeLine{88 \textcolor{stringliteral}{    Y: Array of the y values in the markov chain}}
+\DoxyCodeLine{89 \textcolor{stringliteral}{    Z: Array of the z values in the markov chain}}
+\DoxyCodeLine{90 \textcolor{stringliteral}{    }}
+\DoxyCodeLine{91 \textcolor{stringliteral}{    R1: The location of the first atom}}
+\DoxyCodeLine{92 \textcolor{stringliteral}{    R2: The location of the second atom}}
+\DoxyCodeLine{93 \textcolor{stringliteral}{}}
+\DoxyCodeLine{94 \textcolor{stringliteral}{    "{}"{}"{}}   }
+\DoxyCodeLine{95     \textcolor{comment}{\#data=[go.Scatter3d(x=X, y=Y, z=Z,mode='markers')]}}
+\DoxyCodeLine{96     }
+\DoxyCodeLine{97     fig = go.Figure()}
 \DoxyCodeLine{98     }
-\DoxyCodeLine{99     fig.add\_trace(}
-\DoxyCodeLine{100     go.Scatter3d(}
-\DoxyCodeLine{101         mode=\textcolor{stringliteral}{'markers'},}
-\DoxyCodeLine{102         x=X,}
-\DoxyCodeLine{103         y=Y,}
-\DoxyCodeLine{104         z=Z,}
-\DoxyCodeLine{105         opacity=0.5,}
-\DoxyCodeLine{106         marker=dict(}
-\DoxyCodeLine{107             color=\textcolor{stringliteral}{'\#FF0000'},}
-\DoxyCodeLine{108             size=2,}
-\DoxyCodeLine{109             line=dict(}
-\DoxyCodeLine{110                 color=\textcolor{stringliteral}{'Black'},}
-\DoxyCodeLine{111                 width=2}
-\DoxyCodeLine{112                 )}
-\DoxyCodeLine{113             ),}
-\DoxyCodeLine{114             name=\textcolor{stringliteral}{'Markov Chain positions'}}
-\DoxyCodeLine{115         )}
-\DoxyCodeLine{116     )}
-\DoxyCodeLine{117     }
-\DoxyCodeLine{118     fig.add\_trace(}
-\DoxyCodeLine{119         go.Scatter3d(}
-\DoxyCodeLine{120         mode=\textcolor{stringliteral}{'markers'},}
-\DoxyCodeLine{121         x=[R1[0],R2[0]],}
-\DoxyCodeLine{122         y=[R1[1],R2[1]],}
-\DoxyCodeLine{123         z=[R1[2],R2[2]],}
-\DoxyCodeLine{124         opacity=1.0,}
-\DoxyCodeLine{125         marker=dict(}
-\DoxyCodeLine{126             color=\textcolor{stringliteral}{'\#AAAAAA'},}
-\DoxyCodeLine{127             size=10,}
-\DoxyCodeLine{128             line=dict(}
-\DoxyCodeLine{129                 color=\textcolor{stringliteral}{'Black'},}
-\DoxyCodeLine{130                 width=2}
-\DoxyCodeLine{131                 )}
-\DoxyCodeLine{132             ),}
-\DoxyCodeLine{133             name=\textcolor{stringliteral}{'Atoms'}}
-\DoxyCodeLine{134         )}
-\DoxyCodeLine{135     )}
-\DoxyCodeLine{136     }
-\DoxyCodeLine{137     \textcolor{comment}{\#fig.show()}}
-\DoxyCodeLine{138     }
+\DoxyCodeLine{99     }
+\DoxyCodeLine{100     fig.add\_trace(}
+\DoxyCodeLine{101     go.Scatter3d(}
+\DoxyCodeLine{102         mode=\textcolor{stringliteral}{'markers'},}
+\DoxyCodeLine{103         x=X,}
+\DoxyCodeLine{104         y=Y,}
+\DoxyCodeLine{105         z=Z,}
+\DoxyCodeLine{106         opacity=0.5,}
+\DoxyCodeLine{107         marker=dict(}
+\DoxyCodeLine{108             color=\textcolor{stringliteral}{'\#FF0000'},}
+\DoxyCodeLine{109             size=2,}
+\DoxyCodeLine{110             line=dict(}
+\DoxyCodeLine{111                 color=\textcolor{stringliteral}{'Black'},}
+\DoxyCodeLine{112                 width=2}
+\DoxyCodeLine{113                 )}
+\DoxyCodeLine{114             ),}
+\DoxyCodeLine{115             name=\textcolor{stringliteral}{'Markov Chain positions'}}
+\DoxyCodeLine{116         )}
+\DoxyCodeLine{117     )}
+\DoxyCodeLine{118     }
+\DoxyCodeLine{119     fig.add\_trace(}
+\DoxyCodeLine{120         go.Scatter3d(}
+\DoxyCodeLine{121         mode=\textcolor{stringliteral}{'markers'},}
+\DoxyCodeLine{122         x=[R1[0],R2[0]],}
+\DoxyCodeLine{123         y=[R1[1],R2[1]],}
+\DoxyCodeLine{124         z=[R1[2],R2[2]],}
+\DoxyCodeLine{125         opacity=1.0,}
+\DoxyCodeLine{126         marker=dict(}
+\DoxyCodeLine{127             color=\textcolor{stringliteral}{'\#AAAAAA'},}
+\DoxyCodeLine{128             size=10,}
+\DoxyCodeLine{129             line=dict(}
+\DoxyCodeLine{130                 color=\textcolor{stringliteral}{'Black'},}
+\DoxyCodeLine{131                 width=2}
+\DoxyCodeLine{132                 )}
+\DoxyCodeLine{133             ),}
+\DoxyCodeLine{134             name=\textcolor{stringliteral}{'Atoms'}}
+\DoxyCodeLine{135         )}
+\DoxyCodeLine{136     )}
+\DoxyCodeLine{137     }
+\DoxyCodeLine{138     \textcolor{comment}{\#fig.show()}}
 \DoxyCodeLine{139     }
-\DoxyCodeLine{140     \textcolor{comment}{\#fig.write\_image("{}energies.png"{})}}
-\DoxyCodeLine{141     }
-\DoxyCodeLine{142     \textcolor{keywordflow}{return} fig}
-\DoxyCodeLine{143     }
+\DoxyCodeLine{140     }
+\DoxyCodeLine{141     \textcolor{comment}{\#fig.write\_image("{}energies.png"{})}}
+\DoxyCodeLine{142     }
+\DoxyCodeLine{143     \textcolor{keywordflow}{return} fig}
+\DoxyCodeLine{144     }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespacevisualisation_a059f09b786545f0743961251db26ec5d}\label{namespacevisualisation_a059f09b786545f0743961251db26ec5d}} 
@@ -257,38 +259,38 @@ Definition at line 81 of file visualisation.\+py.
 
 
 
-Definition at line 144 of file visualisation.\+py.
+Definition at line 145 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{144 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a059f09b786545f0743961251db26ec5d}{read\_NCDF\_out}}(filename):}
-\DoxyCodeLine{145 }
-\DoxyCodeLine{146     filename = \textcolor{stringliteral}{"{}output.nc"{}}}
-\DoxyCodeLine{147     rootgrp = Dataset(filename, \textcolor{stringliteral}{"{}r"{}}, format = \textcolor{stringliteral}{"{}NETCDF4"{}})}
-\DoxyCodeLine{148 }
-\DoxyCodeLine{149     system = rootgrp.system}
-\DoxyCodeLine{150 }
-\DoxyCodeLine{151     \mbox{\hyperlink{namespacevisualisation_af26cb719b2deb508473e83624f95b374}{print\_global\_attr}}()}
-\DoxyCodeLine{152     }
-\DoxyCodeLine{153     xyzs = np.array(rootgrp.variables[\textcolor{stringliteral}{'3D Position array'}][:])}
-\DoxyCodeLine{154     }
-\DoxyCodeLine{155     X = xyzs[0,:]}
-\DoxyCodeLine{156     Y = xyzs[1,:]}
-\DoxyCodeLine{157     Z = xyzs[2,:]}
-\DoxyCodeLine{158 }
+\DoxyCodeLine{145 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a059f09b786545f0743961251db26ec5d}{read\_NCDF\_out}}(filename):}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147     filename = \textcolor{stringliteral}{"{}output.nc"{}}}
+\DoxyCodeLine{148     rootgrp = Dataset(filename, \textcolor{stringliteral}{"{}r"{}}, format = \textcolor{stringliteral}{"{}NETCDF4"{}})}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150     system = rootgrp.system}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152     \mbox{\hyperlink{namespacevisualisation_af26cb719b2deb508473e83624f95b374}{print\_global\_attr}}()}
+\DoxyCodeLine{153     }
+\DoxyCodeLine{154     xyzs = np.array(rootgrp.variables[\textcolor{stringliteral}{'3D Position array'}][:])}
+\DoxyCodeLine{155     }
+\DoxyCodeLine{156     X = xyzs[0,:]}
+\DoxyCodeLine{157     Y = xyzs[1,:]}
+\DoxyCodeLine{158     Z = xyzs[2,:]}
 \DoxyCodeLine{159 }
-\DoxyCodeLine{160     \textcolor{keywordflow}{if} (system == \textcolor{stringliteral}{'QHO'}):}
-\DoxyCodeLine{161         data1 = \mbox{\hyperlink{namespacevisualisation_a9e23aabdaf405841cfdfd7c6cc2800e0}{QHO\_eng\_plot}}(rootgrp)}
-\DoxyCodeLine{162         fig2 = \mbox{\hyperlink{namespacevisualisation_ad727a435fed6e71da862d749a6169558}{QHO\_prob\_plot}}(rootgrp)}
-\DoxyCodeLine{163     elif(system == \textcolor{stringliteral}{'H2plus'}):}
-\DoxyCodeLine{164         \textcolor{keywordflow}{pass}}
-\DoxyCodeLine{165 }
-\DoxyCodeLine{166     elif(system == \textcolor{stringliteral}{'H2'}):}
-\DoxyCodeLine{167         \textcolor{keywordflow}{pass}}
-\DoxyCodeLine{168 }
-\DoxyCodeLine{169     \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{170             \textcolor{keywordflow}{raise} Exception(\textcolor{stringliteral}{"{}Invalid system input into visualisation"{}})}
-\DoxyCodeLine{171 }
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161     \textcolor{keywordflow}{if} (system == \textcolor{stringliteral}{'QHO'}):}
+\DoxyCodeLine{162         data1 = \mbox{\hyperlink{namespacevisualisation_a9e23aabdaf405841cfdfd7c6cc2800e0}{QHO\_eng\_plot}}(rootgrp)}
+\DoxyCodeLine{163         fig2 = \mbox{\hyperlink{namespacevisualisation_ad727a435fed6e71da862d749a6169558}{QHO\_prob\_plot}}(rootgrp)}
+\DoxyCodeLine{164     elif(system == \textcolor{stringliteral}{'H2plus'}):}
+\DoxyCodeLine{165         \textcolor{keywordflow}{pass}}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167     elif(system == \textcolor{stringliteral}{'H2'}):}
+\DoxyCodeLine{168         \textcolor{keywordflow}{pass}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{171             \textcolor{keywordflow}{raise} Exception(\textcolor{stringliteral}{"{}Invalid system input into visualisation"{}})}
+\DoxyCodeLine{172 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -311,17 +313,17 @@ functions plotting the wavefunction ab initio \#\#\#\#\#\#\#
 
 
 
-Definition at line 174 of file visualisation.\+py.
+Definition at line 175 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{174 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_aee22ef0385ad565e03cc2c8aae5c10c2}{orb\_1s}}(X,Y,Z, R\_a): \textcolor{comment}{\#R\_a is the location of the atoms}}
-\DoxyCodeLine{175     x\_a,y\_a,z\_a = R\_a}
-\DoxyCodeLine{176     a0 = 1}
-\DoxyCodeLine{177     orbital = 1/(((a0**1.5)*(np.sqrt(np.pi)))*\(\backslash\)}
-\DoxyCodeLine{178                  np.exp(np.sqrt((X-\/x\_a)**2+(Y-\/y\_a)**2+(Z-\/z\_a)**2)/a0))}
-\DoxyCodeLine{179     \textcolor{keywordflow}{return} orbital}
-\DoxyCodeLine{180 }
+\DoxyCodeLine{175 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_aee22ef0385ad565e03cc2c8aae5c10c2}{orb\_1s}}(X,Y,Z, R\_a): \textcolor{comment}{\#R\_a is the location of the atoms}}
+\DoxyCodeLine{176     x\_a,y\_a,z\_a = R\_a}
+\DoxyCodeLine{177     a0 = 1}
+\DoxyCodeLine{178     orbital = 1/(((a0**1.5)*(np.sqrt(np.pi)))*\(\backslash\)}
+\DoxyCodeLine{179                  np.exp(np.sqrt((X-\/x\_a)**2+(Y-\/y\_a)**2+(Z-\/z\_a)**2)/a0))}
+\DoxyCodeLine{180     \textcolor{keywordflow}{return} orbital}
+\DoxyCodeLine{181 }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -340,15 +342,15 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 181 of file visualisation.\+py.
+Definition at line 182 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{181 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a622c163e8aa656ccc9b1745a3bfe545b}{orb\_2s}}(r,R\_a):}
-\DoxyCodeLine{182     a0 = 1}
-\DoxyCodeLine{183     orbital = (2-\/np.linalg.norm(r-\/R\_a)()/a0)/((4*(a0**1.5)*(np.sqrt(2*np.pi)))*np.exp(np.linalg.norm(r-\/R\_a)/(2*a0)))}
-\DoxyCodeLine{184     \textcolor{keywordflow}{return} orbital}
-\DoxyCodeLine{185 }
+\DoxyCodeLine{182 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a622c163e8aa656ccc9b1745a3bfe545b}{orb\_2s}}(r,R\_a):}
+\DoxyCodeLine{183     a0 = 1}
+\DoxyCodeLine{184     orbital = (2-\/np.linalg.norm(r-\/R\_a)()/a0)/((4*(a0**1.5)*(np.sqrt(2*np.pi)))*np.exp(np.linalg.norm(r-\/R\_a)/(2*a0)))}
+\DoxyCodeLine{185     \textcolor{keywordflow}{return} orbital}
+\DoxyCodeLine{186 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespacevisualisation_aa711c68ba9bc3ff10d2589890a785ed2}\label{namespacevisualisation_aa711c68ba9bc3ff10d2589890a785ed2}} 
@@ -359,18 +361,18 @@ Definition at line 181 of file visualisation.\+py.
 
 
 
-Definition at line 186 of file visualisation.\+py.
+Definition at line 187 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{186 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_aa711c68ba9bc3ff10d2589890a785ed2}{polar\_to\_cart}}(r,theta, phi):}
-\DoxyCodeLine{187     X = r*np.sin(phi)*np.cos(theta)}
-\DoxyCodeLine{188     Y = r*np.sin(phi)*np.sin(theta)}
-\DoxyCodeLine{189     Z = r*np.cos(phi)}
-\DoxyCodeLine{190 }
-\DoxyCodeLine{191     \textcolor{keywordflow}{return} X,Y,Z}
-\DoxyCodeLine{192     }
-\DoxyCodeLine{193 }
+\DoxyCodeLine{187 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_aa711c68ba9bc3ff10d2589890a785ed2}{polar\_to\_cart}}(r,theta, phi):}
+\DoxyCodeLine{188     X = r*np.sin(phi)*np.cos(theta)}
+\DoxyCodeLine{189     Y = r*np.sin(phi)*np.sin(theta)}
+\DoxyCodeLine{190     Z = r*np.cos(phi)}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192     \textcolor{keywordflow}{return} X,Y,Z}
+\DoxyCodeLine{193     }
+\DoxyCodeLine{194 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespacevisualisation_a8518056c83c83befbb585f14d97497d8}\label{namespacevisualisation_a8518056c83c83befbb585f14d97497d8}} 
@@ -381,23 +383,23 @@ Definition at line 186 of file visualisation.\+py.
 
 
 
-Definition at line 194 of file visualisation.\+py.
+Definition at line 195 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{194 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a8518056c83c83befbb585f14d97497d8}{lcao\_wfn}}(X,Y,Z, R1, R2, pqn = 1):}
-\DoxyCodeLine{195     \textcolor{comment}{\#for the linear combination of wavefunctions, to be added to and to be remove}}
-\DoxyCodeLine{196     \textcolor{keywordflow}{if} pqn == 1:}
-\DoxyCodeLine{197          wfn = np.sqrt(2)*\mbox{\hyperlink{namespacevisualisation_aee22ef0385ad565e03cc2c8aae5c10c2}{orb\_1s}}(X,Y,Z,R1) + np.sqrt(2)*\mbox{\hyperlink{namespacevisualisation_aee22ef0385ad565e03cc2c8aae5c10c2}{orb\_1s}}(X,Y,Z,R2)}
-\DoxyCodeLine{198     \textcolor{keywordflow}{if} pqn == 2:}
-\DoxyCodeLine{199         \textcolor{keywordflow}{pass}}
-\DoxyCodeLine{200 }
-\DoxyCodeLine{201     \textcolor{keywordflow}{return} wfn}
-\DoxyCodeLine{202 }
+\DoxyCodeLine{195 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a8518056c83c83befbb585f14d97497d8}{lcao\_wfn}}(X,Y,Z, R1, R2, pqn = 1):}
+\DoxyCodeLine{196     \textcolor{comment}{\#for the linear combination of wavefunctions, to be added to and to be remove}}
+\DoxyCodeLine{197     \textcolor{keywordflow}{if} pqn == 1:}
+\DoxyCodeLine{198          wfn = np.sqrt(2)*\mbox{\hyperlink{namespacevisualisation_aee22ef0385ad565e03cc2c8aae5c10c2}{orb\_1s}}(X,Y,Z,R1) + np.sqrt(2)*\mbox{\hyperlink{namespacevisualisation_aee22ef0385ad565e03cc2c8aae5c10c2}{orb\_1s}}(X,Y,Z,R2)}
+\DoxyCodeLine{199     \textcolor{keywordflow}{if} pqn == 2:}
+\DoxyCodeLine{200         \textcolor{keywordflow}{pass}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202     \textcolor{keywordflow}{return} wfn}
 \DoxyCodeLine{203 }
 \DoxyCodeLine{204 }
 \DoxyCodeLine{205 }
 \DoxyCodeLine{206 }
+\DoxyCodeLine{207 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -419,48 +421,48 @@ Here is the caller graph for this function\+:
 \mbox{\Hypertarget{namespacevisualisation_a9756d369d218ccf60a488ec02542eac6}\label{namespacevisualisation_a9756d369d218ccf60a488ec02542eac6}} 
 \index{visualisation@{visualisation}!plot\_3D@{plot\_3D}}
 \index{plot\_3D@{plot\_3D}!visualisation@{visualisation}}
-\doxysubsubsection{\texorpdfstring{plot\_3D()}{plot\_3D()}}
+\doxysubsubsection{\texorpdfstring{plot\_3D()}{plot\_3D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily def visualisation.\+plot\+\_\+3D (\begin{DoxyParamCaption}\item[{}]{X,  }\item[{}]{Y,  }\item[{}]{Z,  }\item[{}]{wfn,  }\item[{}]{R1,  }\item[{}]{R2 }\end{DoxyParamCaption})}
 
 
 
-Definition at line 207 of file visualisation.\+py.
+Definition at line 208 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{207 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a9756d369d218ccf60a488ec02542eac6}{plot\_3D}}(X,Y,Z,wfn,R1,R2):}
-\DoxyCodeLine{208       }
-\DoxyCodeLine{209     fig = go.Figure()}
-\DoxyCodeLine{210     \textcolor{comment}{\#for plotting wavefunctions, to be removed}}
-\DoxyCodeLine{211     fig.add\_trace(go.Volume(}
-\DoxyCodeLine{212     x=X.flatten(),}
-\DoxyCodeLine{213     y=Y.flatten(),}
-\DoxyCodeLine{214     z=Z.flatten(),}
-\DoxyCodeLine{215     value=wfn.flatten(),}
-\DoxyCodeLine{216     opacity=0.1, }
-\DoxyCodeLine{217     surface\_count=21, }
-\DoxyCodeLine{218     ))}
-\DoxyCodeLine{219     }
-\DoxyCodeLine{220     fig.add\_trace(go.Scatter3d(}
-\DoxyCodeLine{221         mode=\textcolor{stringliteral}{'markers'},}
-\DoxyCodeLine{222         x=[R1[0],R2[0]],}
-\DoxyCodeLine{223         y=[R1[1],R2[1]],}
-\DoxyCodeLine{224         z=[R1[2],R2[2]],}
-\DoxyCodeLine{225         opacity=1.0,}
-\DoxyCodeLine{226         marker=dict(}
-\DoxyCodeLine{227             color=\textcolor{stringliteral}{'\#AAAAAA'},}
-\DoxyCodeLine{228             size=10,}
-\DoxyCodeLine{229             line=dict(}
-\DoxyCodeLine{230                 color=\textcolor{stringliteral}{'Black'},}
-\DoxyCodeLine{231                 width=2}
-\DoxyCodeLine{232                 )}
-\DoxyCodeLine{233             ),}
-\DoxyCodeLine{234             name=\textcolor{stringliteral}{'Atoms'}}
-\DoxyCodeLine{235         )}
-\DoxyCodeLine{236     )}
-\DoxyCodeLine{237     \textcolor{keywordflow}{return} fig}
-\DoxyCodeLine{238 }
+\DoxyCodeLine{208 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a58db1c83502abb038c648f3bb1076432}{plot\_3D}}(X,Y,Z,wfn,R1,R2):}
+\DoxyCodeLine{209       }
+\DoxyCodeLine{210     fig = go.Figure()}
+\DoxyCodeLine{211     \textcolor{comment}{\#for plotting wavefunctions, to be removed}}
+\DoxyCodeLine{212     fig.add\_trace(go.Volume(}
+\DoxyCodeLine{213     x=X.flatten(),}
+\DoxyCodeLine{214     y=Y.flatten(),}
+\DoxyCodeLine{215     z=Z.flatten(),}
+\DoxyCodeLine{216     value=wfn.flatten(),}
+\DoxyCodeLine{217     opacity=0.1, }
+\DoxyCodeLine{218     surface\_count=21, }
+\DoxyCodeLine{219     ))}
+\DoxyCodeLine{220     }
+\DoxyCodeLine{221     fig.add\_trace(go.Scatter3d(}
+\DoxyCodeLine{222         mode=\textcolor{stringliteral}{'markers'},}
+\DoxyCodeLine{223         x=[R1[0],R2[0]],}
+\DoxyCodeLine{224         y=[R1[1],R2[1]],}
+\DoxyCodeLine{225         z=[R1[2],R2[2]],}
+\DoxyCodeLine{226         opacity=1.0,}
+\DoxyCodeLine{227         marker=dict(}
+\DoxyCodeLine{228             color=\textcolor{stringliteral}{'\#AAAAAA'},}
+\DoxyCodeLine{229             size=10,}
+\DoxyCodeLine{230             line=dict(}
+\DoxyCodeLine{231                 color=\textcolor{stringliteral}{'Black'},}
+\DoxyCodeLine{232                 width=2}
+\DoxyCodeLine{233                 )}
+\DoxyCodeLine{234             ),}
+\DoxyCodeLine{235             name=\textcolor{stringliteral}{'Atoms'}}
+\DoxyCodeLine{236         )}
+\DoxyCodeLine{237     )}
+\DoxyCodeLine{238     \textcolor{keywordflow}{return} fig}
 \DoxyCodeLine{239 }
+\DoxyCodeLine{240 }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -479,33 +481,32 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 240 of file visualisation.\+py.
+Definition at line 241 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{240 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a73a6709541da1825e8af407b3558240e}{example\_H1s\_wfn}}(bond\_length=2.0):}
-\DoxyCodeLine{241     }
-\DoxyCodeLine{242 }
-\DoxyCodeLine{243     x, y, z = np.mgrid[-\/3:3:40j, -\/3:3:40j, -\/3:3:40j]}
-\DoxyCodeLine{244 }
-\DoxyCodeLine{245     R\_1 = (-\/0.5*bond\_length, 0,0)}
-\DoxyCodeLine{246     R\_2 = (0.5*bond\_length, 0,0)}
-\DoxyCodeLine{247     }
-\DoxyCodeLine{248     wfn = \mbox{\hyperlink{namespacevisualisation_a8518056c83c83befbb585f14d97497d8}{lcao\_wfn}}(x,y,z,R\_1,R\_2)}
-\DoxyCodeLine{249     density = wfn**2}
-\DoxyCodeLine{250     }
-\DoxyCodeLine{251     density\_plot = \mbox{\hyperlink{namespacevisualisation_a9756d369d218ccf60a488ec02542eac6}{plot\_3D}}(x,y,z,density,R\_1,R\_2)}
-\DoxyCodeLine{252     \textcolor{keywordflow}{return} density\_plot}
-\DoxyCodeLine{253 }
-\DoxyCodeLine{254     }
-\DoxyCodeLine{255 }
+\DoxyCodeLine{241 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a73a6709541da1825e8af407b3558240e}{example\_H1s\_wfn}}(bond\_length=2.0):}
+\DoxyCodeLine{242     }
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244     x, y, z = np.mgrid[-\/3:3:40j, -\/3:3:40j, -\/3:3:40j]}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246     R\_1 = (-\/0.5*bond\_length, 0,0)}
+\DoxyCodeLine{247     R\_2 = (0.5*bond\_length, 0,0)}
+\DoxyCodeLine{248     }
+\DoxyCodeLine{249     wfn = \mbox{\hyperlink{namespacevisualisation_a8518056c83c83befbb585f14d97497d8}{lcao\_wfn}}(x,y,z,R\_1,R\_2)}
+\DoxyCodeLine{250     density = wfn**2}
+\DoxyCodeLine{251     }
+\DoxyCodeLine{252     density\_plot = \mbox{\hyperlink{namespacevisualisation_a58db1c83502abb038c648f3bb1076432}{plot\_3D}}(x,y,z,density,R\_1,R\_2)}
+\DoxyCodeLine{253     \textcolor{keywordflow}{return} density\_plot}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255     }
 \DoxyCodeLine{256 }
 \DoxyCodeLine{257 }
 \DoxyCodeLine{258 }
-\DoxyCodeLine{259 }
-\DoxyCodeLine{260 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{261 \textcolor{comment}{\# Burn / Thin FUNCTION DEFINITIONS -\/}}
-\DoxyCodeLine{262 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{259     \textcolor{keywordflow}{return} wfn}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262 }
 \DoxyCodeLine{263 }
 
 \end{DoxyCode}
@@ -515,6 +516,49 @@ Here is the call graph for this function\+:
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{namespacevisualisation_a73a6709541da1825e8af407b3558240e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacevisualisation_a58db1c83502abb038c648f3bb1076432}\label{namespacevisualisation_a58db1c83502abb038c648f3bb1076432}} 
+\index{visualisation@{visualisation}!plot\_3D@{plot\_3D}}
+\index{plot\_3D@{plot\_3D}!visualisation@{visualisation}}
+\doxysubsubsection{\texorpdfstring{plot\_3D()}{plot\_3D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily def visualisation.\+plot\+\_\+3D (\begin{DoxyParamCaption}\item[{}]{X,  }\item[{}]{Y,  }\item[{}]{Z,  }\item[{}]{wfn }\end{DoxyParamCaption})}
+
+
+
+Definition at line 264 of file visualisation.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{264 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a58db1c83502abb038c648f3bb1076432}{plot\_3D}}(X,Y,Z,wfn):}
+\DoxyCodeLine{265     \textcolor{comment}{\#for plotting wavefunctions, to be removed}}
+\DoxyCodeLine{266     fig = go.Figure(data=go.Volume(}
+\DoxyCodeLine{267     x=X.flatten(),}
+\DoxyCodeLine{268     y=Y.flatten(),}
+\DoxyCodeLine{269     z=Z.flatten(),}
+\DoxyCodeLine{270     value=wfn.flatten(),}
+\DoxyCodeLine{271     isomin=0.0,}
+\DoxyCodeLine{272     isomax=1.2,}
+\DoxyCodeLine{273     opacity=0.1, }
+\DoxyCodeLine{274     surface\_count=21, }
+\DoxyCodeLine{275     ))}
+\DoxyCodeLine{276     \textcolor{comment}{\#fig.save("{}wavefunction.png"{})}}
+\DoxyCodeLine{277     \textcolor{keywordflow}{return} fig}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279     }
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{282 \textcolor{comment}{\# Burn / Thin FUNCTION DEFINITIONS -\/}}
+\DoxyCodeLine{283 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{284 }
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{namespacevisualisation_a58db1c83502abb038c648f3bb1076432_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{namespacevisualisation_a125cde5ab41fad7aaed30b720dd95318}\label{namespacevisualisation_a125cde5ab41fad7aaed30b720dd95318}} 
@@ -534,20 +578,20 @@ Plots the original trace of an MCMC run.
 \end{DoxyParams}
 
 
-Definition at line 268 of file visualisation.\+py.
+Definition at line 289 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{268 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a125cde5ab41fad7aaed30b720dd95318}{view\_original\_trace}}(chain):}
-\DoxyCodeLine{269     }
-\DoxyCodeLine{270     plt.plot(range(len(chain)), chain)}
-\DoxyCodeLine{271     plt.xlabel(\textcolor{stringliteral}{"{}Position in chain"{}})}
-\DoxyCodeLine{272     plt.ylabel(\textcolor{stringliteral}{"{}Chain value"{}})}
-\DoxyCodeLine{273     plt.title(\textcolor{stringliteral}{"{}Original Chain"{}})}
-\DoxyCodeLine{274     plt.show()}
-\DoxyCodeLine{275     }
-\DoxyCodeLine{276     \textcolor{keywordflow}{return}}
-\DoxyCodeLine{277 }
+\DoxyCodeLine{289 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a125cde5ab41fad7aaed30b720dd95318}{view\_original\_trace}}(chain):}
+\DoxyCodeLine{290     }
+\DoxyCodeLine{291     plt.plot(range(len(chain)), chain)}
+\DoxyCodeLine{292     plt.xlabel(\textcolor{stringliteral}{"{}Position in chain"{}})}
+\DoxyCodeLine{293     plt.ylabel(\textcolor{stringliteral}{"{}Chain value"{}})}
+\DoxyCodeLine{294     plt.title(\textcolor{stringliteral}{"{}Original Chain"{}})}
+\DoxyCodeLine{295     plt.show()}
+\DoxyCodeLine{296     }
+\DoxyCodeLine{297     \textcolor{keywordflow}{return}}
+\DoxyCodeLine{298 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespacevisualisation_a701fd174c3547d52cc346056e71525da}\label{namespacevisualisation_a701fd174c3547d52cc346056e71525da}} 
@@ -573,59 +617,59 @@ Takes as input a burning parameter and a tuning parameter which controls how agg
 \end{DoxyParams}
 
 
-Definition at line 293 of file visualisation.\+py.
+Definition at line 314 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{293 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a701fd174c3547d52cc346056e71525da}{get\_autocorrelation\_time}}(chain, burn, tuning):}
-\DoxyCodeLine{294     }
-\DoxyCodeLine{295     acp = sps.fftconvolve(chain,chain[::-\/1],mode=\textcolor{stringliteral}{'full'})}
-\DoxyCodeLine{296     acp = acp[int(acp.size / 2):]}
-\DoxyCodeLine{297     acp = acp / max(acp)}
-\DoxyCodeLine{298     acp = acp[burn:]}
-\DoxyCodeLine{299     }
-\DoxyCodeLine{300     \textcolor{comment}{\#tuning = 1e-\/2}}
-\DoxyCodeLine{301     \textcolor{comment}{\#print("{}tuning = "{}, tuning)}}
-\DoxyCodeLine{302     }
-\DoxyCodeLine{303     thin = np.argmax(abs(acp) < tuning)}
-\DoxyCodeLine{304     \textcolor{keywordflow}{if} thin == 0:}
-\DoxyCodeLine{305         \textcolor{keywordflow}{if} acp[thin] < tuning:}
-\DoxyCodeLine{306             thin = 1}
-\DoxyCodeLine{307         \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{308             print(\textcolor{stringliteral}{"{}No thinning value found -\/ tuning may be too aggressive. Defaulting to no thinning, thin=1."{}})}
-\DoxyCodeLine{309             print()}
-\DoxyCodeLine{310             thin = 1}
-\DoxyCodeLine{311     }
-\DoxyCodeLine{312     print(\textcolor{stringliteral}{"{}burning parameter = "{}}, burn)}
-\DoxyCodeLine{313     print()}
-\DoxyCodeLine{314     print(\textcolor{stringliteral}{"{}tuning parameter = "{}}, tuning)}
-\DoxyCodeLine{315     print()}
-\DoxyCodeLine{316     print(\textcolor{stringliteral}{"{}proposed thinning parameter = "{}}, thin)}
-\DoxyCodeLine{317     print()}
-\DoxyCodeLine{318     }
-\DoxyCodeLine{319     chain\_new = chain[burn::thin]}
-\DoxyCodeLine{320     print(\textcolor{stringliteral}{"{}length of new chain = "{}}, len(chain\_new))}
-\DoxyCodeLine{321     }
-\DoxyCodeLine{322     }
-\DoxyCodeLine{323     plt.plot(range(len(acp)), acp)}
-\DoxyCodeLine{324     plt.xlabel(\textcolor{stringliteral}{"{}Position in chain / Lag time"{}})}
-\DoxyCodeLine{325     plt.ylabel(\textcolor{stringliteral}{"{}ACF"{}})}
-\DoxyCodeLine{326     plt.title(\textcolor{stringliteral}{"{}Autocorrelation function vs lag time"{}})}
-\DoxyCodeLine{327     plt.show()}
-\DoxyCodeLine{328     }
-\DoxyCodeLine{329     plt.plot(range(len(chain\_new)), chain\_new)}
-\DoxyCodeLine{330     plt.xlabel(\textcolor{stringliteral}{"{}Position in chain"{}})}
-\DoxyCodeLine{331     plt.ylabel(\textcolor{stringliteral}{"{}Chain value"{}})}
-\DoxyCodeLine{332     plt.title(\textcolor{stringliteral}{"{}New Chain"{}})}
-\DoxyCodeLine{333     plt.show()}
-\DoxyCodeLine{334     }
-\DoxyCodeLine{335     \textcolor{keywordflow}{return}}
-\DoxyCodeLine{336 }
-\DoxyCodeLine{337 }
-\DoxyCodeLine{338 }
-\DoxyCodeLine{339 }
-\DoxyCodeLine{340 }
-\DoxyCodeLine{341 }
+\DoxyCodeLine{314 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a701fd174c3547d52cc346056e71525da}{get\_autocorrelation\_time}}(chain, burn, tuning):}
+\DoxyCodeLine{315     }
+\DoxyCodeLine{316     acp = sps.fftconvolve(chain,chain[::-\/1],mode=\textcolor{stringliteral}{'full'})}
+\DoxyCodeLine{317     acp = acp[int(acp.size / 2):]}
+\DoxyCodeLine{318     acp = acp / max(acp)}
+\DoxyCodeLine{319     acp = acp[burn:]}
+\DoxyCodeLine{320     }
+\DoxyCodeLine{321     \textcolor{comment}{\#tuning = 1e-\/2}}
+\DoxyCodeLine{322     \textcolor{comment}{\#print("{}tuning = "{}, tuning)}}
+\DoxyCodeLine{323     }
+\DoxyCodeLine{324     thin = np.argmax(abs(acp) < tuning)}
+\DoxyCodeLine{325     \textcolor{keywordflow}{if} thin == 0:}
+\DoxyCodeLine{326         \textcolor{keywordflow}{if} acp[thin] < tuning:}
+\DoxyCodeLine{327             thin = 1}
+\DoxyCodeLine{328         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{329             print(\textcolor{stringliteral}{"{}No thinning value found -\/ tuning may be too aggressive. Defaulting to no thinning, thin=1."{}})}
+\DoxyCodeLine{330             print()}
+\DoxyCodeLine{331             thin = 1}
+\DoxyCodeLine{332     }
+\DoxyCodeLine{333     print(\textcolor{stringliteral}{"{}burning parameter = "{}}, burn)}
+\DoxyCodeLine{334     print()}
+\DoxyCodeLine{335     print(\textcolor{stringliteral}{"{}tuning parameter = "{}}, tuning)}
+\DoxyCodeLine{336     print()}
+\DoxyCodeLine{337     print(\textcolor{stringliteral}{"{}proposed thinning parameter = "{}}, thin)}
+\DoxyCodeLine{338     print()}
+\DoxyCodeLine{339     }
+\DoxyCodeLine{340     chain\_new = chain[burn::thin]}
+\DoxyCodeLine{341     print(\textcolor{stringliteral}{"{}length of new chain = "{}}, len(chain\_new))}
+\DoxyCodeLine{342     }
+\DoxyCodeLine{343     }
+\DoxyCodeLine{344     plt.plot(range(len(acp)), acp)}
+\DoxyCodeLine{345     plt.xlabel(\textcolor{stringliteral}{"{}Position in chain / Lag time"{}})}
+\DoxyCodeLine{346     plt.ylabel(\textcolor{stringliteral}{"{}ACF"{}})}
+\DoxyCodeLine{347     plt.title(\textcolor{stringliteral}{"{}Autocorrelation function vs lag time"{}})}
+\DoxyCodeLine{348     plt.show()}
+\DoxyCodeLine{349     }
+\DoxyCodeLine{350     plt.plot(range(len(chain\_new)), chain\_new)}
+\DoxyCodeLine{351     plt.xlabel(\textcolor{stringliteral}{"{}Position in chain"{}})}
+\DoxyCodeLine{352     plt.ylabel(\textcolor{stringliteral}{"{}Chain value"{}})}
+\DoxyCodeLine{353     plt.title(\textcolor{stringliteral}{"{}New Chain"{}})}
+\DoxyCodeLine{354     plt.show()}
+\DoxyCodeLine{355     }
+\DoxyCodeLine{356     \textcolor{keywordflow}{return}}
+\DoxyCodeLine{357 }
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359 }
+\DoxyCodeLine{360 }
+\DoxyCodeLine{361 }
+\DoxyCodeLine{362 }
 
 \end{DoxyCode}
 
@@ -643,7 +687,7 @@ Matplotlib implementation.
 
 Plotly Implementation 
 
-Definition at line 58 of file visualisation.\+py.
+Definition at line 59 of file visualisation.\+py.
 
 \mbox{\Hypertarget{namespacevisualisation_a40a49644828770b16212ef416b876eea}\label{namespacevisualisation_a40a49644828770b16212ef416b876eea}} 
 \index{visualisation@{visualisation}!fig1@{fig1}}
@@ -653,5 +697,5 @@ Definition at line 58 of file visualisation.\+py.
 
 
 
-Definition at line 59 of file visualisation.\+py.
+Definition at line 60 of file visualisation.\+py.
 

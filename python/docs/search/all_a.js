@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['plot_5f3d_36',['plot_3D',['../namespacevisualisation.html#a9756d369d218ccf60a488ec02542eac6',1,'visualisation']]],
+  ['plot_5f3d_36',['plot_3D',['../namespacevisualisation.html#a9756d369d218ccf60a488ec02542eac6',1,'visualisation.plot_3D(X, Y, Z, wfn, R1, R2)'],['../namespacevisualisation.html#a58db1c83502abb038c648f3bb1076432',1,'visualisation.plot_3D(X, Y, Z, wfn)']]],
   ['polar_5fto_5fcart_37',['polar_to_cart',['../namespacevisualisation.html#aa711c68ba9bc3ff10d2589890a785ed2',1,'visualisation']]],
   ['porder_5fhyd_38',['porder_hyd',['../namespacecheck.html#a40ce55cb1cbe818cf23963d5c4236c4e',1,'check']]],
   ['porder_5fqho_39',['porder_qho',['../namespacecheck.html#a7007164677403017cf717d63e116a307',1,'check']]],
