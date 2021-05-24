@@ -14,7 +14,7 @@ def \mbox{\hyperlink{namespacevis2_acf71426b090a0d1218ce65a7fd66afec}{QHOWfn\+Pl
 \begin{DoxyCompactList}\small\item\em Scatter plotter of the sampled QHO wavefunction. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacevis2_aee64c8500c0d66f819ae5b02a6e622b0}{H2plus\+Energy\+Plot}} (results\+\_\+file)
 \begin{DoxyCompactList}\small\item\em $ H_{2}^{+} $ H-\/H bond energy and parameter plotter. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacevis2_af95596a07fda86950c612959836d47c8}{H2\+Energy\+Plot}} (results\+\_\+file)
+def \mbox{\hyperlink{namespacevis2_aeae9ef75e5221ae5504abe4894988757}{H2\+Energy\+Plot}} (results\+\_\+file, slice)
 \begin{DoxyCompactList}\small\item\em $ H_{2} $ H-\/H bond energy and parameter plotter. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -210,11 +210,11 @@ Definition at line 72 of file vis2.\+py.
 \DoxyCodeLine{121 }
 
 \end{DoxyCode}
-\mbox{\Hypertarget{namespacevis2_af95596a07fda86950c612959836d47c8}\label{namespacevis2_af95596a07fda86950c612959836d47c8}} 
+\mbox{\Hypertarget{namespacevis2_aeae9ef75e5221ae5504abe4894988757}\label{namespacevis2_aeae9ef75e5221ae5504abe4894988757}} 
 \index{vis2@{vis2}!H2EnergyPlot@{H2EnergyPlot}}
 \index{H2EnergyPlot@{H2EnergyPlot}!vis2@{vis2}}
 \doxysubsubsection{\texorpdfstring{H2EnergyPlot()}{H2EnergyPlot()}}
-{\footnotesize\ttfamily def vis2.\+H2\+Energy\+Plot (\begin{DoxyParamCaption}\item[{}]{results\+\_\+file }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def vis2.\+H2\+Energy\+Plot (\begin{DoxyParamCaption}\item[{}]{results\+\_\+file,  }\item[{}]{slice }\end{DoxyParamCaption})}
 
 
 
@@ -233,7 +233,7 @@ Definition at line 122 of file vis2.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{122 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevis2_af95596a07fda86950c612959836d47c8}{H2EnergyPlot}}(results\_file):}
+\DoxyCodeLine{122 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevis2_aeae9ef75e5221ae5504abe4894988757}{H2EnergyPlot}}(results\_file, slice):}
 \DoxyCodeLine{123     \textcolor{stringliteral}{'''}}
 \DoxyCodeLine{124 \textcolor{stringliteral}{    @brief}}
 \DoxyCodeLine{125 \textcolor{stringliteral}{    @f\$ H\_\{2\} @f\$ H-\/H bond energy and parameter plotter.}}
@@ -249,11 +249,11 @@ Definition at line 122 of file vis2.\+py.
 \DoxyCodeLine{135 \textcolor{stringliteral}{    '''}}
 \DoxyCodeLine{136     dat = nd.Dataset(results\_file, \textcolor{stringliteral}{'r'}, format=\textcolor{stringliteral}{'NETCDF4'})}
 \DoxyCodeLine{137 }
-\DoxyCodeLine{138     bond\_lengths = dat.variables[\textcolor{stringliteral}{'Bondlength\_array'}][:]}
-\DoxyCodeLine{139     a\_opt = dat.variables[\textcolor{stringliteral}{'Parameter\_a\_array'}][:]}
-\DoxyCodeLine{140     beta\_opt = dat.variables[\textcolor{stringliteral}{'Parameter\_beta\_array'}][:]}
-\DoxyCodeLine{141     energies = dat.variables[\textcolor{stringliteral}{'total\_energies'}][:]}
-\DoxyCodeLine{142     variances = dat.variables[\textcolor{stringliteral}{'Uncertainties'}][:]}
+\DoxyCodeLine{138     bond\_lengths = dat.variables[\textcolor{stringliteral}{'Bondlength\_array'}][slice[0]:slice[1]]}
+\DoxyCodeLine{139     a\_opt = dat.variables[\textcolor{stringliteral}{'Parameter\_a\_array'}][slice[0]:slice[1]]}
+\DoxyCodeLine{140     beta\_opt = dat.variables[\textcolor{stringliteral}{'Parameter\_beta\_array'}][slice[0]:slice[1]]}
+\DoxyCodeLine{141     energies = dat.variables[\textcolor{stringliteral}{'total\_energies'}][slice[0]:slice[1]]}
+\DoxyCodeLine{142     variances = dat.variables[\textcolor{stringliteral}{'Uncertainties'}][slice[0]:slice[1]]}
 \DoxyCodeLine{143 }
 \DoxyCodeLine{144     stdevs = np.sqrt(variances)}
 \DoxyCodeLine{145     min\_energy = min(energies)}
@@ -274,9 +274,9 @@ Definition at line 122 of file vis2.\+py.
 \DoxyCodeLine{160     ax2.tick\_params(axis=\textcolor{stringliteral}{'y'}, labelcolor=\textcolor{stringliteral}{'red'})}
 \DoxyCodeLine{161 }
 \DoxyCodeLine{162     ax2a = ax2.twinx()}
-\DoxyCodeLine{163     ax2a.plot(bond\_lengths, beta\_opt, color=\textcolor{stringliteral}{'cyan'})}
-\DoxyCodeLine{164     ax2a.set\_ylabel(\textcolor{stringliteral}{r'\$\(\backslash\)beta'}, color=\textcolor{stringliteral}{'cyan'})}
-\DoxyCodeLine{165     ax2a.tick\_params(axis=\textcolor{stringliteral}{'y'}, labelcolor=\textcolor{stringliteral}{'cyan'})}
+\DoxyCodeLine{163     ax2a.plot(bond\_lengths, beta\_opt, color=\textcolor{stringliteral}{'blue'})}
+\DoxyCodeLine{164     ax2a.set\_ylabel(\textcolor{stringliteral}{r'\$\(\backslash\)beta\$'}, color=\textcolor{stringliteral}{'blue'})}
+\DoxyCodeLine{165     ax2a.tick\_params(axis=\textcolor{stringliteral}{'y'}, labelcolor=\textcolor{stringliteral}{'blue'})}
 \DoxyCodeLine{166 }
 \DoxyCodeLine{167     fig.tight\_layout()}
 \DoxyCodeLine{168     fig.show()}

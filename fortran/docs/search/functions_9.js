@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['position_5foutput_5f3d_191',['position_output_3d',['../namespacewrite__netcdf.html#ad07f7eae9a3f4604743ca2d18addd413',1,'write_netcdf']]]
+  ['qho_5fenergy_192',['qho_energy',['../namespacesolvers.html#a4f0054c0d0d2f5080c92a04557feaf52',1,'solvers']]],
+  ['qho_5fprob_193',['qho_prob',['../namespacesolvers.html#a722edf182d188ad1db7fa6a675fea13c',1,'solvers']]]
 ];

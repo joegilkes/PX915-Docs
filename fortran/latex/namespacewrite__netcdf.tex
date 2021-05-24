@@ -24,7 +24,7 @@ subroutine \mbox{\hyperlink{namespacewrite__netcdf_a8d49ffe8b78e85c17f3127d8dc89
 \begin{DoxyCompactList}\small\item\em Output results of H2 MCMC run. \end{DoxyCompactList}\item 
 subroutine \mbox{\hyperlink{namespacewrite__netcdf_adbc78c0b592ef703a9e83b22b0fff0ae}{chain\+\_\+output\+\_\+1d}} (position\+\_\+array, energy\+\_\+array, filename, ierr)
 \item 
-subroutine \mbox{\hyperlink{namespacewrite__netcdf_ad07f7eae9a3f4604743ca2d18addd413}{position\+\_\+output\+\_\+3d}} (position\+\_\+array\+\_\+3d, filename, ierr)
+subroutine \mbox{\hyperlink{namespacewrite__netcdf_a5db206d7abf62895d858d29209f0109f}{chain\+\_\+output\+\_\+3d}} (position\+\_\+array\+\_\+3d, energy\+\_\+array, filename, ierr)
 \item 
 subroutine \mbox{\hyperlink{namespacewrite__netcdf_a6830bd805591aad1ec622d12037dd99d}{append\+\_\+to\+\_\+array}} (array, filename, ierr)
 \end{DoxyCompactItemize}
@@ -734,7 +734,7 @@ Definition at line 580 of file netcdf\+\_\+out.\+f90.
 \DoxyCodeLine{584 }
 \DoxyCodeLine{585     \textcolor{comment}{! Declaring other variables}}
 \DoxyCodeLine{586     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: ndims=1  \textcolor{comment}{! Dimension of array (1D)}}
-\DoxyCodeLine{587     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: n\_arrays = 5  \textcolor{comment}{! Number of arrays to output}}
+\DoxyCodeLine{587     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: n\_arrays = 2  \textcolor{comment}{! Number of arrays to output}}
 \DoxyCodeLine{588     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{dimension(ndims)} :: dim\_id  \textcolor{comment}{! Size of array and dimension ID}}
 \DoxyCodeLine{589     \textcolor{keywordtype}{character(len=1)}, \textcolor{keywordtype}{dimension(ndims)} :: dims=(/\textcolor{stringliteral}{"{}t"{}}/)  \textcolor{comment}{! Write along t axis}}
 \DoxyCodeLine{590     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{dimension(n\_arrays)} :: var\_id  \textcolor{comment}{! Variable IDs}}
@@ -785,11 +785,11 @@ Here is the call graph for this function\+:
 \includegraphics[width=308pt]{namespacewrite__netcdf_adbc78c0b592ef703a9e83b22b0fff0ae_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespacewrite__netcdf_ad07f7eae9a3f4604743ca2d18addd413}\label{namespacewrite__netcdf_ad07f7eae9a3f4604743ca2d18addd413}} 
-\index{write\_netcdf@{write\_netcdf}!position\_output\_3d@{position\_output\_3d}}
-\index{position\_output\_3d@{position\_output\_3d}!write\_netcdf@{write\_netcdf}}
-\doxysubsubsection{\texorpdfstring{position\_output\_3d()}{position\_output\_3d()}}
-{\footnotesize\ttfamily subroutine write\+\_\+netcdf\+::position\+\_\+output\+\_\+3d (\begin{DoxyParamCaption}\item[{real(real64), dimension(\+:,\+:), intent(in)}]{position\+\_\+array\+\_\+3d,  }\item[{character(len=$\ast$), intent(in)}]{filename,  }\item[{integer}]{ierr }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{namespacewrite__netcdf_a5db206d7abf62895d858d29209f0109f}\label{namespacewrite__netcdf_a5db206d7abf62895d858d29209f0109f}} 
+\index{write\_netcdf@{write\_netcdf}!chain\_output\_3d@{chain\_output\_3d}}
+\index{chain\_output\_3d@{chain\_output\_3d}!write\_netcdf@{write\_netcdf}}
+\doxysubsubsection{\texorpdfstring{chain\_output\_3d()}{chain\_output\_3d()}}
+{\footnotesize\ttfamily subroutine write\+\_\+netcdf\+::chain\+\_\+output\+\_\+3d (\begin{DoxyParamCaption}\item[{real(real64), dimension(\+:,\+:), intent(in)}]{position\+\_\+array\+\_\+3d,  }\item[{real(real64), dimension(\+:), intent(in)}]{energy\+\_\+array,  }\item[{character(len=$\ast$), intent(in)}]{filename,  }\item[{integer}]{ierr }\end{DoxyParamCaption})}
 
 
 
@@ -800,43 +800,53 @@ Definition at line 631 of file netcdf\+\_\+out.\+f90.
 \DoxyCodeLine{632 }
 \DoxyCodeLine{633     \textcolor{comment}{! Declaring input variables}}
 \DoxyCodeLine{634 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:,:)} :: position\_array\_3d}
-\DoxyCodeLine{635     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{intent(in)} :: filename}
-\DoxyCodeLine{636 }
-\DoxyCodeLine{637     \textcolor{comment}{! Declaring other variables}}
-\DoxyCodeLine{638     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: ndims=2  \textcolor{comment}{! Dimension of array (2D)}}
-\DoxyCodeLine{639     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{dimension(ndims)} :: dim\_id  \textcolor{comment}{! Size of array and dimension ID}}
-\DoxyCodeLine{640     \textcolor{keywordtype}{character(len=1)}, \textcolor{keywordtype}{dimension(ndims)} :: dims=(/\textcolor{stringliteral}{"{}y"{}}, \textcolor{stringliteral}{"{}t"{}}/)  \textcolor{comment}{! Write along t,y axes}}
-\DoxyCodeLine{641     \textcolor{keywordtype}{integer} :: ierr, file\_id, var\_id, i  \textcolor{comment}{! Error check status, file and variable ID(s), iterator}}
-\DoxyCodeLine{642 }
-\DoxyCodeLine{643     \textcolor{comment}{! Create file, overwrite if existing  }}
-\DoxyCodeLine{644     ierr = nf90\_create(filename, nf90\_clobber, file\_id)}
-\DoxyCodeLine{645     \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{635 \textcolor{keywordtype}{    real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: energy\_array}
+\DoxyCodeLine{636     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{intent(in)} :: filename}
+\DoxyCodeLine{637 }
+\DoxyCodeLine{638     \textcolor{comment}{! Declaring other variables}}
+\DoxyCodeLine{639     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: ndims=2  \textcolor{comment}{! Dimension of position array (2D)}}
+\DoxyCodeLine{640     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: n\_arrays = 2  \textcolor{comment}{! Number of arrays to output}}
+\DoxyCodeLine{641     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{dimension(ndims)} :: dim\_id  \textcolor{comment}{! Size of array and dimension ID}}
+\DoxyCodeLine{642     \textcolor{keywordtype}{character(len=1)}, \textcolor{keywordtype}{dimension(ndims)} :: dims=(/\textcolor{stringliteral}{"{}y"{}}, \textcolor{stringliteral}{"{}t"{}}/)  \textcolor{comment}{! Write along t,y axes}}
+\DoxyCodeLine{643     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{dimension(ndims)} :: dim\_lengths=(/3, nf90\_unlimited/)}
+\DoxyCodeLine{644     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{dimension(n\_arrays)} :: var\_id  \textcolor{comment}{! Variable IDs}}
+\DoxyCodeLine{645     \textcolor{keywordtype}{integer} :: ierr, file\_id, i  \textcolor{comment}{! Error check status, file ID, iterator}}
 \DoxyCodeLine{646 }
-\DoxyCodeLine{647     \textcolor{comment}{! 2D array, define dimensions }}
-\DoxyCodeLine{648     \textcolor{keywordflow}{do} i = 1, ndims}
-\DoxyCodeLine{649         ierr = nf90\_def\_dim(file\_id, dims(i), nf90\_unlimited, dim\_id(i))}
-\DoxyCodeLine{650         \textcolor{keyword}{call }error\_check(ierr)}
-\DoxyCodeLine{651 \textcolor{keywordflow}{    enddo}}
-\DoxyCodeLine{652 }
-\DoxyCodeLine{653     \textcolor{comment}{! Global metadata}}
-\DoxyCodeLine{654     \textcolor{comment}{! TO DO}}
-\DoxyCodeLine{655 }
-\DoxyCodeLine{656     \textcolor{comment}{! Define variable types from 2D array (real)}}
-\DoxyCodeLine{657     ierr = nf90\_def\_var(file\_id, \textcolor{stringliteral}{"{}3D Position array"{}}, nf90\_double, dim\_id, var\_id)}
-\DoxyCodeLine{658     \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{647     \textcolor{comment}{! Create file, overwrite if existing  }}
+\DoxyCodeLine{648     ierr = nf90\_create(filename, nf90\_clobber, file\_id)}
+\DoxyCodeLine{649     \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{650 }
+\DoxyCodeLine{651     \textcolor{comment}{! 2D array, define dimensions }}
+\DoxyCodeLine{652     \textcolor{keywordflow}{do} i = 1, ndims}
+\DoxyCodeLine{653         ierr = nf90\_def\_dim(file\_id, dims(i), dim\_lengths(i), dim\_id(i))}
+\DoxyCodeLine{654         \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{655 \textcolor{keywordflow}{    enddo}}
+\DoxyCodeLine{656 }
+\DoxyCodeLine{657     \textcolor{comment}{! Global metadata}}
+\DoxyCodeLine{658     \textcolor{comment}{! TO DO}}
 \DoxyCodeLine{659 }
-\DoxyCodeLine{660     \textcolor{comment}{! Finish defining metadata}}
-\DoxyCodeLine{661     ierr = nf90\_enddef(file\_id)}
+\DoxyCodeLine{660     \textcolor{comment}{! Define variable types from 2D array (real)}}
+\DoxyCodeLine{661     ierr = nf90\_def\_var(file\_id, \textcolor{stringliteral}{"{}3D Positions"{}}, nf90\_double, dim\_id, var\_id(1))}
 \DoxyCodeLine{662     \textcolor{keyword}{call }error\_check(ierr)}
-\DoxyCodeLine{663 }
-\DoxyCodeLine{664     \textcolor{comment}{! Actually write 2D array(s)}}
-\DoxyCodeLine{665     ierr = nf90\_put\_var(file\_id, var\_id, position\_array\_3d) }
-\DoxyCodeLine{666     \textcolor{keyword}{call }error\_check(ierr)}
-\DoxyCodeLine{667 }
-\DoxyCodeLine{668     \textcolor{comment}{! Close file}}
-\DoxyCodeLine{669     ierr = nf90\_close(file\_id)}
-\DoxyCodeLine{670     \textcolor{keyword}{call }error\_check(ierr)}
-\DoxyCodeLine{671 }
+\DoxyCodeLine{663     \textcolor{comment}{! Define variable types from 1D array (real)}}
+\DoxyCodeLine{664     ierr = nf90\_def\_var(file\_id, \textcolor{stringliteral}{"{}Energies"{}}, nf90\_double, dim\_id(2), var\_id(2))}
+\DoxyCodeLine{665     \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{666 }
+\DoxyCodeLine{667     \textcolor{comment}{! Finish defining metadata}}
+\DoxyCodeLine{668     ierr = nf90\_enddef(file\_id)}
+\DoxyCodeLine{669     \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{670 }
+\DoxyCodeLine{671     \textcolor{comment}{! Actually write 2D array(s)}}
+\DoxyCodeLine{672     ierr = nf90\_put\_var(file\_id, var\_id(1), position\_array\_3d) }
+\DoxyCodeLine{673     \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{674     \textcolor{comment}{! Actually write 1D array(s)}}
+\DoxyCodeLine{675     ierr = nf90\_put\_var(file\_id, var\_id(2), energy\_array) }
+\DoxyCodeLine{676     \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{677 }
+\DoxyCodeLine{678     \textcolor{comment}{! Close file}}
+\DoxyCodeLine{679     ierr = nf90\_close(file\_id)}
+\DoxyCodeLine{680     \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{681 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -844,7 +854,7 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=318pt]{namespacewrite__netcdf_ad07f7eae9a3f4604743ca2d18addd413_cgraph}
+\includegraphics[width=308pt]{namespacewrite__netcdf_a5db206d7abf62895d858d29209f0109f_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{namespacewrite__netcdf_a6830bd805591aad1ec622d12037dd99d}\label{namespacewrite__netcdf_a6830bd805591aad1ec622d12037dd99d}} 
@@ -855,50 +865,50 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line 678 of file netcdf\+\_\+out.\+f90.
+Definition at line 688 of file netcdf\+\_\+out.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{679     \textcolor{comment}{! Declaring inpit variables}}
-\DoxyCodeLine{680 \textcolor{keywordtype}{    real}, \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: array}
-\DoxyCodeLine{681     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{intent(in)} :: filename}
-\DoxyCodeLine{682 }
-\DoxyCodeLine{683     \textcolor{comment}{! Declaring other variables}}
-\DoxyCodeLine{684     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: ndims=1  \textcolor{comment}{! Dimension of array (1D)}}
-\DoxyCodeLine{685     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{dimension(ndims)} :: dim\_id  \textcolor{comment}{! Size of array and dimension ID}}
-\DoxyCodeLine{686     \textcolor{keywordtype}{character(len=1)}, \textcolor{keywordtype}{dimension(ndims)} :: dims=(/\textcolor{stringliteral}{"{}t"{}}/)  \textcolor{comment}{! Write along t axis}}
-\DoxyCodeLine{687     \textcolor{keywordtype}{integer} :: ierr, file\_id, var\_id, i, array\_length  \textcolor{comment}{! Error check status, file and variable ID, iterator}}
-\DoxyCodeLine{688     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{dimension(1)} :: start\_array}
-\DoxyCodeLine{689 }
-\DoxyCodeLine{690 }
-\DoxyCodeLine{691     \textcolor{comment}{! Open existing NetCDF file in read / write mode}}
-\DoxyCodeLine{692     ierr = nf90\_open(filename, nf90\_write, file\_id)}
-\DoxyCodeLine{693     \textcolor{keyword}{call }error\_check(ierr)}
-\DoxyCodeLine{694 }
-\DoxyCodeLine{695     \textcolor{comment}{! Grab variable ID of Trace / 1D array}}
-\DoxyCodeLine{696     ierr = nf90\_inq\_varid(file\_id, \textcolor{stringliteral}{"{}Trace"{}}, var\_id)}
-\DoxyCodeLine{697     \textcolor{keyword}{call }error\_check(ierr)}
-\DoxyCodeLine{698 }
-\DoxyCodeLine{699     \textcolor{comment}{! Grab dimension ID of Trace / 1D array ("{}t"{})}}
-\DoxyCodeLine{700     \textcolor{keywordflow}{do} i = 1, ndims}
-\DoxyCodeLine{701         ierr = nf90\_inq\_dimid(file\_id, dims(i), dim\_id(i))}
-\DoxyCodeLine{702         \textcolor{keyword}{call }error\_check(ierr)}
-\DoxyCodeLine{703 \textcolor{keywordflow}{    enddo}}
+\DoxyCodeLine{689     \textcolor{comment}{! Declaring inpit variables}}
+\DoxyCodeLine{690 \textcolor{keywordtype}{    real}, \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: array}
+\DoxyCodeLine{691     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{intent(in)} :: filename}
+\DoxyCodeLine{692 }
+\DoxyCodeLine{693     \textcolor{comment}{! Declaring other variables}}
+\DoxyCodeLine{694     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{parameter} :: ndims=1  \textcolor{comment}{! Dimension of array (1D)}}
+\DoxyCodeLine{695     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{dimension(ndims)} :: dim\_id  \textcolor{comment}{! Size of array and dimension ID}}
+\DoxyCodeLine{696     \textcolor{keywordtype}{character(len=1)}, \textcolor{keywordtype}{dimension(ndims)} :: dims=(/\textcolor{stringliteral}{"{}t"{}}/)  \textcolor{comment}{! Write along t axis}}
+\DoxyCodeLine{697     \textcolor{keywordtype}{integer} :: ierr, file\_id, var\_id, i, array\_length  \textcolor{comment}{! Error check status, file and variable ID, iterator}}
+\DoxyCodeLine{698     \textcolor{keywordtype}{integer}, \textcolor{keywordtype}{dimension(1)} :: start\_array}
+\DoxyCodeLine{699 }
+\DoxyCodeLine{700 }
+\DoxyCodeLine{701     \textcolor{comment}{! Open existing NetCDF file in read / write mode}}
+\DoxyCodeLine{702     ierr = nf90\_open(filename, nf90\_write, file\_id)}
+\DoxyCodeLine{703     \textcolor{keyword}{call }error\_check(ierr)}
 \DoxyCodeLine{704 }
-\DoxyCodeLine{705     \textcolor{comment}{! Grab length of dimension / 1D array}}
-\DoxyCodeLine{706     ierr = nf90\_inquire\_dimension(file\_id, dim\_id(1), dims(1), array\_length)}
+\DoxyCodeLine{705     \textcolor{comment}{! Grab variable ID of Trace / 1D array}}
+\DoxyCodeLine{706     ierr = nf90\_inq\_varid(file\_id, \textcolor{stringliteral}{"{}Trace"{}}, var\_id)}
 \DoxyCodeLine{707     \textcolor{keyword}{call }error\_check(ierr)}
 \DoxyCodeLine{708 }
-\DoxyCodeLine{709     start\_array(1) = array\_length}
-\DoxyCodeLine{710 }
-\DoxyCodeLine{711     \textcolor{comment}{! Write new data to end of 1D array }}
-\DoxyCodeLine{712     ierr = nf90\_put\_var(file\_id, var\_id, array, start=start\_array)}
-\DoxyCodeLine{713     \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{709     \textcolor{comment}{! Grab dimension ID of Trace / 1D array ("{}t"{})}}
+\DoxyCodeLine{710     \textcolor{keywordflow}{do} i = 1, ndims}
+\DoxyCodeLine{711         ierr = nf90\_inq\_dimid(file\_id, dims(i), dim\_id(i))}
+\DoxyCodeLine{712         \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{713 \textcolor{keywordflow}{    enddo}}
 \DoxyCodeLine{714 }
-\DoxyCodeLine{715     \textcolor{comment}{! Close file}}
-\DoxyCodeLine{716     ierr = nf90\_close(file\_id)}
+\DoxyCodeLine{715     \textcolor{comment}{! Grab length of dimension / 1D array}}
+\DoxyCodeLine{716     ierr = nf90\_inquire\_dimension(file\_id, dim\_id(1), dims(1), array\_length)}
 \DoxyCodeLine{717     \textcolor{keyword}{call }error\_check(ierr)}
 \DoxyCodeLine{718 }
+\DoxyCodeLine{719     start\_array(1) = array\_length}
+\DoxyCodeLine{720 }
+\DoxyCodeLine{721     \textcolor{comment}{! Write new data to end of 1D array }}
+\DoxyCodeLine{722     ierr = nf90\_put\_var(file\_id, var\_id, array, start=start\_array)}
+\DoxyCodeLine{723     \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{724 }
+\DoxyCodeLine{725     \textcolor{comment}{! Close file}}
+\DoxyCodeLine{726     ierr = nf90\_close(file\_id)}
+\DoxyCodeLine{727     \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{728 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
