@@ -633,9 +633,9 @@ Definition at line 293 of file vqmc.\+f90.
 \DoxyCodeLine{552         \textcolor{keywordflow}{do} i = 1, re\_size}
 \DoxyCodeLine{553             energy2\_mean = energy2\_mean + energy\_chain(i)*energy\_chain(i\textcolor{comment}{) }}
 \DoxyCodeLine{554 \textcolor{comment}{}\textcolor{keywordflow}{        end do}}
-\DoxyCodeLine{555         energy\_variance = (1.0\_real64 / real(re\_size-\/1, kind=real64)) * \textcolor{comment}{\& }}
-\DoxyCodeLine{556 \textcolor{comment}{}            (energy2\_mean -\/ (1/real(re\_size, kind=real64)) * energy\_mean\textcolor{comment}{ * energy\_mean)}}
-\DoxyCodeLine{557 \textcolor{comment}{}}
+\DoxyCodeLine{555         energy\_variance = ((1.0\_real64 / real(re\_size, kind=real64)) * \&\textcolor{comment}{ }}
+\DoxyCodeLine{556 \textcolor{comment}{}            energy2\_mean) -\/ (energy\_mean * energy\_mean)}
+\DoxyCodeLine{557 }
 \DoxyCodeLine{558         \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{559             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Local energy = ', F12.8)"{}}) energy\_mean}
 \DoxyCodeLine{560             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Variance = ', F12.8)"{}}) energy\_variance}
