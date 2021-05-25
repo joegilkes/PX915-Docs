@@ -8,7 +8,7 @@ var namespaceshared__data =
     [ "run_equil", "namespaceshared__data.html#a9285af0408bde68c647a77c75900929d", null ],
     [ "run_restart", "namespaceshared__data.html#a2938e794296c80673d3b14040bc92798", null ],
     [ "write_restart", "namespaceshared__data.html#ade9d4ec979d01a52cdef8fc778abfa1d", null ],
-    [ "restart_step", "namespaceshared__data.html#abee3357695dee9120626f1a0c422dd29", null ],
+    [ "restart_num", "namespaceshared__data.html#a0e5ef617d0a232c0e7e36960aad8aff6", null ],
     [ "write_chains", "namespaceshared__data.html#a3ea265f2c8a3797c4d1a2b33059e1877", null ],
     [ "write_log", "namespaceshared__data.html#acf2cbacc5b2b4d8ee26c96dc7062aa9b", null ],
     [ "outfile", "namespaceshared__data.html#a2901a107f2659faf5c03f8c35f64e68f", null ],

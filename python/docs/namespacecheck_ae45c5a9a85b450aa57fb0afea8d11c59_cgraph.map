@@ -1,4 +1,0 @@
-<map id="check.check_grid" name="check.check_grid">
-<area shape="rect" id="node1" title="Checks the input values for a grid parameter." alt="" coords="5,5,128,32"/>
-<area shape="rect" id="node2" href="$namespacecheck.html#a94f283ccc6c56cdbb36649cb73c5da7e" title="Subroutine that notifies the user when defaults are being used for a certain parameter." alt="" coords="176,5,335,32"/>
-</map>

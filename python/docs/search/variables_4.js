@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['porder_5fhyd_127',['porder_hyd',['../namespacecheck.html#a40ce55cb1cbe818cf23963d5c4236c4e',1,'check']]],
-  ['porder_5fqho_128',['porder_qho',['../namespacecheck.html#a7007164677403017cf717d63e116a307',1,'check']]]
+  ['porder_5fhyd_154',['porder_hyd',['../namespacedice__defaults.html#a1ef1439ef065ea0b7cdf600501e250fa',1,'dice_defaults']]],
+  ['porder_5fqho_155',['porder_qho',['../namespacedice__defaults.html#a2ce08293281630a3f77edc5efa797c7b',1,'dice_defaults']]]
 ];

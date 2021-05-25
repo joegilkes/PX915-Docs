@@ -12,7 +12,7 @@ var namespaces_dup =
       [ "r2o2", "namespaceconstants.html#a1bac0d0e628245595f9abe2bdd4de9c0", null ]
     ] ],
     [ "input_parser", "namespaceinput__parser.html", [
-      [ "read_control", "namespaceinput__parser.html#ace5694fecca99b0223f02140c750e5f1", null ],
+      [ "read_control", "namespaceinput__parser.html#a17a93a7f5e509724de92cf330dbc597a", null ],
       [ "read_qho", "namespaceinput__parser.html#aa9a77c1395d69d54ce38420acdb3f87f", null ],
       [ "read_h2plus", "namespaceinput__parser.html#a3ebe204fa7f63e19fbf29c36f580ee74", null ],
       [ "read_h2", "namespaceinput__parser.html#a163a65b1b9201a421da32ba2a7c92148", null ],

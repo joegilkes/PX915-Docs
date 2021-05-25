@@ -1,0 +1,4 @@
+<map id="dice_write.query_step" name="dice_write.query_step">
+<area shape="rect" id="node1" title="Queries an integer step value, using the input string as a prompt." alt="" coords="5,5,152,32"/>
+<area shape="rect" id="node2" href="$namespacedice__write.html#a6b5b39cce6741d1a0b96fe3dd59b2652" title="Checks if the input string represents an integer." alt="" coords="200,5,308,32"/>
+</map>

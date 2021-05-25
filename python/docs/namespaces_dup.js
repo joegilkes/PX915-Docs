@@ -1,32 +1,55 @@
 var namespaces_dup =
 [
-    [ "check", "namespacecheck.html", [
-      [ "isvalid", "namespacecheck.html#a32de2011b794306c74af033f77fef367", null ],
-      [ "default_message", "namespacecheck.html#a94f283ccc6c56cdbb36649cb73c5da7e", null ],
-      [ "check_step", "namespacecheck.html#ae808077a5a5aa3583bbf20a5fb38131d", null ],
-      [ "check_float", "namespacecheck.html#a92fcf5aad4145a0f4bbc3d52703a64ab", null ],
-      [ "check_grid", "namespacecheck.html#ae45c5a9a85b450aa57fb0afea8d11c59", null ],
-      [ "check_inputs", "namespacecheck.html#af433b760a4dbdb0972d3b43505f2c4b8", null ],
-      [ "systems", "namespacecheck.html#a80daf9cf96a39fa34181b0ef3fcc5750", null ],
-      [ "boolean", "namespacecheck.html#a26944ae06b1c4267e761adca3a568740", null ],
-      [ "d_equi", "namespacecheck.html#aa48003eacf7aca280afc3a85c95e629a", null ],
-      [ "d_rres", "namespacecheck.html#ae5615b24901d47f7e3c1ecee57ce841d", null ],
-      [ "d_wres", "namespacecheck.html#a18f020cef3af1bc33ea4341ce354455f", null ],
-      [ "d_rstep", "namespacecheck.html#a00e1f284e5d80c06137b4ab0da081ba2", null ],
-      [ "d_chn", "namespacecheck.html#a7c28ef5a9bec6904935d9fa7361a5c47", null ],
-      [ "d_log", "namespacecheck.html#ab158083af6270ff724c9dc6dea81d9df", null ],
-      [ "d_steps", "namespacecheck.html#aa2e3c72dd60ea2461a3878d2ce0344f6", null ],
-      [ "d_bstep", "namespacecheck.html#a5315731ecbf8ad0aadec6aa5779ded9d", null ],
-      [ "d_tstep", "namespacecheck.html#a2c78287865c27be10beab7a684335a9b", null ],
-      [ "d_sigma", "namespacecheck.html#ac82e56472aa06b46705e830c3a0e74ee", null ],
-      [ "d_rcut", "namespacecheck.html#ad62bb8773868aa92924c4c6215db80cc", null ],
-      [ "corder", "namespacecheck.html#a804da4f3d8099c2bd5dc41317210ff13", null ],
-      [ "porder_qho", "namespacecheck.html#a7007164677403017cf717d63e116a307", null ],
-      [ "porder_hyd", "namespacecheck.html#a40ce55cb1cbe818cf23963d5c4236c4e", null ]
+    [ "check", "namespacecheck.html", null ],
+    [ "dice_check", "namespacedice__check.html", [
+      [ "isvalid", "namespacedice__check.html#ac4fbe7bb65f9ff67c90cad4fec72dc62", null ],
+      [ "default_message", "namespacedice__check.html#a2de27ef57a990ce0c94bc34211639aa7", null ],
+      [ "check_step", "namespacedice__check.html#afeb33eda791fdb69d9145f9169798c80", null ],
+      [ "check_float", "namespacedice__check.html#afba8f0b27859076a624e8d5bc3d23429", null ],
+      [ "check_grid", "namespacedice__check.html#ae95c26c0aa34a5d08c7570d561a7a05b", null ],
+      [ "check_inputs", "namespacedice__check.html#a6d9e6c1b578154488d648ae41acf78d4", null ]
     ] ],
-    [ "input", "namespaceinput.html", [
-      [ "step_one", "namespaceinput.html#a3d7818a4f120b1f0ada5a32dc5476fa3", null ]
+    [ "dice_defaults", "namespacedice__defaults.html", [
+      [ "systems", "namespacedice__defaults.html#a704117e9150f756a214a8fcd9abddf0c", null ],
+      [ "boolean", "namespacedice__defaults.html#a9befb53f368a56c3db61b09e304a6b43", null ],
+      [ "d_equi", "namespacedice__defaults.html#adf09dbd4923dd1642f94ac03dc947c49", null ],
+      [ "d_rres", "namespacedice__defaults.html#a645868c2d2c841166df473eb6396f1ed", null ],
+      [ "d_wres", "namespacedice__defaults.html#a4643190e5d485208fe0321da3961fd98", null ],
+      [ "d_rnum", "namespacedice__defaults.html#af392d24bab038b8bdb96c7f6a4e20eed", null ],
+      [ "d_chn", "namespacedice__defaults.html#a1a21add220f92eec87e2f00558a53853", null ],
+      [ "d_log", "namespacedice__defaults.html#a7dcc6fb96b25d51e7506e40985ab7976", null ],
+      [ "d_steps", "namespacedice__defaults.html#a17bb8d0f70b6c6316fbde1a3b4474318", null ],
+      [ "d_bstep", "namespacedice__defaults.html#a513700c975a9fd4e1867dd62eb37c628", null ],
+      [ "d_tstep", "namespacedice__defaults.html#abff27db0a268208106d304626981e706", null ],
+      [ "d_sigma", "namespacedice__defaults.html#af098afdca3b8888b9013eb797e812d97", null ],
+      [ "d_rcut", "namespacedice__defaults.html#a0cc1c346e0f3902bd715579680089ac3", null ],
+      [ "d_alpha", "namespacedice__defaults.html#af9dd51775e5c5f635403cd9d90025a2e", null ],
+      [ "d_c_fdstep", "namespacedice__defaults.html#aa42cf8aa87bb19c35997c7bc6cb8fee0", null ],
+      [ "d_ham_fdstep", "namespacedice__defaults.html#a12f5c5d39a912e50dccaf2df6e6f33c6", null ],
+      [ "d_c", "namespacedice__defaults.html#a183a931368d5866f92cab9d92e6b38ca", null ],
+      [ "d_c_grid", "namespacedice__defaults.html#a74c675662351cc7a6da40a90c00b6cd5", null ],
+      [ "d_bond_h2plus", "namespacedice__defaults.html#a128a86193a8aeb44d2c542a2773a3605", null ],
+      [ "d_beta", "namespacedice__defaults.html#a1510da70650c024b0faf36fb51d53e61", null ],
+      [ "d_beta_grid", "namespacedice__defaults.html#a7929b54c1ea9fa6dcfad2fde61401330", null ],
+      [ "d_bond_h2", "namespacedice__defaults.html#aa836fd3ce31272ba29a5e1803ca6eed7", null ],
+      [ "corder", "namespacedice__defaults.html#abce8d8d1aa6baaa9f13509ee98beed12", null ],
+      [ "porder_qho", "namespacedice__defaults.html#a2ce08293281630a3f77edc5efa797c7b", null ],
+      [ "porder_hyd", "namespacedice__defaults.html#a1ef1439ef065ea0b7cdf600501e250fa", null ]
     ] ],
+    [ "dice_inputs", "namespacedice__inputs.html", [
+      [ "dice_inputs", "namespacedice__inputs.html#ad9bf26e9331e0e111146c30a7456ddd4", null ]
+    ] ],
+    [ "dice_write", "namespacedice__write.html", [
+      [ "isint", "namespacedice__write.html#a6b5b39cce6741d1a0b96fe3dd59b2652", null ],
+      [ "isfloat", "namespacedice__write.html#ac634cffa3f4f8855127ef9bff7a56851", null ],
+      [ "query_default", "namespacedice__write.html#aebd3126f641c7d8245a920b5f00a19e8", null ],
+      [ "query_step", "namespacedice__write.html#a582e3bc639d5d28fcd8b6c0af2b8530d", null ],
+      [ "query_posfloat", "namespacedice__write.html#a75a643f89765eb164532394130b8d657", null ],
+      [ "query_grid", "namespacedice__write.html#a8c3fdb6a1a789a4d0f3e3afe7f4c5c6c", null ],
+      [ "query_params", "namespacedice__write.html#a2327d5c026b4653f4dcbc3ea0e998efe", null ],
+      [ "write_params", "namespacedice__write.html#a8850537a5cdec760b180095ece66f23d", null ]
+    ] ],
+    [ "input", "namespaceinput.html", null ],
     [ "vis2", "namespacevis2.html", [
       [ "QHOEnergyPlot", "namespacevis2.html#a9daac64c8c06f7a07c3cb1608b6bb36d", null ],
       [ "QHOWfnPlot", "namespacevis2.html#ac21c80c2cfa183521dd0713f4ad38bfc", null ],
@@ -53,14 +76,5 @@ var namespaces_dup =
       [ "data1", "namespacevisualisation.html#a046456973173620f623fad7687ae0629", null ],
       [ "fig1", "namespacevisualisation.html#a40a49644828770b16212ef416b876eea", null ]
     ] ],
-    [ "write", "namespacewrite.html", [
-      [ "isint", "namespacewrite.html#a6d208b551e50aabd0cfffdf928852f2e", null ],
-      [ "isfloat", "namespacewrite.html#ab2d5e87a28584993d493d77da00d1bab", null ],
-      [ "query_default", "namespacewrite.html#a6ead226a81a790198f4fe23e69a7a7e3", null ],
-      [ "query_step", "namespacewrite.html#a5301642c79448d29f87b3506f85a01c8", null ],
-      [ "query_posfloat", "namespacewrite.html#abcf50fa9f656fcc5938355f67ee6744a", null ],
-      [ "query_grid", "namespacewrite.html#afa3fbcda7589cff5d02ac8e298ae8b05", null ],
-      [ "query_params", "namespacewrite.html#a2a80b928706bf9c4a0283575b3105dd9", null ],
-      [ "write_params", "namespacewrite.html#ab06a12b89b6110c4bcf845485c8f4b9b", null ]
-    ] ]
+    [ "write", "namespacewrite.html", null ]
 ];

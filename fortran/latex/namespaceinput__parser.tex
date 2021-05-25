@@ -8,7 +8,7 @@ Contains routines that read the input file params.\+txt.
 \doxysubsection*{Functions/\+Subroutines}
 \begin{DoxyCompactItemize}
 \item 
-subroutine \mbox{\hyperlink{namespaceinput__parser_ace5694fecca99b0223f02140c750e5f1}{read\+\_\+control}} (p\+\_\+system, run\+\_\+equil, run\+\_\+restart, write\+\_\+restart, restart\+\_\+step, write\+\_\+chains, write\+\_\+log)
+subroutine \mbox{\hyperlink{namespaceinput__parser_a17a93a7f5e509724de92cf330dbc597a}{read\+\_\+control}} (p\+\_\+system, run\+\_\+equil, run\+\_\+restart, write\+\_\+restart, restart\+\_\+num, write\+\_\+chains, write\+\_\+log)
 \begin{DoxyCompactList}\small\item\em Reads the CONTROL namelist in params.\+txt and assigns its data to the corresponding global variables defined in the \mbox{\hyperlink{namespaceshared__data}{shared\+\_\+data}} module. \end{DoxyCompactList}\item 
 subroutine \mbox{\hyperlink{namespaceinput__parser_aa9a77c1395d69d54ce38420acdb3f87f}{read\+\_\+qho}} (QHO)
 \begin{DoxyCompactList}\small\item\em Reads the PARAMETER namelist in params.\+txt for the QHO system. Assigns the input data to the corresponding variables in the QHO derived type. \end{DoxyCompactList}\item 
@@ -26,11 +26,11 @@ Contains routines that read the input file params.\+txt.
 Contains subroutines to read the CONTROL namelist and the PARAMETERS namelist for each system respectively. Includes a driver function that handles the input file params.\+txt. For restart runs, the driver function also ensures that the RESTART namelist from, restart file res\+\_\+nml.\+txt, is read into the program. 
 
 \doxysubsection{Function/\+Subroutine Documentation}
-\mbox{\Hypertarget{namespaceinput__parser_ace5694fecca99b0223f02140c750e5f1}\label{namespaceinput__parser_ace5694fecca99b0223f02140c750e5f1}} 
+\mbox{\Hypertarget{namespaceinput__parser_a17a93a7f5e509724de92cf330dbc597a}\label{namespaceinput__parser_a17a93a7f5e509724de92cf330dbc597a}} 
 \index{input\_parser@{input\_parser}!read\_control@{read\_control}}
 \index{read\_control@{read\_control}!input\_parser@{input\_parser}}
 \doxysubsubsection{\texorpdfstring{read\_control()}{read\_control()}}
-{\footnotesize\ttfamily subroutine input\+\_\+parser\+::read\+\_\+control (\begin{DoxyParamCaption}\item[{character(len=10), intent(out)}]{p\+\_\+system,  }\item[{logical, intent(out)}]{run\+\_\+equil,  }\item[{logical, intent(out)}]{run\+\_\+restart,  }\item[{logical, intent(out)}]{write\+\_\+restart,  }\item[{integer(int32), intent(out)}]{restart\+\_\+step,  }\item[{logical, intent(out)}]{write\+\_\+chains,  }\item[{logical, intent(out)}]{write\+\_\+log }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily subroutine input\+\_\+parser\+::read\+\_\+control (\begin{DoxyParamCaption}\item[{character(len=10), intent(out)}]{p\+\_\+system,  }\item[{logical, intent(out)}]{run\+\_\+equil,  }\item[{logical, intent(out)}]{run\+\_\+restart,  }\item[{logical, intent(out)}]{write\+\_\+restart,  }\item[{integer(int32), intent(out)}]{restart\+\_\+num,  }\item[{logical, intent(out)}]{write\+\_\+chains,  }\item[{logical, intent(out)}]{write\+\_\+log }\end{DoxyParamCaption})}
 
 
 
@@ -46,7 +46,7 @@ Reads the CONTROL namelist in params.\+txt and assigns its data to the correspon
 \hline
 \mbox{\texttt{ in}}  & {\em write\+\_\+restart} & Tag for writing restart files \\
 \hline
-\mbox{\texttt{ in}}  & {\em restart\+\_\+step} & Frequency of writing restart files, within MMC loop \\
+\mbox{\texttt{ in}}  & {\em restart\+\_\+num} & Interval of MMC loops between writing restart files \\
 \hline
 \mbox{\texttt{ in}}  & {\em write\+\_\+chains} & Tag to write final MMC chains \\
 \hline
@@ -63,10 +63,10 @@ Definition at line 48 of file input\+\_\+parser.\+f90.
 \DoxyCodeLine{50         \textcolor{comment}{! Local variables}}
 \DoxyCodeLine{51         \textcolor{keywordtype}{character(len=10)}, \textcolor{keywordtype}{intent(out)} :: p\_system}
 \DoxyCodeLine{52         \textcolor{keywordtype}{logical}, \textcolor{keywordtype}{intent(out)} :: run\_equil, run\_restart, write\_restart, write\_chains, write\_log}
-\DoxyCodeLine{53         \textcolor{keywordtype}{integer(int32)}, \textcolor{keywordtype}{intent(out)} :: restart\_step    }
+\DoxyCodeLine{53         \textcolor{keywordtype}{integer(int32)}, \textcolor{keywordtype}{intent(out)} :: restart\_num    }
 \DoxyCodeLine{54 }
 \DoxyCodeLine{55         \textcolor{comment}{! Define the namelist}}
-\DoxyCodeLine{56         namelist /control/ p\_system, run\_equil, run\_restart, write\_restart, restart\_step, write\_chains, write\_log}
+\DoxyCodeLine{56         namelist /control/ p\_system, run\_equil, run\_restart, write\_restart, restart\_num, write\_chains, write\_log}
 \DoxyCodeLine{57 }
 \DoxyCodeLine{58         \textcolor{comment}{! Read the namelist}}
 \DoxyCodeLine{59         \textcolor{keyword}{read}(nml=control, iostat=rc, unit=fu)}
@@ -81,7 +81,7 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespaceinput__parser_ace5694fecca99b0223f02140c750e5f1_icgraph}
+\includegraphics[width=350pt]{namespaceinput__parser_a17a93a7f5e509724de92cf330dbc597a_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{namespaceinput__parser_aa9a77c1395d69d54ce38420acdb3f87f}\label{namespaceinput__parser_aa9a77c1395d69d54ce38420acdb3f87f}} 
@@ -243,7 +243,7 @@ Definition at line 164 of file input\+\_\+parser.\+f90.
 \DoxyCodeLine{173         \textcolor{keyword}{open}(action=\textcolor{stringliteral}{'read'}, file=\textcolor{stringliteral}{'params.txt'}, iostat=rc, newunit=fu)}
 \DoxyCodeLine{174 }
 \DoxyCodeLine{175         \textcolor{comment}{! Read CONTROL namelist}}
-\DoxyCodeLine{176         \textcolor{keyword}{call }read\_control(p\_system, run\_equil, run\_restart, write\_restart\textcolor{comment}{, restart\_step, write\_chains, write\_log)}}
+\DoxyCodeLine{176         \textcolor{keyword}{call }read\_control(p\_system, run\_equil, run\_restart, write\_restart\textcolor{comment}{, restart\_num, write\_chains, write\_log)}}
 \DoxyCodeLine{177 \textcolor{comment}{}}
 \DoxyCodeLine{178         \textcolor{comment}{! If p\_system='test', return to main}}
 \DoxyCodeLine{179         \textcolor{keywordflow}{if} (trim(p\_system)==\textcolor{stringliteral}{'test'}) \textcolor{keywordflow}{then}}

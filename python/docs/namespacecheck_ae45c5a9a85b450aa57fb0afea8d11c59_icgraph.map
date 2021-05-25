@@ -1,5 +1,0 @@
-<map id="check.check_grid" name="check.check_grid">
-<area shape="rect" id="node1" title="Checks the input values for a grid parameter." alt="" coords="345,5,468,32"/>
-<area shape="rect" id="node2" href="$namespacecheck.html#af433b760a4dbdb0972d3b43505f2c4b8" title="Major subroutine that checks the inputs of file params.txt." alt="" coords="160,5,297,32"/>
-<area shape="rect" id="node3" href="$namespaceinput.html#a3d7818a4f120b1f0ada5a32dc5476fa3" title="Enquires whether the user would like to write a new params.txt file, or check an existing params...." alt="" coords="5,5,112,32"/>
-</map>

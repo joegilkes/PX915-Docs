@@ -327,7 +327,7 @@ Definition at line 53 of file driver.\+f90.
 \DoxyCodeLine{327 }
 \DoxyCodeLine{328             \textcolor{comment}{! Set up parameter array, if doing a grid search}}
 \DoxyCodeLine{329             \textcolor{keywordflow}{if} (h2plus\%auto\_params .eqv. .false.) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{330                 p\_arr = linspace(h2plus\%c1(1), h2plus\%c1(2), h2plus\%c1(3))}
+\DoxyCodeLine{330                 p\_arr = linspace(h2plus\%c\_grid(1), h2plus\%c\_grid(2), h2plus\%c\_grid(3))}
 \DoxyCodeLine{331 \textcolor{keywordflow}{            endif} }
 \DoxyCodeLine{332 }
 \DoxyCodeLine{333             \textcolor{comment}{! Update user from rank 0}}
@@ -338,7 +338,7 @@ Definition at line 53 of file driver.\+f90.
 \DoxyCodeLine{338                     \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{339                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Grid search across linearly spaced parameters enabled.')"{}})}
 \DoxyCodeLine{340                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Array of c values: ')"{}})}
-\DoxyCodeLine{341                         \textcolor{keywordflow}{do} i = 1, int(h2plus\%c1(3))}
+\DoxyCodeLine{341                         \textcolor{keywordflow}{do} i = 1, int(h2plus\%c\_grid(3))}
 \DoxyCodeLine{342                             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(F12.8)"{}}) p\_arr(i)}
 \DoxyCodeLine{343 \textcolor{keywordflow}{                        end do}}
 \DoxyCodeLine{344                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}
@@ -479,7 +479,7 @@ Definition at line 53 of file driver.\+f90.
 \DoxyCodeLine{479 }
 \DoxyCodeLine{480             \textcolor{comment}{! Set up parameter array, if doing a grid search}}
 \DoxyCodeLine{481             \textcolor{keywordflow}{if} (h2\%auto\_params .eqv. .false.) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{482                 p\_arr = linspace(h2\%c1(1), h2\%c1(2), h2\%c1(3))}
+\DoxyCodeLine{482                 p\_arr = linspace(h2\%beta\_grid(1), h2\%beta\_grid(2), h2\%beta\_grid(3))}
 \DoxyCodeLine{483 \textcolor{keywordflow}{            endif} }
 \DoxyCodeLine{484 }
 \DoxyCodeLine{485             \textcolor{comment}{! Update user from rank 0}}
@@ -490,7 +490,7 @@ Definition at line 53 of file driver.\+f90.
 \DoxyCodeLine{490                     \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{491                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Grid search across linearly spaced parameters enabled.')"{}})}
 \DoxyCodeLine{492                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Array of beta values: ')"{}})}
-\DoxyCodeLine{493                         \textcolor{keywordflow}{do} i = 1, int(h2\%c1(3))}
+\DoxyCodeLine{493                         \textcolor{keywordflow}{do} i = 1, int(h2\%beta\_grid(3))}
 \DoxyCodeLine{494                             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(F12.8)"{}}) p\_arr(i)}
 \DoxyCodeLine{495 \textcolor{keywordflow}{                        end do}}
 \DoxyCodeLine{496                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}

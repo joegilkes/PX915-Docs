@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['check_5ffloat_78',['check_float',['../namespacecheck.html#a92fcf5aad4145a0f4bbc3d52703a64ab',1,'check']]],
-  ['check_5fgrid_79',['check_grid',['../namespacecheck.html#ae45c5a9a85b450aa57fb0afea8d11c59',1,'check']]],
-  ['check_5finputs_80',['check_inputs',['../namespacecheck.html#af433b760a4dbdb0972d3b43505f2c4b8',1,'check']]],
-  ['check_5fstep_81',['check_step',['../namespacecheck.html#ae808077a5a5aa3583bbf20a5fb38131d',1,'check']]]
+  ['check_5ffloat_96',['check_float',['../namespacedice__check.html#afba8f0b27859076a624e8d5bc3d23429',1,'dice_check']]],
+  ['check_5fgrid_97',['check_grid',['../namespacedice__check.html#ae95c26c0aa34a5d08c7570d561a7a05b',1,'dice_check']]],
+  ['check_5finputs_98',['check_inputs',['../namespacedice__check.html#a6d9e6c1b578154488d648ae41acf78d4',1,'dice_check']]],
+  ['check_5fstep_99',['check_step',['../namespacedice__check.html#afeb33eda791fdb69d9145f9169798c80',1,'dice_check']]]
 ];

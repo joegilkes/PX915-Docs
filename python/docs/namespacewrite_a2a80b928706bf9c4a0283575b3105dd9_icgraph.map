@@ -1,4 +1,0 @@
-<map id="write.query_params" name="write.query_params">
-<area shape="rect" id="node1" title="Major function that queries the user for all the inputs required to assemble params...." alt="" coords="160,5,295,32"/>
-<area shape="rect" id="node2" href="$namespaceinput.html#a3d7818a4f120b1f0ada5a32dc5476fa3" title="Enquires whether the user would like to write a new params.txt file, or check an existing params...." alt="" coords="5,5,112,32"/>
-</map>

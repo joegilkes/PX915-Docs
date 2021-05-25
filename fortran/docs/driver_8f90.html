@@ -152,7 +152,7 @@ Functions/Subroutines</h2></td></tr>
 <area shape="rect" href="namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335" title="Draws a sample from a normal distribution using the Box&#45;Muller transform." alt="" coords="644,107,793,133"/>
 <area shape="rect" href="namespacevqmc.html#a8213f95bb390d7a9eff8260f527c00b8" title="Performs VQMC for the &#160;system." alt="" coords="423,56,574,83"/>
 <area shape="rect" href="namespacevqmc.html#a05315751002a983c9976851c9f21f0f0" title="Performs VQMC for the QHO system." alt="" coords="439,107,559,133"/>
-<area shape="rect" href="namespaceinput__parser.html#ace5694fecca99b0223f02140c750e5f1" title="Reads the CONTROL namelist in params.txt and assigns its data to the corresponding global variables d..." alt="" coords="437,1286,561,1327"/>
+<area shape="rect" href="namespaceinput__parser.html#a17a93a7f5e509724de92cf330dbc597a" title="Reads the CONTROL namelist in params.txt and assigns its data to the corresponding global variables d..." alt="" coords="437,1286,561,1327"/>
 <area shape="rect" href="namespaceinput__parser.html#a163a65b1b9201a421da32ba2a7c92148" title="Reads the PARAMETER namelist in params.txt for the H2 molecule system. Assigns the input data to the ..." alt="" coords="426,1352,571,1379"/>
 <area shape="rect" href="namespaceinput__parser.html#a3ebe204fa7f63e19fbf29c36f580ee74" title="Reads the PARAMETER namelist in params.txt for the H2 ion system. Assigns the input data to the corre..." alt="" coords="437,1403,561,1445"/>
 <area shape="rect" href="namespaceinput__parser.html#aa9a77c1395d69d54ce38420acdb3f87f" title="Reads the PARAMETER namelist in params.txt for the QHO system. Assigns the input data to the correspo..." alt="" coords="423,1469,575,1496"/>
@@ -478,7 +478,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            <span class="comment">! Set up parameter array, if doing a grid search</span></div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            <span class="keywordflow">if</span> (h2plus%auto_params .eqv. .false.) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                p_arr = linspace(h2plus%c1(1), h2plus%c1(2), h2plus%c1(3))</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                p_arr = linspace(h2plus%c_grid(1), h2plus%c_grid(2), h2plus%c_grid(3))</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="keywordflow">            endif</span> </div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            <span class="comment">! Update user from rank 0</span></div>
@@ -489,7 +489,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                    <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                        <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;Grid search across linearly spaced parameters enabled.&#39;)&quot;</span>)</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                        <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;Array of c values: &#39;)&quot;</span>)</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                        <span class="keywordflow">do</span> i = 1, int(h2plus%c1(3))</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                        <span class="keywordflow">do</span> i = 1, int(h2plus%c_grid(3))</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                            <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(F12.8)&quot;</span>) p_arr(i)</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="keywordflow">                        end do</span></div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                        <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;&#39;)&quot;</span>)</div>
@@ -630,7 +630,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160; </div>
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;            <span class="comment">! Set up parameter array, if doing a grid search</span></div>
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;            <span class="keywordflow">if</span> (h2%auto_params .eqv. .false.) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;                p_arr = linspace(h2%c1(1), h2%c1(2), h2%c1(3))</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;                p_arr = linspace(h2%beta_grid(1), h2%beta_grid(2), h2%beta_grid(3))</div>
 <div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;<span class="keywordflow">            endif</span> </div>
 <div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160; </div>
 <div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;            <span class="comment">! Update user from rank 0</span></div>
@@ -641,7 +641,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;                    <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;                        <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;Grid search across linearly spaced parameters enabled.&#39;)&quot;</span>)</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;                        <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;Array of beta values: &#39;)&quot;</span>)</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                        <span class="keywordflow">do</span> i = 1, int(h2%c1(3))</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                        <span class="keywordflow">do</span> i = 1, int(h2%beta_grid(3))</div>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;                            <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(F12.8)&quot;</span>) p_arr(i)</div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;<span class="keywordflow">                        end do</span></div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                        <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;&#39;)&quot;</span>)</div>
@@ -795,7 +795,7 @@ Functions/Subroutines</h2></td></tr>
 <area shape="rect" href="namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335" title="Draws a sample from a normal distribution using the Box&#45;Muller transform." alt="" coords="554,107,703,133"/>
 <area shape="rect" href="namespacevqmc.html#a8213f95bb390d7a9eff8260f527c00b8" title="Performs VQMC for the &#160;system." alt="" coords="325,5,475,32"/>
 <area shape="rect" href="namespacevqmc.html#a05315751002a983c9976851c9f21f0f0" title="Performs VQMC for the QHO system." alt="" coords="340,56,460,83"/>
-<area shape="rect" href="namespaceinput__parser.html#ace5694fecca99b0223f02140c750e5f1" title="Reads the CONTROL namelist in params.txt and assigns its data to the corresponding global variables d..." alt="" coords="338,1286,462,1327"/>
+<area shape="rect" href="namespaceinput__parser.html#a17a93a7f5e509724de92cf330dbc597a" title="Reads the CONTROL namelist in params.txt and assigns its data to the corresponding global variables d..." alt="" coords="338,1286,462,1327"/>
 <area shape="rect" href="namespaceinput__parser.html#a163a65b1b9201a421da32ba2a7c92148" title="Reads the PARAMETER namelist in params.txt for the H2 molecule system. Assigns the input data to the ..." alt="" coords="327,1352,473,1379"/>
 <area shape="rect" href="namespaceinput__parser.html#a3ebe204fa7f63e19fbf29c36f580ee74" title="Reads the PARAMETER namelist in params.txt for the H2 ion system. Assigns the input data to the corre..." alt="" coords="338,1403,462,1445"/>
 <area shape="rect" href="namespaceinput__parser.html#aa9a77c1395d69d54ce38420acdb3f87f" title="Reads the PARAMETER namelist in params.txt for the QHO system. Assigns the input data to the correspo..." alt="" coords="324,1469,476,1496"/>

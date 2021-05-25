@@ -17,7 +17,7 @@ var shared__data_8f90 =
     [ "run_equil", "shared__data_8f90.html#a9285af0408bde68c647a77c75900929d", null ],
     [ "run_restart", "shared__data_8f90.html#a2938e794296c80673d3b14040bc92798", null ],
     [ "write_restart", "shared__data_8f90.html#ade9d4ec979d01a52cdef8fc778abfa1d", null ],
-    [ "restart_step", "shared__data_8f90.html#abee3357695dee9120626f1a0c422dd29", null ],
+    [ "restart_num", "shared__data_8f90.html#a0e5ef617d0a232c0e7e36960aad8aff6", null ],
     [ "write_chains", "shared__data_8f90.html#a3ea265f2c8a3797c4d1a2b33059e1877", null ],
     [ "write_log", "shared__data_8f90.html#acf2cbacc5b2b4d8ee26c96dc7062aa9b", null ],
     [ "outfile", "shared__data_8f90.html#a2901a107f2659faf5c03f8c35f64e68f", null ],

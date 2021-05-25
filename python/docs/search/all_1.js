@@ -1,10 +1,9 @@
 var searchData=
 [
   ['check_1',['check',['../namespacecheck.html',1,'']]],
-  ['check_2epy_2',['check.py',['../check_8py.html',1,'']]],
-  ['check_5ffloat_3',['check_float',['../namespacecheck.html#a92fcf5aad4145a0f4bbc3d52703a64ab',1,'check']]],
-  ['check_5fgrid_4',['check_grid',['../namespacecheck.html#ae45c5a9a85b450aa57fb0afea8d11c59',1,'check']]],
-  ['check_5finputs_5',['check_inputs',['../namespacecheck.html#af433b760a4dbdb0972d3b43505f2c4b8',1,'check']]],
-  ['check_5fstep_6',['check_step',['../namespacecheck.html#ae808077a5a5aa3583bbf20a5fb38131d',1,'check']]],
-  ['corder_7',['corder',['../namespacecheck.html#a804da4f3d8099c2bd5dc41317210ff13',1,'check']]]
+  ['check_5ffloat_2',['check_float',['../namespacedice__check.html#afba8f0b27859076a624e8d5bc3d23429',1,'dice_check']]],
+  ['check_5fgrid_3',['check_grid',['../namespacedice__check.html#ae95c26c0aa34a5d08c7570d561a7a05b',1,'dice_check']]],
+  ['check_5finputs_4',['check_inputs',['../namespacedice__check.html#a6d9e6c1b578154488d648ae41acf78d4',1,'dice_check']]],
+  ['check_5fstep_5',['check_step',['../namespacedice__check.html#afeb33eda791fdb69d9145f9169798c80',1,'dice_check']]],
+  ['corder_6',['corder',['../namespacedice__defaults.html#abce8d8d1aa6baaa9f13509ee98beed12',1,'dice_defaults']]]
 ];

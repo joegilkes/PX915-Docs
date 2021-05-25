@@ -1,8 +1,0 @@
-<map id="check.default_message" name="check.default_message">
-<area shape="rect" id="node1" title="Subroutine that notifies the user when defaults are being used for a certain parameter." alt="" coords="520,81,679,108"/>
-<area shape="rect" id="node2" href="$namespacecheck.html#a92fcf5aad4145a0f4bbc3d52703a64ab" title="Checks the input value of a parameter that is expected to be a float." alt="" coords="345,5,472,32"/>
-<area shape="rect" id="node3" href="$namespacecheck.html#af433b760a4dbdb0972d3b43505f2c4b8" title="Major subroutine that checks the inputs of file params.txt." alt="" coords="160,81,297,108"/>
-<area shape="rect" id="node5" href="$namespacecheck.html#ae45c5a9a85b450aa57fb0afea8d11c59" title="Checks the input values for a grid parameter." alt="" coords="347,107,470,133"/>
-<area shape="rect" id="node6" href="$namespacecheck.html#ae808077a5a5aa3583bbf20a5fb38131d" title="Checks the input value of a parameter that is expected to be an integer step." alt="" coords="345,157,472,184"/>
-<area shape="rect" id="node4" href="$namespaceinput.html#a3d7818a4f120b1f0ada5a32dc5476fa3" title="Enquires whether the user would like to write a new params.txt file, or check an existing params...." alt="" coords="5,81,112,108"/>
-</map>

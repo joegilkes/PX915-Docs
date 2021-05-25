@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['boolean_0',['boolean',['../namespacecheck.html#a26944ae06b1c4267e761adca3a568740',1,'check']]]
+  ['boolean_0',['boolean',['../namespacedice__defaults.html#a9befb53f368a56c3db61b09e304a6b43',1,'dice_defaults']]]
 ];
