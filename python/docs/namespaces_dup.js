@@ -34,6 +34,7 @@ var namespaces_dup =
       [ "H2EnergyPlot", "namespacevis2.html#a7d278aa9a718e17bfdbff1f5ee1db529", null ]
     ] ],
     [ "visualisation", "namespacevisualisation.html", [
+      [ "load_results", "namespacevisualisation.html#a7feac5307d5b7b959a2bcfa051af983c", null ],
       [ "print_global_attr", "namespacevisualisation.html#af26cb719b2deb508473e83624f95b374", null ],
       [ "QHO_eng_plot", "namespacevisualisation.html#a9e23aabdaf405841cfdfd7c6cc2800e0", null ],
       [ "QHO_prob_plot", "namespacevisualisation.html#ad727a435fed6e71da862d749a6169558", null ],

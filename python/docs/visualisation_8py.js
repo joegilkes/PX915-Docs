@@ -1,5 +1,6 @@
 var visualisation_8py =
 [
+    [ "load_results", "visualisation_8py.html#a7feac5307d5b7b959a2bcfa051af983c", null ],
     [ "print_global_attr", "visualisation_8py.html#af26cb719b2deb508473e83624f95b374", null ],
     [ "QHO_eng_plot", "visualisation_8py.html#a9e23aabdaf405841cfdfd7c6cc2800e0", null ],
     [ "QHO_prob_plot", "visualisation_8py.html#ad727a435fed6e71da862d749a6169558", null ],
