@@ -96,21 +96,15 @@ $(document).ready(function(){initNavTree('md_repo__r_e_a_d_m_e.html',''); initRe
 <h2><b>Contents</b></h2>
 <ul>
 <li><a href="#About">About</a></li>
-<li><a href="#Keywords">Keywords</a></li>
-<li><a href="#[Abbreviations]">Abbreviations</a></li>
 <li><a href="#Build-Instructions">Build Instructions</a></li>
-<li><a href="#Design-Document">Design Document</a></li>
-<li><a href="#Software-Specification">Software Specification</a></li>
-<li><a href="#Work-Plan">Work Plan</a></li>
-<li><a href="#Tutorial">Tutorial</a></li>
+<li><a href="#FAQ">FAQ</a></li>
+<li><a href="#Further-Documentation">Further Documentation</a></li>
 <li><a href="#Contributors">Contributors</a></li>
 </ul>
 <hr  />
 <h2><b>About</b></h2>
-<p>Group A created a piece of software called <em><b>Dice</b></em> to run Variational Quantum Monte Carlo (VQMC) simulations. It is capable of determining the ground state energy and wave functions of the following systems: the quantum harmonic oscillator, the hydrogen atom, the hydrogen ion, and the hydrogen molecule. This was achieved with a high-performance parallel backend code, written in Fortran and a Python frontend for input generation and results visualisation. The software release date is on Friday 28/08/2021.</p>
-<p>The documentation of <em><b>Dice</b></em> has been generated using <a href="https://www.doxygen.nl/index.html">Doxygen</a>. As a documentation generator, Doxygen extracts information from specially-formatted comments within the code. Documentations are available in the format of HTML files to guide both users and developers of the code.</p>
-<p>In the documents, Group A described the software's core structure, algorithms and installation procedures. As these documents will continue to be updated when developers add additional features to the code, users will also be able to benefit from the latest features, developments and bug-fixes.</p>
-<p>For any information on specific input parameters and background theory, please click the links below to gain access to the documents.</p>
+<p><em><b>Dice</b></em> is a hybrid Fortran/Python code for running Variational Quantum Monte Carlo (VQMC) simulations. It is capable of determining the ground state energy and wave functions of the following systems: the quantum harmonic oscillator, the hydrogen ion and the hydrogen molecule. This was achieved with a high-performance parallel backend code, written in Fortran and a Python frontend for input generation and results visualisation. The software release date is on Thursday 27th May 2021.</p>
+<p>The following links can be used to get around important websites relating to <em><b>Dice</b></em>, including the developer documentation. The latest version of the User Manual is available in the repository, under <em>MANUAL.pdf</em>. To learn how to use <em><b>Dice</b></em>, check out the Jupyter notebook tutorial in <em>Tutorial.ipynb</em>.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Destination   </th><th class="markdownTableHeadNone">Link    </th></tr>
@@ -123,49 +117,24 @@ $(document).ready(function(){initNavTree('md_repo__r_e_a_d_m_e.html',''); initRe
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Python Dev Documentation   </td><td class="markdownTableBodyNone"><a href="https://joegilkes.github.io/PX915-Docs/python/docs/index.html">Here</a>   </td></tr>
 </table>
-<p><a href="#Contents">&uarr; Back to Contents</a></p>
-<hr  />
 <h2><b>Keywords</b></h2>
 <p><em><b>Variational Quantum Monte Carlo</b></em>, <em><b>Quantum Harmonic Oscillator</b></em>, <em><b>Hydrogen Atom</b></em>, <em><b>Hydrogen Ion</b></em>, <em><b>Hydrogen Molecule</b></em>, <em><b>Parallel Computing</b></em>, <em><b>Fortran</b></em>, <em><b>Python</b></em></p>
 <p><a href="#Contents">&uarr; Back to Contents</a></p>
 <hr  />
-<h2><b>Abbreviations</b></h2>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Abbreviation   </th><th class="markdownTableHeadNone">Original Phrase    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">BO   </td><td class="markdownTableBodyNone">Born-Oppenheimer Approximation    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">DQMC   </td><td class="markdownTableBodyNone">Diffusion Quantum Monte Carlo    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">FAQ   </td><td class="markdownTableBodyNone">Frequently Asked Questions    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">MCMC   </td><td class="markdownTableBodyNone">Markov Chain Monte Carlo    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">MMC   </td><td class="markdownTableBodyNone">Metropolis Monte Carlo    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">MPI   </td><td class="markdownTableBodyNone">Message Passing Interface    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a href="https://www.unidata.ucar.edu/software/netcdf/">NetCDF</a>   </td><td class="markdownTableBodyNone">Network Common Data Form    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">QHO   </td><td class="markdownTableBodyNone">Quantum Harmonic Oscillator    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">QMC*   </td><td class="markdownTableBodyNone">Quantum Monte Carlo    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">VQMC*   </td><td class="markdownTableBodyNone">Variational Quantum Monte Carlo   </td></tr>
-</table>
-<p>*Note: QMC and VQMC are used interchangeably in this version of the software.</p>
-<p><a href="#Contents">&uarr; Back to Contents</a></p>
-<hr  />
 <h2><b>Build Instructions</b></h2>
-<ol type="1">
-<li>Clone the GitHub repository, load the modules, <code>make clean &amp;&amp; make</code></li>
-<li>Run the input generator with <code>python <a class="el" href="input_8py.html">input.py</a></code></li>
-<li>Run the Fortran code with <code>./program</code></li>
-</ol>
+<p><em><b>Dice</b></em> has a complex set of dependencies for both the Fortran backend and the Python frontend. These are listed in the User Manual, alongside instructions for their installation on the Warwick SCRTP system.</p>
+<p>Compiling <em><b>Dice</b></em> requires specifying your compiler in the Makefile, and then it's as simple as running <code>make</code>. Again, full instructions are given in the User Manual.</p>
 <p><a href="#Contents">&uarr; Back to Contents</a></p>
 <hr  />
-<h2><b>Design Document</b></h2>
+<h2><b>FAQ</b></h2>
+<p><em><b>Q: Is a PDF version of the developer documentation available?</b></em></p>
+<p><em>A: There will not be any PDF version of the developer documentation. It is extremely detailed and would be cumbersome to read linearly as PDF files. This is why we are hosting the developer documentation as HTML files to help users to navigate through the contents much quicker.</em></p>
+<p><em><b>Q: What could I do if I spot a bug in the software?</b></em></p>
+<p><em>A: If you find a bug in <b>Dice</b>, please notify the developers (anyone in the <b>contributor</b> table) by raising it as an issue in the <b>Issues</b> tab in the relevant branch of the **Dice**’s GitHub repository. Key bug fixes will be documented in a changelog in the next stable version release.</em></p>
+<p><a href="#Contents">&uarr; Back to Contents</a></p>
+<hr  />
+<h2><b>Further Documentation</b></h2>
+<h3><b>Design Document</b></h3>
 <p>The <a href="https://github.com/HetSys/PX915_2021_A/files/6503937/PX915.Group.Project.Design.Document.-.Group.A.pdf">Design Document</a> for <em><b>Dice</b></em> explains the following topics in details:</p><ul>
 <li>Code Structure</li>
 <li>Algorithms</li>
@@ -174,23 +143,10 @@ $(document).ready(function(){initNavTree('md_repo__r_e_a_d_m_e.html',''); initRe
 <li>Documentation</li>
 <li>Collaboration mechanisms</li>
 </ul>
-<p><a href="#Contents">&uarr; Back to Contents</a></p>
-<hr  />
-<h2><b>Software Specification</b></h2>
+<h3><b>Software Specification</b></h3>
 <p>The <a href="https://github.com/HetSys/PX915_2021_A/files/6503938/PX915.Group.Project.Software.Specification.-.Group.A.pdf">Software Specification</a> document will discuss <em><b>Dice</b></em>'s' <em>Performance</em>, <em>Input</em>, <em>Output</em>, <em>Engine</em>, <em>Analysis</em> and <em>Extensions</em> in details.</p>
-<p><a href="#Contents">&uarr; Back to Contents</a></p>
-<hr  />
-<h2><b>Work Plan</b></h2>
+<h3><b>Work Plan</b></h3>
 <p>The initial work plan for <em><b>Dice</b></em> can be found in details in <a href="https://github.com/HetSys/PX915_2021_A/files/6503942/PX915.Group.Project.Workplan.Explanation.-.Group.A.pdf">Work Plan Explanation</a>. This document has shown a clear division of labour during the five weeks that Group A will have to work on the project.</p>
-<p><a href="#Contents">&uarr; Back to Contents</a></p>
-<hr  />
-<h2><b>Tutorial</b></h2>
-<p>A good tutorial should:</p><ul>
-<li>enable users to learn on-demand</li>
-<li>be accessible independent of time and location</li>
-<li>be able to stop, repeat and skip sections as needed</li>
-</ul>
-<p>Based on these guidelines, Group A created a tutorial hoping to teach the users how to use <em><b>Dice</b></em>. The tutorial is the format of a Jupyter Notebook named and it is names <em>Tutorials_outline.ipynb</em>. The tutorial can be accessed from the program’s main GitHub repository.</p>
 <p><a href="#Contents">&uarr; Back to Contents</a></p>
 <hr  />
 <h2><b>Contributors</b></h2>
@@ -213,7 +169,7 @@ $(document).ready(function(){initNavTree('md_repo__r_e_a_d_m_e.html',''); initRe
 <p>Group Project Supervisor: <a href="https://warwick.ac.uk/fac/sci/eng/staff/jrk/">Dr. James Kermode</a></p>
 <p><a href="#Contents">&uarr; Back to Contents</a></p>
 <hr  />
-<p>This documentation was generated from commit 93a84c7 </p>
+<p>This documentation was generated from commit 2f12e60 </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

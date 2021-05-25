@@ -5,13 +5,9 @@
 
 \begin{DoxyItemize}
 \item \href{\#About}{\texttt{ About}}
-\item \href{\#Keywords}{\texttt{ Keywords}}
-\item \href{\#[Abbreviations]}{\texttt{ Abbreviations}}
 \item \href{\#Build-Instructions}{\texttt{ Build Instructions}}
-\item \href{\#Design-Document}{\texttt{ Design Document}}
-\item \href{\#Software-Specification}{\texttt{ Software Specification}}
-\item \href{\#Work-Plan}{\texttt{ Work Plan}}
-\item \href{\#Tutorial}{\texttt{ Tutorial}}
+\item \href{\#FAQ}{\texttt{ FAQ}}
+\item \href{\#Further-Documentation}{\texttt{ Further Documentation}}
 \item \href{\#Contributors}{\texttt{ Contributors}}
 \end{DoxyItemize}
 
@@ -20,13 +16,9 @@
 
 \doxysubsection*{{\bfseries{About}}}
 
-Group A created a piece of software called {\itshape {\bfseries{Dice}}} to run Variational Quantum Monte Carlo (VQMC) simulations. It is capable of determining the ground state energy and wave functions of the following systems\+: the quantum harmonic oscillator, the hydrogen atom, the hydrogen ion, and the hydrogen molecule. This was achieved with a high-\/performance parallel backend code, written in Fortran and a Python frontend for input generation and results visualisation. The software release date is on Friday 28/08/2021.
+{\itshape {\bfseries{Dice}}} is a hybrid Fortran/\+Python code for running Variational Quantum Monte Carlo (VQMC) simulations. It is capable of determining the ground state energy and wave functions of the following systems\+: the quantum harmonic oscillator, the hydrogen ion and the hydrogen molecule. This was achieved with a high-\/performance parallel backend code, written in Fortran and a Python frontend for input generation and results visualisation. The software release date is on Thursday 27th May 2021.
 
-The documentation of {\itshape {\bfseries{Dice}}} has been generated using \href{https://www.doxygen.nl/index.html}{\texttt{ Doxygen}}. As a documentation generator, Doxygen extracts information from specially-\/formatted comments within the code. Documentations are available in the format of HTML files to guide both users and developers of the code.
-
-In the documents, Group A described the software\textquotesingle{}s core structure, algorithms and installation procedures. As these documents will continue to be updated when developers add additional features to the code, users will also be able to benefit from the latest features, developments and bug-\/fixes.
-
-For any information on specific input parameters and background theory, please click the links below to gain access to the documents.
+The following links can be used to get around important websites relating to {\itshape {\bfseries{Dice}}}, including the developer documentation. The latest version of the User Manual is available in the repository, under {\itshape MANUAL.\+pdf}. To learn how to use {\itshape {\bfseries{Dice}}}, check out the Jupyter notebook tutorial in {\itshape Tutorial.\+ipynb}.
 
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
@@ -45,11 +37,6 @@ Python Dev Documentation   &\href{https://joegilkes.github.io/PX915-Docs/python/
 \end{longtabu}
 
 
-\href{\#Contents}{\texttt{ {$\uparrow$} Back to Contents}}
-
-\DoxyHorRuler{0}
-
-
 \doxysubsection*{{\bfseries{Keywords}}}
 
 {\itshape {\bfseries{Variational Quantum Monte Carlo}}}, {\itshape {\bfseries{Quantum Harmonic Oscillator}}}, {\itshape {\bfseries{Hydrogen Atom}}}, {\itshape {\bfseries{Hydrogen Ion}}}, {\itshape {\bfseries{Hydrogen Molecule}}}, {\itshape {\bfseries{Parallel Computing}}}, {\itshape {\bfseries{Fortran}}}, {\itshape {\bfseries{Python}}}
@@ -59,53 +46,35 @@ Python Dev Documentation   &\href{https://joegilkes.github.io/PX915-Docs/python/
 \DoxyHorRuler{0}
 
 
-\doxysubsection*{{\bfseries{Abbreviations}}}
-
-\tabulinesep=1mm
-\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
-\hline
-\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Abbreviation   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Original Phrase    }\\\cline{1-2}
-\endfirsthead
-\hline
-\endfoot
-\hline
-\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Abbreviation   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Original Phrase    }\\\cline{1-2}
-\endhead
-BO   &Born-\/\+Oppenheimer Approximation    \\\cline{1-2}
-DQMC   &Diffusion Quantum Monte Carlo    \\\cline{1-2}
-FAQ   &Frequently Asked Questions    \\\cline{1-2}
-MCMC   &Markov Chain Monte Carlo    \\\cline{1-2}
-MMC   &Metropolis Monte Carlo    \\\cline{1-2}
-MPI   &Message Passing Interface    \\\cline{1-2}
-\href{https://www.unidata.ucar.edu/software/netcdf/}{\texttt{ Net\+CDF}}   &Network Common Data Form    \\\cline{1-2}
-QHO   &Quantum Harmonic Oscillator    \\\cline{1-2}
-QMC$\ast$   &Quantum Monte Carlo    \\\cline{1-2}
-VQMC$\ast$   &Variational Quantum Monte Carlo   \\\cline{1-2}
-\end{longtabu}
-
-
-$\ast$\+Note\+: QMC and VQMC are used interchangeably in this version of the software.
-
-\href{\#Contents}{\texttt{ {$\uparrow$} Back to Contents}}
-
-\DoxyHorRuler{0}
-
-
 \doxysubsection*{{\bfseries{Build Instructions}}}
 
+{\itshape {\bfseries{Dice}}} has a complex set of dependencies for both the Fortran backend and the Python frontend. These are listed in the User Manual, alongside instructions for their installation on the Warwick SCRTP system.
 
-\begin{DoxyEnumerate}
-\item Clone the Git\+Hub repository, load the modules, {\ttfamily make clean \&\& make}
-\item Run the input generator with {\ttfamily python \mbox{\hyperlink{input_8py}{input.\+py}}}
-\item Run the Fortran code with {\ttfamily ./program}
-\end{DoxyEnumerate}
+Compiling {\itshape {\bfseries{Dice}}} requires specifying your compiler in the Makefile, and then it\textquotesingle{}s as simple as running {\ttfamily make}. Again, full instructions are given in the User Manual.
 
 \href{\#Contents}{\texttt{ {$\uparrow$} Back to Contents}}
 
 \DoxyHorRuler{0}
 
 
-\doxysubsection*{{\bfseries{Design Document}}}
+\doxysubsection*{{\bfseries{FAQ}}}
+
+{\itshape {\bfseries{Q\+: Is a PDF version of the developer documentation available?}}}
+
+{\itshape A\+: There will not be any PDF version of the developer documentation. It is extremely detailed and would be cumbersome to read linearly as PDF files. This is why we are hosting the developer documentation as HTML files to help users to navigate through the contents much quicker.}
+
+{\itshape {\bfseries{Q\+: What could I do if I spot a bug in the software?}}}
+
+{\itshape A\+: If you find a bug in {\bfseries{Dice}}, please notify the developers (anyone in the {\bfseries{contributor}} table) by raising it as an issue in the {\bfseries{Issues}} tab in the relevant branch of the $\ast$$\ast$\+Dice$\ast$$\ast$’s Git\+Hub repository. Key bug fixes will be documented in a changelog in the next stable version release.}
+
+\href{\#Contents}{\texttt{ {$\uparrow$} Back to Contents}}
+
+\DoxyHorRuler{0}
+
+
+\doxysubsection*{{\bfseries{Further Documentation}}}
+
+\doxysubsubsection*{{\bfseries{Design Document}}}
 
 The \href{https://github.com/HetSys/PX915_2021_A/files/6503937/PX915.Group.Project.Design.Document.-.Group.A.pdf}{\texttt{ Design Document}} for {\itshape {\bfseries{Dice}}} explains the following topics in details\+:
 \begin{DoxyItemize}
@@ -117,39 +86,13 @@ The \href{https://github.com/HetSys/PX915_2021_A/files/6503937/PX915.Group.Proje
 \item Collaboration mechanisms
 \end{DoxyItemize}
 
-\href{\#Contents}{\texttt{ {$\uparrow$} Back to Contents}}
-
-\DoxyHorRuler{0}
-
-
-\doxysubsection*{{\bfseries{Software Specification}}}
+\doxysubsubsection*{{\bfseries{Software Specification}}}
 
 The \href{https://github.com/HetSys/PX915_2021_A/files/6503938/PX915.Group.Project.Software.Specification.-.Group.A.pdf}{\texttt{ Software Specification}} document will discuss {\itshape {\bfseries{Dice}}}\textquotesingle{}s\textquotesingle{} {\itshape Performance}, {\itshape Input}, {\itshape Output}, {\itshape Engine}, {\itshape Analysis} and {\itshape Extensions} in details.
 
-\href{\#Contents}{\texttt{ {$\uparrow$} Back to Contents}}
-
-\DoxyHorRuler{0}
-
-
-\doxysubsection*{{\bfseries{Work Plan}}}
+\doxysubsubsection*{{\bfseries{Work Plan}}}
 
 The initial work plan for {\itshape {\bfseries{Dice}}} can be found in details in \href{https://github.com/HetSys/PX915_2021_A/files/6503942/PX915.Group.Project.Workplan.Explanation.-.Group.A.pdf}{\texttt{ Work Plan Explanation}}. This document has shown a clear division of labour during the five weeks that Group A will have to work on the project.
-
-\href{\#Contents}{\texttt{ {$\uparrow$} Back to Contents}}
-
-\DoxyHorRuler{0}
-
-
-\doxysubsection*{{\bfseries{Tutorial}}}
-
-A good tutorial should\+:
-\begin{DoxyItemize}
-\item enable users to learn on-\/demand
-\item be accessible independent of time and location
-\item be able to stop, repeat and skip sections as needed
-\end{DoxyItemize}
-
-Based on these guidelines, Group A created a tutorial hoping to teach the users how to use {\itshape {\bfseries{Dice}}}. The tutorial is the format of a Jupyter Notebook named and it is names {\itshape Tutorials\+\_\+outline.\+ipynb}. The tutorial can be accessed from the program’s main Git\+Hub repository.
 
 \href{\#Contents}{\texttt{ {$\uparrow$} Back to Contents}}
 
@@ -184,4 +127,4 @@ Group Project Supervisor\+: \href{https://warwick.ac.uk/fac/sci/eng/staff/jrk/}{
 \DoxyHorRuler{0}
 
 
-This documentation was generated from commit 93a84c7 
+This documentation was generated from commit 2f12e60 
