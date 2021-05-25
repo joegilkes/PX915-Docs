@@ -10,7 +10,7 @@ Temporary storage for basic plotting functions until visualisation is usable.
 \item 
 def \mbox{\hyperlink{namespacevis2_a9daac64c8c06f7a07c3cb1608b6bb36d}{QHOEnergy\+Plot}} (results\+\_\+file, sliceby=(None, None))
 \begin{DoxyCompactList}\small\item\em Energy against $ \alpha $ plotter for the QHO problem. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacevis2_acf71426b090a0d1218ce65a7fd66afec}{QHOWfn\+Plot}} (chain\+\_\+file)
+def \mbox{\hyperlink{namespacevis2_ac21c80c2cfa183521dd0713f4ad38bfc}{QHOWfn\+Plot}} (chain\+\_\+file, show\+\_\+analytic=False)
 \begin{DoxyCompactList}\small\item\em Scatter plotter of the sampled QHO wavefunction. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacevis2_a08a68539d8dbe6e5231936ca9967e1f2}{H2plus\+Energy\+Plot}} (results\+\_\+file, sliceby=(None, None))
 \begin{DoxyCompactList}\small\item\em $ H_{2}^{+} $ H-\/H bond energy and parameter plotter. \end{DoxyCompactList}\item 
@@ -74,26 +74,25 @@ Definition at line 9 of file vis2.\+py.
 \DoxyCodeLine{33     fig, ax1 = plt.subplots(1, 1, figsize=(8, 8))}
 \DoxyCodeLine{34 }
 \DoxyCodeLine{35     ax1.set\_title(\textcolor{stringliteral}{r'Quantum Harmonic Oscillator Energy with Varying \$\(\backslash\)alpha\$'})}
-\DoxyCodeLine{36     ax1.errorbar(alpha\_array, energies, yerr=stdevs, marker=\textcolor{stringliteral}{'o'}, ls=\textcolor{stringliteral}{'-\/-\/'})}
-\DoxyCodeLine{37     ax1.axvline(0.5, ls=\textcolor{stringliteral}{'-\/'}, color=\textcolor{stringliteral}{'black'}, alpha=0.3)}
-\DoxyCodeLine{38     ax1.set\_xlabel(\textcolor{stringliteral}{r'\$\(\backslash\)alpha\$'})}
-\DoxyCodeLine{39     ax1.set\_ylabel(\textcolor{stringliteral}{'Energy'})}
-\DoxyCodeLine{40 }
-\DoxyCodeLine{41     fig.show()}
-\DoxyCodeLine{42 }
-\DoxyCodeLine{43     print(f\textcolor{stringliteral}{'Optimum alpha: \{opt\_alpha\}'})}
-\DoxyCodeLine{44     print(f\textcolor{stringliteral}{'Energy: \{min\_energy\} ± \{min\_energy\_stdev\}'})}
-\DoxyCodeLine{45 }
-\DoxyCodeLine{46     print(stdevs)}
+\DoxyCodeLine{36     ax1.plot(alpha\_array, energies, marker=\textcolor{stringliteral}{'o'}, ls=\textcolor{stringliteral}{'-\/-\/'}, color=\textcolor{stringliteral}{'blue'})}
+\DoxyCodeLine{37     ax1.fill\_between(alpha\_array, energies+stdevs, energies-\/stdevs, alpha=0.4, color=\textcolor{stringliteral}{'purple'})}
+\DoxyCodeLine{38     ax1.axvline(0.5, ls=\textcolor{stringliteral}{'-\/'}, color=\textcolor{stringliteral}{'black'}, alpha=0.3)}
+\DoxyCodeLine{39     ax1.set\_xlabel(\textcolor{stringliteral}{r'\$\(\backslash\)alpha\$'})}
+\DoxyCodeLine{40     ax1.set\_ylabel(\textcolor{stringliteral}{'Energy'})}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     fig.show()}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     print(f\textcolor{stringliteral}{'Optimum alpha: \{opt\_alpha\}'})}
+\DoxyCodeLine{45     print(f\textcolor{stringliteral}{'Energy: \{min\_energy\} ± \{min\_energy\_stdev\}'})}
+\DoxyCodeLine{46 }
 \DoxyCodeLine{47 }
-\DoxyCodeLine{48 }
 
 \end{DoxyCode}
-\mbox{\Hypertarget{namespacevis2_acf71426b090a0d1218ce65a7fd66afec}\label{namespacevis2_acf71426b090a0d1218ce65a7fd66afec}} 
+\mbox{\Hypertarget{namespacevis2_ac21c80c2cfa183521dd0713f4ad38bfc}\label{namespacevis2_ac21c80c2cfa183521dd0713f4ad38bfc}} 
 \index{vis2@{vis2}!QHOWfnPlot@{QHOWfnPlot}}
 \index{QHOWfnPlot@{QHOWfnPlot}!vis2@{vis2}}
 \doxysubsubsection{\texorpdfstring{QHOWfnPlot()}{QHOWfnPlot()}}
-{\footnotesize\ttfamily def vis2.\+QHOWfn\+Plot (\begin{DoxyParamCaption}\item[{}]{chain\+\_\+file }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def vis2.\+QHOWfn\+Plot (\begin{DoxyParamCaption}\item[{}]{chain\+\_\+file,  }\item[{}]{show\+\_\+analytic = {\ttfamily False} }\end{DoxyParamCaption})}
 
 
 
@@ -105,39 +104,48 @@ Plots the sampled posisions of a trial QHO wavefunction against the energies at 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em chain\+\_\+file} & A net\+CDF dataset of Markov chain and corresponding energies of a VQMC run \\
 \hline
+\mbox{\texttt{ in}}  & {\em show\+\_\+analytic} & Also display the analytical wavefunction \\
+\hline
 \end{DoxyParams}
 
 
-Definition at line 49 of file vis2.\+py.
+Definition at line 48 of file vis2.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{49 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevis2_acf71426b090a0d1218ce65a7fd66afec}{QHOWfnPlot}}(chain\_file):}
-\DoxyCodeLine{50     \textcolor{stringliteral}{'''}}
-\DoxyCodeLine{51 \textcolor{stringliteral}{    @brief}}
-\DoxyCodeLine{52 \textcolor{stringliteral}{    Scatter plotter of the sampled QHO wavefunction.}}
-\DoxyCodeLine{53 \textcolor{stringliteral}{}}
-\DoxyCodeLine{54 \textcolor{stringliteral}{    @details}}
-\DoxyCodeLine{55 \textcolor{stringliteral}{    Plots the sampled posisions of a trial QHO wavefunction against the}}
-\DoxyCodeLine{56 \textcolor{stringliteral}{    energies at those positions, to illustrate the shape of that wavefunction.}}
-\DoxyCodeLine{57 \textcolor{stringliteral}{    Chain output requires the @em write\_chains parameter to be @em TRUE.}}
-\DoxyCodeLine{58 \textcolor{stringliteral}{}}
-\DoxyCodeLine{59 \textcolor{stringliteral}{    @param[in]  chain\_file    A netCDF dataset of Markov chain and corresponding energies of a VQMC run}}
+\DoxyCodeLine{48 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevis2_ac21c80c2cfa183521dd0713f4ad38bfc}{QHOWfnPlot}}(chain\_file, show\_analytic=False):}
+\DoxyCodeLine{49     \textcolor{stringliteral}{'''}}
+\DoxyCodeLine{50 \textcolor{stringliteral}{    @brief}}
+\DoxyCodeLine{51 \textcolor{stringliteral}{    Scatter plotter of the sampled QHO wavefunction.}}
+\DoxyCodeLine{52 \textcolor{stringliteral}{}}
+\DoxyCodeLine{53 \textcolor{stringliteral}{    @details}}
+\DoxyCodeLine{54 \textcolor{stringliteral}{    Plots the sampled posisions of a trial QHO wavefunction against the}}
+\DoxyCodeLine{55 \textcolor{stringliteral}{    energies at those positions, to illustrate the shape of that wavefunction.}}
+\DoxyCodeLine{56 \textcolor{stringliteral}{    Chain output requires the @em write\_chains parameter to be @em TRUE.}}
+\DoxyCodeLine{57 \textcolor{stringliteral}{}}
+\DoxyCodeLine{58 \textcolor{stringliteral}{    @param[in]  chain\_file     A netCDF dataset of Markov chain and corresponding energies of a VQMC run}}
+\DoxyCodeLine{59 \textcolor{stringliteral}{    @param[in]  show\_analytic  Also display the analytical wavefunction}}
 \DoxyCodeLine{60 \textcolor{stringliteral}{    '''}}
 \DoxyCodeLine{61     dat = nd.Dataset(chain\_file, \textcolor{stringliteral}{'r'}, format=\textcolor{stringliteral}{'NETCDF4'})}
 \DoxyCodeLine{62 }
 \DoxyCodeLine{63     positions = dat.variables[\textcolor{stringliteral}{'positions'}][:]}
 \DoxyCodeLine{64     energies = dat.variables[\textcolor{stringliteral}{'energies'}][:]}
-\DoxyCodeLine{65 }
-\DoxyCodeLine{66     plt.figure(figsize=(8, 8))}
-\DoxyCodeLine{67     plt.title(\textcolor{stringliteral}{'Sampled QHO Wavefunction'})}
-\DoxyCodeLine{68     plt.plot(positions, energies, \textcolor{stringliteral}{'o'}, color=\textcolor{stringliteral}{'purple'}, markersize=4.0, alpha=0.5)}
-\DoxyCodeLine{69     plt.xlabel(\textcolor{stringliteral}{'Sampled Position'})}
-\DoxyCodeLine{70     plt.ylabel(\textcolor{stringliteral}{'Energy'})}
-\DoxyCodeLine{71 }
-\DoxyCodeLine{72     plt.show()}
-\DoxyCodeLine{73 }
-\DoxyCodeLine{74 }
+\DoxyCodeLine{65     alpha = dat.alpha}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     plt.figure(figsize=(8, 8))}
+\DoxyCodeLine{68     plt.title(rf\textcolor{stringliteral}{'Sampled QHO Wavefunction at \$\(\backslash\)alpha\$ = \{alpha\}'})}
+\DoxyCodeLine{69     plt.plot(positions, energies, \textcolor{stringliteral}{'o'}, color=\textcolor{stringliteral}{'purple'}, markersize=4.0, alpha=0.5)}
+\DoxyCodeLine{70     plt.xlabel(\textcolor{stringliteral}{'Sampled Position'})}
+\DoxyCodeLine{71     plt.ylabel(\textcolor{stringliteral}{'Energy'})}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \textcolor{keywordflow}{if} show\_analytic:}
+\DoxyCodeLine{74         pos\_array = np.linspace(min(positions), max(positions), 100)}
+\DoxyCodeLine{75         analytic = np.exp(-\/alpha * pos\_array**2)}
+\DoxyCodeLine{76         plt.plot(pos\_array, analytic, color=\textcolor{stringliteral}{'red'}, alpha=0.8)}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     plt.show()}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespacevis2_a08a68539d8dbe6e5231936ca9967e1f2}\label{namespacevis2_a08a68539d8dbe6e5231936ca9967e1f2}} 
@@ -161,61 +169,61 @@ Plots the H-\/H bond potential energy curve generated by VQMC at the optimum par
 \end{DoxyParams}
 
 
-Definition at line 75 of file vis2.\+py.
+Definition at line 81 of file vis2.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{75 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevis2_a08a68539d8dbe6e5231936ca9967e1f2}{H2plusEnergyPlot}}(results\_file, sliceby=(\textcolor{keywordtype}{None}, \textcolor{keywordtype}{None})):}
-\DoxyCodeLine{76     \textcolor{stringliteral}{'''}}
-\DoxyCodeLine{77 \textcolor{stringliteral}{    @brief}}
-\DoxyCodeLine{78 \textcolor{stringliteral}{    @f\$ H\_\{2\}\string^\{+\} @f\$ H-\/H bond energy and parameter plotter.}}
-\DoxyCodeLine{79 \textcolor{stringliteral}{}}
-\DoxyCodeLine{80 \textcolor{stringliteral}{    @details}}
-\DoxyCodeLine{81 \textcolor{stringliteral}{    Plots the H-\/H bond potential energy curve generated by VQMC at the optimum}}
-\DoxyCodeLine{82 \textcolor{stringliteral}{    parameters for each bond length. Plots standard deviation of each energy as}}
-\DoxyCodeLine{83 \textcolor{stringliteral}{    a measure of uncertainty. Also plots variational parameter @f\$ c @f\$ against}}
-\DoxyCodeLine{84 \textcolor{stringliteral}{    bond length. Reports equilibrium bond length for the molecule and optimum}}
-\DoxyCodeLine{85 \textcolor{stringliteral}{    energy.}}
-\DoxyCodeLine{86 \textcolor{stringliteral}{}}
-\DoxyCodeLine{87 \textcolor{stringliteral}{    @param[in]  results\_file    The main netCDF output file from a @f\$ H\_\{2\}\string^\{+\} @f\$ run}}
-\DoxyCodeLine{88 \textcolor{stringliteral}{    @param[in]  sliceby         (Optional) Tuple containing slice intervals for arrays}}
-\DoxyCodeLine{89 \textcolor{stringliteral}{    '''}}
-\DoxyCodeLine{90     dat = nd.Dataset(results\_file, \textcolor{stringliteral}{'r'}, format=\textcolor{stringliteral}{'NETCDF4'})}
-\DoxyCodeLine{91 }
-\DoxyCodeLine{92     bond\_lengths = dat.variables[\textcolor{stringliteral}{'Bondlength\_array'}][sliceby[0]:sliceby[1]]}
-\DoxyCodeLine{93     c\_opt = dat.variables[\textcolor{stringliteral}{'Parameter\_array'}][sliceby[0]:sliceby[1]]}
-\DoxyCodeLine{94     energies = dat.variables[\textcolor{stringliteral}{'total\_energies'}][sliceby[0]:sliceby[1]]}
-\DoxyCodeLine{95     variances = dat.variables[\textcolor{stringliteral}{'Uncertainties'}][sliceby[0]:sliceby[1]]}
-\DoxyCodeLine{96 }
-\DoxyCodeLine{97     stdevs = np.sqrt(variances)}
-\DoxyCodeLine{98     min\_energy = min(energies)}
-\DoxyCodeLine{99     min\_energy\_stdev = stdevs[np.argmin(energies)]}
-\DoxyCodeLine{100     min\_bond\_length = bond\_lengths[np.argmin(energies)]}
-\DoxyCodeLine{101 }
-\DoxyCodeLine{102     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 8))}
-\DoxyCodeLine{103 }
-\DoxyCodeLine{104     ax1.set\_title(\textcolor{stringliteral}{r'\$H\_\{2\}\string^\{+\}\$ bond energy curve'})}
-\DoxyCodeLine{105     \textcolor{comment}{\# ax1.plot(bond\_lengths, energies, marker='o')}}
-\DoxyCodeLine{106     ax1.errorbar(bond\_lengths, energies, yerr=stdevs, marker=\textcolor{stringliteral}{'o'}, ls=\textcolor{stringliteral}{'-\/-\/'})}
-\DoxyCodeLine{107     ax1.axhline(-\/0.5, ls=\textcolor{stringliteral}{'-\/'}, color=\textcolor{stringliteral}{'black'}, alpha=0.3)}
-\DoxyCodeLine{108     ax1.set\_xlabel(\textcolor{stringliteral}{r'Bond Length / \$a\_\{0\}\$'})}
-\DoxyCodeLine{109     ax1.set\_ylabel(\textcolor{stringliteral}{'Energy / Ha'})}
-\DoxyCodeLine{110 }
-\DoxyCodeLine{111     ax2.set\_title(\textcolor{stringliteral}{r'Optimised parameter \$c\$'})}
-\DoxyCodeLine{112     ax2.plot(bond\_lengths, c\_opt)}
-\DoxyCodeLine{113     ax2.axhline(1/np.sqrt(2), ls=\textcolor{stringliteral}{'-\/'}, color=\textcolor{stringliteral}{'black'}, alpha=0.3)}
-\DoxyCodeLine{114     ax2.set\_xlabel(\textcolor{stringliteral}{r'Bond Length / \$a\_\{0\}\$'})}
-\DoxyCodeLine{115     ax2.set\_ylabel(\textcolor{stringliteral}{r'\$c\$'})}
+\DoxyCodeLine{81 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevis2_a08a68539d8dbe6e5231936ca9967e1f2}{H2plusEnergyPlot}}(results\_file, sliceby=(\textcolor{keywordtype}{None}, \textcolor{keywordtype}{None})):}
+\DoxyCodeLine{82     \textcolor{stringliteral}{'''}}
+\DoxyCodeLine{83 \textcolor{stringliteral}{    @brief}}
+\DoxyCodeLine{84 \textcolor{stringliteral}{    @f\$ H\_\{2\}\string^\{+\} @f\$ H-\/H bond energy and parameter plotter.}}
+\DoxyCodeLine{85 \textcolor{stringliteral}{}}
+\DoxyCodeLine{86 \textcolor{stringliteral}{    @details}}
+\DoxyCodeLine{87 \textcolor{stringliteral}{    Plots the H-\/H bond potential energy curve generated by VQMC at the optimum}}
+\DoxyCodeLine{88 \textcolor{stringliteral}{    parameters for each bond length. Plots standard deviation of each energy as}}
+\DoxyCodeLine{89 \textcolor{stringliteral}{    a measure of uncertainty. Also plots variational parameter @f\$ c @f\$ against}}
+\DoxyCodeLine{90 \textcolor{stringliteral}{    bond length. Reports equilibrium bond length for the molecule and optimum}}
+\DoxyCodeLine{91 \textcolor{stringliteral}{    energy.}}
+\DoxyCodeLine{92 \textcolor{stringliteral}{}}
+\DoxyCodeLine{93 \textcolor{stringliteral}{    @param[in]  results\_file    The main netCDF output file from a @f\$ H\_\{2\}\string^\{+\} @f\$ run}}
+\DoxyCodeLine{94 \textcolor{stringliteral}{    @param[in]  sliceby         (Optional) Tuple containing slice intervals for arrays}}
+\DoxyCodeLine{95 \textcolor{stringliteral}{    '''}}
+\DoxyCodeLine{96     dat = nd.Dataset(results\_file, \textcolor{stringliteral}{'r'}, format=\textcolor{stringliteral}{'NETCDF4'})}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     bond\_lengths = dat.variables[\textcolor{stringliteral}{'Bondlength\_array'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{99     c\_opt = dat.variables[\textcolor{stringliteral}{'Parameter\_array'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{100     energies = dat.variables[\textcolor{stringliteral}{'total\_energies'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{101     variances = dat.variables[\textcolor{stringliteral}{'Uncertainties'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     stdevs = np.sqrt(variances)}
+\DoxyCodeLine{104     min\_energy = min(energies)}
+\DoxyCodeLine{105     min\_energy\_stdev = stdevs[np.argmin(energies)]}
+\DoxyCodeLine{106     min\_bond\_length = bond\_lengths[np.argmin(energies)]}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 8))}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     ax1.set\_title(\textcolor{stringliteral}{r'\$H\_\{2\}\string^\{+\}\$ bond energy curve'})}
+\DoxyCodeLine{111     \textcolor{comment}{\# ax1.plot(bond\_lengths, energies, marker='o')}}
+\DoxyCodeLine{112     ax1.errorbar(bond\_lengths, energies, yerr=stdevs, marker=\textcolor{stringliteral}{'o'}, ls=\textcolor{stringliteral}{'-\/-\/'})}
+\DoxyCodeLine{113     ax1.axhline(-\/0.5, ls=\textcolor{stringliteral}{'-\/'}, color=\textcolor{stringliteral}{'black'}, alpha=0.3)}
+\DoxyCodeLine{114     ax1.set\_xlabel(\textcolor{stringliteral}{r'Bond Length / \$a\_\{0\}\$'})}
+\DoxyCodeLine{115     ax1.set\_ylabel(\textcolor{stringliteral}{'Energy / Ha'})}
 \DoxyCodeLine{116 }
-\DoxyCodeLine{117     fig.tight\_layout()}
-\DoxyCodeLine{118     fig.show()}
-\DoxyCodeLine{119 }
-\DoxyCodeLine{120     print(f\textcolor{stringliteral}{'Equilibrium bond length: \{min\_bond\_length\} Bohr'})}
-\DoxyCodeLine{121     print(f\textcolor{stringliteral}{'                         = \{min\_bond\_length*0.529177\} Angstroms'})}
-\DoxyCodeLine{122     print(f\textcolor{stringliteral}{'   at energy: \{min\_energy\} ± \{min\_energy\_stdev\} Ha'})}
-\DoxyCodeLine{123 }
-\DoxyCodeLine{124 }
+\DoxyCodeLine{117     ax2.set\_title(\textcolor{stringliteral}{r'Optimised parameter \$c\$'})}
+\DoxyCodeLine{118     ax2.plot(bond\_lengths, c\_opt)}
+\DoxyCodeLine{119     ax2.axhline(1/np.sqrt(2), ls=\textcolor{stringliteral}{'-\/'}, color=\textcolor{stringliteral}{'black'}, alpha=0.3)}
+\DoxyCodeLine{120     ax2.set\_xlabel(\textcolor{stringliteral}{r'Bond Length / \$a\_\{0\}\$'})}
+\DoxyCodeLine{121     ax2.set\_ylabel(\textcolor{stringliteral}{r'\$c\$'})}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     fig.tight\_layout()}
+\DoxyCodeLine{124     fig.show()}
 \DoxyCodeLine{125 }
+\DoxyCodeLine{126     print(f\textcolor{stringliteral}{'Equilibrium bond length: \{min\_bond\_length\} Bohr'})}
+\DoxyCodeLine{127     print(f\textcolor{stringliteral}{'                         = \{min\_bond\_length*0.529177\} Angstroms'})}
+\DoxyCodeLine{128     print(f\textcolor{stringliteral}{'   at energy: \{min\_energy\} ± \{min\_energy\_stdev\} Ha'})}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespacevis2_a7d278aa9a718e17bfdbff1f5ee1db529}\label{namespacevis2_a7d278aa9a718e17bfdbff1f5ee1db529}} 
@@ -239,61 +247,61 @@ Plots the H-\/H bond potential energy curve generated by VQMC at the optimum par
 \end{DoxyParams}
 
 
-Definition at line 126 of file vis2.\+py.
+Definition at line 132 of file vis2.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{126 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevis2_a7d278aa9a718e17bfdbff1f5ee1db529}{H2EnergyPlot}}(results\_file, sliceby=(\textcolor{keywordtype}{None}, \textcolor{keywordtype}{None})):}
-\DoxyCodeLine{127     \textcolor{stringliteral}{'''}}
-\DoxyCodeLine{128 \textcolor{stringliteral}{    @brief}}
-\DoxyCodeLine{129 \textcolor{stringliteral}{    @f\$ H\_\{2\} @f\$ H-\/H bond energy and parameter plotter.}}
-\DoxyCodeLine{130 \textcolor{stringliteral}{}}
-\DoxyCodeLine{131 \textcolor{stringliteral}{    @details}}
-\DoxyCodeLine{132 \textcolor{stringliteral}{    Plots the H-\/H bond potential energy curve generated by VQMC at the optimum}}
-\DoxyCodeLine{133 \textcolor{stringliteral}{    parameters for each bond length. Plots standard deviation of each energy as}}
-\DoxyCodeLine{134 \textcolor{stringliteral}{    a measure of uncertainty. Also plots variational parameters @f\$ a @f\$ and}}
-\DoxyCodeLine{135 \textcolor{stringliteral}{    @f\$ \(\backslash\)beta @f\$ against bond length. Reports equilibrium bond length for the}}
-\DoxyCodeLine{136 \textcolor{stringliteral}{    molecule and optimum energy.}}
-\DoxyCodeLine{137 \textcolor{stringliteral}{}}
-\DoxyCodeLine{138 \textcolor{stringliteral}{    @param[in]  results\_file    The main netCDF output file from a @f\$ H\_\{2\} @f\$ run}}
-\DoxyCodeLine{139 \textcolor{stringliteral}{    @param[in]  sliceby         (Optional) Tuple containing slice intervals for arrays}}
-\DoxyCodeLine{140 \textcolor{stringliteral}{    '''}}
-\DoxyCodeLine{141     dat = nd.Dataset(results\_file, \textcolor{stringliteral}{'r'}, format=\textcolor{stringliteral}{'NETCDF4'})}
-\DoxyCodeLine{142 }
-\DoxyCodeLine{143     bond\_lengths = dat.variables[\textcolor{stringliteral}{'Bondlength\_array'}][sliceby[0]:sliceby[1]]}
-\DoxyCodeLine{144     a\_opt = dat.variables[\textcolor{stringliteral}{'Parameter\_a\_array'}][sliceby[0]:sliceby[1]]}
-\DoxyCodeLine{145     beta\_opt = dat.variables[\textcolor{stringliteral}{'Parameter\_beta\_array'}][sliceby[0]:sliceby[1]]}
-\DoxyCodeLine{146     energies = dat.variables[\textcolor{stringliteral}{'total\_energies'}][sliceby[0]:sliceby[1]]}
-\DoxyCodeLine{147     variances = dat.variables[\textcolor{stringliteral}{'Uncertainties'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{132 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevis2_a7d278aa9a718e17bfdbff1f5ee1db529}{H2EnergyPlot}}(results\_file, sliceby=(\textcolor{keywordtype}{None}, \textcolor{keywordtype}{None})):}
+\DoxyCodeLine{133     \textcolor{stringliteral}{'''}}
+\DoxyCodeLine{134 \textcolor{stringliteral}{    @brief}}
+\DoxyCodeLine{135 \textcolor{stringliteral}{    @f\$ H\_\{2\} @f\$ H-\/H bond energy and parameter plotter.}}
+\DoxyCodeLine{136 \textcolor{stringliteral}{}}
+\DoxyCodeLine{137 \textcolor{stringliteral}{    @details}}
+\DoxyCodeLine{138 \textcolor{stringliteral}{    Plots the H-\/H bond potential energy curve generated by VQMC at the optimum}}
+\DoxyCodeLine{139 \textcolor{stringliteral}{    parameters for each bond length. Plots standard deviation of each energy as}}
+\DoxyCodeLine{140 \textcolor{stringliteral}{    a measure of uncertainty. Also plots variational parameters @f\$ a @f\$ and}}
+\DoxyCodeLine{141 \textcolor{stringliteral}{    @f\$ \(\backslash\)beta @f\$ against bond length. Reports equilibrium bond length for the}}
+\DoxyCodeLine{142 \textcolor{stringliteral}{    molecule and optimum energy.}}
+\DoxyCodeLine{143 \textcolor{stringliteral}{}}
+\DoxyCodeLine{144 \textcolor{stringliteral}{    @param[in]  results\_file    The main netCDF output file from a @f\$ H\_\{2\} @f\$ run}}
+\DoxyCodeLine{145 \textcolor{stringliteral}{    @param[in]  sliceby         (Optional) Tuple containing slice intervals for arrays}}
+\DoxyCodeLine{146 \textcolor{stringliteral}{    '''}}
+\DoxyCodeLine{147     dat = nd.Dataset(results\_file, \textcolor{stringliteral}{'r'}, format=\textcolor{stringliteral}{'NETCDF4'})}
 \DoxyCodeLine{148 }
-\DoxyCodeLine{149     stdevs = np.sqrt(variances)}
-\DoxyCodeLine{150     min\_energy = min(energies)}
-\DoxyCodeLine{151     min\_energy\_stdev = stdevs[np.argmin(energies)]}
-\DoxyCodeLine{152     min\_bond\_length = bond\_lengths[np.argmin(energies)]}
-\DoxyCodeLine{153 }
-\DoxyCodeLine{154     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 8))}
-\DoxyCodeLine{155 }
-\DoxyCodeLine{156     ax1.set\_title(\textcolor{stringliteral}{r'\$H\_\{2\}\$ bond energy curve'})}
-\DoxyCodeLine{157     ax1.errorbar(bond\_lengths, energies, yerr=stdevs, marker=\textcolor{stringliteral}{'o'}, ls=\textcolor{stringliteral}{'-\/-\/'})}
-\DoxyCodeLine{158     ax1.set\_xlabel(\textcolor{stringliteral}{r'Bond Length / \$a\_\{0\}\$'})}
-\DoxyCodeLine{159     ax1.set\_ylabel(\textcolor{stringliteral}{'Energy / Ha'})}
-\DoxyCodeLine{160 }
-\DoxyCodeLine{161     ax2.set\_title(\textcolor{stringliteral}{r'Optimised parameters'})}
-\DoxyCodeLine{162     ax2.plot(bond\_lengths, a\_opt, color=\textcolor{stringliteral}{'red'})}
-\DoxyCodeLine{163     ax2.set\_xlabel(\textcolor{stringliteral}{r'Bond Length / \$a\_\{0\}\$'})}
-\DoxyCodeLine{164     ax2.set\_ylabel(\textcolor{stringliteral}{r'\$a\$'}, color=\textcolor{stringliteral}{'red'})}
-\DoxyCodeLine{165     ax2.tick\_params(axis=\textcolor{stringliteral}{'y'}, labelcolor=\textcolor{stringliteral}{'red'})}
+\DoxyCodeLine{149     bond\_lengths = dat.variables[\textcolor{stringliteral}{'Bondlength\_array'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{150     a\_opt = dat.variables[\textcolor{stringliteral}{'Parameter\_a\_array'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{151     beta\_opt = dat.variables[\textcolor{stringliteral}{'Parameter\_beta\_array'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{152     energies = dat.variables[\textcolor{stringliteral}{'total\_energies'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{153     variances = dat.variables[\textcolor{stringliteral}{'Uncertainties'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155     stdevs = np.sqrt(variances)}
+\DoxyCodeLine{156     min\_energy = min(energies)}
+\DoxyCodeLine{157     min\_energy\_stdev = stdevs[np.argmin(energies)]}
+\DoxyCodeLine{158     min\_bond\_length = bond\_lengths[np.argmin(energies)]}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 8))}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162     ax1.set\_title(\textcolor{stringliteral}{r'\$H\_\{2\}\$ bond energy curve'})}
+\DoxyCodeLine{163     ax1.errorbar(bond\_lengths, energies, yerr=stdevs, marker=\textcolor{stringliteral}{'o'}, ls=\textcolor{stringliteral}{'-\/-\/'})}
+\DoxyCodeLine{164     ax1.set\_xlabel(\textcolor{stringliteral}{r'Bond Length / \$a\_\{0\}\$'})}
+\DoxyCodeLine{165     ax1.set\_ylabel(\textcolor{stringliteral}{'Energy / Ha'})}
 \DoxyCodeLine{166 }
-\DoxyCodeLine{167     ax2a = ax2.twinx()}
-\DoxyCodeLine{168     ax2a.plot(bond\_lengths, beta\_opt, color=\textcolor{stringliteral}{'blue'})}
-\DoxyCodeLine{169     ax2a.set\_ylabel(\textcolor{stringliteral}{r'\$\(\backslash\)beta\$'}, color=\textcolor{stringliteral}{'blue'})}
-\DoxyCodeLine{170     ax2a.tick\_params(axis=\textcolor{stringliteral}{'y'}, labelcolor=\textcolor{stringliteral}{'blue'})}
-\DoxyCodeLine{171 }
-\DoxyCodeLine{172     fig.tight\_layout()}
-\DoxyCodeLine{173     fig.show()}
-\DoxyCodeLine{174 }
-\DoxyCodeLine{175     print(f\textcolor{stringliteral}{'Equilibrium bond length: \{min\_bond\_length\} Bohr'})}
-\DoxyCodeLine{176     print(f\textcolor{stringliteral}{'                         = \{min\_bond\_length*0.529177\} Angstroms'})}
-\DoxyCodeLine{177     print(f\textcolor{stringliteral}{'   at energy: \{min\_energy\} ± \{min\_energy\_stdev\} Ha'})}
+\DoxyCodeLine{167     ax2.set\_title(\textcolor{stringliteral}{r'Optimised parameters'})}
+\DoxyCodeLine{168     ax2.plot(bond\_lengths, a\_opt, color=\textcolor{stringliteral}{'red'})}
+\DoxyCodeLine{169     ax2.set\_xlabel(\textcolor{stringliteral}{r'Bond Length / \$a\_\{0\}\$'})}
+\DoxyCodeLine{170     ax2.set\_ylabel(\textcolor{stringliteral}{r'\$a\$'}, color=\textcolor{stringliteral}{'red'})}
+\DoxyCodeLine{171     ax2.tick\_params(axis=\textcolor{stringliteral}{'y'}, labelcolor=\textcolor{stringliteral}{'red'})}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173     ax2a = ax2.twinx()}
+\DoxyCodeLine{174     ax2a.plot(bond\_lengths, beta\_opt, color=\textcolor{stringliteral}{'blue'})}
+\DoxyCodeLine{175     ax2a.set\_ylabel(\textcolor{stringliteral}{r'\$\(\backslash\)beta\$'}, color=\textcolor{stringliteral}{'blue'})}
+\DoxyCodeLine{176     ax2a.tick\_params(axis=\textcolor{stringliteral}{'y'}, labelcolor=\textcolor{stringliteral}{'blue'})}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178     fig.tight\_layout()}
+\DoxyCodeLine{179     fig.show()}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181     print(f\textcolor{stringliteral}{'Equilibrium bond length: \{min\_bond\_length\} Bohr'})}
+\DoxyCodeLine{182     print(f\textcolor{stringliteral}{'                         = \{min\_bond\_length*0.529177\} Angstroms'})}
+\DoxyCodeLine{183     print(f\textcolor{stringliteral}{'   at energy: \{min\_energy\} ± \{min\_energy\_stdev\} Ha'})}
 
 \end{DoxyCode}
