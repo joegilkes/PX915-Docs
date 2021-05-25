@@ -126,8 +126,8 @@ Definition at line 49 of file vis2.\+py.
 \DoxyCodeLine{60 \textcolor{stringliteral}{    '''}}
 \DoxyCodeLine{61     dat = nd.Dataset(chain\_file, \textcolor{stringliteral}{'r'}, format=\textcolor{stringliteral}{'NETCDF4'})}
 \DoxyCodeLine{62 }
-\DoxyCodeLine{63     positions = dat.variables[\textcolor{stringliteral}{'Positions'}][:-\/1]}
-\DoxyCodeLine{64     energies = dat.variables[\textcolor{stringliteral}{'Energies'}][:-\/1]}
+\DoxyCodeLine{63     positions = dat.variables[\textcolor{stringliteral}{'positions'}][:]}
+\DoxyCodeLine{64     energies = dat.variables[\textcolor{stringliteral}{'energies'}][:]}
 \DoxyCodeLine{65 }
 \DoxyCodeLine{66     plt.figure(figsize=(8, 8))}
 \DoxyCodeLine{67     plt.title(\textcolor{stringliteral}{'Sampled QHO Wavefunction'})}

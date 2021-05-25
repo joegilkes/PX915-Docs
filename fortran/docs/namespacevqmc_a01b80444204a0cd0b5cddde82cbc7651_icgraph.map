@@ -15,6 +15,6 @@
 <area shape="rect" id="node12" href="$namespacevqmc.html#a0a07ef5b098cdc478b253de26c49aadc" title="Automatically finds the best variational parameter &#160;for the &#160;problem at given bond length." alt="" coords="208,208,352,235"/>
 <area shape="rect" id="node13" href="$namespacevqmc.html#a169c06cb168984ca6285231ad80a0243" title="Performs VQMC on an array of values for the variational parameter , outputting energy traces for each..." alt="" coords="207,259,353,285"/>
 <area shape="rect" id="node14" href="$namespacevqmc.html#a70c9fcecdf5f2a6ffea7dd3c4f0c1eeb" title="Performs a grid search to find the optimal value for the variational parameter &#160;in the &#160;problem." alt="" coords="210,309,350,336"/>
-<area shape="rect" id="node16" href="$namespacevqmc.html#a5d73324fcbe9c3ef7fe11309581af529" title="Performs VQMC on an array of values for the variational parameter , outputting energy traces for each..." alt="" coords="223,411,337,437"/>
-<area shape="rect" id="node17" href="$namespacevqmc.html#a4856736e8ffc45caa57893a6b96318d3" title="Performs VQMC on an array of values for the variational parameter ." alt="" coords="225,360,335,387"/>
+<area shape="rect" id="node16" href="$namespacevqmc.html#a7bf32b6cd68452e6808f9e840b0484c3" title="Performs VQMC on an array of values for the variational parameter , outputting energy traces for each..." alt="" coords="223,411,337,437"/>
+<area shape="rect" id="node17" href="$namespacevqmc.html#a726aff689b64924586b655d2e8a846d1" title="Performs VQMC on an array of values for the variational parameter ." alt="" coords="225,360,335,387"/>
 </map>

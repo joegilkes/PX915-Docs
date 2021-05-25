@@ -97,7 +97,7 @@ Definition at line 48 of file testing.\+f90.
 \DoxyCodeLine{61 }
 \DoxyCodeLine{62         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{63             ierr = 1}
-\DoxyCodeLine{64             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F, ', got result ', F, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
+\DoxyCodeLine{64             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F12.8, ', got result ', F12.8, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
 \DoxyCodeLine{65 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
 \DoxyCodeLine{66             ierr = 0}
 \DoxyCodeLine{67 \textcolor{keywordflow}{        end if}}
@@ -155,7 +155,7 @@ Definition at line 85 of file testing.\+f90.
 \DoxyCodeLine{97 }
 \DoxyCodeLine{98         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{99             ierr = 1}
-\DoxyCodeLine{100             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F, ', got result ', F, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
+\DoxyCodeLine{100             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F12.8, ', got result ', F12.8, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
 \DoxyCodeLine{101 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
 \DoxyCodeLine{102             ierr = 0}
 \DoxyCodeLine{103 \textcolor{keywordflow}{        end if}}
@@ -213,7 +213,7 @@ Definition at line 120 of file testing.\+f90.
 \DoxyCodeLine{132 }
 \DoxyCodeLine{133         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{134             ierr = 1}
-\DoxyCodeLine{135             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F, ', got result ', F, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
+\DoxyCodeLine{135             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F12.8, ', got result ', F12.8, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
 \DoxyCodeLine{136 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
 \DoxyCodeLine{137             ierr = 0}
 \DoxyCodeLine{138 \textcolor{keywordflow}{        end if}}
@@ -271,7 +271,7 @@ Definition at line 155 of file testing.\+f90.
 \DoxyCodeLine{167 }
 \DoxyCodeLine{168         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{169             ierr = 1}
-\DoxyCodeLine{170             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F, ', got result ', F, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
+\DoxyCodeLine{170             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F12.8, ', got result ', F12.8, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
 \DoxyCodeLine{171 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
 \DoxyCodeLine{172             ierr = 0}
 \DoxyCodeLine{173 \textcolor{keywordflow}{        end if}}
@@ -331,7 +331,7 @@ Definition at line 191 of file testing.\+f90.
 \DoxyCodeLine{205 }
 \DoxyCodeLine{206         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{207             ierr = 1}
-\DoxyCodeLine{208             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F, ', got result ', F, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
+\DoxyCodeLine{208             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F12.8, ', got result ', F12.8, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
 \DoxyCodeLine{209 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
 \DoxyCodeLine{210             ierr = 0}
 \DoxyCodeLine{211 \textcolor{keywordflow}{        end if}}
@@ -392,7 +392,7 @@ Definition at line 229 of file testing.\+f90.
 \DoxyCodeLine{244 }
 \DoxyCodeLine{245         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{246             ierr = 1}
-\DoxyCodeLine{247             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F, ', got result ', F, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
+\DoxyCodeLine{247             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F12.8, ', got result ', F12.8, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
 \DoxyCodeLine{248 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
 \DoxyCodeLine{249             ierr = 0}
 \DoxyCodeLine{250 \textcolor{keywordflow}{        end if}}
@@ -454,10 +454,10 @@ Definition at line 268 of file testing.\+f90.
 \DoxyCodeLine{284 }
 \DoxyCodeLine{285         \textcolor{keywordflow}{if} (abs(energy\_actual -\/ energy\_expected) .ge. tol) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{286             ierr = 1}
-\DoxyCodeLine{287             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected energy: ' F, ', got energy ', F, ' instead.')"{}}\textcolor{comment}{) energy\_expected, energy\_actual}}
+\DoxyCodeLine{287             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected energy: ' F12.8, ', got energy ', F12.8, ' instead.')"{}}\textcolor{comment}{) energy\_expected, energy\_actual}}
 \DoxyCodeLine{288 \textcolor{comment}{}        \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (abs(grad\_actual -\/ grad\_expected) .ge. tol) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{289             ierr = 1}
-\DoxyCodeLine{290             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected gradient: ' F, ', got gradient ', F, ' instead.')"{}}\textcolor{comment}{) grad\_expected, grad\_actual}}
+\DoxyCodeLine{290             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected gradient: ' F12.8, ', got gradient ', F12.8, ' instead.')"{}}\textcolor{comment}{) grad\_expected, grad\_actual}}
 \DoxyCodeLine{291 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
 \DoxyCodeLine{292             ierr = 0}
 \DoxyCodeLine{293 \textcolor{keywordflow}{        end if}}
@@ -515,7 +515,7 @@ Definition at line 311 of file testing.\+f90.
 \DoxyCodeLine{323 }
 \DoxyCodeLine{324         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{325             ierr = 1}
-\DoxyCodeLine{326             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F, ', got result ', F, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
+\DoxyCodeLine{326             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F12.8, ', got result ', F12.8, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
 \DoxyCodeLine{327 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
 \DoxyCodeLine{328             ierr = 0}
 \DoxyCodeLine{329 \textcolor{keywordflow}{        end if}}
@@ -572,7 +572,7 @@ Definition at line 347 of file testing.\+f90.
 \DoxyCodeLine{358 }
 \DoxyCodeLine{359         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{360             ierr = 1}
-\DoxyCodeLine{361             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F, ', got result ', F, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
+\DoxyCodeLine{361             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F12.8, ', got result ', F12.8, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
 \DoxyCodeLine{362 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
 \DoxyCodeLine{363             ierr = 0}
 \DoxyCodeLine{364 \textcolor{keywordflow}{        end if}}
@@ -634,7 +634,7 @@ Definition at line 382 of file testing.\+f90.
 \DoxyCodeLine{398 }
 \DoxyCodeLine{399         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{400             ierr = 1}
-\DoxyCodeLine{401             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F, ', got result ', F, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
+\DoxyCodeLine{401             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F12.8, ', got result ', F12.8, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
 \DoxyCodeLine{402 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
 \DoxyCodeLine{403             ierr = 0}
 \DoxyCodeLine{404 \textcolor{keywordflow}{        end if}}
@@ -697,7 +697,7 @@ Definition at line 422 of file testing.\+f90.
 \DoxyCodeLine{439 \textcolor{comment}{}}
 \DoxyCodeLine{440         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{441             ierr = 1}
-\DoxyCodeLine{442             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F, ', got result ', F, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
+\DoxyCodeLine{442             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F12.8, ', got result ', F12.8, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
 \DoxyCodeLine{443 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
 \DoxyCodeLine{444             ierr = 0}
 \DoxyCodeLine{445 \textcolor{keywordflow}{        end if}}
@@ -760,10 +760,10 @@ Definition at line 463 of file testing.\+f90.
 \DoxyCodeLine{480 \textcolor{comment}{}}
 \DoxyCodeLine{481         \textcolor{keywordflow}{if} (abs(energy\_actual -\/ energy\_expected) .ge. tol) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{482             ierr = 1}
-\DoxyCodeLine{483             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected energy: ' F, ', got energy ', F, ' instead.')"{}}\textcolor{comment}{) energy\_expected, energy\_actual}}
+\DoxyCodeLine{483             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected energy: ' F12.8, ', got energy ', F12.8, ' instead.')"{}}\textcolor{comment}{) energy\_expected, energy\_actual}}
 \DoxyCodeLine{484 \textcolor{comment}{}        \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (abs(grad\_actual -\/ grad\_expected) .ge. tol) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{485             ierr = 1}
-\DoxyCodeLine{486             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected gradient: ' F, ', got gradient ', F, ' instead.')"{}}\textcolor{comment}{) grad\_expected, grad\_actual}}
+\DoxyCodeLine{486             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected gradient: ' F12.8, ', got gradient ', F12.8, ' instead.')"{}}\textcolor{comment}{) grad\_expected, grad\_actual}}
 \DoxyCodeLine{487 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
 \DoxyCodeLine{488             ierr = 0}
 \DoxyCodeLine{489 \textcolor{keywordflow}{        end if}}
@@ -821,7 +821,7 @@ Definition at line 507 of file testing.\+f90.
 \DoxyCodeLine{519 }
 \DoxyCodeLine{520         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{521             ierr = 1}
-\DoxyCodeLine{522             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F, ', got result ', F, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
+\DoxyCodeLine{522             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F12.8, ', got result ', F12.8, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
 \DoxyCodeLine{523 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
 \DoxyCodeLine{524             ierr = 0}
 \DoxyCodeLine{525 \textcolor{keywordflow}{        end if}}
@@ -880,7 +880,7 @@ Definition at line 548 of file testing.\+f90.
 \DoxyCodeLine{560         }
 \DoxyCodeLine{561         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{562             ierr = 1}
-\DoxyCodeLine{563             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F, ', got result ', F, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
+\DoxyCodeLine{563             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F12.8, ', got result ', F12.8, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
 \DoxyCodeLine{564 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
 \DoxyCodeLine{565             ierr = 0}
 \DoxyCodeLine{566 \textcolor{keywordflow}{        end if}}
@@ -941,7 +941,7 @@ Definition at line 586 of file testing.\+f90.
 \DoxyCodeLine{600 }
 \DoxyCodeLine{601         \textcolor{keywordflow}{if} (norm2(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{602             ierr = 1}
-\DoxyCodeLine{603             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F, ', got result ', F, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
+\DoxyCodeLine{603             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F12.8, ', got result ', F12.8, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
 \DoxyCodeLine{604 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
 \DoxyCodeLine{605             ierr = 0}
 \DoxyCodeLine{606 \textcolor{keywordflow}{        end if}}
@@ -1004,7 +1004,7 @@ Definition at line 624 of file testing.\+f90.
 \DoxyCodeLine{640 }
 \DoxyCodeLine{641         \textcolor{keywordflow}{if} (norm2(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{642             ierr = 1}
-\DoxyCodeLine{643             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F, ', got result ', F, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
+\DoxyCodeLine{643             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F12.8, ', got result ', F12.8, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
 \DoxyCodeLine{644 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
 \DoxyCodeLine{645             ierr = 0}
 \DoxyCodeLine{646 \textcolor{keywordflow}{        end if}}
@@ -1068,7 +1068,7 @@ Definition at line 664 of file testing.\+f90.
 \DoxyCodeLine{681 }
 \DoxyCodeLine{682         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{683             ierr = 1}
-\DoxyCodeLine{684             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F, ', got result ', F, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
+\DoxyCodeLine{684             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F12.8, ', got result ', F12.8, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
 \DoxyCodeLine{685 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
 \DoxyCodeLine{686             ierr = 0}
 \DoxyCodeLine{687 \textcolor{keywordflow}{        end if}}
@@ -1127,7 +1127,7 @@ Definition at line 705 of file testing.\+f90.
 \DoxyCodeLine{725 }
 \DoxyCodeLine{726         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{727             ierr = 1}
-\DoxyCodeLine{728             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F, ', got result ', F, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
+\DoxyCodeLine{728             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F12.8, ', got result ', F12.8, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
 \DoxyCodeLine{729 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
 \DoxyCodeLine{730             ierr = 0}
 \DoxyCodeLine{731 \textcolor{keywordflow}{        end if}}
@@ -1186,7 +1186,7 @@ Definition at line 749 of file testing.\+f90.
 \DoxyCodeLine{769 }
 \DoxyCodeLine{770         \textcolor{keywordflow}{if} (abs(res\_actual -\/ res\_expected) .ge. tol) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{771             ierr = 1}
-\DoxyCodeLine{772             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F, ', got result ', F, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
+\DoxyCodeLine{772             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Expected result: ' F12.8, ', got result ', F12.8, ' instead.')"{}}\textcolor{comment}{) res\_expected, res\_actual}}
 \DoxyCodeLine{773 \textcolor{comment}{}        \textcolor{keywordflow}{else}}
 \DoxyCodeLine{774             ierr = 0}
 \DoxyCodeLine{775 \textcolor{keywordflow}{        end if}}

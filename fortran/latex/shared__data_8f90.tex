@@ -73,9 +73,47 @@ character(len= $\ast$), parameter \mbox{\hyperlink{namespaceshared__data_a3e8175
 \begin{DoxyCompactList}\small\item\em Name of restart file storing parameter energies. \end{DoxyCompactList}\item 
 character(len= $\ast$), parameter \mbox{\hyperlink{namespaceshared__data_adf411355aadabf7c289e7105e57e02d4}{shared\+\_\+data\+::resfile\+\_\+chn}} = \textquotesingle{}res\+\_\+chains.\+nc\textquotesingle{}
 \begin{DoxyCompactList}\small\item\em Name of restart file storing energy chains. \end{DoxyCompactList}\item 
+integer(int32) \mbox{\hyperlink{namespaceshared__data_a076a0c3c193b4adf2a52bcb9acaa2565}{shared\+\_\+data\+::run\+\_\+steps}}
+\begin{DoxyCompactList}\small\item\em Number of MMC steps after burning (for MPI worksharing) \end{DoxyCompactList}\item 
+integer(int32) \mbox{\hyperlink{namespaceshared__data_a3be2ef6260b4058766e7a270721fb686}{shared\+\_\+data\+::tstep}}
+\begin{DoxyCompactList}\small\item\em Interval of steps for thinning in non-\/equil runs (for MPI worksharing) \end{DoxyCompactList}\item 
 integer(int32) \mbox{\hyperlink{namespaceshared__data_a28246c61bb5db3025877f5369254d399}{shared\+\_\+data\+::alpha\+\_\+start}} =1
 \begin{DoxyCompactList}\small\item\em Start value for alpha grid, can be $>$1 for restarts. \end{DoxyCompactList}\item 
 integer(int32) \mbox{\hyperlink{namespaceshared__data_abd55f854da9e9234d715022110bd076a}{shared\+\_\+data\+::bond\+\_\+start}} =1
 \begin{DoxyCompactList}\small\item\em Start value for bondlength grid, can be $>$1 for restarts. \end{DoxyCompactList}\item 
+integer(int32) \mbox{\hyperlink{namespaceshared__data_ace7224073c1af78df0dc9f7f0dc62cfd}{shared\+\_\+data\+::cgrid\+\_\+start}} =1
+\begin{DoxyCompactList}\small\item\em Start value for grid search of parameter c, can be $>$1 for restarts. \end{DoxyCompactList}\item 
+integer(int32) \mbox{\hyperlink{namespaceshared__data_a72cd266e5f18560f2d8c04f99c244901}{shared\+\_\+data\+::cauto\+\_\+start}} =1
+\begin{DoxyCompactList}\small\item\em Start value for automatic search of parameter c, can be $>$1 for restarts. \end{DoxyCompactList}\item 
 integer \mbox{\hyperlink{namespaceshared__data_af5798eba5b1c4594d4c3c9648d732e9e}{shared\+\_\+data\+::logid}}
-\begin{DoxyCompactList}\small\item\em To store logfile unit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em To store logfile unit. \end{DoxyCompactList}\item 
+logical \mbox{\hyperlink{namespaceshared__data_a829b5d4edec8365a446e8caeb244e9c9}{shared\+\_\+data\+::i\+\_\+log}} =.FALSE.
+\begin{DoxyCompactList}\small\item\em Indicates whether the processor needs to write the logfile. \end{DoxyCompactList}\item 
+integer \mbox{\hyperlink{namespaceshared__data_ade04a1c1d09d144038a197f87cdd6c6b}{shared\+\_\+data\+::max\+\_\+chain\+\_\+len}} =100000
+\begin{DoxyCompactList}\small\item\em Maximum length of energy chains for writing to net\+CDF files. \end{DoxyCompactList}\item 
+integer(int32) \mbox{\hyperlink{namespaceshared__data_af28e44e4992413c934847d53d0baf9df}{shared\+\_\+data\+::mpierr}}
+\begin{DoxyCompactList}\small\item\em MPI error flag. \end{DoxyCompactList}\item 
+integer(int32) \mbox{\hyperlink{namespaceshared__data_abc58d0e1fd387c74f530b35c02e97c77}{shared\+\_\+data\+::p}}
+\begin{DoxyCompactList}\small\item\em Number of processors. \end{DoxyCompactList}\item 
+integer(int32) \mbox{\hyperlink{namespaceshared__data_aeef8efadc3d25901a576ca7650fe1c38}{shared\+\_\+data\+::my\+\_\+rank}}
+\begin{DoxyCompactList}\small\item\em Rank of current processor. \end{DoxyCompactList}\item 
+integer(int32) \mbox{\hyperlink{namespaceshared__data_ae93449eb2c08ee77817e0b27aef94aae}{shared\+\_\+data\+::my\+\_\+steps}}
+\begin{DoxyCompactList}\small\item\em Number of steps per processor. \end{DoxyCompactList}\item 
+integer(int32) \mbox{\hyperlink{namespaceshared__data_a53aef60e9a1d10373ace8fe74a9db810}{shared\+\_\+data\+::ip}}
+\begin{DoxyCompactList}\small\item\em Processor rank for MPI communications. \end{DoxyCompactList}\item 
+integer(int64) \mbox{\hyperlink{namespaceshared__data_aea420d50119313f13ba1ca05064c4125}{shared\+\_\+data\+::ip\+\_\+seed}}
+\begin{DoxyCompactList}\small\item\em Processor seed for MPI communications. \end{DoxyCompactList}\item 
+integer(int32) \mbox{\hyperlink{namespaceshared__data_a90bd4a549f560641e7eb94862701ff2c}{shared\+\_\+data\+::tag\+\_\+seed}} =10
+\begin{DoxyCompactList}\small\item\em Unique tag for communicating rank seeds. \end{DoxyCompactList}\item 
+integer(int32) \mbox{\hyperlink{namespaceshared__data_ab233d5d23549fb2fa6bd5173c9253027}{shared\+\_\+data\+::my\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em Length of chain on a processor, after burning \& thinning. \end{DoxyCompactList}\item 
+integer(int32) \mbox{\hyperlink{namespaceshared__data_ade3f4c3e4dbfe45e09682164a27ead54}{shared\+\_\+data\+::tot\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em Total length of chains across processors, after burning and thinning. \end{DoxyCompactList}\item 
+integer, dimension(mpi\+\_\+status\+\_\+size) \mbox{\hyperlink{namespaceshared__data_aa6eec3f7d39e431314c9b039303805b5}{shared\+\_\+data\+::status}}
+\begin{DoxyCompactList}\small\item\em Status of MPI Recv commands. \end{DoxyCompactList}\item 
+real(real64) \mbox{\hyperlink{namespaceshared__data_a647c8ec22331dc222502337b5b94d808}{shared\+\_\+data\+::per\+\_\+step}}
+\begin{DoxyCompactList}\small\item\em Reused multiplicative factor, representing division by total number of MMC steps (tot\+\_\+size) \end{DoxyCompactList}\item 
+real(real64) \mbox{\hyperlink{namespaceshared__data_a78640b831cb27b9066c5fe420d83391d}{shared\+\_\+data\+::per\+\_\+proc}}
+\begin{DoxyCompactList}\small\item\em Reused multiplicative factor, representing division by number of processors (p) \end{DoxyCompactList}\item 
+real(real64) \mbox{\hyperlink{namespaceshared__data_a7355502513ab54ba438c558150499d39}{shared\+\_\+data\+::per\+\_\+proc2}}
+\begin{DoxyCompactList}\small\item\em Reused multiplicative factor, representing division by square of number of processors (p$^\wedge$2) \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -577,7 +577,7 @@ Definition at line 394 of file quantum\+\_\+solvers.\+f90.
 \DoxyCodeLine{410         maxiter = 100}
 \DoxyCodeLine{411         tol = 1e-\/5\_real64}
 \DoxyCodeLine{412 }
-\DoxyCodeLine{413         \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{413         \textcolor{keywordflow}{if} (i\_log) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{414             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Starting Newton-\/Raphson search for parameter a...')"{}}\textcolor{comment}{)}}
 \DoxyCodeLine{415 \textcolor{comment}{}            \textcolor{keyword}{write}(logid, *) \textcolor{stringliteral}{'a               abs(f)'}}
 \DoxyCodeLine{416 \textcolor{keywordflow}{        end if}}
@@ -588,7 +588,7 @@ Definition at line 394 of file quantum\+\_\+solvers.\+f90.
 \DoxyCodeLine{421         \textcolor{keywordflow}{do} k = 1, maxiter}
 \DoxyCodeLine{422 }
 \DoxyCodeLine{423             \textcolor{keywordflow}{if} (abs(f) .lt. tol) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{424                 \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{424                 \textcolor{keywordflow}{if} (i\_log) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{425                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Value of parameter a converged.')"{}})}
 \DoxyCodeLine{426                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}
 \DoxyCodeLine{427 \textcolor{keywordflow}{                end if}}
@@ -603,7 +603,7 @@ Definition at line 394 of file quantum\+\_\+solvers.\+f90.
 \DoxyCodeLine{436             \textcolor{comment}{! Update value of a}}
 \DoxyCodeLine{437             a = a -\/ (f / f\_dash)}
 \DoxyCodeLine{438 }
-\DoxyCodeLine{439             \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{439             \textcolor{keywordflow}{if} (i\_log) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{440                 \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(F12.8, '    ', F12.8)"{}}) a, abs(f)}
 \DoxyCodeLine{441 \textcolor{keywordflow}{            end if}}
 \DoxyCodeLine{442 }

@@ -947,7 +947,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        maxiter = 100</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        tol = 1e-5_real64</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        <span class="keywordflow">if</span> (i_log) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;            <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;Starting Newton-Raphson search for parameter a...&#39;)&quot;</span><span class="comment">)</span></div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;<span class="comment"></span>            <span class="keyword">write</span>(logid, *) <span class="stringliteral">&#39;a               abs(f)&#39;</span></div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;<span class="keywordflow">        end if</span></div>
@@ -958,7 +958,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        <span class="keywordflow">do</span> k = 1, maxiter</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160; </div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;            <span class="keywordflow">if</span> (abs(f) .lt. tol) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                <span class="keywordflow">if</span> (i_log) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                    <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;Value of parameter a converged.&#39;)&quot;</span>)</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                    <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;&#39;)&quot;</span>)</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;<span class="keywordflow">                end if</span></div>
@@ -973,7 +973,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            <span class="comment">! Update value of a</span></div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;            a = a - (f / f_dash)</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160; </div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            <span class="keywordflow">if</span> (i_log) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(F12.8, &#39;    &#39;, F12.8)&quot;</span>) a, abs(f)</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;<span class="keywordflow">            end if</span></div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160; </div>
