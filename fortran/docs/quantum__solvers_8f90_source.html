@@ -485,86 +485,86 @@ $(document).ready(function(){initNavTree('quantum__solvers_8f90_source.html','')
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    <span class="comment">!</span></div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    <span class="comment">!</span></div>
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    <span class="comment">! PARAMETERS:</span></div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    <span class="comment">! -----------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00590"></a><span class="lineno"><a class="line" href="namespacesolvers.html#a9afbcdcc0405d544d4441e9786f440a2">  590</a></span>&#160;    <span class="keyword">subroutine </span><a class="code" href="namespacesolvers.html#a9afbcdcc0405d544d4441e9786f440a2">h_2_energy</a>(a, beta, r_1, r_2, R_a, R_b, E_loc, DphiDbeta)</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160; </div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;        <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160; </div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: a</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: beta</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: r_1, r_2</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: R_a, R_b</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160; </div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span> :: E_loc</div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span> :: DphiDbeta</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160; </div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;<span class="keywordtype">        real</span>(real64) :: E1, E2, E3, E4, E5, E6, E7, E8</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;<span class="keywordtype">        real</span>(real64) :: phi_1a, phi_1b, phi_1</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;<span class="keywordtype">        real</span>(real64) :: phi_2a, phi_2b, phi_2</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;<span class="keywordtype">        real</span>(real64) :: r_1a, r_1b, r_2a, r_2b, r_12</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: r_1a_hat, r_1b_hat, r_2a_hat, r_2b_hat, r_12_hat</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160; </div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;        r_1a = norm2(r_1 - r_a)</div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;        r_1b = norm2(r_1 - r_b)</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;        r_2a = norm2(r_2 - r_a)</div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;        r_2b = norm2(r_2 - r_b)</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;        r_12 = norm2(r_1 - r_2)</div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160; </div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;        r_1a_hat = (r_1 - r_a) / spread(r_1a, 1, 3)</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;        r_1b_hat = (r_1 - r_b) / spread(r_1b, 1, 3)</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;        r_2a_hat = (r_2 - r_a) / spread(r_2a, 1, 3)</div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;        r_2b_hat = (r_2 - r_b) / spread(r_2b, 1, 3)</div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;        r_12_hat = (r_1 - r_2) / spread(r_12, 1, 3)</div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160; </div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;        phi_1a = exp(-r_1a / a)</div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;        phi_1b = exp(-r_1b / a)</div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;        phi_2a = exp(-r_2a / a)</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;        phi_2b = exp(-r_2b / a)</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160; </div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;        phi_1 = phi_1a + phi_1b</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        phi_2 = phi_2a + phi_2b</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160; </div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;        e1 = 1.0_real64 / (a*a)</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;        e2 = ((phi_1a / r_1a) + (phi_1b / r_1b)) / (a * phi_1)</div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;        e3 = ((phi_2a / r_2a) + (phi_2b / r_2b)) / (a * phi_2)</div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;        e4 = (1.0_real64 / r_1a) + (1.0_real64 / r_1b) + (1.0_real64 / r_2a) + (1.0_real64 / r_2b)</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;        e5 = 1.0_real64 / r_12</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;        e6 = ((((phi_1a * sum(r_1a_hat * r_12_hat, dim=1)) + (phi_1b * sum(r_1b_hat * r_12_hat, dim=1))) / phi_1) &amp;</div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;            - (((phi_2a * sum(r_2a_hat * r_12_hat, dim=1)) + (phi_2b * sum(r_2b_hat * r_12_hat, dim=1))) / phi_2)) &amp;</div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;            / (2.0_real64 * a * (1.0_real64 + beta*r_12)**2)</div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;        e7 = (((4.0_real64*beta + 1.0_real64) * r_12) + 4.0_real64) &amp;</div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;            / (4.0_real64 * r_12 * (1.0_real64 + beta*r_12)**4)</div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;        e8 = (1.0_real64 / norm2(r_a - r_b))</div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160; </div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;        e_loc = -e1 + e2 + e3 - e4 + e5 + e6 - e7 + e8</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160; </div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;        dphidbeta = -(r_12*r_12) / (2.0_real64*(1.0_real64 + beta*r_12)**2)</div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160; </div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;    <span class="keyword">end subroutine </span><a class="code" href="namespacesolvers.html#a9afbcdcc0405d544d4441e9786f440a2">h_2_energy</a></div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160; </div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    <span class="comment">! -----------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;    <span class="comment">! ROUTINE: H_2_update_beta</span></div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;    <span class="comment">!</span></div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;    <span class="comment">! DESCRIPTION:</span></div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;    <span class="comment">!</span></div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;    <span class="comment">!</span></div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;    <span class="comment">! PARAMETERS:</span></div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;    <span class="comment">! -----------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00663"></a><span class="lineno"><a class="line" href="namespacesolvers.html#a4b4d370a4ee50b231f53058ab62e4084">  663</a></span>&#160;    <span class="keyword">subroutine </span><a class="code" href="namespacesolvers.html#a4b4d370a4ee50b231f53058ab62e4084">h_2_update_beta</a>(beta_old, gradient, beta_new)</div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160; </div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;        <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160; </div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: beta_old</div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: gradient</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span> :: beta_new</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160; </div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;<span class="keywordtype">        real</span>(real64) :: damping = 1.0_real64</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160; </div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;        beta_new = beta_old - (damping * gradient)</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160; </div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    <span class="keyword">end subroutine </span><a class="code" href="namespacesolvers.html#a4b4d370a4ee50b231f53058ab62e4084">h_2_update_beta</a></div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    </div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;<span class="keyword">end module </span>solvers</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    <span class="comment">! -----------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00591"></a><span class="lineno"><a class="line" href="namespacesolvers.html#a9afbcdcc0405d544d4441e9786f440a2">  591</a></span>&#160;    <span class="keyword">subroutine </span><a class="code" href="namespacesolvers.html#a9afbcdcc0405d544d4441e9786f440a2">h_2_energy</a>(a, beta, r_1, r_2, R_a, R_b, E_loc, DphiDbeta)</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160; </div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;        <span class="keywordtype">implicit none</span></div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160; </div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: a</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: beta</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: r_1, r_2</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: R_a, R_b</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160; </div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span> :: E_loc</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span> :: DphiDbeta</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160; </div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;<span class="keywordtype">        real</span>(real64) :: E1, E2, E3, E4, E5, E6, E7, E8</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;<span class="keywordtype">        real</span>(real64) :: phi_1a, phi_1b, phi_1</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;<span class="keywordtype">        real</span>(real64) :: phi_2a, phi_2b, phi_2</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;<span class="keywordtype">        real</span>(real64) :: r_1a, r_1b, r_2a, r_2b, r_12</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: r_1a_hat, r_1b_hat, r_2a_hat, r_2b_hat, r_12_hat</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160; </div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;        r_1a = norm2(r_1 - r_a)</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;        r_1b = norm2(r_1 - r_b)</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;        r_2a = norm2(r_2 - r_a)</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;        r_2b = norm2(r_2 - r_b)</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;        r_12 = norm2(r_1 - r_2)</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160; </div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;        r_1a_hat = (r_1 - r_a) / spread(r_1a, 1, 3)</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;        r_1b_hat = (r_1 - r_b) / spread(r_1b, 1, 3)</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;        r_2a_hat = (r_2 - r_a) / spread(r_2a, 1, 3)</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;        r_2b_hat = (r_2 - r_b) / spread(r_2b, 1, 3)</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;        r_12_hat = (r_1 - r_2) / spread(r_12, 1, 3)</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160; </div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;        phi_1a = exp(-r_1a / a)</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;        phi_1b = exp(-r_1b / a)</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;        phi_2a = exp(-r_2a / a)</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;        phi_2b = exp(-r_2b / a)</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160; </div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        phi_1 = phi_1a + phi_1b</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;        phi_2 = phi_2a + phi_2b</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160; </div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;        e1 = 1.0_real64 / (a*a)</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;        e2 = ((phi_1a / r_1a) + (phi_1b / r_1b)) / (a * phi_1)</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;        e3 = ((phi_2a / r_2a) + (phi_2b / r_2b)) / (a * phi_2)</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;        e4 = (1.0_real64 / r_1a) + (1.0_real64 / r_1b) + (1.0_real64 / r_2a) + (1.0_real64 / r_2b)</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;        e5 = 1.0_real64 / r_12</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;        e6 = ((((phi_1a * sum(r_1a_hat * r_12_hat, dim=1)) + (phi_1b * sum(r_1b_hat * r_12_hat, dim=1))) / phi_1) &amp;</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;            - (((phi_2a * sum(r_2a_hat * r_12_hat, dim=1)) + (phi_2b * sum(r_2b_hat * r_12_hat, dim=1))) / phi_2)) &amp;</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;            / (2.0_real64 * a * (1.0_real64 + beta*r_12)**2)</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;        e7 = (((4.0_real64*beta + 1.0_real64) * r_12) + 4.0_real64) &amp;</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;            / (4.0_real64 * r_12 * (1.0_real64 + beta*r_12)**4)</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;        e8 = (1.0_real64 / norm2(r_a - r_b))</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160; </div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;        e_loc = -e1 + e2 + e3 - e4 + e5 + e6 - e7 + e8</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160; </div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;        dphidbeta = -(r_12*r_12) / (2.0_real64*(1.0_real64 + beta*r_12)**2)</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160; </div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    <span class="keyword">end subroutine </span><a class="code" href="namespacesolvers.html#a9afbcdcc0405d544d4441e9786f440a2">h_2_energy</a></div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160; </div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;    <span class="comment">! -----------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;    <span class="comment">! ROUTINE: H_2_update_beta</span></div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;    <span class="comment">!</span></div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;    <span class="comment">! DESCRIPTION:</span></div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    <span class="comment">!</span></div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;    <span class="comment">!</span></div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;    <span class="comment">! PARAMETERS:</span></div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;    <span class="comment">! -----------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00664"></a><span class="lineno"><a class="line" href="namespacesolvers.html#a4b4d370a4ee50b231f53058ab62e4084">  664</a></span>&#160;    <span class="keyword">subroutine </span><a class="code" href="namespacesolvers.html#a4b4d370a4ee50b231f53058ab62e4084">h_2_update_beta</a>(beta_old, gradient, beta_new)</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160; </div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;        <span class="keywordtype">implicit none</span></div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160; </div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: beta_old</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: gradient</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(out)</span> :: beta_new</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160; </div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;<span class="keywordtype">        real</span>(real64) :: damping = 1.0_real64</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160; </div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;        beta_new = beta_old - (damping * gradient)</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160; </div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    <span class="keyword">end subroutine </span><a class="code" href="namespacesolvers.html#a4b4d370a4ee50b231f53058ab62e4084">h_2_update_beta</a></div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    </div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;<span class="keyword">end module </span>solvers</div>
 <div class="ttc" id="anamespaceconstants_html"><div class="ttname"><a href="namespaceconstants.html">constants</a></div><div class="ttdoc">Contains mathematical constants needed throughout the code, all of which are globally accessible.</div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00016">shared_data.f90:16</a></div></div>
 <div class="ttc" id="anamespaceconstants_html_a444dcf0e44c72ee753f937ae46b38493"><div class="ttname"><a href="namespaceconstants.html#a444dcf0e44c72ee753f937ae46b38493">constants::pi_dash_2</a></div><div class="ttdeci">real(real64), parameter pi_dash_2</div><div class="ttdoc">1 / (4*sqrt(2*pi)) - multiplication factor used by H2s_wfn</div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00026">shared_data.f90:26</a></div></div>
 <div class="ttc" id="anamespaceconstants_html_a54c9d4eb7a08da77b2012fc1dfe8612b"><div class="ttname"><a href="namespaceconstants.html#a54c9d4eb7a08da77b2012fc1dfe8612b">constants::pi_dash</a></div><div class="ttdeci">real(real64), parameter pi_dash</div><div class="ttdoc">1 / sqrt(pi) - multiplication factor used by H1s_wfn</div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00025">shared_data.f90:25</a></div></div>
@@ -574,14 +574,14 @@ $(document).ready(function(){initNavTree('quantum__solvers_8f90_source.html','')
 <div class="ttc" id="anamespaceshared__data_html_af5798eba5b1c4594d4c3c9648d732e9e"><div class="ttname"><a href="namespaceshared__data.html#af5798eba5b1c4594d4c3c9648d732e9e">shared_data::logid</a></div><div class="ttdeci">integer logid</div><div class="ttdoc">To store logfile unit.</div><div class="ttdef"><b>Definition:</b> <a href="shared__data_8f90_source.html#l00153">shared_data.f90:153</a></div></div>
 <div class="ttc" id="anamespacesolvers_html"><div class="ttname"><a href="namespacesolvers.html">solvers</a></div><div class="ttdoc">Contains local energy and transition probability solvers for available problems.</div><div class="ttdef"><b>Definition:</b> <a href="quantum__solvers_8f90_source.html#l00016">quantum_solvers.f90:16</a></div></div>
 <div class="ttc" id="anamespacesolvers_html_a38259c21a02a250a91f45d79e4165742"><div class="ttname"><a href="namespacesolvers.html#a38259c21a02a250a91f45d79e4165742">solvers::h_2_cusp</a></div><div class="ttdeci">real(real64) function h_2_cusp(s)</div><div class="ttdoc">Calculates a value for a given the bond length s by Newton-Raphson iteration.</div><div class="ttdef"><b>Definition:</b> <a href="quantum__solvers_8f90_source.html#l00394">quantum_solvers.f90:395</a></div></div>
-<div class="ttc" id="anamespacesolvers_html_a4b4d370a4ee50b231f53058ab62e4084"><div class="ttname"><a href="namespacesolvers.html#a4b4d370a4ee50b231f53058ab62e4084">solvers::h_2_update_beta</a></div><div class="ttdeci">subroutine h_2_update_beta(beta_old, gradient, beta_new)</div><div class="ttdoc">Updates the  parameter in the  problem by dampened steepest descent.</div><div class="ttdef"><b>Definition:</b> <a href="quantum__solvers_8f90_source.html#l00663">quantum_solvers.f90:664</a></div></div>
+<div class="ttc" id="anamespacesolvers_html_a4b4d370a4ee50b231f53058ab62e4084"><div class="ttname"><a href="namespacesolvers.html#a4b4d370a4ee50b231f53058ab62e4084">solvers::h_2_update_beta</a></div><div class="ttdeci">subroutine h_2_update_beta(beta_old, gradient, beta_new)</div><div class="ttdoc">Updates the  parameter in the  problem by dampened steepest descent.</div><div class="ttdef"><b>Definition:</b> <a href="quantum__solvers_8f90_source.html#l00664">quantum_solvers.f90:665</a></div></div>
 <div class="ttc" id="anamespacesolvers_html_a4f0054c0d0d2f5080c92a04557feaf52"><div class="ttname"><a href="namespacesolvers.html#a4f0054c0d0d2f5080c92a04557feaf52">solvers::qho_energy</a></div><div class="ttdeci">real(real64) function qho_energy(alpha, x)</div><div class="ttdoc">Calculates local energy for quantum harmonic oscillator problem.</div><div class="ttdef"><b>Definition:</b> <a href="quantum__solvers_8f90_source.html#l00076">quantum_solvers.f90:77</a></div></div>
 <div class="ttc" id="anamespacesolvers_html_a5695d107239a7a8fb1f8b096786af028"><div class="ttname"><a href="namespacesolvers.html#a5695d107239a7a8fb1f8b096786af028">solvers::h_2_plus_prob</a></div><div class="ttdeci">real(real64) function h_2_plus_prob(c, r_current, r_next, R_a, R_b)</div><div class="ttdoc">Calculates transition probability for the  problem.</div><div class="ttdef"><b>Definition:</b> <a href="quantum__solvers_8f90_source.html#l00225">quantum_solvers.f90:226</a></div></div>
 <div class="ttc" id="anamespacesolvers_html_a6d705d11696b64991f1624e298067bed"><div class="ttname"><a href="namespacesolvers.html#a6d705d11696b64991f1624e298067bed">solvers::h_2_plus_wfn</a></div><div class="ttdeci">real(real64) function h_2_plus_wfn(c, r, R_a, R_b)</div><div class="ttdoc">Calculates trial wavefunction for the  problem.</div><div class="ttdef"><b>Definition:</b> <a href="quantum__solvers_8f90_source.html#l00190">quantum_solvers.f90:191</a></div></div>
 <div class="ttc" id="anamespacesolvers_html_a722edf182d188ad1db7fa6a675fea13c"><div class="ttname"><a href="namespacesolvers.html#a722edf182d188ad1db7fa6a675fea13c">solvers::qho_prob</a></div><div class="ttdeci">real(real64) function qho_prob(alpha, x_current, x_next)</div><div class="ttdoc">Calculates transition probability for quantum harmonic oscillator problem.</div><div class="ttdef"><b>Definition:</b> <a href="quantum__solvers_8f90_source.html#l00047">quantum_solvers.f90:48</a></div></div>
 <div class="ttc" id="anamespacesolvers_html_a7d32620a8f8a8780a0b0ef83c490e8f7"><div class="ttname"><a href="namespacesolvers.html#a7d32620a8f8a8780a0b0ef83c490e8f7">solvers::h1s_wfn</a></div><div class="ttdeci">real(real64) function h1s_wfn(r_elec, R_nuc)</div><div class="ttdoc">Calculates value of the wavefunction of a hydrogen 1s orbital.</div><div class="ttdef"><b>Definition:</b> <a href="quantum__solvers_8f90_source.html#l00111">quantum_solvers.f90:112</a></div></div>
 <div class="ttc" id="anamespacesolvers_html_a89943685e3d86544f0261f24fac44419"><div class="ttname"><a href="namespacesolvers.html#a89943685e3d86544f0261f24fac44419">solvers::h2s_wfn</a></div><div class="ttdeci">real(real64) function h2s_wfn(r_elec, R_nuc)</div><div class="ttdoc">[DEPRECATED] Calculates value of the wavefunction of a hydrogen 2s orbital.</div><div class="ttdef"><b>Definition:</b> <a href="quantum__solvers_8f90_source.html#l00149">quantum_solvers.f90:150</a></div></div>
-<div class="ttc" id="anamespacesolvers_html_a9afbcdcc0405d544d4441e9786f440a2"><div class="ttname"><a href="namespacesolvers.html#a9afbcdcc0405d544d4441e9786f440a2">solvers::h_2_energy</a></div><div class="ttdeci">subroutine h_2_energy(a, beta, r_1, r_2, R_a, R_b, E_loc, DphiDbeta)</div><div class="ttdoc">{UPDATE ME} Calculates local energy for the  problem.</div><div class="ttdef"><b>Definition:</b> <a href="quantum__solvers_8f90_source.html#l00590">quantum_solvers.f90:591</a></div></div>
+<div class="ttc" id="anamespacesolvers_html_a9afbcdcc0405d544d4441e9786f440a2"><div class="ttname"><a href="namespacesolvers.html#a9afbcdcc0405d544d4441e9786f440a2">solvers::h_2_energy</a></div><div class="ttdeci">subroutine h_2_energy(a, beta, r_1, r_2, R_a, R_b, E_loc, DphiDbeta)</div><div class="ttdoc">{UPDATE ME} Calculates local energy for the  problem.</div><div class="ttdef"><b>Definition:</b> <a href="quantum__solvers_8f90_source.html#l00591">quantum_solvers.f90:592</a></div></div>
 <div class="ttc" id="anamespacesolvers_html_a9cc5ffb282a9d15708307d84f6cf147f"><div class="ttname"><a href="namespacesolvers.html#a9cc5ffb282a9d15708307d84f6cf147f">solvers::h_2_plus_energy</a></div><div class="ttdeci">subroutine h_2_plus_energy(c, r, R_a, R_b, E_loc, gradient)</div><div class="ttdoc">Calculates local energy for the  problem.</div><div class="ttdef"><b>Definition:</b> <a href="quantum__solvers_8f90_source.html#l00277">quantum_solvers.f90:278</a></div></div>
 <div class="ttc" id="anamespacesolvers_html_ac30d1c7141f673647e837524ecb26b07"><div class="ttname"><a href="namespacesolvers.html#ac30d1c7141f673647e837524ecb26b07">solvers::h_2_prob</a></div><div class="ttdeci">real(real64) function h_2_prob(a, beta, r_1_current, r_2_current, r_1_next, r_2_next, R_a, R_b)</div><div class="ttdoc">Calculates transition probability for the  problem.</div><div class="ttdef"><b>Definition:</b> <a href="quantum__solvers_8f90_source.html#l00539">quantum_solvers.f90:541</a></div></div>
 <div class="ttc" id="anamespacesolvers_html_ac603f31a67286a6e89588cf4de29bd1b"><div class="ttname"><a href="namespacesolvers.html#ac603f31a67286a6e89588cf4de29bd1b">solvers::h_2_wfn</a></div><div class="ttdeci">real(real64) function h_2_wfn(a, beta, r_1, r_2, R_a, R_b)</div><div class="ttdoc">Calculates trial wavefunction for the  problem.</div><div class="ttdef"><b>Definition:</b> <a href="quantum__solvers_8f90_source.html#l00488">quantum_solvers.f90:489</a></div></div>

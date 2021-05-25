@@ -1,0 +1,4 @@
+<map id="testing::test_h_2_update_beta" name="testing::test_h_2_update_beta">
+<area shape="rect" id="node1" title="Tests the H_2_update_beta function in the solvers module." alt="" coords="5,5,200,32"/>
+<area shape="rect" id="node2" href="$namespacesolvers.html#a4b4d370a4ee50b231f53058ab62e4084" title="Updates the &#160;parameter in the &#160;problem by dampened steepest descent." alt="" coords="248,5,417,32"/>
+</map>

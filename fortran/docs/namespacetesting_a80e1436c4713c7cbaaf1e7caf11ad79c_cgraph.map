@@ -1,0 +1,4 @@
+<map id="testing::test_h_2_plus_update_c" name="testing::test_h_2_plus_update_c">
+<area shape="rect" id="node1" title="Tests the H_2_plus_update_c function in the solvers module." alt="" coords="5,5,153,47"/>
+<area shape="rect" id="node2" href="$namespacesolvers.html#acb91c2bfc7ae441b3e24f83d0f49d55a" title="Updates the &#160;parameter in the &#160;problem by dampened steepest descent." alt="" coords="201,13,384,39"/>
+</map>

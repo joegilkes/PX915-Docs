@@ -1,5 +1,7 @@
 <map id="vqmc::linspace" name="vqmc::linspace">
-<area shape="rect" id="node1" title="Adaptation of numpy&#39;s linspace function." alt="" coords="207,5,315,32"/>
+<area shape="rect" id="node1" title="Adaptation of numpy&#39;s linspace function." alt="" coords="571,5,679,32"/>
 <area shape="rect" id="node2" href="$driver_8f90.html#aae94725eafaedc467ab9bfefcae9769e" title="Subroutine for running the main code (needed for Doxygen compatability)." alt="" coords="104,5,159,32"/>
+<area shape="rect" id="node4" href="$namespacetesting.html#a5fce9aca0a9c6be18a50bdb72c2facb1" title="Tests the linspace function in the vqmc module." alt="" coords="379,31,523,57"/>
 <area shape="rect" id="node3" href="$driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="Main program, contains the driver subroutine that runs all other code." alt="" coords="5,5,56,32"/>
+<area shape="rect" id="node5" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="207,31,331,57"/>
 </map>

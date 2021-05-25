@@ -1,5 +1,7 @@
 <map id="solvers::h_2_cusp" name="solvers::h_2_cusp">
-<area shape="rect" id="node1" title="Calculates a value for a given the bond length s by Newton&#45;Raphson iteration." alt="" coords="207,5,333,32"/>
+<area shape="rect" id="node1" title="Calculates a value for a given the bond length s by Newton&#45;Raphson iteration." alt="" coords="579,5,705,32"/>
 <area shape="rect" id="node2" href="$driver_8f90.html#aae94725eafaedc467ab9bfefcae9769e" title="Subroutine for running the main code (needed for Doxygen compatability)." alt="" coords="104,5,159,32"/>
+<area shape="rect" id="node4" href="$namespacetesting.html#ade975131820e8f24948af289d5ad3879" title="Tests the H_2_cusp function in the solvers module." alt="" coords="379,31,531,57"/>
 <area shape="rect" id="node3" href="$driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="Main program, contains the driver subroutine that runs all other code." alt="" coords="5,5,56,32"/>
+<area shape="rect" id="node5" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="207,31,331,57"/>
 </map>

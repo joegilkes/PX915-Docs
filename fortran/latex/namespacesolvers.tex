@@ -523,6 +523,14 @@ Definition at line 354 of file quantum\+\_\+solvers.\+f90.
 \DoxyCodeLine{366 }
 
 \end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacesolvers_acb91c2bfc7ae441b3e24f83d0f49d55a_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{namespacesolvers_a38259c21a02a250a91f45d79e4165742}\label{namespacesolvers_a38259c21a02a250a91f45d79e4165742}} 
 \index{solvers@{solvers}!h\_2\_cusp@{h\_2\_cusp}}
 \index{h\_2\_cusp@{h\_2\_cusp}!solvers@{solvers}}
@@ -613,7 +621,7 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=326pt]{namespacesolvers_a38259c21a02a250a91f45d79e4165742_icgraph}
+\includegraphics[width=350pt]{namespacesolvers_a38259c21a02a250a91f45d79e4165742_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{namespacesolvers_ac603f31a67286a6e89588cf4de29bd1b}\label{namespacesolvers_ac603f31a67286a6e89588cf4de29bd1b}} 
@@ -774,7 +782,9 @@ Function to calculate the local energy of two walkers in the $ H_{2} $ problem. 
 
 Also calculates the gradient with respect to the parameter $ \beta $, provided auto\+\_\+params for this problem is set to {\itshape TRUE}. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em c} & Parameter(s) of trial wavefunction \\
+\mbox{\texttt{ in}}  & {\em a} & Parameter $ a $ of trial wavefunction \\
+\hline
+\mbox{\texttt{ in}}  & {\em beta} & Parameter $ \beta $ of trial wavefunction \\
 \hline
 \mbox{\texttt{ in}}  & {\em r\+\_\+1} & Position of walker 1 \\
 \hline
@@ -784,73 +794,70 @@ Also calculates the gradient with respect to the parameter $ \beta $, provided a
 \hline
 \mbox{\texttt{ in}}  & {\em R\+\_\+b} & Position of hydrogen atom B \\
 \hline
-\mbox{\texttt{ in}}  & {\em fdstep} & Finite difference step size (optional, default = 1e-\/3 Bohr) \\
+\mbox{\texttt{ out}}  & {\em E\+\_\+loc} & Local energy \\
+\hline
+\mbox{\texttt{ out}}  & {\em Dphi\+Dbeta} & Wavefunction gradient with respect to $ \beta $ \\
 \hline
 \end{DoxyParams}
 
-\begin{DoxyRetVals}{Return values}
-{\em E\+\_\+loc} & Local energy \\
-\hline
-\end{DoxyRetVals}
 
-
-Definition at line 590 of file quantum\+\_\+solvers.\+f90.
+Definition at line 591 of file quantum\+\_\+solvers.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{591 }
-\DoxyCodeLine{592         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{593 }
-\DoxyCodeLine{594 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: a}
-\DoxyCodeLine{595 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: beta}
-\DoxyCodeLine{596 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_1, r\_2}
-\DoxyCodeLine{597 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
-\DoxyCodeLine{598 }
-\DoxyCodeLine{599 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: E\_loc}
-\DoxyCodeLine{600 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: DphiDbeta}
-\DoxyCodeLine{601 }
-\DoxyCodeLine{602 \textcolor{keywordtype}{        real}(real64) :: E1, E2, E3, E4, E5, E6, E7, E8}
-\DoxyCodeLine{603 \textcolor{keywordtype}{        real}(real64) :: phi\_1a, phi\_1b, phi\_1}
-\DoxyCodeLine{604 \textcolor{keywordtype}{        real}(real64) :: phi\_2a, phi\_2b, phi\_2}
-\DoxyCodeLine{605 \textcolor{keywordtype}{        real}(real64) :: r\_1a, r\_1b, r\_2a, r\_2b, r\_12}
-\DoxyCodeLine{606 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_1a\_hat, r\_1b\_hat, r\_2a\_hat, r\_2b\_hat\textcolor{comment}{, r\_12\_hat}}
-\DoxyCodeLine{607 \textcolor{comment}{}}
-\DoxyCodeLine{608 \textcolor{comment}{        r\_1a = norm2(r\_1 -\/ r\_a)}}
-\DoxyCodeLine{609 \textcolor{comment}{}        r\_1b = norm2(r\_1 -\/ r\_b)}
-\DoxyCodeLine{610         r\_2a = norm2(r\_2 -\/ r\_a)}
-\DoxyCodeLine{611         r\_2b = norm2(r\_2 -\/ r\_b)}
-\DoxyCodeLine{612         r\_12 = norm2(r\_1 -\/ r\_2)}
-\DoxyCodeLine{613 }
-\DoxyCodeLine{614         r\_1a\_hat = (r\_1 -\/ r\_a) / spread(r\_1a, 1, 3)}
-\DoxyCodeLine{615         r\_1b\_hat = (r\_1 -\/ r\_b) / spread(r\_1b, 1, 3)}
-\DoxyCodeLine{616         r\_2a\_hat = (r\_2 -\/ r\_a) / spread(r\_2a, 1, 3)}
-\DoxyCodeLine{617         r\_2b\_hat = (r\_2 -\/ r\_b) / spread(r\_2b, 1, 3)}
-\DoxyCodeLine{618         r\_12\_hat = (r\_1 -\/ r\_2) / spread(r\_12, 1, 3)}
-\DoxyCodeLine{619 }
-\DoxyCodeLine{620         phi\_1a = exp(-\/r\_1a / a)}
-\DoxyCodeLine{621         phi\_1b = exp(-\/r\_1b / a)}
-\DoxyCodeLine{622         phi\_2a = exp(-\/r\_2a / a)}
-\DoxyCodeLine{623         phi\_2b = exp(-\/r\_2b / a)}
-\DoxyCodeLine{624 }
-\DoxyCodeLine{625         phi\_1 = phi\_1a + phi\_1b}
-\DoxyCodeLine{626         phi\_2 = phi\_2a + phi\_2b}
-\DoxyCodeLine{627 }
-\DoxyCodeLine{628         e1 = 1.0\_real64 / (a*a)}
-\DoxyCodeLine{629         e2 = ((phi\_1a / r\_1a) + (phi\_1b / r\_1b)) / (a * phi\_1)}
-\DoxyCodeLine{630         e3 = ((phi\_2a / r\_2a) + (phi\_2b / r\_2b)) / (a * phi\_2)}
-\DoxyCodeLine{631         e4 = (1.0\_real64 / r\_1a) + (1.0\_real64 / r\_1b) + (1.0\_real64 / r\_2a\textcolor{comment}{) + (1.0\_real64 / r\_2b)}}
-\DoxyCodeLine{632 \textcolor{comment}{}        e5 = 1.0\_real64 / r\_12}
-\DoxyCodeLine{633         e6 = ((((phi\_1a * sum(r\_1a\_hat * r\_12\_hat, dim=1)) + (phi\_1b * sum\textcolor{comment}{(r\_1b\_hat * r\_12\_hat, dim=1))) / phi\_1) \&}}
-\DoxyCodeLine{634 \textcolor{comment}{}            -\/ (((phi\_2a * sum(r\_2a\_hat * r\_12\_hat, dim=1)) + (phi\_2b * sum\textcolor{comment}{(r\_2b\_hat * r\_12\_hat, dim=1))) / phi\_2)) \&}}
-\DoxyCodeLine{635 \textcolor{comment}{}            / (2.0\_real64 * a * (1.0\_real64 + beta*r\_12)**2)}
-\DoxyCodeLine{636         e7 = (((4.0\_real64*beta + 1.0\_real64) * r\_12) + 4.0\_real64) \&}
-\DoxyCodeLine{637             / (4.0\_real64 * r\_12 * (1.0\_real64 + beta*r\_12)**4)}
-\DoxyCodeLine{638         e8 = (1.0\_real64 / norm2(r\_a -\/ r\_b))}
-\DoxyCodeLine{639 }
-\DoxyCodeLine{640         e\_loc = -\/e1 + e2 + e3 -\/ e4 + e5 + e6 -\/ e7 + e8}
-\DoxyCodeLine{641 }
-\DoxyCodeLine{642         dphidbeta = -\/(r\_12*r\_12) / (2.0\_real64*(1.0\_real64 + beta*r\_12)*\textcolor{comment}{*2)}}
-\DoxyCodeLine{643 \textcolor{comment}{}}
+\DoxyCodeLine{592 }
+\DoxyCodeLine{593         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{594 }
+\DoxyCodeLine{595 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: a}
+\DoxyCodeLine{596 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: beta}
+\DoxyCodeLine{597 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: r\_1, r\_2}
+\DoxyCodeLine{598 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: R\_a, R\_b}
+\DoxyCodeLine{599 }
+\DoxyCodeLine{600 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: E\_loc}
+\DoxyCodeLine{601 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: DphiDbeta}
+\DoxyCodeLine{602 }
+\DoxyCodeLine{603 \textcolor{keywordtype}{        real}(real64) :: E1, E2, E3, E4, E5, E6, E7, E8}
+\DoxyCodeLine{604 \textcolor{keywordtype}{        real}(real64) :: phi\_1a, phi\_1b, phi\_1}
+\DoxyCodeLine{605 \textcolor{keywordtype}{        real}(real64) :: phi\_2a, phi\_2b, phi\_2}
+\DoxyCodeLine{606 \textcolor{keywordtype}{        real}(real64) :: r\_1a, r\_1b, r\_2a, r\_2b, r\_12}
+\DoxyCodeLine{607 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: r\_1a\_hat, r\_1b\_hat, r\_2a\_hat, r\_2b\_hat\textcolor{comment}{, r\_12\_hat}}
+\DoxyCodeLine{608 \textcolor{comment}{}}
+\DoxyCodeLine{609 \textcolor{comment}{        r\_1a = norm2(r\_1 -\/ r\_a)}}
+\DoxyCodeLine{610 \textcolor{comment}{}        r\_1b = norm2(r\_1 -\/ r\_b)}
+\DoxyCodeLine{611         r\_2a = norm2(r\_2 -\/ r\_a)}
+\DoxyCodeLine{612         r\_2b = norm2(r\_2 -\/ r\_b)}
+\DoxyCodeLine{613         r\_12 = norm2(r\_1 -\/ r\_2)}
+\DoxyCodeLine{614 }
+\DoxyCodeLine{615         r\_1a\_hat = (r\_1 -\/ r\_a) / spread(r\_1a, 1, 3)}
+\DoxyCodeLine{616         r\_1b\_hat = (r\_1 -\/ r\_b) / spread(r\_1b, 1, 3)}
+\DoxyCodeLine{617         r\_2a\_hat = (r\_2 -\/ r\_a) / spread(r\_2a, 1, 3)}
+\DoxyCodeLine{618         r\_2b\_hat = (r\_2 -\/ r\_b) / spread(r\_2b, 1, 3)}
+\DoxyCodeLine{619         r\_12\_hat = (r\_1 -\/ r\_2) / spread(r\_12, 1, 3)}
+\DoxyCodeLine{620 }
+\DoxyCodeLine{621         phi\_1a = exp(-\/r\_1a / a)}
+\DoxyCodeLine{622         phi\_1b = exp(-\/r\_1b / a)}
+\DoxyCodeLine{623         phi\_2a = exp(-\/r\_2a / a)}
+\DoxyCodeLine{624         phi\_2b = exp(-\/r\_2b / a)}
+\DoxyCodeLine{625 }
+\DoxyCodeLine{626         phi\_1 = phi\_1a + phi\_1b}
+\DoxyCodeLine{627         phi\_2 = phi\_2a + phi\_2b}
+\DoxyCodeLine{628 }
+\DoxyCodeLine{629         e1 = 1.0\_real64 / (a*a)}
+\DoxyCodeLine{630         e2 = ((phi\_1a / r\_1a) + (phi\_1b / r\_1b)) / (a * phi\_1)}
+\DoxyCodeLine{631         e3 = ((phi\_2a / r\_2a) + (phi\_2b / r\_2b)) / (a * phi\_2)}
+\DoxyCodeLine{632         e4 = (1.0\_real64 / r\_1a) + (1.0\_real64 / r\_1b) + (1.0\_real64 / r\_2a\textcolor{comment}{) + (1.0\_real64 / r\_2b)}}
+\DoxyCodeLine{633 \textcolor{comment}{}        e5 = 1.0\_real64 / r\_12}
+\DoxyCodeLine{634         e6 = ((((phi\_1a * sum(r\_1a\_hat * r\_12\_hat, dim=1)) + (phi\_1b * sum\textcolor{comment}{(r\_1b\_hat * r\_12\_hat, dim=1))) / phi\_1) \&}}
+\DoxyCodeLine{635 \textcolor{comment}{}            -\/ (((phi\_2a * sum(r\_2a\_hat * r\_12\_hat, dim=1)) + (phi\_2b * sum\textcolor{comment}{(r\_2b\_hat * r\_12\_hat, dim=1))) / phi\_2)) \&}}
+\DoxyCodeLine{636 \textcolor{comment}{}            / (2.0\_real64 * a * (1.0\_real64 + beta*r\_12)**2)}
+\DoxyCodeLine{637         e7 = (((4.0\_real64*beta + 1.0\_real64) * r\_12) + 4.0\_real64) \&}
+\DoxyCodeLine{638             / (4.0\_real64 * r\_12 * (1.0\_real64 + beta*r\_12)**4)}
+\DoxyCodeLine{639         e8 = (1.0\_real64 / norm2(r\_a -\/ r\_b))}
+\DoxyCodeLine{640 }
+\DoxyCodeLine{641         e\_loc = -\/e1 + e2 + e3 -\/ e4 + e5 + e6 -\/ e7 + e8}
+\DoxyCodeLine{642 }
+\DoxyCodeLine{643         dphidbeta = -\/(r\_12*r\_12) / (2.0\_real64*(1.0\_real64 + beta*r\_12)*\textcolor{comment}{*2)}}
+\DoxyCodeLine{644 \textcolor{comment}{}}
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -882,20 +889,28 @@ Uses the gradient calculated by \mbox{\hyperlink{namespacesolvers_a9afbcdcc0405d
 \end{DoxyParams}
 
 
-Definition at line 663 of file quantum\+\_\+solvers.\+f90.
+Definition at line 664 of file quantum\+\_\+solvers.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{664 }
-\DoxyCodeLine{665         \textcolor{keywordtype}{implicit none}}
-\DoxyCodeLine{666 }
-\DoxyCodeLine{667 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: beta\_old}
-\DoxyCodeLine{668 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: gradient}
-\DoxyCodeLine{669 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: beta\_new}
-\DoxyCodeLine{670 }
-\DoxyCodeLine{671 \textcolor{keywordtype}{        real}(real64) :: damping = 1.0\_real64}
-\DoxyCodeLine{672 }
-\DoxyCodeLine{673         beta\_new = beta\_old -\/ (damping * gradient)}
-\DoxyCodeLine{674 }
+\DoxyCodeLine{665 }
+\DoxyCodeLine{666         \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{667 }
+\DoxyCodeLine{668 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: beta\_old}
+\DoxyCodeLine{669 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: gradient}
+\DoxyCodeLine{670 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: beta\_new}
+\DoxyCodeLine{671 }
+\DoxyCodeLine{672 \textcolor{keywordtype}{        real}(real64) :: damping = 1.0\_real64}
+\DoxyCodeLine{673 }
+\DoxyCodeLine{674         beta\_new = beta\_old -\/ (damping * gradient)}
+\DoxyCodeLine{675 }
 
 \end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacesolvers_a4b4d370a4ee50b231f53058ab62e4084_icgraph}
+\end{center}
+\end{figure}
