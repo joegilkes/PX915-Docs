@@ -1274,7 +1274,7 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160;                    variance_out, dphidc_chain)</div>
 <div class="line"><a name="l01311"></a><span class="lineno"> 1311</span>&#160;                <span class="keyword">write</span>(*, <span class="stringliteral">&quot;(2A)&quot;</span>) <span class="stringliteral">&#39;Writing Markov chain to &#39;</span>, chainfile</div>
 <div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;                <span class="keyword">call </span>write_h2plus_equilibration(pos_chain, energy_chain, chainfile, ierr, h2plus, &amp;</div>
-<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;                    accept_out, c_out)</div>
+<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;                    accept_out, c_out, bond_length)</div>
 <div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;<span class="keywordflow">            end if</span></div>
 <div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;<span class="keywordflow">        end if</span></div>
 <div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;        </div>
@@ -1396,7 +1396,7 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160;                    variance_out, dphidc_chain)</div>
 <div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160;                <span class="keyword">write</span>(*, <span class="stringliteral">&quot;(2A)&quot;</span>) <span class="stringliteral">&#39;Writing Markov chain to &#39;</span>, chainfile</div>
 <div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;                <span class="keyword">call </span>write_h2plus_equilibration(pos_chain, energy_chain, chainfile, ierr, h2plus, &amp;</div>
-<div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160;                    accept_out, c_out)</div>
+<div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160;                    accept_out, c_out, bond_length)</div>
 <div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160;<span class="keywordflow">            end if</span></div>
 <div class="line"><a name="l01450"></a><span class="lineno"> 1450</span>&#160; </div>
 <div class="line"><a name="l01451"></a><span class="lineno"> 1451</span>&#160;<span class="keywordflow">        endif</span> </div>
@@ -1455,7 +1455,7 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="line"><a name="l01514"></a><span class="lineno"> 1514</span>&#160;                <span class="stringliteral">&#39;_c&#39;</span>, trim(adjustl(str_i)), <span class="stringliteral">&#39;.nc&#39;</span></div>
 <div class="line"><a name="l01515"></a><span class="lineno"> 1515</span>&#160;            <span class="keyword">write</span>(*, *) <span class="stringliteral">&#39;Writing equilibration outfile to &#39;</span>, equilfile</div>
 <div class="line"><a name="l01516"></a><span class="lineno"> 1516</span>&#160;            <span class="keyword">call </span>write_h2plus_equilibration(pos_chain, energy_chain, equilfile, ierr, h2plus, &amp;</div>
-<div class="line"><a name="l01517"></a><span class="lineno"> 1517</span>&#160;                accept_rate, c_array(i))</div>
+<div class="line"><a name="l01517"></a><span class="lineno"> 1517</span>&#160;                accept_rate, c_array(i), bond_length)</div>
 <div class="line"><a name="l01518"></a><span class="lineno"> 1518</span>&#160; </div>
 <div class="line"><a name="l01519"></a><span class="lineno"> 1519</span>&#160;            <span class="comment">! Write restart files, if required</span></div>
 <div class="line"><a name="l01520"></a><span class="lineno"> 1520</span>&#160;            <span class="keywordflow">if</span> (write_restart) <span class="keywordflow">then</span></div>

@@ -1484,7 +1484,7 @@ Definition at line 1171 of file vqmc.\+f90.
 \DoxyCodeLine{1310 \textcolor{comment}{}                    variance\_out, dphidc\_chain)}
 \DoxyCodeLine{1311                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}(2A)"{}}) \textcolor{stringliteral}{'Writing Markov chain to '}, chainfile}
 \DoxyCodeLine{1312                 \textcolor{keyword}{call }write\_h2plus\_equilibration(pos\_chain, energy\_chain,\textcolor{comment}{ chainfile, ierr, h2plus, \&}}
-\DoxyCodeLine{1313 \textcolor{comment}{}                    accept\_out, c\_out)}
+\DoxyCodeLine{1313 \textcolor{comment}{}                    accept\_out, c\_out, bond\_length)}
 \DoxyCodeLine{1314 \textcolor{keywordflow}{            end if}}
 \DoxyCodeLine{1315 \textcolor{keywordflow}{        end if}}
 \DoxyCodeLine{1316         }
@@ -1643,7 +1643,7 @@ Definition at line 1340 of file vqmc.\+f90.
 \DoxyCodeLine{1445 \textcolor{comment}{}                    variance\_out, dphidc\_chain)}
 \DoxyCodeLine{1446                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}(2A)"{}}) \textcolor{stringliteral}{'Writing Markov chain to '}, chainfile}
 \DoxyCodeLine{1447                 \textcolor{keyword}{call }write\_h2plus\_equilibration(pos\_chain, energy\_chain,\textcolor{comment}{ chainfile, ierr, h2plus, \&}}
-\DoxyCodeLine{1448 \textcolor{comment}{}                    accept\_out, c\_out)}
+\DoxyCodeLine{1448 \textcolor{comment}{}                    accept\_out, c\_out, bond\_length)}
 \DoxyCodeLine{1449 \textcolor{keywordflow}{            end if}}
 \DoxyCodeLine{1450 }
 \DoxyCodeLine{1451 \textcolor{keywordflow}{        endif} }
@@ -1734,7 +1734,7 @@ Definition at line 1473 of file vqmc.\+f90.
 \DoxyCodeLine{1514 \textcolor{comment}{}                \textcolor{stringliteral}{'\_c'}, trim(adjustl(str\_i)), \textcolor{stringliteral}{'.nc'}}
 \DoxyCodeLine{1515             \textcolor{keyword}{write}(*, *) \textcolor{stringliteral}{'Writing equilibration outfile to '}, equilfile}
 \DoxyCodeLine{1516             \textcolor{keyword}{call }write\_h2plus\_equilibration(pos\_chain, energy\_chain, equilfile\textcolor{comment}{, ierr, h2plus, \&}}
-\DoxyCodeLine{1517 \textcolor{comment}{}                accept\_rate, c\_array(i))}
+\DoxyCodeLine{1517 \textcolor{comment}{}                accept\_rate, c\_array(i), bond\_length)}
 \DoxyCodeLine{1518 }
 \DoxyCodeLine{1519             \textcolor{comment}{! Write restart files, if required}}
 \DoxyCodeLine{1520             \textcolor{keywordflow}{if} (write\_restart) \textcolor{keywordflow}{then}}

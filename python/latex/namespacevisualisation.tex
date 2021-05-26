@@ -20,7 +20,7 @@ def \mbox{\hyperlink{namespacevisualisation_ad727a435fed6e71da862d749a6169558}{Q
 \item 
 def \mbox{\hyperlink{namespacevisualisation_a15512bdc0a35b851921f281f89e6460f}{H2\+\_\+eng\+\_\+plot}} (variables)
 \begin{DoxyCompactList}\small\item\em Plots the energies against the parameters checked during the grid search Parameters\+: variables\+: Dictionary which contains data about the variables in the netcdf4 object. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacevisualisation_afd9acdd2f2d70052a6eac6d2bbf9820f}{H2\+Prob\+Plot}} (chainfile)
+def \mbox{\hyperlink{namespacevisualisation_a857bf301504e6d7c2e8cca241ce18364}{Hyd\+Prob\+Plot}} (chainfile)
 \item 
 def \mbox{\hyperlink{namespacevisualisation_a665238431e964d48ad871c62f97c0eeb}{H2\+\_\+prob\+\_\+plot}} (X, Y, Z, R1, R2)
 \begin{DoxyCompactList}\small\item\em H2plus\+\_\+main\+\_\+plot() Plots the wavefunction for the quantum harmonic oscillator case. \end{DoxyCompactList}\item 
@@ -317,11 +317,11 @@ Here is the caller graph for this function\+:
 \includegraphics[width=350pt]{namespacevisualisation_a15512bdc0a35b851921f281f89e6460f_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespacevisualisation_afd9acdd2f2d70052a6eac6d2bbf9820f}\label{namespacevisualisation_afd9acdd2f2d70052a6eac6d2bbf9820f}} 
-\index{visualisation@{visualisation}!H2ProbPlot@{H2ProbPlot}}
-\index{H2ProbPlot@{H2ProbPlot}!visualisation@{visualisation}}
-\doxysubsubsection{\texorpdfstring{H2ProbPlot()}{H2ProbPlot()}}
-{\footnotesize\ttfamily def visualisation.\+H2\+Prob\+Plot (\begin{DoxyParamCaption}\item[{}]{chainfile }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{namespacevisualisation_a857bf301504e6d7c2e8cca241ce18364}\label{namespacevisualisation_a857bf301504e6d7c2e8cca241ce18364}} 
+\index{visualisation@{visualisation}!HydProbPlot@{HydProbPlot}}
+\index{HydProbPlot@{HydProbPlot}!visualisation@{visualisation}}
+\doxysubsubsection{\texorpdfstring{HydProbPlot()}{HydProbPlot()}}
+{\footnotesize\ttfamily def visualisation.\+Hyd\+Prob\+Plot (\begin{DoxyParamCaption}\item[{}]{chainfile }\end{DoxyParamCaption})}
 
 
 
@@ -329,7 +329,7 @@ Definition at line 128 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{128 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_afd9acdd2f2d70052a6eac6d2bbf9820f}{H2ProbPlot}}(chainfile):}
+\DoxyCodeLine{128 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a857bf301504e6d7c2e8cca241ce18364}{HydProbPlot}}(chainfile):}
 \DoxyCodeLine{129 }
 \DoxyCodeLine{130     dat = Dataset(chainfile, \textcolor{stringliteral}{'r'}, format=\textcolor{stringliteral}{'NETCDF4'})}
 \DoxyCodeLine{131 }
@@ -355,7 +355,7 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespacevisualisation_afd9acdd2f2d70052a6eac6d2bbf9820f_cgraph}
+\includegraphics[width=350pt]{namespacevisualisation_a857bf301504e6d7c2e8cca241ce18364_cgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{namespacevisualisation_a665238431e964d48ad871c62f97c0eeb}\label{namespacevisualisation_a665238431e964d48ad871c62f97c0eeb}} 
@@ -818,7 +818,7 @@ Definition at line 349 of file visualisation.\+py.
 \DoxyCodeLine{374 }
 \DoxyCodeLine{375     ax1.set\_title(\textcolor{stringliteral}{r'Quantum Harmonic Oscillator Energy with Varying \$\(\backslash\)alpha\$'})}
 \DoxyCodeLine{376     ax1.plot(alpha\_array, energies, marker=\textcolor{stringliteral}{'o'}, ls=\textcolor{stringliteral}{'-\/-\/'}, color=\textcolor{stringliteral}{'blue'})}
-\DoxyCodeLine{377     ax1.fill\_between(alpha\_array, energies+stdevs, energies-\/stdevs, alpha=0.4, color=\textcolor{stringliteral}{'purple'})}
+\DoxyCodeLine{377     ax1.fill\_between(alpha\_array, energies+stdevs, energies-\/stdevs, alpha=0.3, color=\textcolor{stringliteral}{'purple'})}
 \DoxyCodeLine{378     ax1.axvline(0.5, ls=\textcolor{stringliteral}{'-\/'}, color=\textcolor{stringliteral}{'black'}, alpha=0.3)}
 \DoxyCodeLine{379     ax1.set\_xlabel(\textcolor{stringliteral}{r'\$\(\backslash\)alpha\$'})}
 \DoxyCodeLine{380     ax1.set\_ylabel(\textcolor{stringliteral}{'Energy'})}
@@ -947,26 +947,27 @@ Definition at line 421 of file visualisation.\+py.
 \DoxyCodeLine{449 }
 \DoxyCodeLine{450     ax1.set\_title(\textcolor{stringliteral}{r'\$H\_\{2\}\string^\{+\}\$ bond energy curve'})}
 \DoxyCodeLine{451     \textcolor{comment}{\# ax1.plot(bond\_lengths, energies, marker='o')}}
-\DoxyCodeLine{452     ax1.errorbar(bond\_lengths, energies, yerr=stdevs, marker=\textcolor{stringliteral}{'o'}, ls=\textcolor{stringliteral}{'-\/-\/'})}
-\DoxyCodeLine{453     ax1.axhline(-\/0.5, ls=\textcolor{stringliteral}{'-\/'}, color=\textcolor{stringliteral}{'black'}, alpha=0.3)}
-\DoxyCodeLine{454     ax1.set\_xlabel(\textcolor{stringliteral}{r'Bond Length / \$a\_\{0\}\$'})}
-\DoxyCodeLine{455     ax1.set\_ylabel(\textcolor{stringliteral}{'Energy / Ha'})}
-\DoxyCodeLine{456 }
-\DoxyCodeLine{457     ax2.set\_title(\textcolor{stringliteral}{r'Optimised parameter \$c\$'})}
-\DoxyCodeLine{458     ax2.plot(bond\_lengths, c\_opt)}
-\DoxyCodeLine{459     ax2.axhline(1/np.sqrt(2), ls=\textcolor{stringliteral}{'-\/'}, color=\textcolor{stringliteral}{'black'}, alpha=0.3)}
-\DoxyCodeLine{460     ax2.set\_xlabel(\textcolor{stringliteral}{r'Bond Length / \$a\_\{0\}\$'})}
-\DoxyCodeLine{461     ax2.set\_ylabel(\textcolor{stringliteral}{r'\$c\$'})}
-\DoxyCodeLine{462 }
-\DoxyCodeLine{463     fig.tight\_layout()}
-\DoxyCodeLine{464     fig.show()}
-\DoxyCodeLine{465 }
-\DoxyCodeLine{466     print(f\textcolor{stringliteral}{'Equilibrium bond length: \{min\_bond\_length\} Bohr'})}
-\DoxyCodeLine{467     print(f\textcolor{stringliteral}{'                         = \{min\_bond\_length*0.529177\} Angstroms'})}
-\DoxyCodeLine{468     print(f\textcolor{stringliteral}{'   at energy: \{min\_energy\} ± \{min\_energy\_stdev\} Ha'})}
-\DoxyCodeLine{469 }
+\DoxyCodeLine{452     ax1.plot(bond\_lengths, energies, marker=\textcolor{stringliteral}{'o'}, ls=\textcolor{stringliteral}{'-\/-\/'}, color=\textcolor{stringliteral}{'blue'})}
+\DoxyCodeLine{453     ax1.fill\_between(bond\_lengths, energies+stdevs, energies-\/stdevs, alpha=0.3, color=\textcolor{stringliteral}{'purple'})}
+\DoxyCodeLine{454     ax1.axhline(-\/0.5, ls=\textcolor{stringliteral}{'-\/'}, color=\textcolor{stringliteral}{'black'}, alpha=0.3)}
+\DoxyCodeLine{455     ax1.set\_xlabel(\textcolor{stringliteral}{r'Bond Length / \$a\_\{0\}\$'})}
+\DoxyCodeLine{456     ax1.set\_ylabel(\textcolor{stringliteral}{'Energy / Ha'})}
+\DoxyCodeLine{457 }
+\DoxyCodeLine{458     ax2.set\_title(\textcolor{stringliteral}{r'Optimised parameter \$c\$'})}
+\DoxyCodeLine{459     ax2.plot(bond\_lengths, c\_opt)}
+\DoxyCodeLine{460     ax2.axhline(1/np.sqrt(2), ls=\textcolor{stringliteral}{'-\/'}, color=\textcolor{stringliteral}{'black'}, alpha=0.3)}
+\DoxyCodeLine{461     ax2.set\_xlabel(\textcolor{stringliteral}{r'Bond Length / \$a\_\{0\}\$'})}
+\DoxyCodeLine{462     ax2.set\_ylabel(\textcolor{stringliteral}{r'\$c\$'})}
+\DoxyCodeLine{463 }
+\DoxyCodeLine{464     fig.tight\_layout()}
+\DoxyCodeLine{465     fig.show()}
+\DoxyCodeLine{466 }
+\DoxyCodeLine{467     print(f\textcolor{stringliteral}{'Equilibrium bond length: \{min\_bond\_length\} Bohr'})}
+\DoxyCodeLine{468     print(f\textcolor{stringliteral}{'                         = \{min\_bond\_length*0.529177\} Angstroms'})}
+\DoxyCodeLine{469     print(f\textcolor{stringliteral}{'   at energy: \{min\_energy\} ± \{min\_energy\_stdev\} Ha'})}
 \DoxyCodeLine{470 }
 \DoxyCodeLine{471 }
+\DoxyCodeLine{472 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespacevisualisation_af659f38b7f30300562f10c540226305b}\label{namespacevisualisation_af659f38b7f30300562f10c540226305b}} 
@@ -990,68 +991,69 @@ Plots the H-\/H bond potential energy curve generated by VQMC at the optimum par
 \end{DoxyParams}
 
 
-Definition at line 472 of file visualisation.\+py.
+Definition at line 473 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{472 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_af659f38b7f30300562f10c540226305b}{H2EnergyPlot}}(results\_file, sliceby=(\textcolor{keywordtype}{None}, \textcolor{keywordtype}{None})):}
-\DoxyCodeLine{473     \textcolor{stringliteral}{'''}}
-\DoxyCodeLine{474 \textcolor{stringliteral}{    @brief}}
-\DoxyCodeLine{475 \textcolor{stringliteral}{    @f\$ H\_\{2\} @f\$ H-\/H bond energy and parameter plotter.}}
-\DoxyCodeLine{476 \textcolor{stringliteral}{}}
-\DoxyCodeLine{477 \textcolor{stringliteral}{    @details}}
-\DoxyCodeLine{478 \textcolor{stringliteral}{    Plots the H-\/H bond potential energy curve generated by VQMC at the optimum}}
-\DoxyCodeLine{479 \textcolor{stringliteral}{    parameters for each bond length. Plots standard deviation of each energy as}}
-\DoxyCodeLine{480 \textcolor{stringliteral}{    a measure of uncertainty. Also plots variational parameters @f\$ a @f\$ and}}
-\DoxyCodeLine{481 \textcolor{stringliteral}{    @f\$ \(\backslash\)beta @f\$ against bond length. Reports equilibrium bond length for the}}
-\DoxyCodeLine{482 \textcolor{stringliteral}{    molecule and optimum energy.}}
-\DoxyCodeLine{483 \textcolor{stringliteral}{}}
-\DoxyCodeLine{484 \textcolor{stringliteral}{    @param[in]  results\_file    The main netCDF output file from a @f\$ H\_\{2\} @f\$ run}}
-\DoxyCodeLine{485 \textcolor{stringliteral}{    @param[in]  sliceby         (Optional) Tuple containing slice intervals for arrays}}
-\DoxyCodeLine{486 \textcolor{stringliteral}{    '''}}
-\DoxyCodeLine{487     dat = nd.Dataset(results\_file, \textcolor{stringliteral}{'r'}, format=\textcolor{stringliteral}{'NETCDF4'})}
-\DoxyCodeLine{488 }
-\DoxyCodeLine{489     bond\_lengths = dat.variables[\textcolor{stringliteral}{'Bondlength\_array'}][sliceby[0]:sliceby[1]]}
-\DoxyCodeLine{490     a\_opt = dat.variables[\textcolor{stringliteral}{'Parameter\_a\_array'}][sliceby[0]:sliceby[1]]}
-\DoxyCodeLine{491     beta\_opt = dat.variables[\textcolor{stringliteral}{'Parameter\_beta\_array'}][sliceby[0]:sliceby[1]]}
-\DoxyCodeLine{492     energies = dat.variables[\textcolor{stringliteral}{'total\_energies'}][sliceby[0]:sliceby[1]]}
-\DoxyCodeLine{493     variances = dat.variables[\textcolor{stringliteral}{'Uncertainties'}][sliceby[0]:sliceby[1]]}
-\DoxyCodeLine{494 }
-\DoxyCodeLine{495     stdevs = np.sqrt(variances)}
-\DoxyCodeLine{496     min\_energy = min(energies)}
-\DoxyCodeLine{497     min\_energy\_stdev = stdevs[np.argmin(energies)]}
-\DoxyCodeLine{498     min\_bond\_length = bond\_lengths[np.argmin(energies)]}
-\DoxyCodeLine{499 }
-\DoxyCodeLine{500     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 8))}
-\DoxyCodeLine{501 }
-\DoxyCodeLine{502     ax1.set\_title(\textcolor{stringliteral}{r'\$H\_\{2\}\$ bond energy curve'})}
-\DoxyCodeLine{503     ax1.errorbar(bond\_lengths, energies, yerr=stdevs, marker=\textcolor{stringliteral}{'o'}, ls=\textcolor{stringliteral}{'-\/-\/'})}
-\DoxyCodeLine{504     ax1.set\_xlabel(\textcolor{stringliteral}{r'Bond Length / \$a\_\{0\}\$'})}
-\DoxyCodeLine{505     ax1.set\_ylabel(\textcolor{stringliteral}{'Energy / Ha'})}
-\DoxyCodeLine{506 }
-\DoxyCodeLine{507     ax2.set\_title(\textcolor{stringliteral}{r'Optimised parameters'})}
-\DoxyCodeLine{508     ax2.plot(bond\_lengths, a\_opt, color=\textcolor{stringliteral}{'red'})}
-\DoxyCodeLine{509     ax2.set\_xlabel(\textcolor{stringliteral}{r'Bond Length / \$a\_\{0\}\$'})}
-\DoxyCodeLine{510     ax2.set\_ylabel(\textcolor{stringliteral}{r'\$a\$'}, color=\textcolor{stringliteral}{'red'})}
-\DoxyCodeLine{511     ax2.tick\_params(axis=\textcolor{stringliteral}{'y'}, labelcolor=\textcolor{stringliteral}{'red'})}
-\DoxyCodeLine{512 }
-\DoxyCodeLine{513     ax2a = ax2.twinx()}
-\DoxyCodeLine{514     ax2a.plot(bond\_lengths, beta\_opt, color=\textcolor{stringliteral}{'blue'})}
-\DoxyCodeLine{515     ax2a.set\_ylabel(\textcolor{stringliteral}{r'\$\(\backslash\)beta\$'}, color=\textcolor{stringliteral}{'blue'})}
-\DoxyCodeLine{516     ax2a.tick\_params(axis=\textcolor{stringliteral}{'y'}, labelcolor=\textcolor{stringliteral}{'blue'})}
-\DoxyCodeLine{517 }
-\DoxyCodeLine{518     fig.tight\_layout()}
-\DoxyCodeLine{519     fig.show()}
-\DoxyCodeLine{520 }
-\DoxyCodeLine{521     print(f\textcolor{stringliteral}{'Equilibrium bond length: \{min\_bond\_length\} Bohr'})}
-\DoxyCodeLine{522     print(f\textcolor{stringliteral}{'                         = \{min\_bond\_length*0.529177\} Angstroms'})}
-\DoxyCodeLine{523     print(f\textcolor{stringliteral}{'   at energy: \{min\_energy\} ± \{min\_energy\_stdev\} Ha'})}
-\DoxyCodeLine{524 }
-\DoxyCodeLine{525 }
-\DoxyCodeLine{526 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{527 \textcolor{comment}{\# Burn / Thin FUNCTION DEFINITIONS -\/}}
+\DoxyCodeLine{473 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_af659f38b7f30300562f10c540226305b}{H2EnergyPlot}}(results\_file, sliceby=(\textcolor{keywordtype}{None}, \textcolor{keywordtype}{None})):}
+\DoxyCodeLine{474     \textcolor{stringliteral}{'''}}
+\DoxyCodeLine{475 \textcolor{stringliteral}{    @brief}}
+\DoxyCodeLine{476 \textcolor{stringliteral}{    @f\$ H\_\{2\} @f\$ H-\/H bond energy and parameter plotter.}}
+\DoxyCodeLine{477 \textcolor{stringliteral}{}}
+\DoxyCodeLine{478 \textcolor{stringliteral}{    @details}}
+\DoxyCodeLine{479 \textcolor{stringliteral}{    Plots the H-\/H bond potential energy curve generated by VQMC at the optimum}}
+\DoxyCodeLine{480 \textcolor{stringliteral}{    parameters for each bond length. Plots standard deviation of each energy as}}
+\DoxyCodeLine{481 \textcolor{stringliteral}{    a measure of uncertainty. Also plots variational parameters @f\$ a @f\$ and}}
+\DoxyCodeLine{482 \textcolor{stringliteral}{    @f\$ \(\backslash\)beta @f\$ against bond length. Reports equilibrium bond length for the}}
+\DoxyCodeLine{483 \textcolor{stringliteral}{    molecule and optimum energy.}}
+\DoxyCodeLine{484 \textcolor{stringliteral}{}}
+\DoxyCodeLine{485 \textcolor{stringliteral}{    @param[in]  results\_file    The main netCDF output file from a @f\$ H\_\{2\} @f\$ run}}
+\DoxyCodeLine{486 \textcolor{stringliteral}{    @param[in]  sliceby         (Optional) Tuple containing slice intervals for arrays}}
+\DoxyCodeLine{487 \textcolor{stringliteral}{    '''}}
+\DoxyCodeLine{488     dat = nd.Dataset(results\_file, \textcolor{stringliteral}{'r'}, format=\textcolor{stringliteral}{'NETCDF4'})}
+\DoxyCodeLine{489 }
+\DoxyCodeLine{490     bond\_lengths = dat.variables[\textcolor{stringliteral}{'Bondlength\_array'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{491     a\_opt = dat.variables[\textcolor{stringliteral}{'Parameter\_a\_array'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{492     beta\_opt = dat.variables[\textcolor{stringliteral}{'Parameter\_beta\_array'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{493     energies = dat.variables[\textcolor{stringliteral}{'total\_energies'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{494     variances = dat.variables[\textcolor{stringliteral}{'Uncertainties'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{495 }
+\DoxyCodeLine{496     stdevs = np.sqrt(variances)}
+\DoxyCodeLine{497     min\_energy = min(energies)}
+\DoxyCodeLine{498     min\_energy\_stdev = stdevs[np.argmin(energies)]}
+\DoxyCodeLine{499     min\_bond\_length = bond\_lengths[np.argmin(energies)]}
+\DoxyCodeLine{500 }
+\DoxyCodeLine{501     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 8))}
+\DoxyCodeLine{502 }
+\DoxyCodeLine{503     ax1.set\_title(\textcolor{stringliteral}{r'\$H\_\{2\}\$ bond energy curve'})}
+\DoxyCodeLine{504     ax1.errorbar(bond\_lengths, energies, yerr=stdevs, marker=\textcolor{stringliteral}{'o'}, ls=\textcolor{stringliteral}{'-\/-\/'}, color=\textcolor{stringliteral}{'blue'})}
+\DoxyCodeLine{505     ax1.fill\_between(bond\_lengths, energies+stdevs, energies-\/stdevs, alpha=0.3, color=\textcolor{stringliteral}{'purple'})}
+\DoxyCodeLine{506     ax1.set\_xlabel(\textcolor{stringliteral}{r'Bond Length / \$a\_\{0\}\$'})}
+\DoxyCodeLine{507     ax1.set\_ylabel(\textcolor{stringliteral}{'Energy / Ha'})}
+\DoxyCodeLine{508 }
+\DoxyCodeLine{509     ax2.set\_title(\textcolor{stringliteral}{r'Optimised parameters'})}
+\DoxyCodeLine{510     ax2.plot(bond\_lengths, a\_opt, color=\textcolor{stringliteral}{'red'})}
+\DoxyCodeLine{511     ax2.set\_xlabel(\textcolor{stringliteral}{r'Bond Length / \$a\_\{0\}\$'})}
+\DoxyCodeLine{512     ax2.set\_ylabel(\textcolor{stringliteral}{r'\$a\$'}, color=\textcolor{stringliteral}{'red'})}
+\DoxyCodeLine{513     ax2.tick\_params(axis=\textcolor{stringliteral}{'y'}, labelcolor=\textcolor{stringliteral}{'red'})}
+\DoxyCodeLine{514 }
+\DoxyCodeLine{515     ax2a = ax2.twinx()}
+\DoxyCodeLine{516     ax2a.plot(bond\_lengths, beta\_opt, color=\textcolor{stringliteral}{'blue'})}
+\DoxyCodeLine{517     ax2a.set\_ylabel(\textcolor{stringliteral}{r'\$\(\backslash\)beta\$'}, color=\textcolor{stringliteral}{'blue'})}
+\DoxyCodeLine{518     ax2a.tick\_params(axis=\textcolor{stringliteral}{'y'}, labelcolor=\textcolor{stringliteral}{'blue'})}
+\DoxyCodeLine{519 }
+\DoxyCodeLine{520     fig.tight\_layout()}
+\DoxyCodeLine{521     fig.show()}
+\DoxyCodeLine{522 }
+\DoxyCodeLine{523     print(f\textcolor{stringliteral}{'Equilibrium bond length: \{min\_bond\_length\} Bohr'})}
+\DoxyCodeLine{524     print(f\textcolor{stringliteral}{'                         = \{min\_bond\_length*0.529177\} Angstroms'})}
+\DoxyCodeLine{525     print(f\textcolor{stringliteral}{'   at energy: \{min\_energy\} ± \{min\_energy\_stdev\} Ha'})}
+\DoxyCodeLine{526 }
+\DoxyCodeLine{527 }
 \DoxyCodeLine{528 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{529 }
+\DoxyCodeLine{529 \textcolor{comment}{\# Burn / Thin FUNCTION DEFINITIONS -\/}}
+\DoxyCodeLine{530 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{531 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespacevisualisation_ac345463eb554d7c90613773996e74748}\label{namespacevisualisation_ac345463eb554d7c90613773996e74748}} 
@@ -1071,32 +1073,32 @@ Plots the original trace(s) of an MCMC run.
 \end{DoxyParams}
 
 
-Definition at line 534 of file visualisation.\+py.
+Definition at line 536 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{534 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_ac345463eb554d7c90613773996e74748}{view\_original\_trace}}(filename):}
-\DoxyCodeLine{535     rootgrp = Dataset(filename, \textcolor{stringliteral}{"{}r"{}}, format = \textcolor{stringliteral}{"{}NETCDF4"{}})}
-\DoxyCodeLine{536     chain = np.array(rootgrp[\textcolor{stringliteral}{'positions'}][:])}
-\DoxyCodeLine{537     \textcolor{keywordflow}{if} len(chain.shape) == 1:}
-\DoxyCodeLine{538         plt.plot(range(len(chain)), chain, linewidth=1.0)}
-\DoxyCodeLine{539         plt.xlabel(\textcolor{stringliteral}{"{}Position in chain"{}})}
-\DoxyCodeLine{540         plt.ylabel(\textcolor{stringliteral}{"{}Chain value"{}})}
-\DoxyCodeLine{541         plt.title(\textcolor{stringliteral}{"{}Original Chain"{}})}
-\DoxyCodeLine{542         plt.show()}
-\DoxyCodeLine{543         }
-\DoxyCodeLine{544     \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{545         chainx = chain[:,0]}
-\DoxyCodeLine{546         chainy = chain[:,1]}
-\DoxyCodeLine{547         chainz = chain[:,2]}
-\DoxyCodeLine{548         }
-\DoxyCodeLine{549         fig, (ax1,ax2,ax3) = plt.subplots(3,1)}
-\DoxyCodeLine{550         ax1.plot(range(len(chainx)), chainx, linewidth=1.0)}
-\DoxyCodeLine{551         ax2.plot(range(len(chainy)), chainy, linewidth=1.0)}
-\DoxyCodeLine{552         ax3.plot(range(len(chainz)), chainz, linewidth=1.0)}
-\DoxyCodeLine{553     }
-\DoxyCodeLine{554     \textcolor{keywordflow}{return}}
-\DoxyCodeLine{555 }
+\DoxyCodeLine{536 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_ac345463eb554d7c90613773996e74748}{view\_original\_trace}}(filename):}
+\DoxyCodeLine{537     rootgrp = Dataset(filename, \textcolor{stringliteral}{"{}r"{}}, format = \textcolor{stringliteral}{"{}NETCDF4"{}})}
+\DoxyCodeLine{538     chain = np.array(rootgrp[\textcolor{stringliteral}{'positions'}][:])}
+\DoxyCodeLine{539     \textcolor{keywordflow}{if} len(chain.shape) == 1:}
+\DoxyCodeLine{540         plt.plot(range(len(chain)), chain, linewidth=1.0)}
+\DoxyCodeLine{541         plt.xlabel(\textcolor{stringliteral}{"{}Position in chain"{}})}
+\DoxyCodeLine{542         plt.ylabel(\textcolor{stringliteral}{"{}Chain value"{}})}
+\DoxyCodeLine{543         plt.title(\textcolor{stringliteral}{"{}Original Chain"{}})}
+\DoxyCodeLine{544         plt.show()}
+\DoxyCodeLine{545         }
+\DoxyCodeLine{546     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{547         chainx = chain[:,0]}
+\DoxyCodeLine{548         chainy = chain[:,1]}
+\DoxyCodeLine{549         chainz = chain[:,2]}
+\DoxyCodeLine{550         }
+\DoxyCodeLine{551         fig, (ax1,ax2,ax3) = plt.subplots(3,1)}
+\DoxyCodeLine{552         ax1.plot(range(len(chainx)), chainx, linewidth=1.0)}
+\DoxyCodeLine{553         ax2.plot(range(len(chainy)), chainy, linewidth=1.0)}
+\DoxyCodeLine{554         ax3.plot(range(len(chainz)), chainz, linewidth=1.0)}
+\DoxyCodeLine{555     }
+\DoxyCodeLine{556     \textcolor{keywordflow}{return}}
+\DoxyCodeLine{557 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespacevisualisation_a90f8c15369cb05e981279974d131c819}\label{namespacevisualisation_a90f8c15369cb05e981279974d131c819}} 
@@ -1116,21 +1118,21 @@ Wrapper function for interacting with \mbox{\hyperlink{namespacevisualisation_a2
 \end{DoxyParams}
 
 
-Definition at line 556 of file visualisation.\+py.
+Definition at line 558 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{556 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a90f8c15369cb05e981279974d131c819}{BurnThinUI}}(filename):}
-\DoxyCodeLine{557     \textcolor{stringliteral}{'''}}
-\DoxyCodeLine{558 \textcolor{stringliteral}{    @brief}}
-\DoxyCodeLine{559 \textcolor{stringliteral}{    Wrapper function for interacting with get\_autocorrelation\_time()}}
-\DoxyCodeLine{560 \textcolor{stringliteral}{}}
-\DoxyCodeLine{561 \textcolor{stringliteral}{    @param[in]  filename   Filename of MCMC equilibration run}}
-\DoxyCodeLine{562 \textcolor{stringliteral}{    '''}}
-\DoxyCodeLine{563     widgets.interact\_manual(get\_autocorrelation\_time, filename=fixed(filename), }
-\DoxyCodeLine{564         burn=(0, int(0.1*len(np.array(Dataset(filename, \textcolor{stringliteral}{"{}r"{}}, format = \textcolor{stringliteral}{"{}NETCDF4"{}})[\textcolor{stringliteral}{'positions'}][:]))), 10),}
-\DoxyCodeLine{565         tuning=[(1.0),(1e-\/1),(1e-\/2),(1e-\/3),(1e-\/4)])}
-\DoxyCodeLine{566 }
+\DoxyCodeLine{558 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a90f8c15369cb05e981279974d131c819}{BurnThinUI}}(filename):}
+\DoxyCodeLine{559     \textcolor{stringliteral}{'''}}
+\DoxyCodeLine{560 \textcolor{stringliteral}{    @brief}}
+\DoxyCodeLine{561 \textcolor{stringliteral}{    Wrapper function for interacting with get\_autocorrelation\_time()}}
+\DoxyCodeLine{562 \textcolor{stringliteral}{}}
+\DoxyCodeLine{563 \textcolor{stringliteral}{    @param[in]  filename   Filename of MCMC equilibration run}}
+\DoxyCodeLine{564 \textcolor{stringliteral}{    '''}}
+\DoxyCodeLine{565     widgets.interact\_manual(get\_autocorrelation\_time, filename=fixed(filename), }
+\DoxyCodeLine{566         burn=(0, int(0.1*len(np.array(Dataset(filename, \textcolor{stringliteral}{"{}r"{}}, format = \textcolor{stringliteral}{"{}NETCDF4"{}})[\textcolor{stringliteral}{'positions'}][:]))), 10),}
+\DoxyCodeLine{567         tuning=[(1.0),(1e-\/1),(1e-\/2),(1e-\/3),(1e-\/4)])}
+\DoxyCodeLine{568 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespacevisualisation_a26c9ab9270b803a8d15c40d621769c46}\label{namespacevisualisation_a26c9ab9270b803a8d15c40d621769c46}} 
@@ -1158,99 +1160,99 @@ Takes as input a burning parameter and a tuning parameter which controls how agg
 \end{DoxyParams}
 
 
-Definition at line 583 of file visualisation.\+py.
+Definition at line 585 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{583 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a26c9ab9270b803a8d15c40d621769c46}{get\_autocorrelation\_time}}(filename, burn, tuning, plotting=True):}
-\DoxyCodeLine{584     rootgrp = Dataset(filename, \textcolor{stringliteral}{"{}r"{}}, format = \textcolor{stringliteral}{"{}NETCDF4"{}})}
-\DoxyCodeLine{585     chain = np.array(rootgrp[\textcolor{stringliteral}{'positions'}][:])}
-\DoxyCodeLine{586     \textcolor{keywordflow}{if} len(chain.shape) == 1:}
-\DoxyCodeLine{587         acp = sps.fftconvolve(chain,chain[::-\/1],mode=\textcolor{stringliteral}{'full'})}
-\DoxyCodeLine{588         acp = acp[int(acp.size / 2):]}
-\DoxyCodeLine{589         acp = acp / max(acp)}
-\DoxyCodeLine{590         acp = acp[burn:]}
-\DoxyCodeLine{591 }
-\DoxyCodeLine{592         thin = np.argmax(abs(acp) < tuning)}
-\DoxyCodeLine{593         \textcolor{keywordflow}{if} thin == 0:}
-\DoxyCodeLine{594             \textcolor{keywordflow}{if} acp[thin] < tuning:}
-\DoxyCodeLine{595                 thin = 1}
-\DoxyCodeLine{596             \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{597                 print(\textcolor{stringliteral}{"{}No thinning value found -\/ tuning may be too aggressive. Defaulting to no thinning, thin=1."{}})}
-\DoxyCodeLine{598                 print()}
-\DoxyCodeLine{599                 thin = 1}
-\DoxyCodeLine{600 }
-\DoxyCodeLine{601         print(\textcolor{stringliteral}{"{}burning parameter = "{}}, burn)}
-\DoxyCodeLine{602         print(\textcolor{stringliteral}{"{}proposed thinning parameter = "{}}, thin)}
-\DoxyCodeLine{603 }
-\DoxyCodeLine{604         chain\_new = chain[burn::thin]}
-\DoxyCodeLine{605         print(\textcolor{stringliteral}{"{}length of new chain = "{}}, len(chain\_new))}
-\DoxyCodeLine{606 }
-\DoxyCodeLine{607         \textcolor{keywordflow}{if} plotting==\textcolor{keyword}{True}:}
-\DoxyCodeLine{608             plt.plot(range(len(acp)), acp, linewidth=1.0)}
-\DoxyCodeLine{609             plt.xlabel(\textcolor{stringliteral}{"{}Position in chain / Lag time"{}})}
-\DoxyCodeLine{610             plt.ylabel(\textcolor{stringliteral}{"{}ACF"{}})}
-\DoxyCodeLine{611             plt.title(\textcolor{stringliteral}{"{}Autocorrelation function vs lag time"{}})}
-\DoxyCodeLine{612             plt.show()}
-\DoxyCodeLine{613 }
-\DoxyCodeLine{614             plt.plot(range(len(chain\_new)), chain\_new, linewidth=1.0)}
-\DoxyCodeLine{615             plt.xlabel(\textcolor{stringliteral}{"{}Position in chain"{}})}
-\DoxyCodeLine{616             plt.ylabel(\textcolor{stringliteral}{"{}Chain value"{}})}
-\DoxyCodeLine{617             plt.title(\textcolor{stringliteral}{"{}New Chain"{}})}
-\DoxyCodeLine{618             plt.show()}
-\DoxyCodeLine{619             }
-\DoxyCodeLine{620         \textcolor{keywordflow}{return} burn, thin}
+\DoxyCodeLine{585 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a26c9ab9270b803a8d15c40d621769c46}{get\_autocorrelation\_time}}(filename, burn, tuning, plotting=True):}
+\DoxyCodeLine{586     rootgrp = Dataset(filename, \textcolor{stringliteral}{"{}r"{}}, format = \textcolor{stringliteral}{"{}NETCDF4"{}})}
+\DoxyCodeLine{587     chain = np.array(rootgrp[\textcolor{stringliteral}{'positions'}][:])}
+\DoxyCodeLine{588     \textcolor{keywordflow}{if} len(chain.shape) == 1:}
+\DoxyCodeLine{589         acp = sps.fftconvolve(chain,chain[::-\/1],mode=\textcolor{stringliteral}{'full'})}
+\DoxyCodeLine{590         acp = acp[int(acp.size / 2):]}
+\DoxyCodeLine{591         acp = acp / max(acp)}
+\DoxyCodeLine{592         acp = acp[burn:]}
+\DoxyCodeLine{593 }
+\DoxyCodeLine{594         thin = np.argmax(abs(acp) < tuning)}
+\DoxyCodeLine{595         \textcolor{keywordflow}{if} thin == 0:}
+\DoxyCodeLine{596             \textcolor{keywordflow}{if} acp[thin] < tuning:}
+\DoxyCodeLine{597                 thin = 1}
+\DoxyCodeLine{598             \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{599                 print(\textcolor{stringliteral}{"{}No thinning value found -\/ tuning may be too aggressive. Defaulting to no thinning, thin=1."{}})}
+\DoxyCodeLine{600                 print()}
+\DoxyCodeLine{601                 thin = 1}
+\DoxyCodeLine{602 }
+\DoxyCodeLine{603         print(\textcolor{stringliteral}{"{}burning parameter = "{}}, burn)}
+\DoxyCodeLine{604         print(\textcolor{stringliteral}{"{}proposed thinning parameter = "{}}, thin)}
+\DoxyCodeLine{605 }
+\DoxyCodeLine{606         chain\_new = chain[burn::thin]}
+\DoxyCodeLine{607         print(\textcolor{stringliteral}{"{}length of new chain = "{}}, len(chain\_new))}
+\DoxyCodeLine{608 }
+\DoxyCodeLine{609         \textcolor{keywordflow}{if} plotting==\textcolor{keyword}{True}:}
+\DoxyCodeLine{610             plt.plot(range(len(acp)), acp, linewidth=1.0)}
+\DoxyCodeLine{611             plt.xlabel(\textcolor{stringliteral}{"{}Position in chain / Lag time"{}})}
+\DoxyCodeLine{612             plt.ylabel(\textcolor{stringliteral}{"{}ACF"{}})}
+\DoxyCodeLine{613             plt.title(\textcolor{stringliteral}{"{}Autocorrelation function vs lag time"{}})}
+\DoxyCodeLine{614             plt.show()}
+\DoxyCodeLine{615 }
+\DoxyCodeLine{616             plt.plot(range(len(chain\_new)), chain\_new, linewidth=1.0)}
+\DoxyCodeLine{617             plt.xlabel(\textcolor{stringliteral}{"{}Position in chain"{}})}
+\DoxyCodeLine{618             plt.ylabel(\textcolor{stringliteral}{"{}Chain value"{}})}
+\DoxyCodeLine{619             plt.title(\textcolor{stringliteral}{"{}New Chain"{}})}
+\DoxyCodeLine{620             plt.show()}
 \DoxyCodeLine{621             }
-\DoxyCodeLine{622     \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{623         chainx = chain[:,0]}
-\DoxyCodeLine{624         chainy = chain[:,1]}
-\DoxyCodeLine{625         chainz = chain[:,2]}
-\DoxyCodeLine{626         }
-\DoxyCodeLine{627         threed\_thin = []}
-\DoxyCodeLine{628         chain\_lengths = []}
-\DoxyCodeLine{629         }
-\DoxyCodeLine{630         \textcolor{keywordflow}{for} c \textcolor{keywordflow}{in} [chainx,chainy,chainz]:}
-\DoxyCodeLine{631             acp = sps.fftconvolve(c,c[::-\/1],mode=\textcolor{stringliteral}{'full'})}
-\DoxyCodeLine{632             acp = acp[int(acp.size / 2):]}
-\DoxyCodeLine{633             acp = acp / max(acp)}
-\DoxyCodeLine{634             acp = acp[burn:]}
-\DoxyCodeLine{635 }
-\DoxyCodeLine{636             thin = np.argmax(abs(acp) < tuning)}
-\DoxyCodeLine{637             \textcolor{keywordflow}{if} thin == 0:}
-\DoxyCodeLine{638                 \textcolor{keywordflow}{if} acp[thin] < tuning:}
-\DoxyCodeLine{639                     thin = 1}
-\DoxyCodeLine{640                 \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{641                     print(\textcolor{stringliteral}{"{}No thinning value found -\/ tuning may be too aggressive. Defaulting to no thinning, thin=1."{}})}
-\DoxyCodeLine{642                     print()}
-\DoxyCodeLine{643                     thin = 1}
-\DoxyCodeLine{644                     }
-\DoxyCodeLine{645             threed\_thin.append(thin)}
-\DoxyCodeLine{646 }
-\DoxyCodeLine{647             chain\_new = c[burn::thin]}
-\DoxyCodeLine{648             chain\_lengths.append(len(chain\_new))}
-\DoxyCodeLine{649 }
-\DoxyCodeLine{650             \textcolor{keywordflow}{if} plotting==\textcolor{keyword}{True}:}
-\DoxyCodeLine{651                 plt.plot(range(len(acp)), acp, linewidth=1.0)}
-\DoxyCodeLine{652                 plt.xlabel(\textcolor{stringliteral}{"{}Position in chain / Lag time"{}})}
-\DoxyCodeLine{653                 plt.ylabel(\textcolor{stringliteral}{"{}ACF"{}})}
-\DoxyCodeLine{654                 plt.title(\textcolor{stringliteral}{"{}Autocorrelation function vs lag time"{}})}
-\DoxyCodeLine{655                 plt.show()}
-\DoxyCodeLine{656 }
-\DoxyCodeLine{657 \textcolor{comment}{\#                 plt.plot(range(len(chain\_new)), chain\_new, linewidth=1.0)}}
-\DoxyCodeLine{658 \textcolor{comment}{\#                 plt.xlabel("{}Position in chain"{})}}
-\DoxyCodeLine{659 \textcolor{comment}{\#                 plt.ylabel("{}Chain value"{})}}
-\DoxyCodeLine{660 \textcolor{comment}{\#                 plt.title("{}New Chain"{})}}
-\DoxyCodeLine{661 \textcolor{comment}{\#                 plt.show()}}
-\DoxyCodeLine{662         print(\textcolor{stringliteral}{"{}burning parameter = "{}}, burn)}
-\DoxyCodeLine{663         print(\textcolor{stringliteral}{"{}proposed thinning parameters from the 3 chains: "{}}, threed\_thin)}
-\DoxyCodeLine{664         print(\textcolor{stringliteral}{"{}chain lengths from proposed thins"{}}, chain\_lengths)}
-\DoxyCodeLine{665 }
-\DoxyCodeLine{666         \textcolor{keywordflow}{return} burn, threed\_thin}
+\DoxyCodeLine{622         \textcolor{keywordflow}{return} burn, thin}
+\DoxyCodeLine{623             }
+\DoxyCodeLine{624     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{625         chainx = chain[:,0]}
+\DoxyCodeLine{626         chainy = chain[:,1]}
+\DoxyCodeLine{627         chainz = chain[:,2]}
+\DoxyCodeLine{628         }
+\DoxyCodeLine{629         threed\_thin = []}
+\DoxyCodeLine{630         chain\_lengths = []}
+\DoxyCodeLine{631         }
+\DoxyCodeLine{632         \textcolor{keywordflow}{for} c \textcolor{keywordflow}{in} [chainx,chainy,chainz]:}
+\DoxyCodeLine{633             acp = sps.fftconvolve(c,c[::-\/1],mode=\textcolor{stringliteral}{'full'})}
+\DoxyCodeLine{634             acp = acp[int(acp.size / 2):]}
+\DoxyCodeLine{635             acp = acp / max(acp)}
+\DoxyCodeLine{636             acp = acp[burn:]}
+\DoxyCodeLine{637 }
+\DoxyCodeLine{638             thin = np.argmax(abs(acp) < tuning)}
+\DoxyCodeLine{639             \textcolor{keywordflow}{if} thin == 0:}
+\DoxyCodeLine{640                 \textcolor{keywordflow}{if} acp[thin] < tuning:}
+\DoxyCodeLine{641                     thin = 1}
+\DoxyCodeLine{642                 \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{643                     print(\textcolor{stringliteral}{"{}No thinning value found -\/ tuning may be too aggressive. Defaulting to no thinning, thin=1."{}})}
+\DoxyCodeLine{644                     print()}
+\DoxyCodeLine{645                     thin = 1}
+\DoxyCodeLine{646                     }
+\DoxyCodeLine{647             threed\_thin.append(thin)}
+\DoxyCodeLine{648 }
+\DoxyCodeLine{649             chain\_new = c[burn::thin]}
+\DoxyCodeLine{650             chain\_lengths.append(len(chain\_new))}
+\DoxyCodeLine{651 }
+\DoxyCodeLine{652             \textcolor{keywordflow}{if} plotting==\textcolor{keyword}{True}:}
+\DoxyCodeLine{653                 plt.plot(range(len(acp)), acp, linewidth=1.0)}
+\DoxyCodeLine{654                 plt.xlabel(\textcolor{stringliteral}{"{}Position in chain / Lag time"{}})}
+\DoxyCodeLine{655                 plt.ylabel(\textcolor{stringliteral}{"{}ACF"{}})}
+\DoxyCodeLine{656                 plt.title(\textcolor{stringliteral}{"{}Autocorrelation function vs lag time"{}})}
+\DoxyCodeLine{657                 plt.show()}
+\DoxyCodeLine{658 }
+\DoxyCodeLine{659 \textcolor{comment}{\#                 plt.plot(range(len(chain\_new)), chain\_new, linewidth=1.0)}}
+\DoxyCodeLine{660 \textcolor{comment}{\#                 plt.xlabel("{}Position in chain"{})}}
+\DoxyCodeLine{661 \textcolor{comment}{\#                 plt.ylabel("{}Chain value"{})}}
+\DoxyCodeLine{662 \textcolor{comment}{\#                 plt.title("{}New Chain"{})}}
+\DoxyCodeLine{663 \textcolor{comment}{\#                 plt.show()}}
+\DoxyCodeLine{664         print(\textcolor{stringliteral}{"{}burning parameter = "{}}, burn)}
+\DoxyCodeLine{665         print(\textcolor{stringliteral}{"{}proposed thinning parameters from the 3 chains: "{}}, threed\_thin)}
+\DoxyCodeLine{666         print(\textcolor{stringliteral}{"{}chain lengths from proposed thins"{}}, chain\_lengths)}
 \DoxyCodeLine{667 }
-\DoxyCodeLine{668 }
+\DoxyCodeLine{668         \textcolor{keywordflow}{return} burn, threed\_thin}
 \DoxyCodeLine{669 }
 \DoxyCodeLine{670 }
 \DoxyCodeLine{671 }
 \DoxyCodeLine{672 }
+\DoxyCodeLine{673 }
+\DoxyCodeLine{674 }
 
 \end{DoxyCode}

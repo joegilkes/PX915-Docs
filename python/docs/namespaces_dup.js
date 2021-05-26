@@ -60,7 +60,7 @@ var namespaces_dup =
       [ "QHO_eng_plot", "namespacevisualisation.html#a9e23aabdaf405841cfdfd7c6cc2800e0", null ],
       [ "QHO_prob_plot", "namespacevisualisation.html#ad727a435fed6e71da862d749a6169558", null ],
       [ "H2_eng_plot", "namespacevisualisation.html#a15512bdc0a35b851921f281f89e6460f", null ],
-      [ "H2ProbPlot", "namespacevisualisation.html#afd9acdd2f2d70052a6eac6d2bbf9820f", null ],
+      [ "HydProbPlot", "namespacevisualisation.html#a857bf301504e6d7c2e8cca241ce18364", null ],
       [ "H2_prob_plot", "namespacevisualisation.html#a665238431e964d48ad871c62f97c0eeb", null ],
       [ "process_main_results", "namespacevisualisation.html#ad3e838717595f5a5a4f080cfe6c73c05", null ],
       [ "orb_1s", "namespacevisualisation.html#aee22ef0385ad565e03cc2c8aae5c10c2", null ],
