@@ -8,20 +8,22 @@
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \mbox{\hyperlink{namespacevisualisation_a7feac5307d5b7b959a2bcfa051af983c}{visualisation.\+load\+\_\+results}} (results=\textquotesingle{}results.\+nc\textquotesingle{})
+def \mbox{\hyperlink{namespacevisualisation_a5c80a150bab5e4176013e33b5fec9816}{visualisation.\+load\+\_\+results}} (filename=\textquotesingle{}results.\+nc\textquotesingle{})
 \begin{DoxyCompactList}\small\item\em Loads the results as a dataset Net\+CDF object to be passed to other functions. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacevisualisation_af26cb719b2deb508473e83624f95b374}{visualisation.\+print\+\_\+global\+\_\+attr}} (rootgrp)
-\item 
+def \mbox{\hyperlink{namespacevisualisation_a6a2287f360d1e76cd639bd70f229fe6c}{visualisation.\+load\+\_\+global\+\_\+attr}} (rootgrp, verbose=True)
+\begin{DoxyCompactList}\small\item\em Loads the global metadata in the results file into a dictionary. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacevisualisation_a72a74f351b2aeb7073d75d659c0a37fe}{visualisation.\+load\+\_\+variables}} (rootgrp, verbose=True)
+\begin{DoxyCompactList}\small\item\em Loads the variables in the results file into a dictionary. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacevisualisation_a9e23aabdaf405841cfdfd7c6cc2800e0}{visualisation.\+QHO\+\_\+eng\+\_\+plot}} (rootgrp, equil=False)
 \begin{DoxyCompactList}\small\item\em energy\+\_\+plot() Plots the energy at each step as the MC converges \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacevisualisation_ad727a435fed6e71da862d749a6169558}{visualisation.\+QHO\+\_\+prob\+\_\+plot}} (rootgrp)
 \item 
-def \mbox{\hyperlink{namespacevisualisation_a9b6373542137aecb35f5db5805f15e7f}{visualisation.\+H2\+\_\+eng\+\_\+plot}} (rootgrp)
-\item 
+def \mbox{\hyperlink{namespacevisualisation_a15512bdc0a35b851921f281f89e6460f}{visualisation.\+H2\+\_\+eng\+\_\+plot}} (variables)
+\begin{DoxyCompactList}\small\item\em Plots the energies against the parameters checked during the grid search Parameters\+: variables\+: Dictionary which contains data about the variables in the netcdf4 object. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacevisualisation_a665238431e964d48ad871c62f97c0eeb}{visualisation.\+H2\+\_\+prob\+\_\+plot}} (X, Y, Z, R1, R2)
 \begin{DoxyCompactList}\small\item\em H2plus\+\_\+main\+\_\+plot() Plots the wavefunction for the quantum harmonic oscillator case. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacevisualisation_a059f09b786545f0743961251db26ec5d}{visualisation.\+read\+\_\+\+NCDF\+\_\+out}} (filename)
-\item 
+def \mbox{\hyperlink{namespacevisualisation_ad3e838717595f5a5a4f080cfe6c73c05}{visualisation.\+process\+\_\+main\+\_\+results}} (filename=\textquotesingle{}results.\+nc\textquotesingle{}, verbose=True)
+\begin{DoxyCompactList}\small\item\em Processes the results output as a result of the parameter search from the Net\+CDF4 file. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacevisualisation_aee22ef0385ad565e03cc2c8aae5c10c2}{visualisation.\+orb\+\_\+1s}} (X, Y, Z, R\+\_\+a)
 \begin{DoxyCompactList}\small\item\em functions plotting the wavefunction ab initio \#\#\#\#\#\#\# \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacevisualisation_a622c163e8aa656ccc9b1745a3bfe545b}{visualisation.\+orb\+\_\+2s}} (r, R\+\_\+a)
@@ -40,10 +42,3 @@ def \mbox{\hyperlink{namespacevisualisation_a125cde5ab41fad7aaed30b720dd95318}{v
 \begin{DoxyCompactList}\small\item\em Plots the original trace of an MCMC run. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacevisualisation_a701fd174c3547d52cc346056e71525da}{visualisation.\+get\+\_\+autocorrelation\+\_\+time}} (chain, burn, tuning)
 \begin{DoxyCompactList}\small\item\em Function which suggests a thinning parameter for a MCMC chain. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{namespacevisualisation_a046456973173620f623fad7687ae0629}{visualisation.\+data1}} = go.\+Scatter(x=alphas, y=energies, mode=\textquotesingle{}markers\textquotesingle{})
-\begin{DoxyCompactList}\small\item\em Matplotlib implementation. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespacevisualisation_a40a49644828770b16212ef416b876eea}{visualisation.\+fig1}} = go.\+Figure(data)
-\end{DoxyCompactItemize}

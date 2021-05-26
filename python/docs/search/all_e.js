@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['view_5foriginal_5ftrace_72',['view_original_trace',['../namespacevisualisation.html#a125cde5ab41fad7aaed30b720dd95318',1,'visualisation']]],
-  ['vis2_73',['vis2',['../namespacevis2.html',1,'']]],
-  ['vis2_2epy_74',['vis2.py',['../vis2_8py.html',1,'']]],
-  ['visualisation_75',['visualisation',['../namespacevisualisation.html',1,'']]],
-  ['visualisation_2epy_76',['visualisation.py',['../visualisation_8py.html',1,'']]]
+  ['write_76',['write',['../namespacewrite.html',1,'']]],
+  ['write_5fparams_77',['write_params',['../namespacedice__write.html#a8850537a5cdec760b180095ece66f23d',1,'dice_write']]]
 ];

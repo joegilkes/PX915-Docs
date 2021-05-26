@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['read_5fncdf_5fout_127',['read_NCDF_out',['../namespacevisualisation.html#a059f09b786545f0743961251db26ec5d',1,'visualisation']]]
+  ['view_5foriginal_5ftrace_128',['view_original_trace',['../namespacevisualisation.html#a125cde5ab41fad7aaed30b720dd95318',1,'visualisation']]]
 ];

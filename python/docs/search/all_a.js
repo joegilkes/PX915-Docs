@@ -1,10 +1,12 @@
 var searchData=
 [
-  ['plot_5f3d_53',['plot_3D',['../namespacevisualisation.html#a9756d369d218ccf60a488ec02542eac6',1,'visualisation.plot_3D(X, Y, Z, wfn, R1, R2)'],['../namespacevisualisation.html#a58db1c83502abb038c648f3bb1076432',1,'visualisation.plot_3D(X, Y, Z, wfn)']]],
-  ['polar_5fto_5fcart_54',['polar_to_cart',['../namespacevisualisation.html#aa711c68ba9bc3ff10d2589890a785ed2',1,'visualisation']]],
-  ['porder_5fhyd_55',['porder_hyd',['../namespacedice__defaults.html#a1ef1439ef065ea0b7cdf600501e250fa',1,'dice_defaults']]],
-  ['porder_5fqho_56',['porder_qho',['../namespacedice__defaults.html#a2ce08293281630a3f77edc5efa797c7b',1,'dice_defaults']]],
-  ['print_5fglobal_5fattr_57',['print_global_attr',['../namespacevisualisation.html#af26cb719b2deb508473e83624f95b374',1,'visualisation']]],
-  ['python_20developer_20documentation_20main_20page_58',['Python Developer Documentation Main Page',['../index.html',1,'']]],
-  ['python_5fmainpage_2emd_59',['PYTHON_MAINPAGE.md',['../_p_y_t_h_o_n___m_a_i_n_p_a_g_e_8md.html',1,'']]]
+  ['qho_5feng_5fplot_60',['QHO_eng_plot',['../namespacevisualisation.html#a9e23aabdaf405841cfdfd7c6cc2800e0',1,'visualisation']]],
+  ['qho_5fprob_5fplot_61',['QHO_prob_plot',['../namespacevisualisation.html#ad727a435fed6e71da862d749a6169558',1,'visualisation']]],
+  ['qhoenergyplot_62',['QHOEnergyPlot',['../namespacevis2.html#a9daac64c8c06f7a07c3cb1608b6bb36d',1,'vis2']]],
+  ['qhowfnplot_63',['QHOWfnPlot',['../namespacevis2.html#ac21c80c2cfa183521dd0713f4ad38bfc',1,'vis2']]],
+  ['query_5fdefault_64',['query_default',['../namespacedice__write.html#aebd3126f641c7d8245a920b5f00a19e8',1,'dice_write']]],
+  ['query_5fgrid_65',['query_grid',['../namespacedice__write.html#a8c3fdb6a1a789a4d0f3e3afe7f4c5c6c',1,'dice_write']]],
+  ['query_5fparams_66',['query_params',['../namespacedice__write.html#a2327d5c026b4653f4dcbc3ea0e998efe',1,'dice_write']]],
+  ['query_5fposfloat_67',['query_posfloat',['../namespacedice__write.html#a75a643f89765eb164532394130b8d657',1,'dice_write']]],
+  ['query_5fstep_68',['query_step',['../namespacedice__write.html#a582e3bc639d5d28fcd8b6c0af2b8530d',1,'dice_write']]]
 ];

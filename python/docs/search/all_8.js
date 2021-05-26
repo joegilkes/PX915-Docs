@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['lcao_5fwfn_49',['lcao_wfn',['../namespacevisualisation.html#a8518056c83c83befbb585f14d97497d8',1,'visualisation']]],
-  ['load_5fresults_50',['load_results',['../namespacevisualisation.html#a7feac5307d5b7b959a2bcfa051af983c',1,'visualisation']]]
+  ['orb_5f1s_51',['orb_1s',['../namespacevisualisation.html#aee22ef0385ad565e03cc2c8aae5c10c2',1,'visualisation']]],
+  ['orb_5f2s_52',['orb_2s',['../namespacevisualisation.html#a622c163e8aa656ccc9b1745a3bfe545b',1,'visualisation']]]
 ];

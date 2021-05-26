@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['h2_5feng_5fplot_41',['H2_eng_plot',['../namespacevisualisation.html#a9b6373542137aecb35f5db5805f15e7f',1,'visualisation']]],
-  ['h2_5fprob_5fplot_42',['H2_prob_plot',['../namespacevisualisation.html#a665238431e964d48ad871c62f97c0eeb',1,'visualisation']]],
-  ['h2energyplot_43',['H2EnergyPlot',['../namespacevis2.html#a7d278aa9a718e17bfdbff1f5ee1db529',1,'vis2']]],
-  ['h2plusenergyplot_44',['H2plusEnergyPlot',['../namespacevis2.html#a08a68539d8dbe6e5231936ca9967e1f2',1,'vis2']]]
+  ['input_43',['input',['../namespaceinput.html',1,'']]],
+  ['isfloat_44',['isfloat',['../namespacedice__write.html#ac634cffa3f4f8855127ef9bff7a56851',1,'dice_write']]],
+  ['isint_45',['isint',['../namespacedice__write.html#a6b5b39cce6741d1a0b96fe3dd59b2652',1,'dice_write']]],
+  ['isvalid_46',['isvalid',['../namespacedice__check.html#ac4fbe7bb65f9ff67c90cad4fec72dc62',1,'dice_check']]]
 ];
