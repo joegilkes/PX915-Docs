@@ -1,5 +1,10 @@
 \hypertarget{namespace_dice_py_1_1dice__visualise}{}\doxysection{Dice\+Py.\+dice\+\_\+visualise Namespace Reference}
 \label{namespace_dice_py_1_1dice__visualise}\index{DicePy.dice\_visualise@{DicePy.dice\_visualise}}
+
+
+Contains functions for burning/thinning and visualization for Dice.  
+
+
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -55,6 +60,11 @@ def \mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_ac82e6fdf20ce6eca6265e
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Contains functions for burning/thinning and visualization for Dice. 
+
+Module containing the energy plotters for the QHO, H2plus and H2 systems, wavefunction plotters for QHO and the hydrogenic systems, and the burning/thinning interactive widget. 
+
 \doxysubsection{Function Documentation}
 \mbox{\Hypertarget{namespace_dice_py_1_1dice__visualise_aa8bff4555b1d8df8986a287e47b44fe3}\label{namespace_dice_py_1_1dice__visualise_aa8bff4555b1d8df8986a287e47b44fe3}} 
 \index{DicePy.dice\_visualise@{DicePy.dice\_visualise}!QHOProbPlot@{QHOProbPlot}}
@@ -75,31 +85,31 @@ Loads in the net\+CDF dataset and extracts position and energy arrays, passes th
 \end{DoxyParams}
 
 
-Definition at line 23 of file dice\+\_\+visualise.\+py.
+Definition at line 27 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{23 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_aa8bff4555b1d8df8986a287e47b44fe3}{QHOProbPlot}}(chain\_file):}
-\DoxyCodeLine{24     \textcolor{stringliteral}{'''}}
-\DoxyCodeLine{25 \textcolor{stringliteral}{    @brief}}
-\DoxyCodeLine{26 \textcolor{stringliteral}{    Wrapper function for QHO\_prob\_plot()}}
-\DoxyCodeLine{27 \textcolor{stringliteral}{}}
-\DoxyCodeLine{28 \textcolor{stringliteral}{    @details}}
-\DoxyCodeLine{29 \textcolor{stringliteral}{    Loads in the netCDF dataset and extracts position and energy}}
-\DoxyCodeLine{30 \textcolor{stringliteral}{    arrays, passes them off to QHO\_prob\_plot().}}
+\DoxyCodeLine{27 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_aa8bff4555b1d8df8986a287e47b44fe3}{QHOProbPlot}}(chain\_file):}
+\DoxyCodeLine{28     \textcolor{stringliteral}{'''}}
+\DoxyCodeLine{29 \textcolor{stringliteral}{    @brief}}
+\DoxyCodeLine{30 \textcolor{stringliteral}{    Wrapper function for QHO\_prob\_plot()}}
 \DoxyCodeLine{31 \textcolor{stringliteral}{}}
-\DoxyCodeLine{32 \textcolor{stringliteral}{    @param[in]  chain\_file   The main netCDF output file from a Full VQMC run with write\_chains=.TRUE.}}
-\DoxyCodeLine{33 \textcolor{stringliteral}{    '''}}
-\DoxyCodeLine{34     dat = Dataset(chain\_file, \textcolor{stringliteral}{'r'}, format=\textcolor{stringliteral}{'NETCDF4'})}
-\DoxyCodeLine{35 }
-\DoxyCodeLine{36     positions = dat.variables[\textcolor{stringliteral}{'positions'}][::5]}
-\DoxyCodeLine{37     energies = dat.variables[\textcolor{stringliteral}{'energies'}][::5]}
-\DoxyCodeLine{38 }
-\DoxyCodeLine{39     fig = \mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a1e0fa890b9d36a8dc0d2cf886bdb47d0}{QHO\_prob\_plot}}(positions, energies)}
-\DoxyCodeLine{40 }
-\DoxyCodeLine{41     fig.show()}
+\DoxyCodeLine{32 \textcolor{stringliteral}{    @details}}
+\DoxyCodeLine{33 \textcolor{stringliteral}{    Loads in the netCDF dataset and extracts position and energy}}
+\DoxyCodeLine{34 \textcolor{stringliteral}{    arrays, passes them off to QHO\_prob\_plot().}}
+\DoxyCodeLine{35 \textcolor{stringliteral}{}}
+\DoxyCodeLine{36 \textcolor{stringliteral}{    @param[in]  chain\_file   The main netCDF output file from a Full VQMC run with write\_chains=.TRUE.}}
+\DoxyCodeLine{37 \textcolor{stringliteral}{    '''}}
+\DoxyCodeLine{38     dat = Dataset(chain\_file, \textcolor{stringliteral}{'r'}, format=\textcolor{stringliteral}{'NETCDF4'})}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     positions = dat.variables[\textcolor{stringliteral}{'positions'}][::5]}
+\DoxyCodeLine{41     energies = dat.variables[\textcolor{stringliteral}{'energies'}][::5]}
 \DoxyCodeLine{42 }
-\DoxyCodeLine{43 }
+\DoxyCodeLine{43     fig = \mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a1e0fa890b9d36a8dc0d2cf886bdb47d0}{QHO\_prob\_plot}}(positions, energies)}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     fig.show()}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -129,37 +139,37 @@ Fancy Plotly plotter for QHO Markov chains.
 \end{DoxyParams}
 
 
-Definition at line 44 of file dice\+\_\+visualise.\+py.
+Definition at line 48 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{44 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a1e0fa890b9d36a8dc0d2cf886bdb47d0}{QHO\_prob\_plot}}(positions,energies):}
-\DoxyCodeLine{45     \textcolor{stringliteral}{'''}}
-\DoxyCodeLine{46 \textcolor{stringliteral}{    @brief}}
-\DoxyCodeLine{47 \textcolor{stringliteral}{    Fancy Plotly plotter for QHO Markov chains}}
-\DoxyCodeLine{48 \textcolor{stringliteral}{}}
-\DoxyCodeLine{49 \textcolor{stringliteral}{    @param[in]  positions  Position array from Markov chain}}
-\DoxyCodeLine{50 \textcolor{stringliteral}{    @param[in]  energies   Energy array from Markov chain}}
-\DoxyCodeLine{51 \textcolor{stringliteral}{    '''}}
-\DoxyCodeLine{52     hist = ff.create\_distplot([positions], [\textcolor{stringliteral}{'Position Distribution'}],}
-\DoxyCodeLine{53                          bin\_size=.2, show\_rug=\textcolor{keyword}{False})}
-\DoxyCodeLine{54 }
-\DoxyCodeLine{55     fig = make\_subplots(specs=[[\{\textcolor{stringliteral}{"{}secondary\_y"{}}: \textcolor{keyword}{True}\}]])}
-\DoxyCodeLine{56     fig.add\_trace(go.Scatter(x=positions, y=energies, mode =\textcolor{stringliteral}{'markers'}, name=\textcolor{stringliteral}{"{}Energy"{}},}
-\DoxyCodeLine{57                 marker=dict(}
-\DoxyCodeLine{58                 color=energies,}
-\DoxyCodeLine{59                 colorscale =\textcolor{stringliteral}{'Viridis'},}
-\DoxyCodeLine{60                 line=dict(}
-\DoxyCodeLine{61                     width=0}
-\DoxyCodeLine{62                     ))))}
-\DoxyCodeLine{63     fig.add\_trace(go.Histogram(hist[\textcolor{stringliteral}{'data'}][0]),secondary\_y=\textcolor{keyword}{True},)}
-\DoxyCodeLine{64     fig.add\_trace(go.Scatter(hist[\textcolor{stringliteral}{'data'}][1]),secondary\_y=\textcolor{keyword}{True},)}
-\DoxyCodeLine{65     fig[\textcolor{stringliteral}{'layout'}][\textcolor{stringliteral}{'yaxis'}][\textcolor{stringliteral}{'autorange'}] = \textcolor{stringliteral}{"{}reversed"{}}}
-\DoxyCodeLine{66     fig[\textcolor{stringliteral}{'layout'}][\textcolor{stringliteral}{'yaxis2'}][\textcolor{stringliteral}{'showgrid'}] = \textcolor{keyword}{False}}
-\DoxyCodeLine{67 }
-\DoxyCodeLine{68     \textcolor{keywordflow}{return} fig}
-\DoxyCodeLine{69 }
-\DoxyCodeLine{70     }
+\DoxyCodeLine{48 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a1e0fa890b9d36a8dc0d2cf886bdb47d0}{QHO\_prob\_plot}}(positions,energies):}
+\DoxyCodeLine{49     \textcolor{stringliteral}{'''}}
+\DoxyCodeLine{50 \textcolor{stringliteral}{    @brief}}
+\DoxyCodeLine{51 \textcolor{stringliteral}{    Fancy Plotly plotter for QHO Markov chains}}
+\DoxyCodeLine{52 \textcolor{stringliteral}{}}
+\DoxyCodeLine{53 \textcolor{stringliteral}{    @param[in]  positions  Position array from Markov chain}}
+\DoxyCodeLine{54 \textcolor{stringliteral}{    @param[in]  energies   Energy array from Markov chain}}
+\DoxyCodeLine{55 \textcolor{stringliteral}{    '''}}
+\DoxyCodeLine{56     hist = ff.create\_distplot([positions], [\textcolor{stringliteral}{'Position Distribution'}],}
+\DoxyCodeLine{57                          bin\_size=.2, show\_rug=\textcolor{keyword}{False})}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     fig = make\_subplots(specs=[[\{\textcolor{stringliteral}{"{}secondary\_y"{}}: \textcolor{keyword}{True}\}]])}
+\DoxyCodeLine{60     fig.add\_trace(go.Scatter(x=positions, y=energies, mode =\textcolor{stringliteral}{'markers'}, name=\textcolor{stringliteral}{"{}Energy"{}},}
+\DoxyCodeLine{61                 marker=dict(}
+\DoxyCodeLine{62                 color=energies,}
+\DoxyCodeLine{63                 colorscale =\textcolor{stringliteral}{'Viridis'},}
+\DoxyCodeLine{64                 line=dict(}
+\DoxyCodeLine{65                     width=0}
+\DoxyCodeLine{66                     ))))}
+\DoxyCodeLine{67     fig.add\_trace(go.Histogram(hist[\textcolor{stringliteral}{'data'}][0]),secondary\_y=\textcolor{keyword}{True},)}
+\DoxyCodeLine{68     fig.add\_trace(go.Scatter(hist[\textcolor{stringliteral}{'data'}][1]),secondary\_y=\textcolor{keyword}{True},)}
+\DoxyCodeLine{69     fig[\textcolor{stringliteral}{'layout'}][\textcolor{stringliteral}{'yaxis'}][\textcolor{stringliteral}{'autorange'}] = \textcolor{stringliteral}{"{}reversed"{}}}
+\DoxyCodeLine{70     fig[\textcolor{stringliteral}{'layout'}][\textcolor{stringliteral}{'yaxis2'}][\textcolor{stringliteral}{'showgrid'}] = \textcolor{keyword}{False}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{keywordflow}{return} fig}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -191,37 +201,37 @@ Loads in the net\+CDF dataset and extracts position and energy arrays, passes th
 \end{DoxyParams}
 
 
-Definition at line 71 of file dice\+\_\+visualise.\+py.
+Definition at line 75 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{71 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a05c1a1feaeeaae37d1692368f422ecf1}{HydProbPlot}}(chain\_file, opacity=0.2):}
-\DoxyCodeLine{72     \textcolor{stringliteral}{'''}}
-\DoxyCodeLine{73 \textcolor{stringliteral}{    @brief}}
-\DoxyCodeLine{74 \textcolor{stringliteral}{    Wrapper function for H2\_prob\_plot()}}
-\DoxyCodeLine{75 \textcolor{stringliteral}{}}
-\DoxyCodeLine{76 \textcolor{stringliteral}{    @details}}
-\DoxyCodeLine{77 \textcolor{stringliteral}{    Loads in the netCDF dataset and extracts position and energy}}
-\DoxyCodeLine{78 \textcolor{stringliteral}{    arrays, passes them off to H2\_prob\_plot().}}
+\DoxyCodeLine{75 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a05c1a1feaeeaae37d1692368f422ecf1}{HydProbPlot}}(chain\_file, opacity=0.2):}
+\DoxyCodeLine{76     \textcolor{stringliteral}{'''}}
+\DoxyCodeLine{77 \textcolor{stringliteral}{    @brief}}
+\DoxyCodeLine{78 \textcolor{stringliteral}{    Wrapper function for H2\_prob\_plot()}}
 \DoxyCodeLine{79 \textcolor{stringliteral}{}}
-\DoxyCodeLine{80 \textcolor{stringliteral}{    @param[in]  chain\_file   The main netCDF output file from a Full VQMC run with write\_chains=.TRUE.}}
-\DoxyCodeLine{81 \textcolor{stringliteral}{    @param[in]  opacity      (Optional, default=0.2) Opacity of the electron position scatter plot}}
-\DoxyCodeLine{82 \textcolor{stringliteral}{    '''}}
-\DoxyCodeLine{83     dat = Dataset(chain\_file, \textcolor{stringliteral}{'r'}, format=\textcolor{stringliteral}{'NETCDF4'})}
-\DoxyCodeLine{84 }
-\DoxyCodeLine{85     positions = dat.variables[\textcolor{stringliteral}{'positions'}][:, :]}
-\DoxyCodeLine{86     energies = dat.variables[\textcolor{stringliteral}{'energies'}][:]}
-\DoxyCodeLine{87     bond\_length = dat.bond\_length}
+\DoxyCodeLine{80 \textcolor{stringliteral}{    @details}}
+\DoxyCodeLine{81 \textcolor{stringliteral}{    Loads in the netCDF dataset and extracts position and energy}}
+\DoxyCodeLine{82 \textcolor{stringliteral}{    arrays, passes them off to H2\_prob\_plot().}}
+\DoxyCodeLine{83 \textcolor{stringliteral}{}}
+\DoxyCodeLine{84 \textcolor{stringliteral}{    @param[in]  chain\_file   The main netCDF output file from a Full VQMC run with write\_chains=.TRUE.}}
+\DoxyCodeLine{85 \textcolor{stringliteral}{    @param[in]  opacity      (Optional, default=0.2) Opacity of the electron position scatter plot}}
+\DoxyCodeLine{86 \textcolor{stringliteral}{    '''}}
+\DoxyCodeLine{87     dat = Dataset(chain\_file, \textcolor{stringliteral}{'r'}, format=\textcolor{stringliteral}{'NETCDF4'})}
 \DoxyCodeLine{88 }
-\DoxyCodeLine{89     R1 = [-\/bond\_length/2, 0.0, 0.0]}
-\DoxyCodeLine{90     R2 = [bond\_length/2, 0.0, 0.0]}
-\DoxyCodeLine{91 }
-\DoxyCodeLine{92     print(len(positions))}
-\DoxyCodeLine{93 }
-\DoxyCodeLine{94     fig = \mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_ae92b300a144ac37a74e18b6dc16d89a7}{H2\_prob\_plot}}(positions, energies, R1, R2, opacity)}
+\DoxyCodeLine{89     positions = dat.variables[\textcolor{stringliteral}{'positions'}][:, :]}
+\DoxyCodeLine{90     energies = dat.variables[\textcolor{stringliteral}{'energies'}][:]}
+\DoxyCodeLine{91     bond\_length = dat.bond\_length}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     R1 = [-\/bond\_length/2, 0.0, 0.0]}
+\DoxyCodeLine{94     R2 = [bond\_length/2, 0.0, 0.0]}
 \DoxyCodeLine{95 }
-\DoxyCodeLine{96     fig.show()}
+\DoxyCodeLine{96     print(len(positions))}
 \DoxyCodeLine{97 }
+\DoxyCodeLine{98     fig = \mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_ae92b300a144ac37a74e18b6dc16d89a7}{H2\_prob\_plot}}(positions, energies, R1, R2, opacity)}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100     fig.show()}
+\DoxyCodeLine{101 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -262,86 +272,86 @@ Plots the sampled wavefunction for H2plus/\+H2.
 \end{DoxyRetVals}
 
 
-Definition at line 98 of file dice\+\_\+visualise.\+py.
+Definition at line 102 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{98 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_ae92b300a144ac37a74e18b6dc16d89a7}{H2\_prob\_plot}}(positions,energies,R1, R2, opacity):}
-\DoxyCodeLine{99     \textcolor{stringliteral}{"{}"{}"{} }}
-\DoxyCodeLine{100 \textcolor{stringliteral}{    @brief}}
-\DoxyCodeLine{101 \textcolor{stringliteral}{    Plots the sampled wavefunction for H2plus/H2}}
-\DoxyCodeLine{102 \textcolor{stringliteral}{    }}
-\DoxyCodeLine{103 \textcolor{stringliteral}{    @param[in]  positions  XYZ coordinates of Markov chain}}
-\DoxyCodeLine{104 \textcolor{stringliteral}{    @param[in]  energies   Energies of the Markov chains}}
-\DoxyCodeLine{105 \textcolor{stringliteral}{    @param[in]  R1         The XYZ coordinates of the first atom}}
-\DoxyCodeLine{106 \textcolor{stringliteral}{    @param[in]  R2         The XYZ coordinates of the second atom}}
-\DoxyCodeLine{107 \textcolor{stringliteral}{    @param[in]  opacity    Opacity of the electron position scatter plot}}
-\DoxyCodeLine{108 \textcolor{stringliteral}{    @retval     fig        Plotly figure object}}
-\DoxyCodeLine{109 \textcolor{stringliteral}{    "{}"{}"{}}   }
-\DoxyCodeLine{110     }
-\DoxyCodeLine{111     X = positions[:,0]}
-\DoxyCodeLine{112     Y = positions[:,1]}
-\DoxyCodeLine{113     Z = positions[:,2]}
-\DoxyCodeLine{114 }
-\DoxyCodeLine{115     fig = go.Figure()}
-\DoxyCodeLine{116     }
-\DoxyCodeLine{117     \textcolor{comment}{\#Plots the positions of the Markov chain, with energies corresponding to a certain color}}
-\DoxyCodeLine{118     fig.add\_trace(}
-\DoxyCodeLine{119     go.Scatter3d(}
-\DoxyCodeLine{120         mode=\textcolor{stringliteral}{'markers'},}
-\DoxyCodeLine{121         x=X,}
-\DoxyCodeLine{122         y=Y,}
-\DoxyCodeLine{123         z=Z,}
-\DoxyCodeLine{124         opacity=opacity,}
-\DoxyCodeLine{125         marker=dict(}
-\DoxyCodeLine{126             color=energies,}
-\DoxyCodeLine{127             size=3,}
-\DoxyCodeLine{128             colorscale =\textcolor{stringliteral}{'Viridis'},}
-\DoxyCodeLine{129             line=dict(}
-\DoxyCodeLine{130                 width=0}
-\DoxyCodeLine{131                 )}
-\DoxyCodeLine{132             ),}
-\DoxyCodeLine{133             name=\textcolor{stringliteral}{'Markov Chain positions'}}
-\DoxyCodeLine{134         )}
-\DoxyCodeLine{135     )}
-\DoxyCodeLine{136     }
-\DoxyCodeLine{137     \textcolor{comment}{\#Adds points to show the location of the atoms within the object}}
-\DoxyCodeLine{138     fig.add\_trace(}
-\DoxyCodeLine{139         go.Scatter3d(}
-\DoxyCodeLine{140         mode=\textcolor{stringliteral}{'markers'},}
-\DoxyCodeLine{141         x=[R1[0],R2[0]],}
-\DoxyCodeLine{142         y=[R1[1],R2[1]],}
-\DoxyCodeLine{143         z=[R1[2],R2[2]],}
-\DoxyCodeLine{144         opacity=1.0,}
-\DoxyCodeLine{145         marker=dict(}
-\DoxyCodeLine{146             color=\textcolor{stringliteral}{'\#AAAAAA'},}
-\DoxyCodeLine{147             size=20,}
-\DoxyCodeLine{148             line=dict(}
-\DoxyCodeLine{149                 color=\textcolor{stringliteral}{'Black'},}
-\DoxyCodeLine{150                 width=2}
-\DoxyCodeLine{151                 )}
-\DoxyCodeLine{152             ),}
-\DoxyCodeLine{153             name=\textcolor{stringliteral}{'Atoms'}}
-\DoxyCodeLine{154         )}
-\DoxyCodeLine{155     )}
-\DoxyCodeLine{156     }
-\DoxyCodeLine{157     \textcolor{comment}{\#Resizes the layout}}
-\DoxyCodeLine{158     fig.update\_layout(}
-\DoxyCodeLine{159     autosize=\textcolor{keyword}{False},}
-\DoxyCodeLine{160     width=800,}
-\DoxyCodeLine{161     height=800,}
-\DoxyCodeLine{162         margin=dict(}
-\DoxyCodeLine{163         l=5,}
-\DoxyCodeLine{164         r=5,}
-\DoxyCodeLine{165         b=5,}
-\DoxyCodeLine{166         t=100,}
-\DoxyCodeLine{167         pad=1}
-\DoxyCodeLine{168     )}
-\DoxyCodeLine{169     )}
-\DoxyCodeLine{170     }
-\DoxyCodeLine{171     \textcolor{keywordflow}{return} fig}
-\DoxyCodeLine{172     }
-\DoxyCodeLine{173 }
+\DoxyCodeLine{102 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_ae92b300a144ac37a74e18b6dc16d89a7}{H2\_prob\_plot}}(positions,energies,R1, R2, opacity):}
+\DoxyCodeLine{103     \textcolor{stringliteral}{"{}"{}"{} }}
+\DoxyCodeLine{104 \textcolor{stringliteral}{    @brief}}
+\DoxyCodeLine{105 \textcolor{stringliteral}{    Plots the sampled wavefunction for H2plus/H2}}
+\DoxyCodeLine{106 \textcolor{stringliteral}{    }}
+\DoxyCodeLine{107 \textcolor{stringliteral}{    @param[in]  positions  XYZ coordinates of Markov chain}}
+\DoxyCodeLine{108 \textcolor{stringliteral}{    @param[in]  energies   Energies of the Markov chains}}
+\DoxyCodeLine{109 \textcolor{stringliteral}{    @param[in]  R1         The XYZ coordinates of the first atom}}
+\DoxyCodeLine{110 \textcolor{stringliteral}{    @param[in]  R2         The XYZ coordinates of the second atom}}
+\DoxyCodeLine{111 \textcolor{stringliteral}{    @param[in]  opacity    Opacity of the electron position scatter plot}}
+\DoxyCodeLine{112 \textcolor{stringliteral}{    @retval     fig        Plotly figure object}}
+\DoxyCodeLine{113 \textcolor{stringliteral}{    "{}"{}"{}}   }
+\DoxyCodeLine{114     }
+\DoxyCodeLine{115     X = positions[:,0]}
+\DoxyCodeLine{116     Y = positions[:,1]}
+\DoxyCodeLine{117     Z = positions[:,2]}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     fig = go.Figure()}
+\DoxyCodeLine{120     }
+\DoxyCodeLine{121     \textcolor{comment}{\#Plots the positions of the Markov chain, with energies corresponding to a certain color}}
+\DoxyCodeLine{122     fig.add\_trace(}
+\DoxyCodeLine{123     go.Scatter3d(}
+\DoxyCodeLine{124         mode=\textcolor{stringliteral}{'markers'},}
+\DoxyCodeLine{125         x=X,}
+\DoxyCodeLine{126         y=Y,}
+\DoxyCodeLine{127         z=Z,}
+\DoxyCodeLine{128         opacity=opacity,}
+\DoxyCodeLine{129         marker=dict(}
+\DoxyCodeLine{130             color=energies,}
+\DoxyCodeLine{131             size=3,}
+\DoxyCodeLine{132             colorscale =\textcolor{stringliteral}{'Viridis'},}
+\DoxyCodeLine{133             line=dict(}
+\DoxyCodeLine{134                 width=0}
+\DoxyCodeLine{135                 )}
+\DoxyCodeLine{136             ),}
+\DoxyCodeLine{137             name=\textcolor{stringliteral}{'Markov Chain positions'}}
+\DoxyCodeLine{138         )}
+\DoxyCodeLine{139     )}
+\DoxyCodeLine{140     }
+\DoxyCodeLine{141     \textcolor{comment}{\#Adds points to show the location of the atoms within the object}}
+\DoxyCodeLine{142     fig.add\_trace(}
+\DoxyCodeLine{143         go.Scatter3d(}
+\DoxyCodeLine{144         mode=\textcolor{stringliteral}{'markers'},}
+\DoxyCodeLine{145         x=[R1[0],R2[0]],}
+\DoxyCodeLine{146         y=[R1[1],R2[1]],}
+\DoxyCodeLine{147         z=[R1[2],R2[2]],}
+\DoxyCodeLine{148         opacity=1.0,}
+\DoxyCodeLine{149         marker=dict(}
+\DoxyCodeLine{150             color=\textcolor{stringliteral}{'\#AAAAAA'},}
+\DoxyCodeLine{151             size=20,}
+\DoxyCodeLine{152             line=dict(}
+\DoxyCodeLine{153                 color=\textcolor{stringliteral}{'Black'},}
+\DoxyCodeLine{154                 width=2}
+\DoxyCodeLine{155                 )}
+\DoxyCodeLine{156             ),}
+\DoxyCodeLine{157             name=\textcolor{stringliteral}{'Atoms'}}
+\DoxyCodeLine{158         )}
+\DoxyCodeLine{159     )}
+\DoxyCodeLine{160     }
+\DoxyCodeLine{161     \textcolor{comment}{\#Resizes the layout}}
+\DoxyCodeLine{162     fig.update\_layout(}
+\DoxyCodeLine{163     autosize=\textcolor{keyword}{False},}
+\DoxyCodeLine{164     width=800,}
+\DoxyCodeLine{165     height=800,}
+\DoxyCodeLine{166         margin=dict(}
+\DoxyCodeLine{167         l=5,}
+\DoxyCodeLine{168         r=5,}
+\DoxyCodeLine{169         b=5,}
+\DoxyCodeLine{170         t=100,}
+\DoxyCodeLine{171         pad=1}
+\DoxyCodeLine{172     )}
+\DoxyCodeLine{173     )}
+\DoxyCodeLine{174     }
+\DoxyCodeLine{175     \textcolor{keywordflow}{return} fig}
+\DoxyCodeLine{176     }
+\DoxyCodeLine{177 }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -373,49 +383,49 @@ Plots the VQMC wavefunction energy at each of an array of values for the variati
 \end{DoxyParams}
 
 
-Definition at line 174 of file dice\+\_\+visualise.\+py.
+Definition at line 178 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{174 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a592dd6c19dea285182a2d766eba39393}{QHOEnergyPlot}}(results\_file, sliceby=(\textcolor{keywordtype}{None}, \textcolor{keywordtype}{None})):}
-\DoxyCodeLine{175     \textcolor{stringliteral}{'''}}
-\DoxyCodeLine{176 \textcolor{stringliteral}{    @brief}}
-\DoxyCodeLine{177 \textcolor{stringliteral}{    Energy against @f\$ \(\backslash\)alpha @f\$ plotter for the QHO problem.}}
-\DoxyCodeLine{178 \textcolor{stringliteral}{}}
-\DoxyCodeLine{179 \textcolor{stringliteral}{    @details}}
-\DoxyCodeLine{180 \textcolor{stringliteral}{    Plots the VQMC wavefunction energy at each of an array of values for the}}
-\DoxyCodeLine{181 \textcolor{stringliteral}{    variational parameter @f\$ \(\backslash\)alpha @f\$, alongside error bars of the standard}}
-\DoxyCodeLine{182 \textcolor{stringliteral}{    deviation in each energy.}}
-\DoxyCodeLine{183 \textcolor{stringliteral}{}}
-\DoxyCodeLine{184 \textcolor{stringliteral}{    @param[in]  results\_file    The main netCDF output file from a QHO run}}
-\DoxyCodeLine{185 \textcolor{stringliteral}{    @param[in]  sliceby         (Optional) Tuple containing slice intervals for arrays}}
-\DoxyCodeLine{186 \textcolor{stringliteral}{    '''}}
-\DoxyCodeLine{187     dat = nd.Dataset(results\_file, \textcolor{stringliteral}{'r'}, format=\textcolor{stringliteral}{'NETCDF4'})}
-\DoxyCodeLine{188 }
-\DoxyCodeLine{189     alpha\_array = dat.variables[\textcolor{stringliteral}{'Alpha\_array'}][sliceby[0]:sliceby[1]]}
-\DoxyCodeLine{190     energies = dat.variables[\textcolor{stringliteral}{'total\_energies'}][sliceby[0]:sliceby[1]]}
-\DoxyCodeLine{191     variances = dat.variables[\textcolor{stringliteral}{'Uncertainties'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{178 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a592dd6c19dea285182a2d766eba39393}{QHOEnergyPlot}}(results\_file, sliceby=(\textcolor{keywordtype}{None}, \textcolor{keywordtype}{None})):}
+\DoxyCodeLine{179     \textcolor{stringliteral}{'''}}
+\DoxyCodeLine{180 \textcolor{stringliteral}{    @brief}}
+\DoxyCodeLine{181 \textcolor{stringliteral}{    Energy against @f\$ \(\backslash\)alpha @f\$ plotter for the QHO problem.}}
+\DoxyCodeLine{182 \textcolor{stringliteral}{}}
+\DoxyCodeLine{183 \textcolor{stringliteral}{    @details}}
+\DoxyCodeLine{184 \textcolor{stringliteral}{    Plots the VQMC wavefunction energy at each of an array of values for the}}
+\DoxyCodeLine{185 \textcolor{stringliteral}{    variational parameter @f\$ \(\backslash\)alpha @f\$, alongside error bars of the standard}}
+\DoxyCodeLine{186 \textcolor{stringliteral}{    deviation in each energy.}}
+\DoxyCodeLine{187 \textcolor{stringliteral}{}}
+\DoxyCodeLine{188 \textcolor{stringliteral}{    @param[in]  results\_file    The main netCDF output file from a QHO run}}
+\DoxyCodeLine{189 \textcolor{stringliteral}{    @param[in]  sliceby         (Optional) Tuple containing slice intervals for arrays}}
+\DoxyCodeLine{190 \textcolor{stringliteral}{    '''}}
+\DoxyCodeLine{191     dat = nd.Dataset(results\_file, \textcolor{stringliteral}{'r'}, format=\textcolor{stringliteral}{'NETCDF4'})}
 \DoxyCodeLine{192 }
-\DoxyCodeLine{193     stdevs = np.sqrt(variances)}
-\DoxyCodeLine{194     min\_energy = min(energies)}
-\DoxyCodeLine{195     min\_energy\_stdev = stdevs[np.argmin(energies)]}
-\DoxyCodeLine{196     opt\_alpha = alpha\_array[np.argmin(energies)]}
-\DoxyCodeLine{197 }
-\DoxyCodeLine{198     fig, ax1 = plt.subplots(1, 1, figsize=(8, 8))}
-\DoxyCodeLine{199 }
-\DoxyCodeLine{200     ax1.set\_title(\textcolor{stringliteral}{r'Quantum Harmonic Oscillator Energy with Varying \$\(\backslash\)alpha\$'})}
-\DoxyCodeLine{201     ax1.plot(alpha\_array, energies, marker=\textcolor{stringliteral}{'o'}, ls=\textcolor{stringliteral}{'-\/-\/'}, color=\textcolor{stringliteral}{'blue'})}
-\DoxyCodeLine{202     ax1.fill\_between(alpha\_array, energies+stdevs, energies-\/stdevs, alpha=0.3, color=\textcolor{stringliteral}{'purple'})}
-\DoxyCodeLine{203     ax1.axvline(0.5, ls=\textcolor{stringliteral}{'-\/'}, color=\textcolor{stringliteral}{'black'}, alpha=0.3)}
-\DoxyCodeLine{204     ax1.set\_xlabel(\textcolor{stringliteral}{r'\$\(\backslash\)alpha\$'})}
-\DoxyCodeLine{205     ax1.set\_ylabel(\textcolor{stringliteral}{'Energy'})}
-\DoxyCodeLine{206 }
-\DoxyCodeLine{207     fig.show()}
-\DoxyCodeLine{208 }
-\DoxyCodeLine{209     print(f\textcolor{stringliteral}{'Optimum alpha: \{opt\_alpha\}'})}
-\DoxyCodeLine{210     print(f\textcolor{stringliteral}{'Energy: \{min\_energy\} ± \{min\_energy\_stdev\}'})}
-\DoxyCodeLine{211 }
+\DoxyCodeLine{193     alpha\_array = dat.variables[\textcolor{stringliteral}{'Alpha\_array'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{194     energies = dat.variables[\textcolor{stringliteral}{'total\_energies'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{195     variances = dat.variables[\textcolor{stringliteral}{'Uncertainties'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197     stdevs = np.sqrt(variances)}
+\DoxyCodeLine{198     min\_energy = min(energies)}
+\DoxyCodeLine{199     min\_energy\_stdev = stdevs[np.argmin(energies)]}
+\DoxyCodeLine{200     opt\_alpha = alpha\_array[np.argmin(energies)]}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202     fig, ax1 = plt.subplots(1, 1, figsize=(8, 8))}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204     ax1.set\_title(\textcolor{stringliteral}{r'Quantum Harmonic Oscillator Energy with Varying \$\(\backslash\)alpha\$'})}
+\DoxyCodeLine{205     ax1.plot(alpha\_array, energies, marker=\textcolor{stringliteral}{'o'}, ls=\textcolor{stringliteral}{'-\/-\/'}, color=\textcolor{stringliteral}{'blue'})}
+\DoxyCodeLine{206     ax1.fill\_between(alpha\_array, energies+stdevs, energies-\/stdevs, alpha=0.3, color=\textcolor{stringliteral}{'purple'})}
+\DoxyCodeLine{207     ax1.axvline(0.5, ls=\textcolor{stringliteral}{'-\/'}, color=\textcolor{stringliteral}{'black'}, alpha=0.3)}
+\DoxyCodeLine{208     ax1.set\_xlabel(\textcolor{stringliteral}{r'\$\(\backslash\)alpha\$'})}
+\DoxyCodeLine{209     ax1.set\_ylabel(\textcolor{stringliteral}{'Energy'})}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211     fig.show()}
 \DoxyCodeLine{212 }
+\DoxyCodeLine{213     print(f\textcolor{stringliteral}{'Optimum alpha: \{opt\_alpha\}'})}
+\DoxyCodeLine{214     print(f\textcolor{stringliteral}{'Energy: \{min\_energy\} ± \{min\_energy\_stdev\}'})}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespace_dice_py_1_1dice__visualise_a9b1db186f691296871f6344f4bff4e67}\label{namespace_dice_py_1_1dice__visualise_a9b1db186f691296871f6344f4bff4e67}} 
@@ -439,43 +449,43 @@ Plots the sampled posisions of a trial QHO wavefunction against the energies at 
 \end{DoxyParams}
 
 
-Definition at line 213 of file dice\+\_\+visualise.\+py.
+Definition at line 217 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{213 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a9b1db186f691296871f6344f4bff4e67}{QHOWfnPlot}}(chain\_file, show\_analytic=False):}
-\DoxyCodeLine{214     \textcolor{stringliteral}{'''}}
-\DoxyCodeLine{215 \textcolor{stringliteral}{    @brief}}
-\DoxyCodeLine{216 \textcolor{stringliteral}{    Scatter plotter of the sampled QHO wavefunction.}}
-\DoxyCodeLine{217 \textcolor{stringliteral}{}}
-\DoxyCodeLine{218 \textcolor{stringliteral}{    @details}}
-\DoxyCodeLine{219 \textcolor{stringliteral}{    Plots the sampled posisions of a trial QHO wavefunction against the}}
-\DoxyCodeLine{220 \textcolor{stringliteral}{    energies at those positions, to illustrate the shape of that wavefunction.}}
-\DoxyCodeLine{221 \textcolor{stringliteral}{    Chain output requires the @em write\_chains parameter to be @em TRUE.}}
-\DoxyCodeLine{222 \textcolor{stringliteral}{}}
-\DoxyCodeLine{223 \textcolor{stringliteral}{    @param[in]  chain\_file     A netCDF dataset of Markov chain and corresponding energies of a VQMC run}}
-\DoxyCodeLine{224 \textcolor{stringliteral}{    @param[in]  show\_analytic  Also display the analytical wavefunction}}
-\DoxyCodeLine{225 \textcolor{stringliteral}{    '''}}
-\DoxyCodeLine{226     dat = nd.Dataset(chain\_file, \textcolor{stringliteral}{'r'}, format=\textcolor{stringliteral}{'NETCDF4'})}
-\DoxyCodeLine{227 }
-\DoxyCodeLine{228     positions = dat.variables[\textcolor{stringliteral}{'positions'}][:]}
-\DoxyCodeLine{229     energies = dat.variables[\textcolor{stringliteral}{'energies'}][:]}
-\DoxyCodeLine{230     alpha = dat.alpha}
+\DoxyCodeLine{217 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a9b1db186f691296871f6344f4bff4e67}{QHOWfnPlot}}(chain\_file, show\_analytic=False):}
+\DoxyCodeLine{218     \textcolor{stringliteral}{'''}}
+\DoxyCodeLine{219 \textcolor{stringliteral}{    @brief}}
+\DoxyCodeLine{220 \textcolor{stringliteral}{    Scatter plotter of the sampled QHO wavefunction.}}
+\DoxyCodeLine{221 \textcolor{stringliteral}{}}
+\DoxyCodeLine{222 \textcolor{stringliteral}{    @details}}
+\DoxyCodeLine{223 \textcolor{stringliteral}{    Plots the sampled posisions of a trial QHO wavefunction against the}}
+\DoxyCodeLine{224 \textcolor{stringliteral}{    energies at those positions, to illustrate the shape of that wavefunction.}}
+\DoxyCodeLine{225 \textcolor{stringliteral}{    Chain output requires the @em write\_chains parameter to be @em TRUE.}}
+\DoxyCodeLine{226 \textcolor{stringliteral}{}}
+\DoxyCodeLine{227 \textcolor{stringliteral}{    @param[in]  chain\_file     A netCDF dataset of Markov chain and corresponding energies of a VQMC run}}
+\DoxyCodeLine{228 \textcolor{stringliteral}{    @param[in]  show\_analytic  Also display the analytical wavefunction}}
+\DoxyCodeLine{229 \textcolor{stringliteral}{    '''}}
+\DoxyCodeLine{230     dat = nd.Dataset(chain\_file, \textcolor{stringliteral}{'r'}, format=\textcolor{stringliteral}{'NETCDF4'})}
 \DoxyCodeLine{231 }
-\DoxyCodeLine{232     plt.figure(figsize=(8, 8))}
-\DoxyCodeLine{233     plt.title(rf\textcolor{stringliteral}{'Sampled QHO Wavefunction at \$\(\backslash\)alpha\$ = \{alpha\}'})}
-\DoxyCodeLine{234     plt.plot(positions, energies, \textcolor{stringliteral}{'o'}, color=\textcolor{stringliteral}{'purple'}, markersize=4.0, alpha=0.5)}
-\DoxyCodeLine{235     plt.xlabel(\textcolor{stringliteral}{'Sampled Position'})}
-\DoxyCodeLine{236     plt.ylabel(\textcolor{stringliteral}{'Energy'})}
-\DoxyCodeLine{237 }
-\DoxyCodeLine{238     \textcolor{keywordflow}{if} show\_analytic:}
-\DoxyCodeLine{239         pos\_array = np.linspace(min(positions), max(positions), 100)}
-\DoxyCodeLine{240         analytic = np.exp(-\/alpha * pos\_array**2)}
-\DoxyCodeLine{241         plt.plot(pos\_array, analytic, color=\textcolor{stringliteral}{'red'}, alpha=0.8)}
-\DoxyCodeLine{242 }
-\DoxyCodeLine{243     plt.show()}
-\DoxyCodeLine{244 }
-\DoxyCodeLine{245 }
+\DoxyCodeLine{232     positions = dat.variables[\textcolor{stringliteral}{'positions'}][:]}
+\DoxyCodeLine{233     energies = dat.variables[\textcolor{stringliteral}{'energies'}][:]}
+\DoxyCodeLine{234     alpha = dat.alpha}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236     plt.figure(figsize=(8, 8))}
+\DoxyCodeLine{237     plt.title(rf\textcolor{stringliteral}{'Sampled QHO Wavefunction at \$\(\backslash\)alpha\$ = \{alpha\}'})}
+\DoxyCodeLine{238     plt.plot(positions, energies, \textcolor{stringliteral}{'o'}, color=\textcolor{stringliteral}{'purple'}, markersize=4.0, alpha=0.5)}
+\DoxyCodeLine{239     plt.xlabel(\textcolor{stringliteral}{'Sampled Position'})}
+\DoxyCodeLine{240     plt.ylabel(\textcolor{stringliteral}{'Energy'})}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242     \textcolor{keywordflow}{if} show\_analytic:}
+\DoxyCodeLine{243         pos\_array = np.linspace(min(positions), max(positions), 100)}
+\DoxyCodeLine{244         analytic = np.exp(-\/alpha * pos\_array**2)}
+\DoxyCodeLine{245         plt.plot(pos\_array, analytic, color=\textcolor{stringliteral}{'red'}, alpha=0.8)}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247     plt.show()}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespace_dice_py_1_1dice__visualise_abe1e1fab789ff04e6f5ac5f6887695ec}\label{namespace_dice_py_1_1dice__visualise_abe1e1fab789ff04e6f5ac5f6887695ec}} 
@@ -499,62 +509,62 @@ Plots the H-\/H bond potential energy curve generated by VQMC at the optimum par
 \end{DoxyParams}
 
 
-Definition at line 246 of file dice\+\_\+visualise.\+py.
+Definition at line 250 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{246 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_abe1e1fab789ff04e6f5ac5f6887695ec}{H2plusEnergyPlot}}(results\_file, sliceby=(\textcolor{keywordtype}{None}, \textcolor{keywordtype}{None})):}
-\DoxyCodeLine{247     \textcolor{stringliteral}{'''}}
-\DoxyCodeLine{248 \textcolor{stringliteral}{    @brief}}
-\DoxyCodeLine{249 \textcolor{stringliteral}{    @f\$ H\_\{2\}\string^\{+\} @f\$ H-\/H bond energy and parameter plotter.}}
-\DoxyCodeLine{250 \textcolor{stringliteral}{}}
-\DoxyCodeLine{251 \textcolor{stringliteral}{    @details}}
-\DoxyCodeLine{252 \textcolor{stringliteral}{    Plots the H-\/H bond potential energy curve generated by VQMC at the optimum}}
-\DoxyCodeLine{253 \textcolor{stringliteral}{    parameters for each bond length. Plots standard deviation of each energy as}}
-\DoxyCodeLine{254 \textcolor{stringliteral}{    a measure of uncertainty. Also plots variational parameter @f\$ c @f\$ against}}
-\DoxyCodeLine{255 \textcolor{stringliteral}{    bond length. Reports equilibrium bond length for the molecule and optimum}}
-\DoxyCodeLine{256 \textcolor{stringliteral}{    energy.}}
-\DoxyCodeLine{257 \textcolor{stringliteral}{}}
-\DoxyCodeLine{258 \textcolor{stringliteral}{    @param[in]  results\_file    The main netCDF output file from a @f\$ H\_\{2\}\string^\{+\} @f\$ run}}
-\DoxyCodeLine{259 \textcolor{stringliteral}{    @param[in]  sliceby         (Optional) Tuple containing slice intervals for arrays}}
-\DoxyCodeLine{260 \textcolor{stringliteral}{    '''}}
-\DoxyCodeLine{261     dat = nd.Dataset(results\_file, \textcolor{stringliteral}{'r'}, format=\textcolor{stringliteral}{'NETCDF4'})}
-\DoxyCodeLine{262 }
-\DoxyCodeLine{263     bond\_lengths = dat.variables[\textcolor{stringliteral}{'Bondlength\_array'}][sliceby[0]:sliceby[1]]}
-\DoxyCodeLine{264     c\_opt = dat.variables[\textcolor{stringliteral}{'Parameter\_array'}][sliceby[0]:sliceby[1]]}
-\DoxyCodeLine{265     energies = dat.variables[\textcolor{stringliteral}{'total\_energies'}][sliceby[0]:sliceby[1]]}
-\DoxyCodeLine{266     variances = dat.variables[\textcolor{stringliteral}{'Uncertainties'}][sliceby[0]:sliceby[1]]}
-\DoxyCodeLine{267 }
-\DoxyCodeLine{268     stdevs = np.sqrt(variances)}
-\DoxyCodeLine{269     min\_energy = min(energies)}
-\DoxyCodeLine{270     min\_energy\_stdev = stdevs[np.argmin(energies)]}
-\DoxyCodeLine{271     min\_bond\_length = bond\_lengths[np.argmin(energies)]}
-\DoxyCodeLine{272 }
-\DoxyCodeLine{273     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 8))}
-\DoxyCodeLine{274 }
-\DoxyCodeLine{275     ax1.set\_title(\textcolor{stringliteral}{r'\$H\_\{2\}\string^\{+\}\$ bond energy curve'})}
-\DoxyCodeLine{276     \textcolor{comment}{\# ax1.plot(bond\_lengths, energies, marker='o')}}
-\DoxyCodeLine{277     ax1.plot(bond\_lengths, energies, marker=\textcolor{stringliteral}{'o'}, ls=\textcolor{stringliteral}{'-\/-\/'}, color=\textcolor{stringliteral}{'blue'})}
-\DoxyCodeLine{278     ax1.fill\_between(bond\_lengths, energies+stdevs, energies-\/stdevs, alpha=0.3, color=\textcolor{stringliteral}{'purple'})}
-\DoxyCodeLine{279     ax1.axhline(-\/0.5, ls=\textcolor{stringliteral}{'-\/'}, color=\textcolor{stringliteral}{'black'}, alpha=0.3)}
-\DoxyCodeLine{280     ax1.set\_xlabel(\textcolor{stringliteral}{r'Bond Length / \$a\_\{0\}\$'})}
-\DoxyCodeLine{281     ax1.set\_ylabel(\textcolor{stringliteral}{'Energy / Ha'})}
-\DoxyCodeLine{282 }
-\DoxyCodeLine{283     ax2.set\_title(\textcolor{stringliteral}{r'Optimised parameter \$c\$'})}
-\DoxyCodeLine{284     ax2.plot(bond\_lengths, c\_opt)}
-\DoxyCodeLine{285     ax2.axhline(1/np.sqrt(2), ls=\textcolor{stringliteral}{'-\/'}, color=\textcolor{stringliteral}{'black'}, alpha=0.3)}
-\DoxyCodeLine{286     ax2.set\_xlabel(\textcolor{stringliteral}{r'Bond Length / \$a\_\{0\}\$'})}
-\DoxyCodeLine{287     ax2.set\_ylabel(\textcolor{stringliteral}{r'\$c\$'})}
-\DoxyCodeLine{288 }
-\DoxyCodeLine{289     fig.tight\_layout()}
-\DoxyCodeLine{290     fig.show()}
-\DoxyCodeLine{291 }
-\DoxyCodeLine{292     print(f\textcolor{stringliteral}{'Equilibrium bond length: \{min\_bond\_length\} Bohr'})}
-\DoxyCodeLine{293     print(f\textcolor{stringliteral}{'                         = \{min\_bond\_length*0.529177\} Angstroms'})}
-\DoxyCodeLine{294     print(f\textcolor{stringliteral}{'   at energy: \{min\_energy\} ± \{min\_energy\_stdev\} Ha'})}
+\DoxyCodeLine{250 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_abe1e1fab789ff04e6f5ac5f6887695ec}{H2plusEnergyPlot}}(results\_file, sliceby=(\textcolor{keywordtype}{None}, \textcolor{keywordtype}{None})):}
+\DoxyCodeLine{251     \textcolor{stringliteral}{'''}}
+\DoxyCodeLine{252 \textcolor{stringliteral}{    @brief}}
+\DoxyCodeLine{253 \textcolor{stringliteral}{    @f\$ H\_\{2\}\string^\{+\} @f\$ H-\/H bond energy and parameter plotter.}}
+\DoxyCodeLine{254 \textcolor{stringliteral}{}}
+\DoxyCodeLine{255 \textcolor{stringliteral}{    @details}}
+\DoxyCodeLine{256 \textcolor{stringliteral}{    Plots the H-\/H bond potential energy curve generated by VQMC at the optimum}}
+\DoxyCodeLine{257 \textcolor{stringliteral}{    parameters for each bond length. Plots standard deviation of each energy as}}
+\DoxyCodeLine{258 \textcolor{stringliteral}{    a measure of uncertainty. Also plots variational parameter @f\$ c @f\$ against}}
+\DoxyCodeLine{259 \textcolor{stringliteral}{    bond length. Reports equilibrium bond length for the molecule and optimum}}
+\DoxyCodeLine{260 \textcolor{stringliteral}{    energy.}}
+\DoxyCodeLine{261 \textcolor{stringliteral}{}}
+\DoxyCodeLine{262 \textcolor{stringliteral}{    @param[in]  results\_file    The main netCDF output file from a @f\$ H\_\{2\}\string^\{+\} @f\$ run}}
+\DoxyCodeLine{263 \textcolor{stringliteral}{    @param[in]  sliceby         (Optional) Tuple containing slice intervals for arrays}}
+\DoxyCodeLine{264 \textcolor{stringliteral}{    '''}}
+\DoxyCodeLine{265     dat = nd.Dataset(results\_file, \textcolor{stringliteral}{'r'}, format=\textcolor{stringliteral}{'NETCDF4'})}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{267     bond\_lengths = dat.variables[\textcolor{stringliteral}{'Bondlength\_array'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{268     c\_opt = dat.variables[\textcolor{stringliteral}{'Parameter\_array'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{269     energies = dat.variables[\textcolor{stringliteral}{'total\_energies'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{270     variances = dat.variables[\textcolor{stringliteral}{'Uncertainties'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272     stdevs = np.sqrt(variances)}
+\DoxyCodeLine{273     min\_energy = min(energies)}
+\DoxyCodeLine{274     min\_energy\_stdev = stdevs[np.argmin(energies)]}
+\DoxyCodeLine{275     min\_bond\_length = bond\_lengths[np.argmin(energies)]}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{277     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 8))}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279     ax1.set\_title(\textcolor{stringliteral}{r'\$H\_\{2\}\string^\{+\}\$ bond energy curve'})}
+\DoxyCodeLine{280     \textcolor{comment}{\# ax1.plot(bond\_lengths, energies, marker='o')}}
+\DoxyCodeLine{281     ax1.plot(bond\_lengths, energies, marker=\textcolor{stringliteral}{'o'}, ls=\textcolor{stringliteral}{'-\/-\/'}, color=\textcolor{stringliteral}{'blue'})}
+\DoxyCodeLine{282     ax1.fill\_between(bond\_lengths, energies+stdevs, energies-\/stdevs, alpha=0.3, color=\textcolor{stringliteral}{'purple'})}
+\DoxyCodeLine{283     ax1.axhline(-\/0.5, ls=\textcolor{stringliteral}{'-\/'}, color=\textcolor{stringliteral}{'black'}, alpha=0.3)}
+\DoxyCodeLine{284     ax1.set\_xlabel(\textcolor{stringliteral}{r'Bond Length / \$a\_\{0\}\$'})}
+\DoxyCodeLine{285     ax1.set\_ylabel(\textcolor{stringliteral}{'Energy / Ha'})}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287     ax2.set\_title(\textcolor{stringliteral}{r'Optimised parameter \$c\$'})}
+\DoxyCodeLine{288     ax2.plot(bond\_lengths, c\_opt)}
+\DoxyCodeLine{289     ax2.axhline(1/np.sqrt(2), ls=\textcolor{stringliteral}{'-\/'}, color=\textcolor{stringliteral}{'black'}, alpha=0.3)}
+\DoxyCodeLine{290     ax2.set\_xlabel(\textcolor{stringliteral}{r'Bond Length / \$a\_\{0\}\$'})}
+\DoxyCodeLine{291     ax2.set\_ylabel(\textcolor{stringliteral}{r'\$c\$'})}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293     fig.tight\_layout()}
+\DoxyCodeLine{294     fig.show()}
 \DoxyCodeLine{295 }
-\DoxyCodeLine{296 }
-\DoxyCodeLine{297 }
+\DoxyCodeLine{296     print(f\textcolor{stringliteral}{'Equilibrium bond length: \{min\_bond\_length\} Bohr'})}
+\DoxyCodeLine{297     print(f\textcolor{stringliteral}{'                         = \{min\_bond\_length*0.529177\} Angstroms'})}
+\DoxyCodeLine{298     print(f\textcolor{stringliteral}{'   at energy: \{min\_energy\} ± \{min\_energy\_stdev\} Ha'})}
+\DoxyCodeLine{299 }
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespace_dice_py_1_1dice__visualise_a68554c3801b44e369f77719d5147e591}\label{namespace_dice_py_1_1dice__visualise_a68554c3801b44e369f77719d5147e591}} 
@@ -578,69 +588,69 @@ Plots the H-\/H bond potential energy curve generated by VQMC at the optimum par
 \end{DoxyParams}
 
 
-Definition at line 298 of file dice\+\_\+visualise.\+py.
+Definition at line 302 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{298 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a68554c3801b44e369f77719d5147e591}{H2EnergyPlot}}(results\_file, sliceby=(\textcolor{keywordtype}{None}, \textcolor{keywordtype}{None})):}
-\DoxyCodeLine{299     \textcolor{stringliteral}{'''}}
-\DoxyCodeLine{300 \textcolor{stringliteral}{    @brief}}
-\DoxyCodeLine{301 \textcolor{stringliteral}{    @f\$ H\_\{2\} @f\$ H-\/H bond energy and parameter plotter.}}
-\DoxyCodeLine{302 \textcolor{stringliteral}{}}
-\DoxyCodeLine{303 \textcolor{stringliteral}{    @details}}
-\DoxyCodeLine{304 \textcolor{stringliteral}{    Plots the H-\/H bond potential energy curve generated by VQMC at the optimum}}
-\DoxyCodeLine{305 \textcolor{stringliteral}{    parameters for each bond length. Plots standard deviation of each energy as}}
-\DoxyCodeLine{306 \textcolor{stringliteral}{    a measure of uncertainty. Also plots variational parameters @f\$ a @f\$ and}}
-\DoxyCodeLine{307 \textcolor{stringliteral}{    @f\$ \(\backslash\)beta @f\$ against bond length. Reports equilibrium bond length for the}}
-\DoxyCodeLine{308 \textcolor{stringliteral}{    molecule and optimum energy.}}
-\DoxyCodeLine{309 \textcolor{stringliteral}{}}
-\DoxyCodeLine{310 \textcolor{stringliteral}{    @param[in]  results\_file    The main netCDF output file from a @f\$ H\_\{2\} @f\$ run}}
-\DoxyCodeLine{311 \textcolor{stringliteral}{    @param[in]  sliceby         (Optional) Tuple containing slice intervals for arrays}}
-\DoxyCodeLine{312 \textcolor{stringliteral}{    '''}}
-\DoxyCodeLine{313     dat = nd.Dataset(results\_file, \textcolor{stringliteral}{'r'}, format=\textcolor{stringliteral}{'NETCDF4'})}
-\DoxyCodeLine{314 }
-\DoxyCodeLine{315     bond\_lengths = dat.variables[\textcolor{stringliteral}{'Bondlength\_array'}][sliceby[0]:sliceby[1]]}
-\DoxyCodeLine{316     a\_opt = dat.variables[\textcolor{stringliteral}{'Parameter\_a\_array'}][sliceby[0]:sliceby[1]]}
-\DoxyCodeLine{317     beta\_opt = dat.variables[\textcolor{stringliteral}{'Parameter\_beta\_array'}][sliceby[0]:sliceby[1]]}
-\DoxyCodeLine{318     energies = dat.variables[\textcolor{stringliteral}{'total\_energies'}][sliceby[0]:sliceby[1]]}
-\DoxyCodeLine{319     variances = dat.variables[\textcolor{stringliteral}{'Uncertainties'}][sliceby[0]:sliceby[1]]}
-\DoxyCodeLine{320 }
-\DoxyCodeLine{321     stdevs = np.sqrt(variances)}
-\DoxyCodeLine{322     min\_energy = min(energies)}
-\DoxyCodeLine{323     min\_energy\_stdev = stdevs[np.argmin(energies)]}
-\DoxyCodeLine{324     min\_bond\_length = bond\_lengths[np.argmin(energies)]}
-\DoxyCodeLine{325 }
-\DoxyCodeLine{326     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 8))}
-\DoxyCodeLine{327 }
-\DoxyCodeLine{328     ax1.set\_title(\textcolor{stringliteral}{r'\$H\_\{2\}\$ bond energy curve'})}
-\DoxyCodeLine{329     ax1.errorbar(bond\_lengths, energies, yerr=stdevs, marker=\textcolor{stringliteral}{'o'}, ls=\textcolor{stringliteral}{'-\/-\/'}, color=\textcolor{stringliteral}{'blue'})}
-\DoxyCodeLine{330     ax1.fill\_between(bond\_lengths, energies+stdevs, energies-\/stdevs, alpha=0.3, color=\textcolor{stringliteral}{'purple'})}
-\DoxyCodeLine{331     ax1.set\_xlabel(\textcolor{stringliteral}{r'Bond Length / \$a\_\{0\}\$'})}
-\DoxyCodeLine{332     ax1.set\_ylabel(\textcolor{stringliteral}{'Energy / Ha'})}
-\DoxyCodeLine{333 }
-\DoxyCodeLine{334     ax2.set\_title(\textcolor{stringliteral}{r'Optimised parameters'})}
-\DoxyCodeLine{335     ax2.plot(bond\_lengths, a\_opt, color=\textcolor{stringliteral}{'red'})}
-\DoxyCodeLine{336     ax2.set\_xlabel(\textcolor{stringliteral}{r'Bond Length / \$a\_\{0\}\$'})}
-\DoxyCodeLine{337     ax2.set\_ylabel(\textcolor{stringliteral}{r'\$a\$'}, color=\textcolor{stringliteral}{'red'})}
-\DoxyCodeLine{338     ax2.tick\_params(axis=\textcolor{stringliteral}{'y'}, labelcolor=\textcolor{stringliteral}{'red'})}
-\DoxyCodeLine{339 }
-\DoxyCodeLine{340     ax2a = ax2.twinx()}
-\DoxyCodeLine{341     ax2a.plot(bond\_lengths, beta\_opt, color=\textcolor{stringliteral}{'blue'})}
-\DoxyCodeLine{342     ax2a.set\_ylabel(\textcolor{stringliteral}{r'\$\(\backslash\)beta\$'}, color=\textcolor{stringliteral}{'blue'})}
-\DoxyCodeLine{343     ax2a.tick\_params(axis=\textcolor{stringliteral}{'y'}, labelcolor=\textcolor{stringliteral}{'blue'})}
-\DoxyCodeLine{344 }
-\DoxyCodeLine{345     fig.tight\_layout()}
-\DoxyCodeLine{346     fig.show()}
-\DoxyCodeLine{347 }
-\DoxyCodeLine{348     print(f\textcolor{stringliteral}{'Equilibrium bond length: \{min\_bond\_length\} Bohr'})}
-\DoxyCodeLine{349     print(f\textcolor{stringliteral}{'                         = \{min\_bond\_length*0.529177\} Angstroms'})}
-\DoxyCodeLine{350     print(f\textcolor{stringliteral}{'   at energy: \{min\_energy\} ± \{min\_energy\_stdev\} Ha'})}
+\DoxyCodeLine{302 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a68554c3801b44e369f77719d5147e591}{H2EnergyPlot}}(results\_file, sliceby=(\textcolor{keywordtype}{None}, \textcolor{keywordtype}{None})):}
+\DoxyCodeLine{303     \textcolor{stringliteral}{'''}}
+\DoxyCodeLine{304 \textcolor{stringliteral}{    @brief}}
+\DoxyCodeLine{305 \textcolor{stringliteral}{    @f\$ H\_\{2\} @f\$ H-\/H bond energy and parameter plotter.}}
+\DoxyCodeLine{306 \textcolor{stringliteral}{}}
+\DoxyCodeLine{307 \textcolor{stringliteral}{    @details}}
+\DoxyCodeLine{308 \textcolor{stringliteral}{    Plots the H-\/H bond potential energy curve generated by VQMC at the optimum}}
+\DoxyCodeLine{309 \textcolor{stringliteral}{    parameters for each bond length. Plots standard deviation of each energy as}}
+\DoxyCodeLine{310 \textcolor{stringliteral}{    a measure of uncertainty. Also plots variational parameters @f\$ a @f\$ and}}
+\DoxyCodeLine{311 \textcolor{stringliteral}{    @f\$ \(\backslash\)beta @f\$ against bond length. Reports equilibrium bond length for the}}
+\DoxyCodeLine{312 \textcolor{stringliteral}{    molecule and optimum energy.}}
+\DoxyCodeLine{313 \textcolor{stringliteral}{}}
+\DoxyCodeLine{314 \textcolor{stringliteral}{    @param[in]  results\_file    The main netCDF output file from a @f\$ H\_\{2\} @f\$ run}}
+\DoxyCodeLine{315 \textcolor{stringliteral}{    @param[in]  sliceby         (Optional) Tuple containing slice intervals for arrays}}
+\DoxyCodeLine{316 \textcolor{stringliteral}{    '''}}
+\DoxyCodeLine{317     dat = nd.Dataset(results\_file, \textcolor{stringliteral}{'r'}, format=\textcolor{stringliteral}{'NETCDF4'})}
+\DoxyCodeLine{318 }
+\DoxyCodeLine{319     bond\_lengths = dat.variables[\textcolor{stringliteral}{'Bondlength\_array'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{320     a\_opt = dat.variables[\textcolor{stringliteral}{'Parameter\_a\_array'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{321     beta\_opt = dat.variables[\textcolor{stringliteral}{'Parameter\_beta\_array'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{322     energies = dat.variables[\textcolor{stringliteral}{'total\_energies'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{323     variances = dat.variables[\textcolor{stringliteral}{'Uncertainties'}][sliceby[0]:sliceby[1]]}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{325     stdevs = np.sqrt(variances)}
+\DoxyCodeLine{326     min\_energy = min(energies)}
+\DoxyCodeLine{327     min\_energy\_stdev = stdevs[np.argmin(energies)]}
+\DoxyCodeLine{328     min\_bond\_length = bond\_lengths[np.argmin(energies)]}
+\DoxyCodeLine{329 }
+\DoxyCodeLine{330     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 8))}
+\DoxyCodeLine{331 }
+\DoxyCodeLine{332     ax1.set\_title(\textcolor{stringliteral}{r'\$H\_\{2\}\$ bond energy curve'})}
+\DoxyCodeLine{333     ax1.errorbar(bond\_lengths, energies, yerr=stdevs, marker=\textcolor{stringliteral}{'o'}, ls=\textcolor{stringliteral}{'-\/-\/'}, color=\textcolor{stringliteral}{'blue'})}
+\DoxyCodeLine{334     ax1.fill\_between(bond\_lengths, energies+stdevs, energies-\/stdevs, alpha=0.3, color=\textcolor{stringliteral}{'purple'})}
+\DoxyCodeLine{335     ax1.set\_xlabel(\textcolor{stringliteral}{r'Bond Length / \$a\_\{0\}\$'})}
+\DoxyCodeLine{336     ax1.set\_ylabel(\textcolor{stringliteral}{'Energy / Ha'})}
+\DoxyCodeLine{337 }
+\DoxyCodeLine{338     ax2.set\_title(\textcolor{stringliteral}{r'Optimised parameters'})}
+\DoxyCodeLine{339     ax2.plot(bond\_lengths, a\_opt, color=\textcolor{stringliteral}{'red'})}
+\DoxyCodeLine{340     ax2.set\_xlabel(\textcolor{stringliteral}{r'Bond Length / \$a\_\{0\}\$'})}
+\DoxyCodeLine{341     ax2.set\_ylabel(\textcolor{stringliteral}{r'\$a\$'}, color=\textcolor{stringliteral}{'red'})}
+\DoxyCodeLine{342     ax2.tick\_params(axis=\textcolor{stringliteral}{'y'}, labelcolor=\textcolor{stringliteral}{'red'})}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344     ax2a = ax2.twinx()}
+\DoxyCodeLine{345     ax2a.plot(bond\_lengths, beta\_opt, color=\textcolor{stringliteral}{'blue'})}
+\DoxyCodeLine{346     ax2a.set\_ylabel(\textcolor{stringliteral}{r'\$\(\backslash\)beta\$'}, color=\textcolor{stringliteral}{'blue'})}
+\DoxyCodeLine{347     ax2a.tick\_params(axis=\textcolor{stringliteral}{'y'}, labelcolor=\textcolor{stringliteral}{'blue'})}
+\DoxyCodeLine{348 }
+\DoxyCodeLine{349     fig.tight\_layout()}
+\DoxyCodeLine{350     fig.show()}
 \DoxyCodeLine{351 }
-\DoxyCodeLine{352 }
-\DoxyCodeLine{353 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{354 \textcolor{comment}{\# Burn / Thin FUNCTION DEFINITIONS -\/}}
-\DoxyCodeLine{355 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{352     print(f\textcolor{stringliteral}{'Equilibrium bond length: \{min\_bond\_length\} Bohr'})}
+\DoxyCodeLine{353     print(f\textcolor{stringliteral}{'                         = \{min\_bond\_length*0.529177\} Angstroms'})}
+\DoxyCodeLine{354     print(f\textcolor{stringliteral}{'   at energy: \{min\_energy\} ± \{min\_energy\_stdev\} Ha'})}
+\DoxyCodeLine{355 }
 \DoxyCodeLine{356 }
+\DoxyCodeLine{357 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{358 \textcolor{comment}{\# Burn / Thin FUNCTION DEFINITIONS -\/}}
+\DoxyCodeLine{359 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{360 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespace_dice_py_1_1dice__visualise_a74e67f9c7fa59205001d85b39eed2aa6}\label{namespace_dice_py_1_1dice__visualise_a74e67f9c7fa59205001d85b39eed2aa6}} 
@@ -660,32 +670,32 @@ Plots the original trace(s) of an MCMC run.
 \end{DoxyParams}
 
 
-Definition at line 361 of file dice\+\_\+visualise.\+py.
+Definition at line 365 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{361 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a74e67f9c7fa59205001d85b39eed2aa6}{view\_original\_trace}}(equil\_file):}
-\DoxyCodeLine{362     rootgrp = Dataset(equil\_file, \textcolor{stringliteral}{"{}r"{}}, format = \textcolor{stringliteral}{"{}NETCDF4"{}})}
-\DoxyCodeLine{363     chain = np.array(rootgrp[\textcolor{stringliteral}{'positions'}][:])}
-\DoxyCodeLine{364     \textcolor{keywordflow}{if} len(chain.shape) == 1:}
-\DoxyCodeLine{365         plt.plot(range(len(chain)), chain, linewidth=1.0)}
-\DoxyCodeLine{366         plt.xlabel(\textcolor{stringliteral}{"{}Position in chain"{}})}
-\DoxyCodeLine{367         plt.ylabel(\textcolor{stringliteral}{"{}Chain value"{}})}
-\DoxyCodeLine{368         plt.title(\textcolor{stringliteral}{"{}Original Chain"{}})}
-\DoxyCodeLine{369         plt.show()}
-\DoxyCodeLine{370         }
-\DoxyCodeLine{371     \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{372         chainx = chain[:,0]}
-\DoxyCodeLine{373         chainy = chain[:,1]}
-\DoxyCodeLine{374         chainz = chain[:,2]}
-\DoxyCodeLine{375         }
-\DoxyCodeLine{376         fig, (ax1,ax2,ax3) = plt.subplots(3,1)}
-\DoxyCodeLine{377         ax1.plot(range(len(chainx)), chainx, linewidth=1.0)}
-\DoxyCodeLine{378         ax2.plot(range(len(chainy)), chainy, linewidth=1.0)}
-\DoxyCodeLine{379         ax3.plot(range(len(chainz)), chainz, linewidth=1.0)}
-\DoxyCodeLine{380     }
-\DoxyCodeLine{381     \textcolor{keywordflow}{return}}
-\DoxyCodeLine{382 }
+\DoxyCodeLine{365 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a74e67f9c7fa59205001d85b39eed2aa6}{view\_original\_trace}}(equil\_file):}
+\DoxyCodeLine{366     rootgrp = Dataset(equil\_file, \textcolor{stringliteral}{"{}r"{}}, format = \textcolor{stringliteral}{"{}NETCDF4"{}})}
+\DoxyCodeLine{367     chain = np.array(rootgrp[\textcolor{stringliteral}{'positions'}][:])}
+\DoxyCodeLine{368     \textcolor{keywordflow}{if} len(chain.shape) == 1:}
+\DoxyCodeLine{369         plt.plot(range(len(chain)), chain, linewidth=1.0)}
+\DoxyCodeLine{370         plt.xlabel(\textcolor{stringliteral}{"{}Position in chain"{}})}
+\DoxyCodeLine{371         plt.ylabel(\textcolor{stringliteral}{"{}Chain value"{}})}
+\DoxyCodeLine{372         plt.title(\textcolor{stringliteral}{"{}Original Chain"{}})}
+\DoxyCodeLine{373         plt.show()}
+\DoxyCodeLine{374         }
+\DoxyCodeLine{375     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{376         chainx = chain[:,0]}
+\DoxyCodeLine{377         chainy = chain[:,1]}
+\DoxyCodeLine{378         chainz = chain[:,2]}
+\DoxyCodeLine{379         }
+\DoxyCodeLine{380         fig, (ax1,ax2,ax3) = plt.subplots(3,1)}
+\DoxyCodeLine{381         ax1.plot(range(len(chainx)), chainx, linewidth=1.0)}
+\DoxyCodeLine{382         ax2.plot(range(len(chainy)), chainy, linewidth=1.0)}
+\DoxyCodeLine{383         ax3.plot(range(len(chainz)), chainz, linewidth=1.0)}
+\DoxyCodeLine{384     }
+\DoxyCodeLine{385     \textcolor{keywordflow}{return}}
+\DoxyCodeLine{386 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespace_dice_py_1_1dice__visualise_a7ba47841ec6e00b67df7de0c1aab7d6a}\label{namespace_dice_py_1_1dice__visualise_a7ba47841ec6e00b67df7de0c1aab7d6a}} 
@@ -705,21 +715,21 @@ Wrapper function for interacting with \mbox{\hyperlink{namespace_dice_py_1_1dice
 \end{DoxyParams}
 
 
-Definition at line 383 of file dice\+\_\+visualise.\+py.
+Definition at line 387 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{383 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a7ba47841ec6e00b67df7de0c1aab7d6a}{BurnThinUI}}(equil\_file):}
-\DoxyCodeLine{384     \textcolor{stringliteral}{'''}}
-\DoxyCodeLine{385 \textcolor{stringliteral}{    @brief}}
-\DoxyCodeLine{386 \textcolor{stringliteral}{    Wrapper function for interacting with get\_autocorrelation\_time()}}
-\DoxyCodeLine{387 \textcolor{stringliteral}{}}
-\DoxyCodeLine{388 \textcolor{stringliteral}{    @param[in]  equil\_file   Filename of MCMC equilibration run}}
-\DoxyCodeLine{389 \textcolor{stringliteral}{    '''}}
-\DoxyCodeLine{390     widgets.interact\_manual(get\_autocorrelation\_time, filename=fixed(equil\_file), }
-\DoxyCodeLine{391         burn=(0, int(0.1*len(np.array(Dataset(equil\_file, \textcolor{stringliteral}{"{}r"{}}, format = \textcolor{stringliteral}{"{}NETCDF4"{}})[\textcolor{stringliteral}{'positions'}][:]))), 10),}
-\DoxyCodeLine{392         tuning=[(1.0),(1e-\/1),(1e-\/2),(1e-\/3),(1e-\/4)])}
-\DoxyCodeLine{393 }
+\DoxyCodeLine{387 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a7ba47841ec6e00b67df7de0c1aab7d6a}{BurnThinUI}}(equil\_file):}
+\DoxyCodeLine{388     \textcolor{stringliteral}{'''}}
+\DoxyCodeLine{389 \textcolor{stringliteral}{    @brief}}
+\DoxyCodeLine{390 \textcolor{stringliteral}{    Wrapper function for interacting with get\_autocorrelation\_time()}}
+\DoxyCodeLine{391 \textcolor{stringliteral}{}}
+\DoxyCodeLine{392 \textcolor{stringliteral}{    @param[in]  equil\_file   Filename of MCMC equilibration run}}
+\DoxyCodeLine{393 \textcolor{stringliteral}{    '''}}
+\DoxyCodeLine{394     widgets.interact\_manual(get\_autocorrelation\_time, filename=fixed(equil\_file), }
+\DoxyCodeLine{395         burn=(0, int(0.1*len(np.array(Dataset(equil\_file, \textcolor{stringliteral}{"{}r"{}}, format = \textcolor{stringliteral}{"{}NETCDF4"{}})[\textcolor{stringliteral}{'positions'}][:]))), 10),}
+\DoxyCodeLine{396         tuning=[(1.0),(1e-\/1),(1e-\/2),(1e-\/3),(1e-\/4)])}
+\DoxyCodeLine{397 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespace_dice_py_1_1dice__visualise_a50ae4ae68f1121153c0026e9586143c5}\label{namespace_dice_py_1_1dice__visualise_a50ae4ae68f1121153c0026e9586143c5}} 
@@ -747,101 +757,101 @@ Takes as input a burning parameter and a tuning parameter which controls how agg
 \end{DoxyParams}
 
 
-Definition at line 410 of file dice\+\_\+visualise.\+py.
+Definition at line 414 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{410 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a50ae4ae68f1121153c0026e9586143c5}{get\_autocorrelation\_time}}(filename, burn, tuning, plotting=True):}
-\DoxyCodeLine{411     rootgrp = Dataset(filename, \textcolor{stringliteral}{"{}r"{}}, format = \textcolor{stringliteral}{"{}NETCDF4"{}})}
-\DoxyCodeLine{412     chain = np.array(rootgrp[\textcolor{stringliteral}{'positions'}][:])}
-\DoxyCodeLine{413     \textcolor{keywordflow}{if} len(chain.shape) == 1:}
-\DoxyCodeLine{414         acp = sps.fftconvolve(chain,chain[::-\/1],mode=\textcolor{stringliteral}{'full'})}
-\DoxyCodeLine{415         acp = acp[int(acp.size / 2):]}
-\DoxyCodeLine{416         acp = acp / max(acp)}
-\DoxyCodeLine{417         acp = acp[burn:]}
-\DoxyCodeLine{418 }
-\DoxyCodeLine{419         thin = np.argmax(abs(acp) < tuning)}
-\DoxyCodeLine{420         \textcolor{keywordflow}{if} thin == 0:}
-\DoxyCodeLine{421             \textcolor{keywordflow}{if} acp[thin] < tuning:}
-\DoxyCodeLine{422                 thin = 1}
-\DoxyCodeLine{423             \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{424                 print(\textcolor{stringliteral}{"{}No thinning value found -\/ tuning may be too aggressive. Defaulting to no thinning, thin=1."{}})}
-\DoxyCodeLine{425                 print()}
+\DoxyCodeLine{414 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a50ae4ae68f1121153c0026e9586143c5}{get\_autocorrelation\_time}}(filename, burn, tuning, plotting=True):}
+\DoxyCodeLine{415     rootgrp = Dataset(filename, \textcolor{stringliteral}{"{}r"{}}, format = \textcolor{stringliteral}{"{}NETCDF4"{}})}
+\DoxyCodeLine{416     chain = np.array(rootgrp[\textcolor{stringliteral}{'positions'}][:])}
+\DoxyCodeLine{417     \textcolor{keywordflow}{if} len(chain.shape) == 1:}
+\DoxyCodeLine{418         acp = sps.fftconvolve(chain,chain[::-\/1],mode=\textcolor{stringliteral}{'full'})}
+\DoxyCodeLine{419         acp = acp[int(acp.size / 2):]}
+\DoxyCodeLine{420         acp = acp / max(acp)}
+\DoxyCodeLine{421         acp = acp[burn:]}
+\DoxyCodeLine{422 }
+\DoxyCodeLine{423         thin = np.argmax(abs(acp) < tuning)}
+\DoxyCodeLine{424         \textcolor{keywordflow}{if} thin == 0:}
+\DoxyCodeLine{425             \textcolor{keywordflow}{if} acp[thin] < tuning:}
 \DoxyCodeLine{426                 thin = 1}
-\DoxyCodeLine{427 }
-\DoxyCodeLine{428         print(\textcolor{stringliteral}{"{}burning parameter = "{}}, burn)}
-\DoxyCodeLine{429         print(\textcolor{stringliteral}{"{}proposed thinning parameter = "{}}, thin)}
-\DoxyCodeLine{430 }
-\DoxyCodeLine{431         chain\_new = chain[burn::thin]}
-\DoxyCodeLine{432         print(\textcolor{stringliteral}{"{}length of new chain = "{}}, len(chain\_new))}
-\DoxyCodeLine{433 }
-\DoxyCodeLine{434         \textcolor{keywordflow}{if} plotting==\textcolor{keyword}{True}:}
-\DoxyCodeLine{435             plt.plot(range(len(acp)), acp, linewidth=1.0)}
-\DoxyCodeLine{436             plt.xlabel(\textcolor{stringliteral}{"{}Position in chain / Lag time"{}})}
-\DoxyCodeLine{437             plt.ylabel(\textcolor{stringliteral}{"{}ACF"{}})}
-\DoxyCodeLine{438             plt.title(\textcolor{stringliteral}{"{}Autocorrelation function vs lag time"{}})}
-\DoxyCodeLine{439             plt.show()}
-\DoxyCodeLine{440 }
-\DoxyCodeLine{441             plt.plot(range(len(chain\_new)), chain\_new, linewidth=1.0)}
-\DoxyCodeLine{442             plt.xlabel(\textcolor{stringliteral}{"{}Position in chain"{}})}
-\DoxyCodeLine{443             plt.ylabel(\textcolor{stringliteral}{"{}Chain value"{}})}
-\DoxyCodeLine{444             plt.title(\textcolor{stringliteral}{"{}New Chain"{}})}
-\DoxyCodeLine{445             plt.show()}
-\DoxyCodeLine{446             }
-\DoxyCodeLine{447         \textcolor{keywordflow}{return} burn, thin}
-\DoxyCodeLine{448             }
-\DoxyCodeLine{449     \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{450         chainx = chain[:,0]}
-\DoxyCodeLine{451         chainy = chain[:,1]}
-\DoxyCodeLine{452         chainz = chain[:,2]}
-\DoxyCodeLine{453         }
-\DoxyCodeLine{454         threed\_thin = []}
-\DoxyCodeLine{455         chain\_lengths = []}
-\DoxyCodeLine{456         }
-\DoxyCodeLine{457         \textcolor{keywordflow}{for} c \textcolor{keywordflow}{in} [chainx,chainy,chainz]:}
-\DoxyCodeLine{458             acp = sps.fftconvolve(c,c[::-\/1],mode=\textcolor{stringliteral}{'full'})}
-\DoxyCodeLine{459             acp = acp[int(acp.size / 2):]}
-\DoxyCodeLine{460             acp = acp / max(acp)}
-\DoxyCodeLine{461             acp = acp[burn:]}
-\DoxyCodeLine{462 }
-\DoxyCodeLine{463             thin = np.argmax(abs(acp) < tuning)}
-\DoxyCodeLine{464             \textcolor{keywordflow}{if} thin == 0:}
-\DoxyCodeLine{465                 \textcolor{keywordflow}{if} acp[thin] < tuning:}
-\DoxyCodeLine{466                     thin = 1}
-\DoxyCodeLine{467                 \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{468                     print(\textcolor{stringliteral}{"{}No thinning value found -\/ tuning may be too aggressive. Defaulting to no thinning, thin=1."{}})}
-\DoxyCodeLine{469                     print()}
+\DoxyCodeLine{427             \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{428                 print(\textcolor{stringliteral}{"{}No thinning value found -\/ tuning may be too aggressive. Defaulting to no thinning, thin=1."{}})}
+\DoxyCodeLine{429                 print()}
+\DoxyCodeLine{430                 thin = 1}
+\DoxyCodeLine{431 }
+\DoxyCodeLine{432         print(\textcolor{stringliteral}{"{}burning parameter = "{}}, burn)}
+\DoxyCodeLine{433         print(\textcolor{stringliteral}{"{}proposed thinning parameter = "{}}, thin)}
+\DoxyCodeLine{434 }
+\DoxyCodeLine{435         chain\_new = chain[burn::thin]}
+\DoxyCodeLine{436         print(\textcolor{stringliteral}{"{}length of new chain = "{}}, len(chain\_new))}
+\DoxyCodeLine{437 }
+\DoxyCodeLine{438         \textcolor{keywordflow}{if} plotting==\textcolor{keyword}{True}:}
+\DoxyCodeLine{439             plt.plot(range(len(acp)), acp, linewidth=1.0)}
+\DoxyCodeLine{440             plt.xlabel(\textcolor{stringliteral}{"{}Position in chain / Lag time"{}})}
+\DoxyCodeLine{441             plt.ylabel(\textcolor{stringliteral}{"{}ACF"{}})}
+\DoxyCodeLine{442             plt.title(\textcolor{stringliteral}{"{}Autocorrelation function vs lag time"{}})}
+\DoxyCodeLine{443             plt.show()}
+\DoxyCodeLine{444 }
+\DoxyCodeLine{445             plt.plot(range(len(chain\_new)), chain\_new, linewidth=1.0)}
+\DoxyCodeLine{446             plt.xlabel(\textcolor{stringliteral}{"{}Position in chain"{}})}
+\DoxyCodeLine{447             plt.ylabel(\textcolor{stringliteral}{"{}Chain value"{}})}
+\DoxyCodeLine{448             plt.title(\textcolor{stringliteral}{"{}New Chain"{}})}
+\DoxyCodeLine{449             plt.show()}
+\DoxyCodeLine{450             }
+\DoxyCodeLine{451         \textcolor{keywordflow}{return} burn, thin}
+\DoxyCodeLine{452             }
+\DoxyCodeLine{453     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{454         chainx = chain[:,0]}
+\DoxyCodeLine{455         chainy = chain[:,1]}
+\DoxyCodeLine{456         chainz = chain[:,2]}
+\DoxyCodeLine{457         }
+\DoxyCodeLine{458         threed\_thin = []}
+\DoxyCodeLine{459         chain\_lengths = []}
+\DoxyCodeLine{460         }
+\DoxyCodeLine{461         \textcolor{keywordflow}{for} c \textcolor{keywordflow}{in} [chainx,chainy,chainz]:}
+\DoxyCodeLine{462             acp = sps.fftconvolve(c,c[::-\/1],mode=\textcolor{stringliteral}{'full'})}
+\DoxyCodeLine{463             acp = acp[int(acp.size / 2):]}
+\DoxyCodeLine{464             acp = acp / max(acp)}
+\DoxyCodeLine{465             acp = acp[burn:]}
+\DoxyCodeLine{466 }
+\DoxyCodeLine{467             thin = np.argmax(abs(acp) < tuning)}
+\DoxyCodeLine{468             \textcolor{keywordflow}{if} thin == 0:}
+\DoxyCodeLine{469                 \textcolor{keywordflow}{if} acp[thin] < tuning:}
 \DoxyCodeLine{470                     thin = 1}
-\DoxyCodeLine{471                     }
-\DoxyCodeLine{472             threed\_thin.append(thin)}
-\DoxyCodeLine{473 }
-\DoxyCodeLine{474             chain\_new = c[burn::thin]}
-\DoxyCodeLine{475             chain\_lengths.append(len(chain\_new))}
-\DoxyCodeLine{476 }
-\DoxyCodeLine{477             \textcolor{keywordflow}{if} plotting==\textcolor{keyword}{True}:}
-\DoxyCodeLine{478                 plt.plot(range(len(acp)), acp, linewidth=1.0)}
-\DoxyCodeLine{479                 plt.xlabel(\textcolor{stringliteral}{"{}Position in chain / Lag time"{}})}
-\DoxyCodeLine{480                 plt.ylabel(\textcolor{stringliteral}{"{}ACF"{}})}
-\DoxyCodeLine{481                 plt.title(\textcolor{stringliteral}{"{}Autocorrelation function vs lag time"{}})}
-\DoxyCodeLine{482                 plt.show()}
-\DoxyCodeLine{483 }
-\DoxyCodeLine{484 \textcolor{comment}{\#                 plt.plot(range(len(chain\_new)), chain\_new, linewidth=1.0)}}
-\DoxyCodeLine{485 \textcolor{comment}{\#                 plt.xlabel("{}Position in chain"{})}}
-\DoxyCodeLine{486 \textcolor{comment}{\#                 plt.ylabel("{}Chain value"{})}}
-\DoxyCodeLine{487 \textcolor{comment}{\#                 plt.title("{}New Chain"{})}}
-\DoxyCodeLine{488 \textcolor{comment}{\#                 plt.show()}}
-\DoxyCodeLine{489         print(\textcolor{stringliteral}{"{}burning parameter = "{}}, burn)}
-\DoxyCodeLine{490         print(\textcolor{stringliteral}{"{}proposed thinning parameters from the 3 chains: "{}}, threed\_thin)}
-\DoxyCodeLine{491         print(\textcolor{stringliteral}{"{}chain lengths from proposed thins"{}}, chain\_lengths)}
-\DoxyCodeLine{492 }
-\DoxyCodeLine{493         \textcolor{keywordflow}{return} burn, threed\_thin}
-\DoxyCodeLine{494 }
-\DoxyCodeLine{495 }
+\DoxyCodeLine{471                 \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{472                     print(\textcolor{stringliteral}{"{}No thinning value found -\/ tuning may be too aggressive. Defaulting to no thinning, thin=1."{}})}
+\DoxyCodeLine{473                     print()}
+\DoxyCodeLine{474                     thin = 1}
+\DoxyCodeLine{475                     }
+\DoxyCodeLine{476             threed\_thin.append(thin)}
+\DoxyCodeLine{477 }
+\DoxyCodeLine{478             chain\_new = c[burn::thin]}
+\DoxyCodeLine{479             chain\_lengths.append(len(chain\_new))}
+\DoxyCodeLine{480 }
+\DoxyCodeLine{481             \textcolor{keywordflow}{if} plotting==\textcolor{keyword}{True}:}
+\DoxyCodeLine{482                 plt.plot(range(len(acp)), acp, linewidth=1.0)}
+\DoxyCodeLine{483                 plt.xlabel(\textcolor{stringliteral}{"{}Position in chain / Lag time"{}})}
+\DoxyCodeLine{484                 plt.ylabel(\textcolor{stringliteral}{"{}ACF"{}})}
+\DoxyCodeLine{485                 plt.title(\textcolor{stringliteral}{"{}Autocorrelation function vs lag time"{}})}
+\DoxyCodeLine{486                 plt.show()}
+\DoxyCodeLine{487 }
+\DoxyCodeLine{488 \textcolor{comment}{\#                 plt.plot(range(len(chain\_new)), chain\_new, linewidth=1.0)}}
+\DoxyCodeLine{489 \textcolor{comment}{\#                 plt.xlabel("{}Position in chain"{})}}
+\DoxyCodeLine{490 \textcolor{comment}{\#                 plt.ylabel("{}Chain value"{})}}
+\DoxyCodeLine{491 \textcolor{comment}{\#                 plt.title("{}New Chain"{})}}
+\DoxyCodeLine{492 \textcolor{comment}{\#                 plt.show()}}
+\DoxyCodeLine{493         print(\textcolor{stringliteral}{"{}burning parameter = "{}}, burn)}
+\DoxyCodeLine{494         print(\textcolor{stringliteral}{"{}proposed thinning parameters from the 3 chains: "{}}, threed\_thin)}
+\DoxyCodeLine{495         print(\textcolor{stringliteral}{"{}chain lengths from proposed thins"{}}, chain\_lengths)}
 \DoxyCodeLine{496 }
-\DoxyCodeLine{497 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{498 \textcolor{comment}{\# Deprecated Functions}}
-\DoxyCodeLine{499 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{497         \textcolor{keywordflow}{return} burn, threed\_thin}
+\DoxyCodeLine{498 }
+\DoxyCodeLine{499 }
 \DoxyCodeLine{500 }
+\DoxyCodeLine{501 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{502 \textcolor{comment}{\# Deprecated Functions}}
+\DoxyCodeLine{503 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{504 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespace_dice_py_1_1dice__visualise_ade39cf6264b70d0cd62d9ff89742c62e}\label{namespace_dice_py_1_1dice__visualise_ade39cf6264b70d0cd62d9ff89742c62e}} 
@@ -859,24 +869,24 @@ Loads the results as a dataset Net\+CDF object to be passed to other functions.
 \end{DoxyVerb}
  
 
-Definition at line 501 of file dice\+\_\+visualise.\+py.
+Definition at line 505 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{501 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_ade39cf6264b70d0cd62d9ff89742c62e}{load\_results}}(filename = 'results.nc'):}
-\DoxyCodeLine{502 }
-\DoxyCodeLine{503     \textcolor{stringliteral}{"{}"{}"{}Loads the results as a dataset NetCDF object to be passed to other functions}}
-\DoxyCodeLine{504 \textcolor{stringliteral}{    }}
-\DoxyCodeLine{505 \textcolor{stringliteral}{    Parameters:}}
-\DoxyCodeLine{506 \textcolor{stringliteral}{        filename: The name of the file containing the results, defaults to 'results.nc'. "{}"{}"{}}}
-\DoxyCodeLine{507     }
-\DoxyCodeLine{508     \textcolor{keywordflow}{try}:}
-\DoxyCodeLine{509         rootgrp = Dataset(filename)}
-\DoxyCodeLine{510     \textcolor{keywordflow}{except} OSError \textcolor{keyword}{as} err:}
-\DoxyCodeLine{511         print(f\textcolor{stringliteral}{"{}OS error: \{err\}"{}})}
-\DoxyCodeLine{512     \textcolor{keywordflow}{return} rootgrp}
-\DoxyCodeLine{513 }
-\DoxyCodeLine{514 }
+\DoxyCodeLine{505 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_ade39cf6264b70d0cd62d9ff89742c62e}{load\_results}}(filename = 'results.nc'):}
+\DoxyCodeLine{506 }
+\DoxyCodeLine{507     \textcolor{stringliteral}{"{}"{}"{}Loads the results as a dataset NetCDF object to be passed to other functions}}
+\DoxyCodeLine{508 \textcolor{stringliteral}{    }}
+\DoxyCodeLine{509 \textcolor{stringliteral}{    Parameters:}}
+\DoxyCodeLine{510 \textcolor{stringliteral}{        filename: The name of the file containing the results, defaults to 'results.nc'. "{}"{}"{}}}
+\DoxyCodeLine{511     }
+\DoxyCodeLine{512     \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{513         rootgrp = Dataset(filename)}
+\DoxyCodeLine{514     \textcolor{keywordflow}{except} OSError \textcolor{keyword}{as} err:}
+\DoxyCodeLine{515         print(f\textcolor{stringliteral}{"{}OS error: \{err\}"{}})}
+\DoxyCodeLine{516     \textcolor{keywordflow}{return} rootgrp}
+\DoxyCodeLine{517 }
+\DoxyCodeLine{518 }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -903,29 +913,29 @@ Loads the global metadata in the results file into a dictionary.
 \end{DoxyVerb}
  
 
-Definition at line 515 of file dice\+\_\+visualise.\+py.
+Definition at line 519 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{515 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a86a6e09c72837b5f17066a3eee79087e}{load\_global\_attr}}(rootgrp, verbose = True):}
-\DoxyCodeLine{516     \textcolor{stringliteral}{"{}"{}"{}Loads the global metadata in the results file into a dictionary}}
-\DoxyCodeLine{517 \textcolor{stringliteral}{    }}
-\DoxyCodeLine{518 \textcolor{stringliteral}{    Parameters:}}
-\DoxyCodeLine{519 \textcolor{stringliteral}{        rootgrp: NetCDF4 dataset object which loaded in using 'load\_results()'.}}
-\DoxyCodeLine{520 \textcolor{stringliteral}{        verbose: Defaults to true. Prints the value of global attributes which have been loaded}}
-\DoxyCodeLine{521 \textcolor{stringliteral}{    "{}"{}"{}}}
-\DoxyCodeLine{522     global\_dict =\{\}}
-\DoxyCodeLine{523 }
-\DoxyCodeLine{524     \textcolor{keywordflow}{for} name \textcolor{keywordflow}{in} rootgrp.ncattrs():}
-\DoxyCodeLine{525         \textcolor{keywordflow}{if} verbose:}
-\DoxyCodeLine{526             print(\textcolor{stringliteral}{"{}\{\} = \{\}"{}}.format(name, getattr(rootgrp, name)))}
+\DoxyCodeLine{519 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a86a6e09c72837b5f17066a3eee79087e}{load\_global\_attr}}(rootgrp, verbose = True):}
+\DoxyCodeLine{520     \textcolor{stringliteral}{"{}"{}"{}Loads the global metadata in the results file into a dictionary}}
+\DoxyCodeLine{521 \textcolor{stringliteral}{    }}
+\DoxyCodeLine{522 \textcolor{stringliteral}{    Parameters:}}
+\DoxyCodeLine{523 \textcolor{stringliteral}{        rootgrp: NetCDF4 dataset object which loaded in using 'load\_results()'.}}
+\DoxyCodeLine{524 \textcolor{stringliteral}{        verbose: Defaults to true. Prints the value of global attributes which have been loaded}}
+\DoxyCodeLine{525 \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{526     global\_dict =\{\}}
 \DoxyCodeLine{527 }
-\DoxyCodeLine{528     global\_dict[name] = getattr(rootgrp, name)}
-\DoxyCodeLine{529 }
-\DoxyCodeLine{530 }
-\DoxyCodeLine{531     \textcolor{keywordflow}{return} global\_dict}
-\DoxyCodeLine{532 }
+\DoxyCodeLine{528     \textcolor{keywordflow}{for} name \textcolor{keywordflow}{in} rootgrp.ncattrs():}
+\DoxyCodeLine{529         \textcolor{keywordflow}{if} verbose:}
+\DoxyCodeLine{530             print(\textcolor{stringliteral}{"{}\{\} = \{\}"{}}.format(name, getattr(rootgrp, name)))}
+\DoxyCodeLine{531 }
+\DoxyCodeLine{532     global\_dict[name] = getattr(rootgrp, name)}
 \DoxyCodeLine{533 }
+\DoxyCodeLine{534 }
+\DoxyCodeLine{535     \textcolor{keywordflow}{return} global\_dict}
+\DoxyCodeLine{536 }
+\DoxyCodeLine{537 }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -952,26 +962,26 @@ Loads the variables in the results file into a dictionary.
 \end{DoxyVerb}
  
 
-Definition at line 534 of file dice\+\_\+visualise.\+py.
+Definition at line 538 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{534 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_abbdc54b3066752afd14b554b0791e96d}{load\_variables}}(rootgrp, verbose = True):}
-\DoxyCodeLine{535     \textcolor{stringliteral}{"{}"{}"{}Loads the variables in the results file into a dictionary}}
-\DoxyCodeLine{536 \textcolor{stringliteral}{    }}
-\DoxyCodeLine{537 \textcolor{stringliteral}{    Parameters:}}
-\DoxyCodeLine{538 \textcolor{stringliteral}{        rootgrp: NetCDF4 dataset object which loaded in using 'load\_results()'}}
-\DoxyCodeLine{539 \textcolor{stringliteral}{        verbose: Defaults to true. Prints the value of variables which have been loaded}}
-\DoxyCodeLine{540 \textcolor{stringliteral}{    "{}"{}"{}}}
-\DoxyCodeLine{541     var\_dict = \{\}}
-\DoxyCodeLine{542     \textcolor{keywordflow}{for} k \textcolor{keywordflow}{in} rootgrp.variables.keys():}
-\DoxyCodeLine{543         \textcolor{keywordflow}{if} verbose:}
-\DoxyCodeLine{544             print(\textcolor{stringliteral}{"{}\{\} = \{\}"{}}.format(k, rootgrp[k][:]))}
-\DoxyCodeLine{545         var\_dict[k] = rootgrp[k][:]}
-\DoxyCodeLine{546 }
-\DoxyCodeLine{547     \textcolor{keywordflow}{return} var\_dict}
-\DoxyCodeLine{548 }
-\DoxyCodeLine{549 }
+\DoxyCodeLine{538 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_abbdc54b3066752afd14b554b0791e96d}{load\_variables}}(rootgrp, verbose = True):}
+\DoxyCodeLine{539     \textcolor{stringliteral}{"{}"{}"{}Loads the variables in the results file into a dictionary}}
+\DoxyCodeLine{540 \textcolor{stringliteral}{    }}
+\DoxyCodeLine{541 \textcolor{stringliteral}{    Parameters:}}
+\DoxyCodeLine{542 \textcolor{stringliteral}{        rootgrp: NetCDF4 dataset object which loaded in using 'load\_results()'}}
+\DoxyCodeLine{543 \textcolor{stringliteral}{        verbose: Defaults to true. Prints the value of variables which have been loaded}}
+\DoxyCodeLine{544 \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{545     var\_dict = \{\}}
+\DoxyCodeLine{546     \textcolor{keywordflow}{for} k \textcolor{keywordflow}{in} rootgrp.variables.keys():}
+\DoxyCodeLine{547         \textcolor{keywordflow}{if} verbose:}
+\DoxyCodeLine{548             print(\textcolor{stringliteral}{"{}\{\} = \{\}"{}}.format(k, rootgrp[k][:]))}
+\DoxyCodeLine{549         var\_dict[k] = rootgrp[k][:]}
+\DoxyCodeLine{550 }
+\DoxyCodeLine{551     \textcolor{keywordflow}{return} var\_dict}
+\DoxyCodeLine{552 }
+\DoxyCodeLine{553 }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -994,39 +1004,39 @@ Plots the energies against the parameters checked during the grid search Paramet
 
 
 
-Definition at line 550 of file dice\+\_\+visualise.\+py.
+Definition at line 554 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{550 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a12b764183adcced19e3e7bf8a10f4e92}{H2\_eng\_plot}}(variables):}
-\DoxyCodeLine{551     \textcolor{stringliteral}{"{}"{}"{}Plots the energies against the parameters checked during the grid search}}
-\DoxyCodeLine{552 \textcolor{stringliteral}{       Parameters:}}
-\DoxyCodeLine{553 \textcolor{stringliteral}{         variables: Dictionary which contains data about the variables in the netcdf4 object"{}"{}"{}}}
-\DoxyCodeLine{554 }
-\DoxyCodeLine{555     fig = go.Figure()}
-\DoxyCodeLine{556 }
-\DoxyCodeLine{557     fig.add\_trace(}
-\DoxyCodeLine{558         go.Scatter(}
-\DoxyCodeLine{559             x=variables[\textcolor{stringliteral}{'Bondlength\_array'}],}
-\DoxyCodeLine{560             y=variables[\textcolor{stringliteral}{'total\_energies'}],}
-\DoxyCodeLine{561             error\_y=dict(}
-\DoxyCodeLine{562             type=\textcolor{stringliteral}{'data'},}
-\DoxyCodeLine{563             array=variables[\textcolor{stringliteral}{'Uncertainties'}],}
-\DoxyCodeLine{564             visible=\textcolor{keyword}{True})}
-\DoxyCodeLine{565             )}
-\DoxyCodeLine{566         )}
-\DoxyCodeLine{567     }
-\DoxyCodeLine{568     fig.update\_layout(}
-\DoxyCodeLine{569     title=f\textcolor{stringliteral}{"{}Energies vs Bond Lengths"{}},}
-\DoxyCodeLine{570     xaxis\_title=\textcolor{stringliteral}{"{}Bond Length"{}},}
-\DoxyCodeLine{571     yaxis\_title=\textcolor{stringliteral}{"{}Energy"{}}}
-\DoxyCodeLine{572     )}
-\DoxyCodeLine{573     }
-\DoxyCodeLine{574     fig.show()}
-\DoxyCodeLine{575     }
-\DoxyCodeLine{576     \textcolor{keywordflow}{return} fig}
-\DoxyCodeLine{577 }
-\DoxyCodeLine{578 }
+\DoxyCodeLine{554 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a12b764183adcced19e3e7bf8a10f4e92}{H2\_eng\_plot}}(variables):}
+\DoxyCodeLine{555     \textcolor{stringliteral}{"{}"{}"{}Plots the energies against the parameters checked during the grid search}}
+\DoxyCodeLine{556 \textcolor{stringliteral}{       Parameters:}}
+\DoxyCodeLine{557 \textcolor{stringliteral}{         variables: Dictionary which contains data about the variables in the netcdf4 object"{}"{}"{}}}
+\DoxyCodeLine{558 }
+\DoxyCodeLine{559     fig = go.Figure()}
+\DoxyCodeLine{560 }
+\DoxyCodeLine{561     fig.add\_trace(}
+\DoxyCodeLine{562         go.Scatter(}
+\DoxyCodeLine{563             x=variables[\textcolor{stringliteral}{'Bondlength\_array'}],}
+\DoxyCodeLine{564             y=variables[\textcolor{stringliteral}{'total\_energies'}],}
+\DoxyCodeLine{565             error\_y=dict(}
+\DoxyCodeLine{566             type=\textcolor{stringliteral}{'data'},}
+\DoxyCodeLine{567             array=variables[\textcolor{stringliteral}{'Uncertainties'}],}
+\DoxyCodeLine{568             visible=\textcolor{keyword}{True})}
+\DoxyCodeLine{569             )}
+\DoxyCodeLine{570         )}
+\DoxyCodeLine{571     }
+\DoxyCodeLine{572     fig.update\_layout(}
+\DoxyCodeLine{573     title=f\textcolor{stringliteral}{"{}Energies vs Bond Lengths"{}},}
+\DoxyCodeLine{574     xaxis\_title=\textcolor{stringliteral}{"{}Bond Length"{}},}
+\DoxyCodeLine{575     yaxis\_title=\textcolor{stringliteral}{"{}Energy"{}}}
+\DoxyCodeLine{576     )}
+\DoxyCodeLine{577     }
+\DoxyCodeLine{578     fig.show()}
+\DoxyCodeLine{579     }
+\DoxyCodeLine{580     \textcolor{keywordflow}{return} fig}
+\DoxyCodeLine{581 }
+\DoxyCodeLine{582 }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -1049,29 +1059,29 @@ energy\+\_\+plot() Plots the energy at each step as the MC converges
 
 
 
-Definition at line 579 of file dice\+\_\+visualise.\+py.
+Definition at line 583 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{579 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a4ed52b8cb18152fddc5e933a9ec10fe5}{QHO\_eng\_plot}}(rootgrp,equil=False):}
-\DoxyCodeLine{580     \textcolor{stringliteral}{"{}"{}"{}energy\_plot()}}
-\DoxyCodeLine{581 \textcolor{stringliteral}{    Plots the energy at each step as the MC converges}}
-\DoxyCodeLine{582 \textcolor{stringliteral}{    "{}"{}"{}}}
-\DoxyCodeLine{583 }
-\DoxyCodeLine{584     energies = np.array(rootgrp.variables[\textcolor{stringliteral}{'energy\_at\_alphas\_array'}][:])}
-\DoxyCodeLine{585 }
-\DoxyCodeLine{586     alphas = np.array((rootgrp.variables[\textcolor{stringliteral}{'Alpha\_array'}][:]))}
+\DoxyCodeLine{583 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a4ed52b8cb18152fddc5e933a9ec10fe5}{QHO\_eng\_plot}}(rootgrp,equil=False):}
+\DoxyCodeLine{584     \textcolor{stringliteral}{"{}"{}"{}energy\_plot()}}
+\DoxyCodeLine{585 \textcolor{stringliteral}{    Plots the energy at each step as the MC converges}}
+\DoxyCodeLine{586 \textcolor{stringliteral}{    "{}"{}"{}}}
 \DoxyCodeLine{587 }
-\DoxyCodeLine{588     \textcolor{keywordflow}{if} (equil):}
-\DoxyCodeLine{589         \textcolor{keywordflow}{pass}}
-\DoxyCodeLine{590 }
-\DoxyCodeLine{591     data = go.Scatter(x=alphas, y=energies, mode=\textcolor{stringliteral}{'markers'})}
-\DoxyCodeLine{592     fig = go.Figure(data)}
-\DoxyCodeLine{593     fig.show()}
-\DoxyCodeLine{594     }
-\DoxyCodeLine{595     \textcolor{keywordflow}{return} data}
-\DoxyCodeLine{596 }
-\DoxyCodeLine{597 }
+\DoxyCodeLine{588     energies = np.array(rootgrp.variables[\textcolor{stringliteral}{'energy\_at\_alphas\_array'}][:])}
+\DoxyCodeLine{589 }
+\DoxyCodeLine{590     alphas = np.array((rootgrp.variables[\textcolor{stringliteral}{'Alpha\_array'}][:]))}
+\DoxyCodeLine{591 }
+\DoxyCodeLine{592     \textcolor{keywordflow}{if} (equil):}
+\DoxyCodeLine{593         \textcolor{keywordflow}{pass}}
+\DoxyCodeLine{594 }
+\DoxyCodeLine{595     data = go.Scatter(x=alphas, y=energies, mode=\textcolor{stringliteral}{'markers'})}
+\DoxyCodeLine{596     fig = go.Figure(data)}
+\DoxyCodeLine{597     fig.show()}
+\DoxyCodeLine{598     }
+\DoxyCodeLine{599     \textcolor{keywordflow}{return} data}
+\DoxyCodeLine{600 }
+\DoxyCodeLine{601 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespace_dice_py_1_1dice__visualise_af6619867dfdc02c14995d64df42314f3}\label{namespace_dice_py_1_1dice__visualise_af6619867dfdc02c14995d64df42314f3}} 
@@ -1082,28 +1092,28 @@ Definition at line 579 of file dice\+\_\+visualise.\+py.
 
 
 
-Definition at line 598 of file dice\+\_\+visualise.\+py.
+Definition at line 602 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{598 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_aaecb354ce844d441ff41cd60c875e36f}{plot\_3D}}(X,Y,Z,wfn):}
-\DoxyCodeLine{599     \textcolor{comment}{\#for plotting wavefunctions, to be removed}}
-\DoxyCodeLine{600     fig = go.Figure(data=go.Volume(}
-\DoxyCodeLine{601         x=X.flatten(),}
-\DoxyCodeLine{602         y=Y.flatten(),}
-\DoxyCodeLine{603         z=Z.flatten(),}
-\DoxyCodeLine{604         value=wfn.flatten(),}
-\DoxyCodeLine{605         isomin=0.0,}
-\DoxyCodeLine{606         isomax=1.2,}
-\DoxyCodeLine{607         opacity=0.1, }
-\DoxyCodeLine{608         surface\_count=21, }
-\DoxyCodeLine{609     ))}
-\DoxyCodeLine{610 }
-\DoxyCodeLine{611     \textcolor{comment}{\#fig.save("{}wavefunction.png"{})}}
-\DoxyCodeLine{612 }
-\DoxyCodeLine{613     \textcolor{keywordflow}{return} fig}
+\DoxyCodeLine{602 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_aaecb354ce844d441ff41cd60c875e36f}{plot\_3D}}(X,Y,Z,wfn):}
+\DoxyCodeLine{603     \textcolor{comment}{\#for plotting wavefunctions, to be removed}}
+\DoxyCodeLine{604     fig = go.Figure(data=go.Volume(}
+\DoxyCodeLine{605         x=X.flatten(),}
+\DoxyCodeLine{606         y=Y.flatten(),}
+\DoxyCodeLine{607         z=Z.flatten(),}
+\DoxyCodeLine{608         value=wfn.flatten(),}
+\DoxyCodeLine{609         isomin=0.0,}
+\DoxyCodeLine{610         isomax=1.2,}
+\DoxyCodeLine{611         opacity=0.1, }
+\DoxyCodeLine{612         surface\_count=21, }
+\DoxyCodeLine{613     ))}
 \DoxyCodeLine{614 }
-\DoxyCodeLine{615 }
+\DoxyCodeLine{615     \textcolor{comment}{\#fig.save("{}wavefunction.png"{})}}
+\DoxyCodeLine{616 }
+\DoxyCodeLine{617     \textcolor{keywordflow}{return} fig}
+\DoxyCodeLine{618 }
+\DoxyCodeLine{619 }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -1129,43 +1139,43 @@ Processes the results output as a result of the parameter search from the Net\+C
 \end{DoxyVerb}
  
 
-Definition at line 616 of file dice\+\_\+visualise.\+py.
+Definition at line 620 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{616 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a5a0c22f15d7ec362e1e8063e090cff12}{process\_main\_results}}(filename='results.nc', verbose = True):}
-\DoxyCodeLine{617     \textcolor{stringliteral}{"{}"{}"{}Processes the results output as a result of the parameter search from the NetCDF4 file}}
-\DoxyCodeLine{618 \textcolor{stringliteral}{}}
-\DoxyCodeLine{619 \textcolor{stringliteral}{    Parameters:}}
-\DoxyCodeLine{620 \textcolor{stringliteral}{        filename: Defaults to 'results.nc'. The file which contains the data output by the parameter search}}
-\DoxyCodeLine{621 \textcolor{stringliteral}{    "{}"{}"{}}}
-\DoxyCodeLine{622 }
-\DoxyCodeLine{623 }
-\DoxyCodeLine{624 }
-\DoxyCodeLine{625     rootgrp = \mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_ade39cf6264b70d0cd62d9ff89742c62e}{load\_results}}(filename)}
+\DoxyCodeLine{620 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a5a0c22f15d7ec362e1e8063e090cff12}{process\_main\_results}}(filename='results.nc', verbose = True):}
+\DoxyCodeLine{621     \textcolor{stringliteral}{"{}"{}"{}Processes the results output as a result of the parameter search from the NetCDF4 file}}
+\DoxyCodeLine{622 \textcolor{stringliteral}{}}
+\DoxyCodeLine{623 \textcolor{stringliteral}{    Parameters:}}
+\DoxyCodeLine{624 \textcolor{stringliteral}{        filename: Defaults to 'results.nc'. The file which contains the data output by the parameter search}}
+\DoxyCodeLine{625 \textcolor{stringliteral}{    "{}"{}"{}}}
 \DoxyCodeLine{626 }
-\DoxyCodeLine{627     global\_attr = \mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a86a6e09c72837b5f17066a3eee79087e}{load\_global\_attr}}(rootgrp, verbose)}
+\DoxyCodeLine{627 }
 \DoxyCodeLine{628 }
-\DoxyCodeLine{629     variables = \mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_abbdc54b3066752afd14b554b0791e96d}{load\_variables}}(rootgrp, verbose)}
+\DoxyCodeLine{629     rootgrp = \mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_ade39cf6264b70d0cd62d9ff89742c62e}{load\_results}}(filename)}
 \DoxyCodeLine{630 }
-\DoxyCodeLine{631 }
-\DoxyCodeLine{632     \textcolor{keywordflow}{if} (global\_attr[\textcolor{stringliteral}{'system'}] == \textcolor{stringliteral}{'QHO'}):}
-\DoxyCodeLine{633         \textcolor{keywordflow}{pass}}
-\DoxyCodeLine{634         \textcolor{comment}{\#data1 = QHO\_eng\_plot(rootgrp)}}
-\DoxyCodeLine{635         \textcolor{comment}{\#fig = QHO\_prob\_plot(rootgrp)}}
-\DoxyCodeLine{636     elif(global\_attr[\textcolor{stringliteral}{'system'}] == \textcolor{stringliteral}{'H2plus'}):}
-\DoxyCodeLine{637         main\_fig = \mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a12b764183adcced19e3e7bf8a10f4e92}{H2\_eng\_plot}}(variables)}
-\DoxyCodeLine{638         }
-\DoxyCodeLine{639 }
-\DoxyCodeLine{640     elif(global\_attr[\textcolor{stringliteral}{'system'}] == \textcolor{stringliteral}{'H2'}):}
-\DoxyCodeLine{641         \textcolor{keywordflow}{pass}}
-\DoxyCodeLine{642 }
-\DoxyCodeLine{643     \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{644             \textcolor{keywordflow}{raise} Exception(\textcolor{stringliteral}{"{}Invalid system input into visualisation"{}})}
-\DoxyCodeLine{645             }
-\DoxyCodeLine{646     \textcolor{keywordflow}{return} global\_attr,variables,main\_fig}
-\DoxyCodeLine{647 }
-\DoxyCodeLine{648 }
+\DoxyCodeLine{631     global\_attr = \mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a86a6e09c72837b5f17066a3eee79087e}{load\_global\_attr}}(rootgrp, verbose)}
+\DoxyCodeLine{632 }
+\DoxyCodeLine{633     variables = \mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_abbdc54b3066752afd14b554b0791e96d}{load\_variables}}(rootgrp, verbose)}
+\DoxyCodeLine{634 }
+\DoxyCodeLine{635 }
+\DoxyCodeLine{636     \textcolor{keywordflow}{if} (global\_attr[\textcolor{stringliteral}{'system'}] == \textcolor{stringliteral}{'QHO'}):}
+\DoxyCodeLine{637         \textcolor{keywordflow}{pass}}
+\DoxyCodeLine{638         \textcolor{comment}{\#data1 = QHO\_eng\_plot(rootgrp)}}
+\DoxyCodeLine{639         \textcolor{comment}{\#fig = QHO\_prob\_plot(rootgrp)}}
+\DoxyCodeLine{640     elif(global\_attr[\textcolor{stringliteral}{'system'}] == \textcolor{stringliteral}{'H2plus'}):}
+\DoxyCodeLine{641         main\_fig = \mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a12b764183adcced19e3e7bf8a10f4e92}{H2\_eng\_plot}}(variables)}
+\DoxyCodeLine{642         }
+\DoxyCodeLine{643 }
+\DoxyCodeLine{644     elif(global\_attr[\textcolor{stringliteral}{'system'}] == \textcolor{stringliteral}{'H2'}):}
+\DoxyCodeLine{645         \textcolor{keywordflow}{pass}}
+\DoxyCodeLine{646 }
+\DoxyCodeLine{647     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{648             \textcolor{keywordflow}{raise} Exception(\textcolor{stringliteral}{"{}Invalid system input into visualisation"{}})}
+\DoxyCodeLine{649             }
+\DoxyCodeLine{650     \textcolor{keywordflow}{return} global\_attr,variables,main\_fig}
+\DoxyCodeLine{651 }
+\DoxyCodeLine{652 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -1184,34 +1194,34 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line 649 of file dice\+\_\+visualise.\+py.
+Definition at line 653 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{649 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a71f87402b5309230c1d68d46263bf848}{plot\_markov\_chain}}(filename):}
-\DoxyCodeLine{650 }
-\DoxyCodeLine{651     dset = nc.Dataset(filename)}
-\DoxyCodeLine{652     }
-\DoxyCodeLine{653     energies = dset[\textcolor{stringliteral}{'energies'}][:]}
+\DoxyCodeLine{653 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a71f87402b5309230c1d68d46263bf848}{plot\_markov\_chain}}(filename):}
 \DoxyCodeLine{654 }
-\DoxyCodeLine{655     positions = dset[\textcolor{stringliteral}{'positions'}][:] }
+\DoxyCodeLine{655     dset = nc.Dataset(filename)}
 \DoxyCodeLine{656     }
-\DoxyCodeLine{657     \textcolor{keywordflow}{if} dset.system == \textcolor{stringliteral}{'QHO'}:}
-\DoxyCodeLine{658         }
-\DoxyCodeLine{659         fig = \mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a1e0fa890b9d36a8dc0d2cf886bdb47d0}{QHO\_prob\_plot}}(positions)}
-\DoxyCodeLine{660         }
-\DoxyCodeLine{661         \textcolor{keywordflow}{return} fig}
+\DoxyCodeLine{657     energies = dset[\textcolor{stringliteral}{'energies'}][:]}
+\DoxyCodeLine{658 }
+\DoxyCodeLine{659     positions = dset[\textcolor{stringliteral}{'positions'}][:] }
+\DoxyCodeLine{660     }
+\DoxyCodeLine{661     \textcolor{keywordflow}{if} dset.system == \textcolor{stringliteral}{'QHO'}:}
 \DoxyCodeLine{662         }
-\DoxyCodeLine{663     \textcolor{keywordflow}{elif} dset.system == \textcolor{stringliteral}{'H2'} \textcolor{keywordflow}{or} dset.system == \textcolor{stringliteral}{'H2plus'}:}
-\DoxyCodeLine{664 }
-\DoxyCodeLine{665         R1 = [-\/0.5*dset.bond\_length, 0, 0]}
-\DoxyCodeLine{666         R2 = [0.5*dset.bond\_length, 0, 0]}
-\DoxyCodeLine{667     }
-\DoxyCodeLine{668         fig = vis.H2\_prob\_plot(positions, energies, R1, R2)}
-\DoxyCodeLine{669         }
-\DoxyCodeLine{670         \textcolor{keywordflow}{return} fig}
-\DoxyCodeLine{671 }
-\DoxyCodeLine{672 }
+\DoxyCodeLine{663         fig = \mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a1e0fa890b9d36a8dc0d2cf886bdb47d0}{QHO\_prob\_plot}}(positions)}
+\DoxyCodeLine{664         }
+\DoxyCodeLine{665         \textcolor{keywordflow}{return} fig}
+\DoxyCodeLine{666         }
+\DoxyCodeLine{667     \textcolor{keywordflow}{elif} dset.system == \textcolor{stringliteral}{'H2'} \textcolor{keywordflow}{or} dset.system == \textcolor{stringliteral}{'H2plus'}:}
+\DoxyCodeLine{668 }
+\DoxyCodeLine{669         R1 = [-\/0.5*dset.bond\_length, 0, 0]}
+\DoxyCodeLine{670         R2 = [0.5*dset.bond\_length, 0, 0]}
+\DoxyCodeLine{671     }
+\DoxyCodeLine{672         fig = vis.H2\_prob\_plot(positions, energies, R1, R2)}
+\DoxyCodeLine{673         }
+\DoxyCodeLine{674         \textcolor{keywordflow}{return} fig}
+\DoxyCodeLine{675 }
+\DoxyCodeLine{676 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -1234,18 +1244,18 @@ functions plotting the wavefunction ab initio \#\#\#\#\#\#\#
 
 
 
-Definition at line 675 of file dice\+\_\+visualise.\+py.
+Definition at line 679 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{675 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a94102fa6eb01dcccc8b10c387f4bd9eb}{orb\_1s}}(X,Y,Z, R\_a): \textcolor{comment}{\#R\_a is the location of the atoms}}
-\DoxyCodeLine{676     x\_a,y\_a,z\_a = R\_a}
-\DoxyCodeLine{677     a0 = 1}
-\DoxyCodeLine{678     orbital = 1/(((a0**1.5)*(np.sqrt(np.pi)))*\(\backslash\)}
-\DoxyCodeLine{679                  np.exp(np.sqrt((X-\/x\_a)**2+(Y-\/y\_a)**2+(Z-\/z\_a)**2)/a0))}
-\DoxyCodeLine{680     \textcolor{keywordflow}{return} orbital}
-\DoxyCodeLine{681 }
-\DoxyCodeLine{682 }
+\DoxyCodeLine{679 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a94102fa6eb01dcccc8b10c387f4bd9eb}{orb\_1s}}(X,Y,Z, R\_a): \textcolor{comment}{\#R\_a is the location of the atoms}}
+\DoxyCodeLine{680     x\_a,y\_a,z\_a = R\_a}
+\DoxyCodeLine{681     a0 = 1}
+\DoxyCodeLine{682     orbital = 1/(((a0**1.5)*(np.sqrt(np.pi)))*\(\backslash\)}
+\DoxyCodeLine{683                  np.exp(np.sqrt((X-\/x\_a)**2+(Y-\/y\_a)**2+(Z-\/z\_a)**2)/a0))}
+\DoxyCodeLine{684     \textcolor{keywordflow}{return} orbital}
+\DoxyCodeLine{685 }
+\DoxyCodeLine{686 }
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
@@ -1264,16 +1274,16 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 683 of file dice\+\_\+visualise.\+py.
+Definition at line 687 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{683 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a47f4a634a4bd3ca1498a2d262feb88c9}{orb\_2s}}(r,R\_a):}
-\DoxyCodeLine{684     a0 = 1}
-\DoxyCodeLine{685     orbital = (2-\/np.linalg.norm(r-\/R\_a)()/a0)/((4*(a0**1.5)*(np.sqrt(2*np.pi)))*np.exp(np.linalg.norm(r-\/R\_a)/(2*a0)))}
-\DoxyCodeLine{686     \textcolor{keywordflow}{return} orbital}
-\DoxyCodeLine{687 }
-\DoxyCodeLine{688 }
+\DoxyCodeLine{687 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a47f4a634a4bd3ca1498a2d262feb88c9}{orb\_2s}}(r,R\_a):}
+\DoxyCodeLine{688     a0 = 1}
+\DoxyCodeLine{689     orbital = (2-\/np.linalg.norm(r-\/R\_a)()/a0)/((4*(a0**1.5)*(np.sqrt(2*np.pi)))*np.exp(np.linalg.norm(r-\/R\_a)/(2*a0)))}
+\DoxyCodeLine{690     \textcolor{keywordflow}{return} orbital}
+\DoxyCodeLine{691 }
+\DoxyCodeLine{692 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespace_dice_py_1_1dice__visualise_a163ee968729a70b3b9f653ebed51045d}\label{namespace_dice_py_1_1dice__visualise_a163ee968729a70b3b9f653ebed51045d}} 
@@ -1284,18 +1294,18 @@ Definition at line 683 of file dice\+\_\+visualise.\+py.
 
 
 
-Definition at line 689 of file dice\+\_\+visualise.\+py.
+Definition at line 693 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{689 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a163ee968729a70b3b9f653ebed51045d}{polar\_to\_cart}}(r,theta, phi):}
-\DoxyCodeLine{690     X = r*np.sin(phi)*np.cos(theta)}
-\DoxyCodeLine{691     Y = r*np.sin(phi)*np.sin(theta)}
-\DoxyCodeLine{692     Z = r*np.cos(phi)}
-\DoxyCodeLine{693 }
-\DoxyCodeLine{694     \textcolor{keywordflow}{return} X,Y,Z}
-\DoxyCodeLine{695     }
-\DoxyCodeLine{696 }
+\DoxyCodeLine{693 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a163ee968729a70b3b9f653ebed51045d}{polar\_to\_cart}}(r,theta, phi):}
+\DoxyCodeLine{694     X = r*np.sin(phi)*np.cos(theta)}
+\DoxyCodeLine{695     Y = r*np.sin(phi)*np.sin(theta)}
+\DoxyCodeLine{696     Z = r*np.cos(phi)}
+\DoxyCodeLine{697 }
+\DoxyCodeLine{698     \textcolor{keywordflow}{return} X,Y,Z}
+\DoxyCodeLine{699     }
+\DoxyCodeLine{700 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespace_dice_py_1_1dice__visualise_aa7a7248206840811fa4e6ac835142af5}\label{namespace_dice_py_1_1dice__visualise_aa7a7248206840811fa4e6ac835142af5}} 
@@ -1306,20 +1316,20 @@ Definition at line 689 of file dice\+\_\+visualise.\+py.
 
 
 
-Definition at line 697 of file dice\+\_\+visualise.\+py.
+Definition at line 701 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{697 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_aa7a7248206840811fa4e6ac835142af5}{lcao\_wfn}}(X,Y,Z, R1, R2, pqn = 1):}
-\DoxyCodeLine{698     \textcolor{comment}{\#for the linear combination of wavefunctions, to be added to and to be remove}}
-\DoxyCodeLine{699     \textcolor{keywordflow}{if} pqn == 1:}
-\DoxyCodeLine{700          wfn = np.sqrt(2)*\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a94102fa6eb01dcccc8b10c387f4bd9eb}{orb\_1s}}(X,Y,Z,R1) + np.sqrt(2)*\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a94102fa6eb01dcccc8b10c387f4bd9eb}{orb\_1s}}(X,Y,Z,R2)}
-\DoxyCodeLine{701     \textcolor{keywordflow}{if} pqn == 2:}
-\DoxyCodeLine{702         \textcolor{keywordflow}{pass}}
-\DoxyCodeLine{703 }
-\DoxyCodeLine{704     \textcolor{keywordflow}{return} wfn}
-\DoxyCodeLine{705 }
-\DoxyCodeLine{706 }
+\DoxyCodeLine{701 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_aa7a7248206840811fa4e6ac835142af5}{lcao\_wfn}}(X,Y,Z, R1, R2, pqn = 1):}
+\DoxyCodeLine{702     \textcolor{comment}{\#for the linear combination of wavefunctions, to be added to and to be remove}}
+\DoxyCodeLine{703     \textcolor{keywordflow}{if} pqn == 1:}
+\DoxyCodeLine{704          wfn = np.sqrt(2)*\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a94102fa6eb01dcccc8b10c387f4bd9eb}{orb\_1s}}(X,Y,Z,R1) + np.sqrt(2)*\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a94102fa6eb01dcccc8b10c387f4bd9eb}{orb\_1s}}(X,Y,Z,R2)}
+\DoxyCodeLine{705     \textcolor{keywordflow}{if} pqn == 2:}
+\DoxyCodeLine{706         \textcolor{keywordflow}{pass}}
+\DoxyCodeLine{707 }
+\DoxyCodeLine{708     \textcolor{keywordflow}{return} wfn}
+\DoxyCodeLine{709 }
+\DoxyCodeLine{710 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -1352,50 +1362,50 @@ Meshgrids can be generated using np.\+meshgrid(x,y,z)
 
 Parameters\+: X\+: Meshgrid of X coordinates Y\+: Meshgrid of Y coordinates Z\+: Meshgrid of Z coordinates 
 
-Definition at line 707 of file dice\+\_\+visualise.\+py.
+Definition at line 711 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{707 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_aaecb354ce844d441ff41cd60c875e36f}{plot\_3D}}(X,Y,Z,wfn,R1,R2):}
-\DoxyCodeLine{708     \textcolor{stringliteral}{"{}"{}"{} Function for plotting the wavefunction analytically. Meshgrids can be generated using np.meshgrid(x,y,z)}}
-\DoxyCodeLine{709 \textcolor{stringliteral}{}}
-\DoxyCodeLine{710 \textcolor{stringliteral}{    Parameters:}}
-\DoxyCodeLine{711 \textcolor{stringliteral}{        X: Meshgrid of X coordinates}}
-\DoxyCodeLine{712 \textcolor{stringliteral}{        Y: Meshgrid of Y coordinates}}
-\DoxyCodeLine{713 \textcolor{stringliteral}{        Z: Meshgrid of Z coordinates}}
-\DoxyCodeLine{714 \textcolor{stringliteral}{    "{}"{}"{}} }
-\DoxyCodeLine{715 }
-\DoxyCodeLine{716     fig = go.Figure()}
-\DoxyCodeLine{717     \textcolor{comment}{\#for plotting wavefunctions, to be removed}}
-\DoxyCodeLine{718     fig.add\_trace(go.Volume(}
-\DoxyCodeLine{719     x=X.flatten(),}
-\DoxyCodeLine{720     y=Y.flatten(),}
-\DoxyCodeLine{721     z=Z.flatten(),}
-\DoxyCodeLine{722     value=wfn.flatten(),}
-\DoxyCodeLine{723     opacity=0.1, }
-\DoxyCodeLine{724     surface\_count=21, }
-\DoxyCodeLine{725     ))}
-\DoxyCodeLine{726     }
-\DoxyCodeLine{727     fig.add\_trace(go.Scatter3d(}
-\DoxyCodeLine{728         mode=\textcolor{stringliteral}{'markers'},}
-\DoxyCodeLine{729         x=[R1[0],R2[0]],}
-\DoxyCodeLine{730         y=[R1[1],R2[1]],}
-\DoxyCodeLine{731         z=[R1[2],R2[2]],}
-\DoxyCodeLine{732         opacity=1.0,}
-\DoxyCodeLine{733         marker=dict(}
-\DoxyCodeLine{734             color=\textcolor{stringliteral}{'\#AAAAAA'},}
-\DoxyCodeLine{735             size=10,}
-\DoxyCodeLine{736             line=dict(}
-\DoxyCodeLine{737                 color=\textcolor{stringliteral}{'Black'},}
-\DoxyCodeLine{738                 width=2}
-\DoxyCodeLine{739                 )}
-\DoxyCodeLine{740             ),}
-\DoxyCodeLine{741             name=\textcolor{stringliteral}{'Atoms'}}
-\DoxyCodeLine{742         )}
-\DoxyCodeLine{743     )}
-\DoxyCodeLine{744     \textcolor{keywordflow}{return} fig}
-\DoxyCodeLine{745 }
-\DoxyCodeLine{746 }
+\DoxyCodeLine{711 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_aaecb354ce844d441ff41cd60c875e36f}{plot\_3D}}(X,Y,Z,wfn,R1,R2):}
+\DoxyCodeLine{712     \textcolor{stringliteral}{"{}"{}"{} Function for plotting the wavefunction analytically. Meshgrids can be generated using np.meshgrid(x,y,z)}}
+\DoxyCodeLine{713 \textcolor{stringliteral}{}}
+\DoxyCodeLine{714 \textcolor{stringliteral}{    Parameters:}}
+\DoxyCodeLine{715 \textcolor{stringliteral}{        X: Meshgrid of X coordinates}}
+\DoxyCodeLine{716 \textcolor{stringliteral}{        Y: Meshgrid of Y coordinates}}
+\DoxyCodeLine{717 \textcolor{stringliteral}{        Z: Meshgrid of Z coordinates}}
+\DoxyCodeLine{718 \textcolor{stringliteral}{    "{}"{}"{}} }
+\DoxyCodeLine{719 }
+\DoxyCodeLine{720     fig = go.Figure()}
+\DoxyCodeLine{721     \textcolor{comment}{\#for plotting wavefunctions, to be removed}}
+\DoxyCodeLine{722     fig.add\_trace(go.Volume(}
+\DoxyCodeLine{723     x=X.flatten(),}
+\DoxyCodeLine{724     y=Y.flatten(),}
+\DoxyCodeLine{725     z=Z.flatten(),}
+\DoxyCodeLine{726     value=wfn.flatten(),}
+\DoxyCodeLine{727     opacity=0.1, }
+\DoxyCodeLine{728     surface\_count=21, }
+\DoxyCodeLine{729     ))}
+\DoxyCodeLine{730     }
+\DoxyCodeLine{731     fig.add\_trace(go.Scatter3d(}
+\DoxyCodeLine{732         mode=\textcolor{stringliteral}{'markers'},}
+\DoxyCodeLine{733         x=[R1[0],R2[0]],}
+\DoxyCodeLine{734         y=[R1[1],R2[1]],}
+\DoxyCodeLine{735         z=[R1[2],R2[2]],}
+\DoxyCodeLine{736         opacity=1.0,}
+\DoxyCodeLine{737         marker=dict(}
+\DoxyCodeLine{738             color=\textcolor{stringliteral}{'\#AAAAAA'},}
+\DoxyCodeLine{739             size=10,}
+\DoxyCodeLine{740             line=dict(}
+\DoxyCodeLine{741                 color=\textcolor{stringliteral}{'Black'},}
+\DoxyCodeLine{742                 width=2}
+\DoxyCodeLine{743                 )}
+\DoxyCodeLine{744             ),}
+\DoxyCodeLine{745             name=\textcolor{stringliteral}{'Atoms'}}
+\DoxyCodeLine{746         )}
+\DoxyCodeLine{747     )}
+\DoxyCodeLine{748     \textcolor{keywordflow}{return} fig}
+\DoxyCodeLine{749 }
+\DoxyCodeLine{750 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -1414,24 +1424,24 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line 747 of file dice\+\_\+visualise.\+py.
+Definition at line 751 of file dice\+\_\+visualise.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{747 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_ac82e6fdf20ce6eca6265e10dc59acc08}{example\_H1s\_wfn}}(bond\_length=2.0):}
-\DoxyCodeLine{748     }
-\DoxyCodeLine{749     x, y, z = np.mgrid[-\/3:3:40j, -\/3:3:40j, -\/3:3:40j]}
-\DoxyCodeLine{750 }
-\DoxyCodeLine{751     R\_1 = (-\/0.5*bond\_length, 0,0)}
-\DoxyCodeLine{752     R\_2 = (0.5*bond\_length, 0,0)}
-\DoxyCodeLine{753     }
-\DoxyCodeLine{754     wfn = \mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_aa7a7248206840811fa4e6ac835142af5}{lcao\_wfn}}(x,y,z,R\_1,R\_2)}
-\DoxyCodeLine{755     density = wfn**2}
-\DoxyCodeLine{756     }
-\DoxyCodeLine{757     density\_plot = \mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_aaecb354ce844d441ff41cd60c875e36f}{plot\_3D}}(x,y,z,density,R\_1,R\_2)}
-\DoxyCodeLine{758     \textcolor{keywordflow}{return} density\_plot}
-\DoxyCodeLine{759 }
-\DoxyCodeLine{760     \textcolor{keywordflow}{return} wfn}
+\DoxyCodeLine{751 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_ac82e6fdf20ce6eca6265e10dc59acc08}{example\_H1s\_wfn}}(bond\_length=2.0):}
+\DoxyCodeLine{752     }
+\DoxyCodeLine{753     x, y, z = np.mgrid[-\/3:3:40j, -\/3:3:40j, -\/3:3:40j]}
+\DoxyCodeLine{754 }
+\DoxyCodeLine{755     R\_1 = (-\/0.5*bond\_length, 0,0)}
+\DoxyCodeLine{756     R\_2 = (0.5*bond\_length, 0,0)}
+\DoxyCodeLine{757     }
+\DoxyCodeLine{758     wfn = \mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_aa7a7248206840811fa4e6ac835142af5}{lcao\_wfn}}(x,y,z,R\_1,R\_2)}
+\DoxyCodeLine{759     density = wfn**2}
+\DoxyCodeLine{760     }
+\DoxyCodeLine{761     density\_plot = \mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_aaecb354ce844d441ff41cd60c875e36f}{plot\_3D}}(x,y,z,density,R\_1,R\_2)}
+\DoxyCodeLine{762     \textcolor{keywordflow}{return} density\_plot}
+\DoxyCodeLine{763 }
+\DoxyCodeLine{764     \textcolor{keywordflow}{return} wfn}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:

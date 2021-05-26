@@ -127,12 +127,16 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a581c3f69fc28686e7c69c0f260556981"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard deviation in MMC transition probability.  <a href="structshared__data_1_1h2plus__type.html#a581c3f69fc28686e7c69c0f260556981">More...</a><br /></td></tr>
 <tr class="separator:a581c3f69fc28686e7c69c0f260556981"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a216705c18dec2984227a17ef587ed0e9"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1h2plus__type.html#a216705c18dec2984227a17ef587ed0e9">auto_params</a> = .TRUE.</td></tr>
+<tr class="memdesc:a216705c18dec2984227a17ef587ed0e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to optimise variational params by automatic gradient-descent searching or by linearly-spaced grid searching.  <a href="structshared__data_1_1h2plus__type.html#a216705c18dec2984227a17ef587ed0e9">More...</a><br /></td></tr>
 <tr class="separator:a216705c18dec2984227a17ef587ed0e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9850ee368bd929cfcd435a1ad6178ca"><td class="memItemLeft" align="right" valign="top">real(real64)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1h2plus__type.html#ac9850ee368bd929cfcd435a1ad6178ca">ham_fdstep</a> =1e-3_real64</td></tr>
+<tr class="memdesc:ac9850ee368bd929cfcd435a1ad6178ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finite difference step size to use in calculation of grad wrt c.  <a href="structshared__data_1_1h2plus__type.html#ac9850ee368bd929cfcd435a1ad6178ca">More...</a><br /></td></tr>
 <tr class="separator:ac9850ee368bd929cfcd435a1ad6178ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93cd67fa7602dee85356a7a3cbe80b7b"><td class="memItemLeft" align="right" valign="top">real(real64)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1h2plus__type.html#a93cd67fa7602dee85356a7a3cbe80b7b">c_fdstep</a> =1e-3_real64</td></tr>
+<tr class="memdesc:a93cd67fa7602dee85356a7a3cbe80b7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finite difference step size to use in calculation of Laplacian.  <a href="structshared__data_1_1h2plus__type.html#a93cd67fa7602dee85356a7a3cbe80b7b">More...</a><br /></td></tr>
 <tr class="separator:a93cd67fa7602dee85356a7a3cbe80b7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3570e02c3f765d441be8d54e990d96b4"><td class="memItemLeft" align="right" valign="top">real(real64)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1h2plus__type.html#a3570e02c3f765d441be8d54e990d96b4">c</a> = 0.7_real64</td></tr>
+<tr class="memdesc:a3570e02c3f765d441be8d54e990d96b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starting guess value of variational parameter c.  <a href="structshared__data_1_1h2plus__type.html#a3570e02c3f765d441be8d54e990d96b4">More...</a><br /></td></tr>
 <tr class="separator:a3570e02c3f765d441be8d54e990d96b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34c94a7b278679a82a85d7974ceda545"><td class="memItemLeft" align="right" valign="top">real(real64), dimension(3)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1h2plus__type.html#a34c94a7b278679a82a85d7974ceda545">c_grid</a> = (/0,1,10/)</td></tr>
 <tr class="memdesc:a34c94a7b278679a82a85d7974ceda545"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grid of c values, format: [min, max, grid points].  <a href="structshared__data_1_1h2plus__type.html#a34c94a7b278679a82a85d7974ceda545">More...</a><br /></td></tr>
@@ -253,8 +257,10 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Whether to optimise variational params by automatic gradient-descent searching or by linearly-spaced grid searching. </p>
+
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00085">85</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordtype">logical</span> :: auto_params = .true.</div>
+<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordtype">logical</span> :: auto_params = .true.           </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -270,8 +276,10 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00086">86</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keywordtype">        real</span>(real64) :: ham_fdstep=1e-3_real64</div>
+<p>Finite difference step size to use in calculation of grad wrt c. </p>
+
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00087">87</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordtype">        real</span>(real64) :: ham_fdstep=1e-3_real64    </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -287,8 +295,10 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00087">87</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordtype">        real</span>(real64) :: c_fdstep=1e-3_real64</div>
+<p>Finite difference step size to use in calculation of Laplacian. </p>
+
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00088">88</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keywordtype">        real</span>(real64) :: c_fdstep=1e-3_real64      </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -304,8 +314,10 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00088">88</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keywordtype">        real</span>(real64) :: c = 0.7_real64</div>
+<p>Starting guess value of variational parameter c. </p>
+
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00089">89</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keywordtype">        real</span>(real64) :: c = 0.7_real64            </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -323,8 +335,8 @@ Public Attributes</h2></td></tr>
 
 <p>Grid of c values, format: [min, max, grid points]. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00089">89</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: c_grid = (/0,1,10/)</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00090">90</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: c_grid = (/0,1,10/)</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -342,8 +354,8 @@ Public Attributes</h2></td></tr>
 
 <p>Grid of bondlength values, format: [min, max, grid points]. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00090">90</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: bond = (/1,3,10/)</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00091">91</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: bond = (/1,3,10/)</div>
 </div><!-- fragment -->
 </div>
 </div>

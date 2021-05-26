@@ -48,7 +48,7 @@ real(real64) \mbox{\hyperlink{structshared__data_1_1restart__type_a92de13b0fd054
 \doxysubsection{Detailed Description}
 Derived Type to store restart data. 
 
-Definition at line 111 of file shared\+\_\+data.\+f90.
+Definition at line 113 of file shared\+\_\+data.\+f90.
 
 
 
@@ -65,11 +65,11 @@ Number of processors used.
 
 
 
-Definition at line 112 of file shared\+\_\+data.\+f90.
+Definition at line 114 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{112         \textcolor{keywordtype}{integer(int32)} :: p}
+\DoxyCodeLine{114         \textcolor{keywordtype}{integer(int32)} :: p}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1restart__type_ab81c4a4d580bccb1878e522ec7c94db2}\label{structshared__data_1_1restart__type_ab81c4a4d580bccb1878e522ec7c94db2}} 
@@ -84,11 +84,11 @@ Random seeds on the processors.
 
 
 
-Definition at line 113 of file shared\+\_\+data.\+f90.
+Definition at line 115 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{113         \textcolor{keywordtype}{integer(int64)},\textcolor{keywordtype}{dimension(:)},\textcolor{keywordtype}{allocatable} :: seeds}
+\DoxyCodeLine{115         \textcolor{keywordtype}{integer(int64)},\textcolor{keywordtype}{dimension(:)},\textcolor{keywordtype}{allocatable} :: seeds}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1restart__type_ad6d5b42f1d080abf1eb7036e2026e4aa}\label{structshared__data_1_1restart__type_ad6d5b42f1d080abf1eb7036e2026e4aa}} 
@@ -103,11 +103,11 @@ Index of last alpha-\/grid point, for QHO.
 
 
 
-Definition at line 114 of file shared\+\_\+data.\+f90.
+Definition at line 116 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{114         \textcolor{keywordtype}{integer(int32)} :: i\_alpha}
+\DoxyCodeLine{116         \textcolor{keywordtype}{integer(int32)} :: i\_alpha}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1restart__type_a54a9d4ff1b7da8f1a128cb76feda942b}\label{structshared__data_1_1restart__type_a54a9d4ff1b7da8f1a128cb76feda942b}} 
@@ -122,11 +122,11 @@ Index of last bond-\/grid point, for H2plus or H2.
 
 
 
-Definition at line 115 of file shared\+\_\+data.\+f90.
+Definition at line 117 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{115         \textcolor{keywordtype}{integer(int32)} :: i\_bond}
+\DoxyCodeLine{117         \textcolor{keywordtype}{integer(int32)} :: i\_bond}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1restart__type_a1ea6fda0c36d040755004dc729c6d3be}\label{structshared__data_1_1restart__type_a1ea6fda0c36d040755004dc729c6d3be}} 
@@ -141,11 +141,11 @@ For H2plus grid-\/search, index of last c-\/grid point.
 
 
 
-Definition at line 116 of file shared\+\_\+data.\+f90.
+Definition at line 118 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{116         \textcolor{keywordtype}{integer(int32)} :: i\_c}
+\DoxyCodeLine{118         \textcolor{keywordtype}{integer(int32)} :: i\_c}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1restart__type_afa4bb582a0ac9eef25c3afdb4f84a1b4}\label{structshared__data_1_1restart__type_afa4bb582a0ac9eef25c3afdb4f84a1b4}} 
@@ -160,11 +160,11 @@ For H2 grid-\/search, index of last beta-\/grid point.
 
 
 
-Definition at line 117 of file shared\+\_\+data.\+f90.
+Definition at line 119 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{117         \textcolor{keywordtype}{integer(int32)} :: i\_beta}
+\DoxyCodeLine{119         \textcolor{keywordtype}{integer(int32)} :: i\_beta}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1restart__type_aa9eac62dc01ab5f8ac2566349803046b}\label{structshared__data_1_1restart__type_aa9eac62dc01ab5f8ac2566349803046b}} 
@@ -180,11 +180,11 @@ For auto-\/search, if c or beta has been optimized ~\newline
 
 
 
-Definition at line 118 of file shared\+\_\+data.\+f90.
+Definition at line 120 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{118         \textcolor{keywordtype}{logical}        :: opt}
+\DoxyCodeLine{120         \textcolor{keywordtype}{logical}        :: opt}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1restart__type_a2a5c277b014794c6e6255cd045a6a47a}\label{structshared__data_1_1restart__type_a2a5c277b014794c6e6255cd045a6a47a}} 
@@ -199,11 +199,11 @@ For H2plus auto-\/search, last guess value for c.
 
 
 
-Definition at line 119 of file shared\+\_\+data.\+f90.
+Definition at line 121 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{119 \textcolor{keywordtype}{        real}(real64)   :: c}
+\DoxyCodeLine{121 \textcolor{keywordtype}{        real}(real64)   :: c}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1restart__type_a83807905e9ec6693745e58f741677695}\label{structshared__data_1_1restart__type_a83807905e9ec6693745e58f741677695}} 
@@ -219,11 +219,11 @@ For H2plus auto-\/search, last c\+\_\+grad value ~\newline
 
 
 
-Definition at line 120 of file shared\+\_\+data.\+f90.
+Definition at line 122 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{120 \textcolor{keywordtype}{        real}(real64)   :: c\_grad}
+\DoxyCodeLine{122 \textcolor{keywordtype}{        real}(real64)   :: c\_grad}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1restart__type_a0e1000934d0ca8986e45afe9a66df038}\label{structshared__data_1_1restart__type_a0e1000934d0ca8986e45afe9a66df038}} 
@@ -238,11 +238,11 @@ For H2 auto-\/search, last guess value for beta.
 
 
 
-Definition at line 121 of file shared\+\_\+data.\+f90.
+Definition at line 123 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{121 \textcolor{keywordtype}{        real}(real64)   :: beta}
+\DoxyCodeLine{123 \textcolor{keywordtype}{        real}(real64)   :: beta}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1restart__type_a92de13b0fd0548d47c95c3a368ab4390}\label{structshared__data_1_1restart__type_a92de13b0fd0548d47c95c3a368ab4390}} 
@@ -258,11 +258,11 @@ For H2 auto-\/search, last beta\+\_\+grad value ~\newline
 
 
 
-Definition at line 122 of file shared\+\_\+data.\+f90.
+Definition at line 124 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{122 \textcolor{keywordtype}{        real}(real64)   :: beta\_grad}
+\DoxyCodeLine{124 \textcolor{keywordtype}{        real}(real64)   :: beta\_grad}
 
 \end{DoxyCode}
 

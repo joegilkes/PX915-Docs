@@ -29,9 +29,9 @@ real(real64) \mbox{\hyperlink{structshared__data_1_1h2__type_a0c0947d862a86bad24
 real(real64) \mbox{\hyperlink{structshared__data_1_1h2__type_a7b888b906b985b9c88e6e8752b73f97a}{sigma}} =0.\+1\+\_\+real64
 \begin{DoxyCompactList}\small\item\em Standard deviation in MMC transition probability. \end{DoxyCompactList}\item 
 logical \mbox{\hyperlink{structshared__data_1_1h2__type_a8895c02d6f6fb25f58dc9463a305856d}{auto\+\_\+params}} = .TRUE.
-\item 
+\begin{DoxyCompactList}\small\item\em Whether to optimise variational params by automatic gradient-\/descent searching or by linearly-\/spaced grid searching. \end{DoxyCompactList}\item 
 real(real64) \mbox{\hyperlink{structshared__data_1_1h2__type_a33d8ad2e0b842f5dbd63d473b52be9e8}{beta}} = 0.\+4\+\_\+real64
-\item 
+\begin{DoxyCompactList}\small\item\em Starting guess value ofvariational parameter $ \beta $. \end{DoxyCompactList}\item 
 real(real64), dimension(3) \mbox{\hyperlink{structshared__data_1_1h2__type_aa08dee89fe225da29c26300c9c846ffe}{beta\+\_\+grid}} = (/0,1,10/)
 \begin{DoxyCompactList}\small\item\em Grid of beta values, format\+: \mbox{[}min, max, grid points\mbox{]}. \end{DoxyCompactList}\item 
 real(real64), dimension(3) \mbox{\hyperlink{structshared__data_1_1h2__type_af37043d2de3ce1c6ab700a88764e0ba4}{bond}} = (/1,3,10/)
@@ -41,7 +41,7 @@ real(real64), dimension(3) \mbox{\hyperlink{structshared__data_1_1h2__type_af370
 \doxysubsection{Detailed Description}
 Derived Type for Hydrogen Molecule, including VQMC defaults. 
 
-Definition at line 96 of file shared\+\_\+data.\+f90.
+Definition at line 97 of file shared\+\_\+data.\+f90.
 
 
 
@@ -58,11 +58,11 @@ Total number of steps for each MMC chain for VQMC runs.
 
 
 
-Definition at line 97 of file shared\+\_\+data.\+f90.
+Definition at line 98 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{97         \textcolor{keywordtype}{integer(int32)} :: steps=100000\_int32      }
+\DoxyCodeLine{98         \textcolor{keywordtype}{integer(int32)} :: steps=100000\_int32      }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2__type_a3b0fc9e9b3524742ed36b9e35ff63307}\label{structshared__data_1_1h2__type_a3b0fc9e9b3524742ed36b9e35ff63307}} 
@@ -77,11 +77,11 @@ Number of steps to be burnt from the start of the MMC chain.
 
 
 
-Definition at line 98 of file shared\+\_\+data.\+f90.
+Definition at line 99 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{98         \textcolor{keywordtype}{integer(int32)} :: burn\_step=4000\_int32    }
+\DoxyCodeLine{99         \textcolor{keywordtype}{integer(int32)} :: burn\_step=4000\_int32    }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2__type_a9e0a5d93f25547fa8cf9826be998d6fb}\label{structshared__data_1_1h2__type_a9e0a5d93f25547fa8cf9826be998d6fb}} 
@@ -96,11 +96,11 @@ Interval of steps by which the MMC chain is thinned.
 
 
 
-Definition at line 99 of file shared\+\_\+data.\+f90.
+Definition at line 100 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{99         \textcolor{keywordtype}{integer(int32)} :: thin\_step=40\_int32      }
+\DoxyCodeLine{100         \textcolor{keywordtype}{integer(int32)} :: thin\_step=40\_int32      }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2__type_a0c0947d862a86bad2415dc9de78ceb24}\label{structshared__data_1_1h2__type_a0c0947d862a86bad2415dc9de78ceb24}} 
@@ -115,11 +115,11 @@ Maximum radius of search around the Hydrogen atoms.
 
 
 
-Definition at line 100 of file shared\+\_\+data.\+f90.
+Definition at line 101 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{100 \textcolor{keywordtype}{        real}(real64) :: rcut=3.0\_real64              }
+\DoxyCodeLine{101 \textcolor{keywordtype}{        real}(real64) :: rcut=3.0\_real64           }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2__type_a7b888b906b985b9c88e6e8752b73f97a}\label{structshared__data_1_1h2__type_a7b888b906b985b9c88e6e8752b73f97a}} 
@@ -134,11 +134,11 @@ Standard deviation in MMC transition probability.
 
 
 
-Definition at line 101 of file shared\+\_\+data.\+f90.
+Definition at line 102 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{101 \textcolor{keywordtype}{        real}(real64) :: sigma=0.1\_real64            }
+\DoxyCodeLine{102 \textcolor{keywordtype}{        real}(real64) :: sigma=0.1\_real64          }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2__type_a8895c02d6f6fb25f58dc9463a305856d}\label{structshared__data_1_1h2__type_a8895c02d6f6fb25f58dc9463a305856d}} 
@@ -149,11 +149,15 @@ Definition at line 101 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 102 of file shared\+\_\+data.\+f90.
+Whether to optimise variational params by automatic gradient-\/descent searching or by linearly-\/spaced grid searching. 
+
+
+
+Definition at line 103 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{102         \textcolor{keywordtype}{logical} :: auto\_params = .true.}
+\DoxyCodeLine{103         \textcolor{keywordtype}{logical} :: auto\_params = .true.           }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2__type_a33d8ad2e0b842f5dbd63d473b52be9e8}\label{structshared__data_1_1h2__type_a33d8ad2e0b842f5dbd63d473b52be9e8}} 
@@ -164,11 +168,15 @@ Definition at line 102 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 103 of file shared\+\_\+data.\+f90.
+Starting guess value ofvariational parameter $ \beta $. 
+
+
+
+Definition at line 105 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{103 \textcolor{keywordtype}{        real}(real64) :: beta = 0.4\_real64}
+\DoxyCodeLine{105 \textcolor{keywordtype}{        real}(real64) :: beta = 0.4\_real64         }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2__type_aa08dee89fe225da29c26300c9c846ffe}\label{structshared__data_1_1h2__type_aa08dee89fe225da29c26300c9c846ffe}} 
@@ -183,11 +191,11 @@ Grid of beta values, format\+: \mbox{[}min, max, grid points\mbox{]}.
 
 
 
-Definition at line 104 of file shared\+\_\+data.\+f90.
+Definition at line 106 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{104 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: beta\_grid = (/0,1,10/)}
+\DoxyCodeLine{106 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: beta\_grid = (/0,1,10/)}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2__type_af37043d2de3ce1c6ab700a88764e0ba4}\label{structshared__data_1_1h2__type_af37043d2de3ce1c6ab700a88764e0ba4}} 
@@ -202,11 +210,11 @@ Grid of bondlength values, format\+: \mbox{[}min, max, grid points\mbox{]}.
 
 
 
-Definition at line 105 of file shared\+\_\+data.\+f90.
+Definition at line 107 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{105 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: bond = (/1,3,10/)}
+\DoxyCodeLine{107 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: bond = (/1,3,10/)}
 
 \end{DoxyCode}
 

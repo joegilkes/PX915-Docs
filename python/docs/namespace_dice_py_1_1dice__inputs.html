@@ -94,6 +94,9 @@ $(document).ready(function(){initNavTree('namespace_dice_py_1_1dice__inputs.html
 <div class="title">DicePy.dice_inputs Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Contains main routine that handles the input file params.txt for Dice.  
+<a href="namespace_dice_py_1_1dice__inputs.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -101,7 +104,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:a261569dce72b6b21ec3f73f090fffb4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enquires whether the user would like to write a new params.txt file, or check an existing params.txt file, and follows up accordingly.  <a href="namespace_dice_py_1_1dice__inputs.html#a261569dce72b6b21ec3f73f090fffb4a">More...</a><br /></td></tr>
 <tr class="separator:a261569dce72b6b21ec3f73f090fffb4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Contains main routine that handles the input file params.txt for Dice. </p>
+<p>This program can generate a new params.txt input file, using user input collated by an interactive sub-program of guided prompts. Alternatively, it can check the correctness of a user assembled params.txt file, informing the user of any errors. For restart runs, this program will also check that the required restart files are present, and notify the user if they are missing. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a261569dce72b6b21ec3f73f090fffb4a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a261569dce72b6b21ec3f73f090fffb4a">&#9670;&nbsp;</a></span>dice_inputs()</h2>
 
@@ -185,10 +191,10 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"># For users running the program directly on the terminal,</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"># call the input routine defined above</span></div>
-<div class="ttc" id="anamespace_dice_py_1_1dice__check_html_a5b0048e86c14d5a7e78feabc634e4b67"><div class="ttname"><a href="namespace_dice_py_1_1dice__check.html#a5b0048e86c14d5a7e78feabc634e4b67">DicePy.dice_check.check_inputs</a></div><div class="ttdeci">def check_inputs(nml)</div><div class="ttdoc">Major subroutine that checks the inputs of file params.txt.</div><div class="ttdef"><b>Definition:</b> <a href="dice__check_8py_source.html#l00146">dice_check.py:146</a></div></div>
+<div class="ttc" id="anamespace_dice_py_1_1dice__check_html_a5b0048e86c14d5a7e78feabc634e4b67"><div class="ttname"><a href="namespace_dice_py_1_1dice__check.html#a5b0048e86c14d5a7e78feabc634e4b67">DicePy.dice_check.check_inputs</a></div><div class="ttdeci">def check_inputs(nml)</div><div class="ttdoc">Major subroutine that checks the inputs of file params.txt.</div><div class="ttdef"><b>Definition:</b> <a href="dice__check_8py_source.html#l00150">dice_check.py:150</a></div></div>
 <div class="ttc" id="anamespace_dice_py_1_1dice__inputs_html_a261569dce72b6b21ec3f73f090fffb4a"><div class="ttname"><a href="namespace_dice_py_1_1dice__inputs.html#a261569dce72b6b21ec3f73f090fffb4a">DicePy.dice_inputs.dice_inputs</a></div><div class="ttdeci">def dice_inputs()</div><div class="ttdoc">Enquires whether the user would like to write a new params.txt file, or check an existing params....</div><div class="ttdef"><b>Definition:</b> <a href="dice__inputs_8py_source.html#l00024">dice_inputs.py:24</a></div></div>
-<div class="ttc" id="anamespace_dice_py_1_1dice__write_html_a3c84b7bc2d0a5121d56457058e3920d1"><div class="ttname"><a href="namespace_dice_py_1_1dice__write.html#a3c84b7bc2d0a5121d56457058e3920d1">DicePy.dice_write.write_params</a></div><div class="ttdeci">def write_params(control, params)</div><div class="ttdoc">Major subroutine that writes the input file params.txt.</div><div class="ttdef"><b>Definition:</b> <a href="dice__write_8py_source.html#l00539">dice_write.py:539</a></div></div>
-<div class="ttc" id="anamespace_dice_py_1_1dice__write_html_a9c61faf451621bddc76ed8a230036039"><div class="ttname"><a href="namespace_dice_py_1_1dice__write.html#a9c61faf451621bddc76ed8a230036039">DicePy.dice_write.query_params</a></div><div class="ttdeci">def query_params()</div><div class="ttdoc">Major function that queries the user for all the inputs required to assemble params....</div><div class="ttdef"><b>Definition:</b> <a href="dice__write_8py_source.html#l00181">dice_write.py:181</a></div></div>
+<div class="ttc" id="anamespace_dice_py_1_1dice__write_html_a3c84b7bc2d0a5121d56457058e3920d1"><div class="ttname"><a href="namespace_dice_py_1_1dice__write.html#a3c84b7bc2d0a5121d56457058e3920d1">DicePy.dice_write.write_params</a></div><div class="ttdeci">def write_params(control, params)</div><div class="ttdoc">Major subroutine that writes the input file params.txt.</div><div class="ttdef"><b>Definition:</b> <a href="dice__write_8py_source.html#l00543">dice_write.py:543</a></div></div>
+<div class="ttc" id="anamespace_dice_py_1_1dice__write_html_a9c61faf451621bddc76ed8a230036039"><div class="ttname"><a href="namespace_dice_py_1_1dice__write.html#a9c61faf451621bddc76ed8a230036039">DicePy.dice_write.query_params</a></div><div class="ttdeci">def query_params()</div><div class="ttdoc">Major function that queries the user for all the inputs required to assemble params....</div><div class="ttdef"><b>Definition:</b> <a href="dice__write_8py_source.html#l00185">dice_write.py:185</a></div></div>
 </div><!-- fragment --><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
