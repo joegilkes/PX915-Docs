@@ -117,11 +117,11 @@ Functions</h2></td></tr>
 <tr class="memitem:a15512bdc0a35b851921f281f89e6460f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevisualisation.html#a15512bdc0a35b851921f281f89e6460f">H2_eng_plot</a> (variables)</td></tr>
 <tr class="memdesc:a15512bdc0a35b851921f281f89e6460f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plots the energies against the parameters checked during the grid search Parameters: variables: Dictionary which contains data about the variables in the netcdf4 object.  <a href="namespacevisualisation.html#a15512bdc0a35b851921f281f89e6460f">More...</a><br /></td></tr>
 <tr class="separator:a15512bdc0a35b851921f281f89e6460f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a857bf301504e6d7c2e8cca241ce18364"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevisualisation.html#a857bf301504e6d7c2e8cca241ce18364">HydProbPlot</a> (chainfile)</td></tr>
-<tr class="separator:a857bf301504e6d7c2e8cca241ce18364"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b55de53638ab3164842e2ea9a8060ce"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevisualisation.html#a2b55de53638ab3164842e2ea9a8060ce">H2_prob_plot</a> (positions, energies, R1, R2)</td></tr>
-<tr class="memdesc:a2b55de53638ab3164842e2ea9a8060ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">H2plus_main_plot() Plots the wavefunction for the quantum harmonic oscillator case.  <a href="namespacevisualisation.html#a2b55de53638ab3164842e2ea9a8060ce">More...</a><br /></td></tr>
-<tr class="separator:a2b55de53638ab3164842e2ea9a8060ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cc7e7e48a1a7fe2f0a46d926501c62b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevisualisation.html#a9cc7e7e48a1a7fe2f0a46d926501c62b">HydProbPlot</a> (chainfile, opacity)</td></tr>
+<tr class="separator:a9cc7e7e48a1a7fe2f0a46d926501c62b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a977806428cd6c4c0c6202ec98f15e2b5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevisualisation.html#a977806428cd6c4c0c6202ec98f15e2b5">H2_prob_plot</a> (positions, energies, R1, R2, opacity)</td></tr>
+<tr class="memdesc:a977806428cd6c4c0c6202ec98f15e2b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">H2plus_main_plot() Plots the wavefunction for the quantum harmonic oscillator case.  <a href="namespacevisualisation.html#a977806428cd6c4c0c6202ec98f15e2b5">More...</a><br /></td></tr>
+<tr class="separator:a977806428cd6c4c0c6202ec98f15e2b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3e838717595f5a5a4f080cfe6c73c05"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevisualisation.html#ad3e838717595f5a5a4f080cfe6c73c05">process_main_results</a> (filename='results.nc', verbose=True)</td></tr>
 <tr class="memdesc:ad3e838717595f5a5a4f080cfe6c73c05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes the results output as a result of the parameter search from the NetCDF4 file.  <a href="namespacevisualisation.html#ad3e838717595f5a5a4f080cfe6c73c05">More...</a><br /></td></tr>
 <tr class="separator:ad3e838717595f5a5a4f080cfe6c73c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -510,8 +510,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a857bf301504e6d7c2e8cca241ce18364"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a857bf301504e6d7c2e8cca241ce18364">&#9670;&nbsp;</a></span>HydProbPlot()</h2>
+<a id="a9cc7e7e48a1a7fe2f0a46d926501c62b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cc7e7e48a1a7fe2f0a46d926501c62b">&#9670;&nbsp;</a></span>HydProbPlot()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -520,14 +520,24 @@ Functions</h2></td></tr>
           <td class="memname">def visualisation.HydProbPlot </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>chainfile</em></td><td>)</td>
+          <td class="paramname"><em>chainfile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>opacity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="visualisation_8py_source.html#l00132">132</a> of file <a class="el" href="visualisation_8py_source.html">visualisation.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keyword">def </span><a class="code" href="namespacevisualisation.html#a857bf301504e6d7c2e8cca241ce18364">HydProbPlot</a>(chainfile):</div>
+<div class="fragment"><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keyword">def </span><a class="code" href="namespacevisualisation.html#a9cc7e7e48a1a7fe2f0a46d926501c62b">HydProbPlot</a>(chainfile, opacity):</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    dat = Dataset(chainfile, <span class="stringliteral">&#39;r&#39;</span>, format=<span class="stringliteral">&#39;NETCDF4&#39;</span>)</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
@@ -542,28 +552,28 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    print(len(positions))</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    fig = <a class="code" href="namespacevisualisation.html#a2b55de53638ab3164842e2ea9a8060ce">H2_prob_plot</a>(positions, energies, R1, R2)</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    fig = <a class="code" href="namespacevisualisation.html#a977806428cd6c4c0c6202ec98f15e2b5">H2_prob_plot</a>(positions, energies, R1, R2, opacity)</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    fig.show()</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="ttc" id="anamespacevisualisation_html_a2b55de53638ab3164842e2ea9a8060ce"><div class="ttname"><a href="namespacevisualisation.html#a2b55de53638ab3164842e2ea9a8060ce">visualisation.H2_prob_plot</a></div><div class="ttdeci">def H2_prob_plot(positions, energies, R1, R2)</div><div class="ttdoc">H2plus_main_plot() Plots the wavefunction for the quantum harmonic oscillator case.</div><div class="ttdef"><b>Definition:</b> <a href="visualisation_8py_source.html#l00151">visualisation.py:151</a></div></div>
-<div class="ttc" id="anamespacevisualisation_html_a857bf301504e6d7c2e8cca241ce18364"><div class="ttname"><a href="namespacevisualisation.html#a857bf301504e6d7c2e8cca241ce18364">visualisation.HydProbPlot</a></div><div class="ttdeci">def HydProbPlot(chainfile)</div><div class="ttdef"><b>Definition:</b> <a href="visualisation_8py_source.html#l00132">visualisation.py:132</a></div></div>
+<div class="ttc" id="anamespacevisualisation_html_a977806428cd6c4c0c6202ec98f15e2b5"><div class="ttname"><a href="namespacevisualisation.html#a977806428cd6c4c0c6202ec98f15e2b5">visualisation.H2_prob_plot</a></div><div class="ttdeci">def H2_prob_plot(positions, energies, R1, R2, opacity)</div><div class="ttdoc">H2plus_main_plot() Plots the wavefunction for the quantum harmonic oscillator case.</div><div class="ttdef"><b>Definition:</b> <a href="visualisation_8py_source.html#l00151">visualisation.py:151</a></div></div>
+<div class="ttc" id="anamespacevisualisation_html_a9cc7e7e48a1a7fe2f0a46d926501c62b"><div class="ttname"><a href="namespacevisualisation.html#a9cc7e7e48a1a7fe2f0a46d926501c62b">visualisation.HydProbPlot</a></div><div class="ttdeci">def HydProbPlot(chainfile, opacity)</div><div class="ttdef"><b>Definition:</b> <a href="visualisation_8py_source.html#l00132">visualisation.py:132</a></div></div>
 </div><!-- fragment --><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="namespacevisualisation_a857bf301504e6d7c2e8cca241ce18364_cgraph.png" border="0" usemap="#anamespacevisualisation_a857bf301504e6d7c2e8cca241ce18364_cgraph" alt=""/></div>
-<map name="anamespacevisualisation_a857bf301504e6d7c2e8cca241ce18364_cgraph" id="anamespacevisualisation_a857bf301504e6d7c2e8cca241ce18364_cgraph">
+<div class="center"><img src="namespacevisualisation_a9cc7e7e48a1a7fe2f0a46d926501c62b_cgraph.png" border="0" usemap="#anamespacevisualisation_a9cc7e7e48a1a7fe2f0a46d926501c62b_cgraph" alt=""/></div>
+<map name="anamespacevisualisation_a9cc7e7e48a1a7fe2f0a46d926501c62b_cgraph" id="anamespacevisualisation_a9cc7e7e48a1a7fe2f0a46d926501c62b_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,176,32"/>
-<area shape="rect" href="namespacevisualisation.html#a2b55de53638ab3164842e2ea9a8060ce" title="H2plus_main_plot() Plots the wavefunction for the quantum harmonic oscillator case." alt="" coords="224,5,399,32"/>
+<area shape="rect" href="namespacevisualisation.html#a977806428cd6c4c0c6202ec98f15e2b5" title="H2plus_main_plot() Plots the wavefunction for the quantum harmonic oscillator case." alt="" coords="224,5,399,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a2b55de53638ab3164842e2ea9a8060ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b55de53638ab3164842e2ea9a8060ce">&#9670;&nbsp;</a></span>H2_prob_plot()</h2>
+<a id="a977806428cd6c4c0c6202ec98f15e2b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a977806428cd6c4c0c6202ec98f15e2b5">&#9670;&nbsp;</a></span>H2_prob_plot()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -590,7 +600,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>R2</em>&#160;</td>
+          <td class="paramname"><em>R2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>opacity</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -604,7 +620,7 @@ Functions</h2></td></tr>
 <p>Positions: XYZ coordinates of Markov chain energies: Energies of the markov chains R1: The location of the first atom R2: The location of the second atom </p>
 
 <p class="definition">Definition at line <a class="el" href="visualisation_8py_source.html#l00151">151</a> of file <a class="el" href="visualisation_8py_source.html">visualisation.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="keyword">def </span><a class="code" href="namespacevisualisation.html#a2b55de53638ab3164842e2ea9a8060ce">H2_prob_plot</a>(positions,energies,R1, R2):</div>
+<div class="fragment"><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="keyword">def </span><a class="code" href="namespacevisualisation.html#a977806428cd6c4c0c6202ec98f15e2b5">H2_prob_plot</a>(positions,energies,R1, R2, opacity):</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="stringliteral">&quot;&quot;&quot; H2plus_main_plot()</span></div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="stringliteral">    Plots the wavefunction for the quantum harmonic oscillator case</span></div>
@@ -631,7 +647,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        x=X,</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        y=Y,</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        z=Z,</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        opacity=0.005,</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        opacity=opacity,</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        marker=dict(</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            color=energies,</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            size=3,</div>
@@ -654,7 +670,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        opacity=1.0,</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        marker=dict(</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            color=<span class="stringliteral">&#39;#AAAAAA&#39;</span>,</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            size=10,</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            size=20,</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            line=dict(</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                color=<span class="stringliteral">&#39;Black&#39;</span>,</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                width=2</div>
@@ -690,10 +706,10 @@ Functions</h2></td></tr>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="namespacevisualisation_a2b55de53638ab3164842e2ea9a8060ce_icgraph.png" border="0" usemap="#anamespacevisualisation_a2b55de53638ab3164842e2ea9a8060ce_icgraph" alt=""/></div>
-<map name="anamespacevisualisation_a2b55de53638ab3164842e2ea9a8060ce_icgraph" id="anamespacevisualisation_a2b55de53638ab3164842e2ea9a8060ce_icgraph">
+<div class="center"><img src="namespacevisualisation_a977806428cd6c4c0c6202ec98f15e2b5_icgraph.png" border="0" usemap="#anamespacevisualisation_a977806428cd6c4c0c6202ec98f15e2b5_icgraph" alt=""/></div>
+<map name="anamespacevisualisation_a977806428cd6c4c0c6202ec98f15e2b5_icgraph" id="anamespacevisualisation_a977806428cd6c4c0c6202ec98f15e2b5_icgraph">
 <area shape="rect" title="H2plus_main_plot() Plots the wavefunction for the quantum harmonic oscillator case." alt="" coords="224,5,399,32"/>
-<area shape="rect" href="namespacevisualisation.html#a857bf301504e6d7c2e8cca241ce18364" title=" " alt="" coords="5,5,176,32"/>
+<area shape="rect" href="namespacevisualisation.html#a9cc7e7e48a1a7fe2f0a46d926501c62b" title=" " alt="" coords="5,5,176,32"/>
 </map>
 </div>
 

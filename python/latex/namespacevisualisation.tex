@@ -20,9 +20,9 @@ def \mbox{\hyperlink{namespacevisualisation_ae631b9a8bb1feeea155e07a856df2362}{Q
 \item 
 def \mbox{\hyperlink{namespacevisualisation_a15512bdc0a35b851921f281f89e6460f}{H2\+\_\+eng\+\_\+plot}} (variables)
 \begin{DoxyCompactList}\small\item\em Plots the energies against the parameters checked during the grid search Parameters\+: variables\+: Dictionary which contains data about the variables in the netcdf4 object. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacevisualisation_a857bf301504e6d7c2e8cca241ce18364}{Hyd\+Prob\+Plot}} (chainfile)
+def \mbox{\hyperlink{namespacevisualisation_a9cc7e7e48a1a7fe2f0a46d926501c62b}{Hyd\+Prob\+Plot}} (chainfile, opacity)
 \item 
-def \mbox{\hyperlink{namespacevisualisation_a2b55de53638ab3164842e2ea9a8060ce}{H2\+\_\+prob\+\_\+plot}} (positions, energies, R1, R2)
+def \mbox{\hyperlink{namespacevisualisation_a977806428cd6c4c0c6202ec98f15e2b5}{H2\+\_\+prob\+\_\+plot}} (positions, energies, R1, R2, opacity)
 \begin{DoxyCompactList}\small\item\em H2plus\+\_\+main\+\_\+plot() Plots the wavefunction for the quantum harmonic oscillator case. \end{DoxyCompactList}\item 
 def \mbox{\hyperlink{namespacevisualisation_ad3e838717595f5a5a4f080cfe6c73c05}{process\+\_\+main\+\_\+results}} (filename=\textquotesingle{}results.\+nc\textquotesingle{}, verbose=True)
 \begin{DoxyCompactList}\small\item\em Processes the results output as a result of the parameter search from the Net\+CDF4 file. \end{DoxyCompactList}\item 
@@ -330,11 +330,11 @@ Here is the caller graph for this function\+:
 \includegraphics[width=350pt]{namespacevisualisation_a15512bdc0a35b851921f281f89e6460f_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespacevisualisation_a857bf301504e6d7c2e8cca241ce18364}\label{namespacevisualisation_a857bf301504e6d7c2e8cca241ce18364}} 
+\mbox{\Hypertarget{namespacevisualisation_a9cc7e7e48a1a7fe2f0a46d926501c62b}\label{namespacevisualisation_a9cc7e7e48a1a7fe2f0a46d926501c62b}} 
 \index{visualisation@{visualisation}!HydProbPlot@{HydProbPlot}}
 \index{HydProbPlot@{HydProbPlot}!visualisation@{visualisation}}
 \doxysubsubsection{\texorpdfstring{HydProbPlot()}{HydProbPlot()}}
-{\footnotesize\ttfamily def visualisation.\+Hyd\+Prob\+Plot (\begin{DoxyParamCaption}\item[{}]{chainfile }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def visualisation.\+Hyd\+Prob\+Plot (\begin{DoxyParamCaption}\item[{}]{chainfile,  }\item[{}]{opacity }\end{DoxyParamCaption})}
 
 
 
@@ -342,7 +342,7 @@ Definition at line 132 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{132 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a857bf301504e6d7c2e8cca241ce18364}{HydProbPlot}}(chainfile):}
+\DoxyCodeLine{132 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a9cc7e7e48a1a7fe2f0a46d926501c62b}{HydProbPlot}}(chainfile, opacity):}
 \DoxyCodeLine{133 }
 \DoxyCodeLine{134     dat = Dataset(chainfile, \textcolor{stringliteral}{'r'}, format=\textcolor{stringliteral}{'NETCDF4'})}
 \DoxyCodeLine{135 }
@@ -357,7 +357,7 @@ Definition at line 132 of file visualisation.\+py.
 \DoxyCodeLine{144 }
 \DoxyCodeLine{145     print(len(positions))}
 \DoxyCodeLine{146 }
-\DoxyCodeLine{147     fig = \mbox{\hyperlink{namespacevisualisation_a2b55de53638ab3164842e2ea9a8060ce}{H2\_prob\_plot}}(positions, energies, R1, R2)}
+\DoxyCodeLine{147     fig = \mbox{\hyperlink{namespacevisualisation_a977806428cd6c4c0c6202ec98f15e2b5}{H2\_prob\_plot}}(positions, energies, R1, R2, opacity)}
 \DoxyCodeLine{148 }
 \DoxyCodeLine{149     fig.show()}
 \DoxyCodeLine{150 }
@@ -368,14 +368,14 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespacevisualisation_a857bf301504e6d7c2e8cca241ce18364_cgraph}
+\includegraphics[width=350pt]{namespacevisualisation_a9cc7e7e48a1a7fe2f0a46d926501c62b_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespacevisualisation_a2b55de53638ab3164842e2ea9a8060ce}\label{namespacevisualisation_a2b55de53638ab3164842e2ea9a8060ce}} 
+\mbox{\Hypertarget{namespacevisualisation_a977806428cd6c4c0c6202ec98f15e2b5}\label{namespacevisualisation_a977806428cd6c4c0c6202ec98f15e2b5}} 
 \index{visualisation@{visualisation}!H2\_prob\_plot@{H2\_prob\_plot}}
 \index{H2\_prob\_plot@{H2\_prob\_plot}!visualisation@{visualisation}}
 \doxysubsubsection{\texorpdfstring{H2\_prob\_plot()}{H2\_prob\_plot()}}
-{\footnotesize\ttfamily def visualisation.\+H2\+\_\+prob\+\_\+plot (\begin{DoxyParamCaption}\item[{}]{positions,  }\item[{}]{energies,  }\item[{}]{R1,  }\item[{}]{R2 }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def visualisation.\+H2\+\_\+prob\+\_\+plot (\begin{DoxyParamCaption}\item[{}]{positions,  }\item[{}]{energies,  }\item[{}]{R1,  }\item[{}]{R2,  }\item[{}]{opacity }\end{DoxyParamCaption})}
 
 
 
@@ -387,7 +387,7 @@ Definition at line 151 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{151 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a2b55de53638ab3164842e2ea9a8060ce}{H2\_prob\_plot}}(positions,energies,R1, R2):}
+\DoxyCodeLine{151 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a977806428cd6c4c0c6202ec98f15e2b5}{H2\_prob\_plot}}(positions,energies,R1, R2, opacity):}
 \DoxyCodeLine{152 }
 \DoxyCodeLine{153     \textcolor{stringliteral}{"{}"{}"{} H2plus\_main\_plot()}}
 \DoxyCodeLine{154 \textcolor{stringliteral}{    Plots the wavefunction for the quantum harmonic oscillator case}}
@@ -414,7 +414,7 @@ Definition at line 151 of file visualisation.\+py.
 \DoxyCodeLine{175         x=X,}
 \DoxyCodeLine{176         y=Y,}
 \DoxyCodeLine{177         z=Z,}
-\DoxyCodeLine{178         opacity=0.005,}
+\DoxyCodeLine{178         opacity=opacity,}
 \DoxyCodeLine{179         marker=dict(}
 \DoxyCodeLine{180             color=energies,}
 \DoxyCodeLine{181             size=3,}
@@ -437,7 +437,7 @@ Definition at line 151 of file visualisation.\+py.
 \DoxyCodeLine{198         opacity=1.0,}
 \DoxyCodeLine{199         marker=dict(}
 \DoxyCodeLine{200             color=\textcolor{stringliteral}{'\#AAAAAA'},}
-\DoxyCodeLine{201             size=10,}
+\DoxyCodeLine{201             size=20,}
 \DoxyCodeLine{202             line=dict(}
 \DoxyCodeLine{203                 color=\textcolor{stringliteral}{'Black'},}
 \DoxyCodeLine{204                 width=2}
@@ -475,7 +475,7 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespacevisualisation_a2b55de53638ab3164842e2ea9a8060ce_icgraph}
+\includegraphics[width=350pt]{namespacevisualisation_a977806428cd6c4c0c6202ec98f15e2b5_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{namespacevisualisation_ad3e838717595f5a5a4f080cfe6c73c05}\label{namespacevisualisation_ad3e838717595f5a5a4f080cfe6c73c05}} 
