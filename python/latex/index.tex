@@ -2,6 +2,8 @@
 \Hypertarget{index_md_repo_PYTHON_MAINPAGE}%
  
 
+This is the homepage for the Developer Documentation of the Python frontend of {\itshape Dice}, {\itshape \mbox{\hyperlink{namespace_dice_py}{Dice\+Py}}}. On this site, you will find definitions for all of the functions that we use in the Input Generator and Visualisation sections of {\itshape \mbox{\hyperlink{namespace_dice_py}{Dice\+Py}}}, as well as instructions for integrating support for a new problem into the code (see below).
+
 \doxysubsection*{Links}
 
 \tabulinesep=1mm
@@ -21,4 +23,128 @@ Python Dev Documentation   &You are here   \\\cline{1-2}
 \end{longtabu}
 
 
-This documentation was generated from commit 3752a1e 
+\DoxyHorRuler{0}
+
+
+\doxysubsection*{Adding a new problem to Dice QMC}
+
+There are two main components to {\itshape \mbox{\hyperlink{namespace_dice_py}{Dice\+Py}}}\+: the Input Generator and the Visualisation library. We will handle these sections separately.
+
+\doxysubsubsection*{Input Generator}
+
+The Input Generator {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__inputs}{Dice\+Py.\+dice\+\_\+inputs}}} incorporates three other modules\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__defaults}{Dice\+Py.\+dice\+\_\+defaults}}} lists the default variables needed throughout the Input Generator, made to match the defaults in the Fortran backend code.
+\item {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__check}{Dice\+Py.\+dice\+\_\+check}}} is used to check existing {\itshape params.\+txt} files for any errors, to prevent further errors when running the Fortran backend code.
+\item {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__write}{Dice\+Py.\+dice\+\_\+write}}} is used to write new {\itshape params.\+txt} files, which are made by the Input Generator
+\end{DoxyItemize}
+
+\doxyparagraph*{{\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__defaults}{Dice\+Py.\+dice\+\_\+defaults}}}}
+
+Implementation of a new problem into {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__defaults}{Dice\+Py.\+dice\+\_\+defaults}}} is perhaps the simplest of the three. Aside from implementing the new system into the {\ttfamily systems} list at the top of the module, the user will need to extend the lists for the globally shared parameters such as {\ttfamily d\+\_\+vqmc\+\_\+steps} and {\ttfamily d\+\_\+sigma}, and add in new variables for problem-\/specific parameters such as in the {\ttfamily Parameters for QHO} and the {\ttfamily Parameters for H2plus} sections.
+
+The user will also need to add in a new {\ttfamily porder} list. These lists specify the order that parameter tags should be iterated through when checking an input file, in order to be consistent with files made by the Input Generator.
+
+\doxyparagraph*{{\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__check}{Dice\+Py.\+dice\+\_\+check}}}}
+
+{\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__check}{Dice\+Py.\+dice\+\_\+check}}} makes use of a number of inner checking routines to ensure that values in a user\textquotesingle{}s {\itshape params.\+txt} are valid. When adding a new problem these do not need to be changed, but they will still be utilised within the {\ttfamily check\+\_\+inputs} function. Most of this function can remain the same, but there are a couple of problem-\/specific sections that will need to be added to.
+
+The first section starts from the comment {\ttfamily \# Check p\+\_\+system of PARAMETERS namelist}. This section checks for the presence of the PARAMETERS namelist, and populates it if it is found to be empty. A `elif p\+\_\+system==\textquotesingle{}your\+\_\+system'\+:{\ttfamily section will need to be added to the end here that automatically populates the PARAMETERS namelist with the values you just defined in}\mbox{\hyperlink{namespace_dice_py_1_1dice__defaults}{Dice\+Py.\+dice\+\_\+defaults}}\`{}.
+
+The second section also requires a similar extension to an existing {\ttfamily elif} statement, which checks through the system-\/specific variables supplied in the user\textquotesingle{}s {\itshape params.\+txt} and determines if they are of the correct type (boolean, float, etc.) using the aforementioned inner checking routines. Of note here are\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily isvalid(tag, values, options)}, which checks if a given {\ttfamily tag}\textquotesingle{}s {\ttfamily values} match one of the expected {\ttfamily options} from a predefined list.
+\item {\ttfamily check\+\_\+float(tag, tags, params, defaults, idx=None)}, which checks if a given {\ttfamily tag}\textquotesingle{}s value(s) are floats, and replaces them with the {\ttfamily tag}\textquotesingle{}s default values if not.
+\item {\ttfamily check\+\_\+grid(tag, tags, params, default\+\_\+grid)}, which does the same as above but for a grid-\/type parameter, ie. a {\ttfamily (start, stop, num)} set of numbers to run a linear spacing function on, similar to numpy\textquotesingle{}s {\ttfamily linspace}.
+\end{DoxyItemize}
+
+\doxyparagraph*{{\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__write}{Dice\+Py.\+dice\+\_\+write}}}}
+
+{\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__write}{Dice\+Py.\+dice\+\_\+write}}} makes use of a similar set of checking functions to the above, but also contains a set of querying functions. These prompt the user for a response in a variety of places throughout the Input Generator, and are made to be extensible to new problems being added. Of note here are\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily isint(s)} and {\ttfamily isfloat(s)}, which check if the string {\ttfamily s} that they are passed is an integer or a float, respectively. These are used consistently throughout the writer to ensure that the user is providing the correct kind of input and not, for example, passing a float to the variable for the total number of VQMC steps, which should always be an integer.
+\item {\ttfamily query\+\_\+default(param, default)}, which queries if a user wishes to use the {\ttfamily default} value for a {\ttfamily param}, as described in {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__defaults}{Dice\+Py.\+dice\+\_\+defaults}}}.
+\item {\ttfamily query\+\_\+step(prompt, tag, defaults, idx)}, which asks the user for a positive integer ie. a \textquotesingle{}step\textquotesingle{} value, and {\ttfamily query\+\_\+posfloat(prompt, tag, defaults, idx)}, which does the same for positive floats.
+\item {\ttfamily query\+\_\+grid(param)}, which constructs a {\ttfamily (start, stop, num)} grid to be linearly spaced once in the Fortran backend, while checking that values in the grid are of the correct type to avoid errors.
+\end{DoxyItemize}
+
+The majority of the module is located in the {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__write_a9c61faf451621bddc76ed8a230036039}{query\+\_\+params()}}} function, which runs the user through the entirety of input generation using the above routines. Much of this function is not specific to a new problem and can be left as-\/is, but there are sections that check the value of the {\ttfamily sys} variable that will need to be constructed for a new problem. These might take a form similar to the following\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# my\_new\_problem}
+\DoxyCodeLine{elif sys=='f':}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \# Query method of solving new problem}
+\DoxyCodeLine{    tag = 'solve\_method'}
+\DoxyCodeLine{    print('')}
+\DoxyCodeLine{    print('Which method would you like to use for solving my\_new\_problem?')}
+\DoxyCodeLine{    print('a) Method 1')}
+\DoxyCodeLine{    print('b) Method 2')}
+\DoxyCodeLine{    response = input('Your response ("{}a"{} or "{}b"{}): ')}
+\DoxyCodeLine{    \# Check response}
+\DoxyCodeLine{    options = ['a','b']}
+\DoxyCodeLine{    while not (response in options):}
+\DoxyCodeLine{        print('Error: Invalid response, please enter "{}a"{} or "{}b"{}, without quotes.')}
+\DoxyCodeLine{        response = input('Your response: ')}
+\DoxyCodeLine{    \# Record response}
+\DoxyCodeLine{    settings = ['.TRUE.','.FALSE.']}
+\DoxyCodeLine{    params[tag] = settings[options.index(response)]}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \# Parameter information -\/  c}
+\DoxyCodeLine{    print('')}
+\DoxyCodeLine{    print('Parameter "{}c"{} is a coefficient in the Hydrogen Ion wavefunction.')}
+\DoxyCodeLine{    print('')}
+\DoxyCodeLine{}
+\DoxyCodeLine{    if auto=='a':}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \# Query start value parameter my\_new\_param}
+\DoxyCodeLine{        tag='my\_new\_param'}
+\DoxyCodeLine{        prompt='Enter starting guess value for my\_new\_param.}
+\DoxyCodeLine{        temp = query\_posfloat(prompt,tag,d\_c)}
+\DoxyCodeLine{        if temp!='':}
+\DoxyCodeLine{            params[tag] = str(temp)   }
+\DoxyCodeLine{}
+\DoxyCodeLine{        \# Parameter information -\/ my\_new\_grid}
+\DoxyCodeLine{        print('')}
+\DoxyCodeLine{        print('Quantity of interest "{}my\_new\_grid"{} is very cool.')}
+\DoxyCodeLine{        print('')}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \# Check if user wants defaults}
+\DoxyCodeLine{        tag = 'my\_new\_grid'}
+\DoxyCodeLine{        use\_def = query\_default(tag, d\_my\_new\_grid\_problem)}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \# If not defaults, query grid}
+\DoxyCodeLine{        if use\_def == 'n':}
+\DoxyCodeLine{            mini, maxi, num = query\_grid(tag)}
+\DoxyCodeLine{            params[tag] = '\{:\}, \{:\}, \{:\}'.format(mini, maxi, num)}
+
+\end{DoxyCode}
+
+
+\doxyparagraph*{{\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__inputs}{Dice\+Py.\+dice\+\_\+inputs}}}}
+
+This module just contains the {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__inputs_a261569dce72b6b21ec3f73f090fffb4a}{dice\+\_\+inputs()}}} function, which is simply a caller for the other modules. No extra work should be needed here.
+
+\DoxyHorRuler{0}
+
+
+\doxysubsubsection*{Visualisation}
+
+\mbox{\hyperlink{namespace_dice_py}{Dice\+Py}} reads in results using the {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__visualise}{Dice\+Py.\+dice\+\_\+visualise}}} module, and is able to visualise the results generated by the main program. Writing additional visualisation options for different problems can be by simply adding a function to plot the positions sampled by the Markov chain, and a function which plots the energies and their uncertainties against the variational parameter.
+
+For example, for the QHO problem\+:
+\begin{DoxyItemize}
+\item {\ttfamily QHOEnergy\+Plot(results\+\_\+file, sliceby=(None, None))} reads {\ttfamily results\+\_\+file} and plots the energies against variational alpha values specified in the problem, as well as the uncertainties in the energies. The sliceby option allows one to plot only a section of the graph by typing the indices of the slice you are interested in.
+\item {\ttfamily QHOWfn\+Plot(chain\+\_\+file, show\+\_\+analytic=False)} reads a file containing the Markov chains and plots the distribution of the QHO wave functions, also showing the energies of these positions as well. It can also plots an analytical solution for the wave function as well, if desired.
+\end{DoxyItemize}
+
+Plots may want to take advantage of the {\ttfamily plotly} or {\ttfamily matplotlib} libraries which have been used for the other functions in the module, but users can also decide to use other libraries as well when writing these functions.
+
+This documentation was generated from commit 369e552 
