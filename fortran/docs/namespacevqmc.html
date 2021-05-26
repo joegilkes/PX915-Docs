@@ -1175,7 +1175,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Performs VQMC on an array of values for the variational parameter \( \alpha \), outputting energy traces for each. </p>
-<p>Generates VQMC energy traces of the QHO trial wavefunction at each value of the parameter \( \alpha \) in <b>alpha_array</b>. Outputs each of these traces to a separate NetCDF file, to be used in determining optimal burning/thinning paramters for an accurate full VQMC run. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Generates VQMC position and energy traces of the QHO trial wavefunction at each value of the parameter \( \alpha \) in <b>alpha_array</b>. Outputs each of these traces to a separate NetCDF file, to be used in determining optimal burning/thinning paramters for an accurate full VQMC run. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">alpha_array</td><td>The array of alpha values to obtain energies for </td></tr>
   </table>
@@ -1788,7 +1788,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Automatically finds the best variational parameter \( c \) for the \( H_{2}^{+} \) problem at given bond length. </p>
-<p>Determines the optimium value of \( c \) at a given bond length from a guess value by utilising the gradient with respect to \( c \) (calculated by first order central difference) in a <a class="el" href="namespacesolvers.html#acb91c2bfc7ae441b3e24f83d0f49d55a">dampened steepest descent optimisation</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Determines the optimum value of \( c \) at a given bond length from a guess value by utilising the gradient with respect to \( c \) (calculated by first order central difference) in a <a class="el" href="namespacesolvers.html#acb91c2bfc7ae441b3e24f83d0f49d55a">dampened steepest descent optimisation</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">c_in</td><td>Guess value for c </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">bond_length</td><td>H-H bond length </td></tr>
@@ -2210,7 +2210,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Performs VQMC on an array of values for the variational parameter \( c \), outputting energy traces for each. </p>
-<p>Generates VQMC energy traces of the \( H_{2}^{+} \) trial wavefunction at each value of the parameter \( c \) in <b>c_array</b>. Outputs each of these traces to a separate NetCDF file, to be used in determining optimal burning/thinning paramters for an accurate full VQMC run. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Generates VQMC position and energy traces of the \( H_{2}^{+} \) trial wavefunction at each value of the parameter \( c \) in <b>c_array</b>. Outputs each of these traces to a separate NetCDF file, to be used in determining optimal burning/thinning paramters for an accurate full VQMC run. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">c_array</td><td>The array of c values to obtain energy traces for </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">bond_length</td><td>The current H-H bond length </td></tr>
@@ -2883,7 +2883,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Automatically finds the best variational parameter \( \beta \) for the \( H_{2}^{+} \) problem at a given bond length. </p>
-<p>Determines the optimium value of \( \beta \) at a given bond length from a guess value by utilising the gradient with respect to \( \beta \) (calculated by first order central difference) in a <a class="el" href="namespacesolvers.html#a4b4d370a4ee50b231f53058ab62e4084">dampened steepest descent optimisation</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Determines the optimum value of \( \beta \) at a given bond length from a guess value by utilising the gradient with respect to \( \beta \) (calculated by first order central difference) in a <a class="el" href="namespacesolvers.html#a4b4d370a4ee50b231f53058ab62e4084">dampened steepest descent optimisation</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>Value of parameter <b>a</b> at current bond length, calculated by <a class="el" href="namespacesolvers.html#a38259c21a02a250a91f45d79e4165742">H_2_cusp</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">beta_in</td><td>Guess value for beta </td></tr>
@@ -3319,7 +3319,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Performs VQMC on an array of values for the variational parameter \( \beta \), outputting energy traces for each. </p>
-<p>Generates VQMC energy traces of the \( H_{2} \) trial wavefunction at each value of the parameter \( \beta \) in <b>beta_array</b>. Outputs each of these traces to a separate NetCDF file, to be used in determining optimal burning/thinning paramters for an accurate full VQMC run. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Generates VQMC position and energy traces of the \( H_{2} \) trial wavefunction at each value of the parameter \( \beta \) in <b>beta_array</b>. Outputs each of these traces to a separate NetCDF file, to be used in determining optimal burning/thinning paramters for an accurate full VQMC run. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>Value of parameter <b>a</b> at current bond length, calculated by <a class="el" href="namespacesolvers.html#a38259c21a02a250a91f45d79e4165742">H_2_cusp</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">beta_array</td><td>The array of beta values to obtain energy traces for </td></tr>

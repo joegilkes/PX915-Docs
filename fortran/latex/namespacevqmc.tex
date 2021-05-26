@@ -853,7 +853,7 @@ Here is the caller graph for this function\+:
 
 Performs VQMC on an array of values for the variational parameter $ \alpha $, outputting energy traces for each. 
 
-Generates VQMC energy traces of the QHO trial wavefunction at each value of the parameter $ \alpha $ in {\bfseries{alpha\+\_\+array}}. Outputs each of these traces to a separate Net\+CDF file, to be used in determining optimal burning/thinning paramters for an accurate full VQMC run. 
+Generates VQMC position and energy traces of the QHO trial wavefunction at each value of the parameter $ \alpha $ in {\bfseries{alpha\+\_\+array}}. Outputs each of these traces to a separate Net\+CDF file, to be used in determining optimal burning/thinning paramters for an accurate full VQMC run. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em alpha\+\_\+array} & The array of alpha values to obtain energies for \\
 \hline
@@ -1328,7 +1328,7 @@ Here is the caller graph for this function\+:
 
 Automatically finds the best variational parameter $ c $ for the $ H_{2}^{+} $ problem at given bond length. 
 
-Determines the optimium value of $ c $ at a given bond length from a guess value by utilising the gradient with respect to $ c $ (calculated by first order central difference) in a \mbox{\hyperlink{namespacesolvers_acb91c2bfc7ae441b3e24f83d0f49d55a}{dampened steepest descent optimisation}}. 
+Determines the optimum value of $ c $ at a given bond length from a guess value by utilising the gradient with respect to $ c $ (calculated by first order central difference) in a \mbox{\hyperlink{namespacesolvers_acb91c2bfc7ae441b3e24f83d0f49d55a}{dampened steepest descent optimisation}}. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em c\+\_\+in} & Guess value for c \\
 \hline
@@ -1683,7 +1683,7 @@ Here is the caller graph for this function\+:
 
 Performs VQMC on an array of values for the variational parameter $ c $, outputting energy traces for each. 
 
-Generates VQMC energy traces of the $ H_{2}^{+} $ trial wavefunction at each value of the parameter $ c $ in {\bfseries{c\+\_\+array}}. Outputs each of these traces to a separate Net\+CDF file, to be used in determining optimal burning/thinning paramters for an accurate full VQMC run. 
+Generates VQMC position and energy traces of the $ H_{2}^{+} $ trial wavefunction at each value of the parameter $ c $ in {\bfseries{c\+\_\+array}}. Outputs each of these traces to a separate Net\+CDF file, to be used in determining optimal burning/thinning paramters for an accurate full VQMC run. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em c\+\_\+array} & The array of c values to obtain energy traces for \\
 \hline
@@ -2198,7 +2198,7 @@ Here is the caller graph for this function\+:
 
 Automatically finds the best variational parameter $ \beta $ for the $ H_{2}^{+} $ problem at a given bond length. 
 
-Determines the optimium value of $ \beta $ at a given bond length from a guess value by utilising the gradient with respect to $ \beta $ (calculated by first order central difference) in a \mbox{\hyperlink{namespacesolvers_a4b4d370a4ee50b231f53058ab62e4084}{dampened steepest descent optimisation}}. 
+Determines the optimum value of $ \beta $ at a given bond length from a guess value by utilising the gradient with respect to $ \beta $ (calculated by first order central difference) in a \mbox{\hyperlink{namespacesolvers_a4b4d370a4ee50b231f53058ab62e4084}{dampened steepest descent optimisation}}. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a} & Value of parameter {\bfseries{a}} at current bond length, calculated by \mbox{\hyperlink{namespacesolvers_a38259c21a02a250a91f45d79e4165742}{H\+\_\+2\+\_\+cusp}} \\
 \hline
@@ -2557,7 +2557,7 @@ Here is the caller graph for this function\+:
 
 Performs VQMC on an array of values for the variational parameter $ \beta $, outputting energy traces for each. 
 
-Generates VQMC energy traces of the $ H_{2} $ trial wavefunction at each value of the parameter $ \beta $ in {\bfseries{beta\+\_\+array}}. Outputs each of these traces to a separate Net\+CDF file, to be used in determining optimal burning/thinning paramters for an accurate full VQMC run. 
+Generates VQMC position and energy traces of the $ H_{2} $ trial wavefunction at each value of the parameter $ \beta $ in {\bfseries{beta\+\_\+array}}. Outputs each of these traces to a separate Net\+CDF file, to be used in determining optimal burning/thinning paramters for an accurate full VQMC run. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a} & Value of parameter {\bfseries{a}} at current bond length, calculated by \mbox{\hyperlink{namespacesolvers_a38259c21a02a250a91f45d79e4165742}{H\+\_\+2\+\_\+cusp}} \\
 \hline
