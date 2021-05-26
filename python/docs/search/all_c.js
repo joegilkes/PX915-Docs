@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['systems_79',['systems',['../namespacedice__defaults.html#a704117e9150f756a214a8fcd9abddf0c',1,'dice_defaults']]]
+  ['systems_77',['systems',['../namespacedice__defaults.html#a704117e9150f756a214a8fcd9abddf0c',1,'dice_defaults']]]
 ];

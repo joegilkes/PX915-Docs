@@ -1,6 +1,5 @@
 var namespaces_dup =
 [
-    [ "check", "namespacecheck.html", null ],
     [ "dice_check", "namespacedice__check.html", [
       [ "isvalid", "namespacedice__check.html#ac4fbe7bb65f9ff67c90cad4fec72dc62", null ],
       [ "default_message", "namespacedice__check.html#abdb75fc7b05ff7529648ed91bd3e3d72", null ],
@@ -79,7 +78,5 @@ var namespaces_dup =
       [ "query_params", "namespacedice__write.html#a2327d5c026b4653f4dcbc3ea0e998efe", null ],
       [ "write_params", "namespacedice__write.html#a8850537a5cdec760b180095ece66f23d", null ]
     ] ],
-    [ "input", "namespaceinput.html", null ],
-    [ "visualisation", "namespacevisualisation.html", null ],
-    [ "write", "namespacewrite.html", null ]
+    [ "visualisation", "namespacevisualisation.html", null ]
 ];

@@ -1,11 +1,21 @@
 \hypertarget{namespacedice__inputs}{}\doxysection{dice\+\_\+inputs Namespace Reference}
 \label{namespacedice__inputs}\index{dice\_inputs@{dice\_inputs}}
+
+
+Contains main routine that handles the input file params.\+txt for \mbox{[}PROGRAM NAME\mbox{]}.  
+
+
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 def \mbox{\hyperlink{namespacedice__inputs_ad9bf26e9331e0e111146c30a7456ddd4}{dice\+\_\+inputs}} ()
 \begin{DoxyCompactList}\small\item\em Enquires whether the user would like to write a new params.\+txt file, or check an existing params.\+txt file, and follows up accordingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Contains main routine that handles the input file params.\+txt for \mbox{[}PROGRAM NAME\mbox{]}. 
+
+This program can generate a new params.\+txt input file, using user input collated by an interactive sub-\/program of guided prompts. Alternatively, it can check the correctness of a user assembled params.\+txt file, informing the user of any errors. For restart runs, this program will also check that the required restart files are present, and notify the user if they are missing. 
 
 \doxysubsection{Function Documentation}
 \mbox{\Hypertarget{namespacedice__inputs_ad9bf26e9331e0e111146c30a7456ddd4}\label{namespacedice__inputs_ad9bf26e9331e0e111146c30a7456ddd4}} 
@@ -37,13 +47,13 @@ Definition at line 24 of file dice\+\_\+inputs.\+py.
 \DoxyCodeLine{34     \textcolor{comment}{\# Query the Task}}
 \DoxyCodeLine{35     print(\textcolor{stringliteral}{''})}
 \DoxyCodeLine{36     print(\textcolor{stringliteral}{'Would you like me to write (w) or check (c) your input file?'})}
-\DoxyCodeLine{37     task = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}w"{} or "{}c"{}, without quotes): '})}
+\DoxyCodeLine{37     task = input(\textcolor{stringliteral}{'Your response ("{}w"{} or "{}c"{}, without quotes): '})}
 \DoxyCodeLine{38 }
 \DoxyCodeLine{39     \textcolor{comment}{\# Check}}
 \DoxyCodeLine{40     \textcolor{keywordflow}{while} task!=\textcolor{stringliteral}{'w'} \textcolor{keywordflow}{and} task!=\textcolor{stringliteral}{'c'}:}
 \DoxyCodeLine{41         print(\textcolor{stringliteral}{''})}
 \DoxyCodeLine{42         print(\textcolor{stringliteral}{'Error: Oops, your response is invalid, please enter "{}w"{} or "{}c"{}, without quotes.'})}
-\DoxyCodeLine{43         task = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{43         task = input(\textcolor{stringliteral}{'Your response: '})}
 \DoxyCodeLine{44 }
 \DoxyCodeLine{45     \textcolor{comment}{\# Report}}
 \DoxyCodeLine{46     \textcolor{keywordflow}{if} task==\textcolor{stringliteral}{'w'}:}

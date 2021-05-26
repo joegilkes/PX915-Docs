@@ -1,5 +1,10 @@
 \hypertarget{namespacedice__write}{}\doxysection{dice\+\_\+write Namespace Reference}
 \label{namespacedice__write}\index{dice\_write@{dice\_write}}
+
+
+Contains functions that write the input file params.\+txt for Dice QMC.  
+
+
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -20,6 +25,9 @@ def \mbox{\hyperlink{namespacedice__write_a2327d5c026b4653f4dcbc3ea0e998efe}{que
 def \mbox{\hyperlink{namespacedice__write_a8850537a5cdec760b180095ece66f23d}{write\+\_\+params}} (control, params)
 \begin{DoxyCompactList}\small\item\em Major subroutine that writes the input file params.\+txt. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Contains functions that write the input file params.\+txt for Dice QMC. 
 
 \doxysubsection{Function Documentation}
 \mbox{\Hypertarget{namespacedice__write_a6b5b39cce6741d1a0b96fe3dd59b2652}\label{namespacedice__write_a6b5b39cce6741d1a0b96fe3dd59b2652}} 
@@ -142,12 +150,12 @@ Definition at line 43 of file dice\+\_\+write.\+py.
 \DoxyCodeLine{44     print(\textcolor{stringliteral}{''})}
 \DoxyCodeLine{45     print(\textcolor{stringliteral}{'Would you like to use default values for the \{:\} grid? -\/ Yes (y) or No (n)'}.format(param))}
 \DoxyCodeLine{46     print(\textcolor{stringliteral}{'Default: min=\{:\}, max=\{:\}, num=\{:\}'}.format(default[0],default[1],default[2]))}
-\DoxyCodeLine{47     use\_def = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}y"{} or "{}n"{}): '})}
+\DoxyCodeLine{47     use\_def = input(\textcolor{stringliteral}{'Your response ("{}y"{} or "{}n"{}): '})}
 \DoxyCodeLine{48     options = [\textcolor{stringliteral}{'y'},\textcolor{stringliteral}{'n'}]}
 \DoxyCodeLine{49     \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (use\_def \textcolor{keywordflow}{in} options):}
 \DoxyCodeLine{50         print(\textcolor{stringliteral}{''})}
 \DoxyCodeLine{51         print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}y"{} or "{}n"{}, without quotes.'})}
-\DoxyCodeLine{52         use\_def = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{52         use\_def = input(\textcolor{stringliteral}{'Your response: '})}
 \DoxyCodeLine{53     }
 \DoxyCodeLine{54     \textcolor{keywordflow}{return} use\_def}
 \DoxyCodeLine{55 }
@@ -201,7 +209,7 @@ Definition at line 65 of file dice\+\_\+write.\+py.
 \DoxyCodeLine{68     \textcolor{keywordflow}{while} not(step>0):}
 \DoxyCodeLine{69         print(prompt)}
 \DoxyCodeLine{70         print(\textcolor{stringliteral}{'Default: '},tag,\textcolor{stringliteral}{'='},defaults[idx])}
-\DoxyCodeLine{71         step = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{71         step = input(\textcolor{stringliteral}{'Your response: '})}
 \DoxyCodeLine{72 }
 \DoxyCodeLine{73         \textcolor{keywordflow}{if} step==\textcolor{stringliteral}{''}:}
 \DoxyCodeLine{74             \textcolor{keywordflow}{break} \textcolor{comment}{\# Use default}}
@@ -276,7 +284,7 @@ Definition at line 97 of file dice\+\_\+write.\+py.
 \DoxyCodeLine{103             print(\textcolor{stringliteral}{'Default: '},tag,\textcolor{stringliteral}{'='},defaults)}
 \DoxyCodeLine{104         \textcolor{keywordflow}{else}:}
 \DoxyCodeLine{105             print(\textcolor{stringliteral}{'Default: '},tag,\textcolor{stringliteral}{'='},defaults[idx])}
-\DoxyCodeLine{106         pf = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{106         pf = input(\textcolor{stringliteral}{'Your response: '})}
 \DoxyCodeLine{107 }
 \DoxyCodeLine{108         \textcolor{keywordflow}{if} pf==\textcolor{stringliteral}{''}:}
 \DoxyCodeLine{109             \textcolor{keywordflow}{break} \textcolor{comment}{\# Use default}}
@@ -348,21 +356,21 @@ Definition at line 134 of file dice\+\_\+write.\+py.
 \begin{DoxyCode}{0}
 \DoxyCodeLine{134 \textcolor{keyword}{def }\mbox{\hyperlink{namespacedice__write_a8c3fdb6a1a789a4d0f3e3afe7f4c5c6c}{query\_grid}}(param):}
 \DoxyCodeLine{135      \textcolor{comment}{\# Minimum}}
-\DoxyCodeLine{136     mini = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Enter minimum value for \{:\} grid: '}.format(param))}
+\DoxyCodeLine{136     mini = input(\textcolor{stringliteral}{'Enter minimum value for \{:\} grid: '}.format(param))}
 \DoxyCodeLine{137     \textcolor{keywordflow}{while} not(\mbox{\hyperlink{namespacedice__write_ac634cffa3f4f8855127ef9bff7a56851}{isfloat}}(mini)):}
 \DoxyCodeLine{138         print(\textcolor{stringliteral}{''})}
 \DoxyCodeLine{139         print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting a float.'})        }
-\DoxyCodeLine{140         mini = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Enter minimum value for \{:\} grid: '}.format(param))}
+\DoxyCodeLine{140         mini = input(\textcolor{stringliteral}{'Enter minimum value for \{:\} grid: '}.format(param))}
 \DoxyCodeLine{141     mini=float(mini)}
 \DoxyCodeLine{142 }
 \DoxyCodeLine{143     \textcolor{comment}{\# Maximum}}
 \DoxyCodeLine{144     maxi = mini -\/ 1.0}
 \DoxyCodeLine{145     \textcolor{keywordflow}{while} maxi < mini:}
-\DoxyCodeLine{146         maxi = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Enter maximum value for \{:\} grid: '}.format(param))}
+\DoxyCodeLine{146         maxi = input(\textcolor{stringliteral}{'Enter maximum value for \{:\} grid: '}.format(param))}
 \DoxyCodeLine{147         \textcolor{keywordflow}{while} not(\mbox{\hyperlink{namespacedice__write_ac634cffa3f4f8855127ef9bff7a56851}{isfloat}}(maxi)):}
 \DoxyCodeLine{148             print(\textcolor{stringliteral}{''})}
 \DoxyCodeLine{149             print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting a float.'})            }
-\DoxyCodeLine{150             maxi = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Enter maximum value for \{:\} grid: '}.format(param))}
+\DoxyCodeLine{150             maxi = input(\textcolor{stringliteral}{'Enter maximum value for \{:\} grid: '}.format(param))}
 \DoxyCodeLine{151         maxi = float(maxi)}
 \DoxyCodeLine{152         \textcolor{keywordflow}{if} maxi < mini:}
 \DoxyCodeLine{153             print(\textcolor{stringliteral}{''})}
@@ -371,11 +379,11 @@ Definition at line 134 of file dice\+\_\+write.\+py.
 \DoxyCodeLine{156     \textcolor{comment}{\# Number of grid points}}
 \DoxyCodeLine{157     num = 0}
 \DoxyCodeLine{158     \textcolor{keywordflow}{while} num < 1:}
-\DoxyCodeLine{159         num = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Enter integer number of grid points (inclusive of max \& min): '})}
+\DoxyCodeLine{159         num = input(\textcolor{stringliteral}{'Enter integer number of grid points (inclusive of max \& min): '})}
 \DoxyCodeLine{160         \textcolor{keywordflow}{while} not(\mbox{\hyperlink{namespacedice__write_a6b5b39cce6741d1a0b96fe3dd59b2652}{isint}}(num)):}
 \DoxyCodeLine{161             print(\textcolor{stringliteral}{''})}
 \DoxyCodeLine{162             print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting a positive integer.'})}
-\DoxyCodeLine{163             num = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Enter integer number of grid points (inclusive of max \& min): '})}
+\DoxyCodeLine{163             num = input(\textcolor{stringliteral}{'Enter integer number of grid points (inclusive of max \& min): '})}
 \DoxyCodeLine{164         num = int(num)}
 \DoxyCodeLine{165         \textcolor{keywordflow}{if} num < 1:}
 \DoxyCodeLine{166             print(\textcolor{stringliteral}{''})}
@@ -433,13 +441,13 @@ Definition at line 181 of file dice\+\_\+write.\+py.
 \DoxyCodeLine{190     print(\textcolor{stringliteral}{'b) Hydrogen Molecule Ion H2+'})}
 \DoxyCodeLine{191     print(\textcolor{stringliteral}{'c) Hydrogen Molecule H2'})}
 \DoxyCodeLine{192     print(\textcolor{stringliteral}{'d) Run Test Cases'})}
-\DoxyCodeLine{193     sys = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}a"{}, "{}b"{}, "{}c"{} or "{}d"{}): '})}
+\DoxyCodeLine{193     sys = input(\textcolor{stringliteral}{'Your response ("{}a"{}, "{}b"{}, "{}c"{} or "{}d"{}): '})}
 \DoxyCodeLine{194     \textcolor{comment}{\# Check system value}}
 \DoxyCodeLine{195     options = [\textcolor{stringliteral}{'a'},\textcolor{stringliteral}{'b'},\textcolor{stringliteral}{'c'},\textcolor{stringliteral}{'d'}]}
 \DoxyCodeLine{196     \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (sys \textcolor{keywordflow}{in} options):}
 \DoxyCodeLine{197         print(\textcolor{stringliteral}{''})}
 \DoxyCodeLine{198         print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}a"{}, "{}b"{}, "{}c"{} or "{}d"{}, without quotes.'})}
-\DoxyCodeLine{199         sys = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{199         sys = input(\textcolor{stringliteral}{'Your response: '})}
 \DoxyCodeLine{200     \textcolor{comment}{\# Report system setting}}
 \DoxyCodeLine{201     settings = [\textcolor{stringliteral}{"{}'QHO'"{}},\textcolor{stringliteral}{"{}'H2plus'"{}},\textcolor{stringliteral}{"{}'H2'"{}},\textcolor{stringliteral}{"{}'test'"{}}]}
 \DoxyCodeLine{202     messages = [\textcolor{stringliteral}{'Quantum Harmonic Oscillator'},\textcolor{stringliteral}{'Hydrogen Molecule Ion'},\textcolor{stringliteral}{'Hydrogen Molecule'},\textcolor{stringliteral}{'Test Cases'}]}
@@ -458,12 +466,12 @@ Definition at line 181 of file dice\+\_\+write.\+py.
 \DoxyCodeLine{215     print(\textcolor{stringliteral}{'What type of calculation would you like to perform?'})}
 \DoxyCodeLine{216     print(\textcolor{stringliteral}{'a) Equilibration run, to determine burning \& thinning step sizes'})}
 \DoxyCodeLine{217     print(\textcolor{stringliteral}{'b) VQMC calculation'})}
-\DoxyCodeLine{218     calc = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}a"{} or "{}b"{}): '})}
+\DoxyCodeLine{218     calc = input(\textcolor{stringliteral}{'Your response ("{}a"{} or "{}b"{}): '})}
 \DoxyCodeLine{219     \textcolor{comment}{\# Check calculation value}}
 \DoxyCodeLine{220     options = [\textcolor{stringliteral}{'a'},\textcolor{stringliteral}{'b'}]}
 \DoxyCodeLine{221     \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (calc \textcolor{keywordflow}{in} options):}
 \DoxyCodeLine{222         print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}a"{} or "{}b"{}, without quotes.'})}
-\DoxyCodeLine{223         calc = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{223         calc = input(\textcolor{stringliteral}{'Your response: '})}
 \DoxyCodeLine{224     \textcolor{comment}{\# Report calculation setting}}
 \DoxyCodeLine{225     settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
 \DoxyCodeLine{226     messages = [\textcolor{stringliteral}{'an Equilibration run.'},\textcolor{stringliteral}{'a VQMC calculation.'},]}
@@ -477,13 +485,13 @@ Definition at line 181 of file dice\+\_\+write.\+py.
 \DoxyCodeLine{234     \textcolor{comment}{\# Query if restart files should be written}}
 \DoxyCodeLine{235     print(\textcolor{stringliteral}{''})}
 \DoxyCodeLine{236     print(\textcolor{stringliteral}{'Would you like the program to write restart files? -\/ Yes (y) or No (n)'})}
-\DoxyCodeLine{237     w\_res = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}y"{} or "{}n"{}): '})}
+\DoxyCodeLine{237     w\_res = input(\textcolor{stringliteral}{'Your response ("{}y"{} or "{}n"{}): '})}
 \DoxyCodeLine{238     \textcolor{comment}{\# Check response}}
 \DoxyCodeLine{239     options = [\textcolor{stringliteral}{'y'},\textcolor{stringliteral}{'n'}]}
 \DoxyCodeLine{240     \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (w\_res \textcolor{keywordflow}{in} options):}
 \DoxyCodeLine{241         print(\textcolor{stringliteral}{''})}
 \DoxyCodeLine{242         print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}y"{} or "{}n"{}, without quotes.'})}
-\DoxyCodeLine{243         w\_res = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{243         w\_res = input(\textcolor{stringliteral}{'Your response: '})}
 \DoxyCodeLine{244     \textcolor{comment}{\# Report response}}
 \DoxyCodeLine{245     settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
 \DoxyCodeLine{246     messages = [\textcolor{stringliteral}{'to'},\textcolor{stringliteral}{'not to'},]}
@@ -512,13 +520,13 @@ Definition at line 181 of file dice\+\_\+write.\+py.
 \DoxyCodeLine{269         print(\textcolor{stringliteral}{'Would you like the program to save the Markov chains (after burning \& thinning)?'})}
 \DoxyCodeLine{270         print(\textcolor{stringliteral}{'y) Yes, I would like a detailed ouput for wavefunction visualization.'})}
 \DoxyCodeLine{271         print(\textcolor{stringliteral}{'n) No, just give me the final energies and optimized parameters.'})}
-\DoxyCodeLine{272         temp = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}y"{} or "{}n"{}): '})}
+\DoxyCodeLine{272         temp = input(\textcolor{stringliteral}{'Your response ("{}y"{} or "{}n"{}): '})}
 \DoxyCodeLine{273         \textcolor{comment}{\# Check response}}
 \DoxyCodeLine{274         options = [\textcolor{stringliteral}{'y'},\textcolor{stringliteral}{'n'}]}
 \DoxyCodeLine{275         \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (temp \textcolor{keywordflow}{in} options):}
 \DoxyCodeLine{276             print(\textcolor{stringliteral}{''})}
 \DoxyCodeLine{277             print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}y"{} or "{}n"{}, without quotes.'})}
-\DoxyCodeLine{278             temp = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{278             temp = input(\textcolor{stringliteral}{'Your response: '})}
 \DoxyCodeLine{279         \textcolor{comment}{\# Report setting}}
 \DoxyCodeLine{280         settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
 \DoxyCodeLine{281         messages = [\textcolor{stringliteral}{'output'}, \textcolor{stringliteral}{'not output'}]}
@@ -529,13 +537,13 @@ Definition at line 181 of file dice\+\_\+write.\+py.
 \DoxyCodeLine{286     \textcolor{comment}{\# Query if logfile should be written}}
 \DoxyCodeLine{287     print(\textcolor{stringliteral}{''})}
 \DoxyCodeLine{288     print(\textcolor{stringliteral}{'Would you like the program to write a logfile? -\/ Yes (y) or No (n)'})}
-\DoxyCodeLine{289     temp = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}y"{} or "{}n"{}): '})}
+\DoxyCodeLine{289     temp = input(\textcolor{stringliteral}{'Your response ("{}y"{} or "{}n"{}): '})}
 \DoxyCodeLine{290     \textcolor{comment}{\# Check response}}
 \DoxyCodeLine{291     options = [\textcolor{stringliteral}{'y'},\textcolor{stringliteral}{'n'}]}
 \DoxyCodeLine{292     \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (temp \textcolor{keywordflow}{in} options):}
 \DoxyCodeLine{293         print(\textcolor{stringliteral}{''})}
 \DoxyCodeLine{294         print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}y"{} or "{}n"{}, without quotes.'})}
-\DoxyCodeLine{295         temp = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{295         temp = input(\textcolor{stringliteral}{'Your response: '})}
 \DoxyCodeLine{296     \textcolor{comment}{\# Report setting}}
 \DoxyCodeLine{297     settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
 \DoxyCodeLine{298     messages = [\textcolor{stringliteral}{'to'},\textcolor{stringliteral}{'not to'},]}
@@ -646,12 +654,12 @@ Definition at line 181 of file dice\+\_\+write.\+py.
 \DoxyCodeLine{403         print(\textcolor{stringliteral}{'Which method would you like to use for parameter optimization at each bondlength?'})}
 \DoxyCodeLine{404         print(\textcolor{stringliteral}{'a) Automatic search by conjugate-\/gradient method, starting from a trial value for c.'})}
 \DoxyCodeLine{405         print(\textcolor{stringliteral}{'b) Grid search, over an input grid of trial values for c'})}
-\DoxyCodeLine{406         auto = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}a"{} or "{}b"{}): '})}
+\DoxyCodeLine{406         auto = input(\textcolor{stringliteral}{'Your response ("{}a"{} or "{}b"{}): '})}
 \DoxyCodeLine{407         \textcolor{comment}{\# Check response}}
 \DoxyCodeLine{408         options = [\textcolor{stringliteral}{'a'},\textcolor{stringliteral}{'b'}]}
 \DoxyCodeLine{409         \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (auto \textcolor{keywordflow}{in} options):}
 \DoxyCodeLine{410             print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}a"{} or "{}b"{}, without quotes.'})}
-\DoxyCodeLine{411             auto = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{411             auto = input(\textcolor{stringliteral}{'Your response: '})}
 \DoxyCodeLine{412         \textcolor{comment}{\# Record response}}
 \DoxyCodeLine{413         settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
 \DoxyCodeLine{414         params[tag] = settings[options.index(auto)]}
@@ -719,12 +727,12 @@ Definition at line 181 of file dice\+\_\+write.\+py.
 \DoxyCodeLine{476         print(\textcolor{stringliteral}{'Which method would you like to use for parameter optimization at each bondlength?'})}
 \DoxyCodeLine{477         print(\textcolor{stringliteral}{'a) Automatic search by conjugate-\/gradient method, starting from a trial value for beta.'})}
 \DoxyCodeLine{478         print(\textcolor{stringliteral}{'b) Grid search, over an input grid of trial values for beta'})}
-\DoxyCodeLine{479         auto = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}a"{} or "{}b"{}): '})}
+\DoxyCodeLine{479         auto = input(\textcolor{stringliteral}{'Your response ("{}a"{} or "{}b"{}): '})}
 \DoxyCodeLine{480         \textcolor{comment}{\# Check response}}
 \DoxyCodeLine{481         options = [\textcolor{stringliteral}{'a'},\textcolor{stringliteral}{'b'}]}
 \DoxyCodeLine{482         \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (auto \textcolor{keywordflow}{in} options):}
 \DoxyCodeLine{483             print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}a"{} or "{}b"{}, without quotes.'})}
-\DoxyCodeLine{484             auto = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{484             auto = input(\textcolor{stringliteral}{'Your response: '})}
 \DoxyCodeLine{485         \textcolor{comment}{\# Record response}}
 \DoxyCodeLine{486         settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
 \DoxyCodeLine{487         params[tag] = settings[options.index(auto)]}
