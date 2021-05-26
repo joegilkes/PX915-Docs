@@ -58,7 +58,7 @@ var namespaces_dup =
       [ "load_global_attr", "namespacevisualisation.html#a6a2287f360d1e76cd639bd70f229fe6c", null ],
       [ "load_variables", "namespacevisualisation.html#a72a74f351b2aeb7073d75d659c0a37fe", null ],
       [ "QHO_eng_plot", "namespacevisualisation.html#a9e23aabdaf405841cfdfd7c6cc2800e0", null ],
-      [ "QHO_prob_plot", "namespacevisualisation.html#ae631b9a8bb1feeea155e07a856df2362", null ],
+      [ "QHO_prob_plot", "namespacevisualisation.html#a0b2d10aa54ec331feaa0bf68fb008de3", null ],
       [ "H2_eng_plot", "namespacevisualisation.html#a15512bdc0a35b851921f281f89e6460f", null ],
       [ "HydProbPlot", "namespacevisualisation.html#a9cc7e7e48a1a7fe2f0a46d926501c62b", null ],
       [ "H2_prob_plot", "namespacevisualisation.html#a977806428cd6c4c0c6202ec98f15e2b5", null ],
