@@ -507,44 +507,44 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="keywordflow">                endif</span></div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="keywordflow">            endif</span></div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            <span class="comment">! Set starting guess value</span></div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            <span class="keywordflow">if</span> ((.not. run_equil) .and. h2plus%auto_params) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                <span class="keywordflow">if</span> ( run_restart) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                    <span class="keywordflow">if</span> (.not. res%auto) error stop <span class="stringliteral">&#39;Error: Inconsistency in auto_params setting between params.txt and res_nml.txt.&#39;</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                    h2plus_param_c_guess = res%guess</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                    h2plus_param_c_guess = h2plus%c</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="keywordflow">                endif</span></div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<span class="keywordflow">            endif</span></div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;            <span class="comment">! Set up printed output for the loop.</span></div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            <span class="keywordflow">if</span> (my_rank==0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                <span class="keyword">write</span>(*, <span class="stringliteral">&quot;(&#39;------------------ Begin VQMC Runs ------------------&#39;)&quot;</span>)</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                <span class="keyword">write</span>(*, <span class="stringliteral">&quot;(&#39;Bond Length    Converged?    Optimised c       Energy&#39;)&quot;</span>)</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                    <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;------------------ Begin VQMC Runs ------------------&#39;)&quot;</span>)</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="keywordflow">                end if</span></div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="keywordflow">            endif</span></div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            <span class="comment">! Loop over bond lengths</span></div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            <span class="keywordflow">do</span> b = bond_start, int(h2plus%bond(3))</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                <span class="comment">! Store bond index for restart writing</span></div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                i_bond = b</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            <span class="comment">! Sort out restarting</span></div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            <span class="keywordflow">if</span> (run_restart .and. (.not. run_equil)) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                <span class="comment">! Insert optimised parameters, energies, accept_rates, and variances into arrays</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                <span class="keyword">call </span>read_energies_h2plus(resfile_etot, energies, variances, accept_rates,h2plus_param_c_array)</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="keywordflow">            endif</span> </div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            <span class="comment">! Set starting guess value</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            <span class="keywordflow">if</span> ((.not. run_equil) .and. h2plus%auto_params) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                <span class="keywordflow">if</span> ( run_restart) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                    <span class="keywordflow">if</span> (.not. res%auto) error stop <span class="stringliteral">&#39;Error: Inconsistency in auto_params setting between params.txt and res_nml.txt.&#39;</span></div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                    h2plus_param_c_guess = res%guess</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                    h2plus_param_c_guess = h2plus%c</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="keywordflow">                endif</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="keywordflow">            endif</span></div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            <span class="comment">! Set up printed output for the loop.</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            <span class="keywordflow">if</span> (my_rank==0) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                <span class="keyword">write</span>(*, <span class="stringliteral">&quot;(&#39;------------------ Begin VQMC Runs ------------------&#39;)&quot;</span>)</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                <span class="keyword">write</span>(*, <span class="stringliteral">&quot;(&#39;Bond Length    Converged?    Optimised c       Energy&#39;)&quot;</span>)</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                    <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;------------------ Begin VQMC Runs ------------------&#39;)&quot;</span>)</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="keywordflow">                end if</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="keywordflow">            endif</span></div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                <span class="keywordflow">if</span> (i_log) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                    <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;  ------------- Bond Length = &#39;, F7.4, &#39; -------------  &#39;)&quot;</span>) &amp;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                        bonds(b)</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="keywordflow">                end if</span></div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                <span class="comment">! Main VQMC callers</span></div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                <span class="keywordflow">if</span> (.not. run_equil) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                    <span class="comment">! Sort out restarting</span></div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                    <span class="keywordflow">if</span> (run_restart) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                        <span class="comment">! Insert optimised parameters, energies, accept_rates, and variances into arrays</span></div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                        <span class="keyword">call </span>read_energies_h2plus(resfile_etot, energies, variances, accept_rates,h2plus_param_c_array)</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;<span class="keywordflow">                    endif</span> </div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            <span class="comment">! Loop over bond lengths</span></div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            <span class="keywordflow">do</span> b = bond_start, int(h2plus%bond(3))</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                <span class="comment">! Store bond index for restart writing</span></div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                i_bond = b</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; </div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                <span class="keywordflow">if</span> (i_log) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                    <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;  ------------- Bond Length = &#39;, F7.4, &#39; -------------  &#39;)&quot;</span>) &amp;</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                        bonds(b)</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;<span class="keywordflow">                end if</span></div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160; </div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                <span class="comment">! Main VQMC callers</span></div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                <span class="keywordflow">if</span> (.not. run_equil) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160; </div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                    <span class="keywordflow">if</span> (h2plus%auto_params) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
@@ -687,47 +687,47 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;<span class="keywordflow">                endif</span></div>
 <div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;<span class="keywordflow">            end if</span></div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160; </div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;            <span class="comment">! Set starting guess value</span></div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;            <span class="keywordflow">if</span> ((.not. run_equil) .and. h2%auto_params) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;                <span class="keywordflow">if</span> (run_restart) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;                    <span class="keywordflow">if</span> (.not. res%auto) error stop <span class="stringliteral">&#39;Error: Inconsistency in auto_params setting between params.txt and res_nml.txt.&#39;</span></div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;                    h2_param_beta_guess = res%guess</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;                    h2_param_beta_guess = h2%beta</div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;<span class="keywordflow">                endif</span></div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;<span class="keywordflow">            endif</span></div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160; </div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;            <span class="comment">! Set up printed output for the loop.</span></div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;            <span class="keywordflow">if</span> (my_rank==0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;                <span class="keyword">write</span>(*, <span class="stringliteral">&quot;(&#39;------------------ Begin VQMC Runs ------------------&#39;)&quot;</span>)</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;                <span class="keyword">write</span>(*, <span class="stringliteral">&quot;(&#39;Bond Length    Converged?    Optimised Beta    Energy&#39;)&quot;</span>)</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;                <span class="keywordflow">if</span> (i_log) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;                    <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;------------------ Begin VQMC Runs ------------------&#39;)&quot;</span>)</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;<span class="keywordflow">                end if</span></div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;<span class="keywordflow">            endif</span></div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160; </div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;            <span class="comment">! Loop over bond lengths</span></div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;            <span class="keywordflow">do</span> b = bond_start, int(h2%bond(3))</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160; </div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;                <span class="comment">! Store bond index for restart writing</span></div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;                i_bond = b</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;            <span class="comment">! Sort out restarting</span></div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;            <span class="keywordflow">if</span> (run_restart .and. (.not. run_equil)) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;                <span class="comment">! Insert optimised parameters, energies, accept_rates, and variances into arrays</span></div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;                <span class="keyword">call </span>read_energies_h2(resfile_etot, energies, variances, accept_rates,h2_param_a_array,h2_param_beta_array)</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;<span class="keywordflow">            endif</span> </div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160; </div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;            <span class="comment">! Set starting guess value</span></div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;            <span class="keywordflow">if</span> ((.not. run_equil) .and. h2%auto_params) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;                <span class="keywordflow">if</span> (run_restart) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;                    <span class="keywordflow">if</span> (.not. res%auto) error stop <span class="stringliteral">&#39;Error: Inconsistency in auto_params setting between params.txt and res_nml.txt.&#39;</span></div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;                    h2_param_beta_guess = res%guess</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;                    h2_param_beta_guess = h2%beta</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;<span class="keywordflow">                endif</span></div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;<span class="keywordflow">            endif</span></div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160; </div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;            <span class="comment">! Set up printed output for the loop.</span></div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;            <span class="keywordflow">if</span> (my_rank==0) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;                <span class="keyword">write</span>(*, <span class="stringliteral">&quot;(&#39;------------------ Begin VQMC Runs ------------------&#39;)&quot;</span>)</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;                <span class="keyword">write</span>(*, <span class="stringliteral">&quot;(&#39;Bond Length    Converged?    Optimised Beta    Energy&#39;)&quot;</span>)</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;                <span class="keywordflow">if</span> (i_log) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;                    <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;------------------ Begin VQMC Runs ------------------&#39;)&quot;</span>)</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;<span class="keywordflow">                end if</span></div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;<span class="keywordflow">            endif</span></div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160; </div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;                <span class="keywordflow">if</span> (i_log) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;                    <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;  ------------- Bond Length = &#39;, F7.4, &#39; -------------  &#39;)&quot;</span>) &amp;</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;                        bonds(b)</div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;<span class="keywordflow">                end if</span></div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160; </div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;                <span class="comment">! Calculate parameter a at this bond length by Newton-Raphson iteration.</span></div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;                h2_param_a = h_2_cusp(bonds(b))</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160; </div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;                <span class="comment">! Main VQMC callers</span></div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;                <span class="keywordflow">if</span> (.not. run_equil) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;            <span class="comment">! Loop over bond lengths</span></div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;            <span class="keywordflow">do</span> b = bond_start, int(h2%bond(3))</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160; </div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;                <span class="comment">! Store bond index for restart writing</span></div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;                i_bond = b</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160; </div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;                <span class="keywordflow">if</span> (i_log) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;                    <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;  ------------- Bond Length = &#39;, F7.4, &#39; -------------  &#39;)&quot;</span>) &amp;</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;                        bonds(b)</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;<span class="keywordflow">                end if</span></div>
 <div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160; </div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;                    <span class="comment">! Sort out restarting</span></div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;                    <span class="keywordflow">if</span> (run_restart) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;                        <span class="comment">! Insert optimised parameters, energies, accept_rates, and variances into arrays</span></div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;                        <span class="keyword">call </span>read_energies_h2(resfile_etot, energies, variances, accept_rates,h2_param_a_array,h2_param_beta_array)</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;<span class="keywordflow">                    endif</span> </div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;                <span class="comment">! Calculate parameter a at this bond length by Newton-Raphson iteration.</span></div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;                h2_param_a = h_2_cusp(bonds(b))</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160; </div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;                <span class="comment">! Main VQMC callers</span></div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;                <span class="keywordflow">if</span> (.not. run_equil) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160; </div>
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;                    <span class="comment">! Either iterate through beta values, or automatically search for best beta.</span></div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;                    <span class="keywordflow">if</span> (h2%auto_params) <span class="keywordflow">then</span> <span class="comment">! ie. if auto searching</span></div>
@@ -746,45 +746,45 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;                        <span class="comment">! Write restart files, if required</span></div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;                        <span class="keywordflow">if</span> (write_restart .and. my_rank==0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;                            <span class="keyword">call </span>write_res_nml(b+1,1,h2%auto_params,h2_param_beta_guess)</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;<span class="keywordflow">                        endif</span> </div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;                    </div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;                    <span class="keywordflow">else</span> <span class="comment">! ie. if doing a grid search</span></div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160; </div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                        <span class="comment">! Get best value of beta at this bond length</span></div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;                        <span class="keyword">call </span>grid_h_2(h2_param_a, p_arr, bonds(b), h2_param_beta_opt, energy, &amp;</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;                        variance, accept_rate)</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160; </div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;                        <span class="comment">! Reset start counter</span></div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;                        grid_start=1</div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160; </div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;                        <span class="comment">! Write restart files, if required</span></div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;                        <span class="keywordflow">if</span> (write_restart .and. my_rank==0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;                            <span class="keyword">call </span>write_res_nml(b+1,1,h2%auto_params)</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;                            <span class="keyword">call </span>write_h2_main(h2_param_a_array, h2_param_beta_array, bonds, &amp;</div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;                        energies, variances, resfile_etot, ierr, h2, accept_rates)</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;<span class="keywordflow">                        endif</span> </div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160; </div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;<span class="keywordflow">                    end if</span></div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;                            <span class="keyword">call </span>write_h2_main(h2_param_a_array, h2_param_beta_array, bonds, &amp;</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;                        energies, variances, resfile_etot, ierr, h2, accept_rates)</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;<span class="keywordflow">                        endif</span> </div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;                    </div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                    <span class="keywordflow">else</span> <span class="comment">! ie. if doing a grid search</span></div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160; </div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;                        <span class="comment">! Get best value of beta at this bond length</span></div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;                        <span class="keyword">call </span>grid_h_2(h2_param_a, p_arr, bonds(b), h2_param_beta_opt, energy, &amp;</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;                        variance, accept_rate)</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160; </div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;                        <span class="comment">! Reset start counter</span></div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;                        grid_start=1</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160; </div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;                        <span class="comment">! Write restart files, if required</span></div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;                        <span class="keywordflow">if</span> (write_restart .and. my_rank==0) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;                            <span class="keyword">call </span>write_res_nml(b+1,1,h2%auto_params)</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;                            <span class="keyword">call </span>write_h2_main(h2_param_a_array, h2_param_beta_array, bonds, &amp;</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;                        energies, variances, resfile_etot, ierr, h2, accept_rates)</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;<span class="keywordflow">                        endif</span> </div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160; </div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;                    <span class="keywordflow">if</span> (my_rank==0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;                        <span class="comment">! Append energy and parameters to arrays</span></div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;                        h2_param_a_array(b) = h2_param_a</div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;                        h2_param_beta_array(b) = h2_param_beta_opt</div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                        energies(b) = energy</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;                        variances(b) = variance</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;                        accept_rates(b) = accept_rate</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;<span class="keywordflow">                    endif</span></div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160; </div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;<span class="keywordflow">                    end if</span></div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160; </div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;                    <span class="keywordflow">if</span> (my_rank==0) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;                        <span class="comment">! Append energy and parameters to arrays</span></div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                        h2_param_a_array(b) = h2_param_a</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;                        h2_param_beta_array(b) = h2_param_beta_opt</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;                        energies(b) = energy</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;                        variances(b) = variance</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;                        accept_rates(b) = accept_rate</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;<span class="keywordflow">                    endif</span></div>
 <div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160; </div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;                    <span class="comment">! Run equilibrations</span></div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;                    <span class="keywordflow">if</span> (my_rank==0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;                        <span class="keyword">call </span>equil_h_2(h2_param_a, p_arr, bonds(b), b)</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;                        <span class="comment">! Write restart files, if required</span></div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;                        <span class="keywordflow">if</span> (write_restart) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;                            <span class="keyword">call </span>write_res_nml(b+1,1,h2%auto_params)</div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;                            <span class="keyword">call </span>write_h2_main(h2_param_a_array, h2_param_beta_array, bonds, &amp;</div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;                        energies, variances, resfile_etot, ierr, h2, accept_rates)</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160; </div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;                    <span class="comment">! Run equilibrations</span></div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;                    <span class="keywordflow">if</span> (my_rank==0) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;                        <span class="keyword">call </span>equil_h_2(h2_param_a, p_arr, bonds(b), b)</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;                        <span class="comment">! Write restart files, if required</span></div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;                        <span class="keywordflow">if</span> (write_restart) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;                            <span class="keyword">call </span>write_res_nml(b+1,1,h2%auto_params)</div>
 <div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;<span class="keywordflow">                        endif</span></div>
 <div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;<span class="keywordflow">                    endif</span></div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160; </div>
@@ -823,9 +823,14 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;    <span class="comment">! Close logfile from rank 0</span></div>
 <div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    <span class="keywordflow">if</span> (i_log) <span class="keyword">close</span>(logid)</div>
 <div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160; </div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    <span class="comment">! End MPI parallelism</span></div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    <span class="keyword">call </span>mpi_finalize(mpierr)</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160; </div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    <span class="comment">! Remove restart files if complete</span></div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    <span class="keyword">call </span>system(<span class="stringliteral">&#39;rm res_etot.nc 2&gt;/dev/null&#39;</span>)</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    <span class="keyword">call </span>system(<span class="stringliteral">&#39;rm res_nml.txt 2&gt;/dev/null&#39;</span>)</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <span class="keyword">call </span>system(<span class="stringliteral">&#39;rm res_epar.nc 2&gt;/dev/null&#39;</span>)</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160; </div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    <span class="comment">! End MPI parallelism</span></div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    <span class="keyword">call </span>mpi_finalize(mpierr)</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160; </div>
 </div><!-- fragment --><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">

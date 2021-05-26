@@ -212,7 +212,7 @@ Here is the caller graph for this function\+:
 \index{restart\_fns@{restart\_fns}!read\_energies@{read\_energies}}
 \index{read\_energies@{read\_energies}!restart\_fns@{restart\_fns}}
 \doxysubsubsection{\texorpdfstring{read\_energies()}{read\_energies()}}
-{\footnotesize\ttfamily subroutine restart\+\_\+fns\+::read\+\_\+energies (\begin{DoxyParamCaption}\item[{character(len=$\ast$), intent(in)}]{filename,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{energies,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{variances,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{accept\+\_\+rates }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily subroutine restart\+\_\+fns\+::read\+\_\+energies (\begin{DoxyParamCaption}\item[{character(len=$\ast$), intent(in)}]{filename,  }\item[{real(real64), dimension(\+:), intent(out)}]{energies,  }\item[{real(real64), dimension(\+:), intent(out)}]{variances,  }\item[{real(real64), dimension(\+:), intent(out)}]{accept\+\_\+rates }\end{DoxyParamCaption})}
 
 
 
@@ -238,7 +238,7 @@ Definition at line 176 of file restart\+\_\+fns.\+f90.
 \DoxyCodeLine{177 }
 \DoxyCodeLine{178         \textcolor{comment}{! Local variables}}
 \DoxyCodeLine{179         \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{intent(in)} :: filename}
-\DoxyCodeLine{180 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable}, \textcolor{keywordtype}{intent(out)} :: energies, variances, accept\_rates}
+\DoxyCodeLine{180 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{intent(out)} :: energies, variances, accept\_rates}
 \DoxyCodeLine{181         \textcolor{keywordtype}{integer} :: ierr, file\_id, var\_id}
 \DoxyCodeLine{182 }
 \DoxyCodeLine{183         \textcolor{comment}{! Check if file exists}}
@@ -298,7 +298,7 @@ Here is the caller graph for this function\+:
 \index{restart\_fns@{restart\_fns}!read\_energies\_h2plus@{read\_energies\_h2plus}}
 \index{read\_energies\_h2plus@{read\_energies\_h2plus}!restart\_fns@{restart\_fns}}
 \doxysubsubsection{\texorpdfstring{read\_energies\_h2plus()}{read\_energies\_h2plus()}}
-{\footnotesize\ttfamily subroutine restart\+\_\+fns\+::read\+\_\+energies\+\_\+h2plus (\begin{DoxyParamCaption}\item[{character(len=$\ast$), intent(in)}]{filename,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{energies,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{variances,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{accept\+\_\+rates,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{c\+\_\+array }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily subroutine restart\+\_\+fns\+::read\+\_\+energies\+\_\+h2plus (\begin{DoxyParamCaption}\item[{character(len=$\ast$), intent(in)}]{filename,  }\item[{real(real64), dimension(\+:), intent(out)}]{energies,  }\item[{real(real64), dimension(\+:), intent(out)}]{variances,  }\item[{real(real64), dimension(\+:), intent(out)}]{accept\+\_\+rates,  }\item[{real(real64), dimension(\+:), intent(out)}]{c\+\_\+array }\end{DoxyParamCaption})}
 
 
 
@@ -326,7 +326,7 @@ Definition at line 238 of file restart\+\_\+fns.\+f90.
 \DoxyCodeLine{239 }
 \DoxyCodeLine{240         \textcolor{comment}{! Local variables}}
 \DoxyCodeLine{241         \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{intent(in)} :: filename}
-\DoxyCodeLine{242 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable}, \textcolor{keywordtype}{intent(out)} :: energies, variances, accept\_rates, c\_array}
+\DoxyCodeLine{242 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{intent(out)} :: energies, variances, accept\_rates, c\_array}
 \DoxyCodeLine{243         \textcolor{keywordtype}{integer} :: ierr, file\_id, var\_id}
 \DoxyCodeLine{244 }
 \DoxyCodeLine{245         \textcolor{comment}{! Check if file exists}}
@@ -394,7 +394,7 @@ Here is the caller graph for this function\+:
 \index{restart\_fns@{restart\_fns}!read\_energies\_h2@{read\_energies\_h2}}
 \index{read\_energies\_h2@{read\_energies\_h2}!restart\_fns@{restart\_fns}}
 \doxysubsubsection{\texorpdfstring{read\_energies\_h2()}{read\_energies\_h2()}}
-{\footnotesize\ttfamily subroutine restart\+\_\+fns\+::read\+\_\+energies\+\_\+h2 (\begin{DoxyParamCaption}\item[{character(len=$\ast$), intent(in)}]{filename,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{energies,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{variances,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{accept\+\_\+rates,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{a\+\_\+array,  }\item[{real(real64), dimension(\+:), intent(out), allocatable}]{b\+\_\+array }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily subroutine restart\+\_\+fns\+::read\+\_\+energies\+\_\+h2 (\begin{DoxyParamCaption}\item[{character(len=$\ast$), intent(in)}]{filename,  }\item[{real(real64), dimension(\+:), intent(out)}]{energies,  }\item[{real(real64), dimension(\+:), intent(out)}]{variances,  }\item[{real(real64), dimension(\+:), intent(out)}]{accept\+\_\+rates,  }\item[{real(real64), dimension(\+:), intent(out)}]{a\+\_\+array,  }\item[{real(real64), dimension(\+:), intent(out)}]{b\+\_\+array }\end{DoxyParamCaption})}
 
 
 
@@ -424,7 +424,7 @@ Definition at line 309 of file restart\+\_\+fns.\+f90.
 \DoxyCodeLine{310 }
 \DoxyCodeLine{311         \textcolor{comment}{! Local variables}}
 \DoxyCodeLine{312         \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{intent(in)} :: filename}
-\DoxyCodeLine{313 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable}, \textcolor{keywordtype}{intent(out)} :: energies, variances, accept\_rates, a\_array, b\_array}
+\DoxyCodeLine{313 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{intent(out)} :: energies, variances, accept\_rates, a\_array, b\_array}
 \DoxyCodeLine{314         \textcolor{keywordtype}{integer} :: ierr, file\_id, var\_id}
 \DoxyCodeLine{315 }
 \DoxyCodeLine{316         \textcolor{comment}{! Check if file exists}}
