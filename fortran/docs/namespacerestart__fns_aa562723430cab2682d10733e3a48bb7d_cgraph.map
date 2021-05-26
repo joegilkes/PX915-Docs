@@ -1,0 +1,4 @@
+<map id="restart_fns::read_energies_h2" name="restart_fns::read_energies_h2">
+<area shape="rect" id="node1" title="Reads restart files with energies, variances and acceptence arrays. Also reads two extra arrays of op..." alt="" coords="5,13,197,39"/>
+<area shape="rect" id="node2" href="$namespacerestart__fns.html#a23054262d0eeb017dee69fd5f9ca1250" title="Checks error status at each point of the NetCDF read." alt="" coords="245,5,361,47"/>
+</map>

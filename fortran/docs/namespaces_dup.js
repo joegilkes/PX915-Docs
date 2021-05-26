@@ -19,11 +19,12 @@ var namespaces_dup =
       [ "read_inputs", "namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea", null ]
     ] ],
     [ "restart_fns", "namespacerestart__fns.html", [
-      [ "write_res_nml", "namespacerestart__fns.html#a11f18611058f7af2ac8e21df6f02afa7", null ],
+      [ "write_res_nml", "namespacerestart__fns.html#a08fcc6eaab415d68620bccc8048b610e", null ],
       [ "read_res_nml", "namespacerestart__fns.html#a34c01a8b391a8c3a4ba40e9f5ec644d3", null ],
       [ "error_check", "namespacerestart__fns.html#a23054262d0eeb017dee69fd5f9ca1250", null ],
-      [ "read_energies", "namespacerestart__fns.html#a673ea568ef91fc50ac00e24822742301", null ],
-      [ "read_chains", "namespacerestart__fns.html#a2bfef0bcec6193f109b558f89e9cd90d", null ],
+      [ "read_energies", "namespacerestart__fns.html#a828b3e20a4454d53f3e9f89cb80ba310", null ],
+      [ "read_energies_h2plus", "namespacerestart__fns.html#a22e2a14111f6a4ff686f7f7b2b47f206", null ],
+      [ "read_energies_h2", "namespacerestart__fns.html#aa562723430cab2682d10733e3a48bb7d", null ],
       [ "fu", "namespacerestart__fns.html#abae4eaf545561c534bc832e303c47b4b", null ],
       [ "rc", "namespacerestart__fns.html#ab386c6b0f14be0090063a054256f5923", null ]
     ] ],
@@ -73,7 +74,7 @@ var namespaces_dup =
       [ "random_normal", "namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335", null ],
       [ "vqmc_qho", "namespacevqmc.html#a05315751002a983c9976851c9f21f0f0", null ],
       [ "grid_qho", "namespacevqmc.html#a726aff689b64924586b655d2e8a846d1", null ],
-      [ "equil_qho", "namespacevqmc.html#a7bf32b6cd68452e6808f9e840b0484c3", null ],
+      [ "equil_qho", "namespacevqmc.html#a5d73324fcbe9c3ef7fe11309581af529", null ],
       [ "vqmc_h_2_plus", "namespacevqmc.html#a8213f95bb390d7a9eff8260f527c00b8", null ],
       [ "auto_h_2_plus", "namespacevqmc.html#a0a07ef5b098cdc478b253de26c49aadc", null ],
       [ "grid_h_2_plus", "namespacevqmc.html#a70c9fcecdf5f2a6ffea7dd3c4f0c1eeb", null ],
@@ -85,7 +86,6 @@ var namespaces_dup =
       [ "ntab", "namespacevqmc.html#a4acb6b64bbac5c4684654d00393f7f24", null ],
       [ "iv", "namespacevqmc.html#a86db46440794b9ef7cfd9fbf1fd69930", null ],
       [ "iy", "namespacevqmc.html#a1608372d703310a49afc4243ccf27368", null ],
-      [ "seed", "namespacevqmc.html#a986f071589794992c4bc31de25c63976", null ],
       [ "logfrac", "namespacevqmc.html#a4f41e2c494f06da125bf9a56314161b5", null ]
     ] ],
     [ "write_netcdf", "namespacewrite__netcdf.html", [

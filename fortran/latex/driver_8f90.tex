@@ -196,426 +196,477 @@ Definition at line 53 of file driver.\+f90.
 \DoxyCodeLine{196 }
 \DoxyCodeLine{197     \textcolor{comment}{! Initialise the random number generator}}
 \DoxyCodeLine{198     \textcolor{keywordflow}{if} (run\_equil) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{199         \textcolor{comment}{! Only rank 0 runs equilibrations}}
-\DoxyCodeLine{200         \textcolor{keywordflow}{if}(my\_rank==0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{201             \textcolor{comment}{! Initialise the seed on rank 0}}
-\DoxyCodeLine{202             \textcolor{keyword}{call }init\_ran1() }
-\DoxyCodeLine{203             \textcolor{comment}{! Update logfile if required}}
-\DoxyCodeLine{204             \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{205                 \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Initial seed from /dev/urandom: ', I20)"{}}) seed}
-\DoxyCodeLine{206                 \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{207 \textcolor{keywordflow}{            endif}}
-\DoxyCodeLine{208             \textcolor{comment}{! Ensure auto\_params is disabled}}
-\DoxyCodeLine{209             \textcolor{keywordflow}{if} (trim(p\_system) .eq. \textcolor{stringliteral}{'H2plus'} .and. h2plus\%auto\_params) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{210                 h2plus\%auto\_params = .false.}
-\DoxyCodeLine{211                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('WARNING: H2plus\%auto\_params should not be .TRUE. when in Equilibration Mode, disabling...')"{}})}
-\DoxyCodeLine{212             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (trim(p\_system) .eq. \textcolor{stringliteral}{'H2'} .and. h2\%auto\_params) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{213                 h2\%auto\_params = .false.}
-\DoxyCodeLine{214                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('WARNING: H2plus\%auto\_params should not be .TRUE. when in Equilibration Mode, disabling...')"{}})}
-\DoxyCodeLine{215 \textcolor{keywordflow}{            end if}}
-\DoxyCodeLine{216 \textcolor{keywordflow}{        endif}}
-\DoxyCodeLine{217     \textcolor{keywordflow}{else}}
-\DoxyCodeLine{218         \textcolor{comment}{! For non-\/equil VQMC runs,}}
-\DoxyCodeLine{219         \textcolor{comment}{! Initialise a seed on each MPI rank}}
-\DoxyCodeLine{220         \textcolor{keyword}{call }init\_ran1() }
-\DoxyCodeLine{221         \textcolor{comment}{! Update logfile if required}}
-\DoxyCodeLine{222         \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{223             \textcolor{keywordflow}{if} (my\_rank>0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{224                 \textcolor{comment}{! Send the seeds to rank 0}}
-\DoxyCodeLine{225                 \textcolor{keyword}{call }mpi\_send(seed,1,mpi\_integer,0,tag\_seed,mpi\_comm\_world,mpierr)}
-\DoxyCodeLine{226             \textcolor{keywordflow}{else}}
-\DoxyCodeLine{227                 \textcolor{comment}{! Write seed of rank=0 to logfile}}
-\DoxyCodeLine{228                 \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Rank ',I2,'. Initial seed from /dev/urandom: ', I20)"{}}) my\_rank, seed}
-\DoxyCodeLine{229                 \textcolor{keywordflow}{do} ip = 1, p-\/1}
-\DoxyCodeLine{230                     \textcolor{comment}{! Receive seed value from rank=ip}}
-\DoxyCodeLine{231                     \textcolor{keyword}{call }mpi\_recv(ip\_seed,1,mpi\_integer,ip,tag\_seed,mpi\_comm\_world,status,mpierr) }
-\DoxyCodeLine{232                     \textcolor{comment}{! Write seed of rank=ip to logfile}}
-\DoxyCodeLine{233                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Rank ',I2,'. Initial seed from /dev/urandom: ', I20)"{}}) ip, ip\_seed}
-\DoxyCodeLine{234 \textcolor{keywordflow}{                end do}}
-\DoxyCodeLine{235                 \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{236 \textcolor{keywordflow}{            endif} }
-\DoxyCodeLine{237 \textcolor{keywordflow}{        endif} }
-\DoxyCodeLine{238 }
-\DoxyCodeLine{239 \textcolor{keywordflow}{    endif} }
-\DoxyCodeLine{240 }
-\DoxyCodeLine{241 \textcolor{comment}{! -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{242 \textcolor{comment}{! SECTION: VQMC Loops}}
-\DoxyCodeLine{243 \textcolor{comment}{! -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{244 }
-\DoxyCodeLine{245     \textcolor{comment}{! Execute problem-\/dependent routines.}}
-\DoxyCodeLine{246     \textcolor{keywordflow}{select case}(trim(p\_system))}
-\DoxyCodeLine{247 }
-\DoxyCodeLine{248     \textcolor{comment}{! -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{249     \textcolor{comment}{!   SUBSECTION: Quantum Harmonic Oscillator}}
-\DoxyCodeLine{250     \textcolor{comment}{! -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{251 }
-\DoxyCodeLine{252         \textcolor{keywordflow}{case}(\textcolor{stringliteral}{'QHO'})}
-\DoxyCodeLine{253 }
-\DoxyCodeLine{254             \textcolor{comment}{! Initialise arrays}}
-\DoxyCodeLine{255             \textcolor{keyword}{allocate}(energies(int(qho\%alpha(3)))); energies(:) = 0.0\_real64}
-\DoxyCodeLine{256             \textcolor{keyword}{allocate}(variances(int(qho\%alpha(3)))); variances(:) = 0.0\_real64}
-\DoxyCodeLine{257             \textcolor{keyword}{allocate}(accept\_rates(int(qho\%alpha(3)))); accept\_rates(:) = 0.0\_real64}
-\DoxyCodeLine{258 }
-\DoxyCodeLine{259             \textcolor{comment}{! Print out system info.}}
-\DoxyCodeLine{260             \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{261                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Doing VQMC runs across ', I3, ' parameter(s).')"{}}) int(qho\%alpha(3))}
-\DoxyCodeLine{262                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Steps: ', I10, ', Burn Steps: ', I7, ', Thin Every ', I7, ' Steps.')"{}}) \&}
-\DoxyCodeLine{263                     qho\%steps, qho\%burn\_step, qho\%thin\_step}
-\DoxyCodeLine{264                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{265 \textcolor{keywordflow}{            endif}}
-\DoxyCodeLine{266 }
-\DoxyCodeLine{267             \textcolor{comment}{! Set up alpha array.}}
-\DoxyCodeLine{268             p\_arr = linspace(qho\%alpha(1), qho\%alpha(2), qho\%alpha(3))}
-\DoxyCodeLine{269 }
-\DoxyCodeLine{270             \textcolor{keywordflow}{if}(my\_rank==0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{271                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Grid search across linearly spaced parameters enabled.')"{}})}
-\DoxyCodeLine{272                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{273                 \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{274                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Grid search across linearly spaced parameters enabled.')"{}})}
-\DoxyCodeLine{275                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Array of alpha values: ')"{}})}
-\DoxyCodeLine{276                     \textcolor{keywordflow}{do} i = 1, int(qho\%alpha(3))}
-\DoxyCodeLine{277                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(F12.8)"{}}) p\_arr(i)}
-\DoxyCodeLine{278 \textcolor{keywordflow}{                    end do}}
-\DoxyCodeLine{279                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{280 \textcolor{keywordflow}{                end if}}
-\DoxyCodeLine{281 \textcolor{keywordflow}{            endif} }
-\DoxyCodeLine{282 }
-\DoxyCodeLine{283             \textcolor{comment}{! Sort out restarting}}
-\DoxyCodeLine{284             \textcolor{keywordflow}{if} (run\_restart) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{285                 \textcolor{comment}{! Insert optimised parameters, energies, accept\_rates, and variances into arrays}}
-\DoxyCodeLine{286 \textcolor{keywordflow}{            end if}}
-\DoxyCodeLine{287 }
-\DoxyCodeLine{288             \textcolor{comment}{! Main VQMC callers.}}
-\DoxyCodeLine{289             \textcolor{keywordflow}{if} (run\_equil) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{290                 \textcolor{comment}{!if (my\_rank==0) then}}
-\DoxyCodeLine{291                 \textcolor{keyword}{call }equil\_qho(p\_arr, energies)}
-\DoxyCodeLine{292                 \textcolor{comment}{!endif }}
-\DoxyCodeLine{293             \textcolor{keywordflow}{else}}
-\DoxyCodeLine{294                 \textcolor{keyword}{call }grid\_qho(p\_arr, energies, accept\_rates, variances)}
-\DoxyCodeLine{295 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{199         \textcolor{comment}{! Run calculations on one processor (rank 0)}}
+\DoxyCodeLine{200         p = 1}
+\DoxyCodeLine{201         \textcolor{keywordflow}{if}(my\_rank==0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{202             \textcolor{comment}{! Initialise the seed on rank 0}}
+\DoxyCodeLine{203             \textcolor{keyword}{call }init\_ran1() }
+\DoxyCodeLine{204             \textcolor{comment}{! Update logfile if required}}
+\DoxyCodeLine{205             \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{206                 \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Initial seed from /dev/urandom: ', I20)"{}}) seed}
+\DoxyCodeLine{207                 \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{208 \textcolor{keywordflow}{            endif}}
+\DoxyCodeLine{209             \textcolor{comment}{! Ensure auto\_params is disabled}}
+\DoxyCodeLine{210             \textcolor{keywordflow}{if} (trim(p\_system) .eq. \textcolor{stringliteral}{'H2plus'} .and. h2plus\%auto\_params) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{211                 h2plus\%auto\_params = .false.}
+\DoxyCodeLine{212                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('WARNING: H2plus\%auto\_params should not be .TRUE. when in Equilibration Mode, disabling...')"{}})}
+\DoxyCodeLine{213             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (trim(p\_system) .eq. \textcolor{stringliteral}{'H2'} .and. h2\%auto\_params) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{214                 h2\%auto\_params = .false.}
+\DoxyCodeLine{215                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('WARNING: H2plus\%auto\_params should not be .TRUE. when in Equilibration Mode, disabling...')"{}})}
+\DoxyCodeLine{216 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{217 \textcolor{keywordflow}{        endif}}
+\DoxyCodeLine{218     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{219         \textcolor{comment}{! For non-\/equil VQMC runs,}}
+\DoxyCodeLine{220         \textcolor{comment}{! Initialise a seed on each MPI rank}}
+\DoxyCodeLine{221         \textcolor{keyword}{call }init\_ran1() }
+\DoxyCodeLine{222         \textcolor{comment}{! Update logfile if required}}
+\DoxyCodeLine{223         \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{224             \textcolor{keywordflow}{if} (my\_rank>0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{225                 \textcolor{comment}{! Send the seeds to rank 0}}
+\DoxyCodeLine{226                 \textcolor{keyword}{call }mpi\_send(seed,1,mpi\_integer,0,tag\_seed,mpi\_comm\_world,mpierr)}
+\DoxyCodeLine{227             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{228                 \textcolor{comment}{! Write seed of rank=0 to logfile}}
+\DoxyCodeLine{229                 \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Rank ',I2,'. Initial seed from /dev/urandom: ', I20)"{}}) my\_rank, seed}
+\DoxyCodeLine{230                 \textcolor{keywordflow}{do} ip = 1, p-\/1}
+\DoxyCodeLine{231                     \textcolor{comment}{! Receive seed value from rank=ip}}
+\DoxyCodeLine{232                     \textcolor{keyword}{call }mpi\_recv(ip\_seed,1,mpi\_integer,ip,tag\_seed,mpi\_comm\_world,status,mpierr) }
+\DoxyCodeLine{233                     \textcolor{comment}{! Write seed of rank=ip to logfile}}
+\DoxyCodeLine{234                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Rank ',I2,'. Initial seed from /dev/urandom: ', I20)"{}}) ip, ip\_seed}
+\DoxyCodeLine{235 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{236                 \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{237 \textcolor{keywordflow}{            endif} }
+\DoxyCodeLine{238 \textcolor{keywordflow}{        endif} }
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240 \textcolor{keywordflow}{    endif} }
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242 \textcolor{comment}{! -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{243 \textcolor{comment}{! SECTION: VQMC Loops}}
+\DoxyCodeLine{244 \textcolor{comment}{! -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246     \textcolor{comment}{! Execute problem-\/dependent routines.}}
+\DoxyCodeLine{247     \textcolor{keywordflow}{select case}(trim(p\_system))}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249     \textcolor{comment}{! -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{250     \textcolor{comment}{!   SUBSECTION: Quantum Harmonic Oscillator}}
+\DoxyCodeLine{251     \textcolor{comment}{! -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253         \textcolor{keywordflow}{case}(\textcolor{stringliteral}{'QHO'})}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255             \textcolor{comment}{! Print out system info.}}
+\DoxyCodeLine{256             \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{257                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Doing VQMC runs across ', I3, ' parameter(s).')"{}}) int(qho\%alpha(3))}
+\DoxyCodeLine{258                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Steps: ', I10, ', Burn Steps: ', I7, ', Thin Every ', I7, ' Steps.')"{}}) \&}
+\DoxyCodeLine{259                     qho\%steps, qho\%burn\_step, qho\%thin\_step}
+\DoxyCodeLine{260                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{261 \textcolor{keywordflow}{            endif}}
+\DoxyCodeLine{262 }
+\DoxyCodeLine{263             \textcolor{comment}{! Set up alpha array.}}
+\DoxyCodeLine{264             p\_arr = linspace(qho\%alpha(1), qho\%alpha(2), qho\%alpha(3))}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266             \textcolor{keywordflow}{if}(my\_rank==0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{267                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Grid search across linearly spaced parameters enabled.')"{}})}
+\DoxyCodeLine{268                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{269                 \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{270                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Grid search across linearly spaced parameters enabled.')"{}})}
+\DoxyCodeLine{271                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Array of alpha values: ')"{}})}
+\DoxyCodeLine{272                     \textcolor{keywordflow}{do} i = 1, int(qho\%alpha(3))}
+\DoxyCodeLine{273                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(F12.8)"{}}) p\_arr(i)}
+\DoxyCodeLine{274 \textcolor{keywordflow}{                    end do}}
+\DoxyCodeLine{275                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{276 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{277 \textcolor{keywordflow}{            endif} }
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279             \textcolor{comment}{! Main VQMC callers.}}
+\DoxyCodeLine{280             \textcolor{keywordflow}{if} (run\_equil) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{281                 \textcolor{comment}{! For restarts, input\_parser would have already set alpha\_start}}
+\DoxyCodeLine{282                 \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{283                     \textcolor{keyword}{call }equil\_qho(p\_arr)}
+\DoxyCodeLine{284 \textcolor{keywordflow}{                endif} }
+\DoxyCodeLine{285             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{286                 \textcolor{comment}{! Initialise arrays}}
+\DoxyCodeLine{287                 \textcolor{keyword}{allocate}(energies(int(qho\%alpha(3)))); energies(:) = 0.0\_real64}
+\DoxyCodeLine{288                 \textcolor{keyword}{allocate}(variances(int(qho\%alpha(3)))); variances(:) = 0.0\_real64}
+\DoxyCodeLine{289                 \textcolor{keyword}{allocate}(accept\_rates(int(qho\%alpha(3)))); accept\_rates(:) = 0.0\_real64}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{291                 \textcolor{comment}{! Sort out restarting}}
+\DoxyCodeLine{292                 \textcolor{keywordflow}{if} (run\_restart) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{293                     \textcolor{comment}{! Insert optimised parameters, energies, accept\_rates, and variances into arrays}}
+\DoxyCodeLine{294                     \textcolor{keyword}{call }read\_energies(resfile\_etot, energies, variances, accept\_rates)}
+\DoxyCodeLine{295 \textcolor{keywordflow}{                endif} }
 \DoxyCodeLine{296 }
-\DoxyCodeLine{297     \textcolor{comment}{! -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{298     \textcolor{comment}{!   SUBSECTION: Hydrogen Molecular Ion}}
-\DoxyCodeLine{299     \textcolor{comment}{! -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{297                 \textcolor{comment}{! Run the grid evaluation}}
+\DoxyCodeLine{298                 \textcolor{keyword}{call }grid\_qho(p\_arr, energies, accept\_rates, variances)}
+\DoxyCodeLine{299 \textcolor{keywordflow}{            end if}}
 \DoxyCodeLine{300 }
-\DoxyCodeLine{301         \textcolor{keywordflow}{case}(\textcolor{stringliteral}{'H2plus'})}
-\DoxyCodeLine{302 }
-\DoxyCodeLine{303             \textcolor{comment}{! Initialise}}
-\DoxyCodeLine{304             \textcolor{keyword}{allocate}(energies(int(h2plus\%bond(3))))}
-\DoxyCodeLine{305             \textcolor{keyword}{allocate}(variances(int(h2plus\%bond(3))))}
-\DoxyCodeLine{306             \textcolor{keyword}{allocate}(h2plus\_param\_c\_array(int(h2plus\%bond(3))))}
-\DoxyCodeLine{307             \textcolor{keyword}{allocate}(accept\_rates(int(h2plus\%bond(3))))}
-\DoxyCodeLine{308             h2plus\_param\_c\_guess = h2plus\%c}
-\DoxyCodeLine{309 }
-\DoxyCodeLine{310             \textcolor{comment}{! Print out system info.}}
-\DoxyCodeLine{311             \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{312                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Doing VQMC runs across ', I7, ' bond lengths.')"{}}) int(h2plus\%bond(3))}
-\DoxyCodeLine{313                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Steps: ', I10, ', Burn Steps: ', I7, ', Thin Every ', \&}}
-\DoxyCodeLine{314 \textcolor{stringliteral}{}\textcolor{stringliteral}{                    \& I7, ' Steps.')"{}}) h2plus\%steps, h2plus\%burn\_step, h2plus\%thin\_step}
-\DoxyCodeLine{315                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{316 \textcolor{keywordflow}{            endif}}
-\DoxyCodeLine{317 }
-\DoxyCodeLine{318             \textcolor{comment}{! Set up bond length array}}
-\DoxyCodeLine{319             bonds = linspace(h2plus\%bond(1), h2plus\%bond(2), h2plus\%bond(3))}
-\DoxyCodeLine{320             \textcolor{keywordflow}{if} (i\_log) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{321                 \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Array of bond lengths: ')"{}})}
-\DoxyCodeLine{322                 \textcolor{keywordflow}{do} i = 1, int(h2plus\%bond(3))}
-\DoxyCodeLine{323                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Bond length ', I4, ': ', F7.4)"{}}) i, bonds(i)}
-\DoxyCodeLine{324 \textcolor{keywordflow}{                end do}}
-\DoxyCodeLine{325                 \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{326 \textcolor{keywordflow}{            end if}}
-\DoxyCodeLine{327 }
-\DoxyCodeLine{328             \textcolor{comment}{! Set up parameter array, if doing a grid search}}
-\DoxyCodeLine{329             \textcolor{keywordflow}{if} (h2plus\%auto\_params .eqv. .false.) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{330                 p\_arr = linspace(h2plus\%c\_grid(1), h2plus\%c\_grid(2), h2plus\%c\_grid(3))}
-\DoxyCodeLine{331 \textcolor{keywordflow}{            endif} }
-\DoxyCodeLine{332 }
-\DoxyCodeLine{333             \textcolor{comment}{! Update user from rank 0}}
-\DoxyCodeLine{334             \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{335                 \textcolor{keywordflow}{if} (h2plus\%auto\_params .eqv. .false.) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{336                     \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Grid search across linearly spaced parameters enabled.')"{}})}
-\DoxyCodeLine{337                     \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{338                     \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{339                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Grid search across linearly spaced parameters enabled.')"{}})}
-\DoxyCodeLine{340                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Array of c values: ')"{}})}
-\DoxyCodeLine{341                         \textcolor{keywordflow}{do} i = 1, int(h2plus\%c\_grid(3))}
-\DoxyCodeLine{342                             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(F12.8)"{}}) p\_arr(i)}
-\DoxyCodeLine{343 \textcolor{keywordflow}{                        end do}}
-\DoxyCodeLine{344                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{345 \textcolor{keywordflow}{                    end if}}
-\DoxyCodeLine{346                 \textcolor{keywordflow}{else}}
-\DoxyCodeLine{347                     \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Automatic search across parameters enabled.')"{}})}
-\DoxyCodeLine{348                     \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{349                     \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{350                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Automatic search across parameters enabled.')"{}})}
-\DoxyCodeLine{351                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{352 \textcolor{keywordflow}{                    end if}}
-\DoxyCodeLine{353 \textcolor{keywordflow}{                endif}}
-\DoxyCodeLine{354 \textcolor{keywordflow}{            end if}}
-\DoxyCodeLine{355 }
-\DoxyCodeLine{356             \textcolor{comment}{! Sort out restarting}}
-\DoxyCodeLine{357             \textcolor{keywordflow}{if} (run\_restart) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{358                 \textcolor{comment}{! Insert optimised parameters, energies, accept\_rates, and variances into arrays}}
-\DoxyCodeLine{359 \textcolor{keywordflow}{            end if}}
-\DoxyCodeLine{360 }
-\DoxyCodeLine{361             \textcolor{comment}{! Set up printed output for the loop.}}
-\DoxyCodeLine{362             \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{363                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Begin VQMC Runs -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}})}
-\DoxyCodeLine{364                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Bond Length    Converged?    Optimised c       Energy')"{}})}
-\DoxyCodeLine{365                 \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{366                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Begin VQMC Runs -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}})}
-\DoxyCodeLine{367 \textcolor{keywordflow}{                end if}}
-\DoxyCodeLine{368 \textcolor{keywordflow}{            endif}}
-\DoxyCodeLine{369 }
-\DoxyCodeLine{370             \textcolor{comment}{! Loop over bond lengths}}
-\DoxyCodeLine{371             \textcolor{keywordflow}{do} b = 1, int(h2plus\%bond(3))}
-\DoxyCodeLine{372 }
-\DoxyCodeLine{373                 \textcolor{keywordflow}{if} (i\_log) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{374                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Bond Length = ', F7.4, ' -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/  ')"{}}) \&}
-\DoxyCodeLine{375                         bonds(b)}
-\DoxyCodeLine{376 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{301     \textcolor{comment}{! -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{302     \textcolor{comment}{!   SUBSECTION: Hydrogen Molecular Ion}}
+\DoxyCodeLine{303     \textcolor{comment}{! -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{305         \textcolor{keywordflow}{case}(\textcolor{stringliteral}{'H2plus'})}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{307             \textcolor{comment}{! Print out system info.}}
+\DoxyCodeLine{308             \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{309                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Doing VQMC runs across ', I7, ' bond lengths.')"{}}) int(h2plus\%bond(3))}
+\DoxyCodeLine{310                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Steps: ', I10, ', Burn Steps: ', I7, ', Thin Every ', \&}}
+\DoxyCodeLine{311 \textcolor{stringliteral}{}\textcolor{stringliteral}{                    \& I7, ' Steps.')"{}}) h2plus\%steps, h2plus\%burn\_step, h2plus\%thin\_step}
+\DoxyCodeLine{312                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{313 \textcolor{keywordflow}{            endif}}
+\DoxyCodeLine{314 }
+\DoxyCodeLine{315             \textcolor{comment}{! Set up bond length array}}
+\DoxyCodeLine{316             bonds = linspace(h2plus\%bond(1), h2plus\%bond(2), h2plus\%bond(3))}
+\DoxyCodeLine{317             \textcolor{keywordflow}{if} (i\_log) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{318                 \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Array of bond lengths: ')"{}})}
+\DoxyCodeLine{319                 \textcolor{keywordflow}{do} i = 1, int(h2plus\%bond(3))}
+\DoxyCodeLine{320                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Bond length ', I4, ': ', F7.4)"{}}) i, bonds(i)}
+\DoxyCodeLine{321 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{322                 \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{323 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{325             \textcolor{comment}{! Set up parameter array, if doing a grid search}}
+\DoxyCodeLine{326             \textcolor{keywordflow}{if} (h2plus\%auto\_params .eqv. .false.) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{327                 p\_arr = linspace(h2plus\%c\_grid(1), h2plus\%c\_grid(2), h2plus\%c\_grid(3))}
+\DoxyCodeLine{328 \textcolor{keywordflow}{            endif} }
+\DoxyCodeLine{329 }
+\DoxyCodeLine{330             \textcolor{comment}{! Update user from rank 0}}
+\DoxyCodeLine{331             \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{332                 \textcolor{keywordflow}{if} (h2plus\%auto\_params .eqv. .false.) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{333                     \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Grid search across linearly spaced parameters enabled.')"{}})}
+\DoxyCodeLine{334                     \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{335                     \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{336                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Grid search across linearly spaced parameters enabled.')"{}})}
+\DoxyCodeLine{337                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Array of c values: ')"{}})}
+\DoxyCodeLine{338                         \textcolor{keywordflow}{do} i = 1, int(h2plus\%c\_grid(3))}
+\DoxyCodeLine{339                             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(F12.8)"{}}) p\_arr(i)}
+\DoxyCodeLine{340 \textcolor{keywordflow}{                        end do}}
+\DoxyCodeLine{341                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{342 \textcolor{keywordflow}{                    end if}}
+\DoxyCodeLine{343                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{344                     \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Automatic search across parameters enabled.')"{}})}
+\DoxyCodeLine{345                     \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{346                     \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{347                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Automatic search across parameters enabled.')"{}})}
+\DoxyCodeLine{348                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{349 \textcolor{keywordflow}{                    end if}}
+\DoxyCodeLine{350 \textcolor{keywordflow}{                endif}}
+\DoxyCodeLine{351 \textcolor{keywordflow}{            endif}}
+\DoxyCodeLine{352 }
+\DoxyCodeLine{353             \textcolor{comment}{! Set starting guess value}}
+\DoxyCodeLine{354             \textcolor{keywordflow}{if} ((.not. run\_equil) .and. h2plus\%auto\_params) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{355                 \textcolor{keywordflow}{if} ( run\_restart) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{356                     \textcolor{keywordflow}{if} (.not. res\%auto) error stop \textcolor{stringliteral}{'Error: Inconsistency in auto\_params setting between params.txt and res\_nml.txt.'}}
+\DoxyCodeLine{357                     h2plus\_param\_c\_guess = res\%guess}
+\DoxyCodeLine{358                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{359                     h2plus\_param\_c\_guess = h2plus\%c}
+\DoxyCodeLine{360 \textcolor{keywordflow}{                endif}}
+\DoxyCodeLine{361 \textcolor{keywordflow}{            endif}}
+\DoxyCodeLine{362 }
+\DoxyCodeLine{363             \textcolor{comment}{! Set up printed output for the loop.}}
+\DoxyCodeLine{364             \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{365                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Begin VQMC Runs -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}})}
+\DoxyCodeLine{366                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Bond Length    Converged?    Optimised c       Energy')"{}})}
+\DoxyCodeLine{367                 \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{368                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Begin VQMC Runs -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}})}
+\DoxyCodeLine{369 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{370 \textcolor{keywordflow}{            endif}}
+\DoxyCodeLine{371 }
+\DoxyCodeLine{372             \textcolor{comment}{! Loop over bond lengths}}
+\DoxyCodeLine{373             \textcolor{keywordflow}{do} b = bond\_start, int(h2plus\%bond(3))}
+\DoxyCodeLine{374 }
+\DoxyCodeLine{375                 \textcolor{comment}{! Store bond index for restart writing}}
+\DoxyCodeLine{376                 i\_bond = b}
 \DoxyCodeLine{377 }
-\DoxyCodeLine{378                 \textcolor{comment}{! Main VQMC callers}}
-\DoxyCodeLine{379                 \textcolor{keywordflow}{if} (.not. run\_equil) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{380                     \textcolor{keywordflow}{if} (h2plus\%auto\_params) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{381 }
-\DoxyCodeLine{382                         \textcolor{comment}{! Search for best param at this bond length}}
-\DoxyCodeLine{383                         \textcolor{keyword}{call }auto\_h\_2\_plus(h2plus\_param\_c\_guess, bonds(b), h2plus\_param\_c\_opt, \&}
-\DoxyCodeLine{384                         energy, variance, accept\_rate, h2plus\_c\_converged)}
+\DoxyCodeLine{378                 \textcolor{keywordflow}{if} (i\_log) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{379                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Bond Length = ', F7.4, ' -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/  ')"{}}) \&}
+\DoxyCodeLine{380                         bonds(b)}
+\DoxyCodeLine{381 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{382 }
+\DoxyCodeLine{383                 \textcolor{comment}{! Main VQMC callers}}
+\DoxyCodeLine{384                 \textcolor{keywordflow}{if} (.not. run\_equil) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{385 }
-\DoxyCodeLine{386                         \textcolor{comment}{! Use current optimised value of c as guess for next bond length's c,}}
-\DoxyCodeLine{387                         \textcolor{comment}{! provided calculations converged this loop}}
-\DoxyCodeLine{388                         \textcolor{keywordflow}{if} (h2plus\_c\_converged .eq. \textcolor{stringliteral}{'Y'}) h2plus\_param\_c\_guess = h2plus\_param\_c\_opt}
-\DoxyCodeLine{389 }
-\DoxyCodeLine{390                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{386                     \textcolor{comment}{! Initialise arrays}}
+\DoxyCodeLine{387                     \textcolor{keyword}{allocate}(energies(int(h2plus\%bond(3))))}
+\DoxyCodeLine{388                     \textcolor{keyword}{allocate}(variances(int(h2plus\%bond(3))))}
+\DoxyCodeLine{389                     \textcolor{keyword}{allocate}(accept\_rates(int(h2plus\%bond(3))))}
+\DoxyCodeLine{390                     \textcolor{keyword}{allocate}(h2plus\_param\_c\_array(int(h2plus\%bond(3))))}
 \DoxyCodeLine{391 }
-\DoxyCodeLine{392                         \textcolor{comment}{! Find best param in grid at this bond length}}
-\DoxyCodeLine{393                         \textcolor{keyword}{call }grid\_h\_2\_plus(p\_arr, bonds(b), h2plus\_param\_c\_opt, energy, \&}
-\DoxyCodeLine{394                             variance, accept\_rate)}
-\DoxyCodeLine{395 }
-\DoxyCodeLine{396 \textcolor{keywordflow}{                    end if}}
+\DoxyCodeLine{392                     \textcolor{comment}{! Sort out restarting}}
+\DoxyCodeLine{393                     \textcolor{keywordflow}{if} (run\_restart) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{394                         \textcolor{comment}{! Insert optimised parameters, energies, accept\_rates, and variances into arrays}}
+\DoxyCodeLine{395                         \textcolor{keyword}{call }read\_energies\_h2plus(resfile\_etot, energies, variances, accept\_rates,h2plus\_param\_c\_array)}
+\DoxyCodeLine{396 \textcolor{keywordflow}{                    endif} }
 \DoxyCodeLine{397 }
-\DoxyCodeLine{398                     \textcolor{comment}{! Append energy and parameters to arrays, on rank 0}}
-\DoxyCodeLine{399                     \textcolor{keywordflow}{if}(my\_rank==0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{400                         h2plus\_param\_c\_array(b) = h2plus\_param\_c\_opt}
-\DoxyCodeLine{401                         energies(b) = energy}
-\DoxyCodeLine{402                         variances(b) = variance}
-\DoxyCodeLine{403                         accept\_rates(b) = accept\_rate}
-\DoxyCodeLine{404 }
-\DoxyCodeLine{405                         \textcolor{comment}{! Write restart files, if required}}
-\DoxyCodeLine{406                         \textcolor{keywordflow}{if} (write\_restart) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{407                             \textcolor{comment}{! TO DO -\/ write bond\_start, c\_opt and the arrays for energy, variance \& accept\_rate}}
-\DoxyCodeLine{408 \textcolor{keywordflow}{                        endif}}
-\DoxyCodeLine{409 }
-\DoxyCodeLine{410 \textcolor{keywordflow}{                    endif}}
-\DoxyCodeLine{411 }
-\DoxyCodeLine{412                 \textcolor{keywordflow}{else}}
-\DoxyCodeLine{413                     \textcolor{comment}{! Run equilibrations serially on rank 0}}
-\DoxyCodeLine{414                     \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{415                         \textcolor{keyword}{call }equil\_h\_2\_plus(p\_arr, bonds(b), b)}
+\DoxyCodeLine{398                     \textcolor{keywordflow}{if} (h2plus\%auto\_params) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{399 }
+\DoxyCodeLine{400                         \textcolor{comment}{! Search for best param at this bond length}}
+\DoxyCodeLine{401                         \textcolor{keyword}{call }auto\_h\_2\_plus(h2plus\_param\_c\_guess, bonds(b), h2plus\_param\_c\_opt, \&}
+\DoxyCodeLine{402                         energy, variance, accept\_rate, h2plus\_c\_converged)}
+\DoxyCodeLine{403 }
+\DoxyCodeLine{404                         \textcolor{comment}{! Reset start counter}}
+\DoxyCodeLine{405                         auto\_start=1}
+\DoxyCodeLine{406 }
+\DoxyCodeLine{407                         \textcolor{comment}{! Use current optimised value of c as guess for next bond length's c,}}
+\DoxyCodeLine{408                         \textcolor{comment}{! provided calculations converged this loop}}
+\DoxyCodeLine{409                         \textcolor{keywordflow}{if} (h2plus\_c\_converged .eq. \textcolor{stringliteral}{'Y'}) h2plus\_param\_c\_guess = h2plus\_param\_c\_opt}
+\DoxyCodeLine{410 }
+\DoxyCodeLine{411                         \textcolor{comment}{! Write restart files, if required}}
+\DoxyCodeLine{412                         \textcolor{keywordflow}{if} (write\_restart .and. my\_rank==0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{413                             \textcolor{keyword}{call }write\_res\_nml(b+1,1,h2plus\%auto\_params,h2plus\_param\_c\_guess)}
+\DoxyCodeLine{414 \textcolor{keywordflow}{                        endif} }
+\DoxyCodeLine{415 }
 \DoxyCodeLine{416 }
-\DoxyCodeLine{417                         \textcolor{comment}{! Write restart files, if required}}
-\DoxyCodeLine{418                         \textcolor{keywordflow}{if} (write\_restart) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{419                             \textcolor{comment}{! TO DO -\/ write bond\_start, cgrid\_start, and the bond-\/search energy array}}
-\DoxyCodeLine{420 \textcolor{keywordflow}{                        endif}}
-\DoxyCodeLine{421 }
-\DoxyCodeLine{422 \textcolor{keywordflow}{                    endif}}
-\DoxyCodeLine{423 \textcolor{keywordflow}{                end if}}
-\DoxyCodeLine{424 }
-\DoxyCodeLine{425 \textcolor{keywordflow}{            end do}}
-\DoxyCodeLine{426 }
-\DoxyCodeLine{427             \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{428 }
-\DoxyCodeLine{429                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ End VQMC Runs -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}})}
-\DoxyCodeLine{430                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{431 }
-\DoxyCodeLine{432                 \textcolor{comment}{! If not in equilibration mode, write results}}
-\DoxyCodeLine{433                 \textcolor{keywordflow}{if} (.not. run\_equil) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{434                     \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}(2A)"{}}) \textcolor{stringliteral}{'Calculations finished, writing results to NetCDF output file '}, \&}
-\DoxyCodeLine{435                         outfile}
-\DoxyCodeLine{436                     \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{437                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(2A)"{}}) \textcolor{stringliteral}{'Calculations finished, writing results to NetCDF \&}}
-\DoxyCodeLine{438 \textcolor{stringliteral}{}\textcolor{stringliteral}{                            \&output file '}, outfile}
-\DoxyCodeLine{439 \textcolor{keywordflow}{                    end if}}
+\DoxyCodeLine{417                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{418 }
+\DoxyCodeLine{419                         \textcolor{comment}{! Find best param in grid at this bond length}}
+\DoxyCodeLine{420                         \textcolor{keyword}{call }grid\_h\_2\_plus(p\_arr, bonds(b), h2plus\_param\_c\_opt, energy, \&}
+\DoxyCodeLine{421                             variance, accept\_rate)}
+\DoxyCodeLine{422 }
+\DoxyCodeLine{423                         \textcolor{comment}{! Reset start counter}}
+\DoxyCodeLine{424                         grid\_start=1}
+\DoxyCodeLine{425 }
+\DoxyCodeLine{426                         \textcolor{comment}{! Write restart files, if required}}
+\DoxyCodeLine{427                         \textcolor{keywordflow}{if} (write\_restart .and. my\_rank==0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{428                             \textcolor{keyword}{call }write\_res\_nml(b+1,1,h2plus\%auto\_params)}
+\DoxyCodeLine{429 \textcolor{keywordflow}{                        endif} }
+\DoxyCodeLine{430 }
+\DoxyCodeLine{431 \textcolor{keywordflow}{                    end if}}
+\DoxyCodeLine{432 }
+\DoxyCodeLine{433                     \textcolor{comment}{! Append energy and parameters to arrays, on rank 0}}
+\DoxyCodeLine{434                     \textcolor{keywordflow}{if}(my\_rank==0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{435                         h2plus\_param\_c\_array(b) = h2plus\_param\_c\_opt}
+\DoxyCodeLine{436                         energies(b) = energy}
+\DoxyCodeLine{437                         variances(b) = variance}
+\DoxyCodeLine{438                         accept\_rates(b) = accept\_rate}
+\DoxyCodeLine{439 \textcolor{keywordflow}{                    endif}}
 \DoxyCodeLine{440 }
-\DoxyCodeLine{441                     \textcolor{keyword}{call }write\_h2plus\_main(h2plus\_param\_c\_array, bonds, energies, variances, \&}
-\DoxyCodeLine{442                         outfile, ierr, h2plus, accept\_rates)}
-\DoxyCodeLine{443 \textcolor{keywordflow}{                end if}}
-\DoxyCodeLine{444 }
-\DoxyCodeLine{445 \textcolor{keywordflow}{            endif}}
-\DoxyCodeLine{446 }
-\DoxyCodeLine{447 }
-\DoxyCodeLine{448     \textcolor{comment}{! -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{449     \textcolor{comment}{!   SUBSECTION: Hydrogen Molecule}}
-\DoxyCodeLine{450     \textcolor{comment}{! -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{451 }
-\DoxyCodeLine{452         \textcolor{keywordflow}{case}(\textcolor{stringliteral}{'H2'})}
-\DoxyCodeLine{453 }
-\DoxyCodeLine{454             \textcolor{comment}{! Initialise}}
-\DoxyCodeLine{455             \textcolor{keyword}{allocate}(h2\_param\_a\_array(int(h2\%bond(3))))}
-\DoxyCodeLine{456             \textcolor{keyword}{allocate}(h2\_param\_beta\_array(int(h2\%bond(3))))}
-\DoxyCodeLine{457             \textcolor{keyword}{allocate}(energies(int(h2\%bond(3))))}
-\DoxyCodeLine{458             \textcolor{keyword}{allocate}(variances(int(h2\%bond(3))))}
-\DoxyCodeLine{459             \textcolor{keyword}{allocate}(accept\_rates(int(h2\%bond(3))))}
-\DoxyCodeLine{460             h2\_param\_beta\_guess = h2\%beta}
-\DoxyCodeLine{461 }
-\DoxyCodeLine{462             \textcolor{comment}{! Print out system info.}}
-\DoxyCodeLine{463             \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{464                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Doing VQMC runs across ', I7, ' bond lengths.')"{}}) int(h2\%bond(3))}
-\DoxyCodeLine{465                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Steps: ', I10, ', Burn Steps: ', I7, ', Thin Every ', I7, ' Steps.')"{}}) \&}
-\DoxyCodeLine{466                         h2\%steps, h2\%burn\_step, h2\%thin\_step}
-\DoxyCodeLine{467                     \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{468 \textcolor{keywordflow}{            endif}}
-\DoxyCodeLine{469 }
-\DoxyCodeLine{470             \textcolor{comment}{! Set up bond length array}}
-\DoxyCodeLine{471             bonds = linspace(h2\%bond(1), h2\%bond(2), h2\%bond(3))}
-\DoxyCodeLine{472             \textcolor{keywordflow}{if} (i\_log) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{473                 \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Array of bond lengths: ')"{}})}
-\DoxyCodeLine{474                 \textcolor{keywordflow}{do} i = 1, int(h2\%bond(3))}
-\DoxyCodeLine{475                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Bond length ', I4, ': ', F7.4)"{}}) i, bonds(i)}
-\DoxyCodeLine{476 \textcolor{keywordflow}{                end do}}
-\DoxyCodeLine{477                 \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{478 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{441                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{442                     \textcolor{comment}{! Run equilibrations serially on rank 0}}
+\DoxyCodeLine{443                     \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{444                         \textcolor{keyword}{call }equil\_h\_2\_plus(p\_arr, bonds(b), b)}
+\DoxyCodeLine{445                         \textcolor{comment}{! Write restart files, if required}}
+\DoxyCodeLine{446                         \textcolor{keywordflow}{if} (write\_restart) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{447                             \textcolor{keyword}{call }write\_res\_nml(b+1,1,h2plus\%auto\_params)}
+\DoxyCodeLine{448 \textcolor{keywordflow}{                        endif}}
+\DoxyCodeLine{449 }
+\DoxyCodeLine{450 \textcolor{keywordflow}{                    endif}}
+\DoxyCodeLine{451 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{452 }
+\DoxyCodeLine{453 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{454 }
+\DoxyCodeLine{455             \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{456 }
+\DoxyCodeLine{457                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ End VQMC Runs -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}})}
+\DoxyCodeLine{458                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{459 }
+\DoxyCodeLine{460                 \textcolor{comment}{! If not in equilibration mode, write results}}
+\DoxyCodeLine{461                 \textcolor{keywordflow}{if} (.not. run\_equil) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{462                     \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}(2A)"{}}) \textcolor{stringliteral}{'Calculations finished, writing results to NetCDF output file '}, \&}
+\DoxyCodeLine{463                         outfile}
+\DoxyCodeLine{464                     \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{465                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(2A)"{}}) \textcolor{stringliteral}{'Calculations finished, writing results to NetCDF \&}}
+\DoxyCodeLine{466 \textcolor{stringliteral}{}\textcolor{stringliteral}{                            \&output file '}, outfile}
+\DoxyCodeLine{467 \textcolor{keywordflow}{                    end if}}
+\DoxyCodeLine{468 }
+\DoxyCodeLine{469                     \textcolor{keyword}{call }write\_h2plus\_main(h2plus\_param\_c\_array, bonds, energies, variances, \&}
+\DoxyCodeLine{470                         outfile, ierr, h2plus, accept\_rates)}
+\DoxyCodeLine{471 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{472 }
+\DoxyCodeLine{473 \textcolor{keywordflow}{            endif}}
+\DoxyCodeLine{474 }
+\DoxyCodeLine{475 }
+\DoxyCodeLine{476     \textcolor{comment}{! -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{477     \textcolor{comment}{!   SUBSECTION: Hydrogen Molecule}}
+\DoxyCodeLine{478     \textcolor{comment}{! -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
 \DoxyCodeLine{479 }
-\DoxyCodeLine{480             \textcolor{comment}{! Set up parameter array, if doing a grid search}}
-\DoxyCodeLine{481             \textcolor{keywordflow}{if} (h2\%auto\_params .eqv. .false.) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{482                 p\_arr = linspace(h2\%beta\_grid(1), h2\%beta\_grid(2), h2\%beta\_grid(3))}
-\DoxyCodeLine{483 \textcolor{keywordflow}{            endif} }
-\DoxyCodeLine{484 }
-\DoxyCodeLine{485             \textcolor{comment}{! Update user from rank 0}}
-\DoxyCodeLine{486             \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{487                 \textcolor{keywordflow}{if} (h2\%auto\_params .eqv. .false.) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{488                     \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Grid search across linearly spaced parameters enabled.')"{}})}
-\DoxyCodeLine{489                     \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{490                     \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{491                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Grid search across linearly spaced parameters enabled.')"{}})}
-\DoxyCodeLine{492                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Array of beta values: ')"{}})}
-\DoxyCodeLine{493                         \textcolor{keywordflow}{do} i = 1, int(h2\%beta\_grid(3))}
-\DoxyCodeLine{494                             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(F12.8)"{}}) p\_arr(i)}
-\DoxyCodeLine{495 \textcolor{keywordflow}{                        end do}}
-\DoxyCodeLine{496                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{497 \textcolor{keywordflow}{                    end if}}
-\DoxyCodeLine{498                 \textcolor{keywordflow}{else}}
-\DoxyCodeLine{499                     \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Automatic search across parameters enabled.')"{}})}
-\DoxyCodeLine{500                     \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{501                     \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{502                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Automatic search across parameters enabled.')"{}})}
-\DoxyCodeLine{503                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{504 \textcolor{keywordflow}{                    end if}}
-\DoxyCodeLine{505 \textcolor{keywordflow}{                endif}}
-\DoxyCodeLine{506 \textcolor{keywordflow}{            end if}}
-\DoxyCodeLine{507 }
-\DoxyCodeLine{508             \textcolor{comment}{! Sort out restarting}}
-\DoxyCodeLine{509             \textcolor{keywordflow}{if} (run\_restart) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{510                 \textcolor{comment}{! Insert optimised parameters, energies, accept\_rates, and variances into arrays}}
-\DoxyCodeLine{511 \textcolor{keywordflow}{            end if}}
-\DoxyCodeLine{512 }
-\DoxyCodeLine{513             \textcolor{comment}{! Set up printed output for the loop.}}
-\DoxyCodeLine{514             \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{515                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Begin VQMC Runs -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}})}
-\DoxyCodeLine{516                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Bond Length    Converged?    Optimised Beta    Energy')"{}})}
-\DoxyCodeLine{517                 \textcolor{keywordflow}{if} (i\_log) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{518                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Begin VQMC Runs -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}})}
-\DoxyCodeLine{519 \textcolor{keywordflow}{                end if}}
-\DoxyCodeLine{520 \textcolor{keywordflow}{            endif}}
-\DoxyCodeLine{521 }
-\DoxyCodeLine{522             \textcolor{comment}{! Loop over bond lengths}}
-\DoxyCodeLine{523             \textcolor{keywordflow}{do} b = 1, int(h2\%bond(3))}
-\DoxyCodeLine{524 }
-\DoxyCodeLine{525                 \textcolor{keywordflow}{if} (i\_log) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{526                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Bond Length = ', F7.4, ' -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/  ')"{}}) \&}
-\DoxyCodeLine{527                         bonds(b)}
-\DoxyCodeLine{528 \textcolor{keywordflow}{                end if}}
-\DoxyCodeLine{529 }
-\DoxyCodeLine{530                 \textcolor{comment}{! Calculate parameter a at this bond length by Newton-\/Raphson iteration.}}
-\DoxyCodeLine{531                 h2\_param\_a = h\_2\_cusp(bonds(b))}
-\DoxyCodeLine{532 }
-\DoxyCodeLine{533                 \textcolor{comment}{! Main VQMC callers}}
-\DoxyCodeLine{534                 \textcolor{keywordflow}{if} (.not. run\_equil) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{535                     \textcolor{comment}{! Either iterate through beta values, or automatically search for best c.}}
-\DoxyCodeLine{536                     \textcolor{keywordflow}{if} (h2\%auto\_params) \textcolor{keywordflow}{then} \textcolor{comment}{! ie. if auto searching}}
+\DoxyCodeLine{480         \textcolor{keywordflow}{case}(\textcolor{stringliteral}{'H2'})}
+\DoxyCodeLine{481 }
+\DoxyCodeLine{482             \textcolor{comment}{! Print out system info.}}
+\DoxyCodeLine{483             \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{484                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Doing VQMC runs across ', I7, ' bond lengths.')"{}}) int(h2\%bond(3))}
+\DoxyCodeLine{485                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Steps: ', I10, ', Burn Steps: ', I7, ', Thin Every ', I7, ' Steps.')"{}}) \&}
+\DoxyCodeLine{486                         h2\%steps, h2\%burn\_step, h2\%thin\_step}
+\DoxyCodeLine{487                     \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{488 \textcolor{keywordflow}{            endif}}
+\DoxyCodeLine{489 }
+\DoxyCodeLine{490             \textcolor{comment}{! Set up bond length array}}
+\DoxyCodeLine{491             bonds = linspace(h2\%bond(1), h2\%bond(2), h2\%bond(3))}
+\DoxyCodeLine{492             \textcolor{keywordflow}{if} (i\_log) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{493                 \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Array of bond lengths: ')"{}})}
+\DoxyCodeLine{494                 \textcolor{keywordflow}{do} i = 1, int(h2\%bond(3))}
+\DoxyCodeLine{495                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Bond length ', I4, ': ', F7.4)"{}}) i, bonds(i)}
+\DoxyCodeLine{496 \textcolor{keywordflow}{                end do}}
+\DoxyCodeLine{497                 \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{498 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{499 }
+\DoxyCodeLine{500             \textcolor{comment}{! Set up parameter array, if doing a grid search}}
+\DoxyCodeLine{501             \textcolor{keywordflow}{if} (h2\%auto\_params .eqv. .false.) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{502                 p\_arr = linspace(h2\%beta\_grid(1), h2\%beta\_grid(2), h2\%beta\_grid(3))}
+\DoxyCodeLine{503 \textcolor{keywordflow}{            endif} }
+\DoxyCodeLine{504 }
+\DoxyCodeLine{505             \textcolor{comment}{! Update user from rank 0}}
+\DoxyCodeLine{506             \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{507                 \textcolor{keywordflow}{if} (h2\%auto\_params .eqv. .false.) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{508                     \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Grid search across linearly spaced parameters enabled.')"{}})}
+\DoxyCodeLine{509                     \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{510                     \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{511                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Grid search across linearly spaced parameters enabled.')"{}})}
+\DoxyCodeLine{512                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Array of beta values: ')"{}})}
+\DoxyCodeLine{513                         \textcolor{keywordflow}{do} i = 1, int(h2\%beta\_grid(3))}
+\DoxyCodeLine{514                             \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(F12.8)"{}}) p\_arr(i)}
+\DoxyCodeLine{515 \textcolor{keywordflow}{                        end do}}
+\DoxyCodeLine{516                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{517 \textcolor{keywordflow}{                    end if}}
+\DoxyCodeLine{518                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{519                     \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Automatic search across parameters enabled.')"{}})}
+\DoxyCodeLine{520                     \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{521                     \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{522                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Automatic search across parameters enabled.')"{}})}
+\DoxyCodeLine{523                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{524 \textcolor{keywordflow}{                    end if}}
+\DoxyCodeLine{525 \textcolor{keywordflow}{                endif}}
+\DoxyCodeLine{526 \textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{527 }
+\DoxyCodeLine{528             \textcolor{comment}{! Set starting guess value}}
+\DoxyCodeLine{529             \textcolor{keywordflow}{if} ((.not. run\_equil) .and. h2\%auto\_params) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{530                 \textcolor{keywordflow}{if} (run\_restart) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{531                     \textcolor{keywordflow}{if} (.not. res\%auto) error stop \textcolor{stringliteral}{'Error: Inconsistency in auto\_params setting between params.txt and res\_nml.txt.'}}
+\DoxyCodeLine{532                     h2\_param\_beta\_guess = res\%guess}
+\DoxyCodeLine{533                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{534                     h2\_param\_beta\_guess = h2\%beta}
+\DoxyCodeLine{535 \textcolor{keywordflow}{                endif}}
+\DoxyCodeLine{536 \textcolor{keywordflow}{            endif}}
 \DoxyCodeLine{537 }
-\DoxyCodeLine{538                         \textcolor{comment}{! Solve value of beta at this bond length.}}
-\DoxyCodeLine{539                         \textcolor{keyword}{call }auto\_h\_2(h2\_param\_a, h2\_param\_beta\_guess, bonds(b), h2\_param\_beta\_opt, \&}
-\DoxyCodeLine{540                             energy, variance, accept\_rate, h2\_beta\_converged)}
-\DoxyCodeLine{541 }
-\DoxyCodeLine{542                         \textcolor{comment}{! Use current optimised value of beta as guess for next bond length's beta,}}
-\DoxyCodeLine{543                         \textcolor{comment}{! provided calculations converged this loop}}
-\DoxyCodeLine{544                         \textcolor{keywordflow}{if} (h2\_beta\_converged .eq. \textcolor{stringliteral}{'Y'}) h2\_param\_beta\_guess = h2\_param\_beta\_opt}
-\DoxyCodeLine{545                     }
-\DoxyCodeLine{546                     \textcolor{keywordflow}{else} \textcolor{comment}{! ie. if doing a grid search}}
-\DoxyCodeLine{547 }
-\DoxyCodeLine{548                         \textcolor{comment}{! Get best value of beta at this bond length}}
-\DoxyCodeLine{549                         \textcolor{keyword}{call }grid\_h\_2(h2\_param\_a, p\_arr, bonds(b), h2\_param\_beta\_opt, energy, \&}
-\DoxyCodeLine{550                         variance, accept\_rate)}
-\DoxyCodeLine{551 }
-\DoxyCodeLine{552 \textcolor{keywordflow}{                    end if}}
-\DoxyCodeLine{553 }
-\DoxyCodeLine{554                     \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{555                         \textcolor{comment}{! Append energy and parameters to arrays}}
-\DoxyCodeLine{556                         h2\_param\_a\_array(b) = h2\_param\_a}
-\DoxyCodeLine{557                         h2\_param\_beta\_array(b) = h2\_param\_beta\_opt}
-\DoxyCodeLine{558                         energies(b) = energy}
-\DoxyCodeLine{559                         variances(b) = variance}
-\DoxyCodeLine{560                         accept\_rates(b) = accept\_rate}
-\DoxyCodeLine{561 }
-\DoxyCodeLine{562                         \textcolor{comment}{! Write restart files, if required}}
-\DoxyCodeLine{563                         \textcolor{keywordflow}{if} (write\_restart) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{564                             \textcolor{comment}{! TO DO -\/ write bond\_start, beta\_opt and the arrays for energy, variance \& accept\_rate}}
-\DoxyCodeLine{565 \textcolor{keywordflow}{                        endif}}
-\DoxyCodeLine{566 }
-\DoxyCodeLine{567 \textcolor{keywordflow}{                    endif}}
-\DoxyCodeLine{568 }
-\DoxyCodeLine{569                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{538             \textcolor{comment}{! Set up printed output for the loop.}}
+\DoxyCodeLine{539             \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{540                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Begin VQMC Runs -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}})}
+\DoxyCodeLine{541                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('Bond Length    Converged?    Optimised Beta    Energy')"{}})}
+\DoxyCodeLine{542                 \textcolor{keywordflow}{if} (i\_log) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{543                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Begin VQMC Runs -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}})}
+\DoxyCodeLine{544 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{545 \textcolor{keywordflow}{            endif}}
+\DoxyCodeLine{546 }
+\DoxyCodeLine{547             \textcolor{comment}{! Loop over bond lengths}}
+\DoxyCodeLine{548             \textcolor{keywordflow}{do} b = bond\_start, int(h2\%bond(3))}
+\DoxyCodeLine{549 }
+\DoxyCodeLine{550                 \textcolor{comment}{! Store bond index for restart writing}}
+\DoxyCodeLine{551                 i\_bond = b}
+\DoxyCodeLine{552 }
+\DoxyCodeLine{553                 \textcolor{keywordflow}{if} (i\_log) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{554                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Bond Length = ', F7.4, ' -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/  ')"{}}) \&}
+\DoxyCodeLine{555                         bonds(b)}
+\DoxyCodeLine{556 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{557 }
+\DoxyCodeLine{558                 \textcolor{comment}{! Calculate parameter a at this bond length by Newton-\/Raphson iteration.}}
+\DoxyCodeLine{559                 h2\_param\_a = h\_2\_cusp(bonds(b))}
+\DoxyCodeLine{560 }
+\DoxyCodeLine{561                 \textcolor{comment}{! Main VQMC callers}}
+\DoxyCodeLine{562                 \textcolor{keywordflow}{if} (.not. run\_equil) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{563                     }
+\DoxyCodeLine{564                     \textcolor{comment}{! Initialise arrays}}
+\DoxyCodeLine{565                     \textcolor{keyword}{allocate}(energies(int(h2\%bond(3))))}
+\DoxyCodeLine{566                     \textcolor{keyword}{allocate}(variances(int(h2\%bond(3))))}
+\DoxyCodeLine{567                     \textcolor{keyword}{allocate}(accept\_rates(int(h2\%bond(3))))}
+\DoxyCodeLine{568                     \textcolor{keyword}{allocate}(h2\_param\_a\_array(int(h2\%bond(3))))}
+\DoxyCodeLine{569                     \textcolor{keyword}{allocate}(h2\_param\_beta\_array(int(h2\%bond(3))))}
 \DoxyCodeLine{570 }
-\DoxyCodeLine{571                     \textcolor{comment}{! Run equilibrations}}
-\DoxyCodeLine{572                     \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{573                         \textcolor{keyword}{call }equil\_h\_2(h2\_param\_a, p\_arr, bonds(b), b)}
-\DoxyCodeLine{574 }
-\DoxyCodeLine{575                         \textcolor{comment}{! Write restart files, if required}}
-\DoxyCodeLine{576                         \textcolor{keywordflow}{if} (write\_restart) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{577                             \textcolor{comment}{! TO DO -\/ write bond\_start, cgrid\_start, and the bond-\/search energy array}}
-\DoxyCodeLine{578 \textcolor{keywordflow}{                        endif}}
-\DoxyCodeLine{579 \textcolor{keywordflow}{                    endif}}
-\DoxyCodeLine{580 }
-\DoxyCodeLine{581 \textcolor{keywordflow}{                end if}}
-\DoxyCodeLine{582 }
-\DoxyCodeLine{583 \textcolor{keywordflow}{            end do}}
-\DoxyCodeLine{584 }
-\DoxyCodeLine{585             \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{586 }
-\DoxyCodeLine{587                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ End VQMC Runs -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}})}
-\DoxyCodeLine{588                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{589 }
-\DoxyCodeLine{590                 \textcolor{comment}{! If not in equilibration mode, write results}}
-\DoxyCodeLine{591                 \textcolor{keywordflow}{if} (.not. run\_equil) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{592 }
-\DoxyCodeLine{593                     \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}(2A)"{}}) \textcolor{stringliteral}{'Calculations finished, writing results to NetCDF output file '}, \&}
-\DoxyCodeLine{594                         outfile}
-\DoxyCodeLine{595 }
-\DoxyCodeLine{596                     \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{597                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(2A)"{}}) \textcolor{stringliteral}{'Calculations finished, writing results to NetCDF \&}}
-\DoxyCodeLine{598 \textcolor{stringliteral}{}\textcolor{stringliteral}{                            \&output file '}, outfile}
-\DoxyCodeLine{599 \textcolor{keywordflow}{                    end if}}
-\DoxyCodeLine{600 }
-\DoxyCodeLine{601                     \textcolor{keyword}{call }write\_h2\_main(h2\_param\_a\_array, h2\_param\_beta\_array, bonds, \&}
-\DoxyCodeLine{602                         energies, variances, outfile, ierr, h2, accept\_rates)}
-\DoxyCodeLine{603 }
-\DoxyCodeLine{604 \textcolor{keywordflow}{                end if}}
-\DoxyCodeLine{605 }
-\DoxyCodeLine{606 \textcolor{keywordflow}{            endif}}
-\DoxyCodeLine{607 }
-\DoxyCodeLine{608         \textcolor{comment}{! Default case, for if none of the cases match. Should be invalidated by checks in input\_parser.}}
-\DoxyCodeLine{609 \textcolor{keywordflow}{        case default}}
-\DoxyCodeLine{610             error stop \textcolor{stringliteral}{'Unknown case. How did you get here?'}}
-\DoxyCodeLine{611 \textcolor{keywordflow}{    end select}}
-\DoxyCodeLine{612 }
-\DoxyCodeLine{613     \textcolor{comment}{! Close logfile from rank 0}}
-\DoxyCodeLine{614     \textcolor{keywordflow}{if} (i\_log) \textcolor{keyword}{close}(logid)}
-\DoxyCodeLine{615 }
-\DoxyCodeLine{616     \textcolor{comment}{! End MPI parallelism}}
-\DoxyCodeLine{617     \textcolor{keyword}{call }mpi\_finalize(mpierr)}
-\DoxyCodeLine{618 }
+\DoxyCodeLine{571                     \textcolor{comment}{! Sort out restarting}}
+\DoxyCodeLine{572                     \textcolor{keywordflow}{if} (run\_restart) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{573                         \textcolor{comment}{! Insert optimised parameters, energies, accept\_rates, and variances into arrays}}
+\DoxyCodeLine{574                         \textcolor{keyword}{call }read\_energies\_h2(resfile\_etot, energies, variances, accept\_rates,h2\_param\_a\_array,h2\_param\_beta\_array)}
+\DoxyCodeLine{575 \textcolor{keywordflow}{                    endif} }
+\DoxyCodeLine{576 }
+\DoxyCodeLine{577                     \textcolor{comment}{! Either iterate through beta values, or automatically search for best beta.}}
+\DoxyCodeLine{578                     \textcolor{keywordflow}{if} (h2\%auto\_params) \textcolor{keywordflow}{then} \textcolor{comment}{! ie. if auto searching}}
+\DoxyCodeLine{579 }
+\DoxyCodeLine{580                         \textcolor{comment}{! Solve value of beta at this bond length.}}
+\DoxyCodeLine{581                         \textcolor{keyword}{call }auto\_h\_2(h2\_param\_a, h2\_param\_beta\_guess, bonds(b), h2\_param\_beta\_opt, \&}
+\DoxyCodeLine{582                             energy, variance, accept\_rate, h2\_beta\_converged)}
+\DoxyCodeLine{583 }
+\DoxyCodeLine{584                         \textcolor{comment}{! Use current optimised value of beta as guess for next bond length's beta,}}
+\DoxyCodeLine{585                         \textcolor{comment}{! provided calculations converged this loop}}
+\DoxyCodeLine{586                         \textcolor{keywordflow}{if} (h2\_beta\_converged .eq. \textcolor{stringliteral}{'Y'}) h2\_param\_beta\_guess = h2\_param\_beta\_opt}
+\DoxyCodeLine{587 }
+\DoxyCodeLine{588                         \textcolor{comment}{! Reset start counter}}
+\DoxyCodeLine{589                         auto\_start=1}
+\DoxyCodeLine{590 }
+\DoxyCodeLine{591                         \textcolor{comment}{! Write restart files, if required}}
+\DoxyCodeLine{592                         \textcolor{keywordflow}{if} (write\_restart .and. my\_rank==0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{593                             \textcolor{keyword}{call }write\_res\_nml(b+1,1,h2\%auto\_params,h2\_param\_beta\_guess)}
+\DoxyCodeLine{594 \textcolor{keywordflow}{                        endif} }
+\DoxyCodeLine{595                     }
+\DoxyCodeLine{596                     \textcolor{keywordflow}{else} \textcolor{comment}{! ie. if doing a grid search}}
+\DoxyCodeLine{597 }
+\DoxyCodeLine{598                         \textcolor{comment}{! Get best value of beta at this bond length}}
+\DoxyCodeLine{599                         \textcolor{keyword}{call }grid\_h\_2(h2\_param\_a, p\_arr, bonds(b), h2\_param\_beta\_opt, energy, \&}
+\DoxyCodeLine{600                         variance, accept\_rate)}
+\DoxyCodeLine{601 }
+\DoxyCodeLine{602                         \textcolor{comment}{! Reset start counter}}
+\DoxyCodeLine{603                         grid\_start=1}
+\DoxyCodeLine{604 }
+\DoxyCodeLine{605                         \textcolor{comment}{! Write restart files, if required}}
+\DoxyCodeLine{606                         \textcolor{keywordflow}{if} (write\_restart .and. my\_rank==0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{607                             \textcolor{keyword}{call }write\_res\_nml(b+1,1,h2\%auto\_params)}
+\DoxyCodeLine{608 \textcolor{keywordflow}{                        endif} }
+\DoxyCodeLine{609 }
+\DoxyCodeLine{610 \textcolor{keywordflow}{                    end if}}
+\DoxyCodeLine{611 }
+\DoxyCodeLine{612                     \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{613                         \textcolor{comment}{! Append energy and parameters to arrays}}
+\DoxyCodeLine{614                         h2\_param\_a\_array(b) = h2\_param\_a}
+\DoxyCodeLine{615                         h2\_param\_beta\_array(b) = h2\_param\_beta\_opt}
+\DoxyCodeLine{616                         energies(b) = energy}
+\DoxyCodeLine{617                         variances(b) = variance}
+\DoxyCodeLine{618                         accept\_rates(b) = accept\_rate}
+\DoxyCodeLine{619 \textcolor{keywordflow}{                    endif}}
+\DoxyCodeLine{620 }
+\DoxyCodeLine{621                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{622 }
+\DoxyCodeLine{623                     \textcolor{comment}{! Run equilibrations}}
+\DoxyCodeLine{624                     \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{625                         \textcolor{keyword}{call }equil\_h\_2(h2\_param\_a, p\_arr, bonds(b), b)}
+\DoxyCodeLine{626                         \textcolor{comment}{! Write restart files, if required}}
+\DoxyCodeLine{627                         \textcolor{keywordflow}{if} (write\_restart) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{628                             \textcolor{keyword}{call }write\_res\_nml(b+1,1,h2\%auto\_params)}
+\DoxyCodeLine{629 \textcolor{keywordflow}{                        endif}}
+\DoxyCodeLine{630 \textcolor{keywordflow}{                    endif}}
+\DoxyCodeLine{631 }
+\DoxyCodeLine{632 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{633 }
+\DoxyCodeLine{634 \textcolor{keywordflow}{            end do}}
+\DoxyCodeLine{635 }
+\DoxyCodeLine{636             \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{637 }
+\DoxyCodeLine{638                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ End VQMC Runs -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}})}
+\DoxyCodeLine{639                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{640 }
+\DoxyCodeLine{641                 \textcolor{comment}{! If not in equilibration mode, write results}}
+\DoxyCodeLine{642                 \textcolor{keywordflow}{if} (.not. run\_equil) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{643 }
+\DoxyCodeLine{644                     \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}(2A)"{}}) \textcolor{stringliteral}{'Calculations finished, writing results to NetCDF output file '}, \&}
+\DoxyCodeLine{645                         outfile}
+\DoxyCodeLine{646 }
+\DoxyCodeLine{647                     \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{648                         \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}(2A)"{}}) \textcolor{stringliteral}{'Calculations finished, writing results to NetCDF \&}}
+\DoxyCodeLine{649 \textcolor{stringliteral}{}\textcolor{stringliteral}{                            \&output file '}, outfile}
+\DoxyCodeLine{650 \textcolor{keywordflow}{                    end if}}
+\DoxyCodeLine{651 }
+\DoxyCodeLine{652                     \textcolor{keyword}{call }write\_h2\_main(h2\_param\_a\_array, h2\_param\_beta\_array, bonds, \&}
+\DoxyCodeLine{653                         energies, variances, outfile, ierr, h2, accept\_rates)}
+\DoxyCodeLine{654 }
+\DoxyCodeLine{655 \textcolor{keywordflow}{                end if}}
+\DoxyCodeLine{656 }
+\DoxyCodeLine{657 \textcolor{keywordflow}{            endif}}
+\DoxyCodeLine{658 }
+\DoxyCodeLine{659         \textcolor{comment}{! Default case, for if none of the cases match. Should be invalidated by checks in input\_parser.}}
+\DoxyCodeLine{660 \textcolor{keywordflow}{        case default}}
+\DoxyCodeLine{661             error stop \textcolor{stringliteral}{'Unknown case. How did you get here?'}}
+\DoxyCodeLine{662 \textcolor{keywordflow}{    end select}}
+\DoxyCodeLine{663 }
+\DoxyCodeLine{664     \textcolor{comment}{! Close logfile from rank 0}}
+\DoxyCodeLine{665     \textcolor{keywordflow}{if} (i\_log) \textcolor{keyword}{close}(logid)}
+\DoxyCodeLine{666 }
+\DoxyCodeLine{667     \textcolor{comment}{! End MPI parallelism}}
+\DoxyCodeLine{668     \textcolor{keyword}{call }mpi\_finalize(mpierr)}
+\DoxyCodeLine{669 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:

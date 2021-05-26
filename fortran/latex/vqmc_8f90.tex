@@ -20,7 +20,7 @@ subroutine \mbox{\hyperlink{namespacevqmc_a05315751002a983c9976851c9f21f0f0}{vqm
 \begin{DoxyCompactList}\small\item\em Performs VQMC for the QHO system. \end{DoxyCompactList}\item 
 subroutine \mbox{\hyperlink{namespacevqmc_a726aff689b64924586b655d2e8a846d1}{vqmc\+::grid\+\_\+qho}} (alpha\+\_\+array, energies, acc\+\_\+rates, variances)
 \begin{DoxyCompactList}\small\item\em Performs VQMC on an array of values for the variational parameter $ \alpha $. \end{DoxyCompactList}\item 
-subroutine \mbox{\hyperlink{namespacevqmc_a7bf32b6cd68452e6808f9e840b0484c3}{vqmc\+::equil\+\_\+qho}} (alpha\+\_\+array, energies)
+subroutine \mbox{\hyperlink{namespacevqmc_a5d73324fcbe9c3ef7fe11309581af529}{vqmc\+::equil\+\_\+qho}} (alpha\+\_\+array)
 \begin{DoxyCompactList}\small\item\em Performs VQMC on an array of values for the variational parameter $ \alpha $, outputting energy traces for each. \end{DoxyCompactList}\item 
 subroutine \mbox{\hyperlink{namespacevqmc_a8213f95bb390d7a9eff8260f527c00b8}{vqmc\+::vqmc\+\_\+h\+\_\+2\+\_\+plus}} (sigma, N, burn, thin, c\+\_\+const, R\+\_\+a, R\+\_\+b, X\+\_\+burnt, accept\+\_\+rate, energy\+\_\+chain, energy\+\_\+mean, energy\+\_\+variance, Dphi\+Dc\+\_\+chain, x\+\_\+start)
 \begin{DoxyCompactList}\small\item\em Performs VQMC for the $ H_{2}^{+} $ system. ~\newline
@@ -49,7 +49,5 @@ integer(int64), dimension(ntab), save \mbox{\hyperlink{namespacevqmc_a86db464407
 \begin{DoxyCompactList}\small\item\em Variable controlling the RNG sequence. \end{DoxyCompactList}\item 
 integer(int64), save \mbox{\hyperlink{namespacevqmc_a1608372d703310a49afc4243ccf27368}{vqmc\+::iy}} = 0
 \begin{DoxyCompactList}\small\item\em Variable controlling the RNG sequence. \end{DoxyCompactList}\item 
-integer(int64), public \mbox{\hyperlink{namespacevqmc_a986f071589794992c4bc31de25c63976}{vqmc\+::seed}}
-\begin{DoxyCompactList}\small\item\em Seed for the random number generator. \end{DoxyCompactList}\item 
 integer \mbox{\hyperlink{namespacevqmc_a4f41e2c494f06da125bf9a56314161b5}{vqmc\+::logfrac}} = 10
 \begin{DoxyCompactList}\small\item\em 1/logfrac is the fraction of samples to report in the log, if \mbox{\hyperlink{namespaceshared__data_acf2cbacc5b2b4d8ee26c96dc7062aa9b}{shared\+\_\+data\+::write\+\_\+log}} is {\itshape TRUE}. \end{DoxyCompactList}\end{DoxyCompactItemize}

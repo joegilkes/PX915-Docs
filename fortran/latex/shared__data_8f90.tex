@@ -70,15 +70,15 @@ integer(int32) \mbox{\hyperlink{namespaceshared__data_aee5816e6032ee02faa391b7fb
 integer(int32) \mbox{\hyperlink{namespaceshared__data_a86df366bd5fa28f0fd42a0ae6c1fd785}{shared\+\_\+data\+::d\+\_\+eqsteps\+\_\+h2}} =100000\+\_\+int32
 \begin{DoxyCompactList}\small\item\em Default total steps for each H2 equilibration MMC chain. \end{DoxyCompactList}\item 
 type(restart\+\_\+type) \mbox{\hyperlink{namespaceshared__data_a2e48217c892c5f716b469fd513ce6c77}{shared\+\_\+data\+::res}}
-\item 
+\begin{DoxyCompactList}\small\item\em Instance of \mbox{\hyperlink{structshared__data_1_1restart__type}{restart\+\_\+type}} for reading restart files. \end{DoxyCompactList}\item 
 character(len= $\ast$), parameter \mbox{\hyperlink{namespaceshared__data_a73f57f5cf348bf3d0dd9e0b8eaf8e514}{shared\+\_\+data\+::resfile\+\_\+nml}} = \textquotesingle{}res\+\_\+nml.\+txt\textquotesingle{}
 \begin{DoxyCompactList}\small\item\em Name of restart file storing RESTART namelist. \end{DoxyCompactList}\item 
 character(len= $\ast$), parameter \mbox{\hyperlink{namespaceshared__data_a92015ef2d63f7ea1e895d120fad6341f}{shared\+\_\+data\+::resfile\+\_\+etot}} = \textquotesingle{}res\+\_\+etot.\+nc\textquotesingle{}
 \begin{DoxyCompactList}\small\item\em Name of restart file storing total energies. \end{DoxyCompactList}\item 
 character(len= $\ast$), parameter \mbox{\hyperlink{namespaceshared__data_a3e81757a05da8c837c39bae8e9bcedae}{shared\+\_\+data\+::resfile\+\_\+epar}} = \textquotesingle{}res\+\_\+epar.\+nc\textquotesingle{}
 \begin{DoxyCompactList}\small\item\em Name of restart file storing parameter energies. \end{DoxyCompactList}\item 
-character(len= $\ast$), parameter \mbox{\hyperlink{namespaceshared__data_adf411355aadabf7c289e7105e57e02d4}{shared\+\_\+data\+::resfile\+\_\+chn}} = \textquotesingle{}res\+\_\+chains.\+nc\textquotesingle{}
-\begin{DoxyCompactList}\small\item\em Name of restart file storing energy chains. \end{DoxyCompactList}\item 
+integer(int64) \mbox{\hyperlink{namespaceshared__data_a075d5ae0a459d951f493b64f47a3a083}{shared\+\_\+data\+::seed}}
+\begin{DoxyCompactList}\small\item\em Seed for the random number generator. \end{DoxyCompactList}\item 
 integer(int32) \mbox{\hyperlink{namespaceshared__data_a076a0c3c193b4adf2a52bcb9acaa2565}{shared\+\_\+data\+::run\+\_\+steps}}
 \begin{DoxyCompactList}\small\item\em Number of MMC steps after burning (for MPI worksharing) \end{DoxyCompactList}\item 
 integer(int32) \mbox{\hyperlink{namespaceshared__data_a3be2ef6260b4058766e7a270721fb686}{shared\+\_\+data\+::tstep}}
@@ -87,10 +87,12 @@ integer(int32) \mbox{\hyperlink{namespaceshared__data_a28246c61bb5db3025877f5369
 \begin{DoxyCompactList}\small\item\em Start value for alpha grid, can be $>$1 for restarts. \end{DoxyCompactList}\item 
 integer(int32) \mbox{\hyperlink{namespaceshared__data_abd55f854da9e9234d715022110bd076a}{shared\+\_\+data\+::bond\+\_\+start}} =1
 \begin{DoxyCompactList}\small\item\em Start value for bondlength grid, can be $>$1 for restarts. \end{DoxyCompactList}\item 
-integer(int32) \mbox{\hyperlink{namespaceshared__data_ace7224073c1af78df0dc9f7f0dc62cfd}{shared\+\_\+data\+::cgrid\+\_\+start}} =1
+integer(int32) \mbox{\hyperlink{namespaceshared__data_aabc68bfe6e28b41b5a50d5c25e4779bd}{shared\+\_\+data\+::grid\+\_\+start}} =1
 \begin{DoxyCompactList}\small\item\em Start value for grid search of parameter c, can be $>$1 for restarts. \end{DoxyCompactList}\item 
-integer(int32) \mbox{\hyperlink{namespaceshared__data_a72cd266e5f18560f2d8c04f99c244901}{shared\+\_\+data\+::cauto\+\_\+start}} =1
+integer(int32) \mbox{\hyperlink{namespaceshared__data_a3d5ecb5dcee145df7f687a011bc3c3d8}{shared\+\_\+data\+::auto\+\_\+start}} =1
 \begin{DoxyCompactList}\small\item\em Start value for automatic search of parameter c, can be $>$1 for restarts. \end{DoxyCompactList}\item 
+integer(int32) \mbox{\hyperlink{namespaceshared__data_a6263d962b34a090fa515dc809caf695b}{shared\+\_\+data\+::i\+\_\+bond}}
+\begin{DoxyCompactList}\small\item\em Index of bondlength grid value, for restart writing. \end{DoxyCompactList}\item 
 integer \mbox{\hyperlink{namespaceshared__data_af5798eba5b1c4594d4c3c9648d732e9e}{shared\+\_\+data\+::logid}}
 \begin{DoxyCompactList}\small\item\em To store logfile unit. \end{DoxyCompactList}\item 
 logical \mbox{\hyperlink{namespaceshared__data_a829b5d4edec8365a446e8caeb244e9c9}{shared\+\_\+data\+::i\+\_\+log}} =.FALSE.

@@ -318,28 +318,27 @@ Definition at line 164 of file input\+\_\+parser.\+f90.
 \DoxyCodeLine{248             \textcolor{keyword}{call }read\_res\_nml(res)}
 \DoxyCodeLine{249 }
 \DoxyCodeLine{250             \textcolor{comment}{! Update grid-\/loop start values}}
-\DoxyCodeLine{251             \textcolor{comment}{! TO DO: Remove res\%step if James confirms that chain-\/restarts are not required.}}
-\DoxyCodeLine{252             \textcolor{keywordflow}{if} (trim(p\_system) == \textcolor{stringliteral}{'QHO'}) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{253                 \textcolor{keywordflow}{if} (res\%step == 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{254                     alpha\_start = res\%i\_alpha}
-\DoxyCodeLine{255                 \textcolor{keywordflow}{else} }
-\DoxyCodeLine{256                     alpha\_start = res\%i\_alpha+1}
-\DoxyCodeLine{257 \textcolor{keywordflow}{                endif} }
-\DoxyCodeLine{258             \textcolor{keywordflow}{else} }
-\DoxyCodeLine{259                 \textcolor{keywordflow}{if} (res\%step == 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{260                     bond\_start = res\%i\_bond}
-\DoxyCodeLine{261                 \textcolor{keywordflow}{else} }
-\DoxyCodeLine{262                     bond\_start = res\%i\_bond+1}
-\DoxyCodeLine{263 \textcolor{keywordflow}{                endif} }
-\DoxyCodeLine{264 \textcolor{keywordflow}{            endif}}
-\DoxyCodeLine{265 }
-\DoxyCodeLine{266             \textcolor{comment}{! Print restarts header.}}
-\DoxyCodeLine{267             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Restarted Program -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}}\textcolor{comment}{)}}
-\DoxyCodeLine{268 \textcolor{comment}{}            \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{269 }
-\DoxyCodeLine{270 \textcolor{keywordflow}{        end if} }
+\DoxyCodeLine{251             \textcolor{keywordflow}{if} (trim(p\_system) == \textcolor{stringliteral}{'QHO'}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{252                 alpha\_start = res\%i\_qoi}
+\DoxyCodeLine{253             \textcolor{keywordflow}{else} }
+\DoxyCodeLine{254                 bond\_start = res\%i\_qoi}
+\DoxyCodeLine{255                 \textcolor{keywordflow}{if} (res\%auto) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{256                     \textcolor{comment}{! For auto-\/search routines}}
+\DoxyCodeLine{257                     auto\_start = res\%i\_par}
+\DoxyCodeLine{258                 \textcolor{keywordflow}{else} }
+\DoxyCodeLine{259                     \textcolor{comment}{! For grid-\/search routines}}
+\DoxyCodeLine{260                     grid\_start = res\%i\_par}
+\DoxyCodeLine{261 \textcolor{keywordflow}{                endif}}
+\DoxyCodeLine{262 }
+\DoxyCodeLine{263 \textcolor{keywordflow}{            endif}}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265             \textcolor{comment}{! Print restarts header.}}
+\DoxyCodeLine{266             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Restarted Program -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}}\textcolor{comment}{)}}
+\DoxyCodeLine{267 \textcolor{comment}{}            \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269 \textcolor{keywordflow}{        end if} }
+\DoxyCodeLine{270 }
 \DoxyCodeLine{271 }
-\DoxyCodeLine{272 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:

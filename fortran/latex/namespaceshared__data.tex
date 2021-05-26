@@ -50,15 +50,15 @@ integer(int32) \mbox{\hyperlink{namespaceshared__data_aee5816e6032ee02faa391b7fb
 integer(int32) \mbox{\hyperlink{namespaceshared__data_a86df366bd5fa28f0fd42a0ae6c1fd785}{d\+\_\+eqsteps\+\_\+h2}} =100000\+\_\+int32
 \begin{DoxyCompactList}\small\item\em Default total steps for each H2 equilibration MMC chain. \end{DoxyCompactList}\item 
 type(\mbox{\hyperlink{structshared__data_1_1restart__type}{restart\+\_\+type}}) \mbox{\hyperlink{namespaceshared__data_a2e48217c892c5f716b469fd513ce6c77}{res}}
-\item 
+\begin{DoxyCompactList}\small\item\em Instance of \mbox{\hyperlink{structshared__data_1_1restart__type}{restart\+\_\+type}} for reading restart files. \end{DoxyCompactList}\item 
 character(len= $\ast$), parameter \mbox{\hyperlink{namespaceshared__data_a73f57f5cf348bf3d0dd9e0b8eaf8e514}{resfile\+\_\+nml}} = \textquotesingle{}res\+\_\+nml.\+txt\textquotesingle{}
 \begin{DoxyCompactList}\small\item\em Name of restart file storing RESTART namelist. \end{DoxyCompactList}\item 
 character(len= $\ast$), parameter \mbox{\hyperlink{namespaceshared__data_a92015ef2d63f7ea1e895d120fad6341f}{resfile\+\_\+etot}} = \textquotesingle{}res\+\_\+etot.\+nc\textquotesingle{}
 \begin{DoxyCompactList}\small\item\em Name of restart file storing total energies. \end{DoxyCompactList}\item 
 character(len= $\ast$), parameter \mbox{\hyperlink{namespaceshared__data_a3e81757a05da8c837c39bae8e9bcedae}{resfile\+\_\+epar}} = \textquotesingle{}res\+\_\+epar.\+nc\textquotesingle{}
 \begin{DoxyCompactList}\small\item\em Name of restart file storing parameter energies. \end{DoxyCompactList}\item 
-character(len= $\ast$), parameter \mbox{\hyperlink{namespaceshared__data_adf411355aadabf7c289e7105e57e02d4}{resfile\+\_\+chn}} = \textquotesingle{}res\+\_\+chains.\+nc\textquotesingle{}
-\begin{DoxyCompactList}\small\item\em Name of restart file storing energy chains. \end{DoxyCompactList}\item 
+integer(int64) \mbox{\hyperlink{namespaceshared__data_a075d5ae0a459d951f493b64f47a3a083}{seed}}
+\begin{DoxyCompactList}\small\item\em Seed for the random number generator. \end{DoxyCompactList}\item 
 integer(int32) \mbox{\hyperlink{namespaceshared__data_a076a0c3c193b4adf2a52bcb9acaa2565}{run\+\_\+steps}}
 \begin{DoxyCompactList}\small\item\em Number of MMC steps after burning (for MPI worksharing) \end{DoxyCompactList}\item 
 integer(int32) \mbox{\hyperlink{namespaceshared__data_a3be2ef6260b4058766e7a270721fb686}{tstep}}
@@ -67,10 +67,12 @@ integer(int32) \mbox{\hyperlink{namespaceshared__data_a28246c61bb5db3025877f5369
 \begin{DoxyCompactList}\small\item\em Start value for alpha grid, can be $>$1 for restarts. \end{DoxyCompactList}\item 
 integer(int32) \mbox{\hyperlink{namespaceshared__data_abd55f854da9e9234d715022110bd076a}{bond\+\_\+start}} =1
 \begin{DoxyCompactList}\small\item\em Start value for bondlength grid, can be $>$1 for restarts. \end{DoxyCompactList}\item 
-integer(int32) \mbox{\hyperlink{namespaceshared__data_ace7224073c1af78df0dc9f7f0dc62cfd}{cgrid\+\_\+start}} =1
+integer(int32) \mbox{\hyperlink{namespaceshared__data_aabc68bfe6e28b41b5a50d5c25e4779bd}{grid\+\_\+start}} =1
 \begin{DoxyCompactList}\small\item\em Start value for grid search of parameter c, can be $>$1 for restarts. \end{DoxyCompactList}\item 
-integer(int32) \mbox{\hyperlink{namespaceshared__data_a72cd266e5f18560f2d8c04f99c244901}{cauto\+\_\+start}} =1
+integer(int32) \mbox{\hyperlink{namespaceshared__data_a3d5ecb5dcee145df7f687a011bc3c3d8}{auto\+\_\+start}} =1
 \begin{DoxyCompactList}\small\item\em Start value for automatic search of parameter c, can be $>$1 for restarts. \end{DoxyCompactList}\item 
+integer(int32) \mbox{\hyperlink{namespaceshared__data_a6263d962b34a090fa515dc809caf695b}{i\+\_\+bond}}
+\begin{DoxyCompactList}\small\item\em Index of bondlength grid value, for restart writing. \end{DoxyCompactList}\item 
 integer \mbox{\hyperlink{namespaceshared__data_af5798eba5b1c4594d4c3c9648d732e9e}{logid}}
 \begin{DoxyCompactList}\small\item\em To store logfile unit. \end{DoxyCompactList}\item 
 logical \mbox{\hyperlink{namespaceshared__data_a829b5d4edec8365a446e8caeb244e9c9}{i\+\_\+log}} =.FALSE.
@@ -123,11 +125,11 @@ System of interest\+: QHO, H2plus, H2.
 
 
 
-Definition at line 134 of file shared\+\_\+data.\+f90.
+Definition at line 127 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{134     \textcolor{keywordtype}{character(len=10)} :: p\_system}
+\DoxyCodeLine{127     \textcolor{keywordtype}{character(len=10)} :: p\_system}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a9285af0408bde68c647a77c75900929d}\label{namespaceshared__data_a9285af0408bde68c647a77c75900929d}} 
@@ -142,11 +144,11 @@ Tag for equilibration runs.
 
 
 
-Definition at line 135 of file shared\+\_\+data.\+f90.
+Definition at line 128 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{135     \textcolor{keywordtype}{logical} :: run\_equil=.false.        }
+\DoxyCodeLine{128     \textcolor{keywordtype}{logical} :: run\_equil=.false.        }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a2938e794296c80673d3b14040bc92798}\label{namespaceshared__data_a2938e794296c80673d3b14040bc92798}} 
@@ -161,11 +163,11 @@ Tag for restart runs.
 
 
 
-Definition at line 136 of file shared\+\_\+data.\+f90.
+Definition at line 129 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{136     \textcolor{keywordtype}{logical} :: run\_restart =.false.     }
+\DoxyCodeLine{129     \textcolor{keywordtype}{logical} :: run\_restart =.false.     }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_ade9d4ec979d01a52cdef8fc778abfa1d}\label{namespaceshared__data_ade9d4ec979d01a52cdef8fc778abfa1d}} 
@@ -180,11 +182,11 @@ Tag for writing restart files.
 
 
 
-Definition at line 137 of file shared\+\_\+data.\+f90.
+Definition at line 130 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{137     \textcolor{keywordtype}{logical} :: write\_restart = .true.   }
+\DoxyCodeLine{130     \textcolor{keywordtype}{logical} :: write\_restart = .true.   }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a0e5ef617d0a232c0e7e36960aad8aff6}\label{namespaceshared__data_a0e5ef617d0a232c0e7e36960aad8aff6}} 
@@ -199,11 +201,11 @@ Interval of MMC loops between writing restart file.
 
 
 
-Definition at line 138 of file shared\+\_\+data.\+f90.
+Definition at line 131 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{138     \textcolor{keywordtype}{integer(int32)} :: restart\_num = 1}
+\DoxyCodeLine{131     \textcolor{keywordtype}{integer(int32)} :: restart\_num = 1}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a3ea265f2c8a3797c4d1a2b33059e1877}\label{namespaceshared__data_a3ea265f2c8a3797c4d1a2b33059e1877}} 
@@ -218,11 +220,11 @@ Tag to write final MMC chains.
 
 
 
-Definition at line 139 of file shared\+\_\+data.\+f90.
+Definition at line 132 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{139     \textcolor{keywordtype}{logical} :: write\_chains =.false.    }
+\DoxyCodeLine{132     \textcolor{keywordtype}{logical} :: write\_chains =.false.    }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_acf2cbacc5b2b4d8ee26c96dc7062aa9b}\label{namespaceshared__data_acf2cbacc5b2b4d8ee26c96dc7062aa9b}} 
@@ -237,11 +239,11 @@ Tag to write logfile.
 
 
 
-Definition at line 140 of file shared\+\_\+data.\+f90.
+Definition at line 133 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{140     \textcolor{keywordtype}{logical} :: write\_log = .false.      }
+\DoxyCodeLine{133     \textcolor{keywordtype}{logical} :: write\_log = .false.      }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a2901a107f2659faf5c03f8c35f64e68f}\label{namespaceshared__data_a2901a107f2659faf5c03f8c35f64e68f}} 
@@ -256,11 +258,11 @@ Default Net\+CDF output file name.
 
 
 
-Definition at line 141 of file shared\+\_\+data.\+f90.
+Definition at line 134 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{141     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{parameter} :: outfile = \textcolor{stringliteral}{'results.nc'}}
+\DoxyCodeLine{134     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{parameter} :: outfile = \textcolor{stringliteral}{'results.nc'}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_ad4da3a0a55e0563861cee8b2e6799be0}\label{namespaceshared__data_ad4da3a0a55e0563861cee8b2e6799be0}} 
@@ -275,11 +277,11 @@ Default log name (if write\+\_\+log is True)
 
 
 
-Definition at line 142 of file shared\+\_\+data.\+f90.
+Definition at line 135 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{142     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{parameter} :: logfile = \textcolor{stringliteral}{'out.log'}}
+\DoxyCodeLine{135     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{parameter} :: logfile = \textcolor{stringliteral}{'out.log'}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a7503c2b3bd10f3ee43c4cf9964c42ab2}\label{namespaceshared__data_a7503c2b3bd10f3ee43c4cf9964c42ab2}} 
@@ -294,11 +296,11 @@ To store inputs for QHO system.
 
 
 
-Definition at line 145 of file shared\+\_\+data.\+f90.
+Definition at line 138 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{145     \textcolor{keywordtype}{type}(QHO\_type) :: QHO}
+\DoxyCodeLine{138     \textcolor{keywordtype}{type}(QHO\_type) :: QHO}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a1e9e95c9ea52c9aa2ec2f05b8d65e4f3}\label{namespaceshared__data_a1e9e95c9ea52c9aa2ec2f05b8d65e4f3}} 
@@ -313,11 +315,11 @@ To store inputs for H2 ion system.
 
 
 
-Definition at line 146 of file shared\+\_\+data.\+f90.
+Definition at line 139 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{146     \textcolor{keywordtype}{type}(H2plus\_type) :: H2plus}
+\DoxyCodeLine{139     \textcolor{keywordtype}{type}(H2plus\_type) :: H2plus}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a1703912ee00414a4aaf1a41d3c167694}\label{namespaceshared__data_a1703912ee00414a4aaf1a41d3c167694}} 
@@ -332,11 +334,11 @@ To store inputs for H2 molecule system.
 
 
 
-Definition at line 147 of file shared\+\_\+data.\+f90.
+Definition at line 140 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{147     \textcolor{keywordtype}{type}(H2\_type) :: H2}
+\DoxyCodeLine{140     \textcolor{keywordtype}{type}(H2\_type) :: H2}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a13face34601b80a8b6c91c442508e4f3}\label{namespaceshared__data_a13face34601b80a8b6c91c442508e4f3}} 
@@ -351,11 +353,11 @@ Default total steps for each QHO equilibration MMC chain.
 
 
 
-Definition at line 148 of file shared\+\_\+data.\+f90.
+Definition at line 141 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{148     \textcolor{keywordtype}{integer(int32)} :: d\_eqsteps\_qho =100000\_int32    }
+\DoxyCodeLine{141     \textcolor{keywordtype}{integer(int32)} :: d\_eqsteps\_qho =100000\_int32    }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_aee5816e6032ee02faa391b7fb22cbaae}\label{namespaceshared__data_aee5816e6032ee02faa391b7fb22cbaae}} 
@@ -370,11 +372,11 @@ Default total steps for each H2plus equilibration MMC chain.
 
 
 
-Definition at line 149 of file shared\+\_\+data.\+f90.
+Definition at line 142 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{149     \textcolor{keywordtype}{integer(int32)} :: d\_eqsteps\_h2plus =100000\_int32 }
+\DoxyCodeLine{142     \textcolor{keywordtype}{integer(int32)} :: d\_eqsteps\_h2plus =100000\_int32 }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a86df366bd5fa28f0fd42a0ae6c1fd785}\label{namespaceshared__data_a86df366bd5fa28f0fd42a0ae6c1fd785}} 
@@ -389,11 +391,11 @@ Default total steps for each H2 equilibration MMC chain.
 
 
 
-Definition at line 150 of file shared\+\_\+data.\+f90.
+Definition at line 143 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{150     \textcolor{keywordtype}{integer(int32)} :: d\_eqsteps\_h2 =100000\_int32     }
+\DoxyCodeLine{143     \textcolor{keywordtype}{integer(int32)} :: d\_eqsteps\_h2 =100000\_int32     }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a2e48217c892c5f716b469fd513ce6c77}\label{namespaceshared__data_a2e48217c892c5f716b469fd513ce6c77}} 
@@ -404,11 +406,15 @@ Definition at line 150 of file shared\+\_\+data.\+f90.
 
 
 
-Definition at line 153 of file shared\+\_\+data.\+f90.
+Instance of \mbox{\hyperlink{structshared__data_1_1restart__type}{restart\+\_\+type}} for reading restart files. 
+
+
+
+Definition at line 146 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{153     \textcolor{keywordtype}{type}(restart\_type) :: res}
+\DoxyCodeLine{146     \textcolor{keywordtype}{type}(restart\_type) :: res}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a73f57f5cf348bf3d0dd9e0b8eaf8e514}\label{namespaceshared__data_a73f57f5cf348bf3d0dd9e0b8eaf8e514}} 
@@ -423,11 +429,11 @@ Name of restart file storing RESTART namelist.
 
 
 
-Definition at line 154 of file shared\+\_\+data.\+f90.
+Definition at line 147 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{154     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{parameter} :: resfile\_nml = \textcolor{stringliteral}{'res\_nml.txt'}}
+\DoxyCodeLine{147     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{parameter} :: resfile\_nml = \textcolor{stringliteral}{'res\_nml.txt'}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a92015ef2d63f7ea1e895d120fad6341f}\label{namespaceshared__data_a92015ef2d63f7ea1e895d120fad6341f}} 
@@ -442,11 +448,11 @@ Name of restart file storing total energies.
 
 
 
-Definition at line 155 of file shared\+\_\+data.\+f90.
+Definition at line 148 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{155     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{parameter} :: resfile\_etot = \textcolor{stringliteral}{'res\_etot.nc'}}
+\DoxyCodeLine{148     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{parameter} :: resfile\_etot = \textcolor{stringliteral}{'res\_etot.nc'}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a3e81757a05da8c837c39bae8e9bcedae}\label{namespaceshared__data_a3e81757a05da8c837c39bae8e9bcedae}} 
@@ -461,30 +467,30 @@ Name of restart file storing parameter energies.
 
 
 
-Definition at line 156 of file shared\+\_\+data.\+f90.
+Definition at line 149 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{156     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{parameter} :: resfile\_epar = \textcolor{stringliteral}{'res\_epar.nc'}}
+\DoxyCodeLine{149     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{parameter} :: resfile\_epar = \textcolor{stringliteral}{'res\_epar.nc'}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{namespaceshared__data_adf411355aadabf7c289e7105e57e02d4}\label{namespaceshared__data_adf411355aadabf7c289e7105e57e02d4}} 
-\index{shared\_data@{shared\_data}!resfile\_chn@{resfile\_chn}}
-\index{resfile\_chn@{resfile\_chn}!shared\_data@{shared\_data}}
-\doxysubsubsection{\texorpdfstring{resfile\_chn}{resfile\_chn}}
-{\footnotesize\ttfamily character(len=$\ast$), parameter shared\+\_\+data\+::resfile\+\_\+chn = \textquotesingle{}res\+\_\+chains.\+nc\textquotesingle{}}
+\mbox{\Hypertarget{namespaceshared__data_a075d5ae0a459d951f493b64f47a3a083}\label{namespaceshared__data_a075d5ae0a459d951f493b64f47a3a083}} 
+\index{shared\_data@{shared\_data}!seed@{seed}}
+\index{seed@{seed}!shared\_data@{shared\_data}}
+\doxysubsubsection{\texorpdfstring{seed}{seed}}
+{\footnotesize\ttfamily integer(int64) shared\+\_\+data\+::seed}
 
 
 
-Name of restart file storing energy chains. 
+Seed for the random number generator. 
 
 
 
-Definition at line 157 of file shared\+\_\+data.\+f90.
+Definition at line 152 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{157     \textcolor{keywordtype}{character(len=*)}, \textcolor{keywordtype}{parameter} :: resfile\_chn = \textcolor{stringliteral}{'res\_chains.nc'}}
+\DoxyCodeLine{152     \textcolor{keywordtype}{integer(int64)} :: seed}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a076a0c3c193b4adf2a52bcb9acaa2565}\label{namespaceshared__data_a076a0c3c193b4adf2a52bcb9acaa2565}} 
@@ -499,11 +505,11 @@ Number of MMC steps after burning (for MPI worksharing)
 
 
 
-Definition at line 160 of file shared\+\_\+data.\+f90.
+Definition at line 153 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{160     \textcolor{keywordtype}{integer(int32)} :: run\_steps}
+\DoxyCodeLine{153     \textcolor{keywordtype}{integer(int32)} :: run\_steps}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a3be2ef6260b4058766e7a270721fb686}\label{namespaceshared__data_a3be2ef6260b4058766e7a270721fb686}} 
@@ -518,11 +524,11 @@ Interval of steps for thinning in non-\/equil runs (for MPI worksharing)
 
 
 
-Definition at line 161 of file shared\+\_\+data.\+f90.
+Definition at line 154 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{161     \textcolor{keywordtype}{integer(int32)} :: tstep}
+\DoxyCodeLine{154     \textcolor{keywordtype}{integer(int32)} :: tstep}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a28246c61bb5db3025877f5369254d399}\label{namespaceshared__data_a28246c61bb5db3025877f5369254d399}} 
@@ -537,11 +543,11 @@ Start value for alpha grid, can be $>$1 for restarts.
 
 
 
-Definition at line 162 of file shared\+\_\+data.\+f90.
+Definition at line 155 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{162     \textcolor{keywordtype}{integer(int32)} :: alpha\_start=1}
+\DoxyCodeLine{155     \textcolor{keywordtype}{integer(int32)} :: alpha\_start=1}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_abd55f854da9e9234d715022110bd076a}\label{namespaceshared__data_abd55f854da9e9234d715022110bd076a}} 
@@ -556,18 +562,18 @@ Start value for bondlength grid, can be $>$1 for restarts.
 
 
 
-Definition at line 163 of file shared\+\_\+data.\+f90.
+Definition at line 156 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{163     \textcolor{keywordtype}{integer(int32)} :: bond\_start=1}
+\DoxyCodeLine{156     \textcolor{keywordtype}{integer(int32)} :: bond\_start=1}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{namespaceshared__data_ace7224073c1af78df0dc9f7f0dc62cfd}\label{namespaceshared__data_ace7224073c1af78df0dc9f7f0dc62cfd}} 
-\index{shared\_data@{shared\_data}!cgrid\_start@{cgrid\_start}}
-\index{cgrid\_start@{cgrid\_start}!shared\_data@{shared\_data}}
-\doxysubsubsection{\texorpdfstring{cgrid\_start}{cgrid\_start}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::cgrid\+\_\+start =1}
+\mbox{\Hypertarget{namespaceshared__data_aabc68bfe6e28b41b5a50d5c25e4779bd}\label{namespaceshared__data_aabc68bfe6e28b41b5a50d5c25e4779bd}} 
+\index{shared\_data@{shared\_data}!grid\_start@{grid\_start}}
+\index{grid\_start@{grid\_start}!shared\_data@{shared\_data}}
+\doxysubsubsection{\texorpdfstring{grid\_start}{grid\_start}}
+{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::grid\+\_\+start =1}
 
 
 
@@ -575,18 +581,18 @@ Start value for grid search of parameter c, can be $>$1 for restarts.
 
 
 
-Definition at line 164 of file shared\+\_\+data.\+f90.
+Definition at line 157 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{164     \textcolor{keywordtype}{integer(int32)} :: cgrid\_start=1}
+\DoxyCodeLine{157     \textcolor{keywordtype}{integer(int32)} :: grid\_start=1}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{namespaceshared__data_a72cd266e5f18560f2d8c04f99c244901}\label{namespaceshared__data_a72cd266e5f18560f2d8c04f99c244901}} 
-\index{shared\_data@{shared\_data}!cauto\_start@{cauto\_start}}
-\index{cauto\_start@{cauto\_start}!shared\_data@{shared\_data}}
-\doxysubsubsection{\texorpdfstring{cauto\_start}{cauto\_start}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::cauto\+\_\+start =1}
+\mbox{\Hypertarget{namespaceshared__data_a3d5ecb5dcee145df7f687a011bc3c3d8}\label{namespaceshared__data_a3d5ecb5dcee145df7f687a011bc3c3d8}} 
+\index{shared\_data@{shared\_data}!auto\_start@{auto\_start}}
+\index{auto\_start@{auto\_start}!shared\_data@{shared\_data}}
+\doxysubsubsection{\texorpdfstring{auto\_start}{auto\_start}}
+{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::auto\+\_\+start =1}
 
 
 
@@ -594,11 +600,30 @@ Start value for automatic search of parameter c, can be $>$1 for restarts.
 
 
 
-Definition at line 165 of file shared\+\_\+data.\+f90.
+Definition at line 158 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{165     \textcolor{keywordtype}{integer(int32)} :: cauto\_start=1}
+\DoxyCodeLine{158     \textcolor{keywordtype}{integer(int32)} :: auto\_start=1}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceshared__data_a6263d962b34a090fa515dc809caf695b}\label{namespaceshared__data_a6263d962b34a090fa515dc809caf695b}} 
+\index{shared\_data@{shared\_data}!i\_bond@{i\_bond}}
+\index{i\_bond@{i\_bond}!shared\_data@{shared\_data}}
+\doxysubsubsection{\texorpdfstring{i\_bond}{i\_bond}}
+{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::i\+\_\+bond}
+
+
+
+Index of bondlength grid value, for restart writing. 
+
+
+
+Definition at line 159 of file shared\+\_\+data.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{159     \textcolor{keywordtype}{integer(int32)} :: i\_bond}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_af5798eba5b1c4594d4c3c9648d732e9e}\label{namespaceshared__data_af5798eba5b1c4594d4c3c9648d732e9e}} 
@@ -613,11 +638,11 @@ To store logfile unit.
 
 
 
-Definition at line 166 of file shared\+\_\+data.\+f90.
+Definition at line 160 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{166     \textcolor{keywordtype}{integer} :: logid}
+\DoxyCodeLine{160     \textcolor{keywordtype}{integer} :: logid}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a829b5d4edec8365a446e8caeb244e9c9}\label{namespaceshared__data_a829b5d4edec8365a446e8caeb244e9c9}} 
@@ -632,11 +657,11 @@ Indicates whether the processor needs to write the logfile.
 
 
 
-Definition at line 167 of file shared\+\_\+data.\+f90.
+Definition at line 161 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{167     \textcolor{keywordtype}{logical} :: i\_log=.false.        }
+\DoxyCodeLine{161     \textcolor{keywordtype}{logical} :: i\_log=.false.        }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_ade04a1c1d09d144038a197f87cdd6c6b}\label{namespaceshared__data_ade04a1c1d09d144038a197f87cdd6c6b}} 
@@ -651,11 +676,11 @@ Maximum length of energy chains for writing to net\+CDF files.
 
 
 
-Definition at line 168 of file shared\+\_\+data.\+f90.
+Definition at line 162 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{168     \textcolor{keywordtype}{integer} :: max\_chain\_len=100000}
+\DoxyCodeLine{162     \textcolor{keywordtype}{integer} :: max\_chain\_len=100000}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_af28e44e4992413c934847d53d0baf9df}\label{namespaceshared__data_af28e44e4992413c934847d53d0baf9df}} 
@@ -670,11 +695,11 @@ MPI error flag.
 
 
 
-Definition at line 171 of file shared\+\_\+data.\+f90.
+Definition at line 165 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{171     \textcolor{keywordtype}{integer(int32)}  :: mpierr}
+\DoxyCodeLine{165     \textcolor{keywordtype}{integer(int32)}  :: mpierr}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_abc58d0e1fd387c74f530b35c02e97c77}\label{namespaceshared__data_abc58d0e1fd387c74f530b35c02e97c77}} 
@@ -689,11 +714,11 @@ Number of processors.
 
 
 
-Definition at line 172 of file shared\+\_\+data.\+f90.
+Definition at line 166 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{172     \textcolor{keywordtype}{integer(int32)}  :: p}
+\DoxyCodeLine{166     \textcolor{keywordtype}{integer(int32)}  :: p}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_aeef8efadc3d25901a576ca7650fe1c38}\label{namespaceshared__data_aeef8efadc3d25901a576ca7650fe1c38}} 
@@ -708,11 +733,11 @@ Rank of current processor.
 
 
 
-Definition at line 173 of file shared\+\_\+data.\+f90.
+Definition at line 167 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{173     \textcolor{keywordtype}{integer(int32)}  :: my\_rank}
+\DoxyCodeLine{167     \textcolor{keywordtype}{integer(int32)}  :: my\_rank}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_ae93449eb2c08ee77817e0b27aef94aae}\label{namespaceshared__data_ae93449eb2c08ee77817e0b27aef94aae}} 
@@ -727,11 +752,11 @@ Number of steps per processor.
 
 
 
-Definition at line 174 of file shared\+\_\+data.\+f90.
+Definition at line 168 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{174     \textcolor{keywordtype}{integer(int32)}  :: my\_steps}
+\DoxyCodeLine{168     \textcolor{keywordtype}{integer(int32)}  :: my\_steps}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a53aef60e9a1d10373ace8fe74a9db810}\label{namespaceshared__data_a53aef60e9a1d10373ace8fe74a9db810}} 
@@ -746,11 +771,11 @@ Processor rank for MPI communications.
 
 
 
-Definition at line 175 of file shared\+\_\+data.\+f90.
+Definition at line 169 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{175     \textcolor{keywordtype}{integer(int32)}  :: ip}
+\DoxyCodeLine{169     \textcolor{keywordtype}{integer(int32)}  :: ip}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_aea420d50119313f13ba1ca05064c4125}\label{namespaceshared__data_aea420d50119313f13ba1ca05064c4125}} 
@@ -765,11 +790,11 @@ Processor seed for MPI communications.
 
 
 
-Definition at line 176 of file shared\+\_\+data.\+f90.
+Definition at line 170 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{176     \textcolor{keywordtype}{integer(int64)}  :: ip\_seed}
+\DoxyCodeLine{170     \textcolor{keywordtype}{integer(int64)}  :: ip\_seed}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a90bd4a549f560641e7eb94862701ff2c}\label{namespaceshared__data_a90bd4a549f560641e7eb94862701ff2c}} 
@@ -784,11 +809,11 @@ Unique tag for communicating rank seeds.
 
 
 
-Definition at line 177 of file shared\+\_\+data.\+f90.
+Definition at line 171 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{177     \textcolor{keywordtype}{integer(int32)}  :: tag\_seed=10}
+\DoxyCodeLine{171     \textcolor{keywordtype}{integer(int32)}  :: tag\_seed=10}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_ab233d5d23549fb2fa6bd5173c9253027}\label{namespaceshared__data_ab233d5d23549fb2fa6bd5173c9253027}} 
@@ -803,11 +828,11 @@ Length of chain on a processor, after burning \& thinning.
 
 
 
-Definition at line 178 of file shared\+\_\+data.\+f90.
+Definition at line 172 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{178     \textcolor{keywordtype}{integer(int32)}  :: my\_size}
+\DoxyCodeLine{172     \textcolor{keywordtype}{integer(int32)}  :: my\_size}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_ade3f4c3e4dbfe45e09682164a27ead54}\label{namespaceshared__data_ade3f4c3e4dbfe45e09682164a27ead54}} 
@@ -822,11 +847,11 @@ Total length of chains across processors, after burning and thinning.
 
 
 
-Definition at line 179 of file shared\+\_\+data.\+f90.
+Definition at line 173 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{179     \textcolor{keywordtype}{integer(int32)}  :: tot\_size}
+\DoxyCodeLine{173     \textcolor{keywordtype}{integer(int32)}  :: tot\_size}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_aa6eec3f7d39e431314c9b039303805b5}\label{namespaceshared__data_aa6eec3f7d39e431314c9b039303805b5}} 
@@ -841,11 +866,11 @@ Status of MPI Recv commands.
 
 
 
-Definition at line 180 of file shared\+\_\+data.\+f90.
+Definition at line 174 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{180     \textcolor{keywordtype}{integer},\textcolor{keywordtype}{dimension(MPI\_STATUS\_SIZE)} :: status}
+\DoxyCodeLine{174     \textcolor{keywordtype}{integer},\textcolor{keywordtype}{dimension(MPI\_STATUS\_SIZE)} :: status}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a647c8ec22331dc222502337b5b94d808}\label{namespaceshared__data_a647c8ec22331dc222502337b5b94d808}} 
@@ -860,11 +885,11 @@ Reused multiplicative factor, representing division by total number of MMC steps
 
 
 
-Definition at line 181 of file shared\+\_\+data.\+f90.
+Definition at line 175 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{181 \textcolor{keywordtype}{    real}(real64)    :: per\_step}
+\DoxyCodeLine{175 \textcolor{keywordtype}{    real}(real64)    :: per\_step}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a78640b831cb27b9066c5fe420d83391d}\label{namespaceshared__data_a78640b831cb27b9066c5fe420d83391d}} 
@@ -879,11 +904,11 @@ Reused multiplicative factor, representing division by number of processors (p)
 
 
 
-Definition at line 182 of file shared\+\_\+data.\+f90.
+Definition at line 176 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{182 \textcolor{keywordtype}{    real}(real64)    :: per\_proc}
+\DoxyCodeLine{176 \textcolor{keywordtype}{    real}(real64)    :: per\_proc}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespaceshared__data_a7355502513ab54ba438c558150499d39}\label{namespaceshared__data_a7355502513ab54ba438c558150499d39}} 
@@ -898,10 +923,10 @@ Reused multiplicative factor, representing division by square of number of proce
 
 
 
-Definition at line 183 of file shared\+\_\+data.\+f90.
+Definition at line 177 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{183 \textcolor{keywordtype}{    real}(real64)    :: per\_proc2}
+\DoxyCodeLine{177 \textcolor{keywordtype}{    real}(real64)    :: per\_proc2}
 
 \end{DoxyCode}

@@ -1,52 +1,52 @@
 <map id="driver" name="driver">
-<area shape="rect" id="node1" title="Subroutine for running the main code (needed for Doxygen compatability)." alt="" coords="5,360,60,387"/>
-<area shape="rect" id="node2" href="$namespacevqmc.html#a70dc752a6b037f137c1264dd8753bac2" title="Automatically finds the best variational parameter &#160;for the &#160;problem at a given bond length." alt="" coords="125,309,238,336"/>
-<area shape="rect" id="node6" href="$namespacevqmc.html#a0a07ef5b098cdc478b253de26c49aadc" title="Automatically finds the best variational parameter &#160;for the &#160;problem at given bond length." alt="" coords="109,5,253,32"/>
-<area shape="rect" id="node8" href="$namespacevqmc.html#ab066adc59fec1fcaaba764a46128c935" title="Performs VQMC on an array of values for the variational parameter , outputting energy traces for each..." alt="" coords="124,360,239,387"/>
-<area shape="rect" id="node9" href="$namespacevqmc.html#a169c06cb168984ca6285231ad80a0243" title="Performs VQMC on an array of values for the variational parameter , outputting energy traces for each..." alt="" coords="108,56,255,83"/>
-<area shape="rect" id="node10" href="$namespacevqmc.html#a7bf32b6cd68452e6808f9e840b0484c3" title="Performs VQMC on an array of values for the variational parameter , outputting energy traces for each..." alt="" coords="124,208,239,235"/>
-<area shape="rect" id="node12" href="$namespacevqmc.html#a08bc46270707aab6c2d5114b589c176c" title="Performs a grid search to find the optimal value for the variational parameter &#160;in the &#160;problem." alt="" coords="127,259,236,285"/>
-<area shape="rect" id="node13" href="$namespacevqmc.html#a70c9fcecdf5f2a6ffea7dd3c4f0c1eeb" title="Performs a grid search to find the optimal value for the variational parameter &#160;in the &#160;problem." alt="" coords="111,107,251,133"/>
-<area shape="rect" id="node14" href="$namespacevqmc.html#a726aff689b64924586b655d2e8a846d1" title="Performs VQMC on an array of values for the variational parameter ." alt="" coords="127,157,236,184"/>
-<area shape="rect" id="node15" href="$namespacesolvers.html#a38259c21a02a250a91f45d79e4165742" title="Calculates a value for a given the bond length s by Newton&#45;Raphson iteration." alt="" coords="565,868,692,895"/>
-<area shape="rect" id="node16" href="$namespacevqmc.html#aed182179994b5465f5466b4d909a764e" title="Initialiser for the random number generator." alt="" coords="127,1285,236,1312"/>
-<area shape="rect" id="node17" href="$namespacevqmc.html#a6b89c5b7a64a3e438695787b90a62359" title="Adaptation of numpy&#39;s linspace function." alt="" coords="575,1209,683,1236"/>
-<area shape="rect" id="node18" href="$namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea" title="Main input parser function that reads the input file params.txt and calls the required namelist parse..." alt="" coords="119,1357,243,1398"/>
-<area shape="rect" id="node24" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="119,624,243,651"/>
-<area shape="rect" id="node48" href="$namespacewrite__netcdf.html#a8d49ffe8b78e85c17f3127d8dc89a83b" title="Output results of H2 MCMC run." alt="" coords="118,1559,245,1601"/>
-<area shape="rect" id="node50" href="$namespacewrite__netcdf.html#a4bf61fdf7f8ca9add5bb9b1663906542" title="Output results of H2plus MCMC run." alt="" coords="118,1446,245,1487"/>
-<area shape="rect" id="node3" href="$namespacevqmc.html#a12f60b20a934a7eb8c6e3cdaaac0b1cc" title="Performs VQMC for the &#160;system." alt="" coords="340,107,460,133"/>
-<area shape="rect" id="node4" href="$namespacevqmc.html#a01b80444204a0cd0b5cddde82cbc7651" title="Implementation of Press et al&#39;s random number generator." alt="" coords="760,107,845,133"/>
-<area shape="rect" id="node5" href="$namespacevqmc.html#a62ec9b662e5d9b46ec37d52ff93cb335" title="Draws a sample from a normal distribution using the Box&#45;Muller transform." alt="" coords="554,107,703,133"/>
-<area shape="rect" id="node7" href="$namespacevqmc.html#a8213f95bb390d7a9eff8260f527c00b8" title="Performs VQMC for the &#160;system." alt="" coords="325,5,475,32"/>
-<area shape="rect" id="node11" href="$namespacevqmc.html#a05315751002a983c9976851c9f21f0f0" title="Performs VQMC for the QHO system." alt="" coords="340,56,460,83"/>
-<area shape="rect" id="node19" href="$namespaceinput__parser.html#a17a93a7f5e509724de92cf330dbc597a" title="Reads the CONTROL namelist in params.txt and assigns its data to the corresponding global variables d..." alt="" coords="338,1286,462,1327"/>
-<area shape="rect" id="node20" href="$namespaceinput__parser.html#a163a65b1b9201a421da32ba2a7c92148" title="Reads the PARAMETER namelist in params.txt for the H2 molecule system. Assigns the input data to the ..." alt="" coords="327,1352,473,1379"/>
-<area shape="rect" id="node21" href="$namespaceinput__parser.html#a3ebe204fa7f63e19fbf29c36f580ee74" title="Reads the PARAMETER namelist in params.txt for the H2 ion system. Assigns the input data to the corre..." alt="" coords="338,1403,462,1445"/>
-<area shape="rect" id="node22" href="$namespaceinput__parser.html#aa9a77c1395d69d54ce38420acdb3f87f" title="Reads the PARAMETER namelist in params.txt for the QHO system. Assigns the input data to the correspo..." alt="" coords="324,1469,476,1496"/>
-<area shape="rect" id="node23" href="$namespacerestart__fns.html#a34c01a8b391a8c3a4ba40e9f5ec644d3" title="Reads the RESTART namelist in res_nml.txt. Assigns the input data to the corresponding variables in t..." alt="" coords="316,1520,484,1547"/>
-<area shape="rect" id="node25" href="$namespacetesting.html#a12c0e6c6469c658e1bd6b30e9fc3f5da" title="Tests the H1s_wfn function in the solvers module." alt="" coords="327,712,473,739"/>
-<area shape="rect" id="node27" href="$namespacetesting.html#abe0f62bb50fbee5f3ebd52fcd43bf1e6" title="Tests the H2s_wfn function in the solvers module." alt="" coords="327,325,473,352"/>
-<area shape="rect" id="node29" href="$namespacetesting.html#ade975131820e8f24948af289d5ad3879" title="Tests the H_2_cusp function in the solvers module." alt="" coords="324,813,476,840"/>
-<area shape="rect" id="node30" href="$namespacetesting.html#a313d78f649070a104e89a7535811d6a5" title="Tests the H_2_Energy function in the solvers module." alt="" coords="319,595,481,621"/>
-<area shape="rect" id="node32" href="$namespacetesting.html#a95de4751adddb42c59a3c44f9076db8d" title="Tests the H_2_plus_Energy function in the solvers module." alt="" coords="326,646,474,687"/>
-<area shape="rect" id="node34" href="$namespacetesting.html#a15f3412ac40e1145572a5269c6f1b971" title="Tests the H_2_plus_Prob function in the solvers module." alt="" coords="310,275,490,301"/>
-<area shape="rect" id="node35" href="$namespacetesting.html#a80e1436c4713c7cbaaf1e7caf11ad79c" title="Tests the H_2_plus_update_c function in the solvers module." alt="" coords="326,377,474,418"/>
-<area shape="rect" id="node36" href="$namespacetesting.html#ad1d0b5a5ff6ea4b8b8f29cc2a0e1982a" title="Tests the H_2_plus_wfn function in the solvers module." alt="" coords="312,443,488,469"/>
-<area shape="rect" id="node37" href="$namespacetesting.html#ad02da7e5d742236c571c965b4f80992c" title="Tests the H_2_Prob function in the solvers module." alt="" coords="325,493,475,520"/>
-<area shape="rect" id="node38" href="$namespacetesting.html#a068ba31ebf16e82a5baf606a38511048" title="Tests the H_2_update_beta function in the solvers module." alt="" coords="303,544,497,571"/>
-<area shape="rect" id="node39" href="$namespacetesting.html#a70f58338fe8165f65417781dae734e68" title="Tests the H_2_wfn function in the solvers module." alt="" coords="327,763,473,789"/>
-<area shape="rect" id="node40" href="$namespacetesting.html#a5fce9aca0a9c6be18a50bdb72c2facb1" title="Tests the linspace function in the vqmc module." alt="" coords="328,1184,472,1211"/>
-<area shape="rect" id="node41" href="$namespacetesting.html#a55374b3e27ef78754002549b1b423118" title="Tests the QHO_Energy function in the solvers module." alt="" coords="319,864,481,891"/>
-<area shape="rect" id="node42" href="$namespacetesting.html#a3cd96e3cb653762262d063e2aed44ab7" title="Tests the QHO_Prob function in the solvers module." alt="" coords="325,915,475,941"/>
-<area shape="rect" id="node43" href="$namespacetesting.html#adb38a97b7ceaad408410367f1510e997" title="Tests the ran1 function in the vqmc module." alt="" coords="568,1028,689,1055"/>
-<area shape="rect" id="node44" href="$namespacetesting.html#acbf13e7eaa077016d7d1712b58fc5223" title="Tests the random_normal function in the vqmc module." alt="" coords="331,158,469,199"/>
-<area shape="rect" id="node45" href="$namespacetesting.html#a2899caabc4df5d19bd020a37ff17eb51" title="Tests the VQMC_H_2 function in the vqmc module." alt="" coords="322,965,478,992"/>
-<area shape="rect" id="node46" href="$namespacetesting.html#acc995bb41da9539c11b06377089d74c6" title="Tests the VQMC_H_2_plus function in the vqmc module." alt="" coords="336,1017,464,1058"/>
-<area shape="rect" id="node47" href="$namespacetesting.html#addd4dbf88accb481fe96433855e3cb64" title="Tests the VQMC_QHO function in the vqmc module." alt="" coords="322,224,478,251"/>
-<area shape="rect" id="node26" href="$namespacesolvers.html#a7d32620a8f8a8780a0b0ef83c490e8f7" title="Calculates value of the wavefunction of a hydrogen 1s orbital." alt="" coords="569,712,688,739"/>
-<area shape="rect" id="node28" href="$namespacesolvers.html#a89943685e3d86544f0261f24fac44419" title="[DEPRECATED] Calculates value of the wavefunction of a hydrogen 2s orbital." alt="" coords="569,325,688,352"/>
-<area shape="rect" id="node31" href="$namespacesolvers.html#a9afbcdcc0405d544d4441e9786f440a2" title="{UPDATE ME} Calculates local energy for the &#160;problem." alt="" coords="561,595,697,621"/>
-<area shape="rect" id="node33" href="$namespacesolvers.html#a9cc5ffb282a9d15708307d84f6cf147f" title="Calculates local energy for the &#160;problem." alt="" coords="545,653,712,680"/>
-<area shape="rect" id="node49" href="$namespacewrite__netcdf.html#aca2bb13e88c9dbfc7d0027b1bd83d9d0" title="Checks error status at each point of NetCDF file build." alt="" coords="337,1571,463,1613"/>
+<area shape="rect" id="node1" title="Subroutine for running the main code (needed for Doxygen compatability)." alt="" coords="5,747,60,773"/>
+<area shape="rect" id="node2" href="$namespacevqmc.html#a70dc752a6b037f137c1264dd8753bac2" title="Automatically finds the best variational parameter &#160;for the &#160;problem at a given bond length." alt="" coords="147,56,261,83"/>
+<area shape="rect" id="node5" href="$namespacevqmc.html#a0a07ef5b098cdc478b253de26c49aadc" title="Automatically finds the best variational parameter &#160;for the &#160;problem at given bond length." alt="" coords="132,208,276,235"/>
+<area shape="rect" id="node7" href="$namespacevqmc.html#ab066adc59fec1fcaaba764a46128c935" title="Performs VQMC on an array of values for the variational parameter , outputting energy traces for each..." alt="" coords="147,107,261,133"/>
+<area shape="rect" id="node8" href="$namespacevqmc.html#a169c06cb168984ca6285231ad80a0243" title="Performs VQMC on an array of values for the variational parameter , outputting energy traces for each..." alt="" coords="131,259,277,285"/>
+<area shape="rect" id="node9" href="$namespacevqmc.html#a5d73324fcbe9c3ef7fe11309581af529" title="Performs VQMC on an array of values for the variational parameter , outputting energy traces for each..." alt="" coords="147,360,261,387"/>
+<area shape="rect" id="node11" href="$namespacevqmc.html#a08bc46270707aab6c2d5114b589c176c" title="Performs a grid search to find the optimal value for the variational parameter &#160;in the &#160;problem." alt="" coords="149,5,259,32"/>
+<area shape="rect" id="node12" href="$namespacevqmc.html#a70c9fcecdf5f2a6ffea7dd3c4f0c1eeb" title="Performs a grid search to find the optimal value for the variational parameter &#160;in the &#160;problem." alt="" coords="134,157,274,184"/>
+<area shape="rect" id="node13" href="$namespacevqmc.html#a726aff689b64924586b655d2e8a846d1" title="Performs VQMC on an array of values for the variational parameter ." alt="" coords="149,309,259,336"/>
+<area shape="rect" id="node14" href="$namespacesolvers.html#a38259c21a02a250a91f45d79e4165742" title="Calculates a value for a given the bond length s by Newton&#45;Raphson iteration." alt="" coords="591,528,717,555"/>
+<area shape="rect" id="node15" href="$namespacevqmc.html#aed182179994b5465f5466b4d909a764e" title="Initialiser for the random number generator." alt="" coords="149,1213,259,1240"/>
+<area shape="rect" id="node16" href="$namespacevqmc.html#a6b89c5b7a64a3e438695787b90a62359" title="Adaptation of numpy&#39;s linspace function." alt="" coords="600,1260,708,1287"/>
+<area shape="rect" id="node17" href="$namespacerestart__fns.html#a828b3e20a4454d53f3e9f89cb80ba310" title="Reads restart files with energies, variances and acceptence arrays." alt="" coords="119,1264,289,1291"/>
+<area shape="rect" id="node19" href="$namespacerestart__fns.html#aa562723430cab2682d10733e3a48bb7d" title="Reads restart files with energies, variances and acceptence arrays. Also reads two extra arrays of op..." alt="" coords="108,1315,300,1341"/>
+<area shape="rect" id="node20" href="$namespacerestart__fns.html#a22e2a14111f6a4ff686f7f7b2b47f206" title="Reads restart files with energies, variances and acceptence arrays. Also reads one extra array of opt..." alt="" coords="119,1366,289,1407"/>
+<area shape="rect" id="node21" href="$namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea" title="Main input parser function that reads the input file params.txt and calls the required namelist parse..." alt="" coords="142,1461,266,1502"/>
+<area shape="rect" id="node27" href="$namespacetesting.html#a426ebe0ada45b0bc1c4ebba3f469a5c6" title="Runs all of the unit tests, reporting successes and failures." alt="" coords="142,747,266,773"/>
+<area shape="rect" id="node47" href="$namespacewrite__netcdf.html#a8d49ffe8b78e85c17f3127d8dc89a83b" title="Output results of H2 MCMC run." alt="" coords="141,1591,267,1633"/>
+<area shape="rect" id="node49" href="$namespacewrite__netcdf.html#a4bf61fdf7f8ca9add5bb9b1663906542" title="Output results of H2plus MCMC run." alt="" coords="141,1526,267,1567"/>
+<area shape="rect" id="node50" href="$namespacerestart__fns.html#a08fcc6eaab415d68620bccc8048b610e" title="Writes the restart file res_nml.txt, using the current states of simulation variables." alt="" coords="145,1657,263,1698"/>
+<area shape="rect" id="node3" href="$namespacevqmc.html#a12f60b20a934a7eb8c6e3cdaaac0b1cc" title="Performs VQMC for the &#160;system." alt="" coords="385,56,505,83"/>
+<area shape="rect" id="node4" href="$namespacevqmc.html#a01b80444204a0cd0b5cddde82cbc7651" title="Implementation of Press et al&#39;s random number generator." alt="" coords="611,132,697,159"/>
+<area shape="rect" id="node6" href="$namespacevqmc.html#a8213f95bb390d7a9eff8260f527c00b8" title="Performs VQMC for the &#160;system." alt="" coords="370,107,521,133"/>
+<area shape="rect" id="node10" href="$namespacevqmc.html#a05315751002a983c9976851c9f21f0f0" title="Performs VQMC for the QHO system." alt="" coords="385,157,505,184"/>
+<area shape="rect" id="node18" href="$namespacerestart__fns.html#a23054262d0eeb017dee69fd5f9ca1250" title="Checks error status at each point of the NetCDF read." alt="" coords="387,1337,503,1378"/>
+<area shape="rect" id="node22" href="$namespaceinput__parser.html#a17a93a7f5e509724de92cf330dbc597a" title="Reads the CONTROL namelist in params.txt and assigns its data to the corresponding global variables d..." alt="" coords="383,1570,507,1611"/>
+<area shape="rect" id="node23" href="$namespaceinput__parser.html#a163a65b1b9201a421da32ba2a7c92148" title="Reads the PARAMETER namelist in params.txt for the H2 molecule system. Assigns the input data to the ..." alt="" coords="373,1636,518,1663"/>
+<area shape="rect" id="node24" href="$namespaceinput__parser.html#a3ebe204fa7f63e19fbf29c36f580ee74" title="Reads the PARAMETER namelist in params.txt for the H2 ion system. Assigns the input data to the corre..." alt="" coords="383,1402,507,1443"/>
+<area shape="rect" id="node25" href="$namespaceinput__parser.html#aa9a77c1395d69d54ce38420acdb3f87f" title="Reads the PARAMETER namelist in params.txt for the QHO system. Assigns the input data to the correspo..." alt="" coords="369,1468,521,1495"/>
+<area shape="rect" id="node26" href="$namespacerestart__fns.html#a34c01a8b391a8c3a4ba40e9f5ec644d3" title="Reads the RESTART namelist in res_nml.txt. Assigns the input data to the corresponding variables in t..." alt="" coords="361,1519,529,1545"/>
+<area shape="rect" id="node28" href="$namespacetesting.html#a12c0e6c6469c658e1bd6b30e9fc3f5da" title="Tests the H1s_wfn function in the solvers module." alt="" coords="373,1184,518,1211"/>
+<area shape="rect" id="node29" href="$namespacetesting.html#abe0f62bb50fbee5f3ebd52fcd43bf1e6" title="Tests the H2s_wfn function in the solvers module." alt="" coords="373,309,518,336"/>
+<area shape="rect" id="node30" href="$namespacetesting.html#ade975131820e8f24948af289d5ad3879" title="Tests the H_2_cusp function in the solvers module." alt="" coords="369,848,521,875"/>
+<area shape="rect" id="node31" href="$namespacetesting.html#a313d78f649070a104e89a7535811d6a5" title="Tests the H_2_Energy function in the solvers module." alt="" coords="364,360,527,387"/>
+<area shape="rect" id="node32" href="$namespacetesting.html#a95de4751adddb42c59a3c44f9076db8d" title="Tests the H_2_plus_Energy function in the solvers module." alt="" coords="371,411,519,453"/>
+<area shape="rect" id="node33" href="$namespacetesting.html#a15f3412ac40e1145572a5269c6f1b971" title="Tests the H_2_plus_Prob function in the solvers module." alt="" coords="355,477,535,504"/>
+<area shape="rect" id="node34" href="$namespacetesting.html#a80e1436c4713c7cbaaf1e7caf11ad79c" title="Tests the H_2_plus_update_c function in the solvers module." alt="" coords="371,529,519,570"/>
+<area shape="rect" id="node35" href="$namespacetesting.html#ad1d0b5a5ff6ea4b8b8f29cc2a0e1982a" title="Tests the H_2_plus_wfn function in the solvers module." alt="" coords="357,595,533,621"/>
+<area shape="rect" id="node36" href="$namespacetesting.html#ad02da7e5d742236c571c965b4f80992c" title="Tests the H_2_Prob function in the solvers module." alt="" coords="371,645,520,672"/>
+<area shape="rect" id="node37" href="$namespacetesting.html#a068ba31ebf16e82a5baf606a38511048" title="Tests the H_2_update_beta function in the solvers module." alt="" coords="348,696,543,723"/>
+<area shape="rect" id="node38" href="$namespacetesting.html#a70f58338fe8165f65417781dae734e68" title="Tests the H_2_wfn function in the solvers module." alt="" coords="373,747,518,773"/>
+<area shape="rect" id="node39" href="$namespacetesting.html#a5fce9aca0a9c6be18a50bdb72c2facb1" title="Tests the linspace function in the vqmc module." alt="" coords="373,1235,517,1261"/>
+<area shape="rect" id="node40" href="$namespacetesting.html#a55374b3e27ef78754002549b1b423118" title="Tests the QHO_Energy function in the solvers module." alt="" coords="364,797,527,824"/>
+<area shape="rect" id="node41" href="$namespacetesting.html#a3cd96e3cb653762262d063e2aed44ab7" title="Tests the QHO_Prob function in the solvers module." alt="" coords="371,899,520,925"/>
+<area shape="rect" id="node42" href="$namespacetesting.html#adb38a97b7ceaad408410367f1510e997" title="Tests the ran1 function in the vqmc module." alt="" coords="385,259,506,285"/>
+<area shape="rect" id="node43" href="$namespacetesting.html#acbf13e7eaa077016d7d1712b58fc5223" title="Tests the random_normal function in the vqmc module." alt="" coords="376,950,515,991"/>
+<area shape="rect" id="node44" href="$namespacetesting.html#a2899caabc4df5d19bd020a37ff17eb51" title="Tests the VQMC_H_2 function in the vqmc module." alt="" coords="367,1016,523,1043"/>
+<area shape="rect" id="node45" href="$namespacetesting.html#acc995bb41da9539c11b06377089d74c6" title="Tests the VQMC_H_2_plus function in the vqmc module." alt="" coords="381,1067,509,1109"/>
+<area shape="rect" id="node46" href="$namespacetesting.html#addd4dbf88accb481fe96433855e3cb64" title="Tests the VQMC_QHO function in the vqmc module." alt="" coords="367,1133,523,1160"/>
+<area shape="rect" id="node48" href="$namespacewrite__netcdf.html#aca2bb13e88c9dbfc7d0027b1bd83d9d0" title="Checks error status at each point of NetCDF file build." alt="" coords="383,1687,508,1729"/>
 </map>

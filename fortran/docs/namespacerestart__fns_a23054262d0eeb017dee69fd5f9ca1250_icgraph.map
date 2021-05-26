@@ -1,5 +1,8 @@
 <map id="restart_fns::error_check" name="restart_fns::error_check">
-<area shape="rect" id="node1" title="Checks error status at each point of the NetCDF read." alt="" coords="224,23,340,65"/>
-<area shape="rect" id="node2" href="$namespacerestart__fns.html#a2bfef0bcec6193f109b558f89e9cd90d" title="Subroutine that reads restart file with energy chains (res_chains.nc) [UNUSED]." alt="" coords="11,5,171,32"/>
-<area shape="rect" id="node3" href="$namespacerestart__fns.html#a673ea568ef91fc50ac00e24822742301" title="Reads restart files with energies (res_ene_tot.nc or res_ene_par.nc)" alt="" coords="5,56,176,83"/>
+<area shape="rect" id="node1" title="Checks error status at each point of the NetCDF read." alt="" coords="447,49,563,90"/>
+<area shape="rect" id="node2" href="$namespacerestart__fns.html#a828b3e20a4454d53f3e9f89cb80ba310" title="Reads restart files with energies, variances and acceptence arrays." alt="" coords="217,5,388,32"/>
+<area shape="rect" id="node5" href="$namespacerestart__fns.html#aa562723430cab2682d10733e3a48bb7d" title="Reads restart files with energies, variances and acceptence arrays. Also reads two extra arrays of op..." alt="" coords="207,56,399,83"/>
+<area shape="rect" id="node6" href="$namespacerestart__fns.html#a22e2a14111f6a4ff686f7f7b2b47f206" title="Reads restart files with energies, variances and acceptence arrays. Also reads one extra array of opt..." alt="" coords="217,107,388,149"/>
+<area shape="rect" id="node3" href="$driver_8f90.html#aae94725eafaedc467ab9bfefcae9769e" title="Subroutine for running the main code (needed for Doxygen compatability)." alt="" coords="104,56,159,83"/>
+<area shape="rect" id="node4" href="$driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="Main program, contains the driver subroutine that runs all other code." alt="" coords="5,56,56,83"/>
 </map>

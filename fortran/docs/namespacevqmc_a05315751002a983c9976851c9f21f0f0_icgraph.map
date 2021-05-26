@@ -1,6 +1,6 @@
 <map id="vqmc::vqmc_qho" name="vqmc::vqmc_qho">
 <area shape="rect" id="node1" title="Performs VQMC for the QHO system." alt="" coords="369,31,489,57"/>
-<area shape="rect" id="node2" href="$namespacevqmc.html#a7bf32b6cd68452e6808f9e840b0484c3" title="Performs VQMC on an array of values for the variational parameter , outputting energy traces for each..." alt="" coords="207,5,321,32"/>
+<area shape="rect" id="node2" href="$namespacevqmc.html#a5d73324fcbe9c3ef7fe11309581af529" title="Performs VQMC on an array of values for the variational parameter , outputting energy traces for each..." alt="" coords="207,5,321,32"/>
 <area shape="rect" id="node5" href="$namespacevqmc.html#a726aff689b64924586b655d2e8a846d1" title="Performs VQMC on an array of values for the variational parameter ." alt="" coords="209,56,319,83"/>
 <area shape="rect" id="node3" href="$driver_8f90.html#aae94725eafaedc467ab9bfefcae9769e" title="Subroutine for running the main code (needed for Doxygen compatability)." alt="" coords="104,31,159,57"/>
 <area shape="rect" id="node4" href="$driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="Main program, contains the driver subroutine that runs all other code." alt="" coords="5,31,56,57"/>
