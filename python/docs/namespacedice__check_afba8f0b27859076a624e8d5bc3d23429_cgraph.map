@@ -1,4 +1,0 @@
-<map id="dice_check.check_float" name="dice_check.check_float">
-<area shape="rect" id="node1" title="Checks the input value of a parameter that is expected to be a float." alt="" coords="5,13,163,39"/>
-<area shape="rect" id="node2" href="$namespacedice__check.html#a2de27ef57a990ce0c94bc34211639aa7" title="Subroutine that notifies the user when defaults are being used for a certain parameter." alt="" coords="211,5,341,47"/>
-</map>

@@ -652,12 +652,12 @@ Definition at line 181 of file dice\+\_\+write.\+py.
 \DoxyCodeLine{409         settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
 \DoxyCodeLine{410         params[tag] = settings[options.index(auto)]}
 \DoxyCodeLine{411 }
-\DoxyCodeLine{412         \textcolor{comment}{\# Query ham\_fdstep}}
-\DoxyCodeLine{413         tag=\textcolor{stringliteral}{'ham\_fdstep'}}
-\DoxyCodeLine{414         prompt=\textcolor{stringliteral}{'Enter finite difference step for differentiation of the H2-\/ion Hamiltonian.'}}
-\DoxyCodeLine{415         temp = \mbox{\hyperlink{namespacedice__write_a75a643f89765eb164532394130b8d657}{query\_posfloat}}(prompt,tag,d\_ham\_fdstep)}
-\DoxyCodeLine{416         \textcolor{keywordflow}{if} temp!=\textcolor{stringliteral}{''}:}
-\DoxyCodeLine{417             params[tag] = str(temp)}
+\DoxyCodeLine{412         \textcolor{comment}{\# Query ham\_fdstep -\/ only for developers}}
+\DoxyCodeLine{413         \textcolor{comment}{\#tag='ham\_fdstep'}}
+\DoxyCodeLine{414         \textcolor{comment}{\#prompt='Enter finite difference step for differentiation of the H2-\/ion Hamiltonian.'}}
+\DoxyCodeLine{415         \textcolor{comment}{\#temp = query\_posfloat(prompt,tag,d\_ham\_fdstep)}}
+\DoxyCodeLine{416         \textcolor{comment}{\#if temp!='':}}
+\DoxyCodeLine{417         \textcolor{comment}{\#    params[tag] = str(temp)}}
 \DoxyCodeLine{418         }
 \DoxyCodeLine{419         \textcolor{comment}{\# Parameter information -\/  c}}
 \DoxyCodeLine{420         print(\textcolor{stringliteral}{''})}
@@ -666,12 +666,12 @@ Definition at line 181 of file dice\+\_\+write.\+py.
 \DoxyCodeLine{423 }
 \DoxyCodeLine{424         \textcolor{keywordflow}{if} auto==\textcolor{stringliteral}{'a'}:}
 \DoxyCodeLine{425 }
-\DoxyCodeLine{426             \textcolor{comment}{\# Query c\_fdstep}}
-\DoxyCodeLine{427             tag=\textcolor{stringliteral}{'c\_fdstep'}}
-\DoxyCodeLine{428             prompt=\textcolor{stringliteral}{'Enter finite difference step for conjugate-\/gradient search of parameter c.'}}
-\DoxyCodeLine{429             temp = \mbox{\hyperlink{namespacedice__write_a75a643f89765eb164532394130b8d657}{query\_posfloat}}(prompt,tag,d\_c\_fdstep)}
-\DoxyCodeLine{430             \textcolor{keywordflow}{if} temp!=\textcolor{stringliteral}{''}:}
-\DoxyCodeLine{431                 params[tag] = str(temp)}
+\DoxyCodeLine{426             \textcolor{comment}{\# Query c\_fdstep -\/ only for developers}}
+\DoxyCodeLine{427             \textcolor{comment}{\#tag='c\_fdstep'}}
+\DoxyCodeLine{428             \textcolor{comment}{\#prompt='Enter finite difference step for conjugate-\/gradient search of parameter c.'}}
+\DoxyCodeLine{429             \textcolor{comment}{\#temp = query\_posfloat(prompt,tag,d\_c\_fdstep)}}
+\DoxyCodeLine{430             \textcolor{comment}{\#if temp!='':}}
+\DoxyCodeLine{431             \textcolor{comment}{\#    params[tag] = str(temp)}}
 \DoxyCodeLine{432 }
 \DoxyCodeLine{433             \textcolor{comment}{\# Query start value for auto-\/search of parameter c}}
 \DoxyCodeLine{434             tag=\textcolor{stringliteral}{'c'}}

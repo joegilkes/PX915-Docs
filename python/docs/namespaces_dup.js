@@ -3,10 +3,10 @@ var namespaces_dup =
     [ "check", "namespacecheck.html", null ],
     [ "dice_check", "namespacedice__check.html", [
       [ "isvalid", "namespacedice__check.html#ac4fbe7bb65f9ff67c90cad4fec72dc62", null ],
-      [ "default_message", "namespacedice__check.html#a2de27ef57a990ce0c94bc34211639aa7", null ],
-      [ "check_step", "namespacedice__check.html#afeb33eda791fdb69d9145f9169798c80", null ],
-      [ "check_float", "namespacedice__check.html#afba8f0b27859076a624e8d5bc3d23429", null ],
-      [ "check_grid", "namespacedice__check.html#ae95c26c0aa34a5d08c7570d561a7a05b", null ],
+      [ "default_message", "namespacedice__check.html#abdb75fc7b05ff7529648ed91bd3e3d72", null ],
+      [ "check_step", "namespacedice__check.html#ad8b84e6487be06d020afa357a27a3f86", null ],
+      [ "check_float", "namespacedice__check.html#a4982ea6884cd4de4b556fbcfb4b888a5", null ],
+      [ "check_grid", "namespacedice__check.html#aa8801b9db86473aef07a67260fc1a2a7", null ],
       [ "check_inputs", "namespacedice__check.html#a6d9e6c1b578154488d648ae41acf78d4", null ]
     ] ],
     [ "dice_defaults", "namespacedice__defaults.html", [
@@ -18,23 +18,26 @@ var namespaces_dup =
       [ "d_rnum", "namespacedice__defaults.html#af392d24bab038b8bdb96c7f6a4e20eed", null ],
       [ "d_chn", "namespacedice__defaults.html#a1a21add220f92eec87e2f00558a53853", null ],
       [ "d_log", "namespacedice__defaults.html#a7dcc6fb96b25d51e7506e40985ab7976", null ],
-      [ "d_steps", "namespacedice__defaults.html#a17bb8d0f70b6c6316fbde1a3b4474318", null ],
+      [ "d_equi_steps", "namespacedice__defaults.html#a74e7c3b1a43cf98b1496ef513211ba13", null ],
+      [ "d_vqmc_steps", "namespacedice__defaults.html#af833e875179f89314070a4acd420ba8c", null ],
       [ "d_bstep", "namespacedice__defaults.html#a513700c975a9fd4e1867dd62eb37c628", null ],
       [ "d_tstep", "namespacedice__defaults.html#abff27db0a268208106d304626981e706", null ],
       [ "d_sigma", "namespacedice__defaults.html#af098afdca3b8888b9013eb797e812d97", null ],
       [ "d_rcut", "namespacedice__defaults.html#a0cc1c346e0f3902bd715579680089ac3", null ],
       [ "d_alpha", "namespacedice__defaults.html#af9dd51775e5c5f635403cd9d90025a2e", null ],
+      [ "d_auto_h2plus", "namespacedice__defaults.html#a63cc284657f700a302b686ca7a49aec7", null ],
       [ "d_c_fdstep", "namespacedice__defaults.html#aa42cf8aa87bb19c35997c7bc6cb8fee0", null ],
       [ "d_ham_fdstep", "namespacedice__defaults.html#a12f5c5d39a912e50dccaf2df6e6f33c6", null ],
       [ "d_c", "namespacedice__defaults.html#a183a931368d5866f92cab9d92e6b38ca", null ],
       [ "d_c_grid", "namespacedice__defaults.html#a74c675662351cc7a6da40a90c00b6cd5", null ],
       [ "d_bond_h2plus", "namespacedice__defaults.html#a128a86193a8aeb44d2c542a2773a3605", null ],
+      [ "d_auto_h2", "namespacedice__defaults.html#a650e68b181827ef6c00e52f6e416c787", null ],
       [ "d_beta", "namespacedice__defaults.html#a1510da70650c024b0faf36fb51d53e61", null ],
       [ "d_beta_grid", "namespacedice__defaults.html#a7929b54c1ea9fa6dcfad2fde61401330", null ],
       [ "d_bond_h2", "namespacedice__defaults.html#aa836fd3ce31272ba29a5e1803ca6eed7", null ],
       [ "corder", "namespacedice__defaults.html#abce8d8d1aa6baaa9f13509ee98beed12", null ],
       [ "porder_qho", "namespacedice__defaults.html#a2ce08293281630a3f77edc5efa797c7b", null ],
-      [ "porder_hyd", "namespacedice__defaults.html#a1ef1439ef065ea0b7cdf600501e250fa", null ]
+      [ "porder_h2plus", "namespacedice__defaults.html#add1340b1dee6f6442a27f3cc5e35d487", null ]
     ] ],
     [ "dice_inputs", "namespacedice__inputs.html", [
       [ "dice_inputs", "namespacedice__inputs.html#ad9bf26e9331e0e111146c30a7456ddd4", null ]
