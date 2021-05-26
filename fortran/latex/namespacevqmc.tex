@@ -793,7 +793,7 @@ Definition at line 579 of file vqmc.\+f90.
 \DoxyCodeLine{683                 \textcolor{keywordflow}{if} (write\_restart) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{684                     \textcolor{keywordflow}{if} (mod(i,restart\_num)==0) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{685                         \textcolor{comment}{! Write res\_nml.txt}}
-\DoxyCodeLine{686                         \textcolor{keyword}{call }write\_res\_nml(i)}
+\DoxyCodeLine{686                         \textcolor{keyword}{call }write\_res\_nml(i+1)}
 \DoxyCodeLine{687                         \textcolor{comment}{! Store energy, variance \& accept\_rate arrays}}
 \DoxyCodeLine{688                         \textcolor{keyword}{call }write\_qho\_main(alpha\_array, energies, variances\textcolor{comment}{, resfile\_etot, ierr, qho, acc\_rates)}}
 \DoxyCodeLine{689 \textcolor{comment}{}\textcolor{keywordflow}{                    endif}}
@@ -921,7 +921,7 @@ Definition at line 742 of file vqmc.\+f90.
 \DoxyCodeLine{790             \textcolor{keywordflow}{if} (write\_restart) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{791                 \textcolor{keywordflow}{if} (mod(i,restart\_num)==0) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{792                     \textcolor{comment}{! Write res\_nml.txt}}
-\DoxyCodeLine{793                     \textcolor{keyword}{call }write\_res\_nml(i)}
+\DoxyCodeLine{793                     \textcolor{keyword}{call }write\_res\_nml(i+1)}
 \DoxyCodeLine{794 \textcolor{keywordflow}{                endif}}
 \DoxyCodeLine{795 \textcolor{keywordflow}{            endif}}
 \DoxyCodeLine{796 }

@@ -695,7 +695,7 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;                <span class="keywordflow">if</span> (write_restart) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;                    <span class="keywordflow">if</span> (mod(i,restart_num)==0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;                        <span class="comment">! Write res_nml.txt</span></div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;                        <span class="keyword">call </span>write_res_nml(i)</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;                        <span class="keyword">call </span>write_res_nml(i+1)</div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;                        <span class="comment">! Store energy, variance &amp; accept_rate arrays</span></div>
 <div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;                        <span class="keyword">call </span>write_qho_main(alpha_array, energies, variances, resfile_etot, ierr, qho, acc_rates)</div>
 <div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;<span class="keywordflow">                    endif</span></div>
@@ -793,7 +793,7 @@ $(document).ready(function(){initNavTree('vqmc_8f90_source.html',''); initResiza
 <div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;            <span class="keywordflow">if</span> (write_restart) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;                <span class="keywordflow">if</span> (mod(i,restart_num)==0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;                    <span class="comment">! Write res_nml.txt</span></div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;                    <span class="keyword">call </span>write_res_nml(i)</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;                    <span class="keyword">call </span>write_res_nml(i+1)</div>
 <div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;<span class="keywordflow">                endif</span></div>
 <div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;<span class="keywordflow">            endif</span></div>
 <div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160; </div>

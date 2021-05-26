@@ -111,16 +111,16 @@ $(document).ready(function(){initNavTree('structshared__data_1_1restart__type.ht
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a979d438b1ec755b717ab4401906cf8de"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#a979d438b1ec755b717ab4401906cf8de">i_qoi</a></td></tr>
+<tr class="memitem:a979d438b1ec755b717ab4401906cf8de"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#a979d438b1ec755b717ab4401906cf8de">i_qoi</a> =1</td></tr>
 <tr class="memdesc:a979d438b1ec755b717ab4401906cf8de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of last grid point of alpha (for QHO)or bond (for H2plus or H2)  <a href="structshared__data_1_1restart__type.html#a979d438b1ec755b717ab4401906cf8de">More...</a><br /></td></tr>
 <tr class="separator:a979d438b1ec755b717ab4401906cf8de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a956ca15bff4e49a37f65f55c470c9eee"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#a956ca15bff4e49a37f65f55c470c9eee">i_par</a></td></tr>
+<tr class="memitem:a956ca15bff4e49a37f65f55c470c9eee"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#a956ca15bff4e49a37f65f55c470c9eee">i_par</a> =1</td></tr>
 <tr class="memdesc:a956ca15bff4e49a37f65f55c470c9eee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of last grid-point or auto-search iteration of c or beta.  <a href="structshared__data_1_1restart__type.html#a956ca15bff4e49a37f65f55c470c9eee">More...</a><br /></td></tr>
 <tr class="separator:a956ca15bff4e49a37f65f55c470c9eee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd8d331decb20bd8a48af8cb0d4ab207"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#abd8d331decb20bd8a48af8cb0d4ab207">auto</a></td></tr>
+<tr class="memitem:abd8d331decb20bd8a48af8cb0d4ab207"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#abd8d331decb20bd8a48af8cb0d4ab207">auto</a> =.FALSE.</td></tr>
 <tr class="memdesc:abd8d331decb20bd8a48af8cb0d4ab207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boolean that is set to True for auto-search and False for grid-search.  <a href="structshared__data_1_1restart__type.html#abd8d331decb20bd8a48af8cb0d4ab207">More...</a><br /></td></tr>
 <tr class="separator:abd8d331decb20bd8a48af8cb0d4ab207"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af531b3767ce1466d53da09ab1982eab5"><td class="memItemLeft" align="right" valign="top">real(real64)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#af531b3767ce1466d53da09ab1982eab5">guess</a></td></tr>
+<tr class="memitem:af531b3767ce1466d53da09ab1982eab5"><td class="memItemLeft" align="right" valign="top">real(real64)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#af531b3767ce1466d53da09ab1982eab5">guess</a> =0.0</td></tr>
 <tr class="memdesc:af531b3767ce1466d53da09ab1982eab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">For auto-search, last guess value for c or beta <br  />
   <a href="structshared__data_1_1restart__type.html#af531b3767ce1466d53da09ab1982eab5">More...</a><br /></td></tr>
 <tr class="separator:af531b3767ce1466d53da09ab1982eab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,7 +137,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">integer(int32) shared_data::restart_type::i_qoi</td>
+          <td class="memname">integer(int32) shared_data::restart_type::i_qoi =1</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -145,7 +145,7 @@ Public Attributes</h2></td></tr>
 <p>Index of last grid point of alpha (for QHO)or bond (for H2plus or H2) </p>
 
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00114">114</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordtype">integer(int32)</span> :: i_qoi</div>
+<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordtype">integer(int32)</span> :: i_qoi=1</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -156,7 +156,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">integer(int32) shared_data::restart_type::i_par</td>
+          <td class="memname">integer(int32) shared_data::restart_type::i_par =1</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -164,7 +164,7 @@ Public Attributes</h2></td></tr>
 <p>Index of last grid-point or auto-search iteration of c or beta. </p>
 
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00115">115</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordtype">integer(int32)</span> :: i_par</div>
+<div class="fragment"><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordtype">integer(int32)</span> :: i_par=1</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -175,7 +175,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">logical shared_data::restart_type::auto</td>
+          <td class="memname">logical shared_data::restart_type::auto =.FALSE.</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -183,7 +183,7 @@ Public Attributes</h2></td></tr>
 <p>Boolean that is set to True for auto-search and False for grid-search. </p>
 
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00116">116</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordtype">logical</span>        :: auto</div>
+<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordtype">logical</span>        :: auto=.false.   </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -194,7 +194,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">real(real64) shared_data::restart_type::guess</td>
+          <td class="memname">real(real64) shared_data::restart_type::guess =0.0</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -203,7 +203,7 @@ Public Attributes</h2></td></tr>
  </p>
 
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00117">117</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keywordtype">        real</span>(real64)   :: guess</div>
+<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keywordtype">        real</span>(real64)   :: guess=0.0</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -18,13 +18,13 @@ Collaboration diagram for shared\+\_\+data\+::restart\+\_\+type\+:
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-integer(int32) \mbox{\hyperlink{structshared__data_1_1restart__type_a979d438b1ec755b717ab4401906cf8de}{i\+\_\+qoi}}
+integer(int32) \mbox{\hyperlink{structshared__data_1_1restart__type_a979d438b1ec755b717ab4401906cf8de}{i\+\_\+qoi}} =1
 \begin{DoxyCompactList}\small\item\em Index of last grid point of alpha (for QHO)or bond (for H2plus or H2) \end{DoxyCompactList}\item 
-integer(int32) \mbox{\hyperlink{structshared__data_1_1restart__type_a956ca15bff4e49a37f65f55c470c9eee}{i\+\_\+par}}
+integer(int32) \mbox{\hyperlink{structshared__data_1_1restart__type_a956ca15bff4e49a37f65f55c470c9eee}{i\+\_\+par}} =1
 \begin{DoxyCompactList}\small\item\em Index of last grid-\/point or auto-\/search iteration of c or beta. \end{DoxyCompactList}\item 
-logical \mbox{\hyperlink{structshared__data_1_1restart__type_abd8d331decb20bd8a48af8cb0d4ab207}{auto}}
+logical \mbox{\hyperlink{structshared__data_1_1restart__type_abd8d331decb20bd8a48af8cb0d4ab207}{auto}} =.FALSE.
 \begin{DoxyCompactList}\small\item\em Boolean that is set to True for auto-\/search and False for grid-\/search. \end{DoxyCompactList}\item 
-real(real64) \mbox{\hyperlink{structshared__data_1_1restart__type_af531b3767ce1466d53da09ab1982eab5}{guess}}
+real(real64) \mbox{\hyperlink{structshared__data_1_1restart__type_af531b3767ce1466d53da09ab1982eab5}{guess}} =0.\+0
 \begin{DoxyCompactList}\small\item\em For auto-\/search, last guess value for c or beta ~\newline
  \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -41,7 +41,7 @@ Definition at line 113 of file shared\+\_\+data.\+f90.
 \index{shared\_data::restart\_type@{shared\_data::restart\_type}!i\_qoi@{i\_qoi}}
 \index{i\_qoi@{i\_qoi}!shared\_data::restart\_type@{shared\_data::restart\_type}}
 \doxysubsubsection{\texorpdfstring{i\_qoi}{i\_qoi}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::restart\+\_\+type\+::i\+\_\+qoi}
+{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::restart\+\_\+type\+::i\+\_\+qoi =1}
 
 
 
@@ -53,14 +53,14 @@ Definition at line 114 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{114         \textcolor{keywordtype}{integer(int32)} :: i\_qoi}
+\DoxyCodeLine{114         \textcolor{keywordtype}{integer(int32)} :: i\_qoi=1}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1restart__type_a956ca15bff4e49a37f65f55c470c9eee}\label{structshared__data_1_1restart__type_a956ca15bff4e49a37f65f55c470c9eee}} 
 \index{shared\_data::restart\_type@{shared\_data::restart\_type}!i\_par@{i\_par}}
 \index{i\_par@{i\_par}!shared\_data::restart\_type@{shared\_data::restart\_type}}
 \doxysubsubsection{\texorpdfstring{i\_par}{i\_par}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::restart\+\_\+type\+::i\+\_\+par}
+{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::restart\+\_\+type\+::i\+\_\+par =1}
 
 
 
@@ -72,14 +72,14 @@ Definition at line 115 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{115         \textcolor{keywordtype}{integer(int32)} :: i\_par}
+\DoxyCodeLine{115         \textcolor{keywordtype}{integer(int32)} :: i\_par=1}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1restart__type_abd8d331decb20bd8a48af8cb0d4ab207}\label{structshared__data_1_1restart__type_abd8d331decb20bd8a48af8cb0d4ab207}} 
 \index{shared\_data::restart\_type@{shared\_data::restart\_type}!auto@{auto}}
 \index{auto@{auto}!shared\_data::restart\_type@{shared\_data::restart\_type}}
 \doxysubsubsection{\texorpdfstring{auto}{auto}}
-{\footnotesize\ttfamily logical shared\+\_\+data\+::restart\+\_\+type\+::auto}
+{\footnotesize\ttfamily logical shared\+\_\+data\+::restart\+\_\+type\+::auto =.FALSE.}
 
 
 
@@ -91,14 +91,14 @@ Definition at line 116 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{116         \textcolor{keywordtype}{logical}        :: auto}
+\DoxyCodeLine{116         \textcolor{keywordtype}{logical}        :: auto=.false.   }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1restart__type_af531b3767ce1466d53da09ab1982eab5}\label{structshared__data_1_1restart__type_af531b3767ce1466d53da09ab1982eab5}} 
 \index{shared\_data::restart\_type@{shared\_data::restart\_type}!guess@{guess}}
 \index{guess@{guess}!shared\_data::restart\_type@{shared\_data::restart\_type}}
 \doxysubsubsection{\texorpdfstring{guess}{guess}}
-{\footnotesize\ttfamily real(real64) shared\+\_\+data\+::restart\+\_\+type\+::guess}
+{\footnotesize\ttfamily real(real64) shared\+\_\+data\+::restart\+\_\+type\+::guess =0.\+0}
 
 
 
@@ -111,7 +111,7 @@ Definition at line 117 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{117 \textcolor{keywordtype}{        real}(real64)   :: guess}
+\DoxyCodeLine{117 \textcolor{keywordtype}{        real}(real64)   :: guess=0.0}
 
 \end{DoxyCode}
 
