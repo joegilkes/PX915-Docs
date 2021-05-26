@@ -179,13 +179,13 @@ Functions/Subroutines</h2></td></tr>
 <p>Reads the CONTROL namelist in params.txt and assigns its data to the corresponding global variables defined in the <a class="el" href="namespaceshared__data.html" title="Contains derived types, and global variables to store input values of simulation parameters.">shared_data</a> module. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">p_system</td><td>System of interest: QHO, H2plus, H2 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">run_equil</td><td>Tag for equilibration runs </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">run_restart</td><td>Tag for restart runs </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">write_restart</td><td>Tag for writing restart files </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">restart_num</td><td>Interval of MMC loops between writing restart files </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">write_chains</td><td>Tag to write final MMC chains </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">write_log</td><td>Tag to write logfile </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">p_system</td><td>System of interest: QHO, H2plus, H2 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">run_equil</td><td>Tag for equilibration runs </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">run_restart</td><td>Tag for restart runs </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">write_restart</td><td>Tag for writing restart files </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">restart_num</td><td>Interval of MMC loops between writing restart files </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">write_chains</td><td>Tag to write final MMC chains </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">write_log</td><td>Tag to write logfile </td></tr>
   </table>
   </dd>
 </dl>
