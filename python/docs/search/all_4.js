@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['get_5fautocorrelation_5ftime_42',['get_autocorrelation_time',['../namespacevisualisation.html#a26c9ab9270b803a8d15c40d621769c46',1,'visualisation']]]
+  ['get_5fautocorrelation_5ftime_44',['get_autocorrelation_time',['../namespacedice__visualise.html#a85c547816dec3cbe71d57a1b82f27156',1,'dice_visualise']]]
 ];

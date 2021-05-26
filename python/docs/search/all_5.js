@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['h2_5feng_5fplot_43',['H2_eng_plot',['../namespacevisualisation.html#a15512bdc0a35b851921f281f89e6460f',1,'visualisation']]],
-  ['h2_5fprob_5fplot_44',['H2_prob_plot',['../namespacevisualisation.html#a977806428cd6c4c0c6202ec98f15e2b5',1,'visualisation']]],
-  ['h2energyplot_45',['H2EnergyPlot',['../namespacevisualisation.html#af659f38b7f30300562f10c540226305b',1,'visualisation']]],
-  ['h2plusenergyplot_46',['H2plusEnergyPlot',['../namespacevisualisation.html#a5acbc59eb62f22012becbc9c41b89b04',1,'visualisation']]],
-  ['hydprobplot_47',['HydProbPlot',['../namespacevisualisation.html#a104915a48cdbf6173a66e87fe7c60af2',1,'visualisation']]]
+  ['h2_5feng_5fplot_45',['H2_eng_plot',['../namespacedice__visualise.html#ab8202f97d42f9dd1c81bc86750650aca',1,'dice_visualise']]],
+  ['h2_5fprob_5fplot_46',['H2_prob_plot',['../namespacedice__visualise.html#af9d6a51b0af57e617f69ffa5e969cbd6',1,'dice_visualise']]],
+  ['h2energyplot_47',['H2EnergyPlot',['../namespacedice__visualise.html#a7f1fc39043a9327a8f37cec298ba705b',1,'dice_visualise']]],
+  ['h2plusenergyplot_48',['H2plusEnergyPlot',['../namespacedice__visualise.html#ab337097c900a9fd625f1f5de6869dfbc',1,'dice_visualise']]],
+  ['hydprobplot_49',['HydProbPlot',['../namespacedice__visualise.html#aa35ad097fb65d34e0fa14fe4c3a2e48e',1,'dice_visualise']]]
 ];

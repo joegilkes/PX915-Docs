@@ -1,4 +1,0 @@
-<map id="visualisation.load_global_attr" name="visualisation.load_global_attr">
-<area shape="rect" id="node1" title="Loads the global metadata in the results file into a dictionary." alt="" coords="196,5,317,47"/>
-<area shape="rect" id="node2" href="$namespacevisualisation.html#ad3e838717595f5a5a4f080cfe6c73c05" title="Processes the results output as a result of the parameter search from the NetCDF4 file." alt="" coords="5,5,148,47"/>
-</map>

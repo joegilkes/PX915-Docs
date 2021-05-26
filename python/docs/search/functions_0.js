@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['burnthinui_97',['BurnThinUI',['../namespacevisualisation.html#a62332650e0b79cb286e070d3f6cdd3bd',1,'visualisation']]]
+  ['burnthinui_100',['BurnThinUI',['../namespacedice__visualise.html#acea8db9064e15627392b1a78b305403c',1,'dice_visualise']]]
 ];

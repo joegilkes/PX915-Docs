@@ -1,0 +1,62 @@
+\hypertarget{dice__visualise_8py}{}\doxysection{repo/dice\+\_\+visualise.py File Reference}
+\label{dice__visualise_8py}\index{repo/dice\_visualise.py@{repo/dice\_visualise.py}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacedice__visualise}{dice\+\_\+visualise}}
+\item 
+ \mbox{\hyperlink{namespacevisualisation}{visualisation}}
+\begin{DoxyCompactList}\small\item\em Contains functions for burning/thinning and visualization for Dice. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacedice__visualise_a7223fd3db64dbd65e83c4860579380bf}{dice\+\_\+visualise.\+QHOProb\+Plot}} (chain\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Wrapper function for \mbox{\hyperlink{namespacedice__visualise_a2def226dcfdb5f2f7b1af8c7104d0deb}{QHO\+\_\+prob\+\_\+plot()}} \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacedice__visualise_a2def226dcfdb5f2f7b1af8c7104d0deb}{dice\+\_\+visualise.\+QHO\+\_\+prob\+\_\+plot}} (positions, energies)
+\begin{DoxyCompactList}\small\item\em Fancy Plotly plotter for QHO Markov chains. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacedice__visualise_aa35ad097fb65d34e0fa14fe4c3a2e48e}{dice\+\_\+visualise.\+Hyd\+Prob\+Plot}} (chain\+\_\+file, opacity=0.\+2)
+\begin{DoxyCompactList}\small\item\em Wrapper function for \mbox{\hyperlink{namespacedice__visualise_af9d6a51b0af57e617f69ffa5e969cbd6}{H2\+\_\+prob\+\_\+plot()}} \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacedice__visualise_af9d6a51b0af57e617f69ffa5e969cbd6}{dice\+\_\+visualise.\+H2\+\_\+prob\+\_\+plot}} (positions, energies, R1, R2, opacity)
+\begin{DoxyCompactList}\small\item\em Plots the sampled wavefunction for H2plus/\+H2. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacedice__visualise_aa878bf3481ce5d476a804f690a42d384}{dice\+\_\+visualise.\+QHOEnergy\+Plot}} (results\+\_\+file, sliceby=(None, None))
+\begin{DoxyCompactList}\small\item\em Energy against $ \alpha $ plotter for the QHO problem. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacedice__visualise_a9cb989fdf28e1ca2822bd61ff91ca0da}{dice\+\_\+visualise.\+QHOWfn\+Plot}} (chain\+\_\+file, show\+\_\+analytic=False)
+\begin{DoxyCompactList}\small\item\em Scatter plotter of the sampled QHO wavefunction. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacedice__visualise_ab337097c900a9fd625f1f5de6869dfbc}{dice\+\_\+visualise.\+H2plus\+Energy\+Plot}} (results\+\_\+file, sliceby=(None, None))
+\begin{DoxyCompactList}\small\item\em $ H_{2}^{+} $ H-\/H bond energy and parameter plotter. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacedice__visualise_a7f1fc39043a9327a8f37cec298ba705b}{dice\+\_\+visualise.\+H2\+Energy\+Plot}} (results\+\_\+file, sliceby=(None, None))
+\begin{DoxyCompactList}\small\item\em $ H_{2} $ H-\/H bond energy and parameter plotter. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacedice__visualise_a1b1118d5e647b1bd9152036d40326c8e}{dice\+\_\+visualise.\+view\+\_\+original\+\_\+trace}} (equil\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Plots the original trace(s) of an MCMC run. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacedice__visualise_acea8db9064e15627392b1a78b305403c}{dice\+\_\+visualise.\+Burn\+Thin\+UI}} (equil\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Wrapper function for interacting with \mbox{\hyperlink{namespacedice__visualise_a85c547816dec3cbe71d57a1b82f27156}{get\+\_\+autocorrelation\+\_\+time()}} \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacedice__visualise_a85c547816dec3cbe71d57a1b82f27156}{dice\+\_\+visualise.\+get\+\_\+autocorrelation\+\_\+time}} (filename, burn, tuning, plotting=True)
+\begin{DoxyCompactList}\small\item\em Function which suggests a thinning parameter for a MCMC chain. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacedice__visualise_a782ee2fbade565fe58f39e6fcddcfbfc}{dice\+\_\+visualise.\+load\+\_\+results}} (filename=\textquotesingle{}results.\+nc\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Loads the results as a dataset Net\+CDF object to be passed to other functions. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacedice__visualise_aac29a95757038a4f4c2e9dd75a24397e}{dice\+\_\+visualise.\+load\+\_\+global\+\_\+attr}} (rootgrp, verbose=True)
+\begin{DoxyCompactList}\small\item\em Loads the global metadata in the results file into a dictionary. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacedice__visualise_a890d74ca045410ff008ff21bffb62d84}{dice\+\_\+visualise.\+load\+\_\+variables}} (rootgrp, verbose=True)
+\begin{DoxyCompactList}\small\item\em Loads the variables in the results file into a dictionary. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacedice__visualise_ab8202f97d42f9dd1c81bc86750650aca}{dice\+\_\+visualise.\+H2\+\_\+eng\+\_\+plot}} (variables)
+\begin{DoxyCompactList}\small\item\em Plots the energies against the parameters checked during the grid search Parameters\+: variables\+: Dictionary which contains data about the variables in the netcdf4 object. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacedice__visualise_a160b1ed1091f7e8170511ee792563923}{dice\+\_\+visualise.\+QHO\+\_\+eng\+\_\+plot}} (rootgrp, equil=False)
+\begin{DoxyCompactList}\small\item\em energy\+\_\+plot() Plots the energy at each step as the MC converges \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacedice__visualise_ae79fbe0672d7c4e181063be51bcbd0e1}{dice\+\_\+visualise.\+plot\+\_\+3D}} (X, Y, Z, wfn)
+\item 
+def \mbox{\hyperlink{namespacedice__visualise_a5bf10890b671d944b7902fe11c434033}{dice\+\_\+visualise.\+process\+\_\+main\+\_\+results}} (filename=\textquotesingle{}results.\+nc\textquotesingle{}, verbose=True)
+\begin{DoxyCompactList}\small\item\em Processes the results output as a result of the parameter search from the Net\+CDF4 file. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacedice__visualise_a23b497b88b9146b2f0006198d522bfa8}{dice\+\_\+visualise.\+plot\+\_\+markov\+\_\+chain}} (filename)
+\item 
+def \mbox{\hyperlink{namespacedice__visualise_acf6978a0f7c887756819dc52eb03f930}{dice\+\_\+visualise.\+orb\+\_\+1s}} (X, Y, Z, R\+\_\+a)
+\begin{DoxyCompactList}\small\item\em functions plotting the wavefunction ab initio \#\#\#\#\#\#\# \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacedice__visualise_a61561770bb08d7b88351f402cb4f9bf5}{dice\+\_\+visualise.\+orb\+\_\+2s}} (r, R\+\_\+a)
+\item 
+def \mbox{\hyperlink{namespacedice__visualise_ad088d0e8dd8e700e9574fb8e768ae1d2}{dice\+\_\+visualise.\+polar\+\_\+to\+\_\+cart}} (r, theta, phi)
+\item 
+def \mbox{\hyperlink{namespacedice__visualise_a8cacf52d2ad58175caf6a16cefccaf75}{dice\+\_\+visualise.\+lcao\+\_\+wfn}} (X, Y, Z, R1, R2, pqn=1)
+\item 
+def \mbox{\hyperlink{namespacedice__visualise_a308922cd1b1364a94866ea0d4b4b0013}{dice\+\_\+visualise.\+plot\+\_\+3D}} (X, Y, Z, wfn, R1, R2)
+\begin{DoxyCompactList}\small\item\em Function for plotting the wavefunction analytically. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacedice__visualise_afad393ca523499bbbcf0ed4d807fbdd3}{dice\+\_\+visualise.\+example\+\_\+\+H1s\+\_\+wfn}} (bond\+\_\+length=2.\+0)
+\end{DoxyCompactItemize}

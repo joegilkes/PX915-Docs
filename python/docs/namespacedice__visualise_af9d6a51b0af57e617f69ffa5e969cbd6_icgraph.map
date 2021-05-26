@@ -1,0 +1,4 @@
+<map id="dice_visualise.H2_prob_plot" name="dice_visualise.H2_prob_plot">
+<area shape="rect" id="node1" title="Plots the sampled wavefunction for H2plus/H2." alt="" coords="233,5,417,32"/>
+<area shape="rect" id="node2" href="$namespacedice__visualise.html#aa35ad097fb65d34e0fa14fe4c3a2e48e" title="Wrapper function for H2_prob_plot()" alt="" coords="5,5,185,32"/>
+</map>
