@@ -30,14 +30,14 @@ Python Dev Documentation   &\href{https://joegilkes.github.io/PX915-Docs/python/
 
 This section presents what the user would need to modify in the Fortran files (.f90) to add a new problem to Dice QMC.
 
-The first step is to add the derived type of the new problem to the file /src/shared\+\_\+data.f90, under the section \char`\"{}\+Derived Types\char`\"{}. Below is a sample format of how the derived type should look like.
+The first step is to add the derived type of the new problem to {\ttfamily \mbox{\hyperlink{namespaceshared__data}{shared\+\_\+data}}}, under the section \char`\"{}\+Derived Types\char`\"{}. Below is a sample format of how the derived type should look like.
 
 \DoxyHorRuler{0}
 
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{! Sample format of new derived type for new problem}}
 \DoxyCodeLine{\textcolor{keyword}{type} :: new\_problem\_type}
 \DoxyCodeLine{        \textcolor{keywordtype}{integer(int32)} :: steps=100000\_int32         }
 \DoxyCodeLine{        \textcolor{keywordtype}{integer(int32)} :: burn\_step=1000\_int32       }
@@ -51,16 +51,16 @@ The first step is to add the derived type of the new problem to the file /src/sh
 \DoxyCodeLine{    \textcolor{keyword}{end type }H2\_type}
 
 \end{DoxyCode}
- If the user wants to add are any other constants then they can be added to the \char`\"{}constants\char`\"{} module in /src/shared\+\_\+data.f90.
+ If the user wants to add any other numerical constants then they can be added to the {\ttfamily constants} module.
 
-The next step is to modify the file /src/quantum\+\_\+solvers.f90. Regardless of the new problem the user will need to implement a function that calculates the transitional probability of the current step and the proposed step. Below is a sample format of how the transitional probability function should look like.
+The next step is to modify {\ttfamily solvers}. Regardless of the new problem the user will need to implement a function that calculates the transition probability of the current step and the proposed step. Below is a sample format of how the transition probability function should look like.
 
 \DoxyHorRuler{0}
 
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{! Sample format of transition probability function}}
 \DoxyCodeLine{\textcolor{keyword}{function }trans\_prob(parameters\_of\_new\_problem, \&}
 \DoxyCodeLine{current\_step, next\_step, other\_constants) \textcolor{keyword}{result}(Prob)}
 \DoxyCodeLine{}
@@ -102,10 +102,10 @@ The other function that is also necessary to be implemented regardless of the pr
 \end{DoxyCode}
 
 
-Most problems will require the user to implement a wave function corresponding to the problem, in order to calculate the transitional probabilities and local energies. The user is free to implement this however they want, as long as the local energy and transitional probability functions have the formats presented above. Another remark for the user is that when calculating the energy, unless the derivatives can be found analytically the user will need to use some numerical method to obtain the derivatives, which they will have to implement themselves. All of the modifications to /src/quantum\+\_\+solvers.f90 should be done after the section \char`\"{}\+H\+\_\+2 Solvers\char`\"{}. ~\newline
+Most problems will require the user to implement a wave function corresponding to the problem, in order to calculate the transitional probabilities and local energies. The user is free to implement this however they want, as long as the local energy and transitional probability functions have the formats presented above. Another remark for the user is that when calculating the energy, unless the derivatives can be found analytically the user will need to use some numerical method to obtain the derivatives, which they will have to implement themselves. All of the modifications to {\ttfamily solvers} should be done after the section {\ttfamily H\+\_\+2 Solvers}. ~\newline
 
 
-The next step is to modify the file /src/vqmc.f90. The user will need to implement a new VQMC solver for the new problem in this module. The user should use one of the \char`\"{}\+VQMC\+\_\+\+QHO\char`\"{}, \char`\"{}\+VQMC\+\_\+\+H\+\_\+2\+\_\+plus\char`\"{} or \char`\"{}\+VQMC\+\_\+\+H\+\_\+2\char`\"{} sub-\/routines as a template for their VQMC solver. This is because they would only need to modify the transitional probability and local energy functions in the Metropolis algorithm. Below is a sample template of how the Metropolis algorithm should look like.
+The next step is to modify the {\ttfamily vqmc} module. The user will need to implement a new VQMC solver for the new problem in this module. The user should use one of the \char`\"{}\+VQMC\+\_\+\+QHO\char`\"{}, \char`\"{}\+VQMC\+\_\+\+H\+\_\+2\+\_\+plus\char`\"{} or \char`\"{}\+VQMC\+\_\+\+H\+\_\+2\char`\"{} sub-\/routines as a template for their VQMC solver. This is because they would only need to modify the transitional probability and local energy functions in the Metropolis algorithm. Below is a sample template of how the Metropolis algorithm should look like.
 
 \DoxyHorRuler{0}
  
@@ -133,9 +133,9 @@ The next step is to modify the file /src/vqmc.f90. The user will need to impleme
 \DoxyCodeLine{\textcolor{keyword}{end }do}
 
 \end{DoxyCode}
- If the user uses one of the \char`\"{}\+VQMC\+\_\+\+QHO\char`\"{}, \char`\"{}\+VQMC\+\_\+\+H\+\_\+2\+\_\+plus\char`\"{} or \char`\"{}\+VQMC\+\_\+\+H\+\_\+2\char`\"{} sub-\/routines as a template then the burning and thinning feautures can be reused for the new problem. It is important to stick to one of the VQMC sub-\/routines so that the outputs are the same.
+ If the user uses one of the \char`\"{}\+VQMC\+\_\+\+QHO\char`\"{}, \char`\"{}\+VQMC\+\_\+\+H\+\_\+2\+\_\+plus\char`\"{} or \char`\"{}\+VQMC\+\_\+\+H\+\_\+2\char`\"{} sub-\/routines as a template then the burning and thinning features can be reused for the new problem. It is important to stick to one of the VQMC sub-\/routines so that the outputs are the same.
 
-The next step is to add the automatic gradient descent based search (GDBS) to the file /src/vqmc.f90. The user should use \char`\"{}\+Auto\+\_\+\+H\+\_\+2\char`\"{}, \char`\"{}\+Auto\+\_\+\+H\+\_\+2\+\_\+plus\char`\"{} sub-\/routines as a template and should only modify the VQMC solver being called (see below). This modification should be place after the new VQMC solver.
+The next step is to add the automatic gradient descent-\/based search (GDBS) to {\ttfamily vqmc}. The user should use \char`\"{}\+Auto\+\_\+\+H\+\_\+2\char`\"{}, \char`\"{}\+Auto\+\_\+\+H\+\_\+2\+\_\+plus\char`\"{} sub-\/routines as a template and should only modify the VQMC solver being called (see below). This modification should be place after the new VQMC solver.
 
 \DoxyHorRuler{0}
  
@@ -156,7 +156,7 @@ The next step is to add the automatic gradient descent based search (GDBS) to th
 \DoxyCodeLine{\textcolor{keyword}{end subroutine }Auto\_H\_2}
 
 \end{DoxyCode}
- If the user does not want to do a GDBS then they can ignore the previous step. Instead they can add a grid search to the file /src/vqmc.f90. The user should use \char`\"{}\+Grid\+\_\+\+H\+\_\+2\char`\"{}, \char`\"{}\+Grid\+\_\+\+H\+\_\+2\+\_\+plus\char`\"{} sub-\/routines as a template and should only modify the VQMC solver being called (see below). This sub-\/routine should be placed after the new VQMC solver.
+ If the user does not want to do a GDBS then they can ignore the previous step. Instead they can add a grid search to {\ttfamily vqmc}. The user should use \char`\"{}\+Grid\+\_\+\+H\+\_\+2\char`\"{}, \char`\"{}\+Grid\+\_\+\+H\+\_\+2\+\_\+plus\char`\"{} sub-\/routines as a template and should only modify the VQMC solver being called (see below). This sub-\/routine should be placed after the new VQMC solver.
 
 \DoxyHorRuler{0}
  
@@ -177,10 +177,10 @@ The next step is to add the automatic gradient descent based search (GDBS) to th
 \DoxyCodeLine{\textcolor{keyword}{end subroutine }Grid\_H\_2\_plus}
 
 \end{DoxyCode}
- The user can of course add both of the search methods mentioned above, but it is important that they at least add one. The final item the user has to add to /src/vqmc.f90 is the equilibration run subroutine. This can be based off \char`\"{}\+Equil\+\_\+\+QHO\char`\"{} or \char`\"{}\+Equil\+\_\+\+H\+\_\+2\char`\"{} and the user should only modify the VQMC solver being used like in the previous step. ~\newline
+ The user can of course add both of the search methods mentioned above, but it is important that they at least add one. The final item the user has to add to {\ttfamily vqmc} is the equilibration run subroutine. This can be based off \char`\"{}\+Equil\+\_\+\+QHO\char`\"{} or \char`\"{}\+Equil\+\_\+\+H\+\_\+2\char`\"{} and the user should only modify the VQMC solver being used like in the previous step. ~\newline
 
 
-The final step is to modify the file /src/driver.f90. The user should add a new case with the corresponding problem to the \char`\"{}\+VQMC Loops\char`\"{} section. The user should use the following \char`\"{}\+Quantum Harmonic Oscillator\char`\"{} subsection, as a template to write their code. The code should only be modified so that the GDBS or grid search, and equilibration subroutines for the new problem are called (see below).
+The final step is to modify {\ttfamily \mbox{\hyperlink{driver_8f90}{driver.\+f90}}}. The user should add a new case with the corresponding problem to the \char`\"{}\+VQMC Loops\char`\"{} section. The user should use the following \char`\"{}\+Quantum Harmonic Oscillator\char`\"{} subsection, as a template to write their code. The code should only be modified so that the GDBS or grid search, and equilibration subroutines for the new problem are called (see below).
 
 \DoxyHorRuler{0}
  
@@ -229,4 +229,4 @@ The final step is to modify the file /src/driver.f90. The user should add a new 
 
 After all the modifications the user should be able to run the code the same way as it is explained in the user manual.
 
-This documentation was generated from commit 553c9dc 
+This documentation was generated from commit 5cde549 
