@@ -6,7 +6,7 @@ var visualisation_8py =
     [ "QHO_eng_plot", "visualisation_8py.html#a9e23aabdaf405841cfdfd7c6cc2800e0", null ],
     [ "QHO_prob_plot", "visualisation_8py.html#a0b2d10aa54ec331feaa0bf68fb008de3", null ],
     [ "H2_eng_plot", "visualisation_8py.html#a15512bdc0a35b851921f281f89e6460f", null ],
-    [ "HydProbPlot", "visualisation_8py.html#a9cc7e7e48a1a7fe2f0a46d926501c62b", null ],
+    [ "HydProbPlot", "visualisation_8py.html#a104915a48cdbf6173a66e87fe7c60af2", null ],
     [ "H2_prob_plot", "visualisation_8py.html#a977806428cd6c4c0c6202ec98f15e2b5", null ],
     [ "process_main_results", "visualisation_8py.html#ad3e838717595f5a5a4f080cfe6c73c05", null ],
     [ "plot_markov_chain", "visualisation_8py.html#aaf3f4acde7cf9b4b477a0fe05cbb3273", null ],
@@ -21,7 +21,7 @@ var visualisation_8py =
     [ "QHOWfnPlot", "visualisation_8py.html#a2a513b3843a02d5a4184593331b0160e", null ],
     [ "H2plusEnergyPlot", "visualisation_8py.html#a5acbc59eb62f22012becbc9c41b89b04", null ],
     [ "H2EnergyPlot", "visualisation_8py.html#af659f38b7f30300562f10c540226305b", null ],
-    [ "view_original_trace", "visualisation_8py.html#ac345463eb554d7c90613773996e74748", null ],
-    [ "BurnThinUI", "visualisation_8py.html#a90f8c15369cb05e981279974d131c819", null ],
+    [ "view_original_trace", "visualisation_8py.html#a32cffba42b558a9b945f8bfdbf6b4f52", null ],
+    [ "BurnThinUI", "visualisation_8py.html#a62332650e0b79cb286e070d3f6cdd3bd", null ],
     [ "get_autocorrelation_time", "visualisation_8py.html#a26c9ab9270b803a8d15c40d621769c46", null ]
 ];
