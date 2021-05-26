@@ -410,9 +410,9 @@ Definition at line 53 of file driver.\+f90.
 \DoxyCodeLine{410 }
 \DoxyCodeLine{411                         \textcolor{comment}{! Write restart files, if required}}
 \DoxyCodeLine{412                         \textcolor{keywordflow}{if} (write\_restart .and. my\_rank==0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{413                             \textcolor{keyword}{call }write\_res\_nml(b+1,1,h2plus\%auto\_params,h2plus\_param\_c\_guess)}
-\DoxyCodeLine{414                             \textcolor{keyword}{call }write\_h2plus\_main(h2plus\_param\_c\_array, bonds, energies, variances, \&}
-\DoxyCodeLine{415                         resfile\_etot, ierr, h2plus, accept\_rates)}
+\DoxyCodeLine{413                             \textcolor{keyword}{call }write\_h2plus\_main(h2plus\_param\_c\_array, bonds, energies, variances, \&}
+\DoxyCodeLine{414                         resfile\_etot, ierr, h2plus, accept\_rates)}
+\DoxyCodeLine{415                             \textcolor{keyword}{call }write\_res\_nml(b+1,1,h2plus\%auto\_params,h2plus\_param\_c\_guess)}
 \DoxyCodeLine{416 \textcolor{keywordflow}{                        endif} }
 \DoxyCodeLine{417 }
 \DoxyCodeLine{418 }
@@ -427,9 +427,9 @@ Definition at line 53 of file driver.\+f90.
 \DoxyCodeLine{427 }
 \DoxyCodeLine{428                         \textcolor{comment}{! Write restart files, if required}}
 \DoxyCodeLine{429                         \textcolor{keywordflow}{if} (write\_restart .and. my\_rank==0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{430                             \textcolor{keyword}{call }write\_res\_nml(b+1,1,h2plus\%auto\_params)}
-\DoxyCodeLine{431                             \textcolor{keyword}{call }write\_h2plus\_main(h2plus\_param\_c\_array, bonds, energies, variances, \&}
-\DoxyCodeLine{432                         resfile\_etot, ierr, h2plus, accept\_rates)}
+\DoxyCodeLine{430                             \textcolor{keyword}{call }write\_h2plus\_main(h2plus\_param\_c\_array, bonds, energies, variances, \&}
+\DoxyCodeLine{431                         resfile\_etot, ierr, h2plus, accept\_rates)}
+\DoxyCodeLine{432                             \textcolor{keyword}{call }write\_res\_nml(b+1,1,h2plus\%auto\_params)}
 \DoxyCodeLine{433 \textcolor{keywordflow}{                        endif} }
 \DoxyCodeLine{434 }
 \DoxyCodeLine{435 \textcolor{keywordflow}{                    end if}}
@@ -594,9 +594,9 @@ Definition at line 53 of file driver.\+f90.
 \DoxyCodeLine{594 }
 \DoxyCodeLine{595                         \textcolor{comment}{! Write restart files, if required}}
 \DoxyCodeLine{596                         \textcolor{keywordflow}{if} (write\_restart .and. my\_rank==0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{597                             \textcolor{keyword}{call }write\_res\_nml(b+1,1,h2\%auto\_params,h2\_param\_beta\_guess)}
-\DoxyCodeLine{598                             \textcolor{keyword}{call }write\_h2\_main(h2\_param\_a\_array, h2\_param\_beta\_array, bonds, \&}
-\DoxyCodeLine{599                         energies, variances, resfile\_etot, ierr, h2, accept\_rates)}
+\DoxyCodeLine{597                             \textcolor{keyword}{call }write\_h2\_main(h2\_param\_a\_array, h2\_param\_beta\_array, bonds, \&}
+\DoxyCodeLine{598                         energies, variances, resfile\_etot, ierr, h2, accept\_rates)}
+\DoxyCodeLine{599                             \textcolor{keyword}{call }write\_res\_nml(b+1,1,h2\%auto\_params,h2\_param\_beta\_guess)}
 \DoxyCodeLine{600 \textcolor{keywordflow}{                        endif} }
 \DoxyCodeLine{601                     }
 \DoxyCodeLine{602                     \textcolor{keywordflow}{else} \textcolor{comment}{! ie. if doing a grid search}}
@@ -610,9 +610,9 @@ Definition at line 53 of file driver.\+f90.
 \DoxyCodeLine{610 }
 \DoxyCodeLine{611                         \textcolor{comment}{! Write restart files, if required}}
 \DoxyCodeLine{612                         \textcolor{keywordflow}{if} (write\_restart .and. my\_rank==0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{613                             \textcolor{keyword}{call }write\_res\_nml(b+1,1,h2\%auto\_params)}
-\DoxyCodeLine{614                             \textcolor{keyword}{call }write\_h2\_main(h2\_param\_a\_array, h2\_param\_beta\_array, bonds, \&}
-\DoxyCodeLine{615                         energies, variances, resfile\_etot, ierr, h2, accept\_rates)}
+\DoxyCodeLine{613                             \textcolor{keyword}{call }write\_h2\_main(h2\_param\_a\_array, h2\_param\_beta\_array, bonds, \&}
+\DoxyCodeLine{614                         energies, variances, resfile\_etot, ierr, h2, accept\_rates)}
+\DoxyCodeLine{615                             \textcolor{keyword}{call }write\_res\_nml(b+1,1,h2\%auto\_params)}
 \DoxyCodeLine{616 \textcolor{keywordflow}{                        endif} }
 \DoxyCodeLine{617 }
 \DoxyCodeLine{618 \textcolor{keywordflow}{                    end if}}
