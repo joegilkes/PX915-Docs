@@ -554,222 +554,226 @@ Definition at line 181 of file dice\+\_\+write.\+py.
 \DoxyCodeLine{311     \textcolor{comment}{\# Query total number of steps}}
 \DoxyCodeLine{312     tag = \textcolor{stringliteral}{'steps'}}
 \DoxyCodeLine{313     prompt = \textcolor{stringliteral}{'Enter total number of MMC steps.'}}
-\DoxyCodeLine{314     steps = \mbox{\hyperlink{namespacedice__write_a582e3bc639d5d28fcd8b6c0af2b8530d}{query\_step}}(prompt,tag,d\_steps,sys\_idx)}
-\DoxyCodeLine{315     \textcolor{keywordflow}{if} steps==\textcolor{stringliteral}{''}:}
-\DoxyCodeLine{316         steps = d\_steps[sys\_idx] \textcolor{comment}{\# Use default}}
-\DoxyCodeLine{317     \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{318         params[tag] = str(steps) \textcolor{comment}{\# Store user input}}
-\DoxyCodeLine{319     }
-\DoxyCodeLine{320 }
-\DoxyCodeLine{321 }
-\DoxyCodeLine{322     \textcolor{comment}{\# For QMC calculations only, include burning \& thinning steps}}
-\DoxyCodeLine{323     \textcolor{keywordflow}{if} calc==\textcolor{stringliteral}{'b'}:}
+\DoxyCodeLine{314     \textcolor{keywordflow}{if} calc==\textcolor{stringliteral}{'a'}:}
+\DoxyCodeLine{315         d\_steps=d\_equi\_steps.copy()}
+\DoxyCodeLine{316     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{317         d\_steps=d\_vqmc\_steps.copy()}
+\DoxyCodeLine{318     steps = \mbox{\hyperlink{namespacedice__write_a582e3bc639d5d28fcd8b6c0af2b8530d}{query\_step}}(prompt,tag,d\_steps,sys\_idx)}
+\DoxyCodeLine{319     \textcolor{keywordflow}{if} steps==\textcolor{stringliteral}{''}:}
+\DoxyCodeLine{320         steps = d\_steps[sys\_idx] \textcolor{comment}{\# Use default}}
+\DoxyCodeLine{321     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{322         params[tag] = str(steps) \textcolor{comment}{\# Store user input}}
+\DoxyCodeLine{323     }
 \DoxyCodeLine{324 }
-\DoxyCodeLine{325         \textcolor{comment}{\# Query step size for burning}}
-\DoxyCodeLine{326         tag = \textcolor{stringliteral}{'burn\_step'}}
-\DoxyCodeLine{327         prompt = \textcolor{stringliteral}{'Enter an integer step-\/size for burning.'}}
-\DoxyCodeLine{328         b\_step = steps + 1}
-\DoxyCodeLine{329         \textcolor{keywordflow}{while} not(b\_step<steps \textcolor{keywordflow}{or} b\_step==\textcolor{stringliteral}{''}):}
-\DoxyCodeLine{330             b\_step = \mbox{\hyperlink{namespacedice__write_a582e3bc639d5d28fcd8b6c0af2b8530d}{query\_step}}(prompt,tag,d\_bstep,sys\_idx)}
-\DoxyCodeLine{331             \textcolor{keywordflow}{if} b\_step==\textcolor{stringliteral}{''}:}
-\DoxyCodeLine{332                 b\_step = d\_bstep[sys\_idx] \textcolor{comment}{\# Use default}}
-\DoxyCodeLine{333             \textcolor{keywordflow}{elif} b\_step<steps:}
-\DoxyCodeLine{334                 params[tag] = str(b\_step) \textcolor{comment}{\# Store user input}}
-\DoxyCodeLine{335             \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{336                 print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{337                 print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting burn\_step < \{:\} as you chose steps=\{:\}.'}.format(steps,steps))}
-\DoxyCodeLine{338                 \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
-\DoxyCodeLine{339 }
-\DoxyCodeLine{340         \textcolor{comment}{\# Query step size for thinning}}
-\DoxyCodeLine{341         tag = \textcolor{stringliteral}{'thin\_step'}}
-\DoxyCodeLine{342         prompt = \textcolor{stringliteral}{'Enter an integer step-\/size for thinning.'}}
-\DoxyCodeLine{343         t\_max = steps -\/ b\_step}
-\DoxyCodeLine{344         t\_step = t\_max + 1}
-\DoxyCodeLine{345         \textcolor{keywordflow}{while} not(t\_step<t\_max \textcolor{keywordflow}{or} t\_step==\textcolor{stringliteral}{''}):}
-\DoxyCodeLine{346             t\_step = \mbox{\hyperlink{namespacedice__write_a582e3bc639d5d28fcd8b6c0af2b8530d}{query\_step}}(prompt,tag,d\_tstep,sys\_idx)}
-\DoxyCodeLine{347             \textcolor{keywordflow}{if} t\_step==\textcolor{stringliteral}{''}:}
-\DoxyCodeLine{348                 t\_step = d\_tstep[sys\_idx] \textcolor{comment}{\# Use default}}
-\DoxyCodeLine{349             \textcolor{keywordflow}{elif} b\_step<steps:}
-\DoxyCodeLine{350                 params[tag] = str(t\_step) \textcolor{comment}{\# Store user input}}
-\DoxyCodeLine{351             \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{352                 print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{353                 print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting thin\_step < \{:\} as you chose steps-\/burn\_steps=\{:\}.'}.format(t\_max,t\_max))}
-\DoxyCodeLine{354                 \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
-\DoxyCodeLine{355 }
-\DoxyCodeLine{356 }
-\DoxyCodeLine{357     \textcolor{comment}{\# Query rcut}}
-\DoxyCodeLine{358     tag=\textcolor{stringliteral}{'rcut'}}
-\DoxyCodeLine{359     prompt=\textcolor{stringliteral}{'Enter cutoff radial distance (in Bohr) for MMC search.'}}
-\DoxyCodeLine{360     temp = \mbox{\hyperlink{namespacedice__write_a75a643f89765eb164532394130b8d657}{query\_posfloat}}(prompt,tag,d\_rcut,sys\_idx)}
-\DoxyCodeLine{361     \textcolor{keywordflow}{if} temp!=\textcolor{stringliteral}{''}:}
-\DoxyCodeLine{362         params[tag] = str(temp)}
-\DoxyCodeLine{363 }
-\DoxyCodeLine{364 }
-\DoxyCodeLine{365     \textcolor{comment}{\# Query sigma}}
-\DoxyCodeLine{366     tag=\textcolor{stringliteral}{'sigma'}}
-\DoxyCodeLine{367     prompt=\textcolor{stringliteral}{'Enter sigma, the standard deviation of the Gaussian used to propose MMC steps.'}}
-\DoxyCodeLine{368     temp = \mbox{\hyperlink{namespacedice__write_a75a643f89765eb164532394130b8d657}{query\_posfloat}}(prompt,tag,d\_rcut,sys\_idx)}
-\DoxyCodeLine{369     \textcolor{keywordflow}{if} temp!=\textcolor{stringliteral}{''}:}
-\DoxyCodeLine{370         params[tag] = str(temp)}
-\DoxyCodeLine{371 }
-\DoxyCodeLine{372 }
-\DoxyCodeLine{373     \textcolor{comment}{\# Problem specific parameters}}
-\DoxyCodeLine{374 }
-\DoxyCodeLine{375     \textcolor{comment}{\# QHO}}
-\DoxyCodeLine{376     \textcolor{keywordflow}{if} sys==\textcolor{stringliteral}{'a'}:}
-\DoxyCodeLine{377 }
-\DoxyCodeLine{378         \textcolor{comment}{\# Parameter information -\/ alpha}}
-\DoxyCodeLine{379         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{380         print(\textcolor{stringliteral}{'Quantity of interest "{}alpha"{} is the factor in the exponent of the Quantum Harmonic Oscillator system.'})}
-\DoxyCodeLine{381         }
-\DoxyCodeLine{382 }
-\DoxyCodeLine{383         \textcolor{comment}{\# Check if user wants defaults}}
-\DoxyCodeLine{384         tag = \textcolor{stringliteral}{'alpha'}}
-\DoxyCodeLine{385         use\_def = \mbox{\hyperlink{namespacedice__write_aebd3126f641c7d8245a920b5f00a19e8}{query\_default}}(tag,d\_alpha)}
+\DoxyCodeLine{325 }
+\DoxyCodeLine{326     \textcolor{comment}{\# For QMC calculations only, include burning \& thinning steps}}
+\DoxyCodeLine{327     \textcolor{keywordflow}{if} calc==\textcolor{stringliteral}{'b'}:}
+\DoxyCodeLine{328 }
+\DoxyCodeLine{329         \textcolor{comment}{\# Query step size for burning}}
+\DoxyCodeLine{330         tag = \textcolor{stringliteral}{'burn\_step'}}
+\DoxyCodeLine{331         prompt = \textcolor{stringliteral}{'Enter an integer step-\/size for burning.'}}
+\DoxyCodeLine{332         b\_step = steps + 1}
+\DoxyCodeLine{333         \textcolor{keywordflow}{while} not(b\_step<steps \textcolor{keywordflow}{or} b\_step==\textcolor{stringliteral}{''}):}
+\DoxyCodeLine{334             b\_step = \mbox{\hyperlink{namespacedice__write_a582e3bc639d5d28fcd8b6c0af2b8530d}{query\_step}}(prompt,tag,d\_bstep,sys\_idx)}
+\DoxyCodeLine{335             \textcolor{keywordflow}{if} b\_step==\textcolor{stringliteral}{''}:}
+\DoxyCodeLine{336                 b\_step = d\_bstep[sys\_idx] \textcolor{comment}{\# Use default}}
+\DoxyCodeLine{337             \textcolor{keywordflow}{elif} b\_step<steps:}
+\DoxyCodeLine{338                 params[tag] = str(b\_step) \textcolor{comment}{\# Store user input}}
+\DoxyCodeLine{339             \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{340                 print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{341                 print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting burn\_step < \{:\} as you chose steps=\{:\}.'}.format(steps,steps))}
+\DoxyCodeLine{342                 \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344         \textcolor{comment}{\# Query step size for thinning}}
+\DoxyCodeLine{345         tag = \textcolor{stringliteral}{'thin\_step'}}
+\DoxyCodeLine{346         prompt = \textcolor{stringliteral}{'Enter an integer step-\/size for thinning.'}}
+\DoxyCodeLine{347         t\_max = steps -\/ b\_step}
+\DoxyCodeLine{348         t\_step = t\_max + 1}
+\DoxyCodeLine{349         \textcolor{keywordflow}{while} not(t\_step<t\_max \textcolor{keywordflow}{or} t\_step==\textcolor{stringliteral}{''}):}
+\DoxyCodeLine{350             t\_step = \mbox{\hyperlink{namespacedice__write_a582e3bc639d5d28fcd8b6c0af2b8530d}{query\_step}}(prompt,tag,d\_tstep,sys\_idx)}
+\DoxyCodeLine{351             \textcolor{keywordflow}{if} t\_step==\textcolor{stringliteral}{''}:}
+\DoxyCodeLine{352                 t\_step = d\_tstep[sys\_idx] \textcolor{comment}{\# Use default}}
+\DoxyCodeLine{353             \textcolor{keywordflow}{elif} b\_step<steps:}
+\DoxyCodeLine{354                 params[tag] = str(t\_step) \textcolor{comment}{\# Store user input}}
+\DoxyCodeLine{355             \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{356                 print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{357                 print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting thin\_step < \{:\} as you chose steps-\/burn\_steps=\{:\}.'}.format(t\_max,t\_max))}
+\DoxyCodeLine{358                 \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
+\DoxyCodeLine{359 }
+\DoxyCodeLine{360 }
+\DoxyCodeLine{361     \textcolor{comment}{\# Query rcut}}
+\DoxyCodeLine{362     tag=\textcolor{stringliteral}{'rcut'}}
+\DoxyCodeLine{363     prompt=\textcolor{stringliteral}{'Enter cutoff radial distance (in Bohr) for MMC search.'}}
+\DoxyCodeLine{364     temp = \mbox{\hyperlink{namespacedice__write_a75a643f89765eb164532394130b8d657}{query\_posfloat}}(prompt,tag,d\_rcut,sys\_idx)}
+\DoxyCodeLine{365     \textcolor{keywordflow}{if} temp!=\textcolor{stringliteral}{''}:}
+\DoxyCodeLine{366         params[tag] = str(temp)}
+\DoxyCodeLine{367 }
+\DoxyCodeLine{368 }
+\DoxyCodeLine{369     \textcolor{comment}{\# Query sigma}}
+\DoxyCodeLine{370     tag=\textcolor{stringliteral}{'sigma'}}
+\DoxyCodeLine{371     prompt=\textcolor{stringliteral}{'Enter sigma, the standard deviation of the Gaussian used to propose MMC steps.'}}
+\DoxyCodeLine{372     temp = \mbox{\hyperlink{namespacedice__write_a75a643f89765eb164532394130b8d657}{query\_posfloat}}(prompt,tag,d\_rcut,sys\_idx)}
+\DoxyCodeLine{373     \textcolor{keywordflow}{if} temp!=\textcolor{stringliteral}{''}:}
+\DoxyCodeLine{374         params[tag] = str(temp)}
+\DoxyCodeLine{375 }
+\DoxyCodeLine{376 }
+\DoxyCodeLine{377     \textcolor{comment}{\# Problem specific parameters}}
+\DoxyCodeLine{378 }
+\DoxyCodeLine{379     \textcolor{comment}{\# QHO}}
+\DoxyCodeLine{380     \textcolor{keywordflow}{if} sys==\textcolor{stringliteral}{'a'}:}
+\DoxyCodeLine{381 }
+\DoxyCodeLine{382         \textcolor{comment}{\# Parameter information -\/ alpha}}
+\DoxyCodeLine{383         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{384         print(\textcolor{stringliteral}{'Quantity of interest "{}alpha"{} is the factor in the exponent of the Quantum Harmonic Oscillator system.'})}
+\DoxyCodeLine{385         }
 \DoxyCodeLine{386 }
-\DoxyCodeLine{387         \textcolor{comment}{\# If not defaults, query grid for alpha}}
-\DoxyCodeLine{388         \textcolor{keywordflow}{if} use\_def == \textcolor{stringliteral}{'n'}:}
-\DoxyCodeLine{389             mini, maxi, num = \mbox{\hyperlink{namespacedice__write_a8c3fdb6a1a789a4d0f3e3afe7f4c5c6c}{query\_grid}}(tag)}
-\DoxyCodeLine{390             params[tag] = \textcolor{stringliteral}{'\{:\}, \{:\}, \{:\}'}.format(mini, maxi, num)}
-\DoxyCodeLine{391 }
-\DoxyCodeLine{392     }
-\DoxyCodeLine{393     \textcolor{comment}{\# H2plus}}
-\DoxyCodeLine{394     \textcolor{keywordflow}{elif} sys==\textcolor{stringliteral}{'b'}:}
+\DoxyCodeLine{387         \textcolor{comment}{\# Check if user wants defaults}}
+\DoxyCodeLine{388         tag = \textcolor{stringliteral}{'alpha'}}
+\DoxyCodeLine{389         use\_def = \mbox{\hyperlink{namespacedice__write_aebd3126f641c7d8245a920b5f00a19e8}{query\_default}}(tag,d\_alpha)}
+\DoxyCodeLine{390 }
+\DoxyCodeLine{391         \textcolor{comment}{\# If not defaults, query grid for alpha}}
+\DoxyCodeLine{392         \textcolor{keywordflow}{if} use\_def == \textcolor{stringliteral}{'n'}:}
+\DoxyCodeLine{393             mini, maxi, num = \mbox{\hyperlink{namespacedice__write_a8c3fdb6a1a789a4d0f3e3afe7f4c5c6c}{query\_grid}}(tag)}
+\DoxyCodeLine{394             params[tag] = \textcolor{stringliteral}{'\{:\}, \{:\}, \{:\}'}.format(mini, maxi, num)}
 \DoxyCodeLine{395 }
-\DoxyCodeLine{396         \textcolor{comment}{\# Query parameter search method}}
-\DoxyCodeLine{397         tag = \textcolor{stringliteral}{'auto\_params'}}
-\DoxyCodeLine{398         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{399         print(\textcolor{stringliteral}{'Which method would you like to use for parameter optimization at each bondlength?'})}
-\DoxyCodeLine{400         print(\textcolor{stringliteral}{'a) Automatic search by conjugate-\/gradient method, starting from a trial value for c.'})}
-\DoxyCodeLine{401         print(\textcolor{stringliteral}{'b) Grid search, over an input grid of trial values for c'})}
-\DoxyCodeLine{402         auto = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}a"{} or "{}b"{}): '})}
-\DoxyCodeLine{403         \textcolor{comment}{\# Check response}}
-\DoxyCodeLine{404         options = [\textcolor{stringliteral}{'a'},\textcolor{stringliteral}{'b'}]}
-\DoxyCodeLine{405         \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (auto \textcolor{keywordflow}{in} options):}
-\DoxyCodeLine{406             print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}a"{} or "{}b"{}, without quotes.'})}
-\DoxyCodeLine{407             auto = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
-\DoxyCodeLine{408         \textcolor{comment}{\# Record response}}
-\DoxyCodeLine{409         settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
-\DoxyCodeLine{410         params[tag] = settings[options.index(auto)]}
-\DoxyCodeLine{411 }
-\DoxyCodeLine{412         \textcolor{comment}{\# Query ham\_fdstep -\/ only for developers}}
-\DoxyCodeLine{413         \textcolor{comment}{\#tag='ham\_fdstep'}}
-\DoxyCodeLine{414         \textcolor{comment}{\#prompt='Enter finite difference step for differentiation of the H2-\/ion Hamiltonian.'}}
-\DoxyCodeLine{415         \textcolor{comment}{\#temp = query\_posfloat(prompt,tag,d\_ham\_fdstep)}}
-\DoxyCodeLine{416         \textcolor{comment}{\#if temp!='':}}
-\DoxyCodeLine{417         \textcolor{comment}{\#    params[tag] = str(temp)}}
-\DoxyCodeLine{418         }
-\DoxyCodeLine{419         \textcolor{comment}{\# Parameter information -\/  c}}
-\DoxyCodeLine{420         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{421         print(\textcolor{stringliteral}{'Parameter "{}c"{} is a coefficient in the Hydrogen Ion wavefunction.'})}
-\DoxyCodeLine{422         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{423 }
-\DoxyCodeLine{424         \textcolor{keywordflow}{if} auto==\textcolor{stringliteral}{'a'}:}
-\DoxyCodeLine{425 }
-\DoxyCodeLine{426             \textcolor{comment}{\# Query c\_fdstep -\/ only for developers}}
-\DoxyCodeLine{427             \textcolor{comment}{\#tag='c\_fdstep'}}
-\DoxyCodeLine{428             \textcolor{comment}{\#prompt='Enter finite difference step for conjugate-\/gradient search of parameter c.'}}
-\DoxyCodeLine{429             \textcolor{comment}{\#temp = query\_posfloat(prompt,tag,d\_c\_fdstep)}}
-\DoxyCodeLine{430             \textcolor{comment}{\#if temp!='':}}
-\DoxyCodeLine{431             \textcolor{comment}{\#    params[tag] = str(temp)}}
-\DoxyCodeLine{432 }
-\DoxyCodeLine{433             \textcolor{comment}{\# Query start value for auto-\/search of parameter c}}
-\DoxyCodeLine{434             tag=\textcolor{stringliteral}{'c'}}
-\DoxyCodeLine{435             prompt=\textcolor{stringliteral}{'Enter starting guess value for the conjugate-\/gradient search of parameter c.'}}
-\DoxyCodeLine{436             temp = \mbox{\hyperlink{namespacedice__write_a75a643f89765eb164532394130b8d657}{query\_posfloat}}(prompt,tag,d\_c)}
-\DoxyCodeLine{437             \textcolor{keywordflow}{if} temp!=\textcolor{stringliteral}{''}:}
-\DoxyCodeLine{438                 params[tag] = str(temp)}
-\DoxyCodeLine{439 }
-\DoxyCodeLine{440         \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{441 }
-\DoxyCodeLine{442             \textcolor{comment}{\# Check if user wants defaults}}
-\DoxyCodeLine{443             tag = \textcolor{stringliteral}{'c\_grid'}}
-\DoxyCodeLine{444             use\_def = \mbox{\hyperlink{namespacedice__write_aebd3126f641c7d8245a920b5f00a19e8}{query\_default}}(tag, d\_c\_grid)}
+\DoxyCodeLine{396     }
+\DoxyCodeLine{397     \textcolor{comment}{\# H2plus}}
+\DoxyCodeLine{398     \textcolor{keywordflow}{elif} sys==\textcolor{stringliteral}{'b'}:}
+\DoxyCodeLine{399 }
+\DoxyCodeLine{400         \textcolor{comment}{\# Query parameter search method}}
+\DoxyCodeLine{401         tag = \textcolor{stringliteral}{'auto\_params'}}
+\DoxyCodeLine{402         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{403         print(\textcolor{stringliteral}{'Which method would you like to use for parameter optimization at each bondlength?'})}
+\DoxyCodeLine{404         print(\textcolor{stringliteral}{'a) Automatic search by conjugate-\/gradient method, starting from a trial value for c.'})}
+\DoxyCodeLine{405         print(\textcolor{stringliteral}{'b) Grid search, over an input grid of trial values for c'})}
+\DoxyCodeLine{406         auto = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}a"{} or "{}b"{}): '})}
+\DoxyCodeLine{407         \textcolor{comment}{\# Check response}}
+\DoxyCodeLine{408         options = [\textcolor{stringliteral}{'a'},\textcolor{stringliteral}{'b'}]}
+\DoxyCodeLine{409         \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (auto \textcolor{keywordflow}{in} options):}
+\DoxyCodeLine{410             print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}a"{} or "{}b"{}, without quotes.'})}
+\DoxyCodeLine{411             auto = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{412         \textcolor{comment}{\# Record response}}
+\DoxyCodeLine{413         settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
+\DoxyCodeLine{414         params[tag] = settings[options.index(auto)]}
+\DoxyCodeLine{415 }
+\DoxyCodeLine{416         \textcolor{comment}{\# Query ham\_fdstep -\/ only for developers}}
+\DoxyCodeLine{417         \textcolor{comment}{\#tag='ham\_fdstep'}}
+\DoxyCodeLine{418         \textcolor{comment}{\#prompt='Enter finite difference step for differentiation of the H2-\/ion Hamiltonian.'}}
+\DoxyCodeLine{419         \textcolor{comment}{\#temp = query\_posfloat(prompt,tag,d\_ham\_fdstep)}}
+\DoxyCodeLine{420         \textcolor{comment}{\#if temp!='':}}
+\DoxyCodeLine{421         \textcolor{comment}{\#    params[tag] = str(temp)}}
+\DoxyCodeLine{422         }
+\DoxyCodeLine{423         \textcolor{comment}{\# Parameter information -\/  c}}
+\DoxyCodeLine{424         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{425         print(\textcolor{stringliteral}{'Parameter "{}c"{} is a coefficient in the Hydrogen Ion wavefunction.'})}
+\DoxyCodeLine{426         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{427 }
+\DoxyCodeLine{428         \textcolor{keywordflow}{if} auto==\textcolor{stringliteral}{'a'}:}
+\DoxyCodeLine{429 }
+\DoxyCodeLine{430             \textcolor{comment}{\# Query c\_fdstep -\/ only for developers}}
+\DoxyCodeLine{431             \textcolor{comment}{\#tag='c\_fdstep'}}
+\DoxyCodeLine{432             \textcolor{comment}{\#prompt='Enter finite difference step for conjugate-\/gradient search of parameter c.'}}
+\DoxyCodeLine{433             \textcolor{comment}{\#temp = query\_posfloat(prompt,tag,d\_c\_fdstep)}}
+\DoxyCodeLine{434             \textcolor{comment}{\#if temp!='':}}
+\DoxyCodeLine{435             \textcolor{comment}{\#    params[tag] = str(temp)}}
+\DoxyCodeLine{436 }
+\DoxyCodeLine{437             \textcolor{comment}{\# Query start value for auto-\/search of parameter c}}
+\DoxyCodeLine{438             tag=\textcolor{stringliteral}{'c'}}
+\DoxyCodeLine{439             prompt=\textcolor{stringliteral}{'Enter starting guess value for the conjugate-\/gradient search of parameter c.'}}
+\DoxyCodeLine{440             temp = \mbox{\hyperlink{namespacedice__write_a75a643f89765eb164532394130b8d657}{query\_posfloat}}(prompt,tag,d\_c)}
+\DoxyCodeLine{441             \textcolor{keywordflow}{if} temp!=\textcolor{stringliteral}{''}:}
+\DoxyCodeLine{442                 params[tag] = str(temp)}
+\DoxyCodeLine{443 }
+\DoxyCodeLine{444         \textcolor{keywordflow}{else}:}
 \DoxyCodeLine{445 }
-\DoxyCodeLine{446             \textcolor{comment}{\# If not defaults, query grid for c}}
-\DoxyCodeLine{447             \textcolor{keywordflow}{if} use\_def == \textcolor{stringliteral}{'n'}:}
-\DoxyCodeLine{448                 mini, maxi, num = \mbox{\hyperlink{namespacedice__write_a8c3fdb6a1a789a4d0f3e3afe7f4c5c6c}{query\_grid}}(tag)}
-\DoxyCodeLine{449                 params[tag] = \textcolor{stringliteral}{'\{:\}, \{:\}, \{:\}'}.format(mini, maxi, num)}
-\DoxyCodeLine{450         }
-\DoxyCodeLine{451 }
-\DoxyCodeLine{452             \textcolor{comment}{\# Parameter information -\/ bond}}
-\DoxyCodeLine{453             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{454             print(\textcolor{stringliteral}{'Quantity of interest "{}bond"{} is the Hydrogen bondlength in Bohr units.'})}
-\DoxyCodeLine{455             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{456 }
-\DoxyCodeLine{457             \textcolor{comment}{\# Check if user wants defaults}}
-\DoxyCodeLine{458             tag = \textcolor{stringliteral}{'bond'}}
-\DoxyCodeLine{459             use\_def = \mbox{\hyperlink{namespacedice__write_aebd3126f641c7d8245a920b5f00a19e8}{query\_default}}(tag,d\_bond\_h2plus)}
+\DoxyCodeLine{446             \textcolor{comment}{\# Check if user wants defaults}}
+\DoxyCodeLine{447             tag = \textcolor{stringliteral}{'c\_grid'}}
+\DoxyCodeLine{448             use\_def = \mbox{\hyperlink{namespacedice__write_aebd3126f641c7d8245a920b5f00a19e8}{query\_default}}(tag, d\_c\_grid)}
+\DoxyCodeLine{449 }
+\DoxyCodeLine{450             \textcolor{comment}{\# If not defaults, query grid for c}}
+\DoxyCodeLine{451             \textcolor{keywordflow}{if} use\_def == \textcolor{stringliteral}{'n'}:}
+\DoxyCodeLine{452                 mini, maxi, num = \mbox{\hyperlink{namespacedice__write_a8c3fdb6a1a789a4d0f3e3afe7f4c5c6c}{query\_grid}}(tag)}
+\DoxyCodeLine{453                 params[tag] = \textcolor{stringliteral}{'\{:\}, \{:\}, \{:\}'}.format(mini, maxi, num)}
+\DoxyCodeLine{454         }
+\DoxyCodeLine{455 }
+\DoxyCodeLine{456             \textcolor{comment}{\# Parameter information -\/ bond}}
+\DoxyCodeLine{457             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{458             print(\textcolor{stringliteral}{'Quantity of interest "{}bond"{} is the Hydrogen bondlength in Bohr units.'})}
+\DoxyCodeLine{459             print(\textcolor{stringliteral}{''})}
 \DoxyCodeLine{460 }
-\DoxyCodeLine{461             \textcolor{comment}{\# If not defaults, query grid for c}}
-\DoxyCodeLine{462             \textcolor{keywordflow}{if} use\_def == \textcolor{stringliteral}{'n'}:}
-\DoxyCodeLine{463                 mini, maxi, num = \mbox{\hyperlink{namespacedice__write_a8c3fdb6a1a789a4d0f3e3afe7f4c5c6c}{query\_grid}}(tag)}
-\DoxyCodeLine{464                 params[tag] = \textcolor{stringliteral}{'\{:\}, \{:\}, \{:\}'}.format(mini, maxi, num)}
-\DoxyCodeLine{465 }
-\DoxyCodeLine{466     \textcolor{comment}{\# H2}}
-\DoxyCodeLine{467     \textcolor{keywordflow}{elif} sys==\textcolor{stringliteral}{'c'}:}
-\DoxyCodeLine{468 }
-\DoxyCodeLine{469         \textcolor{comment}{\# Query parameter search method}}
-\DoxyCodeLine{470         tag = \textcolor{stringliteral}{'auto\_params'}}
-\DoxyCodeLine{471         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{472         print(\textcolor{stringliteral}{'Which method would you like to use for parameter optimization at each bondlength?'})}
-\DoxyCodeLine{473         print(\textcolor{stringliteral}{'a) Automatic search by conjugate-\/gradient method, starting from a trial value for beta.'})}
-\DoxyCodeLine{474         print(\textcolor{stringliteral}{'b) Grid search, over an input grid of trial values for beta'})}
-\DoxyCodeLine{475         auto = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}a"{} or "{}b"{}): '})}
-\DoxyCodeLine{476         \textcolor{comment}{\# Check response}}
-\DoxyCodeLine{477         options = [\textcolor{stringliteral}{'a'},\textcolor{stringliteral}{'b'}]}
-\DoxyCodeLine{478         \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (auto \textcolor{keywordflow}{in} options):}
-\DoxyCodeLine{479             print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}a"{} or "{}b"{}, without quotes.'})}
-\DoxyCodeLine{480             auto = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
-\DoxyCodeLine{481         \textcolor{comment}{\# Record response}}
-\DoxyCodeLine{482         settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
-\DoxyCodeLine{483         params[tag] = settings[options.index(auto)]}
-\DoxyCodeLine{484 }
-\DoxyCodeLine{485         \textcolor{comment}{\# Parameter information -\/  c}}
-\DoxyCodeLine{486         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{487         print(\textcolor{stringliteral}{'Parameter "{}beta"{} is a coefficient in the Hydrogen Molecule wavefunction.'})}
-\DoxyCodeLine{488         print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{489 }
-\DoxyCodeLine{490         \textcolor{keywordflow}{if} auto==\textcolor{stringliteral}{'a'}:}
-\DoxyCodeLine{491 }
-\DoxyCodeLine{492             \textcolor{comment}{\# Query start value for auto-\/search of parameter c}}
-\DoxyCodeLine{493             tag=\textcolor{stringliteral}{'beta'}}
-\DoxyCodeLine{494             prompt=\textcolor{stringliteral}{'Enter starting guess value for the conjugate-\/gradient search of parameter beta.'}}
-\DoxyCodeLine{495             temp = \mbox{\hyperlink{namespacedice__write_a75a643f89765eb164532394130b8d657}{query\_posfloat}}(prompt,tag,d\_beta)}
-\DoxyCodeLine{496             \textcolor{keywordflow}{if} temp!=\textcolor{stringliteral}{''}:}
-\DoxyCodeLine{497                 params[tag] = str(temp)}
-\DoxyCodeLine{498 }
-\DoxyCodeLine{499         \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{500 }
-\DoxyCodeLine{501             \textcolor{comment}{\# Check if user wants defaults}}
-\DoxyCodeLine{502             tag = \textcolor{stringliteral}{'beta\_grid'}}
-\DoxyCodeLine{503             use\_def = \mbox{\hyperlink{namespacedice__write_aebd3126f641c7d8245a920b5f00a19e8}{query\_default}}(tag, d\_beta\_grid)}
+\DoxyCodeLine{461             \textcolor{comment}{\# Check if user wants defaults}}
+\DoxyCodeLine{462             tag = \textcolor{stringliteral}{'bond'}}
+\DoxyCodeLine{463             use\_def = \mbox{\hyperlink{namespacedice__write_aebd3126f641c7d8245a920b5f00a19e8}{query\_default}}(tag,d\_bond\_h2plus)}
+\DoxyCodeLine{464 }
+\DoxyCodeLine{465             \textcolor{comment}{\# If not defaults, query grid for c}}
+\DoxyCodeLine{466             \textcolor{keywordflow}{if} use\_def == \textcolor{stringliteral}{'n'}:}
+\DoxyCodeLine{467                 mini, maxi, num = \mbox{\hyperlink{namespacedice__write_a8c3fdb6a1a789a4d0f3e3afe7f4c5c6c}{query\_grid}}(tag)}
+\DoxyCodeLine{468                 params[tag] = \textcolor{stringliteral}{'\{:\}, \{:\}, \{:\}'}.format(mini, maxi, num)}
+\DoxyCodeLine{469 }
+\DoxyCodeLine{470     \textcolor{comment}{\# H2}}
+\DoxyCodeLine{471     \textcolor{keywordflow}{elif} sys==\textcolor{stringliteral}{'c'}:}
+\DoxyCodeLine{472 }
+\DoxyCodeLine{473         \textcolor{comment}{\# Query parameter search method}}
+\DoxyCodeLine{474         tag = \textcolor{stringliteral}{'auto\_params'}}
+\DoxyCodeLine{475         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{476         print(\textcolor{stringliteral}{'Which method would you like to use for parameter optimization at each bondlength?'})}
+\DoxyCodeLine{477         print(\textcolor{stringliteral}{'a) Automatic search by conjugate-\/gradient method, starting from a trial value for beta.'})}
+\DoxyCodeLine{478         print(\textcolor{stringliteral}{'b) Grid search, over an input grid of trial values for beta'})}
+\DoxyCodeLine{479         auto = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response ("{}a"{} or "{}b"{}): '})}
+\DoxyCodeLine{480         \textcolor{comment}{\# Check response}}
+\DoxyCodeLine{481         options = [\textcolor{stringliteral}{'a'},\textcolor{stringliteral}{'b'}]}
+\DoxyCodeLine{482         \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (auto \textcolor{keywordflow}{in} options):}
+\DoxyCodeLine{483             print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}a"{} or "{}b"{}, without quotes.'})}
+\DoxyCodeLine{484             auto = \mbox{\hyperlink{namespaceinput}{input}}(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{485         \textcolor{comment}{\# Record response}}
+\DoxyCodeLine{486         settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
+\DoxyCodeLine{487         params[tag] = settings[options.index(auto)]}
+\DoxyCodeLine{488 }
+\DoxyCodeLine{489         \textcolor{comment}{\# Parameter information -\/  c}}
+\DoxyCodeLine{490         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{491         print(\textcolor{stringliteral}{'Parameter "{}beta"{} is a coefficient in the Hydrogen Molecule wavefunction.'})}
+\DoxyCodeLine{492         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{493 }
+\DoxyCodeLine{494         \textcolor{keywordflow}{if} auto==\textcolor{stringliteral}{'a'}:}
+\DoxyCodeLine{495 }
+\DoxyCodeLine{496             \textcolor{comment}{\# Query start value for auto-\/search of parameter c}}
+\DoxyCodeLine{497             tag=\textcolor{stringliteral}{'beta'}}
+\DoxyCodeLine{498             prompt=\textcolor{stringliteral}{'Enter starting guess value for the conjugate-\/gradient search of parameter beta.'}}
+\DoxyCodeLine{499             temp = \mbox{\hyperlink{namespacedice__write_a75a643f89765eb164532394130b8d657}{query\_posfloat}}(prompt,tag,d\_beta)}
+\DoxyCodeLine{500             \textcolor{keywordflow}{if} temp!=\textcolor{stringliteral}{''}:}
+\DoxyCodeLine{501                 params[tag] = str(temp)}
+\DoxyCodeLine{502 }
+\DoxyCodeLine{503         \textcolor{keywordflow}{else}:}
 \DoxyCodeLine{504 }
-\DoxyCodeLine{505             \textcolor{comment}{\# If not defaults, query grid for c}}
-\DoxyCodeLine{506             \textcolor{keywordflow}{if} use\_def == \textcolor{stringliteral}{'n'}:}
-\DoxyCodeLine{507                 mini, maxi, num = \mbox{\hyperlink{namespacedice__write_a8c3fdb6a1a789a4d0f3e3afe7f4c5c6c}{query\_grid}}(tag)}
-\DoxyCodeLine{508                 params[tag] = \textcolor{stringliteral}{'\{:\}, \{:\}, \{:\}'}.format(mini, maxi, num)}
-\DoxyCodeLine{509         }
-\DoxyCodeLine{510 }
-\DoxyCodeLine{511             \textcolor{comment}{\# Parameter information -\/ bond}}
-\DoxyCodeLine{512             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{513             print(\textcolor{stringliteral}{'Quantity of interest "{}bond"{} is the Hydrogen bondlength in Bohr units.'})}
-\DoxyCodeLine{514             print(\textcolor{stringliteral}{''})}
-\DoxyCodeLine{515 }
-\DoxyCodeLine{516             \textcolor{comment}{\# Check if user wants defaults}}
-\DoxyCodeLine{517             tag = \textcolor{stringliteral}{'bond'}}
-\DoxyCodeLine{518             use\_def = \mbox{\hyperlink{namespacedice__write_aebd3126f641c7d8245a920b5f00a19e8}{query\_default}}(tag,d\_bond\_h2)}
+\DoxyCodeLine{505             \textcolor{comment}{\# Check if user wants defaults}}
+\DoxyCodeLine{506             tag = \textcolor{stringliteral}{'beta\_grid'}}
+\DoxyCodeLine{507             use\_def = \mbox{\hyperlink{namespacedice__write_aebd3126f641c7d8245a920b5f00a19e8}{query\_default}}(tag, d\_beta\_grid)}
+\DoxyCodeLine{508 }
+\DoxyCodeLine{509             \textcolor{comment}{\# If not defaults, query grid for c}}
+\DoxyCodeLine{510             \textcolor{keywordflow}{if} use\_def == \textcolor{stringliteral}{'n'}:}
+\DoxyCodeLine{511                 mini, maxi, num = \mbox{\hyperlink{namespacedice__write_a8c3fdb6a1a789a4d0f3e3afe7f4c5c6c}{query\_grid}}(tag)}
+\DoxyCodeLine{512                 params[tag] = \textcolor{stringliteral}{'\{:\}, \{:\}, \{:\}'}.format(mini, maxi, num)}
+\DoxyCodeLine{513         }
+\DoxyCodeLine{514 }
+\DoxyCodeLine{515             \textcolor{comment}{\# Parameter information -\/ bond}}
+\DoxyCodeLine{516             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{517             print(\textcolor{stringliteral}{'Quantity of interest "{}bond"{} is the Hydrogen bondlength in Bohr units.'})}
+\DoxyCodeLine{518             print(\textcolor{stringliteral}{''})}
 \DoxyCodeLine{519 }
-\DoxyCodeLine{520             \textcolor{comment}{\# If not defaults, query grid for c}}
-\DoxyCodeLine{521             \textcolor{keywordflow}{if} use\_def == \textcolor{stringliteral}{'n'}:}
-\DoxyCodeLine{522                 mini, maxi, num = \mbox{\hyperlink{namespacedice__write_a8c3fdb6a1a789a4d0f3e3afe7f4c5c6c}{query\_grid}}(tag)}
-\DoxyCodeLine{523                 params[tag] = \textcolor{stringliteral}{'\{:\}, \{:\}, \{:\}'}.format(mini, maxi, num)}
-\DoxyCodeLine{524     }
-\DoxyCodeLine{525 }
-\DoxyCodeLine{526     \textcolor{comment}{\# Return dictionaries with user inputs}}
-\DoxyCodeLine{527     \textcolor{keywordflow}{return} control, params}
-\DoxyCodeLine{528 }
+\DoxyCodeLine{520             \textcolor{comment}{\# Check if user wants defaults}}
+\DoxyCodeLine{521             tag = \textcolor{stringliteral}{'bond'}}
+\DoxyCodeLine{522             use\_def = \mbox{\hyperlink{namespacedice__write_aebd3126f641c7d8245a920b5f00a19e8}{query\_default}}(tag,d\_bond\_h2)}
+\DoxyCodeLine{523 }
+\DoxyCodeLine{524             \textcolor{comment}{\# If not defaults, query grid for c}}
+\DoxyCodeLine{525             \textcolor{keywordflow}{if} use\_def == \textcolor{stringliteral}{'n'}:}
+\DoxyCodeLine{526                 mini, maxi, num = \mbox{\hyperlink{namespacedice__write_a8c3fdb6a1a789a4d0f3e3afe7f4c5c6c}{query\_grid}}(tag)}
+\DoxyCodeLine{527                 params[tag] = \textcolor{stringliteral}{'\{:\}, \{:\}, \{:\}'}.format(mini, maxi, num)}
+\DoxyCodeLine{528     }
 \DoxyCodeLine{529 }
+\DoxyCodeLine{530     \textcolor{comment}{\# Return dictionaries with user inputs}}
+\DoxyCodeLine{531     \textcolor{keywordflow}{return} control, params}
+\DoxyCodeLine{532 }
+\DoxyCodeLine{533 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
@@ -807,35 +811,35 @@ Major subroutine that writes the input file params.\+txt.
 \end{DoxyParams}
 
 
-Definition at line 535 of file dice\+\_\+write.\+py.
+Definition at line 539 of file dice\+\_\+write.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{535 \textcolor{keyword}{def }\mbox{\hyperlink{namespacedice__write_a8850537a5cdec760b180095ece66f23d}{write\_params}}(control,params):}
-\DoxyCodeLine{536     }
-\DoxyCodeLine{537     \textcolor{comment}{\# Open the file}}
-\DoxyCodeLine{538     f = open(\textcolor{stringliteral}{'params.txt'},\textcolor{stringliteral}{'w'})}
-\DoxyCodeLine{539 }
-\DoxyCodeLine{540     \textcolor{comment}{\# CONTROL namelist}}
-\DoxyCodeLine{541     f.write(\textcolor{stringliteral}{'\&CONTROL\(\backslash\)n'})}
-\DoxyCodeLine{542     \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} control.keys():}
-\DoxyCodeLine{543         f.write(tag+\textcolor{stringliteral}{' \(\backslash\)t= '}+control[tag]+\textcolor{stringliteral}{'\(\backslash\)n'})}
-\DoxyCodeLine{544     f.write(\textcolor{stringliteral}{'/\(\backslash\)n'})}
-\DoxyCodeLine{545 }
-\DoxyCodeLine{546     \textcolor{comment}{\# PARAMETERS namelist}}
-\DoxyCodeLine{547     \textcolor{keywordflow}{if} params == \textcolor{stringliteral}{'test'}:}
-\DoxyCodeLine{548         f.write(\textcolor{stringliteral}{'\&PARAMETERS\(\backslash\)n'})}
-\DoxyCodeLine{549         f.write(\textcolor{stringliteral}{'\(\backslash\)\(\backslash\) \(\backslash\)n'})}
-\DoxyCodeLine{550     \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{551         f.write(\textcolor{stringliteral}{'\&PARAMETERS\(\backslash\)n'})}
-\DoxyCodeLine{552         sys = control[\textcolor{stringliteral}{'p\_system'}].replace(\textcolor{stringliteral}{"{}'"{}},\textcolor{stringliteral}{"{}"{}})}
-\DoxyCodeLine{553 }
-\DoxyCodeLine{554         \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} params.keys():}
-\DoxyCodeLine{555             f.write(sys+\textcolor{stringliteral}{'\%'}+tag+\textcolor{stringliteral}{' \(\backslash\)t= '}+params[tag]+\textcolor{stringliteral}{'\(\backslash\)n'})}
-\DoxyCodeLine{556         f.write(\textcolor{stringliteral}{'/\(\backslash\)n'})}
+\DoxyCodeLine{539 \textcolor{keyword}{def }\mbox{\hyperlink{namespacedice__write_a8850537a5cdec760b180095ece66f23d}{write\_params}}(control,params):}
+\DoxyCodeLine{540     }
+\DoxyCodeLine{541     \textcolor{comment}{\# Open the file}}
+\DoxyCodeLine{542     f = open(\textcolor{stringliteral}{'params.txt'},\textcolor{stringliteral}{'w'})}
+\DoxyCodeLine{543 }
+\DoxyCodeLine{544     \textcolor{comment}{\# CONTROL namelist}}
+\DoxyCodeLine{545     f.write(\textcolor{stringliteral}{'\&CONTROL\(\backslash\)n'})}
+\DoxyCodeLine{546     \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} control.keys():}
+\DoxyCodeLine{547         f.write(tag+\textcolor{stringliteral}{' \(\backslash\)t= '}+control[tag]+\textcolor{stringliteral}{'\(\backslash\)n'})}
+\DoxyCodeLine{548     f.write(\textcolor{stringliteral}{'/\(\backslash\)n'})}
+\DoxyCodeLine{549 }
+\DoxyCodeLine{550     \textcolor{comment}{\# PARAMETERS namelist}}
+\DoxyCodeLine{551     \textcolor{keywordflow}{if} params == \textcolor{stringliteral}{'test'}:}
+\DoxyCodeLine{552         f.write(\textcolor{stringliteral}{'\&PARAMETERS\(\backslash\)n'})}
+\DoxyCodeLine{553         f.write(\textcolor{stringliteral}{'\(\backslash\)\(\backslash\) \(\backslash\)n'})}
+\DoxyCodeLine{554     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{555         f.write(\textcolor{stringliteral}{'\&PARAMETERS\(\backslash\)n'})}
+\DoxyCodeLine{556         sys = control[\textcolor{stringliteral}{'p\_system'}].replace(\textcolor{stringliteral}{"{}'"{}},\textcolor{stringliteral}{"{}"{}})}
 \DoxyCodeLine{557 }
-\DoxyCodeLine{558     \textcolor{comment}{\# Close the file}}
-\DoxyCodeLine{559     f.close()}
+\DoxyCodeLine{558         \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} params.keys():}
+\DoxyCodeLine{559             f.write(sys+\textcolor{stringliteral}{'\%'}+tag+\textcolor{stringliteral}{' \(\backslash\)t= '}+params[tag]+\textcolor{stringliteral}{'\(\backslash\)n'})}
+\DoxyCodeLine{560         f.write(\textcolor{stringliteral}{'/\(\backslash\)n'})}
+\DoxyCodeLine{561 }
+\DoxyCodeLine{562     \textcolor{comment}{\# Close the file}}
+\DoxyCodeLine{563     f.close()}
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:
