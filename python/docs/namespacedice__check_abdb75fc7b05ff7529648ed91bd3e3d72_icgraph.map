@@ -1,8 +1,0 @@
-<map id="dice_check.default_message" name="dice_check.default_message">
-<area shape="rect" id="node1" title="Subroutine that notifies the user when defaults are being used for a certain parameter." alt="" coords="633,74,764,115"/>
-<area shape="rect" id="node2" href="$namespacedice__check.html#a4982ea6884cd4de4b556fbcfb4b888a5" title="Checks the input value of a parameter that is expected to be a float." alt="" coords="427,5,585,32"/>
-<area shape="rect" id="node3" href="$namespacedice__check.html#a6d9e6c1b578154488d648ae41acf78d4" title="Major subroutine that checks the inputs of file params.txt." alt="" coords="211,81,379,108"/>
-<area shape="rect" id="node5" href="$namespacedice__check.html#aa8801b9db86473aef07a67260fc1a2a7" title="Checks the input values for a grid parameter." alt="" coords="429,107,583,133"/>
-<area shape="rect" id="node6" href="$namespacedice__check.html#ad8b84e6487be06d020afa357a27a3f86" title="Checks the input value of a parameter that is expected to be an integer step." alt="" coords="427,157,585,184"/>
-<area shape="rect" id="node4" href="$namespacedice__inputs.html#ad9bf26e9331e0e111146c30a7456ddd4" title="Enquires whether the user would like to write a new params.txt file, or check an existing params...." alt="" coords="5,81,163,108"/>
-</map>

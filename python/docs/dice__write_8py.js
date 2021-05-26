@@ -1,11 +1,11 @@
 var dice__write_8py =
 [
-    [ "isint", "dice__write_8py.html#a6b5b39cce6741d1a0b96fe3dd59b2652", null ],
-    [ "isfloat", "dice__write_8py.html#ac634cffa3f4f8855127ef9bff7a56851", null ],
-    [ "query_default", "dice__write_8py.html#aebd3126f641c7d8245a920b5f00a19e8", null ],
-    [ "query_step", "dice__write_8py.html#a582e3bc639d5d28fcd8b6c0af2b8530d", null ],
-    [ "query_posfloat", "dice__write_8py.html#a75a643f89765eb164532394130b8d657", null ],
-    [ "query_grid", "dice__write_8py.html#a8c3fdb6a1a789a4d0f3e3afe7f4c5c6c", null ],
-    [ "query_params", "dice__write_8py.html#a2327d5c026b4653f4dcbc3ea0e998efe", null ],
-    [ "write_params", "dice__write_8py.html#a8850537a5cdec760b180095ece66f23d", null ]
+    [ "isint", "dice__write_8py.html#a876080e22b8a59221886abb1d420176d", null ],
+    [ "isfloat", "dice__write_8py.html#a574df547f033dc2f9681db9085915822", null ],
+    [ "query_default", "dice__write_8py.html#abd52e4ec35811b04e3525b0f3db3a74f", null ],
+    [ "query_step", "dice__write_8py.html#a72a80ad03ea22ae6afae9e9cb7e97a57", null ],
+    [ "query_posfloat", "dice__write_8py.html#a511124193533a3328fbd919cb9eca1e4", null ],
+    [ "query_grid", "dice__write_8py.html#ad3bd71b7240382fbbdb2a0eb04f129cb", null ],
+    [ "query_params", "dice__write_8py.html#a9c61faf451621bddc76ed8a230036039", null ],
+    [ "write_params", "dice__write_8py.html#a3c84b7bc2d0a5121d56457058e3920d1", null ]
 ];

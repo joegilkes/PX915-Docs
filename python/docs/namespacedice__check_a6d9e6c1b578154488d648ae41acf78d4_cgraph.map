@@ -1,8 +1,0 @@
-<map id="dice_check.check_inputs" name="dice_check.check_inputs">
-<area shape="rect" id="node1" title="Major subroutine that checks the inputs of file params.txt." alt="" coords="5,107,173,133"/>
-<area shape="rect" id="node2" href="$namespacedice__check.html#a4982ea6884cd4de4b556fbcfb4b888a5" title="Checks the input value of a parameter that is expected to be a float." alt="" coords="222,5,379,32"/>
-<area shape="rect" id="node3" href="$namespacedice__check.html#abdb75fc7b05ff7529648ed91bd3e3d72" title="Subroutine that notifies the user when defaults are being used for a certain parameter." alt="" coords="428,74,559,115"/>
-<area shape="rect" id="node4" href="$namespacedice__check.html#aa8801b9db86473aef07a67260fc1a2a7" title="Checks the input values for a grid parameter." alt="" coords="223,107,378,133"/>
-<area shape="rect" id="node5" href="$namespacedice__check.html#ad8b84e6487be06d020afa357a27a3f86" title="Checks the input value of a parameter that is expected to be an integer step." alt="" coords="221,157,380,184"/>
-<area shape="rect" id="node6" href="$namespacedice__check.html#ac4fbe7bb65f9ff67c90cad4fec72dc62" title="Checks the validity of the input value given for a tag prein params.txt." alt="" coords="237,208,365,235"/>
-</map>

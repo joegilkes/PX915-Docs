@@ -1,9 +1,0 @@
-<map id="dice_write.query_params" name="dice_write.query_params">
-<area shape="rect" id="node1" title="Major function that queries the user for all the inputs required to assemble params...." alt="" coords="5,81,171,108"/>
-<area shape="rect" id="node2" href="$namespacedice__write.html#aebd3126f641c7d8245a920b5f00a19e8" title="Queries whether the user wants to use default values for a certain parameter." alt="" coords="221,5,383,32"/>
-<area shape="rect" id="node3" href="$namespacedice__write.html#a8c3fdb6a1a789a4d0f3e3afe7f4c5c6c" title="Queries user for the minimum, maximum and number of points of a parameter grid." alt="" coords="231,56,373,83"/>
-<area shape="rect" id="node4" href="$namespacedice__write.html#a75a643f89765eb164532394130b8d657" title="Queries a positive float value, using the input string as a prompt." alt="" coords="219,107,385,133"/>
-<area shape="rect" id="node6" href="$namespacedice__write.html#a582e3bc639d5d28fcd8b6c0af2b8530d" title="Queries an integer step value, using the input string as a prompt." alt="" coords="229,157,375,184"/>
-<area shape="rect" id="node5" href="$namespacedice__write.html#ac634cffa3f4f8855127ef9bff7a56851" title="Checks if the input string represents a float." alt="" coords="433,107,552,133"/>
-<area shape="rect" id="node7" href="$namespacedice__write.html#a6b5b39cce6741d1a0b96fe3dd59b2652" title="Checks if the input string represents an integer." alt="" coords="439,157,547,184"/>
-</map>

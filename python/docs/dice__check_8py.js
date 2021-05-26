@@ -1,9 +1,9 @@
 var dice__check_8py =
 [
-    [ "isvalid", "dice__check_8py.html#ac4fbe7bb65f9ff67c90cad4fec72dc62", null ],
-    [ "default_message", "dice__check_8py.html#abdb75fc7b05ff7529648ed91bd3e3d72", null ],
-    [ "check_step", "dice__check_8py.html#ad8b84e6487be06d020afa357a27a3f86", null ],
-    [ "check_float", "dice__check_8py.html#a4982ea6884cd4de4b556fbcfb4b888a5", null ],
-    [ "check_grid", "dice__check_8py.html#aa8801b9db86473aef07a67260fc1a2a7", null ],
-    [ "check_inputs", "dice__check_8py.html#a6d9e6c1b578154488d648ae41acf78d4", null ]
+    [ "isvalid", "dice__check_8py.html#afa56e066426982c324e32bd0ad8ad2bf", null ],
+    [ "default_message", "dice__check_8py.html#a7df2fa306a86981ea59e1bcc94584ab4", null ],
+    [ "check_step", "dice__check_8py.html#aba4662a6c4a329c05e7d1eed0cc8089a", null ],
+    [ "check_float", "dice__check_8py.html#a98dca2498872f2c2a52c4094512f1a9b", null ],
+    [ "check_grid", "dice__check_8py.html#a98e55f88fd3e099f39b2b2b773b0e720", null ],
+    [ "check_inputs", "dice__check_8py.html#a5b0048e86c14d5a7e78feabc634e4b67", null ]
 ];

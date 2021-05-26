@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['write_5fparams_132',['write_params',['../namespacedice__write.html#a8850537a5cdec760b180095ece66f23d',1,'dice_write']]]
+  ['write_5fparams_136',['write_params',['../namespace_dice_py_1_1dice__write.html#a3c84b7bc2d0a5121d56457058e3920d1',1,'DicePy::dice_write']]]
 ];

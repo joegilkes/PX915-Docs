@@ -1,0 +1,4 @@
+<map id="DicePy.dice_write.write_params" name="DicePy.dice_write.write_params">
+<area shape="rect" id="node1" title="Major subroutine that writes the input file params.txt." alt="" coords="212,5,368,47"/>
+<area shape="rect" id="node2" href="$namespace_dice_py_1_1dice__inputs.html#a261569dce72b6b21ec3f73f090fffb4a" title="Enquires whether the user would like to write a new params.txt file, or check an existing params...." alt="" coords="5,5,164,47"/>
+</map>

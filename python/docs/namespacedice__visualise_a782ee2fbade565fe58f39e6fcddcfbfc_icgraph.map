@@ -1,4 +1,0 @@
-<map id="dice_visualise.load_results" name="dice_visualise.load_results">
-<area shape="rect" id="node1" title="Loads the results as a dataset NetCDF object to be passed to other functions." alt="" coords="207,5,337,47"/>
-<area shape="rect" id="node2" href="$namespacedice__visualise.html#a5bf10890b671d944b7902fe11c434033" title="Processes the results output as a result of the parameter search from the NetCDF4 file." alt="" coords="5,5,159,47"/>
-</map>

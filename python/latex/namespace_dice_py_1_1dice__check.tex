@@ -1,0 +1,663 @@
+\hypertarget{namespace_dice_py_1_1dice__check}{}\doxysection{Dice\+Py.\+dice\+\_\+check Namespace Reference}
+\label{namespace_dice_py_1_1dice__check}\index{DicePy.dice\_check@{DicePy.dice\_check}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespace_dice_py_1_1dice__check_afa56e066426982c324e32bd0ad8ad2bf}{isvalid}} (tag, value, options)
+\begin{DoxyCompactList}\small\item\em Checks the validity of the input value given for a tag prein params.\+txt. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a7df2fa306a86981ea59e1bcc94584ab4}{default\+\_\+message}} (tag, dval)
+\begin{DoxyCompactList}\small\item\em Subroutine that notifies the user when defaults are being used for a certain parameter. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespace_dice_py_1_1dice__check_aba4662a6c4a329c05e7d1eed0cc8089a}{check\+\_\+step}} (tag, tags, params, defaults, idx=None)
+\begin{DoxyCompactList}\small\item\em Checks the input value of a parameter that is expected to be an integer step. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a98dca2498872f2c2a52c4094512f1a9b}{check\+\_\+float}} (tag, tags, params, defaults, idx=None)
+\begin{DoxyCompactList}\small\item\em Checks the input value of a parameter that is expected to be a float. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a98e55f88fd3e099f39b2b2b773b0e720}{check\+\_\+grid}} (tag, tags, params, default\+\_\+grid)
+\begin{DoxyCompactList}\small\item\em Checks the input values for a grid parameter. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a5b0048e86c14d5a7e78feabc634e4b67}{check\+\_\+inputs}} (nml)
+\begin{DoxyCompactList}\small\item\em Major subroutine that checks the inputs of file params.\+txt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_dice_py_1_1dice__check_afa56e066426982c324e32bd0ad8ad2bf}\label{namespace_dice_py_1_1dice__check_afa56e066426982c324e32bd0ad8ad2bf}} 
+\index{DicePy.dice\_check@{DicePy.dice\_check}!isvalid@{isvalid}}
+\index{isvalid@{isvalid}!DicePy.dice\_check@{DicePy.dice\_check}}
+\doxysubsubsection{\texorpdfstring{isvalid()}{isvalid()}}
+{\footnotesize\ttfamily def Dice\+Py.\+dice\+\_\+check.\+isvalid (\begin{DoxyParamCaption}\item[{}]{tag,  }\item[{}]{value,  }\item[{}]{options }\end{DoxyParamCaption})}
+
+
+
+Checks the validity of the input value given for a tag prein params.\+txt. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em tag} & String naming the parameter of interest \\
+\hline
+\mbox{\texttt{ in}}  & {\em values} & Input values for the parameter of interest, from params.\+txt \\
+\hline
+\mbox{\texttt{ in}}  & {\em options} & List of expected input values for the parameter of interest \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 19 of file dice\+\_\+check.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__check_afa56e066426982c324e32bd0ad8ad2bf}{isvalid}}(tag,value,options):}
+\DoxyCodeLine{20     \textcolor{keywordflow}{if} not(value \textcolor{keywordflow}{in} options):}
+\DoxyCodeLine{21         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{22         print(\textcolor{stringliteral}{'Error: Invalid input \(\backslash\)'\{:\}=\{:\}\(\backslash\)'. The program is expecting one of the following inputs:'}.format(tag,value))}
+\DoxyCodeLine{23         print(options)}
+\DoxyCodeLine{24         print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{25 }
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_dice_py_1_1dice__check_afa56e066426982c324e32bd0ad8ad2bf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespace_dice_py_1_1dice__check_a7df2fa306a86981ea59e1bcc94584ab4}\label{namespace_dice_py_1_1dice__check_a7df2fa306a86981ea59e1bcc94584ab4}} 
+\index{DicePy.dice\_check@{DicePy.dice\_check}!default\_message@{default\_message}}
+\index{default\_message@{default\_message}!DicePy.dice\_check@{DicePy.dice\_check}}
+\doxysubsubsection{\texorpdfstring{default\_message()}{default\_message()}}
+{\footnotesize\ttfamily def Dice\+Py.\+dice\+\_\+check.\+default\+\_\+message (\begin{DoxyParamCaption}\item[{}]{tag,  }\item[{}]{dval }\end{DoxyParamCaption})}
+
+
+
+Subroutine that notifies the user when defaults are being used for a certain parameter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em tag} & String naming the parameter of interest \\
+\hline
+\mbox{\texttt{ in}}  & {\em dval} & Default value for parameter of interest \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 31 of file dice\+\_\+check.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{31 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__check_a7df2fa306a86981ea59e1bcc94584ab4}{default\_message}}(tag,dval):}
+\DoxyCodeLine{32     \textcolor{keywordflow}{if} len(dval)==1:}
+\DoxyCodeLine{33         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{34         print(\textcolor{stringliteral}{'Note: Tag \(\backslash\)'\{:\}\(\backslash\)' is not set. Program will use the default \(\backslash\)'\{:\}=\{:\}\(\backslash\)'.'}.format(tag,tag,dval))}
+\DoxyCodeLine{35     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{36         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{37         print(\textcolor{stringliteral}{'Note: Tag \(\backslash\)'\{:\}\(\backslash\)' is not set. Program will use the following default \(\backslash\)'\{:\}\(\backslash\)' grid.'}.format(tag,tag))}
+\DoxyCodeLine{38         print(dval)}
+\DoxyCodeLine{39 }
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_dice_py_1_1dice__check_a7df2fa306a86981ea59e1bcc94584ab4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespace_dice_py_1_1dice__check_aba4662a6c4a329c05e7d1eed0cc8089a}\label{namespace_dice_py_1_1dice__check_aba4662a6c4a329c05e7d1eed0cc8089a}} 
+\index{DicePy.dice\_check@{DicePy.dice\_check}!check\_step@{check\_step}}
+\index{check\_step@{check\_step}!DicePy.dice\_check@{DicePy.dice\_check}}
+\doxysubsubsection{\texorpdfstring{check\_step()}{check\_step()}}
+{\footnotesize\ttfamily def Dice\+Py.\+dice\+\_\+check.\+check\+\_\+step (\begin{DoxyParamCaption}\item[{}]{tag,  }\item[{}]{tags,  }\item[{}]{params,  }\item[{}]{defaults,  }\item[{}]{idx = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+Checks the input value of a parameter that is expected to be an integer step. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em tag} & String naming the parameter of interest \\
+\hline
+\mbox{\texttt{ in}}  & {\em tags} & List containing tags present in the PARAMETER namelist \\
+\hline
+\mbox{\texttt{ in}}  & {\em params} & List containing input values for the PARAMETER namelist tags \\
+\hline
+\mbox{\texttt{ in}}  & {\em defaults} & List containing default values for the parameter of interest across systems \\
+\hline
+\mbox{\texttt{ in}}  & {\em idx} & Index of the system defined in param.\+txt \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em val} & Integer step value from params.\+txt \\
+\hline
+{\em dval} & Default step value for parameter of interest \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 50 of file dice\+\_\+check.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{50 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__check_aba4662a6c4a329c05e7d1eed0cc8089a}{check\_step}}(tag,tags,params,defaults,idx=None):}
+\DoxyCodeLine{51     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
+\DoxyCodeLine{52         val = params[tag]}
+\DoxyCodeLine{53         \textcolor{keywordflow}{if} not(type(val) \textcolor{keywordflow}{is} int):}
+\DoxyCodeLine{54             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{55             print(\textcolor{stringliteral}{'Error: Invalid input \(\backslash\)'\{:\}=\{:\}\(\backslash\)': The program is expecting positive integer for tag \(\backslash\)'\{:\}\(\backslash\)'.'}.format(tag,val,tag))}
+\DoxyCodeLine{56             print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{57         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{58             \textcolor{keywordflow}{return} val}
+\DoxyCodeLine{59     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{60         \textcolor{keywordflow}{if} idx==\textcolor{keywordtype}{None}:}
+\DoxyCodeLine{61             dval = defaults}
+\DoxyCodeLine{62         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{63             dval = defaults[idx]}
+\DoxyCodeLine{64         \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a7df2fa306a86981ea59e1bcc94584ab4}{default\_message}}(tag,dval)}
+\DoxyCodeLine{65         \textcolor{keywordflow}{return} dval}
+\DoxyCodeLine{66 }
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_dice_py_1_1dice__check_aba4662a6c4a329c05e7d1eed0cc8089a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_dice_py_1_1dice__check_aba4662a6c4a329c05e7d1eed0cc8089a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespace_dice_py_1_1dice__check_a98dca2498872f2c2a52c4094512f1a9b}\label{namespace_dice_py_1_1dice__check_a98dca2498872f2c2a52c4094512f1a9b}} 
+\index{DicePy.dice\_check@{DicePy.dice\_check}!check\_float@{check\_float}}
+\index{check\_float@{check\_float}!DicePy.dice\_check@{DicePy.dice\_check}}
+\doxysubsubsection{\texorpdfstring{check\_float()}{check\_float()}}
+{\footnotesize\ttfamily def Dice\+Py.\+dice\+\_\+check.\+check\+\_\+float (\begin{DoxyParamCaption}\item[{}]{tag,  }\item[{}]{tags,  }\item[{}]{params,  }\item[{}]{defaults,  }\item[{}]{idx = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+Checks the input value of a parameter that is expected to be a float. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em tag} & String naming the parameter of interest \\
+\hline
+\mbox{\texttt{ in}}  & {\em tags} & List containing tags present in the PARAMETER namelist \\
+\hline
+\mbox{\texttt{ in}}  & {\em params} & List containing input values for the PARAMETER namelist tags \\
+\hline
+\mbox{\texttt{ in}}  & {\em defaults} & List containing default values for the parameter of interest across systems \\
+\hline
+\mbox{\texttt{ in}}  & {\em idx} & Index of the system defined in param.\+txt \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 75 of file dice\+\_\+check.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{75 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__check_a98dca2498872f2c2a52c4094512f1a9b}{check\_float}}(tag,tags,params,defaults,idx=None):}
+\DoxyCodeLine{76     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
+\DoxyCodeLine{77         val = params[tag]}
+\DoxyCodeLine{78         \textcolor{keywordflow}{if} not(type(val) \textcolor{keywordflow}{is} float):}
+\DoxyCodeLine{79             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{80             print(\textcolor{stringliteral}{'Error: Invalid input \(\backslash\)'\{:\}=\{:\}\(\backslash\)': The program is expecting positive float for tag \(\backslash\)'\{:\}\(\backslash\)'.'}.format(tag,val,tag))}
+\DoxyCodeLine{81             print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{82     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{83         \textcolor{keywordflow}{if} idx==\textcolor{keywordtype}{None}:}
+\DoxyCodeLine{84             dval = defaults}
+\DoxyCodeLine{85         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{86             dval = defaults[idx]}
+\DoxyCodeLine{87         \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a7df2fa306a86981ea59e1bcc94584ab4}{default\_message}}(tag,dval)}
+\DoxyCodeLine{88 }
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_dice_py_1_1dice__check_a98dca2498872f2c2a52c4094512f1a9b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_dice_py_1_1dice__check_a98dca2498872f2c2a52c4094512f1a9b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespace_dice_py_1_1dice__check_a98e55f88fd3e099f39b2b2b773b0e720}\label{namespace_dice_py_1_1dice__check_a98e55f88fd3e099f39b2b2b773b0e720}} 
+\index{DicePy.dice\_check@{DicePy.dice\_check}!check\_grid@{check\_grid}}
+\index{check\_grid@{check\_grid}!DicePy.dice\_check@{DicePy.dice\_check}}
+\doxysubsubsection{\texorpdfstring{check\_grid()}{check\_grid()}}
+{\footnotesize\ttfamily def Dice\+Py.\+dice\+\_\+check.\+check\+\_\+grid (\begin{DoxyParamCaption}\item[{}]{tag,  }\item[{}]{tags,  }\item[{}]{params,  }\item[{}]{default\+\_\+grid }\end{DoxyParamCaption})}
+
+
+
+Checks the input values for a grid parameter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em tag} & String naming the grid parameter of interest \\
+\hline
+\mbox{\texttt{ in}}  & {\em tags} & List containing tags present in the PARAMETER namelist \\
+\hline
+\mbox{\texttt{ in}}  & {\em params} & List containing input values for the PARAMETER namelist tags \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 95 of file dice\+\_\+check.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{95 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__check_a98e55f88fd3e099f39b2b2b773b0e720}{check\_grid}}(tag,tags,params,default\_grid):}
+\DoxyCodeLine{96     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
+\DoxyCodeLine{97         length = len(params[tag])}
+\DoxyCodeLine{98         \textcolor{keywordflow}{if} length == 3:}
+\DoxyCodeLine{99             mini, maxi, num = params[tag]}
+\DoxyCodeLine{100             \textcolor{keywordflow}{if} not(type(mini) \textcolor{keywordflow}{is} float):}
+\DoxyCodeLine{101                 print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{102                 print(\textcolor{stringliteral}{'Error: Invalid input \(\backslash\)'\{:\}\(\backslash\)' min = \{:\}: The program is expecting positive float for \(\backslash\)'\{:\}\(\backslash\)' grid minimum.'}.format(tag,mini,tag))}
+\DoxyCodeLine{103                 print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{104             \textcolor{keywordflow}{elif} not(type(maxi) \textcolor{keywordflow}{is} float):}
+\DoxyCodeLine{105                 print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{106                 print(\textcolor{stringliteral}{'Error: Invalid input \(\backslash\)'\{:\}\(\backslash\)' max = \{:\}: The program is expecting positive float for \(\backslash\)'\{:\}\(\backslash\)' grid maximum.'}.format(tag,maxi,tag))}
+\DoxyCodeLine{107                 print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{108             \textcolor{keywordflow}{elif} mini > maxi:}
+\DoxyCodeLine{109                 print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{110                 print(\textcolor{stringliteral}{'Error: Invalid input: The program requires minimum < maximum for \(\backslash\)'\{:\}\(\backslash\)' grid.'}.format(tag))}
+\DoxyCodeLine{111                 print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{112             \textcolor{keywordflow}{elif} not(type(num) \textcolor{keywordflow}{is} int):}
+\DoxyCodeLine{113                 print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{114                 print(\textcolor{stringliteral}{'Error: Invalid input \(\backslash\)'\{:\}\(\backslash\)' num = \{:\}: The program is expecting positive integer number of points in \(\backslash\)'\{:\}\(\backslash\)' grid.'}.format(tag,num,tag))}
+\DoxyCodeLine{115                 print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{116             \textcolor{keywordflow}{elif} num <= 0:}
+\DoxyCodeLine{117                 print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{118                 print(\textcolor{stringliteral}{'Error: Invalid input \(\backslash\)'\{:\}\(\backslash\)' num = \{:\}: The program is expecting positive integer number of points in \(\backslash\)'\{:\}\(\backslash\)' grid.'}.format(tag,num,tag))}
+\DoxyCodeLine{119                 print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{120             \textcolor{keywordflow}{elif} mini==maxi \textcolor{keywordflow}{and} num!=1:}
+\DoxyCodeLine{121                 print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{122                 print(\textcolor{stringliteral}{'Error: Invalid input: For \(\backslash\)'\{:\}\(\backslash\)' grid, if minimum=maximum, The program is expecting num=1.'}.format(tag))}
+\DoxyCodeLine{123                 print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{124         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{125             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{126             print(\textcolor{stringliteral}{'Error: Invalid input: The program is expecting three input values (minimum, maximum, number of points) for grid \(\backslash\)'\{:\}\(\backslash\)'.'}.format(tag))}
+\DoxyCodeLine{127             print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{128     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{129         \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a7df2fa306a86981ea59e1bcc94584ab4}{default\_message}}(tag,default\_grid)}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{133 \textcolor{comment}{\# MAJOR CHECK FUNCTIONS -\/}}
+\DoxyCodeLine{134 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{135 }
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_dice_py_1_1dice__check_a98e55f88fd3e099f39b2b2b773b0e720_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_dice_py_1_1dice__check_a98e55f88fd3e099f39b2b2b773b0e720_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespace_dice_py_1_1dice__check_a5b0048e86c14d5a7e78feabc634e4b67}\label{namespace_dice_py_1_1dice__check_a5b0048e86c14d5a7e78feabc634e4b67}} 
+\index{DicePy.dice\_check@{DicePy.dice\_check}!check\_inputs@{check\_inputs}}
+\index{check\_inputs@{check\_inputs}!DicePy.dice\_check@{DicePy.dice\_check}}
+\doxysubsubsection{\texorpdfstring{check\_inputs()}{check\_inputs()}}
+{\footnotesize\ttfamily def Dice\+Py.\+dice\+\_\+check.\+check\+\_\+inputs (\begin{DoxyParamCaption}\item[{}]{nml }\end{DoxyParamCaption})}
+
+
+
+Major subroutine that checks the inputs of file params.\+txt. 
+
+Checks that required namelists are present in params.\+txt. Checks that the tags in each namelist are valid. Notifies user of missing tags, for which defaults will be used. Checks that the input values for each tag are of the correct type. Finally, checks that the tags are arranged in the correct order.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em nml} & Namelist containing the data of params.\+txt \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 146 of file dice\+\_\+check.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{146 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__check_a5b0048e86c14d5a7e78feabc634e4b67}{check\_inputs}}(nml):}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     \textcolor{comment}{\# Check for CONTROL header}}
+\DoxyCodeLine{149     headers = [header \textcolor{keywordflow}{for} header \textcolor{keywordflow}{in} nml]}
+\DoxyCodeLine{150     \textcolor{keywordflow}{if} \textcolor{keywordflow}{not} (\textcolor{stringliteral}{'control'} \textcolor{keywordflow}{in} headers):}
+\DoxyCodeLine{151         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{152         print(\textcolor{stringliteral}{'Error: Invalid format: CONTROL namelist is missing.'})}
+\DoxyCodeLine{153         print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155     \textcolor{comment}{\# Extract tags of CONTROL namelist}}
+\DoxyCodeLine{156     control = nml[\textcolor{stringliteral}{'control'}]}
+\DoxyCodeLine{157     tags = [tag \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} control]}
+\DoxyCodeLine{158     ctags = tags.copy()}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160     \textcolor{comment}{\# Check for invalid tags in CONTROL namelist}}
+\DoxyCodeLine{161     invalid\_tags = [tag \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} ctags \textcolor{keywordflow}{if} not(tag \textcolor{keywordflow}{in} corder)]}
+\DoxyCodeLine{162     \textcolor{keywordflow}{if} len(invalid\_tags)!=0:}
+\DoxyCodeLine{163         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{164         print(\textcolor{stringliteral}{'Error: Invalid tags present in the CONTROL namelist tags.'})}
+\DoxyCodeLine{165         print(\textcolor{stringliteral}{'Remove the following invalid tags:'})}
+\DoxyCodeLine{166         \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} invalid\_tags:}
+\DoxyCodeLine{167             print(tag)}
+\DoxyCodeLine{168         print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170     \textcolor{comment}{\# Check order of CONTROL namelist tags}}
+\DoxyCodeLine{171     order = [tag \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} corder \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} ctags]}
+\DoxyCodeLine{172     \textcolor{keywordflow}{if} not(ctags==order):}
+\DoxyCodeLine{173         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{174         print(\textcolor{stringliteral}{'Error: Invalid format. The CONTROL namelist tags need to be in the following order:'})}
+\DoxyCodeLine{175         print(order)}
+\DoxyCodeLine{176         print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178     \textcolor{comment}{\# Check system}}
+\DoxyCodeLine{179     \textcolor{comment}{\# Essential tag}}
+\DoxyCodeLine{180     tag = \textcolor{stringliteral}{'p\_system'}}
+\DoxyCodeLine{181     \textcolor{keywordflow}{if} not(tag \textcolor{keywordflow}{in} tags):}
+\DoxyCodeLine{182         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{183         print(\textcolor{stringliteral}{'Incomplete params.txt: The \(\backslash\)'\{:\}\(\backslash\)' tag is missing.'}.format(tag))}
+\DoxyCodeLine{184         print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{185     p\_system = control[tag]}
+\DoxyCodeLine{186     \mbox{\hyperlink{namespace_dice_py_1_1dice__check_afa56e066426982c324e32bd0ad8ad2bf}{isvalid}}(tag,p\_system,systems)}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188     \textcolor{comment}{\# Get system index for defaults}}
+\DoxyCodeLine{189     sys\_idx = systems.index(p\_system)}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191     \textcolor{comment}{\# Special Test Case}}
+\DoxyCodeLine{192     \textcolor{keywordflow}{if} p\_system == \textcolor{stringliteral}{'test'}:}
+\DoxyCodeLine{193         \textcolor{keywordflow}{return}}
+\DoxyCodeLine{194     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{195         \textcolor{comment}{\# Check for PARAMETERS namelist}}
+\DoxyCodeLine{196         \textcolor{keywordflow}{if} \textcolor{keywordflow}{not} (\textcolor{stringliteral}{'parameters'} \textcolor{keywordflow}{in} headers):}
+\DoxyCodeLine{197             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{198             print(\textcolor{stringliteral}{'Error: Invalid format: PARAMETERS namelist is missing.'})}
+\DoxyCodeLine{199             print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{200     }
+\DoxyCodeLine{201     \textcolor{comment}{\# Check values in CONTROL namelist}}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203     \textcolor{comment}{\# Check run\_equil}}
+\DoxyCodeLine{204     \textcolor{comment}{\# Default run\_equil=.FALSE.}}
+\DoxyCodeLine{205     tag = \textcolor{stringliteral}{'run\_equil'}}
+\DoxyCodeLine{206     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
+\DoxyCodeLine{207         equi = control[tag]}
+\DoxyCodeLine{208         \mbox{\hyperlink{namespace_dice_py_1_1dice__check_afa56e066426982c324e32bd0ad8ad2bf}{isvalid}}(tag,equi,boolean)}
+\DoxyCodeLine{209     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{210         \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a7df2fa306a86981ea59e1bcc94584ab4}{default\_message}}(tag,d\_equi)}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212     \textcolor{comment}{\# Check run\_restart}}
+\DoxyCodeLine{213     \textcolor{comment}{\# Default run\_restart=.FALSE.}}
+\DoxyCodeLine{214     tag = \textcolor{stringliteral}{'run\_restart'}}
+\DoxyCodeLine{215     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
+\DoxyCodeLine{216         rres = control[tag]}
+\DoxyCodeLine{217         \mbox{\hyperlink{namespace_dice_py_1_1dice__check_afa56e066426982c324e32bd0ad8ad2bf}{isvalid}}(tag,rres,boolean)}
+\DoxyCodeLine{218     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{219         \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a7df2fa306a86981ea59e1bcc94584ab4}{default\_message}}(tag,d\_rres)}
+\DoxyCodeLine{220     }
+\DoxyCodeLine{221     \textcolor{comment}{\# Check write\_restart}}
+\DoxyCodeLine{222     \textcolor{comment}{\# Default write\_restart=.FALSE.}}
+\DoxyCodeLine{223     tag = \textcolor{stringliteral}{'write\_restart'}}
+\DoxyCodeLine{224     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
+\DoxyCodeLine{225         wres = control[tag]}
+\DoxyCodeLine{226         \mbox{\hyperlink{namespace_dice_py_1_1dice__check_afa56e066426982c324e32bd0ad8ad2bf}{isvalid}}(tag,wres,boolean)}
+\DoxyCodeLine{227     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{228         wres = d\_wres}
+\DoxyCodeLine{229         \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a7df2fa306a86981ea59e1bcc94584ab4}{default\_message}}(tag,d\_wres)}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231     \textcolor{comment}{\# Check restart\_step}}
+\DoxyCodeLine{232     \textcolor{comment}{\# Default restart\_step=1}}
+\DoxyCodeLine{233     \textcolor{keywordflow}{if} wres:}
+\DoxyCodeLine{234         tag = \textcolor{stringliteral}{'restart\_num'}}
+\DoxyCodeLine{235         \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
+\DoxyCodeLine{236             rnum = control[tag]}
+\DoxyCodeLine{237             \textcolor{keywordflow}{if} not(type(rnum) \textcolor{keywordflow}{is} int):}
+\DoxyCodeLine{238                 print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{239                 print(\textcolor{stringliteral}{'Error: Invalid input \(\backslash\)'\{:\}=\{:\}\(\backslash\)': The program is expecting integer >=0 for tag \(\backslash\)'\{:\}\(\backslash\)'.'}.format(tag,rnum,tag))}
+\DoxyCodeLine{240                 print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{241             \textcolor{keywordflow}{elif} not(rnum>0):}
+\DoxyCodeLine{242                 print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{243                 print(\textcolor{stringliteral}{'Error: Invalid input \(\backslash\)'\{:\}=\{:\}\(\backslash\)': The program is expecting a positive integer for tag \(\backslash\)'\{:\}\(\backslash\)'.'}.format(tag,rnum,tag))}
+\DoxyCodeLine{244                 print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{245         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{246             \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a7df2fa306a86981ea59e1bcc94584ab4}{default\_message}}(tag,d\_rnum)}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248     \textcolor{comment}{\# Check write\_chains}}
+\DoxyCodeLine{249     \textcolor{comment}{\# Default write\_chains=.FALSE. }}
+\DoxyCodeLine{250     tag = \textcolor{stringliteral}{'write\_chains'}}
+\DoxyCodeLine{251     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
+\DoxyCodeLine{252         chn = control[tag]}
+\DoxyCodeLine{253         \mbox{\hyperlink{namespace_dice_py_1_1dice__check_afa56e066426982c324e32bd0ad8ad2bf}{isvalid}}(tag,chn,boolean)}
+\DoxyCodeLine{254         \textcolor{keywordflow}{if} equi \textcolor{keywordflow}{and} chn:}
+\DoxyCodeLine{255             \textcolor{comment}{\# For equilibration runs, it is redundant to set write\_chains=.TRUE.}}
+\DoxyCodeLine{256             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{257             print(\textcolor{stringliteral}{'Error: Cannot set write\_chain=.TRUE. for equilibration runs.'})}
+\DoxyCodeLine{258             print(\textcolor{stringliteral}{'       Equilibration runs (run\_equil=.TRUE.) automatically output the Markov chains.'})}
+\DoxyCodeLine{259             print(\textcolor{stringliteral}{'       It is hence redundant to set write\_chains=.TRUE. along with run\_equil=.TRUE.'})}
+\DoxyCodeLine{260             print(\textcolor{stringliteral}{'       Please remove the tag "{}write\_chains"{} from this CONTROL namelist.'})}
+\DoxyCodeLine{261             print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{262     \textcolor{keywordflow}{elif} (\textcolor{keywordflow}{not} equi):}
+\DoxyCodeLine{263         \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a7df2fa306a86981ea59e1bcc94584ab4}{default\_message}}(tag,d\_chn)}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265     \textcolor{comment}{\# Check write\_log}}
+\DoxyCodeLine{266     \textcolor{comment}{\# Default write\_log=.FALSE. }}
+\DoxyCodeLine{267     tag = \textcolor{stringliteral}{'write\_log'}}
+\DoxyCodeLine{268     \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
+\DoxyCodeLine{269         wlog = control[tag]}
+\DoxyCodeLine{270         \mbox{\hyperlink{namespace_dice_py_1_1dice__check_afa56e066426982c324e32bd0ad8ad2bf}{isvalid}}(tag,wlog,boolean)}
+\DoxyCodeLine{271     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{272         \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a7df2fa306a86981ea59e1bcc94584ab4}{default\_message}}(tag,d\_log)}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275     \textcolor{comment}{\# Check p\_system of PARAMETERS namelist}}
+\DoxyCodeLine{276     parameters = nml[\textcolor{stringliteral}{'parameters'}]}
+\DoxyCodeLine{277     sys\_small = [\textcolor{stringliteral}{'qho'},\textcolor{stringliteral}{'h2plus'},\textcolor{stringliteral}{'h2'},\textcolor{stringliteral}{'test'}]}
+\DoxyCodeLine{278     par\_sys = [sys \textcolor{keywordflow}{for} sys \textcolor{keywordflow}{in} parameters]}
+\DoxyCodeLine{279     \textcolor{keywordflow}{if} len(par\_sys)==0:}
+\DoxyCodeLine{280         \textcolor{comment}{\# Print defaults}}
+\DoxyCodeLine{281         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{282         print(\textcolor{stringliteral}{'Note: PARAMETERS namelist is empty.'})}
+\DoxyCodeLine{283         \textcolor{keywordflow}{if} (equi):}
+\DoxyCodeLine{284             print(\textcolor{stringliteral}{'The program will use the following default parameters for equilibration mode.'})}
+\DoxyCodeLine{285             print(\textcolor{stringliteral}{'steps='},d\_equi\_steps[sys\_idx],\textcolor{stringliteral}{', burn\_step=0, thin\_step=1'})}
+\DoxyCodeLine{286         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{287             print(\textcolor{stringliteral}{'The program will use the following default parameters for VQMC simulation mode.'})}
+\DoxyCodeLine{288             print(\textcolor{stringliteral}{'steps='},d\_vqmc\_steps[sys\_idx],\textcolor{stringliteral}{', burn\_step='},d\_bstep[sys\_idx],\textcolor{stringliteral}{', thin\_step='},d\_tstep[sys\_idx])}
+\DoxyCodeLine{289         print(\textcolor{stringliteral}{'rcut='},d\_rcut[sys\_idx],\textcolor{stringliteral}{', sigma='},d\_sigma[sys\_idx])}
+\DoxyCodeLine{290         \textcolor{keywordflow}{if} p\_system==\textcolor{stringliteral}{'QHO'}:}
+\DoxyCodeLine{291             print(\textcolor{stringliteral}{'alpha=[\{:\},\{:\},\{:\}]'}.format(d\_alpha[0],d\_alpha[1],d\_alpha[2]))}
+\DoxyCodeLine{292         \textcolor{keywordflow}{elif} p\_system==\textcolor{stringliteral}{'H2plus'}:}
+\DoxyCodeLine{293             print(\textcolor{stringliteral}{'auto\_params='},d\_auto\_h2plus)}
+\DoxyCodeLine{294             \textcolor{keywordflow}{if} d\_auto\_h2plus==\textcolor{stringliteral}{'.TRUE.'}:}
+\DoxyCodeLine{295                 print(\textcolor{stringliteral}{'c='},d\_c)}
+\DoxyCodeLine{296             \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{297                 print(\textcolor{stringliteral}{'c\_grid=[\{:\},\{:\},\{:\}]'}.format(d\_c\_grid[0],d\_c\_grid[1],d\_c\_grid[2]))}
+\DoxyCodeLine{298             print(\textcolor{stringliteral}{'bond=[\{:\},\{:\},\{:\}]'}.format(d\_bond\_h2plus[0],d\_bond\_h2plus[1],d\_bond\_h2plus[2]))}
+\DoxyCodeLine{299         \textcolor{keywordflow}{elif} p\_system==\textcolor{stringliteral}{'H2'}:}
+\DoxyCodeLine{300             print(\textcolor{stringliteral}{'auto\_params='},d\_auto\_h2)}
+\DoxyCodeLine{301             \textcolor{keywordflow}{if} d\_auto\_h2==\textcolor{stringliteral}{'.TRUE.'}:}
+\DoxyCodeLine{302                 print(\textcolor{stringliteral}{'beta='},d\_beta)}
+\DoxyCodeLine{303             \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{304                 print(\textcolor{stringliteral}{'beta\_grid=[\{:\},\{:\},\{:\}]'}.format(d\_beta\_grid[0],d\_beta\_grid[1],d\_beta\_grid[2]))}
+\DoxyCodeLine{305             print(\textcolor{stringliteral}{'bond=[\{:\},\{:\},\{:\}]'}.format(d\_bond\_h2[0],d\_bond\_h2[1],d\_bond\_h2[2]))}
+\DoxyCodeLine{306         \textcolor{keywordflow}{return}}
+\DoxyCodeLine{307     \textcolor{keywordflow}{elif} len(par\_sys)>1:}
+\DoxyCodeLine{308         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{309         print(\textcolor{stringliteral}{'Error: Invalid input: Either multiple or no system defitions present in PARAMETERS namelist tags.'})}
+\DoxyCodeLine{310         print(\textcolor{stringliteral}{'The program is expecting one, and only one, of the following strings before a percent symbol:'})}
+\DoxyCodeLine{311         print(systems)}
+\DoxyCodeLine{312         print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{313     \textcolor{keywordflow}{elif} \textcolor{keywordflow}{not} (par\_sys[0] \textcolor{keywordflow}{in} sys\_small):}
+\DoxyCodeLine{314         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{315         print(\textcolor{stringliteral}{'Error: Invalid system definition in PARAMETERS namelist tags. The program is expecting one of the following strings before a percent symbol:'})}
+\DoxyCodeLine{316         print(systems)}
+\DoxyCodeLine{317         print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{318 }
+\DoxyCodeLine{319     \textcolor{comment}{\# Extract tags of PARAMETERS namelist}}
+\DoxyCodeLine{320     params = parameters[par\_sys[0]]}
+\DoxyCodeLine{321     tags = [tag \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} params]}
+\DoxyCodeLine{322     ptags = tags.copy()}
+\DoxyCodeLine{323 }
+\DoxyCodeLine{324     \textcolor{comment}{\# Check for invalid tags in PARAMMETERS namelist}}
+\DoxyCodeLine{325     \textcolor{keywordflow}{if} p\_system==\textcolor{stringliteral}{'QHO'}:}
+\DoxyCodeLine{326         porder = porder\_qho.copy()}
+\DoxyCodeLine{327     \textcolor{keywordflow}{elif} p\_system==\textcolor{stringliteral}{'H2plus'}:}
+\DoxyCodeLine{328         porder = porder\_h2plus.copy()}
+\DoxyCodeLine{329     \textcolor{keywordflow}{elif} p\_system==\textcolor{stringliteral}{'H2'}:}
+\DoxyCodeLine{330         porder = porder\_h2.copy()}
+\DoxyCodeLine{331     invalid\_tags = [tag \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} ptags \textcolor{keywordflow}{if} not(tag \textcolor{keywordflow}{in} porder)]}
+\DoxyCodeLine{332     \textcolor{keywordflow}{if} len(invalid\_tags)!=0:}
+\DoxyCodeLine{333         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{334         print(\textcolor{stringliteral}{'Error: Invalid tags present in the PARAMETERS namelist tags.'})}
+\DoxyCodeLine{335         print(\textcolor{stringliteral}{'Remove the following invalid tags:'})}
+\DoxyCodeLine{336         print(invalid\_tags)}
+\DoxyCodeLine{337         print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{338 }
+\DoxyCodeLine{339     \textcolor{comment}{\# Check order of PARAMETERS namelist}}
+\DoxyCodeLine{340     order = [tag \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} porder \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} ptags]}
+\DoxyCodeLine{341     \textcolor{keywordflow}{if} not(ptags==order):}
+\DoxyCodeLine{342         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{343         print(\textcolor{stringliteral}{'Error: Invalid format. The PARAMETERS namelist tags need to be in the following order:'})}
+\DoxyCodeLine{344         print(order)}
+\DoxyCodeLine{345         print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{346     }
+\DoxyCodeLine{347     \textcolor{comment}{\# Check values in PARAMETERS namelist}}
+\DoxyCodeLine{348 }
+\DoxyCodeLine{349     \textcolor{comment}{\# Check total steps}}
+\DoxyCodeLine{350     steps = \mbox{\hyperlink{namespace_dice_py_1_1dice__check_aba4662a6c4a329c05e7d1eed0cc8089a}{check\_step}}(\textcolor{stringliteral}{'steps'},tags,params,d\_steps,sys\_idx)}
+\DoxyCodeLine{351 }
+\DoxyCodeLine{352     \textcolor{comment}{\# Check burn steps}}
+\DoxyCodeLine{353     bstep = \mbox{\hyperlink{namespace_dice_py_1_1dice__check_aba4662a6c4a329c05e7d1eed0cc8089a}{check\_step}}(\textcolor{stringliteral}{'burn\_step'},tags,params,d\_bstep,sys\_idx)}
+\DoxyCodeLine{354 }
+\DoxyCodeLine{355     \textcolor{comment}{\# Check thin steps}}
+\DoxyCodeLine{356     tstep = \mbox{\hyperlink{namespace_dice_py_1_1dice__check_aba4662a6c4a329c05e7d1eed0cc8089a}{check\_step}}(\textcolor{stringliteral}{'thin\_step'},tags,params,d\_tstep,sys\_idx)}
+\DoxyCodeLine{357 }
+\DoxyCodeLine{358     \textcolor{comment}{\# Check compatibility of steps}}
+\DoxyCodeLine{359     \textcolor{keywordflow}{if} bstep >= steps:}
+\DoxyCodeLine{360         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{361         print(\textcolor{stringliteral}{'Error: Incompatable inputs steps=\{:\} and burn\_step=\{:\}. The program is expecting burn\_step < step.'}.format(steps,bstep))}
+\DoxyCodeLine{362         print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{363     \textcolor{keywordflow}{if} tstep >= steps-\/bstep:}
+\DoxyCodeLine{364         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{365         print(\textcolor{stringliteral}{'Error: Incompatable inputs steps=\{:\}, burn\_step=\{:\} and thin\_step=\{:\}. The program is expecting thinstep < steps -\/ burn\_step.'}.format(steps,bstep,tstep))}
+\DoxyCodeLine{366         print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{367     \textcolor{keywordflow}{if} (equi \textcolor{keywordflow}{and} bstep!=0) \textcolor{keywordflow}{or} (equi \textcolor{keywordflow}{and} tstep!=1):}
+\DoxyCodeLine{368         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{369         print(\textcolor{stringliteral}{'Error: Invalid inputs: For equilibration run, the program requires (defaults) burn\_step=0 and thin\_step=1.'})}
+\DoxyCodeLine{370         print(\textcolor{stringliteral}{'Either specify these values, or just do not specify these tags so that the program uses the defaults.'})}
+\DoxyCodeLine{371         print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{372 }
+\DoxyCodeLine{373     \textcolor{comment}{\# Check rcut}}
+\DoxyCodeLine{374     \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a98dca2498872f2c2a52c4094512f1a9b}{check\_float}}(\textcolor{stringliteral}{'rcut'},tags,params,d\_rcut,sys\_idx)}
+\DoxyCodeLine{375 }
+\DoxyCodeLine{376     \textcolor{comment}{\# Check sigma}}
+\DoxyCodeLine{377     \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a98dca2498872f2c2a52c4094512f1a9b}{check\_float}}(\textcolor{stringliteral}{'sigma'},tags,params,d\_sigma,sys\_idx)}
+\DoxyCodeLine{378 }
+\DoxyCodeLine{379 }
+\DoxyCodeLine{380     \textcolor{comment}{\# System specific parameters}}
+\DoxyCodeLine{381     \textcolor{comment}{\# QHO}}
+\DoxyCodeLine{382     \textcolor{keywordflow}{if} p\_system==\textcolor{stringliteral}{'QHO'}:}
+\DoxyCodeLine{383         }
+\DoxyCodeLine{384         \textcolor{comment}{\# Check alpha}}
+\DoxyCodeLine{385         \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a98e55f88fd3e099f39b2b2b773b0e720}{check\_grid}}(\textcolor{stringliteral}{'alpha'},tags,params,d\_alpha)}
+\DoxyCodeLine{386 }
+\DoxyCodeLine{387     \textcolor{comment}{\# H2plus}}
+\DoxyCodeLine{388     \textcolor{keywordflow}{elif} p\_system==\textcolor{stringliteral}{'H2plus'}:}
+\DoxyCodeLine{389 }
+\DoxyCodeLine{390         \textcolor{comment}{\# Check auto\_params}}
+\DoxyCodeLine{391         \textcolor{comment}{\# Default auto\_params=.TRUE.}}
+\DoxyCodeLine{392         tag = \textcolor{stringliteral}{'auto\_params'}}
+\DoxyCodeLine{393         \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
+\DoxyCodeLine{394             auto = control[tag]}
+\DoxyCodeLine{395             \mbox{\hyperlink{namespace_dice_py_1_1dice__check_afa56e066426982c324e32bd0ad8ad2bf}{isvalid}}(tag,auto,boolean)}
+\DoxyCodeLine{396         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{397             \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a7df2fa306a86981ea59e1bcc94584ab4}{default\_message}}(tag,d\_auto\_h2plus)}
+\DoxyCodeLine{398 }
+\DoxyCodeLine{399         \textcolor{keywordflow}{if} auto:}
+\DoxyCodeLine{400             \textcolor{comment}{\# Check c start guess}}
+\DoxyCodeLine{401             \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a98dca2498872f2c2a52c4094512f1a9b}{check\_float}}(\textcolor{stringliteral}{'c'},tags,params,d\_c)}
+\DoxyCodeLine{402         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{403             \textcolor{comment}{\# Check c\_grid}}
+\DoxyCodeLine{404             \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a98e55f88fd3e099f39b2b2b773b0e720}{check\_grid}}(\textcolor{stringliteral}{'c\_grid'},tags,params,d\_c\_grid)}
+\DoxyCodeLine{405         }
+\DoxyCodeLine{406         \textcolor{comment}{\# Check bond grid}}
+\DoxyCodeLine{407         \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a98e55f88fd3e099f39b2b2b773b0e720}{check\_grid}}(\textcolor{stringliteral}{'bond'},tags,params,d\_bond\_h2plus)}
+\DoxyCodeLine{408 }
+\DoxyCodeLine{409 }
+\DoxyCodeLine{410     \textcolor{comment}{\# H2}}
+\DoxyCodeLine{411     \textcolor{keywordflow}{elif} p\_system==\textcolor{stringliteral}{'H2'}:}
+\DoxyCodeLine{412 }
+\DoxyCodeLine{413         \textcolor{comment}{\# Check auto\_params}}
+\DoxyCodeLine{414         \textcolor{comment}{\# Default auto\_params=.TRUE.}}
+\DoxyCodeLine{415         tag = \textcolor{stringliteral}{'auto\_params'}}
+\DoxyCodeLine{416         \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} tags:}
+\DoxyCodeLine{417             auto = control[tag]}
+\DoxyCodeLine{418             \mbox{\hyperlink{namespace_dice_py_1_1dice__check_afa56e066426982c324e32bd0ad8ad2bf}{isvalid}}(tag,auto,boolean)}
+\DoxyCodeLine{419         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{420             \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a7df2fa306a86981ea59e1bcc94584ab4}{default\_message}}(tag,d\_auto\_h2)}
+\DoxyCodeLine{421         }
+\DoxyCodeLine{422         \textcolor{keywordflow}{if} auto:}
+\DoxyCodeLine{423             \textcolor{comment}{\# Check beta start guess}}
+\DoxyCodeLine{424             \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a98dca2498872f2c2a52c4094512f1a9b}{check\_float}}(\textcolor{stringliteral}{'beta'},tags,params,d\_beta)}
+\DoxyCodeLine{425         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{426             \textcolor{comment}{\# Check beta\_grid}}
+\DoxyCodeLine{427             \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a98e55f88fd3e099f39b2b2b773b0e720}{check\_grid}}(\textcolor{stringliteral}{'beta\_grid'},tags,params,d\_beta\_grid)}
+\DoxyCodeLine{428         }
+\DoxyCodeLine{429         \textcolor{comment}{\# Check bond grid}}
+\DoxyCodeLine{430         \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a98e55f88fd3e099f39b2b2b773b0e720}{check\_grid}}(\textcolor{stringliteral}{'bond'},tags,params,d\_bond\_h2)}
+\DoxyCodeLine{431 }
+\DoxyCodeLine{432     \textcolor{comment}{\# Check for invalid tags in CONTROL namelist}}
+\DoxyCodeLine{433     invalid\_tags = [tag \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} ctags \textcolor{keywordflow}{if} not(tag \textcolor{keywordflow}{in} corder)]}
+\DoxyCodeLine{434     \textcolor{keywordflow}{if} len(invalid\_tags)!=0:}
+\DoxyCodeLine{435         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{436         print(\textcolor{stringliteral}{'Error: Invalid tags present in the CONTROL namelist tags.'})}
+\DoxyCodeLine{437         print(\textcolor{stringliteral}{'Remove the following invalid tags:'})}
+\DoxyCodeLine{438         print(invalid\_tags)}
+\DoxyCodeLine{439         print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{440 }
+\DoxyCodeLine{441     \textcolor{comment}{\# Check order of CONTROL namelist tags}}
+\DoxyCodeLine{442     order = [tag \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} corder \textcolor{keywordflow}{if} tag \textcolor{keywordflow}{in} ctags]}
+\DoxyCodeLine{443     \textcolor{keywordflow}{if} not(ctags==order):}
+\DoxyCodeLine{444         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{445         print(\textcolor{stringliteral}{'Error: Invalid format. The CONTROL namelist tags need to be in the following order:'})}
+\DoxyCodeLine{446         print(order)}
+\DoxyCodeLine{447         print(\textcolor{stringliteral}{''}); exit()}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_dice_py_1_1dice__check_a5b0048e86c14d5a7e78feabc634e4b67_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_dice_py_1_1dice__check_a5b0048e86c14d5a7e78feabc634e4b67_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,100 @@
+\hypertarget{namespace_dice_py_1_1dice__inputs}{}\doxysection{Dice\+Py.\+dice\+\_\+inputs Namespace Reference}
+\label{namespace_dice_py_1_1dice__inputs}\index{DicePy.dice\_inputs@{DicePy.dice\_inputs}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespace_dice_py_1_1dice__inputs_a261569dce72b6b21ec3f73f090fffb4a}{dice\+\_\+inputs}} ()
+\begin{DoxyCompactList}\small\item\em Enquires whether the user would like to write a new params.\+txt file, or check an existing params.\+txt file, and follows up accordingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_dice_py_1_1dice__inputs_a261569dce72b6b21ec3f73f090fffb4a}\label{namespace_dice_py_1_1dice__inputs_a261569dce72b6b21ec3f73f090fffb4a}} 
+\index{DicePy.dice\_inputs@{DicePy.dice\_inputs}!dice\_inputs@{dice\_inputs}}
+\index{dice\_inputs@{dice\_inputs}!DicePy.dice\_inputs@{DicePy.dice\_inputs}}
+\doxysubsubsection{\texorpdfstring{dice\_inputs()}{dice\_inputs()}}
+{\footnotesize\ttfamily def Dice\+Py.\+dice\+\_\+inputs.\+dice\+\_\+inputs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Enquires whether the user would like to write a new params.\+txt file, or check an existing params.\+txt file, and follows up accordingly. 
+
+This routine has been wrapped in a function so that it can be called interactively from a jupyter notebook. It can also be invoked directly from the terminal by running\+: python 3 input.\+py 
+
+Definition at line 24 of file dice\+\_\+inputs.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{24 \textcolor{keyword}{def }\mbox{\hyperlink{namespace_dice_py_1_1dice__inputs_a261569dce72b6b21ec3f73f090fffb4a}{dice\_inputs}}():}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{comment}{\# Welcome Message}}
+\DoxyCodeLine{27     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{28     print(\textcolor{stringliteral}{'-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/'})}
+\DoxyCodeLine{29     print(\textcolor{stringliteral}{'Dice QMC'})}
+\DoxyCodeLine{30     print(\textcolor{stringliteral}{'-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/'})}
+\DoxyCodeLine{31     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{32     print(\textcolor{stringliteral}{'Hello! I\(\backslash\)'m here to help you with the input file for your Dice QMC simulation.'})}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{comment}{\# Query the Task}}
+\DoxyCodeLine{35     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{36     print(\textcolor{stringliteral}{'Would you like me to write (w) or check (c) your input file?'})}
+\DoxyCodeLine{37     task = input(\textcolor{stringliteral}{'Your response ("{}w"{} or "{}c"{}, without quotes): '})}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{comment}{\# Check}}
+\DoxyCodeLine{40     \textcolor{keywordflow}{while} task!=\textcolor{stringliteral}{'w'} \textcolor{keywordflow}{and} task!=\textcolor{stringliteral}{'c'}:}
+\DoxyCodeLine{41         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{42         print(\textcolor{stringliteral}{'Error: Oops, your response is invalid, please enter "{}w"{} or "{}c"{}, without quotes.'})}
+\DoxyCodeLine{43         task = input(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{comment}{\# Report}}
+\DoxyCodeLine{46     \textcolor{keywordflow}{if} task==\textcolor{stringliteral}{'w'}:}
+\DoxyCodeLine{47         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{48         print(\textcolor{stringliteral}{'Alright! I shall write out a new input file for you.'})}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50         \textcolor{comment}{\# Query the user for data}}
+\DoxyCodeLine{51         control, params = \mbox{\hyperlink{namespace_dice_py_1_1dice__write_a9c61faf451621bddc76ed8a230036039}{query\_params}}()}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53         \textcolor{comment}{\# Write the params.txt file}}
+\DoxyCodeLine{54         \mbox{\hyperlink{namespace_dice_py_1_1dice__write_a3c84b7bc2d0a5121d56457058e3920d1}{write\_params}}(control,params)}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56         \textcolor{comment}{\# Notify user}}
+\DoxyCodeLine{57         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{58         print(\textcolor{stringliteral}{'Your params.txt file is ready! You are all set to run the next step on Fortran :-\/) '})}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{61         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{62         print(\textcolor{stringliteral}{'Alright! I shall check the input file in this directory.'})}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64         \textcolor{comment}{\# Check that params.txt exits}}
+\DoxyCodeLine{65         \textcolor{keywordflow}{try}: }
+\DoxyCodeLine{66             f = open(\textcolor{stringliteral}{'params.txt'})}
+\DoxyCodeLine{67         \textcolor{keywordflow}{except} FileNotFoundError:}
+\DoxyCodeLine{68             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{69             print(\textcolor{stringliteral}{'Error: Oops, there is no param.txt file in the current working directory.'})}
+\DoxyCodeLine{70             print(\textcolor{stringliteral}{'       Please copy your params.txt file into this directory, and then run dice\_inputs() again.'})}
+\DoxyCodeLine{71             print(\textcolor{stringliteral}{'       Exiting the program.'})}
+\DoxyCodeLine{72             print(\textcolor{stringliteral}{''}); exit()}
+\DoxyCodeLine{73         f.close()}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75         \textcolor{comment}{\# Reading Namelists}}
+\DoxyCodeLine{76         \textcolor{keyword}{import} f90nml}
+\DoxyCodeLine{77         nml = f90nml.read(\textcolor{stringliteral}{'params.txt'})}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79         \textcolor{comment}{\# Check content of params.txt}}
+\DoxyCodeLine{80         \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a5b0048e86c14d5a7e78feabc634e4b67}{check\_inputs}}(nml)}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82         \textcolor{comment}{\# Notify user}}
+\DoxyCodeLine{83         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{84         print(\textcolor{stringliteral}{'Your params.txt file is correct! You are all set to run the next step on Fortran :-\/) '})}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{comment}{\# For users running the program directly on the terminal,}}
+\DoxyCodeLine{87 \textcolor{comment}{\# call the input routine defined above}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_dice_py_1_1dice__inputs_a261569dce72b6b21ec3f73f090fffb4a_cgraph}
+\end{center}
+\end{figure}

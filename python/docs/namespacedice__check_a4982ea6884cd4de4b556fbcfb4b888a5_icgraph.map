@@ -1,5 +1,0 @@
-<map id="dice_check.check_float" name="dice_check.check_float">
-<area shape="rect" id="node1" title="Checks the input value of a parameter that is expected to be a float." alt="" coords="427,5,584,32"/>
-<area shape="rect" id="node2" href="$namespacedice__check.html#a6d9e6c1b578154488d648ae41acf78d4" title="Major subroutine that checks the inputs of file params.txt." alt="" coords="211,5,379,32"/>
-<area shape="rect" id="node3" href="$namespacedice__inputs.html#ad9bf26e9331e0e111146c30a7456ddd4" title="Enquires whether the user would like to write a new params.txt file, or check an existing params...." alt="" coords="5,5,163,32"/>
-</map>

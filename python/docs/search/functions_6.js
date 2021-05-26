@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['isfloat_108',['isfloat',['../namespacedice__write.html#ac634cffa3f4f8855127ef9bff7a56851',1,'dice_write']]],
-  ['isint_109',['isint',['../namespacedice__write.html#a6b5b39cce6741d1a0b96fe3dd59b2652',1,'dice_write']]],
-  ['isvalid_110',['isvalid',['../namespacedice__check.html#ac4fbe7bb65f9ff67c90cad4fec72dc62',1,'dice_check']]]
+  ['isfloat_112',['isfloat',['../namespace_dice_py_1_1dice__write.html#a574df547f033dc2f9681db9085915822',1,'DicePy::dice_write']]],
+  ['isint_113',['isint',['../namespace_dice_py_1_1dice__write.html#a876080e22b8a59221886abb1d420176d',1,'DicePy::dice_write']]],
+  ['isvalid_114',['isvalid',['../namespace_dice_py_1_1dice__check.html#afa56e066426982c324e32bd0ad8ad2bf',1,'DicePy::dice_check']]]
 ];

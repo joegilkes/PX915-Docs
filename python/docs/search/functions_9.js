@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['plot_5f3d_117',['plot_3D',['../namespacedice__visualise.html#ae79fbe0672d7c4e181063be51bcbd0e1',1,'dice_visualise.plot_3D(X, Y, Z, wfn)'],['../namespacedice__visualise.html#a308922cd1b1364a94866ea0d4b4b0013',1,'dice_visualise.plot_3D(X, Y, Z, wfn, R1, R2)']]],
-  ['plot_5fmarkov_5fchain_118',['plot_markov_chain',['../namespacedice__visualise.html#a23b497b88b9146b2f0006198d522bfa8',1,'dice_visualise']]],
-  ['polar_5fto_5fcart_119',['polar_to_cart',['../namespacedice__visualise.html#ad088d0e8dd8e700e9574fb8e768ae1d2',1,'dice_visualise']]],
-  ['process_5fmain_5fresults_120',['process_main_results',['../namespacedice__visualise.html#a5bf10890b671d944b7902fe11c434033',1,'dice_visualise']]]
+  ['plot_5f3d_121',['plot_3D',['../namespace_dice_py_1_1dice__visualise.html#af6619867dfdc02c14995d64df42314f3',1,'DicePy.dice_visualise.plot_3D(X, Y, Z, wfn)'],['../namespace_dice_py_1_1dice__visualise.html#aaecb354ce844d441ff41cd60c875e36f',1,'DicePy.dice_visualise.plot_3D(X, Y, Z, wfn, R1, R2)']]],
+  ['plot_5fmarkov_5fchain_122',['plot_markov_chain',['../namespace_dice_py_1_1dice__visualise.html#a71f87402b5309230c1d68d46263bf848',1,'DicePy::dice_visualise']]],
+  ['polar_5fto_5fcart_123',['polar_to_cart',['../namespace_dice_py_1_1dice__visualise.html#a163ee968729a70b3b9f653ebed51045d',1,'DicePy::dice_visualise']]],
+  ['process_5fmain_5fresults_124',['process_main_results',['../namespace_dice_py_1_1dice__visualise.html#a5a0c22f15d7ec362e1e8063e090cff12',1,'DicePy::dice_visualise']]]
 ];

@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['qho_5feng_5fplot_121',['QHO_eng_plot',['../namespacedice__visualise.html#a160b1ed1091f7e8170511ee792563923',1,'dice_visualise']]],
-  ['qho_5fprob_5fplot_122',['QHO_prob_plot',['../namespacedice__visualise.html#a2def226dcfdb5f2f7b1af8c7104d0deb',1,'dice_visualise']]],
-  ['qhoenergyplot_123',['QHOEnergyPlot',['../namespacedice__visualise.html#aa878bf3481ce5d476a804f690a42d384',1,'dice_visualise']]],
-  ['qhoprobplot_124',['QHOProbPlot',['../namespacedice__visualise.html#a7223fd3db64dbd65e83c4860579380bf',1,'dice_visualise']]],
-  ['qhowfnplot_125',['QHOWfnPlot',['../namespacedice__visualise.html#a9cb989fdf28e1ca2822bd61ff91ca0da',1,'dice_visualise']]],
-  ['query_5fdefault_126',['query_default',['../namespacedice__write.html#aebd3126f641c7d8245a920b5f00a19e8',1,'dice_write']]],
-  ['query_5fgrid_127',['query_grid',['../namespacedice__write.html#a8c3fdb6a1a789a4d0f3e3afe7f4c5c6c',1,'dice_write']]],
-  ['query_5fparams_128',['query_params',['../namespacedice__write.html#a2327d5c026b4653f4dcbc3ea0e998efe',1,'dice_write']]],
-  ['query_5fposfloat_129',['query_posfloat',['../namespacedice__write.html#a75a643f89765eb164532394130b8d657',1,'dice_write']]],
-  ['query_5fstep_130',['query_step',['../namespacedice__write.html#a582e3bc639d5d28fcd8b6c0af2b8530d',1,'dice_write']]]
+  ['qho_5feng_5fplot_125',['QHO_eng_plot',['../namespace_dice_py_1_1dice__visualise.html#a4ed52b8cb18152fddc5e933a9ec10fe5',1,'DicePy::dice_visualise']]],
+  ['qho_5fprob_5fplot_126',['QHO_prob_plot',['../namespace_dice_py_1_1dice__visualise.html#a1e0fa890b9d36a8dc0d2cf886bdb47d0',1,'DicePy::dice_visualise']]],
+  ['qhoenergyplot_127',['QHOEnergyPlot',['../namespace_dice_py_1_1dice__visualise.html#a592dd6c19dea285182a2d766eba39393',1,'DicePy::dice_visualise']]],
+  ['qhoprobplot_128',['QHOProbPlot',['../namespace_dice_py_1_1dice__visualise.html#aa8bff4555b1d8df8986a287e47b44fe3',1,'DicePy::dice_visualise']]],
+  ['qhowfnplot_129',['QHOWfnPlot',['../namespace_dice_py_1_1dice__visualise.html#a9b1db186f691296871f6344f4bff4e67',1,'DicePy::dice_visualise']]],
+  ['query_5fdefault_130',['query_default',['../namespace_dice_py_1_1dice__write.html#abd52e4ec35811b04e3525b0f3db3a74f',1,'DicePy::dice_write']]],
+  ['query_5fgrid_131',['query_grid',['../namespace_dice_py_1_1dice__write.html#ad3bd71b7240382fbbdb2a0eb04f129cb',1,'DicePy::dice_write']]],
+  ['query_5fparams_132',['query_params',['../namespace_dice_py_1_1dice__write.html#a9c61faf451621bddc76ed8a230036039',1,'DicePy::dice_write']]],
+  ['query_5fposfloat_133',['query_posfloat',['../namespace_dice_py_1_1dice__write.html#a511124193533a3328fbd919cb9eca1e4',1,'DicePy::dice_write']]],
+  ['query_5fstep_134',['query_step',['../namespace_dice_py_1_1dice__write.html#a72a80ad03ea22ae6afae9e9cb7e97a57',1,'DicePy::dice_write']]]
 ];

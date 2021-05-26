@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['default_5fmessage_99',['default_message',['../namespacedice__check.html#abdb75fc7b05ff7529648ed91bd3e3d72',1,'dice_check']]],
-  ['dice_5finputs_100',['dice_inputs',['../namespacedice__inputs.html#ad9bf26e9331e0e111146c30a7456ddd4',1,'dice_inputs']]]
+  ['default_5fmessage_103',['default_message',['../namespace_dice_py_1_1dice__check.html#a7df2fa306a86981ea59e1bcc94584ab4',1,'DicePy::dice_check']]],
+  ['dice_5finputs_104',['dice_inputs',['../namespace_dice_py_1_1dice__inputs.html#a261569dce72b6b21ec3f73f090fffb4a',1,'DicePy::dice_inputs']]]
 ];

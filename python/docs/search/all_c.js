@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['systems_77',['systems',['../namespacedice__defaults.html#a704117e9150f756a214a8fcd9abddf0c',1,'dice_defaults']]]
+  ['readme_2emd_78',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]]
 ];

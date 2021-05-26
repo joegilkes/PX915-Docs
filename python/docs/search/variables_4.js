@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['systems_160',['systems',['../namespacedice__defaults.html#a704117e9150f756a214a8fcd9abddf0c',1,'dice_defaults']]]
+  ['systems_164',['systems',['../namespace_dice_py_1_1dice__defaults.html#a20fb51746ae49150eefc728c23eb8f0b',1,'DicePy::dice_defaults']]]
 ];

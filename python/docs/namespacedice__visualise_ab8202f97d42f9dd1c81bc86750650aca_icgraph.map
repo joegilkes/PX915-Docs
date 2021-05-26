@@ -1,4 +1,0 @@
-<map id="dice_visualise.H2_eng_plot" name="dice_visualise.H2_eng_plot">
-<area shape="rect" id="node1" title="Plots the energies against the parameters checked during the grid search Parameters: variables: Dicti..." alt="" coords="207,13,387,39"/>
-<area shape="rect" id="node2" href="$namespacedice__visualise.html#a5bf10890b671d944b7902fe11c434033" title="Processes the results output as a result of the parameter search from the NetCDF4 file." alt="" coords="5,5,159,47"/>
-</map>

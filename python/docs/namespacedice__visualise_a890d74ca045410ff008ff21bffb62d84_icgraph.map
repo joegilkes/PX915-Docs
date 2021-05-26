@@ -1,4 +1,0 @@
-<map id="dice_visualise.load_variables" name="dice_visualise.load_variables">
-<area shape="rect" id="node1" title="Loads the variables in the results file into a dictionary." alt="" coords="207,5,337,47"/>
-<area shape="rect" id="node2" href="$namespacedice__visualise.html#a5bf10890b671d944b7902fe11c434033" title="Processes the results output as a result of the parameter search from the NetCDF4 file." alt="" coords="5,5,159,47"/>
-</map>

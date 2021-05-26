@@ -1,0 +1,5 @@
+<map id="DicePy.dice_write.query_grid" name="DicePy.dice_write.query_grid">
+<area shape="rect" id="node1" title="Queries user for the minimum, maximum and number of points of a parameter grid." alt="" coords="419,13,605,39"/>
+<area shape="rect" id="node2" href="$namespace_dice_py_1_1dice__write.html#a9c61faf451621bddc76ed8a230036039" title="Major function that queries the user for all the inputs required to assemble params...." alt="" coords="212,5,371,47"/>
+<area shape="rect" id="node3" href="$namespace_dice_py_1_1dice__inputs.html#a261569dce72b6b21ec3f73f090fffb4a" title="Enquires whether the user would like to write a new params.txt file, or check an existing params...." alt="" coords="5,5,164,47"/>
+</map>

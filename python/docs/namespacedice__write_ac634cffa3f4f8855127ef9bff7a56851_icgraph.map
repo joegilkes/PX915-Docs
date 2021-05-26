@@ -1,6 +1,0 @@
-<map id="dice_write.isfloat" name="dice_write.isfloat">
-<area shape="rect" id="node1" title="Checks if the input string represents a float." alt="" coords="639,5,757,32"/>
-<area shape="rect" id="node2" href="$namespacedice__write.html#a75a643f89765eb164532394130b8d657" title="Queries a positive float value, using the input string as a prompt." alt="" coords="424,5,591,32"/>
-<area shape="rect" id="node3" href="$namespacedice__write.html#a2327d5c026b4653f4dcbc3ea0e998efe" title="Major function that queries the user for all the inputs required to assemble params...." alt="" coords="211,5,376,32"/>
-<area shape="rect" id="node4" href="$namespacedice__inputs.html#ad9bf26e9331e0e111146c30a7456ddd4" title="Enquires whether the user would like to write a new params.txt file, or check an existing params...." alt="" coords="5,5,163,32"/>
-</map>

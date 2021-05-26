@@ -1,0 +1,5 @@
+<map id="DicePy.dice_check.isvalid" name="DicePy.dice_check.isvalid">
+<area shape="rect" id="node1" title="Checks the validity of the input value given for a tag prein params.txt." alt="" coords="431,13,603,39"/>
+<area shape="rect" id="node2" href="$namespace_dice_py_1_1dice__check.html#a5b0048e86c14d5a7e78feabc634e4b67" title="Major subroutine that checks the inputs of file params.txt." alt="" coords="212,5,383,47"/>
+<area shape="rect" id="node3" href="$namespace_dice_py_1_1dice__inputs.html#a261569dce72b6b21ec3f73f090fffb4a" title="Enquires whether the user would like to write a new params.txt file, or check an existing params...." alt="" coords="5,5,164,47"/>
+</map>

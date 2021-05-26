@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['orb_5f1s_56',['orb_1s',['../namespacedice__visualise.html#acf6978a0f7c887756819dc52eb03f930',1,'dice_visualise']]],
-  ['orb_5f2s_57',['orb_2s',['../namespacedice__visualise.html#a61561770bb08d7b88351f402cb4f9bf5',1,'dice_visualise']]]
+  ['lcao_5fwfn_54',['lcao_wfn',['../namespace_dice_py_1_1dice__visualise.html#aa7a7248206840811fa4e6ac835142af5',1,'DicePy::dice_visualise']]],
+  ['load_5fglobal_5fattr_55',['load_global_attr',['../namespace_dice_py_1_1dice__visualise.html#a86a6e09c72837b5f17066a3eee79087e',1,'DicePy::dice_visualise']]],
+  ['load_5fresults_56',['load_results',['../namespace_dice_py_1_1dice__visualise.html#ade39cf6264b70d0cd62d9ff89742c62e',1,'DicePy::dice_visualise']]],
+  ['load_5fvariables_57',['load_variables',['../namespace_dice_py_1_1dice__visualise.html#abbdc54b3066752afd14b554b0791e96d',1,'DicePy::dice_visualise']]]
 ];

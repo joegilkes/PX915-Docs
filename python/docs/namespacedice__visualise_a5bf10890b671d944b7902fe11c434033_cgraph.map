@@ -1,7 +1,0 @@
-<map id="dice_visualise.process_main_results" name="dice_visualise.process_main_results">
-<area shape="rect" id="node1" title="Processes the results output as a result of the parameter search from the NetCDF4 file." alt="" coords="5,90,159,131"/>
-<area shape="rect" id="node2" href="$namespacedice__visualise.html#ab8202f97d42f9dd1c81bc86750650aca" title="Plots the energies against the parameters checked during the grid search Parameters: variables: Dicti..." alt="" coords="207,5,387,32"/>
-<area shape="rect" id="node3" href="$namespacedice__visualise.html#aac29a95757038a4f4c2e9dd75a24397e" title="Loads the global metadata in the results file into a dictionary." alt="" coords="231,57,362,98"/>
-<area shape="rect" id="node4" href="$namespacedice__visualise.html#a782ee2fbade565fe58f39e6fcddcfbfc" title="Loads the results as a dataset NetCDF object to be passed to other functions." alt="" coords="231,122,362,163"/>
-<area shape="rect" id="node5" href="$namespacedice__visualise.html#a890d74ca045410ff008ff21bffb62d84" title="Loads the variables in the results file into a dictionary." alt="" coords="231,187,362,229"/>
-</map>

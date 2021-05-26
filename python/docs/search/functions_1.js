@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['check_5ffloat_95',['check_float',['../namespacedice__check.html#a4982ea6884cd4de4b556fbcfb4b888a5',1,'dice_check']]],
-  ['check_5fgrid_96',['check_grid',['../namespacedice__check.html#aa8801b9db86473aef07a67260fc1a2a7',1,'dice_check']]],
-  ['check_5finputs_97',['check_inputs',['../namespacedice__check.html#a6d9e6c1b578154488d648ae41acf78d4',1,'dice_check']]],
-  ['check_5fstep_98',['check_step',['../namespacedice__check.html#ad8b84e6487be06d020afa357a27a3f86',1,'dice_check']]]
+  ['check_5ffloat_99',['check_float',['../namespace_dice_py_1_1dice__check.html#a98dca2498872f2c2a52c4094512f1a9b',1,'DicePy::dice_check']]],
+  ['check_5fgrid_100',['check_grid',['../namespace_dice_py_1_1dice__check.html#a98e55f88fd3e099f39b2b2b773b0e720',1,'DicePy::dice_check']]],
+  ['check_5finputs_101',['check_inputs',['../namespace_dice_py_1_1dice__check.html#a5b0048e86c14d5a7e78feabc634e4b67',1,'DicePy::dice_check']]],
+  ['check_5fstep_102',['check_step',['../namespace_dice_py_1_1dice__check.html#aba4662a6c4a329c05e7d1eed0cc8089a',1,'DicePy::dice_check']]]
 ];
