@@ -1,5 +1,5 @@
 <map id="restart_fns::error_check" name="restart_fns::error_check">
 <area shape="rect" id="node1" title="Checks error status at each point of the NetCDF read." alt="" coords="224,23,340,65"/>
-<area shape="rect" id="node2" href="$namespacerestart__fns.html#a2bfef0bcec6193f109b558f89e9cd90d" title=" " alt="" coords="11,5,171,32"/>
+<area shape="rect" id="node2" href="$namespacerestart__fns.html#a2bfef0bcec6193f109b558f89e9cd90d" title="Subroutine that reads restart file with energy chains (res_chains.nc) [UNUSED]." alt="" coords="11,5,171,32"/>
 <area shape="rect" id="node3" href="$namespacerestart__fns.html#a673ea568ef91fc50ac00e24822742301" title="Reads restart files with energies (res_ene_tot.nc or res_ene_par.nc)" alt="" coords="5,56,176,83"/>
 </map>

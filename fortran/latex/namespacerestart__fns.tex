@@ -17,7 +17,7 @@ subroutine \mbox{\hyperlink{namespacerestart__fns_a23054262d0eeb017dee69fd5f9ca1
 subroutine \mbox{\hyperlink{namespacerestart__fns_a673ea568ef91fc50ac00e24822742301}{read\+\_\+energies}} (filename, energies, accept\+\_\+rates)
 \begin{DoxyCompactList}\small\item\em Reads restart files with energies (res\+\_\+ene\+\_\+tot.\+nc or res\+\_\+ene\+\_\+par.\+nc) \end{DoxyCompactList}\item 
 subroutine \mbox{\hyperlink{namespacerestart__fns_a2bfef0bcec6193f109b558f89e9cd90d}{read\+\_\+chains}} (energy\+\_\+chain, accept\+\_\+rate)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Subroutine that reads restart file with energy chains (res\+\_\+chains.\+nc) \mbox{[}UNUSED\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -242,9 +242,9 @@ Assigns the data arrays it reads to the corresponding array variables passed to 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em filename} & Name of the Net\+CDF restart file with required energies \\
 \hline
-\mbox{\texttt{ in}}  & {\em energies} & Array to store restart energies \\
+\mbox{\texttt{ out}}  & {\em energies} & Array to store restart energies \\
 \hline
-\mbox{\texttt{ in}}  & {\em accept\+\_\+rates} & Array to store restart acceptence rates \\
+\mbox{\texttt{ out}}  & {\em accept\+\_\+rates} & Array to store restart acceptence rates \\
 \hline
 \end{DoxyParams}
 
@@ -304,43 +304,47 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line 239 of file restart\+\_\+fns.\+f90.
+Subroutine that reads restart file with energy chains (res\+\_\+chains.\+nc) \mbox{[}UNUSED\mbox{]}. 
+
+
+
+Definition at line 244 of file restart\+\_\+fns.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{240 }
-\DoxyCodeLine{241         \textcolor{comment}{! Local variables}}
-\DoxyCodeLine{242 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable}, \textcolor{keywordtype}{intent(out)} :: energy\_chain}
-\DoxyCodeLine{243 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: accept\_rate}
-\DoxyCodeLine{244         \textcolor{keywordtype}{integer} :: ierr, file\_id, var\_id}
 \DoxyCodeLine{245 }
-\DoxyCodeLine{246         \textcolor{comment}{! Check if file exists}}
-\DoxyCodeLine{247         \textcolor{keyword}{inquire}(file=resfile\_chn, iostat=rc)}
-\DoxyCodeLine{248         \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{249             print*, \textcolor{stringliteral}{'Searched for file '}, resfile\_chn, \textcolor{stringliteral}{' .'}}
-\DoxyCodeLine{250             error stop \textcolor{stringliteral}{'Error: This restart file is not present in the current directory.'}}
-\DoxyCodeLine{251 \textcolor{keywordflow}{        end if}}
-\DoxyCodeLine{252 }
-\DoxyCodeLine{253         \textcolor{comment}{! Open restart netCDF file with chains}}
-\DoxyCodeLine{254         ierr = nf90\_open(resfile\_chn, nf90\_nowrite, file\_id)}
-\DoxyCodeLine{255         \textcolor{keyword}{call }error\_check(ierr)}
-\DoxyCodeLine{256 }
-\DoxyCodeLine{257         \textcolor{comment}{!! Get var\_id for energy\_chain -\/ called 'Trace' in the netcdf file}}
-\DoxyCodeLine{258         ierr = nf90\_inq\_varid(file\_id, \textcolor{stringliteral}{"{}Trace"{}}, var\_id)}
-\DoxyCodeLine{259         \textcolor{keyword}{call }error\_check(ierr)}
-\DoxyCodeLine{260 }
-\DoxyCodeLine{261         \textcolor{comment}{! Read the energy\_chain}}
-\DoxyCodeLine{262         ierr = nf90\_get\_var(file\_id, var\_id, energy\_chain)}
-\DoxyCodeLine{263         \textcolor{keyword}{call }error\_check(ierr)}
-\DoxyCodeLine{264 }
-\DoxyCodeLine{265         \textcolor{comment}{! Get attribute accept\_rate}}
-\DoxyCodeLine{266         ierr = nf90\_get\_att(file\_id, nf90\_global, \textcolor{stringliteral}{"{}accept\_rate"{}}, accept\_rate\textcolor{comment}{)}}
-\DoxyCodeLine{267 \textcolor{comment}{}        \textcolor{keyword}{call }error\_check(ierr)}
-\DoxyCodeLine{268         }
-\DoxyCodeLine{269         \textcolor{comment}{! Close the file}}
-\DoxyCodeLine{270         ierr = nf90\_close(file\_id)}
-\DoxyCodeLine{271         \textcolor{keyword}{call }error\_check(ierr)}
-\DoxyCodeLine{272 }
+\DoxyCodeLine{246         \textcolor{comment}{! Local variables}}
+\DoxyCodeLine{247 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{allocatable}, \textcolor{keywordtype}{intent(out)} :: energy\_chain}
+\DoxyCodeLine{248 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(out)} :: accept\_rate}
+\DoxyCodeLine{249         \textcolor{keywordtype}{integer} :: ierr, file\_id, var\_id}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251         \textcolor{comment}{! Check if file exists}}
+\DoxyCodeLine{252         \textcolor{keyword}{inquire}(file=resfile\_chn, iostat=rc)}
+\DoxyCodeLine{253         \textcolor{keywordflow}{if} (rc /= 0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{254             print*, \textcolor{stringliteral}{'Searched for file '}, resfile\_chn, \textcolor{stringliteral}{' .'}}
+\DoxyCodeLine{255             error stop \textcolor{stringliteral}{'Error: This restart file is not present in the current directory.'}}
+\DoxyCodeLine{256 \textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258         \textcolor{comment}{! Open restart netCDF file with chains}}
+\DoxyCodeLine{259         ierr = nf90\_open(resfile\_chn, nf90\_nowrite, file\_id)}
+\DoxyCodeLine{260         \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262         \textcolor{comment}{!! Get var\_id for energy\_chain -\/ called 'Trace' in the netcdf file}}
+\DoxyCodeLine{263         ierr = nf90\_inq\_varid(file\_id, \textcolor{stringliteral}{"{}Trace"{}}, var\_id)}
+\DoxyCodeLine{264         \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266         \textcolor{comment}{! Read the energy\_chain}}
+\DoxyCodeLine{267         ierr = nf90\_get\_var(file\_id, var\_id, energy\_chain)}
+\DoxyCodeLine{268         \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270         \textcolor{comment}{! Get attribute accept\_rate}}
+\DoxyCodeLine{271         ierr = nf90\_get\_att(file\_id, nf90\_global, \textcolor{stringliteral}{"{}accept\_rate"{}}, accept\_rate\textcolor{comment}{)}}
+\DoxyCodeLine{272 \textcolor{comment}{}        \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{273         }
+\DoxyCodeLine{274         \textcolor{comment}{! Close the file}}
+\DoxyCodeLine{275         ierr = nf90\_close(file\_id)}
+\DoxyCodeLine{276         \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{277 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
