@@ -169,9 +169,9 @@ Variables</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains routines for handline random number generation, the main VQMC algorithms and routines for determining ideal parameters. </p>
-<p>This module contains the VQMC solvers for the quantum harmonic oscillator (QHO), hydrogen ion (H_2_plus) and hydrogen molecule (H_2) problems. It also has the sub_routine random normal which generates a sample from a normal distribution using the Box-Muller transfrom, which is needed for the Metropolis algorithm used in VQMC. This uses a random number generator which is initially seeded by environmental noise through /dev/urandom, and then propagated by an algorithm from <em> Numerical Recipes </em> by Press et al. (2007)</p>
+<p>This module contains the VQMC solvers for the quantum harmonic oscillator (QHO), hydrogen ion (H_2_plus) and hydrogen molecule (H_2) problems. It also has the subroutine random normal which generates a sample from a normal distribution using the Box-Muller transfrom, which is needed for the Metropolis algorithm used in VQMC. This uses a random number generator which is initially seeded by environmental noise through /dev/urandom, and then propagated by an algorithm from <em> Numerical Recipes </em> by Press et al. (2007)</p>
 <p>The VQMC algorithms use the <a class="el" href="namespacesolvers.html">solvers</a> module to obtain the transition probabilities needed for the Metropolis algorithm and to calculate the local energies given the position of the random walker(s).</p>
-<p>The module also contains routines for running these VQMC algorithms across a range of parameters. The <em>Grid</em> routines are used to do a search for the best variational parameter on a user-defined grid, while the <em>Auto</em> routines utilise the gradients calculated by the local energy routines to automatically determine the best variational parameter from a suitable guess. <em>Equil</em> routines are also included to run VQMC over a parameter grid, but to output the energy trace from VQMC rather than a total energy. These traces can then be used to determine optimal burning/thinning parameters for the Markov chains, using tools in the Python frontend. </p>
+<p>The module also contains routines for running these VQMC algorithms across a range of parameters. The <em>Grid</em> routines are used to do a search for the best variational parameter on a user-defined grid, while the <em>Auto</em> routines utilise the gradients calculated by the local energy routines to automatically determine the best variational parameter from a suitable guess. <em>Equil</em> routines are also included to run VQMC over a parameter grid, but to output the position and energy traces from VQMC rather than a total energy. These traces can then be used to determine optimal burning/thinning parameters for the Markov chains, using tools in the Python frontend. </p>
 </div><h2 class="groupheader">Function/Subroutine Documentation</h2>
 <a id="aed182179994b5465f5466b4d909a764e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aed182179994b5465f5466b4d909a764e">&#9670;&nbsp;</a></span>init_ran1()</h2>
@@ -260,7 +260,14 @@ Variables</h2></td></tr>
 
 <p>Implementation of Press et al's random number generator. </p>
 <p>Update to David Quigley's implementation of Press et al's random number generator (originally from <em> Numerical Methods </em>), as seem in PX425 Assignment 3, to be Fortran 2008 compliant.</p>
-<dl class="section remark"><dt>Remarks</dt><dd>NOTE: The variable dseed must be a negative integer when this routine is first called, otherwise the generator will not initialise properly. param[in,out] dseed Current value of seed. Must be a negative integer on first call of this routine. param[out] sample Uniform random number. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>NOTE: The variable dseed must be a negative integer when this routine is first called, otherwise the generator will not initialise properly. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">dseed</td><td>Current value of seed. Must be a negative integer on first call of this routine. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">sample</td><td>Uniform random number. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="vqmc_8f90_source.html#l00117">117</a> of file <a class="el" href="vqmc_8f90_source.html">vqmc.f90</a>.</p>
 <div class="fragment"><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
@@ -365,7 +372,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Adaptation of numpy's linspace function. </p>
-<p>Uses a REAL value for num for compatbility with parameter arrays, then converts to int internally. Returns a length 1 array just containing the start value if num is equal to 1. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Uses a REAL value for num for compatability with parameter arrays, then converts to int internally. Returns a length 1 array just containing the start value if num is equal to 1. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">start</td><td>Starting value of the sequence </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">end</td><td>End value of the sequence </td></tr>

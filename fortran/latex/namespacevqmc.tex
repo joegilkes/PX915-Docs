@@ -58,11 +58,11 @@ integer \mbox{\hyperlink{namespacevqmc_a4f41e2c494f06da125bf9a56314161b5}{logfra
 \doxysubsection{Detailed Description}
 Contains routines for handline random number generation, the main VQMC algorithms and routines for determining ideal parameters. 
 
-This module contains the VQMC solvers for the quantum harmonic oscillator (QHO), hydrogen ion (H\+\_\+2\+\_\+plus) and hydrogen molecule (H\+\_\+2) problems. It also has the sub\+\_\+routine random normal which generates a sample from a normal distribution using the Box-\/\+Muller transfrom, which is needed for the Metropolis algorithm used in VQMC. This uses a random number generator which is initially seeded by environmental noise through /dev/urandom, and then propagated by an algorithm from {\itshape  Numerical Recipes } by Press et al. (2007)
+This module contains the VQMC solvers for the quantum harmonic oscillator (QHO), hydrogen ion (H\+\_\+2\+\_\+plus) and hydrogen molecule (H\+\_\+2) problems. It also has the subroutine random normal which generates a sample from a normal distribution using the Box-\/\+Muller transfrom, which is needed for the Metropolis algorithm used in VQMC. This uses a random number generator which is initially seeded by environmental noise through /dev/urandom, and then propagated by an algorithm from {\itshape  Numerical Recipes } by Press et al. (2007)
 
 The VQMC algorithms use the \mbox{\hyperlink{namespacesolvers}{solvers}} module to obtain the transition probabilities needed for the Metropolis algorithm and to calculate the local energies given the position of the random walker(s).
 
-The module also contains routines for running these VQMC algorithms across a range of parameters. The {\itshape Grid} routines are used to do a search for the best variational parameter on a user-\/defined grid, while the {\itshape Auto} routines utilise the gradients calculated by the local energy routines to automatically determine the best variational parameter from a suitable guess. {\itshape Equil} routines are also included to run VQMC over a parameter grid, but to output the energy trace from VQMC rather than a total energy. These traces can then be used to determine optimal burning/thinning parameters for the Markov chains, using tools in the Python frontend. 
+The module also contains routines for running these VQMC algorithms across a range of parameters. The {\itshape Grid} routines are used to do a search for the best variational parameter on a user-\/defined grid, while the {\itshape Auto} routines utilise the gradients calculated by the local energy routines to automatically determine the best variational parameter from a suitable guess. {\itshape Equil} routines are also included to run VQMC over a parameter grid, but to output the position and energy traces from VQMC rather than a total energy. These traces can then be used to determine optimal burning/thinning parameters for the Markov chains, using tools in the Python frontend. 
 
 \doxysubsection{Function/\+Subroutine Documentation}
 \mbox{\Hypertarget{namespacevqmc_aed182179994b5465f5466b4d909a764e}\label{namespacevqmc_aed182179994b5465f5466b4d909a764e}} 
@@ -132,8 +132,15 @@ Implementation of Press et al\textquotesingle{}s random number generator.
 Update to David Quigley\textquotesingle{}s implementation of Press et al\textquotesingle{}s random number generator (originally from {\itshape  Numerical Methods }), as seem in PX425 Assignment 3, to be Fortran 2008 compliant.
 
 \begin{DoxyRemark}{Remarks}
-NOTE\+: The variable dseed must be a negative integer when this routine is first called, otherwise the generator will not initialise properly. param\mbox{[}in,out\mbox{]} dseed Current value of seed. Must be a negative integer on first call of this routine. param\mbox{[}out\mbox{]} sample Uniform random number. 
+NOTE\+: The variable dseed must be a negative integer when this routine is first called, otherwise the generator will not initialise properly. 
 \end{DoxyRemark}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em dseed} & Current value of seed. Must be a negative integer on first call of this routine. \\
+\hline
+\mbox{\texttt{ out}}  & {\em sample} & Uniform random number. \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line 117 of file vqmc.\+f90.
@@ -199,7 +206,7 @@ Here is the caller graph for this function\+:
 
 Adaptation of numpy\textquotesingle{}s linspace function. 
 
-Uses a REAL value for num for compatbility with parameter arrays, then converts to int internally. Returns a length 1 array just containing the start value if num is equal to 1. 
+Uses a REAL value for num for compatability with parameter arrays, then converts to int internally. Returns a length 1 array just containing the start value if num is equal to 1. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em start} & Starting value of the sequence \\
 \hline
