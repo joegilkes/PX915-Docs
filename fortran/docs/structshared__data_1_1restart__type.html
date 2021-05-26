@@ -105,42 +105,92 @@ $(document).ready(function(){initNavTree('structshared__data_1_1restart__type.ht
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="structshared__data_1_1restart__type__coll__graph.png" border="0" usemap="#ashared__data_1_1restart__type_coll__map" alt="Collaboration graph"/></div>
 <map name="ashared__data_1_1restart__type_coll__map" id="ashared__data_1_1restart__type_coll__map">
-<area shape="rect" title="Derived Type to store restart data." alt="" coords="5,5,172,185"/>
+<area shape="rect" title="Derived Type to store restart data." alt="" coords="5,5,172,229"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:a1aa15dbbee9dd7149563176a460ca243"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#a1aa15dbbee9dd7149563176a460ca243">p</a></td></tr>
+<tr class="memdesc:a1aa15dbbee9dd7149563176a460ca243"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of processors used.  <a href="structshared__data_1_1restart__type.html#a1aa15dbbee9dd7149563176a460ca243">More...</a><br /></td></tr>
+<tr class="separator:a1aa15dbbee9dd7149563176a460ca243"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab81c4a4d580bccb1878e522ec7c94db2"><td class="memItemLeft" align="right" valign="top">integer(int64), dimension(:), allocatable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#ab81c4a4d580bccb1878e522ec7c94db2">seeds</a></td></tr>
+<tr class="memdesc:ab81c4a4d580bccb1878e522ec7c94db2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Random seeds on the processors.  <a href="structshared__data_1_1restart__type.html#ab81c4a4d580bccb1878e522ec7c94db2">More...</a><br /></td></tr>
+<tr class="separator:ab81c4a4d580bccb1878e522ec7c94db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6d5b42f1d080abf1eb7036e2026e4aa"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#ad6d5b42f1d080abf1eb7036e2026e4aa">i_alpha</a></td></tr>
-<tr class="memdesc:ad6d5b42f1d080abf1eb7036e2026e4aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">index of last alpha value evaluated  <a href="structshared__data_1_1restart__type.html#ad6d5b42f1d080abf1eb7036e2026e4aa">More...</a><br /></td></tr>
+<tr class="memdesc:ad6d5b42f1d080abf1eb7036e2026e4aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of last alpha-grid point, for QHO.  <a href="structshared__data_1_1restart__type.html#ad6d5b42f1d080abf1eb7036e2026e4aa">More...</a><br /></td></tr>
 <tr class="separator:ad6d5b42f1d080abf1eb7036e2026e4aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54a9d4ff1b7da8f1a128cb76feda942b"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#a54a9d4ff1b7da8f1a128cb76feda942b">i_bond</a></td></tr>
-<tr class="memdesc:a54a9d4ff1b7da8f1a128cb76feda942b"><td class="mdescLeft">&#160;</td><td class="mdescRight">index of last bond value evaluated  <a href="structshared__data_1_1restart__type.html#a54a9d4ff1b7da8f1a128cb76feda942b">More...</a><br /></td></tr>
+<tr class="memdesc:a54a9d4ff1b7da8f1a128cb76feda942b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of last bond-grid point, for H2plus or H2.  <a href="structshared__data_1_1restart__type.html#a54a9d4ff1b7da8f1a128cb76feda942b">More...</a><br /></td></tr>
 <tr class="separator:a54a9d4ff1b7da8f1a128cb76feda942b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5fb52db630587b4fff9612bc92b18c4"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#ab5fb52db630587b4fff9612bc92b18c4">i_c1</a></td></tr>
-<tr class="memdesc:ab5fb52db630587b4fff9612bc92b18c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">index of last c1 value evaluated  <a href="structshared__data_1_1restart__type.html#ab5fb52db630587b4fff9612bc92b18c4">More...</a><br /></td></tr>
-<tr class="separator:ab5fb52db630587b4fff9612bc92b18c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae921a73cbaae847677fc126d8dc36874"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#ae921a73cbaae847677fc126d8dc36874">i_c2</a></td></tr>
-<tr class="memdesc:ae921a73cbaae847677fc126d8dc36874"><td class="mdescLeft">&#160;</td><td class="mdescRight">index of last c2 value evaluated  <a href="structshared__data_1_1restart__type.html#ae921a73cbaae847677fc126d8dc36874">More...</a><br /></td></tr>
-<tr class="separator:ae921a73cbaae847677fc126d8dc36874"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af151cf87badda30dc4ff9a092f14fb49"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#af151cf87badda30dc4ff9a092f14fb49">step</a></td></tr>
-<tr class="memdesc:af151cf87badda30dc4ff9a092f14fb49"><td class="mdescLeft">&#160;</td><td class="mdescRight">last step number evaluated - TBC  <a href="structshared__data_1_1restart__type.html#af151cf87badda30dc4ff9a092f14fb49">More...</a><br /></td></tr>
-<tr class="separator:af151cf87badda30dc4ff9a092f14fb49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e8486dc5ab48891670982e08dad9e2d"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#a8e8486dc5ab48891670982e08dad9e2d">seed</a></td></tr>
-<tr class="memdesc:a8e8486dc5ab48891670982e08dad9e2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">last seed used - TBC  <a href="structshared__data_1_1restart__type.html#a8e8486dc5ab48891670982e08dad9e2d">More...</a><br /></td></tr>
-<tr class="separator:a8e8486dc5ab48891670982e08dad9e2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53a97ba362183248957a38022770b956"><td class="memItemLeft" align="right" valign="top">real(real64), dimension(3)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#a53a97ba362183248957a38022770b956">pos1</a></td></tr>
-<tr class="memdesc:a53a97ba362183248957a38022770b956"><td class="mdescLeft">&#160;</td><td class="mdescRight">last position of electron for QHO &amp; H2plus  <a href="structshared__data_1_1restart__type.html#a53a97ba362183248957a38022770b956">More...</a><br /></td></tr>
-<tr class="separator:a53a97ba362183248957a38022770b956"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae167f6d19364c309ca09d8f7b7d52b8e"><td class="memItemLeft" align="right" valign="top">real(real64), dimension(3)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#ae167f6d19364c309ca09d8f7b7d52b8e">pos2</a></td></tr>
-<tr class="memdesc:ae167f6d19364c309ca09d8f7b7d52b8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">last position of second electron for H2  <a href="structshared__data_1_1restart__type.html#ae167f6d19364c309ca09d8f7b7d52b8e">More...</a><br /></td></tr>
-<tr class="separator:ae167f6d19364c309ca09d8f7b7d52b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ea6fda0c36d040755004dc729c6d3be"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#a1ea6fda0c36d040755004dc729c6d3be">i_c</a></td></tr>
+<tr class="memdesc:a1ea6fda0c36d040755004dc729c6d3be"><td class="mdescLeft">&#160;</td><td class="mdescRight">For H2plus grid-search, index of last c-grid point.  <a href="structshared__data_1_1restart__type.html#a1ea6fda0c36d040755004dc729c6d3be">More...</a><br /></td></tr>
+<tr class="separator:a1ea6fda0c36d040755004dc729c6d3be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa4bb582a0ac9eef25c3afdb4f84a1b4"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#afa4bb582a0ac9eef25c3afdb4f84a1b4">i_beta</a></td></tr>
+<tr class="memdesc:afa4bb582a0ac9eef25c3afdb4f84a1b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">For H2 grid-search, index of last beta-grid point.  <a href="structshared__data_1_1restart__type.html#afa4bb582a0ac9eef25c3afdb4f84a1b4">More...</a><br /></td></tr>
+<tr class="separator:afa4bb582a0ac9eef25c3afdb4f84a1b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9eac62dc01ab5f8ac2566349803046b"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#aa9eac62dc01ab5f8ac2566349803046b">opt</a></td></tr>
+<tr class="memdesc:aa9eac62dc01ab5f8ac2566349803046b"><td class="mdescLeft">&#160;</td><td class="mdescRight">For auto-search, if c or beta has been optimized <br  />
+  <a href="structshared__data_1_1restart__type.html#aa9eac62dc01ab5f8ac2566349803046b">More...</a><br /></td></tr>
+<tr class="separator:aa9eac62dc01ab5f8ac2566349803046b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a5c277b014794c6e6255cd045a6a47a"><td class="memItemLeft" align="right" valign="top">real(real64)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#a2a5c277b014794c6e6255cd045a6a47a">c</a></td></tr>
+<tr class="memdesc:a2a5c277b014794c6e6255cd045a6a47a"><td class="mdescLeft">&#160;</td><td class="mdescRight">For H2plus auto-search, last guess value for c.  <a href="structshared__data_1_1restart__type.html#a2a5c277b014794c6e6255cd045a6a47a">More...</a><br /></td></tr>
+<tr class="separator:a2a5c277b014794c6e6255cd045a6a47a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83807905e9ec6693745e58f741677695"><td class="memItemLeft" align="right" valign="top">real(real64)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#a83807905e9ec6693745e58f741677695">c_grad</a></td></tr>
+<tr class="memdesc:a83807905e9ec6693745e58f741677695"><td class="mdescLeft">&#160;</td><td class="mdescRight">For H2plus auto-search, last c_grad value <br  />
+  <a href="structshared__data_1_1restart__type.html#a83807905e9ec6693745e58f741677695">More...</a><br /></td></tr>
+<tr class="separator:a83807905e9ec6693745e58f741677695"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e1000934d0ca8986e45afe9a66df038"><td class="memItemLeft" align="right" valign="top">real(real64)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#a0e1000934d0ca8986e45afe9a66df038">beta</a></td></tr>
+<tr class="memdesc:a0e1000934d0ca8986e45afe9a66df038"><td class="mdescLeft">&#160;</td><td class="mdescRight">For H2 auto-search, last guess value for beta.  <a href="structshared__data_1_1restart__type.html#a0e1000934d0ca8986e45afe9a66df038">More...</a><br /></td></tr>
+<tr class="separator:a0e1000934d0ca8986e45afe9a66df038"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92de13b0fd0548d47c95c3a368ab4390"><td class="memItemLeft" align="right" valign="top">real(real64)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1restart__type.html#a92de13b0fd0548d47c95c3a368ab4390">beta_grad</a></td></tr>
+<tr class="memdesc:a92de13b0fd0548d47c95c3a368ab4390"><td class="mdescLeft">&#160;</td><td class="mdescRight">For H2 auto-search, last beta_grad value <br  />
+  <a href="structshared__data_1_1restart__type.html#a92de13b0fd0548d47c95c3a368ab4390">More...</a><br /></td></tr>
+<tr class="separator:a92de13b0fd0548d47c95c3a368ab4390"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Derived Type to store restart data. </p>
 
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00111">111</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a1aa15dbbee9dd7149563176a460ca243"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1aa15dbbee9dd7149563176a460ca243">&#9670;&nbsp;</a></span>p</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer(int32) shared_data::restart_type::p</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of processors used. </p>
+
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00112">112</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordtype">integer(int32)</span> :: p</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab81c4a4d580bccb1878e522ec7c94db2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab81c4a4d580bccb1878e522ec7c94db2">&#9670;&nbsp;</a></span>seeds</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer(int64), dimension(:), allocatable shared_data::restart_type::seeds</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Random seeds on the processors. </p>
+
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00113">113</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordtype">integer(int64)</span>,<span class="keywordtype">dimension(:)</span>,<span class="keywordtype">allocatable</span> :: seeds</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ad6d5b42f1d080abf1eb7036e2026e4aa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad6d5b42f1d080abf1eb7036e2026e4aa">&#9670;&nbsp;</a></span>i_alpha</h2>
 
@@ -153,10 +203,10 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>index of last alpha value evaluated </p>
+<p>Index of last alpha-grid point, for QHO. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00112">112</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordtype">integer(int32)</span> :: i_alpha</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00114">114</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordtype">integer(int32)</span> :: i_alpha</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -172,124 +222,146 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>index of last bond value evaluated </p>
-
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00113">113</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordtype">integer(int32)</span> :: i_bond</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ab5fb52db630587b4fff9612bc92b18c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5fb52db630587b4fff9612bc92b18c4">&#9670;&nbsp;</a></span>i_c1</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">integer(int32) shared_data::restart_type::i_c1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>index of last c1 value evaluated </p>
-
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00114">114</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordtype">integer(int32)</span> :: i_c1</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ae921a73cbaae847677fc126d8dc36874"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae921a73cbaae847677fc126d8dc36874">&#9670;&nbsp;</a></span>i_c2</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">integer(int32) shared_data::restart_type::i_c2</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>index of last c2 value evaluated </p>
+<p>Index of last bond-grid point, for H2plus or H2. </p>
 
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00115">115</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordtype">integer(int32)</span> :: i_c2</div>
+<div class="fragment"><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordtype">integer(int32)</span> :: i_bond</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="af151cf87badda30dc4ff9a092f14fb49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af151cf87badda30dc4ff9a092f14fb49">&#9670;&nbsp;</a></span>step</h2>
+<a id="a1ea6fda0c36d040755004dc729c6d3be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ea6fda0c36d040755004dc729c6d3be">&#9670;&nbsp;</a></span>i_c</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">integer(int32) shared_data::restart_type::step</td>
+          <td class="memname">integer(int32) shared_data::restart_type::i_c</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>last step number evaluated - TBC </p>
+<p>For H2plus grid-search, index of last c-grid point. </p>
 
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00116">116</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordtype">integer(int32)</span> :: step</div>
+<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordtype">integer(int32)</span> :: i_c</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a8e8486dc5ab48891670982e08dad9e2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e8486dc5ab48891670982e08dad9e2d">&#9670;&nbsp;</a></span>seed</h2>
+<a id="afa4bb582a0ac9eef25c3afdb4f84a1b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa4bb582a0ac9eef25c3afdb4f84a1b4">&#9670;&nbsp;</a></span>i_beta</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">integer(int32) shared_data::restart_type::seed</td>
+          <td class="memname">integer(int32) shared_data::restart_type::i_beta</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>last seed used - TBC </p>
+<p>For H2 grid-search, index of last beta-grid point. </p>
 
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00117">117</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordtype">integer(int32)</span> :: seed</div>
+<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordtype">integer(int32)</span> :: i_beta</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a53a97ba362183248957a38022770b956"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53a97ba362183248957a38022770b956">&#9670;&nbsp;</a></span>pos1</h2>
+<a id="aa9eac62dc01ab5f8ac2566349803046b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9eac62dc01ab5f8ac2566349803046b">&#9670;&nbsp;</a></span>opt</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">real(real64), dimension(3) shared_data::restart_type::pos1</td>
+          <td class="memname">logical shared_data::restart_type::opt</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>last position of electron for QHO &amp; H2plus </p>
+<p>For auto-search, if c or beta has been optimized <br  />
+ </p>
 
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00118">118</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: pos1</div>
+<div class="fragment"><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordtype">logical</span>        :: opt</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ae167f6d19364c309ca09d8f7b7d52b8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae167f6d19364c309ca09d8f7b7d52b8e">&#9670;&nbsp;</a></span>pos2</h2>
+<a id="a2a5c277b014794c6e6255cd045a6a47a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a5c277b014794c6e6255cd045a6a47a">&#9670;&nbsp;</a></span>c</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">real(real64), dimension(3) shared_data::restart_type::pos2</td>
+          <td class="memname">real(real64) shared_data::restart_type::c</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>last position of second electron for H2 </p>
+<p>For H2plus auto-search, last guess value for c. </p>
 
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00119">119</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: pos2</div>
+<div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keywordtype">        real</span>(real64)   :: c</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a83807905e9ec6693745e58f741677695"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83807905e9ec6693745e58f741677695">&#9670;&nbsp;</a></span>c_grad</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">real(real64) shared_data::restart_type::c_grad</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>For H2plus auto-search, last c_grad value <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00120">120</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keywordtype">        real</span>(real64)   :: c_grad</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0e1000934d0ca8986e45afe9a66df038"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e1000934d0ca8986e45afe9a66df038">&#9670;&nbsp;</a></span>beta</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">real(real64) shared_data::restart_type::beta</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>For H2 auto-search, last guess value for beta. </p>
+
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00121">121</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="keywordtype">        real</span>(real64)   :: beta</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a92de13b0fd0548d47c95c3a368ab4390"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92de13b0fd0548d47c95c3a368ab4390">&#9670;&nbsp;</a></span>beta_grad</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">real(real64) shared_data::restart_type::beta_grad</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>For H2 auto-search, last beta_grad value <br  />
+ </p>
+
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00122">122</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keywordtype">        real</span>(real64)   :: beta_grad</div>
 </div><!-- fragment -->
 </div>
 </div>

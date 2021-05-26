@@ -18,22 +18,31 @@ Collaboration diagram for shared\+\_\+data\+::restart\+\_\+type\+:
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
+integer(int32) \mbox{\hyperlink{structshared__data_1_1restart__type_a1aa15dbbee9dd7149563176a460ca243}{p}}
+\begin{DoxyCompactList}\small\item\em Number of processors used. \end{DoxyCompactList}\item 
+integer(int64), dimension(\+:), allocatable \mbox{\hyperlink{structshared__data_1_1restart__type_ab81c4a4d580bccb1878e522ec7c94db2}{seeds}}
+\begin{DoxyCompactList}\small\item\em Random seeds on the processors. \end{DoxyCompactList}\item 
 integer(int32) \mbox{\hyperlink{structshared__data_1_1restart__type_ad6d5b42f1d080abf1eb7036e2026e4aa}{i\+\_\+alpha}}
-\begin{DoxyCompactList}\small\item\em index of last alpha value evaluated \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Index of last alpha-\/grid point, for QHO. \end{DoxyCompactList}\item 
 integer(int32) \mbox{\hyperlink{structshared__data_1_1restart__type_a54a9d4ff1b7da8f1a128cb76feda942b}{i\+\_\+bond}}
-\begin{DoxyCompactList}\small\item\em index of last bond value evaluated \end{DoxyCompactList}\item 
-integer(int32) \mbox{\hyperlink{structshared__data_1_1restart__type_ab5fb52db630587b4fff9612bc92b18c4}{i\+\_\+c1}}
-\begin{DoxyCompactList}\small\item\em index of last c1 value evaluated \end{DoxyCompactList}\item 
-integer(int32) \mbox{\hyperlink{structshared__data_1_1restart__type_ae921a73cbaae847677fc126d8dc36874}{i\+\_\+c2}}
-\begin{DoxyCompactList}\small\item\em index of last c2 value evaluated \end{DoxyCompactList}\item 
-integer(int32) \mbox{\hyperlink{structshared__data_1_1restart__type_af151cf87badda30dc4ff9a092f14fb49}{step}}
-\begin{DoxyCompactList}\small\item\em last step number evaluated -\/ TBC \end{DoxyCompactList}\item 
-integer(int32) \mbox{\hyperlink{structshared__data_1_1restart__type_a8e8486dc5ab48891670982e08dad9e2d}{seed}}
-\begin{DoxyCompactList}\small\item\em last seed used -\/ TBC \end{DoxyCompactList}\item 
-real(real64), dimension(3) \mbox{\hyperlink{structshared__data_1_1restart__type_a53a97ba362183248957a38022770b956}{pos1}}
-\begin{DoxyCompactList}\small\item\em last position of electron for QHO \& H2plus \end{DoxyCompactList}\item 
-real(real64), dimension(3) \mbox{\hyperlink{structshared__data_1_1restart__type_ae167f6d19364c309ca09d8f7b7d52b8e}{pos2}}
-\begin{DoxyCompactList}\small\item\em last position of second electron for H2 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Index of last bond-\/grid point, for H2plus or H2. \end{DoxyCompactList}\item 
+integer(int32) \mbox{\hyperlink{structshared__data_1_1restart__type_a1ea6fda0c36d040755004dc729c6d3be}{i\+\_\+c}}
+\begin{DoxyCompactList}\small\item\em For H2plus grid-\/search, index of last c-\/grid point. \end{DoxyCompactList}\item 
+integer(int32) \mbox{\hyperlink{structshared__data_1_1restart__type_afa4bb582a0ac9eef25c3afdb4f84a1b4}{i\+\_\+beta}}
+\begin{DoxyCompactList}\small\item\em For H2 grid-\/search, index of last beta-\/grid point. \end{DoxyCompactList}\item 
+logical \mbox{\hyperlink{structshared__data_1_1restart__type_aa9eac62dc01ab5f8ac2566349803046b}{opt}}
+\begin{DoxyCompactList}\small\item\em For auto-\/search, if c or beta has been optimized ~\newline
+ \end{DoxyCompactList}\item 
+real(real64) \mbox{\hyperlink{structshared__data_1_1restart__type_a2a5c277b014794c6e6255cd045a6a47a}{c}}
+\begin{DoxyCompactList}\small\item\em For H2plus auto-\/search, last guess value for c. \end{DoxyCompactList}\item 
+real(real64) \mbox{\hyperlink{structshared__data_1_1restart__type_a83807905e9ec6693745e58f741677695}{c\+\_\+grad}}
+\begin{DoxyCompactList}\small\item\em For H2plus auto-\/search, last c\+\_\+grad value ~\newline
+ \end{DoxyCompactList}\item 
+real(real64) \mbox{\hyperlink{structshared__data_1_1restart__type_a0e1000934d0ca8986e45afe9a66df038}{beta}}
+\begin{DoxyCompactList}\small\item\em For H2 auto-\/search, last guess value for beta. \end{DoxyCompactList}\item 
+real(real64) \mbox{\hyperlink{structshared__data_1_1restart__type_a92de13b0fd0548d47c95c3a368ab4390}{beta\+\_\+grad}}
+\begin{DoxyCompactList}\small\item\em For H2 auto-\/search, last beta\+\_\+grad value ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -44,6 +53,44 @@ Definition at line 111 of file shared\+\_\+data.\+f90.
 
 
 \doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structshared__data_1_1restart__type_a1aa15dbbee9dd7149563176a460ca243}\label{structshared__data_1_1restart__type_a1aa15dbbee9dd7149563176a460ca243}} 
+\index{shared\_data::restart\_type@{shared\_data::restart\_type}!p@{p}}
+\index{p@{p}!shared\_data::restart\_type@{shared\_data::restart\_type}}
+\doxysubsubsection{\texorpdfstring{p}{p}}
+{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::restart\+\_\+type\+::p}
+
+
+
+Number of processors used. 
+
+
+
+Definition at line 112 of file shared\+\_\+data.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{112         \textcolor{keywordtype}{integer(int32)} :: p}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structshared__data_1_1restart__type_ab81c4a4d580bccb1878e522ec7c94db2}\label{structshared__data_1_1restart__type_ab81c4a4d580bccb1878e522ec7c94db2}} 
+\index{shared\_data::restart\_type@{shared\_data::restart\_type}!seeds@{seeds}}
+\index{seeds@{seeds}!shared\_data::restart\_type@{shared\_data::restart\_type}}
+\doxysubsubsection{\texorpdfstring{seeds}{seeds}}
+{\footnotesize\ttfamily integer(int64), dimension(\+:), allocatable shared\+\_\+data\+::restart\+\_\+type\+::seeds}
+
+
+
+Random seeds on the processors. 
+
+
+
+Definition at line 113 of file shared\+\_\+data.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{113         \textcolor{keywordtype}{integer(int64)},\textcolor{keywordtype}{dimension(:)},\textcolor{keywordtype}{allocatable} :: seeds}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1restart__type_ad6d5b42f1d080abf1eb7036e2026e4aa}\label{structshared__data_1_1restart__type_ad6d5b42f1d080abf1eb7036e2026e4aa}} 
 \index{shared\_data::restart\_type@{shared\_data::restart\_type}!i\_alpha@{i\_alpha}}
 \index{i\_alpha@{i\_alpha}!shared\_data::restart\_type@{shared\_data::restart\_type}}
@@ -52,15 +99,15 @@ Definition at line 111 of file shared\+\_\+data.\+f90.
 
 
 
-index of last alpha value evaluated 
+Index of last alpha-\/grid point, for QHO. 
 
 
 
-Definition at line 112 of file shared\+\_\+data.\+f90.
+Definition at line 114 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{112         \textcolor{keywordtype}{integer(int32)} :: i\_alpha}
+\DoxyCodeLine{114         \textcolor{keywordtype}{integer(int32)} :: i\_alpha}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1restart__type_a54a9d4ff1b7da8f1a128cb76feda942b}\label{structshared__data_1_1restart__type_a54a9d4ff1b7da8f1a128cb76feda942b}} 
@@ -71,45 +118,7 @@ Definition at line 112 of file shared\+\_\+data.\+f90.
 
 
 
-index of last bond value evaluated 
-
-
-
-Definition at line 113 of file shared\+\_\+data.\+f90.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{113         \textcolor{keywordtype}{integer(int32)} :: i\_bond}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{structshared__data_1_1restart__type_ab5fb52db630587b4fff9612bc92b18c4}\label{structshared__data_1_1restart__type_ab5fb52db630587b4fff9612bc92b18c4}} 
-\index{shared\_data::restart\_type@{shared\_data::restart\_type}!i\_c1@{i\_c1}}
-\index{i\_c1@{i\_c1}!shared\_data::restart\_type@{shared\_data::restart\_type}}
-\doxysubsubsection{\texorpdfstring{i\_c1}{i\_c1}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::restart\+\_\+type\+::i\+\_\+c1}
-
-
-
-index of last c1 value evaluated 
-
-
-
-Definition at line 114 of file shared\+\_\+data.\+f90.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{114         \textcolor{keywordtype}{integer(int32)} :: i\_c1}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{structshared__data_1_1restart__type_ae921a73cbaae847677fc126d8dc36874}\label{structshared__data_1_1restart__type_ae921a73cbaae847677fc126d8dc36874}} 
-\index{shared\_data::restart\_type@{shared\_data::restart\_type}!i\_c2@{i\_c2}}
-\index{i\_c2@{i\_c2}!shared\_data::restart\_type@{shared\_data::restart\_type}}
-\doxysubsubsection{\texorpdfstring{i\_c2}{i\_c2}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::restart\+\_\+type\+::i\+\_\+c2}
-
-
-
-index of last c2 value evaluated 
+Index of last bond-\/grid point, for H2plus or H2. 
 
 
 
@@ -117,18 +126,18 @@ Definition at line 115 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{115         \textcolor{keywordtype}{integer(int32)} :: i\_c2}
+\DoxyCodeLine{115         \textcolor{keywordtype}{integer(int32)} :: i\_bond}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{structshared__data_1_1restart__type_af151cf87badda30dc4ff9a092f14fb49}\label{structshared__data_1_1restart__type_af151cf87badda30dc4ff9a092f14fb49}} 
-\index{shared\_data::restart\_type@{shared\_data::restart\_type}!step@{step}}
-\index{step@{step}!shared\_data::restart\_type@{shared\_data::restart\_type}}
-\doxysubsubsection{\texorpdfstring{step}{step}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::restart\+\_\+type\+::step}
+\mbox{\Hypertarget{structshared__data_1_1restart__type_a1ea6fda0c36d040755004dc729c6d3be}\label{structshared__data_1_1restart__type_a1ea6fda0c36d040755004dc729c6d3be}} 
+\index{shared\_data::restart\_type@{shared\_data::restart\_type}!i\_c@{i\_c}}
+\index{i\_c@{i\_c}!shared\_data::restart\_type@{shared\_data::restart\_type}}
+\doxysubsubsection{\texorpdfstring{i\_c}{i\_c}}
+{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::restart\+\_\+type\+::i\+\_\+c}
 
 
 
-last step number evaluated -\/ TBC 
+For H2plus grid-\/search, index of last c-\/grid point. 
 
 
 
@@ -136,18 +145,18 @@ Definition at line 116 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{116         \textcolor{keywordtype}{integer(int32)} :: step}
+\DoxyCodeLine{116         \textcolor{keywordtype}{integer(int32)} :: i\_c}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{structshared__data_1_1restart__type_a8e8486dc5ab48891670982e08dad9e2d}\label{structshared__data_1_1restart__type_a8e8486dc5ab48891670982e08dad9e2d}} 
-\index{shared\_data::restart\_type@{shared\_data::restart\_type}!seed@{seed}}
-\index{seed@{seed}!shared\_data::restart\_type@{shared\_data::restart\_type}}
-\doxysubsubsection{\texorpdfstring{seed}{seed}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::restart\+\_\+type\+::seed}
+\mbox{\Hypertarget{structshared__data_1_1restart__type_afa4bb582a0ac9eef25c3afdb4f84a1b4}\label{structshared__data_1_1restart__type_afa4bb582a0ac9eef25c3afdb4f84a1b4}} 
+\index{shared\_data::restart\_type@{shared\_data::restart\_type}!i\_beta@{i\_beta}}
+\index{i\_beta@{i\_beta}!shared\_data::restart\_type@{shared\_data::restart\_type}}
+\doxysubsubsection{\texorpdfstring{i\_beta}{i\_beta}}
+{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::restart\+\_\+type\+::i\+\_\+beta}
 
 
 
-last seed used -\/ TBC 
+For H2 grid-\/search, index of last beta-\/grid point. 
 
 
 
@@ -155,18 +164,19 @@ Definition at line 117 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{117         \textcolor{keywordtype}{integer(int32)} :: seed}
+\DoxyCodeLine{117         \textcolor{keywordtype}{integer(int32)} :: i\_beta}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{structshared__data_1_1restart__type_a53a97ba362183248957a38022770b956}\label{structshared__data_1_1restart__type_a53a97ba362183248957a38022770b956}} 
-\index{shared\_data::restart\_type@{shared\_data::restart\_type}!pos1@{pos1}}
-\index{pos1@{pos1}!shared\_data::restart\_type@{shared\_data::restart\_type}}
-\doxysubsubsection{\texorpdfstring{pos1}{pos1}}
-{\footnotesize\ttfamily real(real64), dimension(3) shared\+\_\+data\+::restart\+\_\+type\+::pos1}
+\mbox{\Hypertarget{structshared__data_1_1restart__type_aa9eac62dc01ab5f8ac2566349803046b}\label{structshared__data_1_1restart__type_aa9eac62dc01ab5f8ac2566349803046b}} 
+\index{shared\_data::restart\_type@{shared\_data::restart\_type}!opt@{opt}}
+\index{opt@{opt}!shared\_data::restart\_type@{shared\_data::restart\_type}}
+\doxysubsubsection{\texorpdfstring{opt}{opt}}
+{\footnotesize\ttfamily logical shared\+\_\+data\+::restart\+\_\+type\+::opt}
 
 
 
-last position of electron for QHO \& H2plus 
+For auto-\/search, if c or beta has been optimized ~\newline
+ 
 
 
 
@@ -174,18 +184,18 @@ Definition at line 118 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{118 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: pos1}
+\DoxyCodeLine{118         \textcolor{keywordtype}{logical}        :: opt}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{structshared__data_1_1restart__type_ae167f6d19364c309ca09d8f7b7d52b8e}\label{structshared__data_1_1restart__type_ae167f6d19364c309ca09d8f7b7d52b8e}} 
-\index{shared\_data::restart\_type@{shared\_data::restart\_type}!pos2@{pos2}}
-\index{pos2@{pos2}!shared\_data::restart\_type@{shared\_data::restart\_type}}
-\doxysubsubsection{\texorpdfstring{pos2}{pos2}}
-{\footnotesize\ttfamily real(real64), dimension(3) shared\+\_\+data\+::restart\+\_\+type\+::pos2}
+\mbox{\Hypertarget{structshared__data_1_1restart__type_a2a5c277b014794c6e6255cd045a6a47a}\label{structshared__data_1_1restart__type_a2a5c277b014794c6e6255cd045a6a47a}} 
+\index{shared\_data::restart\_type@{shared\_data::restart\_type}!c@{c}}
+\index{c@{c}!shared\_data::restart\_type@{shared\_data::restart\_type}}
+\doxysubsubsection{\texorpdfstring{c}{c}}
+{\footnotesize\ttfamily real(real64) shared\+\_\+data\+::restart\+\_\+type\+::c}
 
 
 
-last position of second electron for H2 
+For H2plus auto-\/search, last guess value for c. 
 
 
 
@@ -193,7 +203,66 @@ Definition at line 119 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{119 \textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: pos2}
+\DoxyCodeLine{119 \textcolor{keywordtype}{        real}(real64)   :: c}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structshared__data_1_1restart__type_a83807905e9ec6693745e58f741677695}\label{structshared__data_1_1restart__type_a83807905e9ec6693745e58f741677695}} 
+\index{shared\_data::restart\_type@{shared\_data::restart\_type}!c\_grad@{c\_grad}}
+\index{c\_grad@{c\_grad}!shared\_data::restart\_type@{shared\_data::restart\_type}}
+\doxysubsubsection{\texorpdfstring{c\_grad}{c\_grad}}
+{\footnotesize\ttfamily real(real64) shared\+\_\+data\+::restart\+\_\+type\+::c\+\_\+grad}
+
+
+
+For H2plus auto-\/search, last c\+\_\+grad value ~\newline
+ 
+
+
+
+Definition at line 120 of file shared\+\_\+data.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{120 \textcolor{keywordtype}{        real}(real64)   :: c\_grad}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structshared__data_1_1restart__type_a0e1000934d0ca8986e45afe9a66df038}\label{structshared__data_1_1restart__type_a0e1000934d0ca8986e45afe9a66df038}} 
+\index{shared\_data::restart\_type@{shared\_data::restart\_type}!beta@{beta}}
+\index{beta@{beta}!shared\_data::restart\_type@{shared\_data::restart\_type}}
+\doxysubsubsection{\texorpdfstring{beta}{beta}}
+{\footnotesize\ttfamily real(real64) shared\+\_\+data\+::restart\+\_\+type\+::beta}
+
+
+
+For H2 auto-\/search, last guess value for beta. 
+
+
+
+Definition at line 121 of file shared\+\_\+data.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{121 \textcolor{keywordtype}{        real}(real64)   :: beta}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structshared__data_1_1restart__type_a92de13b0fd0548d47c95c3a368ab4390}\label{structshared__data_1_1restart__type_a92de13b0fd0548d47c95c3a368ab4390}} 
+\index{shared\_data::restart\_type@{shared\_data::restart\_type}!beta\_grad@{beta\_grad}}
+\index{beta\_grad@{beta\_grad}!shared\_data::restart\_type@{shared\_data::restart\_type}}
+\doxysubsubsection{\texorpdfstring{beta\_grad}{beta\_grad}}
+{\footnotesize\ttfamily real(real64) shared\+\_\+data\+::restart\+\_\+type\+::beta\+\_\+grad}
+
+
+
+For H2 auto-\/search, last beta\+\_\+grad value ~\newline
+ 
+
+
+
+Definition at line 122 of file shared\+\_\+data.\+f90.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{122 \textcolor{keywordtype}{        real}(real64)   :: beta\_grad}
 
 \end{DoxyCode}
 
