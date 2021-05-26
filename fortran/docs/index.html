@@ -110,7 +110,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <hr  />
 <h2>Adding a new problem to Dice Quantum Monte Carlo (QMC)</h2>
 <p>This section presents what the user would need to modify in the Fortran files (.f90) to add a new problem to Dice QMC.</p>
-<p>The first step is to add the derived type of the new problem to <code><a class="el" href="namespaceshared__data.html" title="Contains derived types, and global variables to store input values of simulation parameters.">shared_data</a></code>, under the section "Derived Types". Below is a sample format of how the derived type should look like.</p>
+<p>The first step is to add the derived type of the new problem to <code><a class="el" href="shared__data_8f90.html">shared_data.f90</a></code>, under the section "Derived Types". Below is a sample format of how the derived type should look like.</p>
 <hr  />
 <div class="fragment"><div class="line"><span class="comment">! Sample format of new derived type for new problem</span></div>
 <div class="line"><span class="keyword">type</span> :: new_problem_type</div>
@@ -124,8 +124,8 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="line"><span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: parameter_grid = (/0,1,10/)</div>
 <div class="line"><span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: bond = (/1,3,10/)</div>
 <div class="line">    <span class="keyword">end type </span>H2_type</div>
-</div><!-- fragment --><p> If the user wants to add any other numerical constants then they can be added to the <code>constants</code> module.</p>
-<p>The next step is to modify <code>solvers</code>. Regardless of the new problem the user will need to implement a function that calculates the transition probability of the current step and the proposed step. Below is a sample format of how the transition probability function should look like.</p>
+</div><!-- fragment --><p> If the user wants to add any other numerical constants then they can be added to the <code>constants</code> module in <code><a class="el" href="shared__data_8f90.html">shared_data.f90</a></code>.</p>
+<p>The next step is to modify <code><a class="el" href="quantum__solvers_8f90.html">quantum_solvers.f90</a></code>. Regardless of the new problem the user will need to implement a function that calculates the transition probability of the current step and the proposed step. Below is a sample format of how the transition probability function should look like.</p>
 <hr  />
 <div class="fragment"><div class="line"><span class="comment">! Sample format of transition probability function</span></div>
 <div class="line"><span class="keyword">function </span>trans_prob(parameters_of_new_problem, &amp;</div>
@@ -158,9 +158,9 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="line">        e_loc = ...</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">end function </span>Local_Energy</div>
-</div><!-- fragment --><p>Most problems will require the user to implement a wave function corresponding to the problem, in order to calculate the transitional probabilities and local energies. The user is free to implement this however they want, as long as the local energy and transitional probability functions have the formats presented above. Another remark for the user is that when calculating the energy, unless the derivatives can be found analytically the user will need to use some numerical method to obtain the derivatives, which they will have to implement themselves. All of the modifications to <code>solvers</code> should be done after the section <code>H_2 Solvers</code>. <br  />
+</div><!-- fragment --><p>Most problems will require the user to implement a wave function corresponding to the problem, in order to calculate the transitional probabilities and local energies. The user is free to implement this however they want, as long as the local energy and transitional probability functions have the formats presented above. Another remark for the user is that when calculating the energy, unless the derivatives can be found analytically the user will need to use some numerical method to obtain the derivatives, which they will have to implement themselves. All of the modifications to <code><a class="el" href="quantum__solvers_8f90.html">quantum_solvers.f90</a></code> should be done after the section <code>H_2 Solvers</code>. <br  />
 </p>
-<p>The next step is to modify the <code>vqmc</code> module. The user will need to implement a new VQMC solver for the new problem in this module. The user should use one of the "VQMC_QHO", "VQMC_H_2_plus" or "VQMC_H_2" sub-routines as a template for their VQMC solver. This is because they would only need to modify the transitional probability and local energy functions in the Metropolis algorithm. Below is a sample template of how the Metropolis algorithm should look like.</p>
+<p>The next step is to modify the <code><a class="el" href="vqmc_8f90.html">vqmc.f90</a></code> module. The user will need to implement a new VQMC solver for the new problem in this module. The user should use one of the "VQMC_QHO", "VQMC_H_2_plus" or "VQMC_H_2" sub-routines as a template for their VQMC solver. This is because they would only need to modify the transitional probability and local energy functions in the Metropolis algorithm. Below is a sample template of how the Metropolis algorithm should look like.</p>
 <hr  />
  <div class="fragment"><div class="line"><span class="comment">! Metropolis Algorithm without burning and thinning for new problem</span></div>
 <div class="line"><span class="keywordflow">do</span> i = 2, n            </div>
@@ -184,7 +184,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="line"><span class="keywordflow">    end if</span> </div>
 <div class="line"><span class="keyword">end </span>do</div>
 </div><!-- fragment --><p> If the user uses one of the "VQMC_QHO", "VQMC_H_2_plus" or "VQMC_H_2" sub-routines as a template then the burning and thinning features can be reused for the new problem. It is important to stick to one of the VQMC sub-routines so that the outputs are the same.</p>
-<p>The next step is to add the automatic gradient descent-based search (GDBS) to <code>vqmc</code>. The user should use "Auto_H_2", "Auto_H_2_plus" sub-routines as a template and should only modify the VQMC solver being called (see below). This modification should be place after the new VQMC solver.</p>
+<p>The next step is to add the automatic gradient descent-based search (GDBS) to <code><a class="el" href="vqmc_8f90.html">vqmc.f90</a></code>. The user should use "Auto_H_2", "Auto_H_2_plus" sub-routines as a template and should only modify the VQMC solver being called (see below). This modification should be place after the new VQMC solver.</p>
 <hr  />
  <div class="fragment"><div class="line"><span class="keyword">subroutine </span>auto_h_2(...)</div>
 <div class="line">        ...</div>
@@ -200,7 +200,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="line"><span class="keywordflow">        end do</span> </div>
 <div class="line">        </div>
 <div class="line"><span class="keyword">end subroutine </span>Auto_H_2</div>
-</div><!-- fragment --><p> If the user does not want to do a GDBS then they can ignore the previous step. Instead they can add a grid search to <code>vqmc</code>. The user should use "Grid_H_2", "Grid_H_2_plus" sub-routines as a template and should only modify the VQMC solver being called (see below). This sub-routine should be placed after the new VQMC solver.</p>
+</div><!-- fragment --><p> If the user does not want to do a GDBS then they can ignore the previous step. Instead they can add a grid search to <code><a class="el" href="vqmc_8f90.html">vqmc.f90</a></code>. The user should use "Grid_H_2", "Grid_H_2_plus" sub-routines as a template and should only modify the VQMC solver being called (see below). This sub-routine should be placed after the new VQMC solver.</p>
 <hr  />
  <div class="fragment"><div class="line"><span class="keyword">subroutine </span>grid_h_2_plus(...)</div>
 <div class="line">        ...</div>
@@ -216,7 +216,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="line"><span class="keywordflow">    end do</span></div>
 <div class="line">    ...</div>
 <div class="line"><span class="keyword">end subroutine </span>Grid_H_2_plus</div>
-</div><!-- fragment --><p> The user can of course add both of the search methods mentioned above, but it is important that they at least add one. The final item the user has to add to <code>vqmc</code> is the equilibration run subroutine. This can be based off "Equil_QHO" or "Equil_H_2" and the user should only modify the VQMC solver being used like in the previous step. <br  />
+</div><!-- fragment --><p> The user can of course add both of the search methods mentioned above, but it is important that they at least add one. The final item the user has to add to <code><a class="el" href="vqmc_8f90.html">vqmc.f90</a></code> is the equilibration run subroutine. This can be based off "Equil_QHO" or "Equil_H_2" and the user should only modify the VQMC solver being used like in the previous step. <br  />
 </p>
 <p>The final step is to modify <code><a class="el" href="driver_8f90.html">driver.f90</a></code>. The user should add a new case with the corresponding problem to the "VQMC Loops" section. The user should use the following "Quantum Harmonic Oscillator" subsection, as a template to write their code. The code should only be modified so that the GDBS or grid search, and equilibration subroutines for the new problem are called (see below).</p>
 <hr  />
@@ -259,7 +259,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="line"><span class="keywordflow">    end do</span></div>
 <div class="line">...        </div>
 </div><!-- fragment --><p>After all the modifications the user should be able to run the code the same way as it is explained in the user manual.</p>
-<p>This documentation was generated from commit 4ee1548 </p>
+<p>This documentation was generated from commit c350a04 </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
