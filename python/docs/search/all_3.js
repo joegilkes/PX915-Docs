@@ -31,7 +31,7 @@ var searchData=
   ['dice_5fdefaults_2epy_36',['dice_defaults.py',['../dice__defaults_8py.html',1,'']]],
   ['dice_5finputs_37',['dice_inputs',['../namespacedice__inputs.html',1,'dice_inputs'],['../namespace_dice_py_1_1dice__inputs.html#a261569dce72b6b21ec3f73f090fffb4a',1,'DicePy.dice_inputs.dice_inputs()'],['../namespace_dice_py_1_1dice__inputs.html',1,'DicePy.dice_inputs']]],
   ['dice_5finputs_2epy_38',['dice_inputs.py',['../dice__inputs_8py.html',1,'']]],
-  ['dice_5fvisualise_39',['dice_visualise',['../namespace_dice_py_1_1dice__visualise.html',1,'DicePy']]],
+  ['dice_5fvisualise_39',['dice_visualise',['../namespacedice__visualise.html',1,'dice_visualise'],['../namespace_dice_py_1_1dice__visualise.html',1,'DicePy.dice_visualise']]],
   ['dice_5fvisualise_2epy_40',['dice_visualise.py',['../dice__visualise_8py.html',1,'']]],
   ['dice_5fwrite_41',['dice_write',['../namespacedice__write.html',1,'dice_write'],['../namespace_dice_py_1_1dice__write.html',1,'DicePy.dice_write']]],
   ['dice_5fwrite_2epy_42',['dice_write.py',['../dice__write_8py.html',1,'']]],
