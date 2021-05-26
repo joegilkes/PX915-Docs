@@ -20,13 +20,13 @@ Collaboration diagram for shared\+\_\+data\+::h2plus\+\_\+type\+:
 \item 
 integer(int32) \mbox{\hyperlink{structshared__data_1_1h2plus__type_a3ca4d4abe74c106a44ebc86584cf481a}{steps}} =100000\+\_\+int32
 \begin{DoxyCompactList}\small\item\em Total number of steps for each MMC chain. \end{DoxyCompactList}\item 
-integer(int32) \mbox{\hyperlink{structshared__data_1_1h2plus__type_ad083f40223825a334434481a67337f3d}{burn\+\_\+step}} =1000\+\_\+int32
+integer(int32) \mbox{\hyperlink{structshared__data_1_1h2plus__type_ad083f40223825a334434481a67337f3d}{burn\+\_\+step}} =5000\+\_\+int32
 \begin{DoxyCompactList}\small\item\em Number of steps to be burnt from the start of the MMC chain. \end{DoxyCompactList}\item 
-integer(int32) \mbox{\hyperlink{structshared__data_1_1h2plus__type_aa0e6869ea406dbf9b00365b827ce1c82}{thin\+\_\+step}} =10\+\_\+int32
+integer(int32) \mbox{\hyperlink{structshared__data_1_1h2plus__type_aa0e6869ea406dbf9b00365b827ce1c82}{thin\+\_\+step}} =20\+\_\+int32
 \begin{DoxyCompactList}\small\item\em Interval of steps by which the MMC chain is thinned. \end{DoxyCompactList}\item 
 real(real64) \mbox{\hyperlink{structshared__data_1_1h2plus__type_a45e78018edd3283615e8b2a0cddb7fb6}{rcut}} =3.\+0\+\_\+real64
 \begin{DoxyCompactList}\small\item\em Maximum radius of search around the Hydrogen atoms. \end{DoxyCompactList}\item 
-real(real64) \mbox{\hyperlink{structshared__data_1_1h2plus__type_a581c3f69fc28686e7c69c0f260556981}{sigma}} =0.\+1\+\_\+real64
+real(real64) \mbox{\hyperlink{structshared__data_1_1h2plus__type_a581c3f69fc28686e7c69c0f260556981}{sigma}} =1.\+8\+\_\+real64
 \begin{DoxyCompactList}\small\item\em Standard deviation in MMC transition probability. \end{DoxyCompactList}\item 
 logical \mbox{\hyperlink{structshared__data_1_1h2plus__type_a216705c18dec2984227a17ef587ed0e9}{auto\+\_\+params}} = .TRUE.
 \item 
@@ -73,7 +73,7 @@ Definition at line 80 of file shared\+\_\+data.\+f90.
 \index{shared\_data::h2plus\_type@{shared\_data::h2plus\_type}!burn\_step@{burn\_step}}
 \index{burn\_step@{burn\_step}!shared\_data::h2plus\_type@{shared\_data::h2plus\_type}}
 \doxysubsubsection{\texorpdfstring{burn\_step}{burn\_step}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::h2plus\+\_\+type\+::burn\+\_\+step =1000\+\_\+int32}
+{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::h2plus\+\_\+type\+::burn\+\_\+step =5000\+\_\+int32}
 
 
 
@@ -85,14 +85,14 @@ Definition at line 81 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{81         \textcolor{keywordtype}{integer(int32)} :: burn\_step=1000\_int32    }
+\DoxyCodeLine{81         \textcolor{keywordtype}{integer(int32)} :: burn\_step=5000\_int32    }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2plus__type_aa0e6869ea406dbf9b00365b827ce1c82}\label{structshared__data_1_1h2plus__type_aa0e6869ea406dbf9b00365b827ce1c82}} 
 \index{shared\_data::h2plus\_type@{shared\_data::h2plus\_type}!thin\_step@{thin\_step}}
 \index{thin\_step@{thin\_step}!shared\_data::h2plus\_type@{shared\_data::h2plus\_type}}
 \doxysubsubsection{\texorpdfstring{thin\_step}{thin\_step}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::h2plus\+\_\+type\+::thin\+\_\+step =10\+\_\+int32}
+{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::h2plus\+\_\+type\+::thin\+\_\+step =20\+\_\+int32}
 
 
 
@@ -104,7 +104,7 @@ Definition at line 82 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{82         \textcolor{keywordtype}{integer(int32)} :: thin\_step=10\_int32      }
+\DoxyCodeLine{82         \textcolor{keywordtype}{integer(int32)} :: thin\_step=20\_int32      }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2plus__type_a45e78018edd3283615e8b2a0cddb7fb6}\label{structshared__data_1_1h2plus__type_a45e78018edd3283615e8b2a0cddb7fb6}} 
@@ -130,7 +130,7 @@ Definition at line 83 of file shared\+\_\+data.\+f90.
 \index{shared\_data::h2plus\_type@{shared\_data::h2plus\_type}!sigma@{sigma}}
 \index{sigma@{sigma}!shared\_data::h2plus\_type@{shared\_data::h2plus\_type}}
 \doxysubsubsection{\texorpdfstring{sigma}{sigma}}
-{\footnotesize\ttfamily real(real64) shared\+\_\+data\+::h2plus\+\_\+type\+::sigma =0.\+1\+\_\+real64}
+{\footnotesize\ttfamily real(real64) shared\+\_\+data\+::h2plus\+\_\+type\+::sigma =1.\+8\+\_\+real64}
 
 
 
@@ -142,7 +142,7 @@ Definition at line 84 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{84 \textcolor{keywordtype}{        real}(real64) :: sigma=0.1\_real64          }
+\DoxyCodeLine{84 \textcolor{keywordtype}{        real}(real64) :: sigma=1.8\_real64          }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2plus__type_a216705c18dec2984227a17ef587ed0e9}\label{structshared__data_1_1h2plus__type_a216705c18dec2984227a17ef587ed0e9}} 

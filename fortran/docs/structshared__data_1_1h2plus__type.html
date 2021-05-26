@@ -114,16 +114,16 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a3ca4d4abe74c106a44ebc86584cf481a"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1h2plus__type.html#a3ca4d4abe74c106a44ebc86584cf481a">steps</a> =100000_int32</td></tr>
 <tr class="memdesc:a3ca4d4abe74c106a44ebc86584cf481a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of steps for each MMC chain.  <a href="structshared__data_1_1h2plus__type.html#a3ca4d4abe74c106a44ebc86584cf481a">More...</a><br /></td></tr>
 <tr class="separator:a3ca4d4abe74c106a44ebc86584cf481a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad083f40223825a334434481a67337f3d"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1h2plus__type.html#ad083f40223825a334434481a67337f3d">burn_step</a> =1000_int32</td></tr>
+<tr class="memitem:ad083f40223825a334434481a67337f3d"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1h2plus__type.html#ad083f40223825a334434481a67337f3d">burn_step</a> =5000_int32</td></tr>
 <tr class="memdesc:ad083f40223825a334434481a67337f3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of steps to be burnt from the start of the MMC chain.  <a href="structshared__data_1_1h2plus__type.html#ad083f40223825a334434481a67337f3d">More...</a><br /></td></tr>
 <tr class="separator:ad083f40223825a334434481a67337f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0e6869ea406dbf9b00365b827ce1c82"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1h2plus__type.html#aa0e6869ea406dbf9b00365b827ce1c82">thin_step</a> =10_int32</td></tr>
+<tr class="memitem:aa0e6869ea406dbf9b00365b827ce1c82"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1h2plus__type.html#aa0e6869ea406dbf9b00365b827ce1c82">thin_step</a> =20_int32</td></tr>
 <tr class="memdesc:aa0e6869ea406dbf9b00365b827ce1c82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interval of steps by which the MMC chain is thinned.  <a href="structshared__data_1_1h2plus__type.html#aa0e6869ea406dbf9b00365b827ce1c82">More...</a><br /></td></tr>
 <tr class="separator:aa0e6869ea406dbf9b00365b827ce1c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45e78018edd3283615e8b2a0cddb7fb6"><td class="memItemLeft" align="right" valign="top">real(real64)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1h2plus__type.html#a45e78018edd3283615e8b2a0cddb7fb6">rcut</a> =3.0_real64</td></tr>
 <tr class="memdesc:a45e78018edd3283615e8b2a0cddb7fb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum radius of search around the Hydrogen atoms.  <a href="structshared__data_1_1h2plus__type.html#a45e78018edd3283615e8b2a0cddb7fb6">More...</a><br /></td></tr>
 <tr class="separator:a45e78018edd3283615e8b2a0cddb7fb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a581c3f69fc28686e7c69c0f260556981"><td class="memItemLeft" align="right" valign="top">real(real64)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1h2plus__type.html#a581c3f69fc28686e7c69c0f260556981">sigma</a> =0.1_real64</td></tr>
+<tr class="memitem:a581c3f69fc28686e7c69c0f260556981"><td class="memItemLeft" align="right" valign="top">real(real64)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1h2plus__type.html#a581c3f69fc28686e7c69c0f260556981">sigma</a> =1.8_real64</td></tr>
 <tr class="memdesc:a581c3f69fc28686e7c69c0f260556981"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard deviation in MMC transition probability.  <a href="structshared__data_1_1h2plus__type.html#a581c3f69fc28686e7c69c0f260556981">More...</a><br /></td></tr>
 <tr class="separator:a581c3f69fc28686e7c69c0f260556981"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a216705c18dec2984227a17ef587ed0e9"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1h2plus__type.html#a216705c18dec2984227a17ef587ed0e9">auto_params</a> = .TRUE.</td></tr>
@@ -172,7 +172,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">integer(int32) shared_data::h2plus_type::burn_step =1000_int32</td>
+          <td class="memname">integer(int32) shared_data::h2plus_type::burn_step =5000_int32</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -180,7 +180,7 @@ Public Attributes</h2></td></tr>
 <p>Number of steps to be burnt from the start of the MMC chain. </p>
 
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00081">81</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">integer(int32)</span> :: burn_step=1000_int32    </div>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">integer(int32)</span> :: burn_step=5000_int32    </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -191,7 +191,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">integer(int32) shared_data::h2plus_type::thin_step =10_int32</td>
+          <td class="memname">integer(int32) shared_data::h2plus_type::thin_step =20_int32</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -199,7 +199,7 @@ Public Attributes</h2></td></tr>
 <p>Interval of steps by which the MMC chain is thinned. </p>
 
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00082">82</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">integer(int32)</span> :: thin_step=10_int32      </div>
+<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">integer(int32)</span> :: thin_step=20_int32      </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -229,7 +229,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">real(real64) shared_data::h2plus_type::sigma =0.1_real64</td>
+          <td class="memname">real(real64) shared_data::h2plus_type::sigma =1.8_real64</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -237,7 +237,7 @@ Public Attributes</h2></td></tr>
 <p>Standard deviation in MMC transition probability. </p>
 
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00084">84</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keywordtype">        real</span>(real64) :: sigma=0.1_real64          </div>
+<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keywordtype">        real</span>(real64) :: sigma=1.8_real64          </div>
 </div><!-- fragment -->
 </div>
 </div>

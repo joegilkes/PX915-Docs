@@ -114,10 +114,10 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a56d33fbcabafbbc64e1e7aad9c794f68"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1h2__type.html#a56d33fbcabafbbc64e1e7aad9c794f68">steps</a> =100000_int32</td></tr>
 <tr class="memdesc:a56d33fbcabafbbc64e1e7aad9c794f68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of steps for each MMC chain.  <a href="structshared__data_1_1h2__type.html#a56d33fbcabafbbc64e1e7aad9c794f68">More...</a><br /></td></tr>
 <tr class="separator:a56d33fbcabafbbc64e1e7aad9c794f68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b0fc9e9b3524742ed36b9e35ff63307"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1h2__type.html#a3b0fc9e9b3524742ed36b9e35ff63307">burn_step</a> =1000_int32</td></tr>
+<tr class="memitem:a3b0fc9e9b3524742ed36b9e35ff63307"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1h2__type.html#a3b0fc9e9b3524742ed36b9e35ff63307">burn_step</a> =4000_int32</td></tr>
 <tr class="memdesc:a3b0fc9e9b3524742ed36b9e35ff63307"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of steps to be burnt from the start of the MMC chain.  <a href="structshared__data_1_1h2__type.html#a3b0fc9e9b3524742ed36b9e35ff63307">More...</a><br /></td></tr>
 <tr class="separator:a3b0fc9e9b3524742ed36b9e35ff63307"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e0a5d93f25547fa8cf9826be998d6fb"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1h2__type.html#a9e0a5d93f25547fa8cf9826be998d6fb">thin_step</a> =10_int32</td></tr>
+<tr class="memitem:a9e0a5d93f25547fa8cf9826be998d6fb"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1h2__type.html#a9e0a5d93f25547fa8cf9826be998d6fb">thin_step</a> =40_int32</td></tr>
 <tr class="memdesc:a9e0a5d93f25547fa8cf9826be998d6fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interval of steps by which the MMC chain is thinned.  <a href="structshared__data_1_1h2__type.html#a9e0a5d93f25547fa8cf9826be998d6fb">More...</a><br /></td></tr>
 <tr class="separator:a9e0a5d93f25547fa8cf9826be998d6fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c0947d862a86bad2415dc9de78ceb24"><td class="memItemLeft" align="right" valign="top">real(real64)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structshared__data_1_1h2__type.html#a0c0947d862a86bad2415dc9de78ceb24">rcut</a> =3.0_real64</td></tr>
@@ -168,7 +168,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">integer(int32) shared_data::h2_type::burn_step =1000_int32</td>
+          <td class="memname">integer(int32) shared_data::h2_type::burn_step =4000_int32</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -176,7 +176,7 @@ Public Attributes</h2></td></tr>
 <p>Number of steps to be burnt from the start of the MMC chain. </p>
 
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00098">98</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordtype">integer(int32)</span> :: burn_step=1000_int32    </div>
+<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordtype">integer(int32)</span> :: burn_step=4000_int32    </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -187,7 +187,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">integer(int32) shared_data::h2_type::thin_step =10_int32</td>
+          <td class="memname">integer(int32) shared_data::h2_type::thin_step =40_int32</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -195,7 +195,7 @@ Public Attributes</h2></td></tr>
 <p>Interval of steps by which the MMC chain is thinned. </p>
 
 <p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00099">99</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordtype">integer(int32)</span> :: thin_step=10_int32      </div>
+<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordtype">integer(int32)</span> :: thin_step=40_int32      </div>
 </div><!-- fragment -->
 </div>
 </div>

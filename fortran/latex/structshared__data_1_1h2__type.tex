@@ -20,9 +20,9 @@ Collaboration diagram for shared\+\_\+data\+::h2\+\_\+type\+:
 \item 
 integer(int32) \mbox{\hyperlink{structshared__data_1_1h2__type_a56d33fbcabafbbc64e1e7aad9c794f68}{steps}} =100000\+\_\+int32
 \begin{DoxyCompactList}\small\item\em Total number of steps for each MMC chain. \end{DoxyCompactList}\item 
-integer(int32) \mbox{\hyperlink{structshared__data_1_1h2__type_a3b0fc9e9b3524742ed36b9e35ff63307}{burn\+\_\+step}} =1000\+\_\+int32
+integer(int32) \mbox{\hyperlink{structshared__data_1_1h2__type_a3b0fc9e9b3524742ed36b9e35ff63307}{burn\+\_\+step}} =4000\+\_\+int32
 \begin{DoxyCompactList}\small\item\em Number of steps to be burnt from the start of the MMC chain. \end{DoxyCompactList}\item 
-integer(int32) \mbox{\hyperlink{structshared__data_1_1h2__type_a9e0a5d93f25547fa8cf9826be998d6fb}{thin\+\_\+step}} =10\+\_\+int32
+integer(int32) \mbox{\hyperlink{structshared__data_1_1h2__type_a9e0a5d93f25547fa8cf9826be998d6fb}{thin\+\_\+step}} =40\+\_\+int32
 \begin{DoxyCompactList}\small\item\em Interval of steps by which the MMC chain is thinned. \end{DoxyCompactList}\item 
 real(real64) \mbox{\hyperlink{structshared__data_1_1h2__type_a0c0947d862a86bad2415dc9de78ceb24}{rcut}} =3.\+0\+\_\+real64
 \begin{DoxyCompactList}\small\item\em Maximum radius of search around the Hydrogen atoms. \end{DoxyCompactList}\item 
@@ -69,7 +69,7 @@ Definition at line 97 of file shared\+\_\+data.\+f90.
 \index{shared\_data::h2\_type@{shared\_data::h2\_type}!burn\_step@{burn\_step}}
 \index{burn\_step@{burn\_step}!shared\_data::h2\_type@{shared\_data::h2\_type}}
 \doxysubsubsection{\texorpdfstring{burn\_step}{burn\_step}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::h2\+\_\+type\+::burn\+\_\+step =1000\+\_\+int32}
+{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::h2\+\_\+type\+::burn\+\_\+step =4000\+\_\+int32}
 
 
 
@@ -81,14 +81,14 @@ Definition at line 98 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{98         \textcolor{keywordtype}{integer(int32)} :: burn\_step=1000\_int32    }
+\DoxyCodeLine{98         \textcolor{keywordtype}{integer(int32)} :: burn\_step=4000\_int32    }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2__type_a9e0a5d93f25547fa8cf9826be998d6fb}\label{structshared__data_1_1h2__type_a9e0a5d93f25547fa8cf9826be998d6fb}} 
 \index{shared\_data::h2\_type@{shared\_data::h2\_type}!thin\_step@{thin\_step}}
 \index{thin\_step@{thin\_step}!shared\_data::h2\_type@{shared\_data::h2\_type}}
 \doxysubsubsection{\texorpdfstring{thin\_step}{thin\_step}}
-{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::h2\+\_\+type\+::thin\+\_\+step =10\+\_\+int32}
+{\footnotesize\ttfamily integer(int32) shared\+\_\+data\+::h2\+\_\+type\+::thin\+\_\+step =40\+\_\+int32}
 
 
 
@@ -100,7 +100,7 @@ Definition at line 99 of file shared\+\_\+data.\+f90.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{99         \textcolor{keywordtype}{integer(int32)} :: thin\_step=10\_int32      }
+\DoxyCodeLine{99         \textcolor{keywordtype}{integer(int32)} :: thin\_step=40\_int32      }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{structshared__data_1_1h2__type_a0c0947d862a86bad2415dc9de78ceb24}\label{structshared__data_1_1h2__type_a0c0947d862a86bad2415dc9de78ceb24}} 
