@@ -114,15 +114,15 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <hr  />
 <div class="fragment"><div class="line"><span class="comment">! Sample format of new derived type for new problem</span></div>
 <div class="line"><span class="keyword">type</span> :: new_problem_type</div>
-<div class="line">        <span class="keywordtype">integer(int32)</span> :: steps=100000_int32         </div>
-<div class="line">        <span class="keywordtype">integer(int32)</span> :: burn_step=1000_int32       </div>
-<div class="line">        <span class="keywordtype">integer(int32)</span> :: thin_step=10_int32         </div>
-<div class="line"><span class="keywordtype">        real</span>(real64) :: rcut=3.0_real64              </div>
-<div class="line"><span class="keywordtype">        real</span>(real64) :: sigma=1.8_real64             </div>
-<div class="line">        <span class="keywordtype">logical</span> :: auto_params = .true.              </div>
-<div class="line"><span class="keywordtype">        real</span>(real64) :: parameter_for_new_problem = 0.4_real64      </div>
-<div class="line"><span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: parameter_grid = (/0,1,10/)</div>
-<div class="line"><span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: bond = (/1,3,10/)</div>
+<div class="line">        <span class="keywordtype">integer(int32)</span> :: steps=100000_int32         <span class="comment">! Total number of steps for each MMC chain</span></div>
+<div class="line">        <span class="keywordtype">integer(int32)</span> :: burn_step=1000_int32       <span class="comment">! Number of steps to be burnt from the start of the MMC chain</span></div>
+<div class="line">        <span class="keywordtype">integer(int32)</span> :: thin_step=10_int32         <span class="comment">! Interval of steps by which the MMC chain is thinned</span></div>
+<div class="line"><span class="keywordtype">        real</span>(real64) :: rcut=3.0_real64              <span class="comment">! Maximum radius of search around the atoms             </span></div>
+<div class="line"><span class="keywordtype">        real</span>(real64) :: sigma=1.8_real64             <span class="comment">! Standard deviation in MMC transition probability</span></div>
+<div class="line">        <span class="keywordtype">logical</span> :: auto_params = .true.              <span class="comment">! True runs the automatic gradient search and false runs the grid search</span></div>
+<div class="line"><span class="keywordtype">        real</span>(real64) :: parameter_for_new_problem = 0.4_real64      <span class="comment">! One can add more than one parameter in the same format</span></div>
+<div class="line"><span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: parameter_grid = (/0,1,10/)   <span class="comment">! Grid of parameter values, format: [min, max, grid points]</span></div>
+<div class="line"><span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: bond = (/1,3,10/)             <span class="comment">! Grid of bondlength values, format: [min, max, grid points]</span></div>
 <div class="line">    <span class="keyword">end type </span>H2_type</div>
 </div><!-- fragment --><p> If the user wants to add any other numerical constants then they can be added to the <code>constants</code> module in <code><a class="el" href="shared__data_8f90.html">shared_data.f90</a></code>.</p>
 <p>The next step is to modify <code><a class="el" href="quantum__solvers_8f90.html">quantum_solvers.f90</a></code>. Regardless of the new problem the user will need to implement a function that calculates the transition probability of the current step and the proposed step. Below is a sample format of how the transition probability function should look like.</p>
@@ -259,7 +259,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="line"><span class="keywordflow">    end do</span></div>
 <div class="line">...        </div>
 </div><!-- fragment --><p>After all the modifications the user should be able to run the code the same way as it is explained in the user manual.</p>
-<p>This documentation was generated from commit f9a213a </p>
+<p>This documentation was generated from commit 16c69ee </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->

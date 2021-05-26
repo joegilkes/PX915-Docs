@@ -39,15 +39,15 @@ The first step is to add the derived type of the new problem to {\ttfamily \mbox
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{comment}{! Sample format of new derived type for new problem}}
 \DoxyCodeLine{\textcolor{keyword}{type} :: new\_problem\_type}
-\DoxyCodeLine{        \textcolor{keywordtype}{integer(int32)} :: steps=100000\_int32         }
-\DoxyCodeLine{        \textcolor{keywordtype}{integer(int32)} :: burn\_step=1000\_int32       }
-\DoxyCodeLine{        \textcolor{keywordtype}{integer(int32)} :: thin\_step=10\_int32         }
-\DoxyCodeLine{\textcolor{keywordtype}{        real}(real64) :: rcut=3.0\_real64              }
-\DoxyCodeLine{\textcolor{keywordtype}{        real}(real64) :: sigma=1.8\_real64             }
-\DoxyCodeLine{        \textcolor{keywordtype}{logical} :: auto\_params = .true.              }
-\DoxyCodeLine{\textcolor{keywordtype}{        real}(real64) :: parameter\_for\_new\_problem = 0.4\_real64      }
-\DoxyCodeLine{\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: parameter\_grid = (/0,1,10/)}
-\DoxyCodeLine{\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: bond = (/1,3,10/)}
+\DoxyCodeLine{        \textcolor{keywordtype}{integer(int32)} :: steps=100000\_int32         \textcolor{comment}{! Total number of steps for each MMC chain}}
+\DoxyCodeLine{        \textcolor{keywordtype}{integer(int32)} :: burn\_step=1000\_int32       \textcolor{comment}{! Number of steps to be burnt from the start of the MMC chain}}
+\DoxyCodeLine{        \textcolor{keywordtype}{integer(int32)} :: thin\_step=10\_int32         \textcolor{comment}{! Interval of steps by which the MMC chain is thinned}}
+\DoxyCodeLine{\textcolor{keywordtype}{        real}(real64) :: rcut=3.0\_real64              \textcolor{comment}{! Maximum radius of search around the atoms             }}
+\DoxyCodeLine{\textcolor{keywordtype}{        real}(real64) :: sigma=1.8\_real64             \textcolor{comment}{! Standard deviation in MMC transition probability}}
+\DoxyCodeLine{        \textcolor{keywordtype}{logical} :: auto\_params = .true.              \textcolor{comment}{! True runs the automatic gradient search and false runs the grid search}}
+\DoxyCodeLine{\textcolor{keywordtype}{        real}(real64) :: parameter\_for\_new\_problem = 0.4\_real64      \textcolor{comment}{! One can add more than one parameter in the same format}}
+\DoxyCodeLine{\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: parameter\_grid = (/0,1,10/)   \textcolor{comment}{! Grid of parameter values, format: [min, max, grid points]}}
+\DoxyCodeLine{\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: bond = (/1,3,10/)             \textcolor{comment}{! Grid of bondlength values, format: [min, max, grid points]}}
 \DoxyCodeLine{    \textcolor{keyword}{end type }H2\_type}
 
 \end{DoxyCode}
@@ -229,4 +229,4 @@ The final step is to modify {\ttfamily \mbox{\hyperlink{driver_8f90}{driver.\+f9
 
 After all the modifications the user should be able to run the code the same way as it is explained in the user manual.
 
-This documentation was generated from commit f9a213a 
+This documentation was generated from commit 16c69ee 
