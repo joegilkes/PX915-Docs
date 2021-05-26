@@ -316,32 +316,31 @@ Definition at line 164 of file input\+\_\+parser.\+f90.
 \DoxyCodeLine{246 }
 \DoxyCodeLine{247             \textcolor{comment}{! Read RESTART namelist}}
 \DoxyCodeLine{248             \textcolor{keyword}{call }read\_res\_nml(res)}
-\DoxyCodeLine{249             print*, \textcolor{stringliteral}{'Read restart file.'}}
-\DoxyCodeLine{250 }
-\DoxyCodeLine{251             \textcolor{comment}{! Update grid-\/loop start values}}
-\DoxyCodeLine{252             \textcolor{keywordflow}{if} (trim(p\_system) == \textcolor{stringliteral}{'QHO'}) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{253                 alpha\_start = res\%i\_qoi}
-\DoxyCodeLine{254             \textcolor{keywordflow}{else} }
-\DoxyCodeLine{255                 bond\_start = res\%i\_qoi}
-\DoxyCodeLine{256                 \textcolor{keywordflow}{if} (res\%auto) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{257                     \textcolor{comment}{! For auto-\/search routines}}
-\DoxyCodeLine{258                     auto\_start = res\%i\_par}
-\DoxyCodeLine{259                 \textcolor{keywordflow}{else} }
-\DoxyCodeLine{260                     \textcolor{comment}{! For grid-\/search routines}}
-\DoxyCodeLine{261                     grid\_start = res\%i\_par}
-\DoxyCodeLine{262 \textcolor{keywordflow}{                endif}}
-\DoxyCodeLine{263 }
-\DoxyCodeLine{264 \textcolor{keywordflow}{            endif}}
-\DoxyCodeLine{265 }
-\DoxyCodeLine{266             \textcolor{comment}{! Print restarts header.}}
-\DoxyCodeLine{267             \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
-\DoxyCodeLine{268                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Restarted Program -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}}\textcolor{comment}{)}}
-\DoxyCodeLine{269 \textcolor{comment}{}                \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{270 \textcolor{keywordflow}{            endif}}
-\DoxyCodeLine{271 }
-\DoxyCodeLine{272 \textcolor{keywordflow}{        end if} }
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250             \textcolor{comment}{! Update grid-\/loop start values}}
+\DoxyCodeLine{251             \textcolor{keywordflow}{if} (trim(p\_system) == \textcolor{stringliteral}{'QHO'}) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{252                 alpha\_start = res\%i\_qoi}
+\DoxyCodeLine{253             \textcolor{keywordflow}{else} }
+\DoxyCodeLine{254                 bond\_start = res\%i\_qoi}
+\DoxyCodeLine{255                 \textcolor{keywordflow}{if} (res\%auto) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{256                     \textcolor{comment}{! For auto-\/search routines}}
+\DoxyCodeLine{257                     auto\_start = res\%i\_par}
+\DoxyCodeLine{258                 \textcolor{keywordflow}{else} }
+\DoxyCodeLine{259                     \textcolor{comment}{! For grid-\/search routines}}
+\DoxyCodeLine{260                     grid\_start = res\%i\_par}
+\DoxyCodeLine{261 \textcolor{keywordflow}{                endif}}
+\DoxyCodeLine{262 }
+\DoxyCodeLine{263 \textcolor{keywordflow}{            endif}}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265             \textcolor{comment}{! Print restarts header.}}
+\DoxyCodeLine{266             \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{267                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Restarted Program -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}}\textcolor{comment}{)}}
+\DoxyCodeLine{268 \textcolor{comment}{}                \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{269 \textcolor{keywordflow}{            endif}}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271 \textcolor{keywordflow}{        end if} }
+\DoxyCodeLine{272 }
 \DoxyCodeLine{273 }
-\DoxyCodeLine{274 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:

@@ -307,36 +307,35 @@ $(document).ready(function(){initNavTree('input__parser_8f90_source.html',''); i
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="comment">! Read RESTART namelist</span></div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <span class="keyword">call </span><a class="code" href="namespacerestart__fns.html#a34c01a8b391a8c3a4ba40e9f5ec644d3">read_res_nml</a>(<a class="code" href="namespaceshared__data.html#a2e48217c892c5f716b469fd513ce6c77">res</a>)</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            print*, <span class="stringliteral">&#39;Read restart file.&#39;</span></div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            <span class="comment">! Update grid-loop start values</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            <span class="keywordflow">if</span> (trim(<a class="code" href="namespaceshared__data.html#ac4c86b6f875f575f5b7194f9a5d2ddf4">p_system</a>) == <span class="stringliteral">&#39;QHO&#39;</span>) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                <a class="code" href="namespaceshared__data.html#a28246c61bb5db3025877f5369254d399">alpha_start</a> = <a class="code" href="namespaceshared__data.html#a2e48217c892c5f716b469fd513ce6c77">res</a>%i_qoi</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            <span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                <a class="code" href="namespaceshared__data.html#abd55f854da9e9234d715022110bd076a">bond_start</a> = <a class="code" href="namespaceshared__data.html#a2e48217c892c5f716b469fd513ce6c77">res</a>%i_qoi</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#a2e48217c892c5f716b469fd513ce6c77">res</a>%auto) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                    <span class="comment">! For auto-search routines</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                    <a class="code" href="namespaceshared__data.html#a3d5ecb5dcee145df7f687a011bc3c3d8">auto_start</a> = <a class="code" href="namespaceshared__data.html#a2e48217c892c5f716b469fd513ce6c77">res</a>%i_par</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                <span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                    <span class="comment">! For grid-search routines</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                    <a class="code" href="namespaceshared__data.html#aabc68bfe6e28b41b5a50d5c25e4779bd">grid_start</a> = <a class="code" href="namespaceshared__data.html#a2e48217c892c5f716b469fd513ce6c77">res</a>%i_par</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="keywordflow">                endif</span></div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="keywordflow">            endif</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            <span class="comment">! Print restarts header.</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#aeef8efadc3d25901a576ca7650fe1c38">my_rank</a>==0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                <span class="keyword">write</span>(*, <span class="stringliteral">&quot;(&#39;------------- Restarted Program -------------&#39;)&quot;</span>)</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                <span class="keyword">write</span>(*, <span class="stringliteral">&quot;(&#39;&#39;)&quot;</span>)</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="keywordflow">            endif</span></div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="keywordflow">        end if</span> </div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            <span class="comment">! Update grid-loop start values</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            <span class="keywordflow">if</span> (trim(<a class="code" href="namespaceshared__data.html#ac4c86b6f875f575f5b7194f9a5d2ddf4">p_system</a>) == <span class="stringliteral">&#39;QHO&#39;</span>) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                <a class="code" href="namespaceshared__data.html#a28246c61bb5db3025877f5369254d399">alpha_start</a> = <a class="code" href="namespaceshared__data.html#a2e48217c892c5f716b469fd513ce6c77">res</a>%i_qoi</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                <a class="code" href="namespaceshared__data.html#abd55f854da9e9234d715022110bd076a">bond_start</a> = <a class="code" href="namespaceshared__data.html#a2e48217c892c5f716b469fd513ce6c77">res</a>%i_qoi</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#a2e48217c892c5f716b469fd513ce6c77">res</a>%auto) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                    <span class="comment">! For auto-search routines</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                    <a class="code" href="namespaceshared__data.html#a3d5ecb5dcee145df7f687a011bc3c3d8">auto_start</a> = <a class="code" href="namespaceshared__data.html#a2e48217c892c5f716b469fd513ce6c77">res</a>%i_par</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                    <span class="comment">! For grid-search routines</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                    <a class="code" href="namespaceshared__data.html#aabc68bfe6e28b41b5a50d5c25e4779bd">grid_start</a> = <a class="code" href="namespaceshared__data.html#a2e48217c892c5f716b469fd513ce6c77">res</a>%i_par</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="keywordflow">                endif</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="keywordflow">            endif</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            <span class="comment">! Print restarts header.</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#aeef8efadc3d25901a576ca7650fe1c38">my_rank</a>==0) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                <span class="keyword">write</span>(*, <span class="stringliteral">&quot;(&#39;------------- Restarted Program -------------&#39;)&quot;</span>)</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                <span class="keyword">write</span>(*, <span class="stringliteral">&quot;(&#39;&#39;)&quot;</span>)</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="keywordflow">            endif</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="keywordflow">        end if</span> </div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keyword">end subroutine </span><a class="code" href="namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea">read_inputs</a></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    </div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="keyword">end module </span>input_parser</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keyword">end subroutine </span><a class="code" href="namespaceinput__parser.html#a3c35b8a909f420e7aa4f19d1392d74ea">read_inputs</a></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="keyword">end module </span>input_parser</div>
 <div class="ttc" id="anamespaceinput__parser_html"><div class="ttname"><a href="namespaceinput__parser.html">input_parser</a></div><div class="ttdoc">Contains routines that read the input file params.txt.</div><div class="ttdef"><b>Definition:</b> <a href="input__parser_8f90_source.html#l00016">input_parser.f90:16</a></div></div>
 <div class="ttc" id="anamespaceinput__parser_html_a163a65b1b9201a421da32ba2a7c92148"><div class="ttname"><a href="namespaceinput__parser.html#a163a65b1b9201a421da32ba2a7c92148">input_parser::read_h2</a></div><div class="ttdeci">subroutine read_h2(H2)</div><div class="ttdoc">Reads the PARAMETER namelist in params.txt for the H2 molecule system. Assigns the input data to the ...</div><div class="ttdef"><b>Definition:</b> <a href="input__parser_8f90_source.html#l00131">input_parser.f90:132</a></div></div>
 <div class="ttc" id="anamespaceinput__parser_html_a17a93a7f5e509724de92cf330dbc597a"><div class="ttname"><a href="namespaceinput__parser.html#a17a93a7f5e509724de92cf330dbc597a">input_parser::read_control</a></div><div class="ttdeci">subroutine read_control(p_system, run_equil, run_restart, write_restart, restart_num, write_chains, write_log)</div><div class="ttdoc">Reads the CONTROL namelist in params.txt and assigns its data to the corresponding global variables d...</div><div class="ttdef"><b>Definition:</b> <a href="input__parser_8f90_source.html#l00048">input_parser.f90:49</a></div></div>
