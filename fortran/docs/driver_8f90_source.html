@@ -480,38 +480,38 @@ $(document).ready(function(){initNavTree('driver_8f90_source.html',''); initResi
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                        <span class="comment">! provided calculations converged this loop</span></div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;                        <span class="keywordflow">if</span> (h2plus_c_converged .eq. <span class="stringliteral">&#39;Y&#39;</span>) h2plus_param_c_guess = h2plus_param_c_opt</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; </div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                        <span class="comment">! Write restart files, if required</span></div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                        <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#ade9d4ec979d01a52cdef8fc778abfa1d">write_restart</a> .and. <a class="code" href="namespaceshared__data.html#aeef8efadc3d25901a576ca7650fe1c38">my_rank</a>==0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                            <span class="keyword">call </span><a class="code" href="namespacewrite__netcdf.html#a4bf61fdf7f8ca9add5bb9b1663906542">write_h2plus_main</a>(h2plus_param_c_array, bonds, energies, variances, &amp;</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                        <a class="code" href="namespaceshared__data.html#a92015ef2d63f7ea1e895d120fad6341f">resfile_etot</a>, ierr, <a class="code" href="namespaceshared__data.html#a1e9e95c9ea52c9aa2ec2f05b8d65e4f3">h2plus</a>, accept_rates)</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                            <span class="keyword">call </span><a class="code" href="namespacerestart__fns.html#a08fcc6eaab415d68620bccc8048b610e">write_res_nml</a>(b+1,1,<a class="code" href="namespaceshared__data.html#a1e9e95c9ea52c9aa2ec2f05b8d65e4f3">h2plus</a>%auto_params,h2plus_param_c_guess)</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;<span class="keywordflow">                        endif</span> </div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160; </div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160; </div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160; </div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                        <span class="comment">! Find best param in grid at this bond length</span></div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                        <span class="keyword">call </span><a class="code" href="namespacevqmc.html#a70c9fcecdf5f2a6ffea7dd3c4f0c1eeb">grid_h_2_plus</a>(p_arr, bonds(b), h2plus_param_c_opt, energy, &amp;</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                            variance, accept_rate)</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160; </div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                        <span class="comment">! Reset start counter</span></div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                        <a class="code" href="namespaceshared__data.html#aabc68bfe6e28b41b5a50d5c25e4779bd">grid_start</a>=1</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160; </div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                        <span class="comment">! Write restart files, if required</span></div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                        <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#ade9d4ec979d01a52cdef8fc778abfa1d">write_restart</a> .and. <a class="code" href="namespaceshared__data.html#aeef8efadc3d25901a576ca7650fe1c38">my_rank</a>==0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                            <span class="keyword">call </span><a class="code" href="namespacewrite__netcdf.html#a4bf61fdf7f8ca9add5bb9b1663906542">write_h2plus_main</a>(h2plus_param_c_array, bonds, energies, variances, &amp;</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                        <a class="code" href="namespaceshared__data.html#a92015ef2d63f7ea1e895d120fad6341f">resfile_etot</a>, ierr, <a class="code" href="namespaceshared__data.html#a1e9e95c9ea52c9aa2ec2f05b8d65e4f3">h2plus</a>, accept_rates)</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                            <span class="keyword">call </span><a class="code" href="namespacerestart__fns.html#a08fcc6eaab415d68620bccc8048b610e">write_res_nml</a>(b+1,1,<a class="code" href="namespaceshared__data.html#a1e9e95c9ea52c9aa2ec2f05b8d65e4f3">h2plus</a>%auto_params)</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;<span class="keywordflow">                        endif</span> </div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;<span class="keywordflow">                    end if</span></div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160; </div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                    <span class="comment">! Append energy and parameters to arrays, on rank 0</span></div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                    <span class="keywordflow">if</span>(<a class="code" href="namespaceshared__data.html#aeef8efadc3d25901a576ca7650fe1c38">my_rank</a>==0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                        h2plus_param_c_array(b) = h2plus_param_c_opt</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                        energies(b) = energy</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;                        variances(b) = variance</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                        accept_rates(b) = accept_rate</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                        <span class="comment">! Find best param in grid at this bond length</span></div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                        <span class="keyword">call </span><a class="code" href="namespacevqmc.html#a70c9fcecdf5f2a6ffea7dd3c4f0c1eeb">grid_h_2_plus</a>(p_arr, bonds(b), h2plus_param_c_opt, energy, &amp;</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                            variance, accept_rate)</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160; </div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                        <span class="comment">! Reset start counter</span></div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                        <a class="code" href="namespaceshared__data.html#aabc68bfe6e28b41b5a50d5c25e4779bd">grid_start</a>=1</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160; </div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;<span class="keywordflow">                    end if</span></div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                    <span class="keywordflow">if</span>(<a class="code" href="namespaceshared__data.html#aeef8efadc3d25901a576ca7650fe1c38">my_rank</a>==0) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                        <span class="comment">! Append energy and parameters to arrays, on rank 0</span></div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                        h2plus_param_c_array(b) = h2plus_param_c_opt</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                        energies(b) = energy</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                        variances(b) = variance</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                        accept_rates(b) = accept_rate</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160; </div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                        <span class="comment">! Write restart files, if required</span></div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                        <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#ade9d4ec979d01a52cdef8fc778abfa1d">write_restart</a>) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                            <span class="comment">! Store the arrays</span></div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                            <span class="keyword">call </span><a class="code" href="namespacewrite__netcdf.html#a4bf61fdf7f8ca9add5bb9b1663906542">write_h2plus_main</a>(h2plus_param_c_array, bonds, energies, variances, &amp;</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                                <a class="code" href="namespaceshared__data.html#a92015ef2d63f7ea1e895d120fad6341f">resfile_etot</a>, ierr, <a class="code" href="namespaceshared__data.html#a1e9e95c9ea52c9aa2ec2f05b8d65e4f3">h2plus</a>, accept_rates)</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                            <span class="comment">! Write res_nml.txt</span></div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                            <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#a1e9e95c9ea52c9aa2ec2f05b8d65e4f3">h2plus</a>%auto_params) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                                <span class="keyword">call </span><a class="code" href="namespacerestart__fns.html#a08fcc6eaab415d68620bccc8048b610e">write_res_nml</a>(b+1,1,<a class="code" href="namespaceshared__data.html#a1e9e95c9ea52c9aa2ec2f05b8d65e4f3">h2plus</a>%auto_params,h2plus_param_c_guess)</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                            <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                                <span class="keyword">call </span><a class="code" href="namespacerestart__fns.html#a08fcc6eaab415d68620bccc8048b610e">write_res_nml</a>(b+1,1,<a class="code" href="namespaceshared__data.html#a1e9e95c9ea52c9aa2ec2f05b8d65e4f3">h2plus</a>%auto_params)</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;<span class="keywordflow">                            endif</span></div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;<span class="keywordflow">                        endif</span> </div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160; </div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;<span class="keywordflow">                    endif</span></div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160; </div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                <span class="keywordflow">else</span></div>
@@ -663,98 +663,105 @@ $(document).ready(function(){initNavTree('driver_8f90_source.html',''); initResi
 <div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160; </div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;                        <span class="comment">! Reset start counter</span></div>
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;                        <a class="code" href="namespaceshared__data.html#a3d5ecb5dcee145df7f687a011bc3c3d8">auto_start</a>=1</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160; </div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;                        <span class="comment">! Write restart files, if required</span></div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;                        <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#ade9d4ec979d01a52cdef8fc778abfa1d">write_restart</a> .and. <a class="code" href="namespaceshared__data.html#aeef8efadc3d25901a576ca7650fe1c38">my_rank</a>==0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;                            <span class="keyword">call </span><a class="code" href="namespacewrite__netcdf.html#a8d49ffe8b78e85c17f3127d8dc89a83b">write_h2_main</a>(h2_param_a_array, h2_param_beta_array, bonds, &amp;</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;                        energies, variances, <a class="code" href="namespaceshared__data.html#a92015ef2d63f7ea1e895d120fad6341f">resfile_etot</a>, ierr, <a class="code" href="namespaceshared__data.html#a1703912ee00414a4aaf1a41d3c167694">h2</a>, accept_rates)</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;                            <span class="keyword">call </span><a class="code" href="namespacerestart__fns.html#a08fcc6eaab415d68620bccc8048b610e">write_res_nml</a>(b+1,1,<a class="code" href="namespaceshared__data.html#a1703912ee00414a4aaf1a41d3c167694">h2</a>%auto_params,h2_param_beta_guess)</div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;<span class="keywordflow">                        endif</span> </div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;                    </div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                    <span class="keywordflow">else</span> <span class="comment">! ie. if doing a grid search</span></div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;                    </div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;                    <span class="keywordflow">else</span> <span class="comment">! ie. if doing a grid search</span></div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160; </div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;                        <span class="comment">! Get best value of beta at this bond length</span></div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;                        <span class="keyword">call </span><a class="code" href="namespacevqmc.html#a08bc46270707aab6c2d5114b589c176c">grid_h_2</a>(h2_param_a, p_arr, bonds(b), h2_param_beta_opt, energy, &amp;</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;                        variance, accept_rate)</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160; </div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;                        <span class="comment">! Reset start counter</span></div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                        <a class="code" href="namespaceshared__data.html#aabc68bfe6e28b41b5a50d5c25e4779bd">grid_start</a>=1</div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160; </div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;                        <span class="comment">! Get best value of beta at this bond length</span></div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;                        <span class="keyword">call </span><a class="code" href="namespacevqmc.html#a08bc46270707aab6c2d5114b589c176c">grid_h_2</a>(h2_param_a, p_arr, bonds(b), h2_param_beta_opt, energy, &amp;</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;                        variance, accept_rate)</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160; </div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;                        <span class="comment">! Reset start counter</span></div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;                        <a class="code" href="namespaceshared__data.html#aabc68bfe6e28b41b5a50d5c25e4779bd">grid_start</a>=1</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;                        <span class="comment">! Write restart files, if required</span></div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;                        <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#ade9d4ec979d01a52cdef8fc778abfa1d">write_restart</a> .and. <a class="code" href="namespaceshared__data.html#aeef8efadc3d25901a576ca7650fe1c38">my_rank</a>==0) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;                            <span class="keyword">call </span><a class="code" href="namespacewrite__netcdf.html#a8d49ffe8b78e85c17f3127d8dc89a83b">write_h2_main</a>(h2_param_a_array, h2_param_beta_array, bonds, &amp;</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;                        energies, variances, <a class="code" href="namespaceshared__data.html#a92015ef2d63f7ea1e895d120fad6341f">resfile_etot</a>, ierr, <a class="code" href="namespaceshared__data.html#a1703912ee00414a4aaf1a41d3c167694">h2</a>, accept_rates)</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;                            <span class="keyword">call </span><a class="code" href="namespacerestart__fns.html#a08fcc6eaab415d68620bccc8048b610e">write_res_nml</a>(b+1,1,<a class="code" href="namespaceshared__data.html#a1703912ee00414a4aaf1a41d3c167694">h2</a>%auto_params)</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;<span class="keywordflow">                        endif</span> </div>
 <div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160; </div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;                        <span class="comment">! Write restart files, if required</span></div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;                        <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#ade9d4ec979d01a52cdef8fc778abfa1d">write_restart</a> .and. <a class="code" href="namespaceshared__data.html#aeef8efadc3d25901a576ca7650fe1c38">my_rank</a>==0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;                            <span class="keyword">call </span><a class="code" href="namespacewrite__netcdf.html#a8d49ffe8b78e85c17f3127d8dc89a83b">write_h2_main</a>(h2_param_a_array, h2_param_beta_array, bonds, &amp;</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;                        energies, variances, <a class="code" href="namespaceshared__data.html#a92015ef2d63f7ea1e895d120fad6341f">resfile_etot</a>, ierr, <a class="code" href="namespaceshared__data.html#a1703912ee00414a4aaf1a41d3c167694">h2</a>, accept_rates)</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;                            <span class="keyword">call </span><a class="code" href="namespacerestart__fns.html#a08fcc6eaab415d68620bccc8048b610e">write_res_nml</a>(b+1,1,<a class="code" href="namespaceshared__data.html#a1703912ee00414a4aaf1a41d3c167694">h2</a>%auto_params)</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;<span class="keywordflow">                        endif</span> </div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160; </div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;<span class="keywordflow">                    end if</span></div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160; </div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#aeef8efadc3d25901a576ca7650fe1c38">my_rank</a>==0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;                        <span class="comment">! Append energy and parameters to arrays</span></div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                        h2_param_a_array(b) = h2_param_a</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;                        h2_param_beta_array(b) = h2_param_beta_opt</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;                        energies(b) = energy</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;                        variances(b) = variance</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;                        accept_rates(b) = accept_rate</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;<span class="keywordflow">                    endif</span></div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160; </div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160; </div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;                    <span class="comment">! Run equilibrations</span></div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#aeef8efadc3d25901a576ca7650fe1c38">my_rank</a>==0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;                        <span class="keyword">call </span><a class="code" href="namespacevqmc.html#ab066adc59fec1fcaaba764a46128c935">equil_h_2</a>(h2_param_a, p_arr, bonds(b), b)</div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;                        <span class="comment">! Write restart files, if required</span></div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;                        <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#ade9d4ec979d01a52cdef8fc778abfa1d">write_restart</a>) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;                            <span class="keyword">call </span><a class="code" href="namespacerestart__fns.html#a08fcc6eaab415d68620bccc8048b610e">write_res_nml</a>(b+1,1,<a class="code" href="namespaceshared__data.html#a1703912ee00414a4aaf1a41d3c167694">h2</a>%auto_params)</div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;<span class="keywordflow">                        endif</span></div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;<span class="keywordflow">                    endif</span></div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160; </div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;<span class="keywordflow">                end if</span></div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160; </div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;<span class="keywordflow">            end do</span></div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160; </div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#aeef8efadc3d25901a576ca7650fe1c38">my_rank</a>==0) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160; </div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;                <span class="keyword">write</span>(*, <span class="stringliteral">&quot;(&#39;------------------- End VQMC Runs -------------------&#39;)&quot;</span>)</div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;                <span class="keyword">write</span>(*, <span class="stringliteral">&quot;(&#39;&#39;)&quot;</span>)</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;<span class="keywordflow">                    end if</span></div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160; </div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#aeef8efadc3d25901a576ca7650fe1c38">my_rank</a>==0) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;                        </div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;                        <span class="comment">! Append energy and parameters to arrays</span></div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;                        h2_param_a_array(b) = h2_param_a</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;                        h2_param_beta_array(b) = h2_param_beta_opt</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;                        energies(b) = energy</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;                        variances(b) = variance</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;                        accept_rates(b) = accept_rate</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160; </div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                        <span class="comment">! Write restart files, if required</span></div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;                        <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#ade9d4ec979d01a52cdef8fc778abfa1d">write_restart</a>) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;                            <span class="comment">! Store the arrays</span></div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;                            <span class="keyword">call </span><a class="code" href="namespacewrite__netcdf.html#a8d49ffe8b78e85c17f3127d8dc89a83b">write_h2_main</a>(h2_param_a_array, h2_param_beta_array, bonds, &amp;</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;                                energies, variances, <a class="code" href="namespaceshared__data.html#a92015ef2d63f7ea1e895d120fad6341f">resfile_etot</a>, ierr, <a class="code" href="namespaceshared__data.html#a1703912ee00414a4aaf1a41d3c167694">h2</a>, accept_rates)</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;                            <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#a1703912ee00414a4aaf1a41d3c167694">h2</a>%auto_params) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;                                <span class="keyword">call </span><a class="code" href="namespacerestart__fns.html#a08fcc6eaab415d68620bccc8048b610e">write_res_nml</a>(b+1,1,<a class="code" href="namespaceshared__data.html#a1703912ee00414a4aaf1a41d3c167694">h2</a>%auto_params,h2_param_beta_guess)</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;                            <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;                                <span class="keyword">call </span><a class="code" href="namespacerestart__fns.html#a08fcc6eaab415d68620bccc8048b610e">write_res_nml</a>(b+1,1,<a class="code" href="namespaceshared__data.html#a1703912ee00414a4aaf1a41d3c167694">h2</a>%auto_params)</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;<span class="keywordflow">                            endif</span> </div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;<span class="keywordflow">                        endif</span> </div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160; </div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;<span class="keywordflow">                    endif</span></div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160; </div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160; </div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;                    <span class="comment">! Run equilibrations</span></div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#aeef8efadc3d25901a576ca7650fe1c38">my_rank</a>==0) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;                        <span class="keyword">call </span><a class="code" href="namespacevqmc.html#ab066adc59fec1fcaaba764a46128c935">equil_h_2</a>(h2_param_a, p_arr, bonds(b), b)</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;                        <span class="comment">! Write restart files, if required</span></div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;                        <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#ade9d4ec979d01a52cdef8fc778abfa1d">write_restart</a>) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;                            <span class="keyword">call </span><a class="code" href="namespacerestart__fns.html#a08fcc6eaab415d68620bccc8048b610e">write_res_nml</a>(b+1,1,<a class="code" href="namespaceshared__data.html#a1703912ee00414a4aaf1a41d3c167694">h2</a>%auto_params)</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;<span class="keywordflow">                        endif</span></div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;<span class="keywordflow">                    endif</span></div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160; </div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;<span class="keywordflow">                end if</span></div>
 <div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160; </div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;                <span class="comment">! If not in equilibration mode, write results</span></div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;                <span class="keywordflow">if</span> (.not. <a class="code" href="namespaceshared__data.html#a9285af0408bde68c647a77c75900929d">run_equil</a>) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160; </div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                    <span class="keyword">write</span>(*, <span class="stringliteral">&quot;(2A)&quot;</span>) <span class="stringliteral">&#39;Calculations finished, writing results to NetCDF output file &#39;</span>, &amp;</div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                        <a class="code" href="namespaceshared__data.html#a2901a107f2659faf5c03f8c35f64e68f">outfile</a></div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160; </div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#acf2cbacc5b2b4d8ee26c96dc7062aa9b">write_log</a>) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;                        <span class="keyword">write</span>(<a class="code" href="namespaceshared__data.html#af5798eba5b1c4594d4c3c9648d732e9e">logid</a>, <span class="stringliteral">&quot;(2A)&quot;</span>) <span class="stringliteral">&#39;Calculations finished, writing results to NetCDF &amp;</span></div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;<span class="stringliteral"></span><span class="stringliteral">                            &amp;output file &#39;</span>, <a class="code" href="namespaceshared__data.html#a2901a107f2659faf5c03f8c35f64e68f">outfile</a></div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;<span class="keywordflow">                    end if</span></div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160; </div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;                    <span class="keyword">call </span><a class="code" href="namespacewrite__netcdf.html#a8d49ffe8b78e85c17f3127d8dc89a83b">write_h2_main</a>(h2_param_a_array, h2_param_beta_array, bonds, &amp;</div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;                        energies, variances, <a class="code" href="namespaceshared__data.html#a2901a107f2659faf5c03f8c35f64e68f">outfile</a>, ierr, <a class="code" href="namespaceshared__data.html#a1703912ee00414a4aaf1a41d3c167694">h2</a>, accept_rates)</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160; </div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;<span class="keywordflow">                end if</span></div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160; </div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;<span class="keywordflow">            endif</span></div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;<span class="keywordflow">            end do</span></div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160; </div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#aeef8efadc3d25901a576ca7650fe1c38">my_rank</a>==0) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160; </div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                <span class="keyword">write</span>(*, <span class="stringliteral">&quot;(&#39;------------------- End VQMC Runs -------------------&#39;)&quot;</span>)</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;                <span class="keyword">write</span>(*, <span class="stringliteral">&quot;(&#39;&#39;)&quot;</span>)</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160; </div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;                <span class="comment">! If not in equilibration mode, write results</span></div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;                <span class="keywordflow">if</span> (.not. <a class="code" href="namespaceshared__data.html#a9285af0408bde68c647a77c75900929d">run_equil</a>) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160; </div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;                    <span class="keyword">write</span>(*, <span class="stringliteral">&quot;(2A)&quot;</span>) <span class="stringliteral">&#39;Calculations finished, writing results to NetCDF output file &#39;</span>, &amp;</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;                        <a class="code" href="namespaceshared__data.html#a2901a107f2659faf5c03f8c35f64e68f">outfile</a></div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160; </div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#acf2cbacc5b2b4d8ee26c96dc7062aa9b">write_log</a>) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                        <span class="keyword">write</span>(<a class="code" href="namespaceshared__data.html#af5798eba5b1c4594d4c3c9648d732e9e">logid</a>, <span class="stringliteral">&quot;(2A)&quot;</span>) <span class="stringliteral">&#39;Calculations finished, writing results to NetCDF &amp;</span></div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;<span class="stringliteral"></span><span class="stringliteral">                            &amp;output file &#39;</span>, <a class="code" href="namespaceshared__data.html#a2901a107f2659faf5c03f8c35f64e68f">outfile</a></div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;<span class="keywordflow">                    end if</span></div>
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160; </div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;        <span class="comment">! Default case, for if none of the cases match. Should be invalidated by checks in input_parser.</span></div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;<span class="keywordflow">        case default</span></div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;            error stop <span class="stringliteral">&#39;Unknown case. How did you get here?&#39;</span></div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;<span class="keywordflow">    end select</span></div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;                    <span class="keyword">call </span><a class="code" href="namespacewrite__netcdf.html#a8d49ffe8b78e85c17f3127d8dc89a83b">write_h2_main</a>(h2_param_a_array, h2_param_beta_array, bonds, &amp;</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;                        energies, variances, <a class="code" href="namespaceshared__data.html#a2901a107f2659faf5c03f8c35f64e68f">outfile</a>, ierr, <a class="code" href="namespaceshared__data.html#a1703912ee00414a4aaf1a41d3c167694">h2</a>, accept_rates)</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160; </div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;<span class="keywordflow">                end if</span></div>
 <div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160; </div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;    <span class="comment">! Close logfile from rank 0</span></div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#a829b5d4edec8365a446e8caeb244e9c9">i_log</a>) <span class="keyword">close</span>(<a class="code" href="namespaceshared__data.html#af5798eba5b1c4594d4c3c9648d732e9e">logid</a>)</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160; </div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    <span class="comment">! Remove restart files if complete</span></div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    <span class="keyword">call </span>system(<span class="stringliteral">&#39;rm res_etot.nc 2&gt;/dev/null&#39;</span>)</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    <span class="keyword">call </span>system(<span class="stringliteral">&#39;rm res_nml.txt 2&gt;/dev/null&#39;</span>)</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <span class="keyword">call </span>system(<span class="stringliteral">&#39;rm res_epar.nc 2&gt;/dev/null&#39;</span>)</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160; </div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    <span class="comment">! End MPI parallelism</span></div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    <span class="keyword">call </span>mpi_finalize(<a class="code" href="namespaceshared__data.html#af28e44e4992413c934847d53d0baf9df">mpierr</a>)</div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160; </div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;<span class="keyword">end subroutine </span><a class="code" href="driver_8f90.html#aae94725eafaedc467ab9bfefcae9769e">driver</a></div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160; </div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;<span class="keyword">end program </span><a class="code" href="driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d">main</a></div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;<span class="keywordflow">            endif</span></div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160; </div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;        <span class="comment">! Default case, for if none of the cases match. Should be invalidated by checks in input_parser.</span></div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;<span class="keywordflow">        case default</span></div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;            error stop <span class="stringliteral">&#39;Unknown case. How did you get here?&#39;</span></div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;<span class="keywordflow">    end select</span></div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160; </div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <span class="comment">! Close logfile from rank 0</span></div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceshared__data.html#a829b5d4edec8365a446e8caeb244e9c9">i_log</a>) <span class="keyword">close</span>(<a class="code" href="namespaceshared__data.html#af5798eba5b1c4594d4c3c9648d732e9e">logid</a>)</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160; </div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    <span class="comment">! Remove restart files if complete</span></div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    <span class="keyword">call </span>system(<span class="stringliteral">&#39;rm res_etot.nc 2&gt;/dev/null&#39;</span>)</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    <span class="keyword">call </span>system(<span class="stringliteral">&#39;rm res_nml.txt 2&gt;/dev/null&#39;</span>)</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    <span class="keyword">call </span>system(<span class="stringliteral">&#39;rm res_epar.nc 2&gt;/dev/null&#39;</span>)</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160; </div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    <span class="comment">! End MPI parallelism</span></div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    <span class="keyword">call </span>mpi_finalize(<a class="code" href="namespaceshared__data.html#af28e44e4992413c934847d53d0baf9df">mpierr</a>)</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160; </div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;<span class="keyword">end subroutine </span><a class="code" href="driver_8f90.html#aae94725eafaedc467ab9bfefcae9769e">driver</a></div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160; </div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;<span class="keyword">end program </span><a class="code" href="driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d">main</a></div>
 <div class="ttc" id="adriver_8f90_html_a8ec2266d83cd6c0b762cbcbc92c0af3d"><div class="ttname"><a href="driver_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d">main</a></div><div class="ttdeci">program main</div><div class="ttdoc">Main program, contains the driver subroutine that runs all other code.</div><div class="ttdef"><b>Definition:</b> <a href="driver_8f90_source.html#l00014">driver.f90:14</a></div></div>
 <div class="ttc" id="adriver_8f90_html_aae94725eafaedc467ab9bfefcae9769e"><div class="ttname"><a href="driver_8f90.html#aae94725eafaedc467ab9bfefcae9769e">driver</a></div><div class="ttdeci">subroutine driver()</div><div class="ttdoc">Subroutine for running the main code (needed for Doxygen compatability).</div><div class="ttdef"><b>Definition:</b> <a href="driver_8f90_source.html#l00053">driver.f90:54</a></div></div>
 <div class="ttc" id="anamespaceinput__parser_html"><div class="ttname"><a href="namespaceinput__parser.html">input_parser</a></div><div class="ttdoc">Contains routines that read the input file params.txt.</div><div class="ttdef"><b>Definition:</b> <a href="input__parser_8f90_source.html#l00016">input_parser.f90:16</a></div></div>
