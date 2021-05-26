@@ -16,6 +16,11 @@ var visualisation_8py =
     [ "plot_3D", "visualisation_8py.html#a9756d369d218ccf60a488ec02542eac6", null ],
     [ "example_H1s_wfn", "visualisation_8py.html#a73a6709541da1825e8af407b3558240e", null ],
     [ "plot_3D", "visualisation_8py.html#a58db1c83502abb038c648f3bb1076432", null ],
+    [ "QHOEnergyPlot", "visualisation_8py.html#a84fd6f51e6bb76fda356bcb2c59e0415", null ],
+    [ "QHOWfnPlot", "visualisation_8py.html#a2a513b3843a02d5a4184593331b0160e", null ],
+    [ "H2plusEnergyPlot", "visualisation_8py.html#a5acbc59eb62f22012becbc9c41b89b04", null ],
+    [ "H2EnergyPlot", "visualisation_8py.html#af659f38b7f30300562f10c540226305b", null ],
     [ "view_original_trace", "visualisation_8py.html#ac345463eb554d7c90613773996e74748", null ],
+    [ "BurnThinUI", "visualisation_8py.html#a90f8c15369cb05e981279974d131c819", null ],
     [ "get_autocorrelation_time", "visualisation_8py.html#a26c9ab9270b803a8d15c40d621769c46", null ]
 ];

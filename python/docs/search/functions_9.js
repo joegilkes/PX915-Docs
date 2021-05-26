@@ -1,12 +1,6 @@
 var searchData=
 [
-  ['qho_5feng_5fplot_121',['QHO_eng_plot',['../namespacevisualisation.html#a9e23aabdaf405841cfdfd7c6cc2800e0',1,'visualisation']]],
-  ['qho_5fprob_5fplot_122',['QHO_prob_plot',['../namespacevisualisation.html#ad727a435fed6e71da862d749a6169558',1,'visualisation']]],
-  ['qhoenergyplot_123',['QHOEnergyPlot',['../namespacevis2.html#a9daac64c8c06f7a07c3cb1608b6bb36d',1,'vis2']]],
-  ['qhowfnplot_124',['QHOWfnPlot',['../namespacevis2.html#ac21c80c2cfa183521dd0713f4ad38bfc',1,'vis2']]],
-  ['query_5fdefault_125',['query_default',['../namespacedice__write.html#aebd3126f641c7d8245a920b5f00a19e8',1,'dice_write']]],
-  ['query_5fgrid_126',['query_grid',['../namespacedice__write.html#a8c3fdb6a1a789a4d0f3e3afe7f4c5c6c',1,'dice_write']]],
-  ['query_5fparams_127',['query_params',['../namespacedice__write.html#a2327d5c026b4653f4dcbc3ea0e998efe',1,'dice_write']]],
-  ['query_5fposfloat_128',['query_posfloat',['../namespacedice__write.html#a75a643f89765eb164532394130b8d657',1,'dice_write']]],
-  ['query_5fstep_129',['query_step',['../namespacedice__write.html#a582e3bc639d5d28fcd8b6c0af2b8530d',1,'dice_write']]]
+  ['plot_5f3d_116',['plot_3D',['../namespacevisualisation.html#a9756d369d218ccf60a488ec02542eac6',1,'visualisation.plot_3D(X, Y, Z, wfn, R1, R2)'],['../namespacevisualisation.html#a58db1c83502abb038c648f3bb1076432',1,'visualisation.plot_3D(X, Y, Z, wfn)']]],
+  ['polar_5fto_5fcart_117',['polar_to_cart',['../namespacevisualisation.html#aa711c68ba9bc3ff10d2589890a785ed2',1,'visualisation']]],
+  ['process_5fmain_5fresults_118',['process_main_results',['../namespacevisualisation.html#ad3e838717595f5a5a4f080cfe6c73c05',1,'visualisation']]]
 ];

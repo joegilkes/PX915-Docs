@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['isfloat_109',['isfloat',['../namespacedice__write.html#ac634cffa3f4f8855127ef9bff7a56851',1,'dice_write']]],
-  ['isint_110',['isint',['../namespacedice__write.html#a6b5b39cce6741d1a0b96fe3dd59b2652',1,'dice_write']]],
-  ['isvalid_111',['isvalid',['../namespacedice__check.html#ac4fbe7bb65f9ff67c90cad4fec72dc62',1,'dice_check']]]
+  ['h2_5feng_5fplot_102',['H2_eng_plot',['../namespacevisualisation.html#a15512bdc0a35b851921f281f89e6460f',1,'visualisation']]],
+  ['h2_5fprob_5fplot_103',['H2_prob_plot',['../namespacevisualisation.html#a665238431e964d48ad871c62f97c0eeb',1,'visualisation']]],
+  ['h2energyplot_104',['H2EnergyPlot',['../namespacevisualisation.html#af659f38b7f30300562f10c540226305b',1,'visualisation']]],
+  ['h2plusenergyplot_105',['H2plusEnergyPlot',['../namespacevisualisation.html#a5acbc59eb62f22012becbc9c41b89b04',1,'visualisation']]],
+  ['h2probplot_106',['H2ProbPlot',['../namespacevisualisation.html#afd9acdd2f2d70052a6eac6d2bbf9820f',1,'visualisation']]]
 ];

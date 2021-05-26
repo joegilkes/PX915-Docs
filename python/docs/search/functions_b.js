@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['write_5fparams_131',['write_params',['../namespacedice__write.html#a8850537a5cdec760b180095ece66f23d',1,'dice_write']]]
+  ['view_5foriginal_5ftrace_128',['view_original_trace',['../namespacevisualisation.html#ac345463eb554d7c90613773996e74748',1,'visualisation']]]
 ];

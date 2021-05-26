@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['example_5fh1s_5fwfn_102',['example_H1s_wfn',['../namespacevisualisation.html#a73a6709541da1825e8af407b3558240e',1,'visualisation']]]
+  ['default_5fmessage_98',['default_message',['../namespacedice__check.html#a2de27ef57a990ce0c94bc34211639aa7',1,'dice_check']]],
+  ['dice_5finputs_99',['dice_inputs',['../namespacedice__inputs.html#ad9bf26e9331e0e111146c30a7456ddd4',1,'dice_inputs']]]
 ];

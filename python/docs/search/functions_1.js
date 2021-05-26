@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['default_5fmessage_100',['default_message',['../namespacedice__check.html#a2de27ef57a990ce0c94bc34211639aa7',1,'dice_check']]],
-  ['dice_5finputs_101',['dice_inputs',['../namespacedice__inputs.html#ad9bf26e9331e0e111146c30a7456ddd4',1,'dice_inputs']]]
+  ['check_5ffloat_94',['check_float',['../namespacedice__check.html#afba8f0b27859076a624e8d5bc3d23429',1,'dice_check']]],
+  ['check_5fgrid_95',['check_grid',['../namespacedice__check.html#ae95c26c0aa34a5d08c7570d561a7a05b',1,'dice_check']]],
+  ['check_5finputs_96',['check_inputs',['../namespacedice__check.html#a6d9e6c1b578154488d648ae41acf78d4',1,'dice_check']]],
+  ['check_5fstep_97',['check_step',['../namespacedice__check.html#afeb33eda791fdb69d9145f9169798c80',1,'dice_check']]]
 ];

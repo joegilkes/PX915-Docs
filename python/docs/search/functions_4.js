@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['h2_5feng_5fplot_104',['H2_eng_plot',['../namespacevisualisation.html#a15512bdc0a35b851921f281f89e6460f',1,'visualisation']]],
-  ['h2_5fprob_5fplot_105',['H2_prob_plot',['../namespacevisualisation.html#a665238431e964d48ad871c62f97c0eeb',1,'visualisation']]],
-  ['h2energyplot_106',['H2EnergyPlot',['../namespacevis2.html#a7d278aa9a718e17bfdbff1f5ee1db529',1,'vis2']]],
-  ['h2plusenergyplot_107',['H2plusEnergyPlot',['../namespacevis2.html#a08a68539d8dbe6e5231936ca9967e1f2',1,'vis2']]],
-  ['h2probplot_108',['H2ProbPlot',['../namespacevisualisation.html#afd9acdd2f2d70052a6eac6d2bbf9820f',1,'visualisation']]]
+  ['get_5fautocorrelation_5ftime_101',['get_autocorrelation_time',['../namespacevisualisation.html#a26c9ab9270b803a8d15c40d621769c46',1,'visualisation']]]
 ];

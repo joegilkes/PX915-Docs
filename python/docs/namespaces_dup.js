@@ -50,12 +50,6 @@ var namespaces_dup =
       [ "write_params", "namespacedice__write.html#a8850537a5cdec760b180095ece66f23d", null ]
     ] ],
     [ "input", "namespaceinput.html", null ],
-    [ "vis2", "namespacevis2.html", [
-      [ "QHOEnergyPlot", "namespacevis2.html#a9daac64c8c06f7a07c3cb1608b6bb36d", null ],
-      [ "QHOWfnPlot", "namespacevis2.html#ac21c80c2cfa183521dd0713f4ad38bfc", null ],
-      [ "H2plusEnergyPlot", "namespacevis2.html#a08a68539d8dbe6e5231936ca9967e1f2", null ],
-      [ "H2EnergyPlot", "namespacevis2.html#a7d278aa9a718e17bfdbff1f5ee1db529", null ]
-    ] ],
     [ "visualisation", "namespacevisualisation.html", [
       [ "load_results", "namespacevisualisation.html#a5c80a150bab5e4176013e33b5fec9816", null ],
       [ "load_global_attr", "namespacevisualisation.html#a6a2287f360d1e76cd639bd70f229fe6c", null ],
@@ -73,7 +67,12 @@ var namespaces_dup =
       [ "plot_3D", "namespacevisualisation.html#a9756d369d218ccf60a488ec02542eac6", null ],
       [ "example_H1s_wfn", "namespacevisualisation.html#a73a6709541da1825e8af407b3558240e", null ],
       [ "plot_3D", "namespacevisualisation.html#a58db1c83502abb038c648f3bb1076432", null ],
+      [ "QHOEnergyPlot", "namespacevisualisation.html#a84fd6f51e6bb76fda356bcb2c59e0415", null ],
+      [ "QHOWfnPlot", "namespacevisualisation.html#a2a513b3843a02d5a4184593331b0160e", null ],
+      [ "H2plusEnergyPlot", "namespacevisualisation.html#a5acbc59eb62f22012becbc9c41b89b04", null ],
+      [ "H2EnergyPlot", "namespacevisualisation.html#af659f38b7f30300562f10c540226305b", null ],
       [ "view_original_trace", "namespacevisualisation.html#ac345463eb554d7c90613773996e74748", null ],
+      [ "BurnThinUI", "namespacevisualisation.html#a90f8c15369cb05e981279974d131c819", null ],
       [ "get_autocorrelation_time", "namespacevisualisation.html#a26c9ab9270b803a8d15c40d621769c46", null ]
     ] ],
     [ "write", "namespacewrite.html", null ]
