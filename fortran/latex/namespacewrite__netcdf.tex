@@ -554,8 +554,8 @@ Definition at line 420 of file netcdf\+\_\+out.\+f90.
 \DoxyCodeLine{458         \textcolor{keyword}{call }error\_check(ierr)}
 \DoxyCodeLine{459         ierr = nf90\_put\_att(file\_id, nf90\_global, \textcolor{stringliteral}{"{}sigma"{}}, h2plus\%sigma)}
 \DoxyCodeLine{460         \textcolor{keyword}{call }error\_check(ierr)}
-\DoxyCodeLine{461         ierr = nf90\_put\_att(file\_id, nf90\_global, \textcolor{stringliteral}{"{}c1"{}}, h2plus\%c1)}
-\DoxyCodeLine{462         \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{461         ierr = nf90\_put\_att(file\_id, nf90\_global, \textcolor{stringliteral}{"{}c\_grid"{}}, h2plus\%c\_grid\textcolor{comment}{)}}
+\DoxyCodeLine{462 \textcolor{comment}{}        \textcolor{keyword}{call }error\_check(ierr)}
 \DoxyCodeLine{463         ierr = nf90\_put\_att(file\_id, nf90\_global, \textcolor{stringliteral}{"{}accept\_rate"{}}, accept\_rate\textcolor{comment}{)}}
 \DoxyCodeLine{464 \textcolor{comment}{}        \textcolor{keyword}{call }error\_check(ierr)}
 \DoxyCodeLine{465         ierr = nf90\_put\_att(file\_id, nf90\_global, \textcolor{stringliteral}{"{}system"{}}, \textcolor{stringliteral}{"{}H2plus"{}})}
@@ -682,8 +682,8 @@ Definition at line 522 of file netcdf\+\_\+out.\+f90.
 \DoxyCodeLine{560         \textcolor{keyword}{call }error\_check(ierr)}
 \DoxyCodeLine{561         ierr = nf90\_put\_att(file\_id, nf90\_global, \textcolor{stringliteral}{"{}sigma"{}}, h2\%sigma)}
 \DoxyCodeLine{562         \textcolor{keyword}{call }error\_check(ierr)}
-\DoxyCodeLine{563         ierr = nf90\_put\_att(file\_id, nf90\_global, \textcolor{stringliteral}{"{}c1"{}}, h2\%c1)}
-\DoxyCodeLine{564         \textcolor{keyword}{call }error\_check(ierr)}
+\DoxyCodeLine{563         ierr = nf90\_put\_att(file\_id, nf90\_global, \textcolor{stringliteral}{"{}beta\_grid"{}}, h2\%beta\_grid\textcolor{comment}{)}}
+\DoxyCodeLine{564 \textcolor{comment}{}        \textcolor{keyword}{call }error\_check(ierr)}
 \DoxyCodeLine{565         ierr = nf90\_put\_att(file\_id, nf90\_global, \textcolor{stringliteral}{"{}accept\_rate"{}}, accept\_rate\textcolor{comment}{)}}
 \DoxyCodeLine{566 \textcolor{comment}{}        \textcolor{keyword}{call }error\_check(ierr)}
 \DoxyCodeLine{567         ierr = nf90\_put\_att(file\_id, nf90\_global, \textcolor{stringliteral}{"{}system"{}}, \textcolor{stringliteral}{"{}H2"{}})}
