@@ -2,17 +2,19 @@
 \Hypertarget{index_md_repo_FORTRAN_MAINPAGE}%
  
 
+This is the homepage for the Developer Documentation of the Fortran backend of {\itshape Dice}. On this site, you will find definitions for all of the functions and subroutines that we use to run VQMC simulations on our three currently implemented problems (QHO, H2plus and H2), as well as instructions for integrating support for a new problem into the code (see below).
+
 \doxysubsection*{Links}
 
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
 \hline
-\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Destination   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Link    }\\\cline{1-2}
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Link   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Destination    }\\\cline{1-2}
 \endfirsthead
 \hline
 \endfoot
 \hline
-\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Destination   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Link    }\\\cline{1-2}
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Link   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Destination    }\\\cline{1-2}
 \endhead
 Git\+Hub   &\href{https://github.com/HetSys/PX915_2021_A}{\texttt{ Here}}    \\\cline{1-2}
 Dev Documentation Main   &\href{https://joegilkes.github.io/PX915-Docs/}{\texttt{ Here}}    \\\cline{1-2}
@@ -21,4 +23,210 @@ Python Dev Documentation   &\href{https://joegilkes.github.io/PX915-Docs/python/
 \end{longtabu}
 
 
-This documentation was generated from commit e6b698a 
+\DoxyHorRuler{0}
+
+
+\doxysubsection*{Adding a new problem to Dice Quantum Monte Carlo (QMC)}
+
+This section presents what the user would need to modify in the Fortran files (.f90) to add a new problem to Dice QMC.
+
+The first step is to add the derived type of the new problem to the file /src/shared\+\_\+data.f90, under the section \char`\"{}\+Derived Types\char`\"{}. Below is a sample format of how the derived type should look like.
+
+\DoxyHorRuler{0}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{type} :: new\_problem\_type}
+\DoxyCodeLine{        \textcolor{keywordtype}{integer(int32)} :: steps=100000\_int32         }
+\DoxyCodeLine{        \textcolor{keywordtype}{integer(int32)} :: burn\_step=1000\_int32       }
+\DoxyCodeLine{        \textcolor{keywordtype}{integer(int32)} :: thin\_step=10\_int32         }
+\DoxyCodeLine{\textcolor{keywordtype}{        real}(real64) :: rcut=3.0\_real64              }
+\DoxyCodeLine{\textcolor{keywordtype}{        real}(real64) :: sigma=1.8\_real64             }
+\DoxyCodeLine{        \textcolor{keywordtype}{logical} :: auto\_params = .true.              }
+\DoxyCodeLine{\textcolor{keywordtype}{        real}(real64) :: parameter\_for\_new\_problem = 0.4\_real64      }
+\DoxyCodeLine{\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: parameter\_grid = (/0,1,10/)}
+\DoxyCodeLine{\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)} :: bond = (/1,3,10/)}
+\DoxyCodeLine{    \textcolor{keyword}{end type }H2\_type}
+
+\end{DoxyCode}
+ If the user wants to add are any other constants then they can be added to the \char`\"{}constants\char`\"{} module in /src/shared\+\_\+data.f90.
+
+The next step is to modify the file /src/quantum\+\_\+solvers.f90. Regardless of the new problem the user will need to implement a function that calculates the transitional probability of the current step and the proposed step. Below is a sample format of how the transitional probability function should look like.
+
+\DoxyHorRuler{0}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{function }trans\_prob(parameters\_of\_new\_problem, \&}
+\DoxyCodeLine{current\_step, next\_step, other\_constants) \textcolor{keyword}{result}(Prob)}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)} :: parameters\_of new\_problem }
+\DoxyCodeLine{\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(3)}, \textcolor{keywordtype}{intent(in)} :: current\_step, next\_step}
+\DoxyCodeLine{\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{dimension(:)}, \textcolor{keywordtype}{intent(in)} :: other\_constants }
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{        real}(real64) :: Prob}
+\DoxyCodeLine{}
+\DoxyCodeLine{        prob = ...}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keyword}{end function }Trans\_Prob}
+
+\end{DoxyCode}
+
+
+The other function that is also necessary to be implemented regardless of the problem is one that calculates the local energy of the problem at a given position. Below is a sample format of how the local energy function should look like.
+
+\DoxyHorRuler{0}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{! Sample format of local energy function }}
+\DoxyCodeLine{\textcolor{keyword}{function }local\_energy(parameters\_of\_new\_problem, \&}
+\DoxyCodeLine{position) \textcolor{keyword}{result}(E\_loc)}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordtype}{implicit none}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: parameters}
+\DoxyCodeLine{\textcolor{keywordtype}{        real}(real64), \textcolor{keywordtype}{intent(in)}, \textcolor{keywordtype}{dimension(:)} :: position }
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{        real}(real64) :: E\_loc}
+\DoxyCodeLine{}
+\DoxyCodeLine{        e\_loc = ...}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keyword}{end function }Local\_Energy}
+
+\end{DoxyCode}
+
+
+Most problems will require the user to implement a wave function corresponding to the problem, in order to calculate the transitional probabilities and local energies. The user is free to implement this however they want, as long as the local energy and transitional probability functions have the formats presented above. Another remark for the user is that when calculating the energy, unless the derivatives can be found analytically the user will need to use some numerical method to obtain the derivatives, which they will have to implement themselves. All of the modifications to /src/quantum\+\_\+solvers.f90 should be done after the section \char`\"{}\+H\+\_\+2 Solvers\char`\"{}. ~\newline
+
+
+The next step is to modify the file /src/vqmc.f90. The user will need to implement a new VQMC solver for the new problem in this module. The user should use one of the \char`\"{}\+VQMC\+\_\+\+QHO\char`\"{}, \char`\"{}\+VQMC\+\_\+\+H\+\_\+2\+\_\+plus\char`\"{} or \char`\"{}\+VQMC\+\_\+\+H\+\_\+2\char`\"{} sub-\/routines as a template for their VQMC solver. This is because they would only need to modify the transitional probability and local energy functions in the Metropolis algorithm. Below is a sample template of how the Metropolis algorithm should look like.
+
+\DoxyHorRuler{0}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{! Metropolis Algorithm without burning and thinning for new problem}}
+\DoxyCodeLine{\textcolor{keywordflow}{do} i = 2, n            }
+\DoxyCodeLine{    ...}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{! Modify here the function for transitional probability}}
+\DoxyCodeLine{    log\_prob\_n = log(trans\_prob(parameters, x(i-\/1), x\_n(1)))}
+\DoxyCodeLine{            }
+\DoxyCodeLine{    ...}
+\DoxyCodeLine{            }
+\DoxyCodeLine{    \textcolor{comment}{! Compare the drawn sample from the uniform distribution with the acceptance ratio }}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (a\_prob\_trans >= unif\_num) \textcolor{keywordflow}{then} }
+\DoxyCodeLine{        ...}
+\DoxyCodeLine{        \textcolor{comment}{! Modify here the function for local energy  }}
+\DoxyCodeLine{        energy\_chain(i) = local\_energy(parameters, x\_n(1))}
+\DoxyCodeLine{    \textcolor{keywordflow}{else} }
+\DoxyCodeLine{        ... }
+\DoxyCodeLine{        }
+\DoxyCodeLine{        \textcolor{comment}{! Modify here the function for local energy}}
+\DoxyCodeLine{        energy\_chain(i) = local\_energy(parameters, x(i-\/1))}
+\DoxyCodeLine{\textcolor{keywordflow}{    end if} }
+\DoxyCodeLine{\textcolor{keyword}{end }do}
+
+\end{DoxyCode}
+ If the user uses one of the \char`\"{}\+VQMC\+\_\+\+QHO\char`\"{}, \char`\"{}\+VQMC\+\_\+\+H\+\_\+2\+\_\+plus\char`\"{} or \char`\"{}\+VQMC\+\_\+\+H\+\_\+2\char`\"{} sub-\/routines as a template then the burning and thinning feautures can be reused for the new problem. It is important to stick to one of the VQMC sub-\/routines so that the outputs are the same.
+
+The next step is to add the automatic gradient descent based search (GDBS) to the file /src/vqmc.f90. The user should use \char`\"{}\+Auto\+\_\+\+H\+\_\+2\char`\"{}, \char`\"{}\+Auto\+\_\+\+H\+\_\+2\+\_\+plus\char`\"{} sub-\/routines as a template and should only modify the VQMC solver being called (see below). This modification should be place after the new VQMC solver.
+
+\DoxyHorRuler{0}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{subroutine }auto\_h\_2(...)}
+\DoxyCodeLine{        ...}
+\DoxyCodeLine{        \textcolor{comment}{! Main iteration loop}}
+\DoxyCodeLine{        \textcolor{keywordflow}{do} k = cauto\_start, maxiter}
+\DoxyCodeLine{}
+\DoxyCodeLine{            \textcolor{comment}{! Calculate gradient at current beta}}
+\DoxyCodeLine{            \textcolor{comment}{! This should be modified to the VQMC}}
+\DoxyCodeLine{            \textcolor{comment}{! solver that user created in the }}
+\DoxyCodeLine{            \textcolor{comment}{! last step.}}
+\DoxyCodeLine{            \textcolor{keyword}{call }vqmc\_h\_2(...)}
+\DoxyCodeLine{        ...}
+\DoxyCodeLine{\textcolor{keywordflow}{        end do} }
+\DoxyCodeLine{        }
+\DoxyCodeLine{\textcolor{keyword}{end subroutine }Auto\_H\_2}
+
+\end{DoxyCode}
+ If the user does not want to do a GDBS then they can ignore the previous step. Instead they can add a grid search to the file /src/vqmc.f90. The user should use \char`\"{}\+Grid\+\_\+\+H\+\_\+2\char`\"{}, \char`\"{}\+Grid\+\_\+\+H\+\_\+2\+\_\+plus\char`\"{} sub-\/routines as a template and should only modify the VQMC solver being called (see below). This sub-\/routine should be placed after the new VQMC solver.
+
+\DoxyHorRuler{0}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{subroutine }grid\_h\_2\_plus(...)}
+\DoxyCodeLine{        ...}
+\DoxyCodeLine{    \textcolor{comment}{! Loop over c values}}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} i = cgrid\_start, \textcolor{keyword}{size}(c\_array)}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{! Calculate energy at current value of c}}
+\DoxyCodeLine{        \textcolor{comment}{! This should be modified to the VQMC}}
+\DoxyCodeLine{        \textcolor{comment}{! solver that user created in the }}
+\DoxyCodeLine{        \textcolor{comment}{! last step.}}
+\DoxyCodeLine{        \textcolor{keyword}{call }vqmc\_h\_2\_plus(...)}
+\DoxyCodeLine{        ...}
+\DoxyCodeLine{\textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{    ...}
+\DoxyCodeLine{\textcolor{keyword}{end subroutine }Grid\_H\_2\_plus}
+
+\end{DoxyCode}
+ The user can of course add both of the search methods mentioned above, but it is important that they at least add one. The final item the user has to add to /src/vqmc.f90 is the equilibration run subroutine. This can be based off \char`\"{}\+Equil\+\_\+\+QHO\char`\"{} or \char`\"{}\+Equil\+\_\+\+H\+\_\+2\char`\"{} and the user should only modify the VQMC solver being used like in the previous step. ~\newline
+
+
+The final step is to modify the file /src/driver.f90. The user should add a new case with the corresponding problem to the \char`\"{}\+VQMC Loops\char`\"{} section. The user should use the following \char`\"{}\+Quantum Harmonic Oscillator\char`\"{} subsection, as a template to write their code. The code should only be modified so that the GDBS or grid search, and equilibration subroutines for the new problem are called (see below).
+
+\DoxyHorRuler{0}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{case('New\_problem')}}
+\DoxyCodeLine{    ...}
+\DoxyCodeLine{    \textcolor{comment}{! Loop over bond lengths}}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} b = 1, int(h2plus\%bond(3))}
+\DoxyCodeLine{        ...}
+\DoxyCodeLine{        \textcolor{comment}{! Main VQMC callers}}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (.not. run\_equil) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{            \textcolor{keywordflow}{if} (h2plus\%auto\_params) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{            \textcolor{comment}{! Search for best param at this bond length}}
+\DoxyCodeLine{            \textcolor{comment}{! This should be modified to the }}
+\DoxyCodeLine{            \textcolor{comment}{! GDBS sub-\/routine for this problem}}
+\DoxyCodeLine{            \textcolor{keyword}{call }auto\_h\_2\_plus(...)}
+\DoxyCodeLine{            ...}
+\DoxyCodeLine{            \textcolor{keywordflow}{else}}
+\DoxyCodeLine{}
+\DoxyCodeLine{            \textcolor{comment}{! Find best param in grid at this bond length}}
+\DoxyCodeLine{            \textcolor{comment}{! This should be modified to the }}
+\DoxyCodeLine{            \textcolor{comment}{! Grid search routine for this problem }}
+\DoxyCodeLine{            \textcolor{keyword}{call }grid\_h\_2\_plus(...)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{            end if}}
+\DoxyCodeLine{        ...}
+\DoxyCodeLine{\textcolor{keywordflow}{        end if} }
+\DoxyCodeLine{        ...}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} }
+\DoxyCodeLine{            ...}
+\DoxyCodeLine{        \textcolor{keywordflow}{else}}
+\DoxyCodeLine{            \textcolor{comment}{! Run equilibrations serially on rank 0}}
+\DoxyCodeLine{            \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{                \textcolor{comment}{! This shoud be modified to }}
+\DoxyCodeLine{                \textcolor{comment}{! the equilibration sub\_routine }}
+\DoxyCodeLine{                \textcolor{comment}{! for this new problem}}
+\DoxyCodeLine{                \textcolor{keyword}{call }equil\_h\_2\_plus(...)}
+\DoxyCodeLine{            ...}
+\DoxyCodeLine{\textcolor{keywordflow}{        end if}}
+\DoxyCodeLine{    ...}
+\DoxyCodeLine{\textcolor{keywordflow}{    end do}}
+\DoxyCodeLine{...        }
+
+\end{DoxyCode}
+
+
+After all the modifications the user should be able to run the code the same way as it is explained in the user manual.
+
+This documentation was generated from commit 553c9dc 

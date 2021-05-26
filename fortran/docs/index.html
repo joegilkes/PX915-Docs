@@ -93,10 +93,11 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_repo_FORTRAN_MAINPAGE"></a> <img src="https://i.imgur.com/FXzNrNN.png" alt="" class="inline"/></p>
+<p>This is the homepage for the Developer Documentation of the Fortran backend of <em>Dice</em>. On this site, you will find definitions for all of the functions and subroutines that we use to run VQMC simulations on our three currently implemented problems (QHO, H2plus and H2), as well as instructions for integrating support for a new problem into the code (see below).</p>
 <h2>Links</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Destination   </th><th class="markdownTableHeadNone">Link    </th></tr>
+<th class="markdownTableHeadNone">Link   </th><th class="markdownTableHeadNone">Destination    </th></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">GitHub   </td><td class="markdownTableBodyNone"><a href="https://github.com/HetSys/PX915_2021_A">Here</a>    </td></tr>
 <tr class="markdownTableRowEven">
@@ -106,7 +107,159 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Python Dev Documentation   </td><td class="markdownTableBodyNone"><a href="https://joegilkes.github.io/PX915-Docs/python/docs/index.html">Here</a>   </td></tr>
 </table>
-<p>This documentation was generated from commit e6b698a </p>
+<hr  />
+<h2>Adding a new problem to Dice Quantum Monte Carlo (QMC)</h2>
+<p>This section presents what the user would need to modify in the Fortran files (.f90) to add a new problem to Dice QMC.</p>
+<p>The first step is to add the derived type of the new problem to the file /src/shared_data.f90, under the section "Derived Types". Below is a sample format of how the derived type should look like.</p>
+<hr  />
+<div class="fragment"><div class="line"> </div>
+<div class="line"><span class="keyword">type</span> :: new_problem_type</div>
+<div class="line">        <span class="keywordtype">integer(int32)</span> :: steps=100000_int32         </div>
+<div class="line">        <span class="keywordtype">integer(int32)</span> :: burn_step=1000_int32       </div>
+<div class="line">        <span class="keywordtype">integer(int32)</span> :: thin_step=10_int32         </div>
+<div class="line"><span class="keywordtype">        real</span>(real64) :: rcut=3.0_real64              </div>
+<div class="line"><span class="keywordtype">        real</span>(real64) :: sigma=1.8_real64             </div>
+<div class="line">        <span class="keywordtype">logical</span> :: auto_params = .true.              </div>
+<div class="line"><span class="keywordtype">        real</span>(real64) :: parameter_for_new_problem = 0.4_real64      </div>
+<div class="line"><span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: parameter_grid = (/0,1,10/)</div>
+<div class="line"><span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span> :: bond = (/1,3,10/)</div>
+<div class="line">    <span class="keyword">end type </span>H2_type</div>
+</div><!-- fragment --><p> If the user wants to add are any other constants then they can be added to the "constants" module in /src/shared_data.f90.</p>
+<p>The next step is to modify the file /src/quantum_solvers.f90. Regardless of the new problem the user will need to implement a function that calculates the transitional probability of the current step and the proposed step. Below is a sample format of how the transitional probability function should look like.</p>
+<hr  />
+<div class="fragment"><div class="line"> </div>
+<div class="line"><span class="keyword">function </span>trans_prob(parameters_of_new_problem, &amp;</div>
+<div class="line">current_step, next_step, other_constants) <span class="keyword">result</span>(Prob)</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordtype">implicit none</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span> :: parameters_of new_problem </div>
+<div class="line"><span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(3)</span>, <span class="keywordtype">intent(in)</span> :: current_step, next_step</div>
+<div class="line"><span class="keywordtype">        real</span>(real64), <span class="keywordtype">dimension(:)</span>, <span class="keywordtype">intent(in)</span> :: other_constants </div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">        real</span>(real64) :: Prob</div>
+<div class="line"> </div>
+<div class="line">        prob = ...</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">end function </span>Trans_Prob</div>
+</div><!-- fragment --><p>The other function that is also necessary to be implemented regardless of the problem is one that calculates the local energy of the problem at a given position. Below is a sample format of how the local energy function should look like.</p>
+<hr  />
+ <div class="fragment"><div class="line"><span class="comment">! Sample format of local energy function </span></div>
+<div class="line"><span class="keyword">function </span>local_energy(parameters_of_new_problem, &amp;</div>
+<div class="line">position) <span class="keyword">result</span>(E_loc)</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordtype">implicit none</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: parameters</div>
+<div class="line"><span class="keywordtype">        real</span>(real64), <span class="keywordtype">intent(in)</span>, <span class="keywordtype">dimension(:)</span> :: position </div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">        real</span>(real64) :: E_loc</div>
+<div class="line"> </div>
+<div class="line">        e_loc = ...</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">end function </span>Local_Energy</div>
+</div><!-- fragment --><p>Most problems will require the user to implement a wave function corresponding to the problem, in order to calculate the transitional probabilities and local energies. The user is free to implement this however they want, as long as the local energy and transitional probability functions have the formats presented above. Another remark for the user is that when calculating the energy, unless the derivatives can be found analytically the user will need to use some numerical method to obtain the derivatives, which they will have to implement themselves. All of the modifications to /src/quantum_solvers.f90 should be done after the section "H_2 Solvers". <br  />
+</p>
+<p>The next step is to modify the file /src/vqmc.f90. The user will need to implement a new VQMC solver for the new problem in this module. The user should use one of the "VQMC_QHO", "VQMC_H_2_plus" or "VQMC_H_2" sub-routines as a template for their VQMC solver. This is because they would only need to modify the transitional probability and local energy functions in the Metropolis algorithm. Below is a sample template of how the Metropolis algorithm should look like.</p>
+<hr  />
+ <div class="fragment"><div class="line"><span class="comment">! Metropolis Algorithm without burning and thinning for new problem</span></div>
+<div class="line"><span class="keywordflow">do</span> i = 2, n            </div>
+<div class="line">    ...</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">! Modify here the function for transitional probability</span></div>
+<div class="line">    log_prob_n = log(trans_prob(parameters, x(i-1), x_n(1)))</div>
+<div class="line">            </div>
+<div class="line">    ...</div>
+<div class="line">            </div>
+<div class="line">    <span class="comment">! Compare the drawn sample from the uniform distribution with the acceptance ratio </span></div>
+<div class="line">    <span class="keywordflow">if</span> (a_prob_trans &gt;= unif_num) <span class="keywordflow">then</span> </div>
+<div class="line">        ...</div>
+<div class="line">        <span class="comment">! Modify here the function for local energy  </span></div>
+<div class="line">        energy_chain(i) = local_energy(parameters, x_n(1))</div>
+<div class="line">    <span class="keywordflow">else</span> </div>
+<div class="line">        ... </div>
+<div class="line">        </div>
+<div class="line">        <span class="comment">! Modify here the function for local energy</span></div>
+<div class="line">        energy_chain(i) = local_energy(parameters, x(i-1))</div>
+<div class="line"><span class="keywordflow">    end if</span> </div>
+<div class="line"><span class="keyword">end </span>do</div>
+</div><!-- fragment --><p> If the user uses one of the "VQMC_QHO", "VQMC_H_2_plus" or "VQMC_H_2" sub-routines as a template then the burning and thinning feautures can be reused for the new problem. It is important to stick to one of the VQMC sub-routines so that the outputs are the same.</p>
+<p>The next step is to add the automatic gradient descent based search (GDBS) to the file /src/vqmc.f90. The user should use "Auto_H_2", "Auto_H_2_plus" sub-routines as a template and should only modify the VQMC solver being called (see below). This modification should be place after the new VQMC solver.</p>
+<hr  />
+ <div class="fragment"><div class="line"><span class="keyword">subroutine </span>auto_h_2(...)</div>
+<div class="line">        ...</div>
+<div class="line">        <span class="comment">! Main iteration loop</span></div>
+<div class="line">        <span class="keywordflow">do</span> k = cauto_start, maxiter</div>
+<div class="line"> </div>
+<div class="line">            <span class="comment">! Calculate gradient at current beta</span></div>
+<div class="line">            <span class="comment">! This should be modified to the VQMC</span></div>
+<div class="line">            <span class="comment">! solver that user created in the </span></div>
+<div class="line">            <span class="comment">! last step.</span></div>
+<div class="line">            <span class="keyword">call </span>vqmc_h_2(...)</div>
+<div class="line">        ...</div>
+<div class="line"><span class="keywordflow">        end do</span> </div>
+<div class="line">        </div>
+<div class="line"><span class="keyword">end subroutine </span>Auto_H_2</div>
+</div><!-- fragment --><p> If the user does not want to do a GDBS then they can ignore the previous step. Instead they can add a grid search to the file /src/vqmc.f90. The user should use "Grid_H_2", "Grid_H_2_plus" sub-routines as a template and should only modify the VQMC solver being called (see below). This sub-routine should be placed after the new VQMC solver.</p>
+<hr  />
+ <div class="fragment"><div class="line"><span class="keyword">subroutine </span>grid_h_2_plus(...)</div>
+<div class="line">        ...</div>
+<div class="line">    <span class="comment">! Loop over c values</span></div>
+<div class="line">    <span class="keywordflow">do</span> i = cgrid_start, <span class="keyword">size</span>(c_array)</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">! Calculate energy at current value of c</span></div>
+<div class="line">        <span class="comment">! This should be modified to the VQMC</span></div>
+<div class="line">        <span class="comment">! solver that user created in the </span></div>
+<div class="line">        <span class="comment">! last step.</span></div>
+<div class="line">        <span class="keyword">call </span>vqmc_h_2_plus(...)</div>
+<div class="line">        ...</div>
+<div class="line"><span class="keywordflow">    end do</span></div>
+<div class="line">    ...</div>
+<div class="line"><span class="keyword">end subroutine </span>Grid_H_2_plus</div>
+</div><!-- fragment --><p> The user can of course add both of the search methods mentioned above, but it is important that they at least add one. The final item the user has to add to /src/vqmc.f90 is the equilibration run subroutine. This can be based off "Equil_QHO" or "Equil_H_2" and the user should only modify the VQMC solver being used like in the previous step. <br  />
+</p>
+<p>The final step is to modify the file /src/driver.f90. The user should add a new case with the corresponding problem to the "VQMC Loops" section. The user should use the following "Quantum Harmonic Oscillator" subsection, as a template to write their code. The code should only be modified so that the GDBS or grid search, and equilibration subroutines for the new problem are called (see below).</p>
+<hr  />
+ <div class="fragment"><div class="line"><span class="comment">case(&#39;New_problem&#39;)</span></div>
+<div class="line">    ...</div>
+<div class="line">    <span class="comment">! Loop over bond lengths</span></div>
+<div class="line">    <span class="keywordflow">do</span> b = 1, int(h2plus%bond(3))</div>
+<div class="line">        ...</div>
+<div class="line">        <span class="comment">! Main VQMC callers</span></div>
+<div class="line">        <span class="keywordflow">if</span> (.not. run_equil) <span class="keywordflow">then</span></div>
+<div class="line">            <span class="keywordflow">if</span> (h2plus%auto_params) <span class="keywordflow">then</span></div>
+<div class="line">            <span class="comment">! Search for best param at this bond length</span></div>
+<div class="line">            <span class="comment">! This should be modified to the </span></div>
+<div class="line">            <span class="comment">! GDBS sub-routine for this problem</span></div>
+<div class="line">            <span class="keyword">call </span>auto_h_2_plus(...)</div>
+<div class="line">            ...</div>
+<div class="line">            <span class="keywordflow">else</span></div>
+<div class="line"> </div>
+<div class="line">            <span class="comment">! Find best param in grid at this bond length</span></div>
+<div class="line">            <span class="comment">! This should be modified to the </span></div>
+<div class="line">            <span class="comment">! Grid search routine for this problem </span></div>
+<div class="line">            <span class="keyword">call </span>grid_h_2_plus(...)</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">            end if</span></div>
+<div class="line">        ...</div>
+<div class="line"><span class="keywordflow">        end if</span> </div>
+<div class="line">        ...</div>
+<div class="line">        <span class="keywordflow">if</span> </div>
+<div class="line">            ...</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">            <span class="comment">! Run equilibrations serially on rank 0</span></div>
+<div class="line">            <span class="keywordflow">if</span> (my_rank==0) <span class="keywordflow">then</span></div>
+<div class="line">                <span class="comment">! This shoud be modified to </span></div>
+<div class="line">                <span class="comment">! the equilibration sub_routine </span></div>
+<div class="line">                <span class="comment">! for this new problem</span></div>
+<div class="line">                <span class="keyword">call </span>equil_h_2_plus(...)</div>
+<div class="line">            ...</div>
+<div class="line"><span class="keywordflow">        end if</span></div>
+<div class="line">    ...</div>
+<div class="line"><span class="keywordflow">    end do</span></div>
+<div class="line">...        </div>
+</div><!-- fragment --><p>After all the modifications the user should be able to run the code the same way as it is explained in the user manual.</p>
+<p>This documentation was generated from commit 553c9dc </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
