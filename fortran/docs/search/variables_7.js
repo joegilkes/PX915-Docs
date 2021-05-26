@@ -1,6 +1,12 @@
 var searchData=
 [
-  ['logfile_291',['logfile',['../namespaceshared__data.html#ad4da3a0a55e0563861cee8b2e6799be0',1,'shared_data']]],
-  ['logfrac_292',['logfrac',['../namespacevqmc.html#a4f41e2c494f06da125bf9a56314161b5',1,'vqmc']]],
-  ['logid_293',['logid',['../namespaceshared__data.html#af5798eba5b1c4594d4c3c9648d732e9e',1,'shared_data']]]
+  ['i_5falpha_288',['i_alpha',['../structshared__data_1_1restart__type.html#ad6d5b42f1d080abf1eb7036e2026e4aa',1,'shared_data::restart_type']]],
+  ['i_5fbond_289',['i_bond',['../structshared__data_1_1restart__type.html#a54a9d4ff1b7da8f1a128cb76feda942b',1,'shared_data::restart_type']]],
+  ['i_5fc1_290',['i_c1',['../structshared__data_1_1restart__type.html#ab5fb52db630587b4fff9612bc92b18c4',1,'shared_data::restart_type']]],
+  ['i_5fc2_291',['i_c2',['../structshared__data_1_1restart__type.html#ae921a73cbaae847677fc126d8dc36874',1,'shared_data::restart_type']]],
+  ['i_5flog_292',['i_log',['../namespaceshared__data.html#a829b5d4edec8365a446e8caeb244e9c9',1,'shared_data']]],
+  ['ip_293',['ip',['../namespaceshared__data.html#a53aef60e9a1d10373ace8fe74a9db810',1,'shared_data']]],
+  ['ip_5fseed_294',['ip_seed',['../namespaceshared__data.html#aea420d50119313f13ba1ca05064c4125',1,'shared_data']]],
+  ['iv_295',['iv',['../namespacevqmc.html#a86db46440794b9ef7cfd9fbf1fd69930',1,'vqmc']]],
+  ['iy_296',['iy',['../namespacevqmc.html#a1608372d703310a49afc4243ccf27368',1,'vqmc']]]
 ];

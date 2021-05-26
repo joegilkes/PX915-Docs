@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['outfile_301',['outfile',['../namespaceshared__data.html#a2901a107f2659faf5c03f8c35f64e68f',1,'shared_data']]]
+  ['ntab_306',['ntab',['../namespacevqmc.html#a4acb6b64bbac5c4684654d00393f7f24',1,'vqmc']]]
 ];

@@ -152,6 +152,15 @@ Variables</h2></td></tr>
 <tr class="memitem:a1703912ee00414a4aaf1a41d3c167694"><td class="memItemLeft" align="right" valign="top">type(<a class="el" href="structshared__data_1_1h2__type.html">h2_type</a>)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a1703912ee00414a4aaf1a41d3c167694">h2</a></td></tr>
 <tr class="memdesc:a1703912ee00414a4aaf1a41d3c167694"><td class="mdescLeft">&#160;</td><td class="mdescRight">To store inputs for H2 molecule system.  <a href="namespaceshared__data.html#a1703912ee00414a4aaf1a41d3c167694">More...</a><br /></td></tr>
 <tr class="separator:a1703912ee00414a4aaf1a41d3c167694"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13face34601b80a8b6c91c442508e4f3"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a13face34601b80a8b6c91c442508e4f3">d_eqsteps_qho</a> =100000_int32</td></tr>
+<tr class="memdesc:a13face34601b80a8b6c91c442508e4f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default total steps for each QHO equilibration MMC chain.  <a href="namespaceshared__data.html#a13face34601b80a8b6c91c442508e4f3">More...</a><br /></td></tr>
+<tr class="separator:a13face34601b80a8b6c91c442508e4f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee5816e6032ee02faa391b7fb22cbaae"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#aee5816e6032ee02faa391b7fb22cbaae">d_eqsteps_h2plus</a> =100000_int32</td></tr>
+<tr class="memdesc:aee5816e6032ee02faa391b7fb22cbaae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default total steps for each H2plus equilibration MMC chain.  <a href="namespaceshared__data.html#aee5816e6032ee02faa391b7fb22cbaae">More...</a><br /></td></tr>
+<tr class="separator:aee5816e6032ee02faa391b7fb22cbaae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86df366bd5fa28f0fd42a0ae6c1fd785"><td class="memItemLeft" align="right" valign="top">integer(int32)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a86df366bd5fa28f0fd42a0ae6c1fd785">d_eqsteps_h2</a> =100000_int32</td></tr>
+<tr class="memdesc:a86df366bd5fa28f0fd42a0ae6c1fd785"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default total steps for each H2 equilibration MMC chain.  <a href="namespaceshared__data.html#a86df366bd5fa28f0fd42a0ae6c1fd785">More...</a><br /></td></tr>
+<tr class="separator:a86df366bd5fa28f0fd42a0ae6c1fd785"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e48217c892c5f716b469fd513ce6c77"><td class="memItemLeft" align="right" valign="top">type(<a class="el" href="structshared__data_1_1restart__type.html">restart_type</a>)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a2e48217c892c5f716b469fd513ce6c77">res</a></td></tr>
 <tr class="separator:a2e48217c892c5f716b469fd513ce6c77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73f57f5cf348bf3d0dd9e0b8eaf8e514"><td class="memItemLeft" align="right" valign="top">character(len= *), parameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshared__data.html#a73f57f5cf348bf3d0dd9e0b8eaf8e514">resfile_nml</a> = 'res_nml.txt'</td></tr>
@@ -465,6 +474,63 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a13face34601b80a8b6c91c442508e4f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13face34601b80a8b6c91c442508e4f3">&#9670;&nbsp;</a></span>d_eqsteps_qho</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer(int32) shared_data::d_eqsteps_qho =100000_int32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default total steps for each QHO equilibration MMC chain. </p>
+
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00143">143</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">integer(int32)</span> :: d_eqsteps_qho =100000_int32    </div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aee5816e6032ee02faa391b7fb22cbaae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee5816e6032ee02faa391b7fb22cbaae">&#9670;&nbsp;</a></span>d_eqsteps_h2plus</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer(int32) shared_data::d_eqsteps_h2plus =100000_int32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default total steps for each H2plus equilibration MMC chain. </p>
+
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00144">144</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">integer(int32)</span> :: d_eqsteps_h2plus =100000_int32 </div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a86df366bd5fa28f0fd42a0ae6c1fd785"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86df366bd5fa28f0fd42a0ae6c1fd785">&#9670;&nbsp;</a></span>d_eqsteps_h2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer(int32) shared_data::d_eqsteps_h2 =100000_int32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default total steps for each H2 equilibration MMC chain. </p>
+
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00145">145</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">integer(int32)</span> :: d_eqsteps_h2 =100000_int32     </div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a2e48217c892c5f716b469fd513ce6c77"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2e48217c892c5f716b469fd513ce6c77">&#9670;&nbsp;</a></span>res</h2>
 
@@ -477,8 +543,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00145">145</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">type</span>(restart_type) :: res</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00149">149</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordtype">type</span>(restart_type) :: res</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -496,8 +562,8 @@ Variables</h2></td></tr>
 
 <p>Name of restart file storing RESTART namelist. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00146">146</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">parameter</span> :: resfile_nml = <span class="stringliteral">&#39;res_nml.txt&#39;</span></div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00150">150</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">parameter</span> :: resfile_nml = <span class="stringliteral">&#39;res_nml.txt&#39;</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -515,8 +581,8 @@ Variables</h2></td></tr>
 
 <p>Name of restart file storing total energies. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00147">147</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">parameter</span> :: resfile_etot = <span class="stringliteral">&#39;res_etot.nc&#39;</span></div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00151">151</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">parameter</span> :: resfile_etot = <span class="stringliteral">&#39;res_etot.nc&#39;</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -534,8 +600,8 @@ Variables</h2></td></tr>
 
 <p>Name of restart file storing parameter energies. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00148">148</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">parameter</span> :: resfile_epar = <span class="stringliteral">&#39;res_epar.nc&#39;</span></div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00152">152</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">parameter</span> :: resfile_epar = <span class="stringliteral">&#39;res_epar.nc&#39;</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -553,8 +619,8 @@ Variables</h2></td></tr>
 
 <p>Name of restart file storing energy chains. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00149">149</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">parameter</span> :: resfile_chn = <span class="stringliteral">&#39;res_chains.nc&#39;</span></div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00153">153</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">character(len=*)</span>, <span class="keywordtype">parameter</span> :: resfile_chn = <span class="stringliteral">&#39;res_chains.nc&#39;</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -572,8 +638,8 @@ Variables</h2></td></tr>
 
 <p>Number of MMC steps after burning (for MPI worksharing) </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00152">152</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordtype">integer(int32)</span> :: run_steps</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00156">156</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordtype">integer(int32)</span> :: run_steps</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -591,8 +657,8 @@ Variables</h2></td></tr>
 
 <p>Interval of steps for thinning in non-equil runs (for MPI worksharing) </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00153">153</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">integer(int32)</span> :: tstep</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00157">157</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">integer(int32)</span> :: tstep</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -610,8 +676,8 @@ Variables</h2></td></tr>
 
 <p>Start value for alpha grid, can be &gt;1 for restarts. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00154">154</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">integer(int32)</span> :: alpha_start=1</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00158">158</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordtype">integer(int32)</span> :: alpha_start=1</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -629,8 +695,8 @@ Variables</h2></td></tr>
 
 <p>Start value for bondlength grid, can be &gt;1 for restarts. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00155">155</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordtype">integer(int32)</span> :: bond_start=1</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00159">159</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordtype">integer(int32)</span> :: bond_start=1</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -648,8 +714,8 @@ Variables</h2></td></tr>
 
 <p>Start value for grid search of parameter c, can be &gt;1 for restarts. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00156">156</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordtype">integer(int32)</span> :: cgrid_start=1</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00160">160</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordtype">integer(int32)</span> :: cgrid_start=1</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -667,8 +733,8 @@ Variables</h2></td></tr>
 
 <p>Start value for automatic search of parameter c, can be &gt;1 for restarts. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00157">157</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">integer(int32)</span> :: cauto_start=1</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00161">161</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordtype">integer(int32)</span> :: cauto_start=1</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -686,8 +752,8 @@ Variables</h2></td></tr>
 
 <p>To store logfile unit. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00158">158</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordtype">integer</span> :: logid</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00162">162</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordtype">integer</span> :: logid</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -705,8 +771,8 @@ Variables</h2></td></tr>
 
 <p>Indicates whether the processor needs to write the logfile. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00159">159</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordtype">logical</span> :: i_log=.false.        </div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00163">163</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">logical</span> :: i_log=.false.        </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -724,8 +790,8 @@ Variables</h2></td></tr>
 
 <p>Maximum length of energy chains for writing to netCDF files. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00160">160</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordtype">integer</span> :: max_chain_len=100000</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00164">164</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">integer</span> :: max_chain_len=100000</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -743,8 +809,8 @@ Variables</h2></td></tr>
 
 <p>MPI error flag. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00163">163</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">integer(int32)</span>  :: mpierr</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00167">167</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordtype">integer(int32)</span>  :: mpierr</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -762,8 +828,8 @@ Variables</h2></td></tr>
 
 <p>Number of processors. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00164">164</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">integer(int32)</span>  :: p</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00168">168</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordtype">integer(int32)</span>  :: p</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -781,8 +847,8 @@ Variables</h2></td></tr>
 
 <p>Rank of current processor. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00165">165</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordtype">integer(int32)</span>  :: my_rank</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00169">169</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordtype">integer(int32)</span>  :: my_rank</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -800,8 +866,8 @@ Variables</h2></td></tr>
 
 <p>Number of steps per processor. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00166">166</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordtype">integer(int32)</span>  :: my_steps</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00170">170</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordtype">integer(int32)</span>  :: my_steps</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -819,8 +885,8 @@ Variables</h2></td></tr>
 
 <p>Processor rank for MPI communications. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00167">167</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordtype">integer(int32)</span>  :: ip</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00171">171</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordtype">integer(int32)</span>  :: ip</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -838,8 +904,8 @@ Variables</h2></td></tr>
 
 <p>Processor seed for MPI communications. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00168">168</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordtype">integer(int64)</span>  :: ip_seed</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00172">172</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordtype">integer(int64)</span>  :: ip_seed</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -857,8 +923,8 @@ Variables</h2></td></tr>
 
 <p>Unique tag for communicating rank seeds. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00169">169</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordtype">integer(int32)</span>  :: tag_seed=10</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00173">173</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordtype">integer(int32)</span>  :: tag_seed=10</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -876,8 +942,8 @@ Variables</h2></td></tr>
 
 <p>Length of chain on a processor, after burning &amp; thinning. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00170">170</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordtype">integer(int32)</span>  :: my_size</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00174">174</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordtype">integer(int32)</span>  :: my_size</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -895,8 +961,8 @@ Variables</h2></td></tr>
 
 <p>Total length of chains across processors, after burning and thinning. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00171">171</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordtype">integer(int32)</span>  :: tot_size</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00175">175</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordtype">integer(int32)</span>  :: tot_size</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -914,8 +980,8 @@ Variables</h2></td></tr>
 
 <p>Status of MPI Recv commands. </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00172">172</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordtype">integer</span>,<span class="keywordtype">dimension(MPI_STATUS_SIZE)</span> :: status</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00176">176</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordtype">integer</span>,<span class="keywordtype">dimension(MPI_STATUS_SIZE)</span> :: status</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -933,8 +999,8 @@ Variables</h2></td></tr>
 
 <p>Reused multiplicative factor, representing division by total number of MMC steps (tot_size) </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00173">173</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keywordtype">    real</span>(real64)    :: per_step</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00177">177</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="keywordtype">    real</span>(real64)    :: per_step</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -952,8 +1018,8 @@ Variables</h2></td></tr>
 
 <p>Reused multiplicative factor, representing division by number of processors (p) </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00174">174</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="keywordtype">    real</span>(real64)    :: per_proc</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00178">178</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="keywordtype">    real</span>(real64)    :: per_proc</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -971,8 +1037,8 @@ Variables</h2></td></tr>
 
 <p>Reused multiplicative factor, representing division by square of number of processors (p^2) </p>
 
-<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00175">175</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="keywordtype">    real</span>(real64)    :: per_proc2</div>
+<p class="definition">Definition at line <a class="el" href="shared__data_8f90_source.html#l00179">179</a> of file <a class="el" href="shared__data_8f90_source.html">shared_data.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="keywordtype">    real</span>(real64)    :: per_proc2</div>
 </div><!-- fragment -->
 </div>
 </div>

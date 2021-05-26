@@ -254,11 +254,11 @@ Definition at line 164 of file input\+\_\+parser.\+f90.
 \DoxyCodeLine{184         \textcolor{keywordflow}{if} (run\_equil) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{185             \textcolor{keywordflow}{select case} (trim(p\_system))}
 \DoxyCodeLine{186             \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'QHO'})}
-\DoxyCodeLine{187                 qho\%steps = 50000}
+\DoxyCodeLine{187                 qho\%steps = d\_eqsteps\_qho}
 \DoxyCodeLine{188             \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'H2plus'})}
-\DoxyCodeLine{189                 h2plus\%steps = 50000}
+\DoxyCodeLine{189                 h2plus\%steps = d\_eqsteps\_h2plus}
 \DoxyCodeLine{190             \textcolor{keywordflow}{case} (\textcolor{stringliteral}{'H2'})}
-\DoxyCodeLine{191                 h2\%steps = 50000}
+\DoxyCodeLine{191                 h2\%steps = d\_eqsteps\_h2}
 \DoxyCodeLine{192 \textcolor{keywordflow}{            case default}}
 \DoxyCodeLine{193                 error stop \textcolor{stringliteral}{'Error: Invalid system definition.'}}
 \DoxyCodeLine{194 \textcolor{keywordflow}{            end select}}

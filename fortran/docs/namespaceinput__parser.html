@@ -422,11 +422,11 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordflow">if</span> (run_equil) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="keywordflow">select case</span> (trim(p_system))</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            <span class="keywordflow">case</span> (<span class="stringliteral">&#39;QHO&#39;</span>)</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                qho%steps = 50000</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                qho%steps = d_eqsteps_qho</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            <span class="keywordflow">case</span> (<span class="stringliteral">&#39;H2plus&#39;</span>)</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                h2plus%steps = 50000</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                h2plus%steps = d_eqsteps_h2plus</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <span class="keywordflow">case</span> (<span class="stringliteral">&#39;H2&#39;</span>)</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                h2%steps = 50000</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                h2%steps = d_eqsteps_h2</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="keywordflow">            case default</span></div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                error stop <span class="stringliteral">&#39;Error: Invalid system definition.&#39;</span></div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="keywordflow">            end select</span></div>
