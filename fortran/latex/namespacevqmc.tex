@@ -2356,7 +2356,7 @@ Definition at line 1945 of file vqmc.\+f90.
 \DoxyCodeLine{2084 \textcolor{comment}{}                        energy\_chain, energy\_out, variance\_out, dphidbeta\_chain\textcolor{comment}{)}}
 \DoxyCodeLine{2085 \textcolor{comment}{}                \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}(2A)"{}}) \textcolor{stringliteral}{'Writing Markov chain to '}, chainfile}
 \DoxyCodeLine{2086                 \textcolor{keyword}{call }write\_h2\_equilibration(e1\_pos\_chain, energy\_chain, chainfile\textcolor{comment}{, ierr, \&}}
-\DoxyCodeLine{2087 \textcolor{comment}{}                    h2, accept\_out, beta\_out)}
+\DoxyCodeLine{2087 \textcolor{comment}{}                    h2, accept\_out, beta\_out, bond\_length)}
 \DoxyCodeLine{2088 \textcolor{keywordflow}{            end if}}
 \DoxyCodeLine{2089 \textcolor{keywordflow}{        end if}}
 \DoxyCodeLine{2090         }
@@ -2517,7 +2517,7 @@ Definition at line 2115 of file vqmc.\+f90.
 \DoxyCodeLine{2220 \textcolor{comment}{}                        energy\_chain, energy\_out, variance\_out, dphidbeta\_chain\textcolor{comment}{)}}
 \DoxyCodeLine{2221 \textcolor{comment}{}                \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}(2A)"{}}) \textcolor{stringliteral}{'Writing Markov chain to '}, chainfile}
 \DoxyCodeLine{2222                 \textcolor{keyword}{call }write\_h2\_equilibration(e1\_pos\_chain, energy\_chain, chainfile\textcolor{comment}{, ierr, \&}}
-\DoxyCodeLine{2223 \textcolor{comment}{}                    h2, accept\_out, beta\_out)}
+\DoxyCodeLine{2223 \textcolor{comment}{}                    h2, accept\_out, beta\_out, bond\_length)}
 \DoxyCodeLine{2224 \textcolor{keywordflow}{            end if}}
 \DoxyCodeLine{2225 }
 \DoxyCodeLine{2226 \textcolor{keywordflow}{        endif}  }
@@ -2613,7 +2613,7 @@ Definition at line 2249 of file vqmc.\+f90.
 \DoxyCodeLine{2293 \textcolor{comment}{}                \textcolor{stringliteral}{'\_beta'}, trim(adjustl(str\_i)), \textcolor{stringliteral}{'.nc'}}
 \DoxyCodeLine{2294             \textcolor{keyword}{write}(*, *) \textcolor{stringliteral}{'Writing equilibration outfile to '}, equilfile}
 \DoxyCodeLine{2295             \textcolor{keyword}{call }write\_h2\_equilibration(e1\_pos\_chain, energy\_chain, equilfile\textcolor{comment}{, ierr, \&}}
-\DoxyCodeLine{2296 \textcolor{comment}{}                h2, accept\_rate, beta\_array(i))}
+\DoxyCodeLine{2296 \textcolor{comment}{}                h2, accept\_rate, beta\_array(i), bond\_length)}
 \DoxyCodeLine{2297 }
 \DoxyCodeLine{2298 \textcolor{keywordflow}{        end do}}
 \DoxyCodeLine{2299 }

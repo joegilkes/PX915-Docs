@@ -3031,7 +3031,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l02084"></a><span class="lineno"> 2084</span>&#160;<span class="comment"></span>                        energy_chain, energy_out, variance_out, dphidbeta_chain<span class="comment">)</span></div>
 <div class="line"><a name="l02085"></a><span class="lineno"> 2085</span>&#160;<span class="comment"></span>                <span class="keyword">write</span>(*, <span class="stringliteral">&quot;(2A)&quot;</span>) <span class="stringliteral">&#39;Writing Markov chain to &#39;</span>, chainfile</div>
 <div class="line"><a name="l02086"></a><span class="lineno"> 2086</span>&#160;                <span class="keyword">call </span>write_h2_equilibration(e1_pos_chain, energy_chain, chainfile<span class="comment">, ierr, &amp;</span></div>
-<div class="line"><a name="l02087"></a><span class="lineno"> 2087</span>&#160;<span class="comment"></span>                    h2, accept_out, beta_out)</div>
+<div class="line"><a name="l02087"></a><span class="lineno"> 2087</span>&#160;<span class="comment"></span>                    h2, accept_out, beta_out, bond_length)</div>
 <div class="line"><a name="l02088"></a><span class="lineno"> 2088</span>&#160;<span class="keywordflow">            end if</span></div>
 <div class="line"><a name="l02089"></a><span class="lineno"> 2089</span>&#160;<span class="keywordflow">        end if</span></div>
 <div class="line"><a name="l02090"></a><span class="lineno"> 2090</span>&#160;        </div>
@@ -3240,7 +3240,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l02220"></a><span class="lineno"> 2220</span>&#160;<span class="comment"></span>                        energy_chain, energy_out, variance_out, dphidbeta_chain<span class="comment">)</span></div>
 <div class="line"><a name="l02221"></a><span class="lineno"> 2221</span>&#160;<span class="comment"></span>                <span class="keyword">write</span>(*, <span class="stringliteral">&quot;(2A)&quot;</span>) <span class="stringliteral">&#39;Writing Markov chain to &#39;</span>, chainfile</div>
 <div class="line"><a name="l02222"></a><span class="lineno"> 2222</span>&#160;                <span class="keyword">call </span>write_h2_equilibration(e1_pos_chain, energy_chain, chainfile<span class="comment">, ierr, &amp;</span></div>
-<div class="line"><a name="l02223"></a><span class="lineno"> 2223</span>&#160;<span class="comment"></span>                    h2, accept_out, beta_out)</div>
+<div class="line"><a name="l02223"></a><span class="lineno"> 2223</span>&#160;<span class="comment"></span>                    h2, accept_out, beta_out, bond_length)</div>
 <div class="line"><a name="l02224"></a><span class="lineno"> 2224</span>&#160;<span class="keywordflow">            end if</span></div>
 <div class="line"><a name="l02225"></a><span class="lineno"> 2225</span>&#160; </div>
 <div class="line"><a name="l02226"></a><span class="lineno"> 2226</span>&#160;<span class="keywordflow">        endif</span>  </div>
@@ -3369,7 +3369,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l02293"></a><span class="lineno"> 2293</span>&#160;<span class="comment"></span>                <span class="stringliteral">&#39;_beta&#39;</span>, trim(adjustl(str_i)), <span class="stringliteral">&#39;.nc&#39;</span></div>
 <div class="line"><a name="l02294"></a><span class="lineno"> 2294</span>&#160;            <span class="keyword">write</span>(*, *) <span class="stringliteral">&#39;Writing equilibration outfile to &#39;</span>, equilfile</div>
 <div class="line"><a name="l02295"></a><span class="lineno"> 2295</span>&#160;            <span class="keyword">call </span>write_h2_equilibration(e1_pos_chain, energy_chain, equilfile<span class="comment">, ierr, &amp;</span></div>
-<div class="line"><a name="l02296"></a><span class="lineno"> 2296</span>&#160;<span class="comment"></span>                h2, accept_rate, beta_array(i))</div>
+<div class="line"><a name="l02296"></a><span class="lineno"> 2296</span>&#160;<span class="comment"></span>                h2, accept_rate, beta_array(i), bond_length)</div>
 <div class="line"><a name="l02297"></a><span class="lineno"> 2297</span>&#160; </div>
 <div class="line"><a name="l02298"></a><span class="lineno"> 2298</span>&#160;<span class="keywordflow">        end do</span></div>
 <div class="line"><a name="l02299"></a><span class="lineno"> 2299</span>&#160; </div>
