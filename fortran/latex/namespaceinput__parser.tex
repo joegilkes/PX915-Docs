@@ -334,12 +334,14 @@ Definition at line 164 of file input\+\_\+parser.\+f90.
 \DoxyCodeLine{264 \textcolor{keywordflow}{            endif}}
 \DoxyCodeLine{265 }
 \DoxyCodeLine{266             \textcolor{comment}{! Print restarts header.}}
-\DoxyCodeLine{267             \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Restarted Program -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}}\textcolor{comment}{)}}
-\DoxyCodeLine{268 \textcolor{comment}{}            \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{269 }
-\DoxyCodeLine{270 \textcolor{keywordflow}{        end if} }
+\DoxyCodeLine{267             \textcolor{keywordflow}{if} (my\_rank==0) \textcolor{keywordflow}{then}}
+\DoxyCodeLine{268                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Restarted Program -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/')"{}}\textcolor{comment}{)}}
+\DoxyCodeLine{269 \textcolor{comment}{}                \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('')"{}})}
+\DoxyCodeLine{270 \textcolor{keywordflow}{            endif}}
 \DoxyCodeLine{271 }
-\DoxyCodeLine{272 }
+\DoxyCodeLine{272 \textcolor{keywordflow}{        end if} }
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274 }
 
 \end{DoxyCode}
 Here is the call graph for this function\+:
