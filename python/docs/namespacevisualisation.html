@@ -138,12 +138,12 @@ Functions</h2></td></tr>
 <tr class="separator:a73a6709541da1825e8af407b3558240e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58db1c83502abb038c648f3bb1076432"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevisualisation.html#a58db1c83502abb038c648f3bb1076432">plot_3D</a> (X, Y, Z, wfn)</td></tr>
 <tr class="separator:a58db1c83502abb038c648f3bb1076432"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a125cde5ab41fad7aaed30b720dd95318"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevisualisation.html#a125cde5ab41fad7aaed30b720dd95318">view_original_trace</a> (chain)</td></tr>
-<tr class="memdesc:a125cde5ab41fad7aaed30b720dd95318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plots the original trace of an MCMC run.  <a href="namespacevisualisation.html#a125cde5ab41fad7aaed30b720dd95318">More...</a><br /></td></tr>
-<tr class="separator:a125cde5ab41fad7aaed30b720dd95318"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a701fd174c3547d52cc346056e71525da"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevisualisation.html#a701fd174c3547d52cc346056e71525da">get_autocorrelation_time</a> (chain, burn, tuning)</td></tr>
-<tr class="memdesc:a701fd174c3547d52cc346056e71525da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function which suggests a thinning parameter for a MCMC chain.  <a href="namespacevisualisation.html#a701fd174c3547d52cc346056e71525da">More...</a><br /></td></tr>
-<tr class="separator:a701fd174c3547d52cc346056e71525da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac345463eb554d7c90613773996e74748"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevisualisation.html#ac345463eb554d7c90613773996e74748">view_original_trace</a> (filename)</td></tr>
+<tr class="memdesc:ac345463eb554d7c90613773996e74748"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plots the original trace(s) of an MCMC run.  <a href="namespacevisualisation.html#ac345463eb554d7c90613773996e74748">More...</a><br /></td></tr>
+<tr class="separator:ac345463eb554d7c90613773996e74748"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26c9ab9270b803a8d15c40d621769c46"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevisualisation.html#a26c9ab9270b803a8d15c40d621769c46">get_autocorrelation_time</a> (filename, burn, tuning, plotting=True)</td></tr>
+<tr class="memdesc:a26c9ab9270b803a8d15c40d621769c46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function which suggests a thinning parameter for a MCMC chain.  <a href="namespacevisualisation.html#a26c9ab9270b803a8d15c40d621769c46">More...</a><br /></td></tr>
+<tr class="separator:a26c9ab9270b803a8d15c40d621769c46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains functions for burning/thinning and visualization for Dice. </p>
@@ -1139,8 +1139,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a125cde5ab41fad7aaed30b720dd95318"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a125cde5ab41fad7aaed30b720dd95318">&#9670;&nbsp;</a></span>view_original_trace()</h2>
+<a id="ac345463eb554d7c90613773996e74748"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac345463eb554d7c90613773996e74748">&#9670;&nbsp;</a></span>view_original_trace()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1149,37 +1149,49 @@ Functions</h2></td></tr>
           <td class="memname">def visualisation.view_original_trace </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>chain</em></td><td>)</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Plots the original trace of an MCMC run. </p>
+<p>Plots the original trace(s) of an MCMC run. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">chain</td><td>1D array from MCMC to be plotted </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">filename</td><td>Filename of MCMC equilibration run </td></tr>
   </table>
   </dd>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="visualisation_8py_source.html#l00338">338</a> of file <a class="el" href="visualisation_8py_source.html">visualisation.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="keyword">def </span><a class="code" href="namespacevisualisation.html#a125cde5ab41fad7aaed30b720dd95318">view_original_trace</a>(chain):</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    </div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    plt.plot(range(len(chain)), chain)</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    plt.xlabel(<span class="stringliteral">&quot;Position in chain&quot;</span>)</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    plt.ylabel(<span class="stringliteral">&quot;Chain value&quot;</span>)</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    plt.title(<span class="stringliteral">&quot;Original Chain&quot;</span>)</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    plt.show()</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    </div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordflow">return</span></div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
-<div class="ttc" id="anamespacevisualisation_html_a125cde5ab41fad7aaed30b720dd95318"><div class="ttname"><a href="namespacevisualisation.html#a125cde5ab41fad7aaed30b720dd95318">visualisation.view_original_trace</a></div><div class="ttdeci">def view_original_trace(chain)</div><div class="ttdoc">Plots the original trace of an MCMC run.</div><div class="ttdef"><b>Definition:</b> <a href="visualisation_8py_source.html#l00338">visualisation.py:338</a></div></div>
+<div class="fragment"><div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="keyword">def </span><a class="code" href="namespacevisualisation.html#ac345463eb554d7c90613773996e74748">view_original_trace</a>(filename):</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    rootgrp = Dataset(filename, <span class="stringliteral">&quot;r&quot;</span>, format = <span class="stringliteral">&quot;NETCDF4&quot;</span>)</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    chain = np.array(rootgrp[<span class="stringliteral">&#39;positions&#39;</span>][:])</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="keywordflow">if</span> len(chain.shape) == 1:</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        plt.plot(range(len(chain)), chain, linewidth=1.0)</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        plt.xlabel(<span class="stringliteral">&quot;Position in chain&quot;</span>)</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        plt.ylabel(<span class="stringliteral">&quot;Chain value&quot;</span>)</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        plt.title(<span class="stringliteral">&quot;Original Chain&quot;</span>)</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        plt.show()</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        </div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        chainx = chain[:,0]</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        chainy = chain[:,1]</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        chainz = chain[:,2]</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        </div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        fig, (ax1,ax2,ax3) = plt.subplots(3,1)</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        ax1.plot(range(len(chainx)), chainx, linewidth=1.0)</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        ax2.plot(range(len(chainy)), chainy, linewidth=1.0)</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        ax3.plot(range(len(chainz)), chainz, linewidth=1.0)</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    </div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keywordflow">return</span></div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
+<div class="ttc" id="anamespacevisualisation_html_ac345463eb554d7c90613773996e74748"><div class="ttname"><a href="namespacevisualisation.html#ac345463eb554d7c90613773996e74748">visualisation.view_original_trace</a></div><div class="ttdeci">def view_original_trace(filename)</div><div class="ttdoc">Plots the original trace(s) of an MCMC run.</div><div class="ttdef"><b>Definition:</b> <a href="visualisation_8py_source.html#l00338">visualisation.py:338</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a701fd174c3547d52cc346056e71525da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a701fd174c3547d52cc346056e71525da">&#9670;&nbsp;</a></span>get_autocorrelation_time()</h2>
+<a id="a26c9ab9270b803a8d15c40d621769c46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26c9ab9270b803a8d15c40d621769c46">&#9670;&nbsp;</a></span>get_autocorrelation_time()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1188,7 +1200,7 @@ Functions</h2></td></tr>
           <td class="memname">def visualisation.get_autocorrelation_time </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>chain</em>, </td>
+          <td class="paramname"><em>filename</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1200,7 +1212,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>tuning</em>&#160;</td>
+          <td class="paramname"><em>tuning</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>plotting</em> = <code>True</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1214,64 +1232,106 @@ Functions</h2></td></tr>
 <p>Takes as input a burning parameter and a tuning parameter which controls how aggressively you tune out autocorrelation in the trace, and prints a suggested thinning parameter (if one was found). Intention is to use interactively, to illustrate procedure for burning and thinning, as default values are provided. Plots generated are the autocorrelation as a function of lag time, and the burnt and thinned trace / chain.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">chain</td><td>1D array from MCMC </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">filename</td><td>Filename of MCMC equilibration run </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">burn</td><td>Number of samples from chain to burn / discard </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">tuning</td><td>Parameter which controls aggression of thinning </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">plotting</td><td>Controls whether to display plots </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="visualisation_8py_source.html#l00363">363</a> of file <a class="el" href="visualisation_8py_source.html">visualisation.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="keyword">def </span><a class="code" href="namespacevisualisation.html#a701fd174c3547d52cc346056e71525da">get_autocorrelation_time</a>(chain, burn, tuning):</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    </div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    acp = sps.fftconvolve(chain,chain[::-1],mode=<span class="stringliteral">&#39;full&#39;</span>)</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    acp = acp[int(acp.size / 2):]</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    acp = acp / max(acp)</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    acp = acp[burn:]</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    </div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="comment">#tuning = 1e-2</span></div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="comment">#print(&quot;tuning = &quot;, tuning)</span></div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    </div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    thin = np.argmax(abs(acp) &lt; tuning)</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keywordflow">if</span> thin == 0:</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <span class="keywordflow">if</span> acp[thin] &lt; tuning:</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            thin = 1</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            print(<span class="stringliteral">&quot;No thinning value found - tuning may be too aggressive. Defaulting to no thinning, thin=1.&quot;</span>)</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            print()</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            thin = 1</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    </div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    print(<span class="stringliteral">&quot;burning parameter = &quot;</span>, burn)</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    print()</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    print(<span class="stringliteral">&quot;tuning parameter = &quot;</span>, tuning)</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    print()</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    print(<span class="stringliteral">&quot;proposed thinning parameter = &quot;</span>, thin)</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    print()</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    </div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    chain_new = chain[burn::thin]</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    print(<span class="stringliteral">&quot;length of new chain = &quot;</span>, len(chain_new))</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    </div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    </div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    plt.plot(range(len(acp)), acp)</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    plt.xlabel(<span class="stringliteral">&quot;Position in chain / Lag time&quot;</span>)</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    plt.ylabel(<span class="stringliteral">&quot;ACF&quot;</span>)</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    plt.title(<span class="stringliteral">&quot;Autocorrelation function vs lag time&quot;</span>)</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    plt.show()</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    </div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    plt.plot(range(len(chain_new)), chain_new)</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    plt.xlabel(<span class="stringliteral">&quot;Position in chain&quot;</span>)</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    plt.ylabel(<span class="stringliteral">&quot;Chain value&quot;</span>)</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    plt.title(<span class="stringliteral">&quot;New Chain&quot;</span>)</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    plt.show()</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    </div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <span class="keywordflow">return</span></div>
+<p class="definition">Definition at line <a class="el" href="visualisation_8py_source.html#l00376">376</a> of file <a class="el" href="visualisation_8py_source.html">visualisation.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="keyword">def </span><a class="code" href="namespacevisualisation.html#a26c9ab9270b803a8d15c40d621769c46">get_autocorrelation_time</a>(filename, burn, tuning, plotting=True):</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    rootgrp = Dataset(filename, <span class="stringliteral">&quot;r&quot;</span>, format = <span class="stringliteral">&quot;NETCDF4&quot;</span>)</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    chain = np.array(rootgrp[<span class="stringliteral">&#39;positions&#39;</span>][:])</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keywordflow">if</span> len(chain.shape) == 1:</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        acp = sps.fftconvolve(chain,chain[::-1],mode=<span class="stringliteral">&#39;full&#39;</span>)</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        acp = acp[int(acp.size / 2):]</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        acp = acp / max(acp)</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        acp = acp[burn:]</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        thin = np.argmax(abs(acp) &lt; tuning)</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keywordflow">if</span> thin == 0:</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            <span class="keywordflow">if</span> acp[thin] &lt; tuning:</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                thin = 1</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                print(<span class="stringliteral">&quot;No thinning value found - tuning may be too aggressive. Defaulting to no thinning, thin=1.&quot;</span>)</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                print()</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                thin = 1</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160; </div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        print(<span class="stringliteral">&quot;burning parameter = &quot;</span>, burn)</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        print(<span class="stringliteral">&quot;proposed thinning parameter = &quot;</span>, thin)</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        chain_new = chain[burn::thin]</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        print(<span class="stringliteral">&quot;length of new chain = &quot;</span>, len(chain_new))</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        <span class="keywordflow">if</span> plotting==<span class="keyword">True</span>:</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            plt.plot(range(len(acp)), acp, linewidth=1.0)</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            plt.xlabel(<span class="stringliteral">&quot;Position in chain / Lag time&quot;</span>)</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;            plt.ylabel(<span class="stringliteral">&quot;ACF&quot;</span>)</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            plt.title(<span class="stringliteral">&quot;Autocorrelation function vs lag time&quot;</span>)</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            plt.show()</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160; </div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160; </div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; </div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; </div>
-<div class="ttc" id="anamespacevisualisation_html_a701fd174c3547d52cc346056e71525da"><div class="ttname"><a href="namespacevisualisation.html#a701fd174c3547d52cc346056e71525da">visualisation.get_autocorrelation_time</a></div><div class="ttdeci">def get_autocorrelation_time(chain, burn, tuning)</div><div class="ttdoc">Function which suggests a thinning parameter for a MCMC chain.</div><div class="ttdef"><b>Definition:</b> <a href="visualisation_8py_source.html#l00363">visualisation.py:363</a></div></div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            plt.plot(range(len(chain_new)), chain_new, linewidth=1.0)</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            plt.xlabel(<span class="stringliteral">&quot;Position in chain&quot;</span>)</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;            plt.ylabel(<span class="stringliteral">&quot;Chain value&quot;</span>)</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            plt.title(<span class="stringliteral">&quot;New Chain&quot;</span>)</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;            plt.show()</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            </div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        <span class="keywordflow">return</span> burn, thin</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;            </div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        chainx = chain[:,0]</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        chainy = chain[:,1]</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        chainz = chain[:,2]</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        </div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        threed_thin = []</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        chain_lengths = []</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        </div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        <span class="keywordflow">for</span> c <span class="keywordflow">in</span> [chainx,chainy,chainz]:</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;            acp = sps.fftconvolve(c,c[::-1],mode=<span class="stringliteral">&#39;full&#39;</span>)</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            acp = acp[int(acp.size / 2):]</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            acp = acp / max(acp)</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            acp = acp[burn:]</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160; </div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;            thin = np.argmax(abs(acp) &lt; tuning)</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;            <span class="keywordflow">if</span> thin == 0:</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                <span class="keywordflow">if</span> acp[thin] &lt; tuning:</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                    thin = 1</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                    print(<span class="stringliteral">&quot;No thinning value found - tuning may be too aggressive. Defaulting to no thinning, thin=1.&quot;</span>)</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                    print()</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                    thin = 1</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                    </div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            threed_thin.append(thin)</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160; </div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;            chain_new = c[burn::thin]</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;            chain_lengths.append(len(chain_new))</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160; </div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;            <span class="keywordflow">if</span> plotting==<span class="keyword">True</span>:</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                plt.plot(range(len(acp)), acp, linewidth=1.0)</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                plt.xlabel(<span class="stringliteral">&quot;Position in chain / Lag time&quot;</span>)</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;                plt.ylabel(<span class="stringliteral">&quot;ACF&quot;</span>)</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;                plt.title(<span class="stringliteral">&quot;Autocorrelation function vs lag time&quot;</span>)</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;                plt.show()</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160; </div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;<span class="comment">#                 plt.plot(range(len(chain_new)), chain_new, linewidth=1.0)</span></div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;<span class="comment">#                 plt.xlabel(&quot;Position in chain&quot;)</span></div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;<span class="comment">#                 plt.ylabel(&quot;Chain value&quot;)</span></div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;<span class="comment">#                 plt.title(&quot;New Chain&quot;)</span></div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;<span class="comment">#                 plt.show()</span></div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;        print(<span class="stringliteral">&quot;burning parameter = &quot;</span>, burn)</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;        print(<span class="stringliteral">&quot;proposed thinning parameters from the 3 chains: &quot;</span>, threed_thin)</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;        print(<span class="stringliteral">&quot;chain lengths from proposed thins&quot;</span>, chain_lengths)</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160; </div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        <span class="keywordflow">return</span> burn, threed_thin</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160; </div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160; </div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160; </div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160; </div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160; </div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160; </div>
+<div class="ttc" id="anamespacevisualisation_html_a26c9ab9270b803a8d15c40d621769c46"><div class="ttname"><a href="namespacevisualisation.html#a26c9ab9270b803a8d15c40d621769c46">visualisation.get_autocorrelation_time</a></div><div class="ttdeci">def get_autocorrelation_time(filename, burn, tuning, plotting=True)</div><div class="ttdoc">Function which suggests a thinning parameter for a MCMC chain.</div><div class="ttdef"><b>Definition:</b> <a href="visualisation_8py_source.html#l00376">visualisation.py:376</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

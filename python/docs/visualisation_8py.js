@@ -15,6 +15,6 @@ var visualisation_8py =
     [ "plot_3D", "visualisation_8py.html#a9756d369d218ccf60a488ec02542eac6", null ],
     [ "example_H1s_wfn", "visualisation_8py.html#a73a6709541da1825e8af407b3558240e", null ],
     [ "plot_3D", "visualisation_8py.html#a58db1c83502abb038c648f3bb1076432", null ],
-    [ "view_original_trace", "visualisation_8py.html#a125cde5ab41fad7aaed30b720dd95318", null ],
-    [ "get_autocorrelation_time", "visualisation_8py.html#a701fd174c3547d52cc346056e71525da", null ]
+    [ "view_original_trace", "visualisation_8py.html#ac345463eb554d7c90613773996e74748", null ],
+    [ "get_autocorrelation_time", "visualisation_8py.html#a26c9ab9270b803a8d15c40d621769c46", null ]
 ];

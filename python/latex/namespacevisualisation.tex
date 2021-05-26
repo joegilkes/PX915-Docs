@@ -38,9 +38,9 @@ def \mbox{\hyperlink{namespacevisualisation_a73a6709541da1825e8af407b3558240e}{e
 \item 
 def \mbox{\hyperlink{namespacevisualisation_a58db1c83502abb038c648f3bb1076432}{plot\+\_\+3D}} (X, Y, Z, wfn)
 \item 
-def \mbox{\hyperlink{namespacevisualisation_a125cde5ab41fad7aaed30b720dd95318}{view\+\_\+original\+\_\+trace}} (chain)
-\begin{DoxyCompactList}\small\item\em Plots the original trace of an MCMC run. \end{DoxyCompactList}\item 
-def \mbox{\hyperlink{namespacevisualisation_a701fd174c3547d52cc346056e71525da}{get\+\_\+autocorrelation\+\_\+time}} (chain, burn, tuning)
+def \mbox{\hyperlink{namespacevisualisation_ac345463eb554d7c90613773996e74748}{view\+\_\+original\+\_\+trace}} (filename)
+\begin{DoxyCompactList}\small\item\em Plots the original trace(s) of an MCMC run. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacevisualisation_a26c9ab9270b803a8d15c40d621769c46}{get\+\_\+autocorrelation\+\_\+time}} (filename, burn, tuning, plotting=True)
 \begin{DoxyCompactList}\small\item\em Function which suggests a thinning parameter for a MCMC chain. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -709,19 +709,19 @@ Here is the call graph for this function\+:
 \includegraphics[width=328pt]{namespacevisualisation_a58db1c83502abb038c648f3bb1076432_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespacevisualisation_a125cde5ab41fad7aaed30b720dd95318}\label{namespacevisualisation_a125cde5ab41fad7aaed30b720dd95318}} 
+\mbox{\Hypertarget{namespacevisualisation_ac345463eb554d7c90613773996e74748}\label{namespacevisualisation_ac345463eb554d7c90613773996e74748}} 
 \index{visualisation@{visualisation}!view\_original\_trace@{view\_original\_trace}}
 \index{view\_original\_trace@{view\_original\_trace}!visualisation@{visualisation}}
 \doxysubsubsection{\texorpdfstring{view\_original\_trace()}{view\_original\_trace()}}
-{\footnotesize\ttfamily def visualisation.\+view\+\_\+original\+\_\+trace (\begin{DoxyParamCaption}\item[{}]{chain }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def visualisation.\+view\+\_\+original\+\_\+trace (\begin{DoxyParamCaption}\item[{}]{filename }\end{DoxyParamCaption})}
 
 
 
-Plots the original trace of an MCMC run. 
+Plots the original trace(s) of an MCMC run. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em chain} & 1D array from MCMC to be plotted \\
+\mbox{\texttt{ in}}  & {\em filename} & Filename of MCMC equilibration run \\
 \hline
 \end{DoxyParams}
 
@@ -730,23 +730,35 @@ Definition at line 338 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{338 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a125cde5ab41fad7aaed30b720dd95318}{view\_original\_trace}}(chain):}
-\DoxyCodeLine{339     }
-\DoxyCodeLine{340     plt.plot(range(len(chain)), chain)}
-\DoxyCodeLine{341     plt.xlabel(\textcolor{stringliteral}{"{}Position in chain"{}})}
-\DoxyCodeLine{342     plt.ylabel(\textcolor{stringliteral}{"{}Chain value"{}})}
-\DoxyCodeLine{343     plt.title(\textcolor{stringliteral}{"{}Original Chain"{}})}
-\DoxyCodeLine{344     plt.show()}
-\DoxyCodeLine{345     }
-\DoxyCodeLine{346     \textcolor{keywordflow}{return}}
-\DoxyCodeLine{347 }
+\DoxyCodeLine{338 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_ac345463eb554d7c90613773996e74748}{view\_original\_trace}}(filename):}
+\DoxyCodeLine{339     rootgrp = Dataset(filename, \textcolor{stringliteral}{"{}r"{}}, format = \textcolor{stringliteral}{"{}NETCDF4"{}})}
+\DoxyCodeLine{340     chain = np.array(rootgrp[\textcolor{stringliteral}{'positions'}][:])}
+\DoxyCodeLine{341     \textcolor{keywordflow}{if} len(chain.shape) == 1:}
+\DoxyCodeLine{342         plt.plot(range(len(chain)), chain, linewidth=1.0)}
+\DoxyCodeLine{343         plt.xlabel(\textcolor{stringliteral}{"{}Position in chain"{}})}
+\DoxyCodeLine{344         plt.ylabel(\textcolor{stringliteral}{"{}Chain value"{}})}
+\DoxyCodeLine{345         plt.title(\textcolor{stringliteral}{"{}Original Chain"{}})}
+\DoxyCodeLine{346         plt.show()}
+\DoxyCodeLine{347         }
+\DoxyCodeLine{348     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{349         chainx = chain[:,0]}
+\DoxyCodeLine{350         chainy = chain[:,1]}
+\DoxyCodeLine{351         chainz = chain[:,2]}
+\DoxyCodeLine{352         }
+\DoxyCodeLine{353         fig, (ax1,ax2,ax3) = plt.subplots(3,1)}
+\DoxyCodeLine{354         ax1.plot(range(len(chainx)), chainx, linewidth=1.0)}
+\DoxyCodeLine{355         ax2.plot(range(len(chainy)), chainy, linewidth=1.0)}
+\DoxyCodeLine{356         ax3.plot(range(len(chainz)), chainz, linewidth=1.0)}
+\DoxyCodeLine{357     }
+\DoxyCodeLine{358     \textcolor{keywordflow}{return}}
+\DoxyCodeLine{359 }
 
 \end{DoxyCode}
-\mbox{\Hypertarget{namespacevisualisation_a701fd174c3547d52cc346056e71525da}\label{namespacevisualisation_a701fd174c3547d52cc346056e71525da}} 
+\mbox{\Hypertarget{namespacevisualisation_a26c9ab9270b803a8d15c40d621769c46}\label{namespacevisualisation_a26c9ab9270b803a8d15c40d621769c46}} 
 \index{visualisation@{visualisation}!get\_autocorrelation\_time@{get\_autocorrelation\_time}}
 \index{get\_autocorrelation\_time@{get\_autocorrelation\_time}!visualisation@{visualisation}}
 \doxysubsubsection{\texorpdfstring{get\_autocorrelation\_time()}{get\_autocorrelation\_time()}}
-{\footnotesize\ttfamily def visualisation.\+get\+\_\+autocorrelation\+\_\+time (\begin{DoxyParamCaption}\item[{}]{chain,  }\item[{}]{burn,  }\item[{}]{tuning }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def visualisation.\+get\+\_\+autocorrelation\+\_\+time (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{burn,  }\item[{}]{tuning,  }\item[{}]{plotting = {\ttfamily True} }\end{DoxyParamCaption})}
 
 
 
@@ -756,67 +768,110 @@ Takes as input a burning parameter and a tuning parameter which controls how agg
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em chain} & 1D array from MCMC \\
+\mbox{\texttt{ in}}  & {\em filename} & Filename of MCMC equilibration run \\
 \hline
 \mbox{\texttt{ in}}  & {\em burn} & Number of samples from chain to burn / discard \\
 \hline
 \mbox{\texttt{ in}}  & {\em tuning} & Parameter which controls aggression of thinning \\
 \hline
+\mbox{\texttt{ in}}  & {\em plotting} & Controls whether to display plots \\
+\hline
 \end{DoxyParams}
 
 
-Definition at line 363 of file visualisation.\+py.
+Definition at line 376 of file visualisation.\+py.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{363 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a701fd174c3547d52cc346056e71525da}{get\_autocorrelation\_time}}(chain, burn, tuning):}
-\DoxyCodeLine{364     }
-\DoxyCodeLine{365     acp = sps.fftconvolve(chain,chain[::-\/1],mode=\textcolor{stringliteral}{'full'})}
-\DoxyCodeLine{366     acp = acp[int(acp.size / 2):]}
-\DoxyCodeLine{367     acp = acp / max(acp)}
-\DoxyCodeLine{368     acp = acp[burn:]}
-\DoxyCodeLine{369     }
-\DoxyCodeLine{370     \textcolor{comment}{\#tuning = 1e-\/2}}
-\DoxyCodeLine{371     \textcolor{comment}{\#print("{}tuning = "{}, tuning)}}
-\DoxyCodeLine{372     }
-\DoxyCodeLine{373     thin = np.argmax(abs(acp) < tuning)}
-\DoxyCodeLine{374     \textcolor{keywordflow}{if} thin == 0:}
-\DoxyCodeLine{375         \textcolor{keywordflow}{if} acp[thin] < tuning:}
-\DoxyCodeLine{376             thin = 1}
-\DoxyCodeLine{377         \textcolor{keywordflow}{else}:}
-\DoxyCodeLine{378             print(\textcolor{stringliteral}{"{}No thinning value found -\/ tuning may be too aggressive. Defaulting to no thinning, thin=1."{}})}
-\DoxyCodeLine{379             print()}
-\DoxyCodeLine{380             thin = 1}
-\DoxyCodeLine{381     }
-\DoxyCodeLine{382     print(\textcolor{stringliteral}{"{}burning parameter = "{}}, burn)}
-\DoxyCodeLine{383     print()}
-\DoxyCodeLine{384     print(\textcolor{stringliteral}{"{}tuning parameter = "{}}, tuning)}
-\DoxyCodeLine{385     print()}
-\DoxyCodeLine{386     print(\textcolor{stringliteral}{"{}proposed thinning parameter = "{}}, thin)}
-\DoxyCodeLine{387     print()}
-\DoxyCodeLine{388     }
-\DoxyCodeLine{389     chain\_new = chain[burn::thin]}
-\DoxyCodeLine{390     print(\textcolor{stringliteral}{"{}length of new chain = "{}}, len(chain\_new))}
-\DoxyCodeLine{391     }
-\DoxyCodeLine{392     }
-\DoxyCodeLine{393     plt.plot(range(len(acp)), acp)}
-\DoxyCodeLine{394     plt.xlabel(\textcolor{stringliteral}{"{}Position in chain / Lag time"{}})}
-\DoxyCodeLine{395     plt.ylabel(\textcolor{stringliteral}{"{}ACF"{}})}
-\DoxyCodeLine{396     plt.title(\textcolor{stringliteral}{"{}Autocorrelation function vs lag time"{}})}
-\DoxyCodeLine{397     plt.show()}
-\DoxyCodeLine{398     }
-\DoxyCodeLine{399     plt.plot(range(len(chain\_new)), chain\_new)}
-\DoxyCodeLine{400     plt.xlabel(\textcolor{stringliteral}{"{}Position in chain"{}})}
-\DoxyCodeLine{401     plt.ylabel(\textcolor{stringliteral}{"{}Chain value"{}})}
-\DoxyCodeLine{402     plt.title(\textcolor{stringliteral}{"{}New Chain"{}})}
-\DoxyCodeLine{403     plt.show()}
-\DoxyCodeLine{404     }
-\DoxyCodeLine{405     \textcolor{keywordflow}{return}}
+\DoxyCodeLine{376 \textcolor{keyword}{def }\mbox{\hyperlink{namespacevisualisation_a26c9ab9270b803a8d15c40d621769c46}{get\_autocorrelation\_time}}(filename, burn, tuning, plotting=True):}
+\DoxyCodeLine{377     rootgrp = Dataset(filename, \textcolor{stringliteral}{"{}r"{}}, format = \textcolor{stringliteral}{"{}NETCDF4"{}})}
+\DoxyCodeLine{378     chain = np.array(rootgrp[\textcolor{stringliteral}{'positions'}][:])}
+\DoxyCodeLine{379     \textcolor{keywordflow}{if} len(chain.shape) == 1:}
+\DoxyCodeLine{380         acp = sps.fftconvolve(chain,chain[::-\/1],mode=\textcolor{stringliteral}{'full'})}
+\DoxyCodeLine{381         acp = acp[int(acp.size / 2):]}
+\DoxyCodeLine{382         acp = acp / max(acp)}
+\DoxyCodeLine{383         acp = acp[burn:]}
+\DoxyCodeLine{384 }
+\DoxyCodeLine{385         thin = np.argmax(abs(acp) < tuning)}
+\DoxyCodeLine{386         \textcolor{keywordflow}{if} thin == 0:}
+\DoxyCodeLine{387             \textcolor{keywordflow}{if} acp[thin] < tuning:}
+\DoxyCodeLine{388                 thin = 1}
+\DoxyCodeLine{389             \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{390                 print(\textcolor{stringliteral}{"{}No thinning value found -\/ tuning may be too aggressive. Defaulting to no thinning, thin=1."{}})}
+\DoxyCodeLine{391                 print()}
+\DoxyCodeLine{392                 thin = 1}
+\DoxyCodeLine{393 }
+\DoxyCodeLine{394         print(\textcolor{stringliteral}{"{}burning parameter = "{}}, burn)}
+\DoxyCodeLine{395         print(\textcolor{stringliteral}{"{}proposed thinning parameter = "{}}, thin)}
+\DoxyCodeLine{396 }
+\DoxyCodeLine{397         chain\_new = chain[burn::thin]}
+\DoxyCodeLine{398         print(\textcolor{stringliteral}{"{}length of new chain = "{}}, len(chain\_new))}
+\DoxyCodeLine{399 }
+\DoxyCodeLine{400         \textcolor{keywordflow}{if} plotting==\textcolor{keyword}{True}:}
+\DoxyCodeLine{401             plt.plot(range(len(acp)), acp, linewidth=1.0)}
+\DoxyCodeLine{402             plt.xlabel(\textcolor{stringliteral}{"{}Position in chain / Lag time"{}})}
+\DoxyCodeLine{403             plt.ylabel(\textcolor{stringliteral}{"{}ACF"{}})}
+\DoxyCodeLine{404             plt.title(\textcolor{stringliteral}{"{}Autocorrelation function vs lag time"{}})}
+\DoxyCodeLine{405             plt.show()}
 \DoxyCodeLine{406 }
-\DoxyCodeLine{407 }
-\DoxyCodeLine{408 }
-\DoxyCodeLine{409 }
-\DoxyCodeLine{410 }
-\DoxyCodeLine{411 }
+\DoxyCodeLine{407             plt.plot(range(len(chain\_new)), chain\_new, linewidth=1.0)}
+\DoxyCodeLine{408             plt.xlabel(\textcolor{stringliteral}{"{}Position in chain"{}})}
+\DoxyCodeLine{409             plt.ylabel(\textcolor{stringliteral}{"{}Chain value"{}})}
+\DoxyCodeLine{410             plt.title(\textcolor{stringliteral}{"{}New Chain"{}})}
+\DoxyCodeLine{411             plt.show()}
+\DoxyCodeLine{412             }
+\DoxyCodeLine{413         \textcolor{keywordflow}{return} burn, thin}
+\DoxyCodeLine{414             }
+\DoxyCodeLine{415     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{416         chainx = chain[:,0]}
+\DoxyCodeLine{417         chainy = chain[:,1]}
+\DoxyCodeLine{418         chainz = chain[:,2]}
+\DoxyCodeLine{419         }
+\DoxyCodeLine{420         threed\_thin = []}
+\DoxyCodeLine{421         chain\_lengths = []}
+\DoxyCodeLine{422         }
+\DoxyCodeLine{423         \textcolor{keywordflow}{for} c \textcolor{keywordflow}{in} [chainx,chainy,chainz]:}
+\DoxyCodeLine{424             acp = sps.fftconvolve(c,c[::-\/1],mode=\textcolor{stringliteral}{'full'})}
+\DoxyCodeLine{425             acp = acp[int(acp.size / 2):]}
+\DoxyCodeLine{426             acp = acp / max(acp)}
+\DoxyCodeLine{427             acp = acp[burn:]}
+\DoxyCodeLine{428 }
+\DoxyCodeLine{429             thin = np.argmax(abs(acp) < tuning)}
+\DoxyCodeLine{430             \textcolor{keywordflow}{if} thin == 0:}
+\DoxyCodeLine{431                 \textcolor{keywordflow}{if} acp[thin] < tuning:}
+\DoxyCodeLine{432                     thin = 1}
+\DoxyCodeLine{433                 \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{434                     print(\textcolor{stringliteral}{"{}No thinning value found -\/ tuning may be too aggressive. Defaulting to no thinning, thin=1."{}})}
+\DoxyCodeLine{435                     print()}
+\DoxyCodeLine{436                     thin = 1}
+\DoxyCodeLine{437                     }
+\DoxyCodeLine{438             threed\_thin.append(thin)}
+\DoxyCodeLine{439 }
+\DoxyCodeLine{440             chain\_new = c[burn::thin]}
+\DoxyCodeLine{441             chain\_lengths.append(len(chain\_new))}
+\DoxyCodeLine{442 }
+\DoxyCodeLine{443             \textcolor{keywordflow}{if} plotting==\textcolor{keyword}{True}:}
+\DoxyCodeLine{444                 plt.plot(range(len(acp)), acp, linewidth=1.0)}
+\DoxyCodeLine{445                 plt.xlabel(\textcolor{stringliteral}{"{}Position in chain / Lag time"{}})}
+\DoxyCodeLine{446                 plt.ylabel(\textcolor{stringliteral}{"{}ACF"{}})}
+\DoxyCodeLine{447                 plt.title(\textcolor{stringliteral}{"{}Autocorrelation function vs lag time"{}})}
+\DoxyCodeLine{448                 plt.show()}
+\DoxyCodeLine{449 }
+\DoxyCodeLine{450 \textcolor{comment}{\#                 plt.plot(range(len(chain\_new)), chain\_new, linewidth=1.0)}}
+\DoxyCodeLine{451 \textcolor{comment}{\#                 plt.xlabel("{}Position in chain"{})}}
+\DoxyCodeLine{452 \textcolor{comment}{\#                 plt.ylabel("{}Chain value"{})}}
+\DoxyCodeLine{453 \textcolor{comment}{\#                 plt.title("{}New Chain"{})}}
+\DoxyCodeLine{454 \textcolor{comment}{\#                 plt.show()}}
+\DoxyCodeLine{455         print(\textcolor{stringliteral}{"{}burning parameter = "{}}, burn)}
+\DoxyCodeLine{456         print(\textcolor{stringliteral}{"{}proposed thinning parameters from the 3 chains: "{}}, threed\_thin)}
+\DoxyCodeLine{457         print(\textcolor{stringliteral}{"{}chain lengths from proposed thins"{}}, chain\_lengths)}
+\DoxyCodeLine{458 }
+\DoxyCodeLine{459         \textcolor{keywordflow}{return} burn, threed\_thin}
+\DoxyCodeLine{460 }
+\DoxyCodeLine{461 }
+\DoxyCodeLine{462 }
+\DoxyCodeLine{463 }
+\DoxyCodeLine{464 }
+\DoxyCodeLine{465 }
 
 \end{DoxyCode}
