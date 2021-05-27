@@ -3393,7 +3393,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l02324"></a><span class="lineno"> 2324</span>&#160;        <span class="keyword">allocate</span>(variances(<span class="keyword">size</span>(beta_array)))</div>
 <div class="line"><a name="l02325"></a><span class="lineno"> 2325</span>&#160; </div>
 <div class="line"><a name="l02326"></a><span class="lineno"> 2326</span>&#160;        <span class="comment">! Loop over values of beta</span></div>
-<div class="line"><a name="l02327"></a><span class="lineno"> 2327</span>&#160;        <span class="keywordflow">do</span> i = 1, <span class="keyword">size</span>(beta_array)</div>
+<div class="line"><a name="l02327"></a><span class="lineno"> 2327</span>&#160;        <span class="keywordflow">do</span> i = grid_start, <span class="keyword">size</span>(beta_array)</div>
 <div class="line"><a name="l02328"></a><span class="lineno"> 2328</span>&#160; </div>
 <div class="line"><a name="l02329"></a><span class="lineno"> 2329</span>&#160;            <span class="comment">! Calculate energy at current value of beta</span></div>
 <div class="line"><a name="l02330"></a><span class="lineno"> 2330</span>&#160;            <span class="keyword">call </span>vqmc_h_2(h2%sigma, h2%steps, h2%burn_step, h2%thin_step<span class="comment">, a, &amp;</span></div>

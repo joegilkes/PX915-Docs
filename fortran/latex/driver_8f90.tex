@@ -111,7 +111,7 @@ Definition at line 53 of file driver.\+f90.
 \DoxyCodeLine{111             \textcolor{comment}{! Check step length}}
 \DoxyCodeLine{112             \textcolor{keywordflow}{if}(run\_steps>max\_chain\_len) \textcolor{keywordflow}{then} }
 \DoxyCodeLine{113                 \textcolor{keyword}{write}(*,\textcolor{stringliteral}{"{}('')"{}})}
-\DoxyCodeLine{114                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}('A, I7, A')"{}}) \textcolor{stringliteral}{'WARNING: The program will be slow at writing equilibration files, \&}}
+\DoxyCodeLine{114                 \textcolor{keyword}{write}(*, \textcolor{stringliteral}{"{}(A, I7, A)"{}}) \textcolor{stringliteral}{'WARNING: The program will be slow at writing equilibration files, \&}}
 \DoxyCodeLine{115 \textcolor{stringliteral}{}\textcolor{stringliteral}{                           \&as the requested number of steps exceeds the recommended \&}}
 \DoxyCodeLine{116 \textcolor{stringliteral}{}\textcolor{stringliteral}{                           \&upper limit of '}, max\_chain\_len, \textcolor{stringliteral}{' steps. Refer to the user manual for details.'}}
 \DoxyCodeLine{117                 \textcolor{keyword}{write}(*,\textcolor{stringliteral}{"{}('')"{}})}

@@ -2651,7 +2651,7 @@ Definition at line 2299 of file vqmc.\+f90.
 \DoxyCodeLine{2324         \textcolor{keyword}{allocate}(variances(\textcolor{keyword}{size}(beta\_array)))}
 \DoxyCodeLine{2325 }
 \DoxyCodeLine{2326         \textcolor{comment}{! Loop over values of beta}}
-\DoxyCodeLine{2327         \textcolor{keywordflow}{do} i = 1, \textcolor{keyword}{size}(beta\_array)}
+\DoxyCodeLine{2327         \textcolor{keywordflow}{do} i = grid\_start, \textcolor{keyword}{size}(beta\_array)}
 \DoxyCodeLine{2328 }
 \DoxyCodeLine{2329             \textcolor{comment}{! Calculate energy at current value of beta}}
 \DoxyCodeLine{2330             \textcolor{keyword}{call }vqmc\_h\_2(h2\%sigma, h2\%steps, h2\%burn\_step, h2\%thin\_step\textcolor{comment}{, a, \&}}
