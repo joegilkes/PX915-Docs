@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['get_5fautocorrelation_5ftime_104',['get_autocorrelation_time',['../namespace_dice_py_1_1dice__visualise.html#a50ae4ae68f1121153c0026e9586143c5',1,'DicePy::dice_visualise']]]
+  ['get_5fautocorrelation_5ftime_116',['get_autocorrelation_time',['../namespacerepo_1_1_dice_py_1_1dice__visualise.html#ad21644ac4e23c3c7568dbb28bf2daef4',1,'repo::DicePy::dice_visualise']]]
 ];

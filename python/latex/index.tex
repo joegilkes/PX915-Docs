@@ -2,7 +2,7 @@
 \Hypertarget{index_md_repo_PYTHON_MAINPAGE}%
  
 
-This is the homepage for the Developer Documentation of the Python frontend of {\itshape Dice}, {\itshape \mbox{\hyperlink{namespace_dice_py}{Dice\+Py}}}. On this site, you will find definitions for all of the functions that we use in the Input Generator and Visualisation sections of {\itshape \mbox{\hyperlink{namespace_dice_py}{Dice\+Py}}}, as well as instructions for integrating support for a new problem into the code (see below).
+This is the homepage for the Developer Documentation of the Python frontend of {\itshape Dice}, {\itshape Dice\+Py}. On this site, you will find definitions for all of the functions that we use in the Input Generator and Visualisation sections of {\itshape Dice\+Py}, as well as instructions for integrating support for a new problem into the code (see below).
 
 \doxysubsection*{Links}
 
@@ -28,7 +28,7 @@ Python Dev Documentation   &You are here   \\\cline{1-2}
 
 \doxysubsection*{Adding a new problem to Dice QMC}
 
-There are two main components to {\itshape \mbox{\hyperlink{namespace_dice_py}{Dice\+Py}}}\+: the Input Generator and the Visualisation library. We will handle these sections separately.
+There are two main components to {\itshape Dice\+Py}\+: the Input Generator and the Visualisation library. We will handle these sections separately.
 
 \doxysubsubsection*{Input Generator}
 
@@ -57,9 +57,9 @@ The second section also requires a similar extension to an existing {\ttfamily e
 
 
 \begin{DoxyItemize}
-\item {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__check_afa56e066426982c324e32bd0ad8ad2bf}{isvalid()}}}, which checks if a given {\ttfamily tag}\textquotesingle{}s {\ttfamily values} match one of the expected {\ttfamily options} from a predefined list.
-\item {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a98dca2498872f2c2a52c4094512f1a9b}{check\+\_\+float()}}}, which checks if a given {\ttfamily tag}\textquotesingle{}s value(s) are floats, and replaces them with the {\ttfamily tag}\textquotesingle{}s default values if not.
-\item {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__check_a98e55f88fd3e099f39b2b2b773b0e720}{check\+\_\+grid()}}}, which does the same as above but for a grid-\/type parameter, ie. a {\ttfamily (start, stop, num)} set of numbers to run a linear spacing function on, similar to numpy\textquotesingle{}s {\ttfamily linspace}.
+\item {\ttfamily \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__check_a1a1f6c0cd51ea74a13b5dd0f42293fdb}{isvalid()}}}, which checks if a given {\ttfamily tag}\textquotesingle{}s {\ttfamily values} match one of the expected {\ttfamily options} from a predefined list.
+\item {\ttfamily \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__check_a11e1a939a780b57bc6fbf04e7d491319}{check\+\_\+float()}}}, which checks if a given {\ttfamily tag}\textquotesingle{}s value(s) are floats, and replaces them with the {\ttfamily tag}\textquotesingle{}s default values if not.
+\item {\ttfamily \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__check_ae8ec810c9210b7d47ba15ca0120f8bf9}{check\+\_\+grid()}}}, which does the same as above but for a grid-\/type parameter, ie. a {\ttfamily (start, stop, num)} set of numbers to run a linear spacing function on, similar to numpy\textquotesingle{}s {\ttfamily linspace}.
 \end{DoxyItemize}
 
 \doxyparagraph*{{\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__write}{Dice\+Py.\+dice\+\_\+write}}}}
@@ -68,13 +68,13 @@ The second section also requires a similar extension to an existing {\ttfamily e
 
 
 \begin{DoxyItemize}
-\item {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__write_a876080e22b8a59221886abb1d420176d}{isint()}}} and {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__write_a574df547f033dc2f9681db9085915822}{isfloat()}}}, which check if the string {\ttfamily s} that they are passed is an integer or a float, respectively. These are used consistently throughout the writer to ensure that the user is providing the correct kind of input and not, for example, passing a float to the variable for the total number of VQMC steps, which should always be an integer.
-\item {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__write_abd52e4ec35811b04e3525b0f3db3a74f}{query\+\_\+default()}}}, which queries if a user wishes to use the {\ttfamily default} value for a {\ttfamily param}, as described in {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__defaults}{Dice\+Py.\+dice\+\_\+defaults}}}.
-\item {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__write_a72a80ad03ea22ae6afae9e9cb7e97a57}{query\+\_\+step()}}}, which asks the user for a positive integer ie. a \textquotesingle{}step\textquotesingle{} value, and {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__write_a511124193533a3328fbd919cb9eca1e4}{query\+\_\+posfloat()}}}, which does the same for positive floats.
-\item {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__write_ad3bd71b7240382fbbdb2a0eb04f129cb}{query\+\_\+grid()}}}, which constructs a {\ttfamily (start, stop, num)} grid to be linearly spaced once in the Fortran backend, while checking that values in the grid are of the correct type to avoid errors.
+\item {\ttfamily \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a8cad57db1ad2bd410b5e2824fe941527}{isint()}}} and {\ttfamily \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a091651cb5a2344490852ec428f3749ad}{isfloat()}}}, which check if the string {\ttfamily s} that they are passed is an integer or a float, respectively. These are used consistently throughout the writer to ensure that the user is providing the correct kind of input and not, for example, passing a float to the variable for the total number of VQMC steps, which should always be an integer.
+\item {\ttfamily \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a3972bcfd8df2c98c95bc85c8a2aec2d0}{query\+\_\+default()}}}, which queries if a user wishes to use the {\ttfamily default} value for a {\ttfamily param}, as described in {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__defaults}{Dice\+Py.\+dice\+\_\+defaults}}}.
+\item {\ttfamily \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a706c67c9391b763fb7c9deae9158b5fc}{query\+\_\+step()}}}, which asks the user for a positive integer ie. a \textquotesingle{}step\textquotesingle{} value, and {\ttfamily \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a5dab30aeb8324ffdb7ec7ce89d003816}{query\+\_\+posfloat()}}}, which does the same for positive floats.
+\item {\ttfamily \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a13116dbc4dc779603cb469334a304f1d}{query\+\_\+grid()}}}, which constructs a {\ttfamily (start, stop, num)} grid to be linearly spaced once in the Fortran backend, while checking that values in the grid are of the correct type to avoid errors.
 \end{DoxyItemize}
 
-The majority of the module is located in the {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__write_a9c61faf451621bddc76ed8a230036039}{query\+\_\+params()}}} function, which runs the user through the entirety of input generation using the above routines. Much of this function is not specific to a new problem and can be left as-\/is, but there are sections that check the value of the {\ttfamily sys} variable that will need to be constructed for a new problem. These might take a form similar to the following\+:
+The majority of the module is located in the {\ttfamily \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_ad98a8932dcff38aeae7a609bab6f0897}{query\+\_\+params()}}} function, which runs the user through the entirety of input generation using the above routines. Much of this function is not specific to a new problem and can be left as-\/is, but there are sections that check the value of the {\ttfamily sys} variable that will need to be constructed for a new problem. These might take a form similar to the following\+:
 
 
 \begin{DoxyCode}{0}
@@ -130,21 +130,21 @@ The majority of the module is located in the {\ttfamily \mbox{\hyperlink{namespa
 
 \doxyparagraph*{{\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__inputs}{Dice\+Py.\+dice\+\_\+inputs}}}}
 
-This module just contains the {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__inputs_a261569dce72b6b21ec3f73f090fffb4a}{dice\+\_\+inputs()}}} function, which is simply a caller for the other modules. No extra work should be needed here.
+This module just contains the {\ttfamily \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__inputs_a4fdc3c6a540c2c6125999f3e8a5d3020}{dice\+\_\+inputs()}}} function, which is simply a caller for the other modules. No extra work should be needed here.
 
 \DoxyHorRuler{0}
 
 
 \doxysubsubsection*{Visualisation}
 
-\mbox{\hyperlink{namespace_dice_py}{Dice\+Py}} reads in results using the {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__visualise}{Dice\+Py.\+dice\+\_\+visualise}}} module, and is able to visualise the results generated by the main program. Writing additional visualisation options for different problems can be by simply adding a function to plot the positions sampled by the Markov chain, and a function which plots the energies and their uncertainties against the variational parameter.
+Dice\+Py reads in results using the {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__visualise}{Dice\+Py.\+dice\+\_\+visualise}}} module, and is able to visualise the results generated by the main program. Writing additional visualisation options for different problems can be by simply adding a function to plot the positions sampled by the Markov chain, and a function which plots the energies and their uncertainties against the variational parameter.
 
 For example, for the QHO problem\+:
 \begin{DoxyItemize}
-\item {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a592dd6c19dea285182a2d766eba39393}{QHOEnergy\+Plot()}}} reads {\ttfamily results\+\_\+file} and plots the energies against variational alpha values specified in the problem, as well as the uncertainties in the energies. The sliceby option allows one to plot only a section of the graph by typing the indices of the slice you are interested in.
-\item {\ttfamily \mbox{\hyperlink{namespace_dice_py_1_1dice__visualise_a9b1db186f691296871f6344f4bff4e67}{QHOWfn\+Plot()}}} reads a file containing the Markov chains and plots the distribution of the QHO wave functions, also showing the energies of these positions as well. It can also plots an analytical solution for the wave function as well, if desired.
+\item {\ttfamily \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__visualise_a184191d6821b187301ed1d7f608282fc}{QHOEnergy\+Plot()}}} reads {\ttfamily results\+\_\+file} and plots the energies against variational alpha values specified in the problem, as well as the uncertainties in the energies. The sliceby option allows one to plot only a section of the graph by typing the indices of the slice you are interested in.
+\item {\ttfamily \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__visualise_a5136a368d1b2ba8373ec139b615d9aba}{QHOWfn\+Plot()}}} reads a file containing the Markov chains and plots the distribution of the QHO wave functions, also showing the energies of these positions as well. It can also plots an analytical solution for the wave function as well, if desired.
 \end{DoxyItemize}
 
 Plots may want to take advantage of the {\ttfamily plotly} or {\ttfamily matplotlib} libraries which have been used for the other functions in the module, but users can also decide to use other libraries as well when writing these functions.
 
-This documentation was generated from commit 383a846 
+This documentation was generated from commit be16f58 

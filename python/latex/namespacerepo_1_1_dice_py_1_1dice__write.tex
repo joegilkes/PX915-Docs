@@ -1,0 +1,860 @@
+\hypertarget{namespacerepo_1_1_dice_py_1_1dice__write}{}\doxysection{repo.\+Dice\+Py.\+dice\+\_\+write Namespace Reference}
+\label{namespacerepo_1_1_dice_py_1_1dice__write}\index{repo.DicePy.dice\_write@{repo.DicePy.dice\_write}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a8cad57db1ad2bd410b5e2824fe941527}{isint}} (s)
+\begin{DoxyCompactList}\small\item\em Checks if the input string represents an integer. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a091651cb5a2344490852ec428f3749ad}{isfloat}} (s)
+\begin{DoxyCompactList}\small\item\em Checks if the input string represents a float. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a3972bcfd8df2c98c95bc85c8a2aec2d0}{query\+\_\+default}} (param, default)
+\begin{DoxyCompactList}\small\item\em Queries whether the user wants to use default values for a certain parameter. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a706c67c9391b763fb7c9deae9158b5fc}{query\+\_\+step}} (prompt, tag, defaults, idx)
+\begin{DoxyCompactList}\small\item\em Queries an integer step value, using the input string as a prompt. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a5dab30aeb8324ffdb7ec7ce89d003816}{query\+\_\+posfloat}} (prompt, tag, defaults, idx=None)
+\begin{DoxyCompactList}\small\item\em Queries a positive float value, using the input string as a prompt. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a13116dbc4dc779603cb469334a304f1d}{query\+\_\+grid}} (param)
+\begin{DoxyCompactList}\small\item\em Queries user for the minimum, maximum and number of points of a parameter grid. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_ad98a8932dcff38aeae7a609bab6f0897}{query\+\_\+params}} ()
+\begin{DoxyCompactList}\small\item\em Major function that queries the user for all the inputs required to assemble params.\+txt. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_ab9f232c7f1271decfbe923238d44e2e9}{write\+\_\+params}} (control, params)
+\begin{DoxyCompactList}\small\item\em Major subroutine that writes the input file params.\+txt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacerepo_1_1_dice_py_1_1dice__write_a8cad57db1ad2bd410b5e2824fe941527}\label{namespacerepo_1_1_dice_py_1_1dice__write_a8cad57db1ad2bd410b5e2824fe941527}} 
+\index{repo.DicePy.dice\_write@{repo.DicePy.dice\_write}!isint@{isint}}
+\index{isint@{isint}!repo.DicePy.dice\_write@{repo.DicePy.dice\_write}}
+\doxysubsubsection{\texorpdfstring{isint()}{isint()}}
+{\footnotesize\ttfamily def repo.\+Dice\+Py.\+dice\+\_\+write.\+isint (\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})}
+
+
+
+Checks if the input string represents an integer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em s} & String with user-\/input \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em True} & If s represents an integer \\
+\hline
+{\em False} & If s does not represent an integer \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 22 of file dice\+\_\+write.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22 \textcolor{keyword}{def }\mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a8cad57db1ad2bd410b5e2824fe941527}{isint}}(s):}
+\DoxyCodeLine{23     \textcolor{keywordflow}{try}: }
+\DoxyCodeLine{24         int(s)}
+\DoxyCodeLine{25         \textcolor{keywordflow}{return} \textcolor{keyword}{True}}
+\DoxyCodeLine{26     \textcolor{keywordflow}{except} ValueError:}
+\DoxyCodeLine{27         \textcolor{keywordflow}{return} \textcolor{keyword}{False}}
+\DoxyCodeLine{28 }
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacerepo_1_1_dice_py_1_1dice__write_a8cad57db1ad2bd410b5e2824fe941527_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacerepo_1_1_dice_py_1_1dice__write_a091651cb5a2344490852ec428f3749ad}\label{namespacerepo_1_1_dice_py_1_1dice__write_a091651cb5a2344490852ec428f3749ad}} 
+\index{repo.DicePy.dice\_write@{repo.DicePy.dice\_write}!isfloat@{isfloat}}
+\index{isfloat@{isfloat}!repo.DicePy.dice\_write@{repo.DicePy.dice\_write}}
+\doxysubsubsection{\texorpdfstring{isfloat()}{isfloat()}}
+{\footnotesize\ttfamily def repo.\+Dice\+Py.\+dice\+\_\+write.\+isfloat (\begin{DoxyParamCaption}\item[{}]{s }\end{DoxyParamCaption})}
+
+
+
+Checks if the input string represents a float. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em s} & String with user-\/input \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em True} & If s represents a float \\
+\hline
+{\em False} & If s does not represent a float \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 35 of file dice\+\_\+write.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{35 \textcolor{keyword}{def }\mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a091651cb5a2344490852ec428f3749ad}{isfloat}}(s):}
+\DoxyCodeLine{36     \textcolor{keywordflow}{try}: }
+\DoxyCodeLine{37         float(s)}
+\DoxyCodeLine{38         \textcolor{keywordflow}{return} \textcolor{keyword}{True}}
+\DoxyCodeLine{39     \textcolor{keywordflow}{except} ValueError:}
+\DoxyCodeLine{40         \textcolor{keywordflow}{return} \textcolor{keyword}{False}}
+\DoxyCodeLine{41 }
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacerepo_1_1_dice_py_1_1dice__write_a091651cb5a2344490852ec428f3749ad_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacerepo_1_1_dice_py_1_1dice__write_a3972bcfd8df2c98c95bc85c8a2aec2d0}\label{namespacerepo_1_1_dice_py_1_1dice__write_a3972bcfd8df2c98c95bc85c8a2aec2d0}} 
+\index{repo.DicePy.dice\_write@{repo.DicePy.dice\_write}!query\_default@{query\_default}}
+\index{query\_default@{query\_default}!repo.DicePy.dice\_write@{repo.DicePy.dice\_write}}
+\doxysubsubsection{\texorpdfstring{query\_default()}{query\_default()}}
+{\footnotesize\ttfamily def repo.\+Dice\+Py.\+dice\+\_\+write.\+query\+\_\+default (\begin{DoxyParamCaption}\item[{}]{param,  }\item[{}]{default }\end{DoxyParamCaption})}
+
+
+
+Queries whether the user wants to use default values for a certain parameter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em param} & String naming the parameter of interest \\
+\hline
+\mbox{\texttt{ in}}  & {\em default} & Default values for grid \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em use\+\_\+def} & Boolean indicating if default should be used \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 48 of file dice\+\_\+write.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{48 \textcolor{keyword}{def }\mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a3972bcfd8df2c98c95bc85c8a2aec2d0}{query\_default}}(param,default):}
+\DoxyCodeLine{49     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{50     print(\textcolor{stringliteral}{'Would you like to use default values for the \{:\} grid? -\/ Yes (y) or No (n)'}.format(param))}
+\DoxyCodeLine{51     print(\textcolor{stringliteral}{'Default: min=\{:\}, max=\{:\}, num=\{:\}'}.format(default[0],default[1],default[2]))}
+\DoxyCodeLine{52     use\_def = input(\textcolor{stringliteral}{'Your response ("{}y"{} or "{}n"{}): '})}
+\DoxyCodeLine{53     options = [\textcolor{stringliteral}{'y'},\textcolor{stringliteral}{'n'}]}
+\DoxyCodeLine{54     \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (use\_def \textcolor{keywordflow}{in} options):}
+\DoxyCodeLine{55         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{56         print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}y"{} or "{}n"{}, without quotes.'})}
+\DoxyCodeLine{57         use\_def = input(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{58     }
+\DoxyCodeLine{59     \textcolor{keywordflow}{return} use\_def}
+\DoxyCodeLine{60 }
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacerepo_1_1_dice_py_1_1dice__write_a3972bcfd8df2c98c95bc85c8a2aec2d0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacerepo_1_1_dice_py_1_1dice__write_a706c67c9391b763fb7c9deae9158b5fc}\label{namespacerepo_1_1_dice_py_1_1dice__write_a706c67c9391b763fb7c9deae9158b5fc}} 
+\index{repo.DicePy.dice\_write@{repo.DicePy.dice\_write}!query\_step@{query\_step}}
+\index{query\_step@{query\_step}!repo.DicePy.dice\_write@{repo.DicePy.dice\_write}}
+\doxysubsubsection{\texorpdfstring{query\_step()}{query\_step()}}
+{\footnotesize\ttfamily def repo.\+Dice\+Py.\+dice\+\_\+write.\+query\+\_\+step (\begin{DoxyParamCaption}\item[{}]{prompt,  }\item[{}]{tag,  }\item[{}]{defaults,  }\item[{}]{idx }\end{DoxyParamCaption})}
+
+
+
+Queries an integer step value, using the input string as a prompt. 
+
+Checks the validity of the user input.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em prompt} & String to prompt user response \\
+\hline
+\mbox{\texttt{ in}}  & {\em tag} & Parameter name \\
+\hline
+\mbox{\texttt{ in}}  & {\em default} & List of default values \\
+\hline
+\mbox{\texttt{ in}}  & {\em idx} & Index of system in the default list \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em step} & User-\/input for the integert step value \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 70 of file dice\+\_\+write.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{70 \textcolor{keyword}{def }\mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a706c67c9391b763fb7c9deae9158b5fc}{query\_step}}(prompt,tag,defaults,idx):}
+\DoxyCodeLine{71     step = 0}
+\DoxyCodeLine{72     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{73     \textcolor{keywordflow}{while} not(step>0):}
+\DoxyCodeLine{74         print(prompt)}
+\DoxyCodeLine{75         print(\textcolor{stringliteral}{'Default: '},tag,\textcolor{stringliteral}{'='},defaults[idx])}
+\DoxyCodeLine{76         step = input(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78         \textcolor{keywordflow}{if} step==\textcolor{stringliteral}{''}:}
+\DoxyCodeLine{79             \textcolor{keywordflow}{break} \textcolor{comment}{\# Use default}}
+\DoxyCodeLine{80         \textcolor{keywordflow}{elif} not(\mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a8cad57db1ad2bd410b5e2824fe941527}{isint}}(step)):}
+\DoxyCodeLine{81             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{82             print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting a positive integer, or blank for default.'})}
+\DoxyCodeLine{83             print(\textcolor{stringliteral}{'Please have another go.'})}
+\DoxyCodeLine{84             step = 0 }
+\DoxyCodeLine{85             \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{86         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{87             step = int(step) }
+\DoxyCodeLine{88             \textcolor{keywordflow}{if} not(step>0):}
+\DoxyCodeLine{89                 print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{90                 print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting an positive integer, or blank for default.'})}
+\DoxyCodeLine{91                 print(\textcolor{stringliteral}{'Please have another go.'})          }
+\DoxyCodeLine{92             }
+\DoxyCodeLine{93     \textcolor{keywordflow}{return} step}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 }
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacerepo_1_1_dice_py_1_1dice__write_a706c67c9391b763fb7c9deae9158b5fc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacerepo_1_1_dice_py_1_1dice__write_a706c67c9391b763fb7c9deae9158b5fc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacerepo_1_1_dice_py_1_1dice__write_a5dab30aeb8324ffdb7ec7ce89d003816}\label{namespacerepo_1_1_dice_py_1_1dice__write_a5dab30aeb8324ffdb7ec7ce89d003816}} 
+\index{repo.DicePy.dice\_write@{repo.DicePy.dice\_write}!query\_posfloat@{query\_posfloat}}
+\index{query\_posfloat@{query\_posfloat}!repo.DicePy.dice\_write@{repo.DicePy.dice\_write}}
+\doxysubsubsection{\texorpdfstring{query\_posfloat()}{query\_posfloat()}}
+{\footnotesize\ttfamily def repo.\+Dice\+Py.\+dice\+\_\+write.\+query\+\_\+posfloat (\begin{DoxyParamCaption}\item[{}]{prompt,  }\item[{}]{tag,  }\item[{}]{defaults,  }\item[{}]{idx = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+Queries a positive float value, using the input string as a prompt. 
+
+Checks the validity of the user input.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em prompt} & String to prompt user response \\
+\hline
+\mbox{\texttt{ in}}  & {\em tag} & Parameter name \\
+\hline
+\mbox{\texttt{ in}}  & {\em defaults} & Default values \\
+\hline
+\mbox{\texttt{ in}}  & {\em idx} & Index of system in the default list \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em pf} & User-\/input for the positive float value \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 105 of file dice\+\_\+write.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{105 \textcolor{keyword}{def }\mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a5dab30aeb8324ffdb7ec7ce89d003816}{query\_posfloat}}(prompt,tag,defaults,idx=None):}
+\DoxyCodeLine{106     pf = -\/1.0}
+\DoxyCodeLine{107     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{108     \textcolor{keywordflow}{while} not(pf>0.0):}
+\DoxyCodeLine{109         print(prompt)}
+\DoxyCodeLine{110         \textcolor{keywordflow}{if} idx==\textcolor{keywordtype}{None}:}
+\DoxyCodeLine{111             print(\textcolor{stringliteral}{'Default: '},tag,\textcolor{stringliteral}{'='},defaults)}
+\DoxyCodeLine{112         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{113             print(\textcolor{stringliteral}{'Default: '},tag,\textcolor{stringliteral}{'='},defaults[idx])}
+\DoxyCodeLine{114         pf = input(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116         \textcolor{keywordflow}{if} pf==\textcolor{stringliteral}{''}:}
+\DoxyCodeLine{117             \textcolor{keywordflow}{break} \textcolor{comment}{\# Use default}}
+\DoxyCodeLine{118         \textcolor{keywordflow}{elif} not(\mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a091651cb5a2344490852ec428f3749ad}{isfloat}}(pf)):}
+\DoxyCodeLine{119             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{120             print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting a positive float, or blank for default.'})}
+\DoxyCodeLine{121             print(\textcolor{stringliteral}{'Please have another go.'})}
+\DoxyCodeLine{122             pf = -\/1.0}
+\DoxyCodeLine{123             \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{124         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{125             pf = float(pf) }
+\DoxyCodeLine{126             \textcolor{keywordflow}{if} not(pf>0.0):}
+\DoxyCodeLine{127                 print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{128                 print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting an positive float, or blank for default.'}) }
+\DoxyCodeLine{129                 print(\textcolor{stringliteral}{'Please have another go.'}) }
+\DoxyCodeLine{130                 }
+\DoxyCodeLine{131     \textcolor{keywordflow}{return} pf}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 }
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacerepo_1_1_dice_py_1_1dice__write_a5dab30aeb8324ffdb7ec7ce89d003816_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacerepo_1_1_dice_py_1_1dice__write_a5dab30aeb8324ffdb7ec7ce89d003816_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacerepo_1_1_dice_py_1_1dice__write_a13116dbc4dc779603cb469334a304f1d}\label{namespacerepo_1_1_dice_py_1_1dice__write_a13116dbc4dc779603cb469334a304f1d}} 
+\index{repo.DicePy.dice\_write@{repo.DicePy.dice\_write}!query\_grid@{query\_grid}}
+\index{query\_grid@{query\_grid}!repo.DicePy.dice\_write@{repo.DicePy.dice\_write}}
+\doxysubsubsection{\texorpdfstring{query\_grid()}{query\_grid()}}
+{\footnotesize\ttfamily def repo.\+Dice\+Py.\+dice\+\_\+write.\+query\+\_\+grid (\begin{DoxyParamCaption}\item[{}]{param }\end{DoxyParamCaption})}
+
+
+
+Queries user for the minimum, maximum and number of points of a parameter grid. 
+
+Checks the validity of the user input.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em param} & String naming the parameter of interest \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em mini} & String with minimum value of the grid \\
+\hline
+{\em maxi} & String with maximum value of the grid \\
+\hline
+{\em num} & String with number of points in the grid \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 142 of file dice\+\_\+write.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{142 \textcolor{keyword}{def }\mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a13116dbc4dc779603cb469334a304f1d}{query\_grid}}(param):}
+\DoxyCodeLine{143      \textcolor{comment}{\# Minimum}}
+\DoxyCodeLine{144     mini = input(\textcolor{stringliteral}{'Enter minimum value for \{:\} grid: '}.format(param))}
+\DoxyCodeLine{145     \textcolor{keywordflow}{while} not(\mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a091651cb5a2344490852ec428f3749ad}{isfloat}}(mini)):}
+\DoxyCodeLine{146         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{147         print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting a float.'})        }
+\DoxyCodeLine{148         mini = input(\textcolor{stringliteral}{'Enter minimum value for \{:\} grid: '}.format(param))}
+\DoxyCodeLine{149     mini=float(mini)}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151     \textcolor{comment}{\# Maximum}}
+\DoxyCodeLine{152     maxi = mini -\/ 1.0}
+\DoxyCodeLine{153     \textcolor{keywordflow}{while} maxi < mini:}
+\DoxyCodeLine{154         maxi = input(\textcolor{stringliteral}{'Enter maximum value for \{:\} grid: '}.format(param))}
+\DoxyCodeLine{155         \textcolor{keywordflow}{while} not(\mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a091651cb5a2344490852ec428f3749ad}{isfloat}}(maxi)):}
+\DoxyCodeLine{156             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{157             print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting a float.'})            }
+\DoxyCodeLine{158             maxi = input(\textcolor{stringliteral}{'Enter maximum value for \{:\} grid: '}.format(param))}
+\DoxyCodeLine{159         maxi = float(maxi)}
+\DoxyCodeLine{160         \textcolor{keywordflow}{if} maxi < mini:}
+\DoxyCodeLine{161             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{162             print(\textcolor{stringliteral}{'Error: Invalid response. Choose a maximum value that is larger than your chosen minimum=\{:\}.'}.format(mini))}
+\DoxyCodeLine{163             }
+\DoxyCodeLine{164     \textcolor{comment}{\# Number of grid points}}
+\DoxyCodeLine{165     num = 0}
+\DoxyCodeLine{166     \textcolor{keywordflow}{while} num < 1:}
+\DoxyCodeLine{167         num = input(\textcolor{stringliteral}{'Enter integer number of grid points (inclusive of max \& min): '})}
+\DoxyCodeLine{168         \textcolor{keywordflow}{while} not(\mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a8cad57db1ad2bd410b5e2824fe941527}{isint}}(num)):}
+\DoxyCodeLine{169             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{170             print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting a positive integer.'})}
+\DoxyCodeLine{171             num = input(\textcolor{stringliteral}{'Enter integer number of grid points (inclusive of max \& min): '})}
+\DoxyCodeLine{172         num = int(num)}
+\DoxyCodeLine{173         \textcolor{keywordflow}{if} num < 1:}
+\DoxyCodeLine{174             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{175             print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting a positive integer.'})}
+\DoxyCodeLine{176     }
+\DoxyCodeLine{177     \textcolor{comment}{\# Return values as strings}}
+\DoxyCodeLine{178     \textcolor{keywordflow}{return} str(mini), str(maxi), str(num)}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{181 \textcolor{comment}{\# MAJOR WRITE FUNCTIONS -\/}}
+\DoxyCodeLine{182 \textcolor{comment}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{183 }
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacerepo_1_1_dice_py_1_1dice__write_a13116dbc4dc779603cb469334a304f1d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacerepo_1_1_dice_py_1_1dice__write_ad98a8932dcff38aeae7a609bab6f0897}\label{namespacerepo_1_1_dice_py_1_1dice__write_ad98a8932dcff38aeae7a609bab6f0897}} 
+\index{repo.DicePy.dice\_write@{repo.DicePy.dice\_write}!query\_params@{query\_params}}
+\index{query\_params@{query\_params}!repo.DicePy.dice\_write@{repo.DicePy.dice\_write}}
+\doxysubsubsection{\texorpdfstring{query\_params()}{query\_params()}}
+{\footnotesize\ttfamily def repo.\+Dice\+Py.\+dice\+\_\+write.\+query\+\_\+params (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Major function that queries the user for all the inputs required to assemble params.\+txt. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em control} & Dictionay with all inputs for the CONTROL namelist in params.\+txt \\
+\hline
+{\em params} & Dictionay with all inputs for the PARAMETER namelist in params.\+txt \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 189 of file dice\+\_\+write.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{189 \textcolor{keyword}{def }\mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_ad98a8932dcff38aeae7a609bab6f0897}{query\_params}}():}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191     \textcolor{comment}{\# Initialize Dictionaries}}
+\DoxyCodeLine{192     control, params = \{\}, \{\}}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194     \textcolor{comment}{\# Query the System}}
+\DoxyCodeLine{195     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{196     print(\textcolor{stringliteral}{'Which system would you like to solve?'})}
+\DoxyCodeLine{197     print(\textcolor{stringliteral}{'a) Quantum Harmonic Oscillator'})}
+\DoxyCodeLine{198     print(\textcolor{stringliteral}{'b) Hydrogen Molecule Ion H2+'})}
+\DoxyCodeLine{199     print(\textcolor{stringliteral}{'c) Hydrogen Molecule H2'})}
+\DoxyCodeLine{200     print(\textcolor{stringliteral}{'d) Run Test Cases'})}
+\DoxyCodeLine{201     sys = input(\textcolor{stringliteral}{'Your response ("{}a"{}, "{}b"{}, "{}c"{} or "{}d"{}): '})}
+\DoxyCodeLine{202     \textcolor{comment}{\# Check system value}}
+\DoxyCodeLine{203     options = [\textcolor{stringliteral}{'a'},\textcolor{stringliteral}{'b'},\textcolor{stringliteral}{'c'},\textcolor{stringliteral}{'d'}]}
+\DoxyCodeLine{204     \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (sys \textcolor{keywordflow}{in} options):}
+\DoxyCodeLine{205         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{206         print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}a"{}, "{}b"{}, "{}c"{} or "{}d"{}, without quotes.'})}
+\DoxyCodeLine{207         sys = input(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{208     \textcolor{comment}{\# Report system setting}}
+\DoxyCodeLine{209     settings = [\textcolor{stringliteral}{"{}'QHO'"{}},\textcolor{stringliteral}{"{}'H2plus'"{}},\textcolor{stringliteral}{"{}'H2'"{}},\textcolor{stringliteral}{"{}'test'"{}}]}
+\DoxyCodeLine{210     messages = [\textcolor{stringliteral}{'Quantum Harmonic Oscillator'},\textcolor{stringliteral}{'Hydrogen Molecule Ion'},\textcolor{stringliteral}{'Hydrogen Molecule'},\textcolor{stringliteral}{'Test Cases'}]}
+\DoxyCodeLine{211     sys\_idx = options.index(sys)}
+\DoxyCodeLine{212     control[\textcolor{stringliteral}{'p\_system'}] = settings[sys\_idx]}
+\DoxyCodeLine{213     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{214     print(\textcolor{stringliteral}{'You have chosen the '} + messages[options.index(sys)] + \textcolor{stringliteral}{'.'})}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217     \textcolor{comment}{\# For Test Cases (d), no more parameters are required}}
+\DoxyCodeLine{218     \textcolor{keywordflow}{if} sys==\textcolor{stringliteral}{'d'}:}
+\DoxyCodeLine{219         \textcolor{keywordflow}{return} control,\textcolor{stringliteral}{'test'}}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221     \textcolor{comment}{\# Query the Calculation}}
+\DoxyCodeLine{222     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{223     print(\textcolor{stringliteral}{'What type of calculation would you like to perform?'})}
+\DoxyCodeLine{224     print(\textcolor{stringliteral}{'a) Equilibration run, to determine burning \& thinning step sizes'})}
+\DoxyCodeLine{225     print(\textcolor{stringliteral}{'b) VQMC calculation'})}
+\DoxyCodeLine{226     calc = input(\textcolor{stringliteral}{'Your response ("{}a"{} or "{}b"{}): '})}
+\DoxyCodeLine{227     \textcolor{comment}{\# Check calculation value}}
+\DoxyCodeLine{228     options = [\textcolor{stringliteral}{'a'},\textcolor{stringliteral}{'b'}]}
+\DoxyCodeLine{229     \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (calc \textcolor{keywordflow}{in} options):}
+\DoxyCodeLine{230         print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}a"{} or "{}b"{}, without quotes.'})}
+\DoxyCodeLine{231         calc = input(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{232     \textcolor{comment}{\# Report calculation setting}}
+\DoxyCodeLine{233     settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
+\DoxyCodeLine{234     messages = [\textcolor{stringliteral}{'an Equilibration run.'},\textcolor{stringliteral}{'a VQMC calculation.'},]}
+\DoxyCodeLine{235     control[\textcolor{stringliteral}{'run\_equil'}] = settings[options.index(calc)]}
+\DoxyCodeLine{236     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{237     print(\textcolor{stringliteral}{'You have chosen to do '} + messages[options.index(calc)])}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239     \textcolor{comment}{\# Assume this is not a restart run}}
+\DoxyCodeLine{240     control[\textcolor{stringliteral}{'run\_restart'}] = \textcolor{stringliteral}{'.FALSE.'}}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242     \textcolor{comment}{\# Query if restart files should be written}}
+\DoxyCodeLine{243     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{244     print(\textcolor{stringliteral}{'Would you like the program to write restart files? -\/ Yes (y) or No (n)'})}
+\DoxyCodeLine{245     w\_res = input(\textcolor{stringliteral}{'Your response ("{}y"{} or "{}n"{}): '})}
+\DoxyCodeLine{246     \textcolor{comment}{\# Check response}}
+\DoxyCodeLine{247     options = [\textcolor{stringliteral}{'y'},\textcolor{stringliteral}{'n'}]}
+\DoxyCodeLine{248     \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (w\_res \textcolor{keywordflow}{in} options):}
+\DoxyCodeLine{249         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{250         print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}y"{} or "{}n"{}, without quotes.'})}
+\DoxyCodeLine{251         w\_res = input(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{252     \textcolor{comment}{\# Report response}}
+\DoxyCodeLine{253     settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
+\DoxyCodeLine{254     messages = [\textcolor{stringliteral}{'to'},\textcolor{stringliteral}{'not to'},]}
+\DoxyCodeLine{255     control[\textcolor{stringliteral}{'write\_restart'}] = settings[options.index(w\_res)]}
+\DoxyCodeLine{256     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{257     print(\textcolor{stringliteral}{'You have requested the program \{:\} write restart files.'}. format(messages[options.index(w\_res)]))}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259     \textcolor{comment}{\# Query restart frequency}}
+\DoxyCodeLine{260     \textcolor{keywordflow}{if} w\_res==\textcolor{stringliteral}{'y'}:}
+\DoxyCodeLine{261         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{262         print(\textcolor{stringliteral}{'By default, restart files will be written after the MMC loop of every grid point in the parameter optimization.'})}
+\DoxyCodeLine{263         print(\textcolor{stringliteral}{'If you want the restart files to be written less frequently, enter the required interval of grid points.'})}
+\DoxyCodeLine{264         print(\textcolor{stringliteral}{'Else, for the default behaviour, leave a blank response below (ie., press \(\backslash\)'Enter\(\backslash\)').'})}
+\DoxyCodeLine{265         prompt=\textcolor{stringliteral}{'Enter interval of points in grid-\/search for writing restart files.'}}
+\DoxyCodeLine{266         tag=\textcolor{stringliteral}{'restart\_num'}}
+\DoxyCodeLine{267         steps = \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a706c67c9391b763fb7c9deae9158b5fc}{query\_step}}(prompt, tag, d\_rnum, sys\_idx)}
+\DoxyCodeLine{268         \textcolor{keywordflow}{if} steps == \textcolor{stringliteral}{''}:}
+\DoxyCodeLine{269             control[tag] = 1 \textcolor{comment}{\# Use default}}
+\DoxyCodeLine{270         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{271             control[tag] = str(steps) }
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273     \textcolor{comment}{\# For QMC calculations, query if Markov chains should be written}}
+\DoxyCodeLine{274     \textcolor{keywordflow}{if} calc==\textcolor{stringliteral}{'b'}:}
+\DoxyCodeLine{275         \textcolor{comment}{\# Query write\_chains}}
+\DoxyCodeLine{276         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{277         print(\textcolor{stringliteral}{'Would you like the program to save the Markov chains (after burning \& thinning)?'})}
+\DoxyCodeLine{278         print(\textcolor{stringliteral}{'y) Yes, I would like a detailed output for wavefunction visualization.'})}
+\DoxyCodeLine{279         print(\textcolor{stringliteral}{'n) No, just give me the final energies and optimized parameters.'})}
+\DoxyCodeLine{280         temp = input(\textcolor{stringliteral}{'Your response ("{}y"{} or "{}n"{}): '})}
+\DoxyCodeLine{281         \textcolor{comment}{\# Check response}}
+\DoxyCodeLine{282         options = [\textcolor{stringliteral}{'y'},\textcolor{stringliteral}{'n'}]}
+\DoxyCodeLine{283         \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (temp \textcolor{keywordflow}{in} options):}
+\DoxyCodeLine{284             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{285             print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}y"{} or "{}n"{}, without quotes.'})}
+\DoxyCodeLine{286             temp = input(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{287         \textcolor{comment}{\# Report setting}}
+\DoxyCodeLine{288         settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
+\DoxyCodeLine{289         messages = [\textcolor{stringliteral}{'output'}, \textcolor{stringliteral}{'not output'}]}
+\DoxyCodeLine{290         control[\textcolor{stringliteral}{'write\_chains'}] = settings[options.index(temp)]}
+\DoxyCodeLine{291         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{292         print(\textcolor{stringliteral}{'Your have requested the program to \{:\} the Markov chains.'}.format(messages[options.index(temp)]))}
+\DoxyCodeLine{293 }
+\DoxyCodeLine{294     \textcolor{comment}{\# Query if logfile should be written}}
+\DoxyCodeLine{295     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{296     print(\textcolor{stringliteral}{'Would you like the program to write a logfile? -\/ Yes (y) or No (n)'})}
+\DoxyCodeLine{297     temp = input(\textcolor{stringliteral}{'Your response ("{}y"{} or "{}n"{}): '})}
+\DoxyCodeLine{298     \textcolor{comment}{\# Check response}}
+\DoxyCodeLine{299     options = [\textcolor{stringliteral}{'y'},\textcolor{stringliteral}{'n'}]}
+\DoxyCodeLine{300     \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (temp \textcolor{keywordflow}{in} options):}
+\DoxyCodeLine{301         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{302         print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}y"{} or "{}n"{}, without quotes.'})}
+\DoxyCodeLine{303         temp = input(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{304     \textcolor{comment}{\# Report setting}}
+\DoxyCodeLine{305     settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
+\DoxyCodeLine{306     messages = [\textcolor{stringliteral}{'to'},\textcolor{stringliteral}{'not to'},]}
+\DoxyCodeLine{307     control[\textcolor{stringliteral}{'write\_log'}] = settings[options.index(temp)]}
+\DoxyCodeLine{308     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{309     print(\textcolor{stringliteral}{'You have requested the program \{:\} write a logfile.'}. format(messages[options.index(temp)]))}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{311 }
+\DoxyCodeLine{312     \textcolor{comment}{\# Message on defaults}}
+\DoxyCodeLine{313     print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{314     print(\textcolor{stringliteral}{'\#\#\#'})}
+\DoxyCodeLine{315     print(\textcolor{stringliteral}{'If you wish to use defaults for any prompt that follows, leave a blank response for it (ie., press \(\backslash\)'Enter\(\backslash\)').'})}
+\DoxyCodeLine{316     print(\textcolor{stringliteral}{'\#\#\#'})}
+\DoxyCodeLine{317 }
+\DoxyCodeLine{318 }
+\DoxyCodeLine{319     \textcolor{comment}{\# Query total number of steps}}
+\DoxyCodeLine{320     tag = \textcolor{stringliteral}{'steps'}}
+\DoxyCodeLine{321     prompt = \textcolor{stringliteral}{'Enter total number of MMC steps.'}}
+\DoxyCodeLine{322     \textcolor{keywordflow}{if} calc==\textcolor{stringliteral}{'a'}:}
+\DoxyCodeLine{323         d\_steps=d\_equi\_steps.copy()}
+\DoxyCodeLine{324     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{325         d\_steps=d\_vqmc\_steps.copy()}
+\DoxyCodeLine{326     steps = \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a706c67c9391b763fb7c9deae9158b5fc}{query\_step}}(prompt,tag,d\_steps,sys\_idx)}
+\DoxyCodeLine{327     \textcolor{keywordflow}{if} steps==\textcolor{stringliteral}{''}:}
+\DoxyCodeLine{328         steps = d\_steps[sys\_idx] \textcolor{comment}{\# Use default}}
+\DoxyCodeLine{329     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{330         params[tag] = str(steps) \textcolor{comment}{\# Store user input}}
+\DoxyCodeLine{331     }
+\DoxyCodeLine{332 }
+\DoxyCodeLine{333 }
+\DoxyCodeLine{334     \textcolor{comment}{\# For QMC calculations only, include burning \& thinning steps}}
+\DoxyCodeLine{335     \textcolor{keywordflow}{if} calc==\textcolor{stringliteral}{'b'}:}
+\DoxyCodeLine{336 }
+\DoxyCodeLine{337         \textcolor{comment}{\# Query step size for burning}}
+\DoxyCodeLine{338         tag = \textcolor{stringliteral}{'burn\_step'}}
+\DoxyCodeLine{339         prompt = \textcolor{stringliteral}{'Enter an integer step-\/size for burning.'}}
+\DoxyCodeLine{340         b\_step = steps + 1}
+\DoxyCodeLine{341         \textcolor{keywordflow}{while} not(b\_step<steps \textcolor{keywordflow}{or} b\_step==\textcolor{stringliteral}{''}):}
+\DoxyCodeLine{342             b\_step = \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a706c67c9391b763fb7c9deae9158b5fc}{query\_step}}(prompt,tag,d\_bstep,sys\_idx)}
+\DoxyCodeLine{343             \textcolor{keywordflow}{if} b\_step==\textcolor{stringliteral}{''}:}
+\DoxyCodeLine{344                 b\_step = d\_bstep[sys\_idx] \textcolor{comment}{\# Use default}}
+\DoxyCodeLine{345             \textcolor{keywordflow}{elif} b\_step<steps:}
+\DoxyCodeLine{346                 params[tag] = str(b\_step) \textcolor{comment}{\# Store user input}}
+\DoxyCodeLine{347             \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{348                 print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{349                 print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting burn\_step < \{:\} as you chose steps=\{:\}.'}.format(steps,steps))}
+\DoxyCodeLine{350                 \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
+\DoxyCodeLine{351 }
+\DoxyCodeLine{352         \textcolor{comment}{\# Query step size for thinning}}
+\DoxyCodeLine{353         tag = \textcolor{stringliteral}{'thin\_step'}}
+\DoxyCodeLine{354         prompt = \textcolor{stringliteral}{'Enter an integer step-\/size for thinning.'}}
+\DoxyCodeLine{355         t\_max = steps -\/ b\_step}
+\DoxyCodeLine{356         t\_step = t\_max + 1}
+\DoxyCodeLine{357         \textcolor{keywordflow}{while} not(t\_step<t\_max \textcolor{keywordflow}{or} t\_step==\textcolor{stringliteral}{''}):}
+\DoxyCodeLine{358             t\_step = \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a706c67c9391b763fb7c9deae9158b5fc}{query\_step}}(prompt,tag,d\_tstep,sys\_idx)}
+\DoxyCodeLine{359             \textcolor{keywordflow}{if} t\_step==\textcolor{stringliteral}{''}:}
+\DoxyCodeLine{360                 t\_step = d\_tstep[sys\_idx] \textcolor{comment}{\# Use default}}
+\DoxyCodeLine{361             \textcolor{keywordflow}{elif} b\_step<steps:}
+\DoxyCodeLine{362                 params[tag] = str(t\_step) \textcolor{comment}{\# Store user input}}
+\DoxyCodeLine{363             \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{364                 print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{365                 print(\textcolor{stringliteral}{'Error: Invalid response. The program is expecting thin\_step < \{:\} as you chose steps-\/burn\_steps=\{:\}.'}.format(t\_max,t\_max))}
+\DoxyCodeLine{366                 \textcolor{keywordflow}{print} (\textcolor{stringliteral}{'Please have another go.'})}
+\DoxyCodeLine{367 }
+\DoxyCodeLine{368 }
+\DoxyCodeLine{369     \textcolor{comment}{\# Query rcut}}
+\DoxyCodeLine{370     tag=\textcolor{stringliteral}{'rcut'}}
+\DoxyCodeLine{371     prompt=\textcolor{stringliteral}{'Enter cutoff radial distance (in Bohr) for MMC search.'}}
+\DoxyCodeLine{372     temp = \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a5dab30aeb8324ffdb7ec7ce89d003816}{query\_posfloat}}(prompt,tag,d\_rcut,sys\_idx)}
+\DoxyCodeLine{373     \textcolor{keywordflow}{if} temp!=\textcolor{stringliteral}{''}:}
+\DoxyCodeLine{374         params[tag] = str(temp)}
+\DoxyCodeLine{375 }
+\DoxyCodeLine{376 }
+\DoxyCodeLine{377     \textcolor{comment}{\# Query sigma}}
+\DoxyCodeLine{378     tag=\textcolor{stringliteral}{'sigma'}}
+\DoxyCodeLine{379     prompt=\textcolor{stringliteral}{'Enter sigma, the standard deviation of the Gaussian used to propose MMC steps.'}}
+\DoxyCodeLine{380     temp = \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a5dab30aeb8324ffdb7ec7ce89d003816}{query\_posfloat}}(prompt,tag,d\_rcut,sys\_idx)}
+\DoxyCodeLine{381     \textcolor{keywordflow}{if} temp!=\textcolor{stringliteral}{''}:}
+\DoxyCodeLine{382         params[tag] = str(temp)}
+\DoxyCodeLine{383 }
+\DoxyCodeLine{384 }
+\DoxyCodeLine{385     \textcolor{comment}{\# Problem specific parameters}}
+\DoxyCodeLine{386 }
+\DoxyCodeLine{387     \textcolor{comment}{\# QHO}}
+\DoxyCodeLine{388     \textcolor{keywordflow}{if} sys==\textcolor{stringliteral}{'a'}:}
+\DoxyCodeLine{389 }
+\DoxyCodeLine{390         \textcolor{comment}{\# Parameter information -\/ alpha}}
+\DoxyCodeLine{391         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{392         print(\textcolor{stringliteral}{'Quantity of interest "{}alpha"{} is the factor in the exponent of the Quantum Harmonic Oscillator system.'})}
+\DoxyCodeLine{393         }
+\DoxyCodeLine{394 }
+\DoxyCodeLine{395         \textcolor{comment}{\# Check if user wants defaults}}
+\DoxyCodeLine{396         tag = \textcolor{stringliteral}{'alpha'}}
+\DoxyCodeLine{397         use\_def = \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a3972bcfd8df2c98c95bc85c8a2aec2d0}{query\_default}}(tag,d\_alpha)}
+\DoxyCodeLine{398 }
+\DoxyCodeLine{399         \textcolor{comment}{\# If not defaults, query grid for alpha}}
+\DoxyCodeLine{400         \textcolor{keywordflow}{if} use\_def == \textcolor{stringliteral}{'n'}:}
+\DoxyCodeLine{401             mini, maxi, num = \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a13116dbc4dc779603cb469334a304f1d}{query\_grid}}(tag)}
+\DoxyCodeLine{402             params[tag] = \textcolor{stringliteral}{'\{:\}, \{:\}, \{:\}'}.format(mini, maxi, num)}
+\DoxyCodeLine{403 }
+\DoxyCodeLine{404     }
+\DoxyCodeLine{405     \textcolor{comment}{\# H2plus}}
+\DoxyCodeLine{406     \textcolor{keywordflow}{elif} sys==\textcolor{stringliteral}{'b'}:}
+\DoxyCodeLine{407 }
+\DoxyCodeLine{408         \textcolor{comment}{\# Query parameter search method}}
+\DoxyCodeLine{409         tag = \textcolor{stringliteral}{'auto\_params'}}
+\DoxyCodeLine{410         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{411         print(\textcolor{stringliteral}{'Which method would you like to use for parameter optimization at each bondlength?'})}
+\DoxyCodeLine{412         print(\textcolor{stringliteral}{'a) Automatic search by conjugate-\/gradient method, starting from a trial value for c.'})}
+\DoxyCodeLine{413         print(\textcolor{stringliteral}{'b) Grid search, over an input grid of trial values for c'})}
+\DoxyCodeLine{414         auto = input(\textcolor{stringliteral}{'Your response ("{}a"{} or "{}b"{}): '})}
+\DoxyCodeLine{415         \textcolor{comment}{\# Check response}}
+\DoxyCodeLine{416         options = [\textcolor{stringliteral}{'a'},\textcolor{stringliteral}{'b'}]}
+\DoxyCodeLine{417         \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (auto \textcolor{keywordflow}{in} options):}
+\DoxyCodeLine{418             print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}a"{} or "{}b"{}, without quotes.'})}
+\DoxyCodeLine{419             auto = input(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{420         \textcolor{comment}{\# Record response}}
+\DoxyCodeLine{421         settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
+\DoxyCodeLine{422         params[tag] = settings[options.index(auto)]}
+\DoxyCodeLine{423 }
+\DoxyCodeLine{424         \textcolor{comment}{\# Query ham\_fdstep -\/ only for developers}}
+\DoxyCodeLine{425         \textcolor{comment}{\#tag='ham\_fdstep'}}
+\DoxyCodeLine{426         \textcolor{comment}{\#prompt='Enter finite difference step for differentiation of the H2-\/ion Hamiltonian.'}}
+\DoxyCodeLine{427         \textcolor{comment}{\#temp = query\_posfloat(prompt,tag,d\_ham\_fdstep)}}
+\DoxyCodeLine{428         \textcolor{comment}{\#if temp!='':}}
+\DoxyCodeLine{429         \textcolor{comment}{\#    params[tag] = str(temp)}}
+\DoxyCodeLine{430         }
+\DoxyCodeLine{431         \textcolor{comment}{\# Parameter information -\/  c}}
+\DoxyCodeLine{432         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{433         print(\textcolor{stringliteral}{'Parameter "{}c"{} is a coefficient in the Hydrogen Ion wavefunction.'})}
+\DoxyCodeLine{434         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{435 }
+\DoxyCodeLine{436         \textcolor{keywordflow}{if} auto==\textcolor{stringliteral}{'a'}:}
+\DoxyCodeLine{437 }
+\DoxyCodeLine{438             \textcolor{comment}{\# Query c\_fdstep -\/ only for developers}}
+\DoxyCodeLine{439             \textcolor{comment}{\#tag='c\_fdstep'}}
+\DoxyCodeLine{440             \textcolor{comment}{\#prompt='Enter finite difference step for conjugate-\/gradient search of parameter c.'}}
+\DoxyCodeLine{441             \textcolor{comment}{\#temp = query\_posfloat(prompt,tag,d\_c\_fdstep)}}
+\DoxyCodeLine{442             \textcolor{comment}{\#if temp!='':}}
+\DoxyCodeLine{443             \textcolor{comment}{\#    params[tag] = str(temp)}}
+\DoxyCodeLine{444 }
+\DoxyCodeLine{445             \textcolor{comment}{\# Query start value for auto-\/search of parameter c}}
+\DoxyCodeLine{446             tag=\textcolor{stringliteral}{'c'}}
+\DoxyCodeLine{447             prompt=\textcolor{stringliteral}{'Enter starting guess value for the conjugate-\/gradient search of parameter c.'}}
+\DoxyCodeLine{448             temp = \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a5dab30aeb8324ffdb7ec7ce89d003816}{query\_posfloat}}(prompt,tag,d\_c)}
+\DoxyCodeLine{449             \textcolor{keywordflow}{if} temp!=\textcolor{stringliteral}{''}:}
+\DoxyCodeLine{450                 params[tag] = str(temp)}
+\DoxyCodeLine{451 }
+\DoxyCodeLine{452         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{453 }
+\DoxyCodeLine{454             \textcolor{comment}{\# Check if user wants defaults}}
+\DoxyCodeLine{455             tag = \textcolor{stringliteral}{'c\_grid'}}
+\DoxyCodeLine{456             use\_def = \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a3972bcfd8df2c98c95bc85c8a2aec2d0}{query\_default}}(tag, d\_c\_grid)}
+\DoxyCodeLine{457 }
+\DoxyCodeLine{458             \textcolor{comment}{\# If not defaults, query grid for c}}
+\DoxyCodeLine{459             \textcolor{keywordflow}{if} use\_def == \textcolor{stringliteral}{'n'}:}
+\DoxyCodeLine{460                 mini, maxi, num = \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a13116dbc4dc779603cb469334a304f1d}{query\_grid}}(tag)}
+\DoxyCodeLine{461                 params[tag] = \textcolor{stringliteral}{'\{:\}, \{:\}, \{:\}'}.format(mini, maxi, num)}
+\DoxyCodeLine{462         }
+\DoxyCodeLine{463 }
+\DoxyCodeLine{464             \textcolor{comment}{\# Parameter information -\/ bond}}
+\DoxyCodeLine{465             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{466             print(\textcolor{stringliteral}{'Quantity of interest "{}bond"{} is the Hydrogen bondlength in Bohr units.'})}
+\DoxyCodeLine{467             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{468 }
+\DoxyCodeLine{469             \textcolor{comment}{\# Check if user wants defaults}}
+\DoxyCodeLine{470             tag = \textcolor{stringliteral}{'bond'}}
+\DoxyCodeLine{471             use\_def = \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a3972bcfd8df2c98c95bc85c8a2aec2d0}{query\_default}}(tag,d\_bond\_h2plus)}
+\DoxyCodeLine{472 }
+\DoxyCodeLine{473             \textcolor{comment}{\# If not defaults, query grid for c}}
+\DoxyCodeLine{474             \textcolor{keywordflow}{if} use\_def == \textcolor{stringliteral}{'n'}:}
+\DoxyCodeLine{475                 mini, maxi, num = \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a13116dbc4dc779603cb469334a304f1d}{query\_grid}}(tag)}
+\DoxyCodeLine{476                 params[tag] = \textcolor{stringliteral}{'\{:\}, \{:\}, \{:\}'}.format(mini, maxi, num)}
+\DoxyCodeLine{477 }
+\DoxyCodeLine{478     \textcolor{comment}{\# H2}}
+\DoxyCodeLine{479     \textcolor{keywordflow}{elif} sys==\textcolor{stringliteral}{'c'}:}
+\DoxyCodeLine{480 }
+\DoxyCodeLine{481         \textcolor{comment}{\# Query parameter search method}}
+\DoxyCodeLine{482         tag = \textcolor{stringliteral}{'auto\_params'}}
+\DoxyCodeLine{483         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{484         print(\textcolor{stringliteral}{'Which method would you like to use for parameter optimization at each bondlength?'})}
+\DoxyCodeLine{485         print(\textcolor{stringliteral}{'a) Automatic search by conjugate-\/gradient method, starting from a trial value for beta.'})}
+\DoxyCodeLine{486         print(\textcolor{stringliteral}{'b) Grid search, over an input grid of trial values for beta'})}
+\DoxyCodeLine{487         auto = input(\textcolor{stringliteral}{'Your response ("{}a"{} or "{}b"{}): '})}
+\DoxyCodeLine{488         \textcolor{comment}{\# Check response}}
+\DoxyCodeLine{489         options = [\textcolor{stringliteral}{'a'},\textcolor{stringliteral}{'b'}]}
+\DoxyCodeLine{490         \textcolor{keywordflow}{while} \textcolor{keywordflow}{not} (auto \textcolor{keywordflow}{in} options):}
+\DoxyCodeLine{491             print(\textcolor{stringliteral}{'Error: Invalid response, please enter "{}a"{} or "{}b"{}, without quotes.'})}
+\DoxyCodeLine{492             auto = input(\textcolor{stringliteral}{'Your response: '})}
+\DoxyCodeLine{493         \textcolor{comment}{\# Record response}}
+\DoxyCodeLine{494         settings = [\textcolor{stringliteral}{'.TRUE.'},\textcolor{stringliteral}{'.FALSE.'}]}
+\DoxyCodeLine{495         params[tag] = settings[options.index(auto)]}
+\DoxyCodeLine{496 }
+\DoxyCodeLine{497         \textcolor{comment}{\# Parameter information -\/  c}}
+\DoxyCodeLine{498         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{499         print(\textcolor{stringliteral}{'Parameter "{}beta"{} is a coefficient in the Hydrogen Molecule wavefunction.'})}
+\DoxyCodeLine{500         print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{501 }
+\DoxyCodeLine{502         \textcolor{keywordflow}{if} auto==\textcolor{stringliteral}{'a'}:}
+\DoxyCodeLine{503 }
+\DoxyCodeLine{504             \textcolor{comment}{\# Query start value for auto-\/search of parameter c}}
+\DoxyCodeLine{505             tag=\textcolor{stringliteral}{'beta'}}
+\DoxyCodeLine{506             prompt=\textcolor{stringliteral}{'Enter starting guess value for the conjugate-\/gradient search of parameter beta.'}}
+\DoxyCodeLine{507             temp = \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a5dab30aeb8324ffdb7ec7ce89d003816}{query\_posfloat}}(prompt,tag,d\_beta)}
+\DoxyCodeLine{508             \textcolor{keywordflow}{if} temp!=\textcolor{stringliteral}{''}:}
+\DoxyCodeLine{509                 params[tag] = str(temp)}
+\DoxyCodeLine{510 }
+\DoxyCodeLine{511         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{512 }
+\DoxyCodeLine{513             \textcolor{comment}{\# Check if user wants defaults}}
+\DoxyCodeLine{514             tag = \textcolor{stringliteral}{'beta\_grid'}}
+\DoxyCodeLine{515             use\_def = \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a3972bcfd8df2c98c95bc85c8a2aec2d0}{query\_default}}(tag, d\_beta\_grid)}
+\DoxyCodeLine{516 }
+\DoxyCodeLine{517             \textcolor{comment}{\# If not defaults, query grid for c}}
+\DoxyCodeLine{518             \textcolor{keywordflow}{if} use\_def == \textcolor{stringliteral}{'n'}:}
+\DoxyCodeLine{519                 mini, maxi, num = \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a13116dbc4dc779603cb469334a304f1d}{query\_grid}}(tag)}
+\DoxyCodeLine{520                 params[tag] = \textcolor{stringliteral}{'\{:\}, \{:\}, \{:\}'}.format(mini, maxi, num)}
+\DoxyCodeLine{521         }
+\DoxyCodeLine{522 }
+\DoxyCodeLine{523             \textcolor{comment}{\# Parameter information -\/ bond}}
+\DoxyCodeLine{524             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{525             print(\textcolor{stringliteral}{'Quantity of interest "{}bond"{} is the Hydrogen bondlength in Bohr units.'})}
+\DoxyCodeLine{526             print(\textcolor{stringliteral}{''})}
+\DoxyCodeLine{527 }
+\DoxyCodeLine{528             \textcolor{comment}{\# Check if user wants defaults}}
+\DoxyCodeLine{529             tag = \textcolor{stringliteral}{'bond'}}
+\DoxyCodeLine{530             use\_def = \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a3972bcfd8df2c98c95bc85c8a2aec2d0}{query\_default}}(tag,d\_bond\_h2)}
+\DoxyCodeLine{531 }
+\DoxyCodeLine{532             \textcolor{comment}{\# If not defaults, query grid for c}}
+\DoxyCodeLine{533             \textcolor{keywordflow}{if} use\_def == \textcolor{stringliteral}{'n'}:}
+\DoxyCodeLine{534                 mini, maxi, num = \mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_a13116dbc4dc779603cb469334a304f1d}{query\_grid}}(tag)}
+\DoxyCodeLine{535                 params[tag] = \textcolor{stringliteral}{'\{:\}, \{:\}, \{:\}'}.format(mini, maxi, num)}
+\DoxyCodeLine{536     }
+\DoxyCodeLine{537 }
+\DoxyCodeLine{538     \textcolor{comment}{\# Return dictionaries with user inputs}}
+\DoxyCodeLine{539     \textcolor{keywordflow}{return} control, params}
+\DoxyCodeLine{540 }
+\DoxyCodeLine{541 }
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacerepo_1_1_dice_py_1_1dice__write_ad98a8932dcff38aeae7a609bab6f0897_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacerepo_1_1_dice_py_1_1dice__write_ad98a8932dcff38aeae7a609bab6f0897_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacerepo_1_1_dice_py_1_1dice__write_ab9f232c7f1271decfbe923238d44e2e9}\label{namespacerepo_1_1_dice_py_1_1dice__write_ab9f232c7f1271decfbe923238d44e2e9}} 
+\index{repo.DicePy.dice\_write@{repo.DicePy.dice\_write}!write\_params@{write\_params}}
+\index{write\_params@{write\_params}!repo.DicePy.dice\_write@{repo.DicePy.dice\_write}}
+\doxysubsubsection{\texorpdfstring{write\_params()}{write\_params()}}
+{\footnotesize\ttfamily def repo.\+Dice\+Py.\+dice\+\_\+write.\+write\+\_\+params (\begin{DoxyParamCaption}\item[{}]{control,  }\item[{}]{params }\end{DoxyParamCaption})}
+
+
+
+Major subroutine that writes the input file params.\+txt. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em control} & Dictionay with all inputs for the CONTROL namelist in params.\+txt \\
+\hline
+\mbox{\texttt{ in}}  & {\em params} & Dictionay with all inputs for the PARAMETER namelist in params.\+txt \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 547 of file dice\+\_\+write.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{547 \textcolor{keyword}{def }\mbox{\hyperlink{namespacerepo_1_1_dice_py_1_1dice__write_ab9f232c7f1271decfbe923238d44e2e9}{write\_params}}(control,params):}
+\DoxyCodeLine{548     }
+\DoxyCodeLine{549     \textcolor{comment}{\# Open the file}}
+\DoxyCodeLine{550     f = open(\textcolor{stringliteral}{'params.txt'},\textcolor{stringliteral}{'w'})}
+\DoxyCodeLine{551 }
+\DoxyCodeLine{552     \textcolor{comment}{\# CONTROL namelist}}
+\DoxyCodeLine{553     f.write(\textcolor{stringliteral}{'\&CONTROL\(\backslash\)n'})}
+\DoxyCodeLine{554     \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} control.keys():}
+\DoxyCodeLine{555         f.write(tag+\textcolor{stringliteral}{' \(\backslash\)t= '}+str(control[tag])+\textcolor{stringliteral}{'\(\backslash\)n'})}
+\DoxyCodeLine{556     f.write(\textcolor{stringliteral}{'/\(\backslash\)n'})}
+\DoxyCodeLine{557 }
+\DoxyCodeLine{558     \textcolor{comment}{\# PARAMETERS namelist}}
+\DoxyCodeLine{559     \textcolor{keywordflow}{if} params == \textcolor{stringliteral}{'test'}:}
+\DoxyCodeLine{560         f.write(\textcolor{stringliteral}{'\&PARAMETERS\(\backslash\)n'})}
+\DoxyCodeLine{561         f.write(\textcolor{stringliteral}{'\(\backslash\)\(\backslash\) \(\backslash\)n'})}
+\DoxyCodeLine{562     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{563         f.write(\textcolor{stringliteral}{'\&PARAMETERS\(\backslash\)n'})}
+\DoxyCodeLine{564         sys = control[\textcolor{stringliteral}{'p\_system'}].replace(\textcolor{stringliteral}{"{}'"{}},\textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{565 }
+\DoxyCodeLine{566         \textcolor{keywordflow}{for} tag \textcolor{keywordflow}{in} params.keys():}
+\DoxyCodeLine{567             f.write(sys+\textcolor{stringliteral}{'\%'}+tag+\textcolor{stringliteral}{' \(\backslash\)t= '}+params[tag]+\textcolor{stringliteral}{'\(\backslash\)n'})}
+\DoxyCodeLine{568         f.write(\textcolor{stringliteral}{'/\(\backslash\)n'})}
+\DoxyCodeLine{569 }
+\DoxyCodeLine{570     \textcolor{comment}{\# Close the file}}
+\DoxyCodeLine{571     f.close()}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacerepo_1_1_dice_py_1_1dice__write_ab9f232c7f1271decfbe923238d44e2e9_icgraph}
+\end{center}
+\end{figure}

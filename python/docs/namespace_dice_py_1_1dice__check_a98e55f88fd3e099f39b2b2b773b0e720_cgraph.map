@@ -1,4 +1,0 @@
-<map id="DicePy.dice_check.check_grid" name="DicePy.dice_check.check_grid">
-<area shape="rect" id="node1" title="Checks the input values for a grid parameter." alt="" coords="5,13,204,39"/>
-<area shape="rect" id="node2" href="$namespace_dice_py_1_1dice__check.html#a7df2fa306a86981ea59e1bcc94584ab4" title="Subroutine that notifies the user when defaults are being used for a certain parameter." alt="" coords="252,5,427,47"/>
-</map>

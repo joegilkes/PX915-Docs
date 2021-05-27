@@ -1,0 +1,7 @@
+<map id="repo.DicePy.dice_visualise.process_main_results" name="repo.DicePy.dice_visualise.process_main_results">
+<area shape="rect" id="node1" title="Processes the results output as a result of the parameter search from the NetCDF4 file." alt="" coords="5,104,231,145"/>
+<area shape="rect" id="node2" href="$namespacerepo_1_1_dice_py_1_1dice__visualise.html#aabcd512b93d1e0758fa1d969d917bd26" title="Plots the energies against the parameters checked during the grid search Parameters: variables: Dicti..." alt="" coords="291,5,469,47"/>
+<area shape="rect" id="node3" href="$namespacerepo_1_1_dice_py_1_1dice__visualise.html#af16babeeddb50f554ff5001b87e722d8" title="Loads the global metadata in the results file into a dictionary." alt="" coords="279,71,481,112"/>
+<area shape="rect" id="node4" href="$namespacerepo_1_1_dice_py_1_1dice__visualise.html#a6c6d04c64ed0656c53657df6e43d5b50" title="Loads the results as a dataset NetCDF object to be passed to other functions." alt="" coords="279,136,481,177"/>
+<area shape="rect" id="node5" href="$namespacerepo_1_1_dice_py_1_1dice__visualise.html#a16b50f0b4cc0f942b2fc6c708f09ebf2" title="Loads the variables in the results file into a dictionary." alt="" coords="279,201,481,243"/>
+</map>

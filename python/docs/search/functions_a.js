@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['qho_5feng_5fplot_123',['QHO_eng_plot',['../namespace_dice_py_1_1dice__visualise.html#a4ed52b8cb18152fddc5e933a9ec10fe5',1,'DicePy::dice_visualise']]],
-  ['qho_5fprob_5fplot_124',['QHO_prob_plot',['../namespace_dice_py_1_1dice__visualise.html#a1e0fa890b9d36a8dc0d2cf886bdb47d0',1,'DicePy::dice_visualise']]],
-  ['qhoenergyplot_125',['QHOEnergyPlot',['../namespace_dice_py_1_1dice__visualise.html#a592dd6c19dea285182a2d766eba39393',1,'DicePy::dice_visualise']]],
-  ['qhoprobplot_126',['QHOProbPlot',['../namespace_dice_py_1_1dice__visualise.html#aa8bff4555b1d8df8986a287e47b44fe3',1,'DicePy::dice_visualise']]],
-  ['qhowfnplot_127',['QHOWfnPlot',['../namespace_dice_py_1_1dice__visualise.html#a9b1db186f691296871f6344f4bff4e67',1,'DicePy::dice_visualise']]],
-  ['query_5fdefault_128',['query_default',['../namespace_dice_py_1_1dice__write.html#abd52e4ec35811b04e3525b0f3db3a74f',1,'DicePy::dice_write']]],
-  ['query_5fgrid_129',['query_grid',['../namespace_dice_py_1_1dice__write.html#ad3bd71b7240382fbbdb2a0eb04f129cb',1,'DicePy::dice_write']]],
-  ['query_5fparams_130',['query_params',['../namespace_dice_py_1_1dice__write.html#a9c61faf451621bddc76ed8a230036039',1,'DicePy::dice_write']]],
-  ['query_5fposfloat_131',['query_posfloat',['../namespace_dice_py_1_1dice__write.html#a511124193533a3328fbd919cb9eca1e4',1,'DicePy::dice_write']]],
-  ['query_5fstep_132',['query_step',['../namespace_dice_py_1_1dice__write.html#a72a80ad03ea22ae6afae9e9cb7e97a57',1,'DicePy::dice_write']]]
+  ['qho_5feng_5fplot_135',['QHO_eng_plot',['../namespacerepo_1_1_dice_py_1_1dice__visualise.html#aa6eace0230fda26315899c030109d097',1,'repo::DicePy::dice_visualise']]],
+  ['qho_5fprob_5fplot_136',['QHO_prob_plot',['../namespacerepo_1_1_dice_py_1_1dice__visualise.html#a85bfac95abc5bb8164216bbd1affe3ef',1,'repo::DicePy::dice_visualise']]],
+  ['qhoenergyplot_137',['QHOEnergyPlot',['../namespacerepo_1_1_dice_py_1_1dice__visualise.html#a184191d6821b187301ed1d7f608282fc',1,'repo::DicePy::dice_visualise']]],
+  ['qhoprobplot_138',['QHOProbPlot',['../namespacerepo_1_1_dice_py_1_1dice__visualise.html#ad72da2ede131c55526018baa02715f8d',1,'repo::DicePy::dice_visualise']]],
+  ['qhowfnplot_139',['QHOWfnPlot',['../namespacerepo_1_1_dice_py_1_1dice__visualise.html#a5136a368d1b2ba8373ec139b615d9aba',1,'repo::DicePy::dice_visualise']]],
+  ['query_5fdefault_140',['query_default',['../namespacerepo_1_1_dice_py_1_1dice__write.html#a3972bcfd8df2c98c95bc85c8a2aec2d0',1,'repo::DicePy::dice_write']]],
+  ['query_5fgrid_141',['query_grid',['../namespacerepo_1_1_dice_py_1_1dice__write.html#a13116dbc4dc779603cb469334a304f1d',1,'repo::DicePy::dice_write']]],
+  ['query_5fparams_142',['query_params',['../namespacerepo_1_1_dice_py_1_1dice__write.html#ad98a8932dcff38aeae7a609bab6f0897',1,'repo::DicePy::dice_write']]],
+  ['query_5fposfloat_143',['query_posfloat',['../namespacerepo_1_1_dice_py_1_1dice__write.html#a5dab30aeb8324ffdb7ec7ce89d003816',1,'repo::DicePy::dice_write']]],
+  ['query_5fstep_144',['query_step',['../namespacerepo_1_1_dice_py_1_1dice__write.html#a706c67c9391b763fb7c9deae9158b5fc',1,'repo::DicePy::dice_write']]]
 ];

@@ -1,0 +1,17 @@
+<map id="repo.DicePy.dice_inputs.dice_inputs" name="repo.DicePy.dice_inputs.dice_inputs">
+<area shape="rect" id="node1" title="Enquires whether the user would like to write a new params.txt file, or check an existing params...." alt="" coords="5,333,192,375"/>
+<area shape="rect" id="node2" href="$namespacerepo_1_1_dice_py_1_1dice__check.html#af1c7783b7b783b4f45627515b7e53884" title="Major subroutine that checks the inputs of file params.txt." alt="" coords="240,140,439,181"/>
+<area shape="rect" id="node8" href="$namespacerepo_1_1_dice_py_1_1dice__write.html#ad98a8932dcff38aeae7a609bab6f0897" title="Major function that queries the user for all the inputs required to assemble params...." alt="" coords="246,333,433,375"/>
+<area shape="rect" id="node15" href="$namespacerepo_1_1_dice_py_1_1dice__write.html#ab9f232c7f1271decfbe923238d44e2e9" title="Major subroutine that writes the input file params.txt." alt="" coords="247,399,431,440"/>
+<area shape="rect" id="node3" href="$namespacerepo_1_1_dice_py_1_1dice__check.html#a11e1a939a780b57bc6fbf04e7d491319" title="Checks the input value of a parameter that is expected to be a float." alt="" coords="503,5,701,47"/>
+<area shape="rect" id="node4" href="$namespacerepo_1_1_dice_py_1_1dice__check.html#af7828f10e902486cf549e1d4d0b567d9" title="Subroutine that notifies the user when defaults are being used for a certain parameter." alt="" coords="765,89,968,131"/>
+<area shape="rect" id="node5" href="$namespacerepo_1_1_dice_py_1_1dice__check.html#ae8ec810c9210b7d47ba15ca0120f8bf9" title="Checks the input values for a grid parameter." alt="" coords="489,122,715,149"/>
+<area shape="rect" id="node6" href="$namespacerepo_1_1_dice_py_1_1dice__check.html#a8a1c7a05141ff970441250fe8355b9d7" title="Checks the input value of a parameter that is expected to be an integer step." alt="" coords="487,173,717,199"/>
+<area shape="rect" id="node7" href="$namespacerepo_1_1_dice_py_1_1dice__check.html#a1a1f6c0cd51ea74a13b5dd0f42293fdb" title="Checks the validity of the input value given for a tag present in params.txt." alt="" coords="502,223,702,250"/>
+<area shape="rect" id="node9" href="$namespacerepo_1_1_dice_py_1_1dice__write.html#a3972bcfd8df2c98c95bc85c8a2aec2d0" title="Queries whether the user wants to use default values for a certain parameter." alt="" coords="509,275,695,316"/>
+<area shape="rect" id="node10" href="$namespacerepo_1_1_dice_py_1_1dice__write.html#a13116dbc4dc779603cb469334a304f1d" title="Queries user for the minimum, maximum and number of points of a parameter grid." alt="" coords="495,341,709,367"/>
+<area shape="rect" id="node11" href="$namespacerepo_1_1_dice_py_1_1dice__write.html#a5dab30aeb8324ffdb7ec7ce89d003816" title="Queries a positive float value, using the input string as a prompt." alt="" coords="509,392,695,433"/>
+<area shape="rect" id="node13" href="$namespacerepo_1_1_dice_py_1_1dice__write.html#a706c67c9391b763fb7c9deae9158b5fc" title="Queries an integer step value, using the input string as a prompt." alt="" coords="493,458,711,485"/>
+<area shape="rect" id="node12" href="$namespacerepo_1_1_dice_py_1_1dice__write.html#a091651cb5a2344490852ec428f3749ad" title="Checks if the input string represents a float." alt="" coords="771,399,962,426"/>
+<area shape="rect" id="node14" href="$namespacerepo_1_1_dice_py_1_1dice__write.html#a8cad57db1ad2bd410b5e2824fe941527" title="Checks if the input string represents an integer." alt="" coords="777,458,957,485"/>
+</map>

@@ -1,4 +1,0 @@
-<map id="DicePy.dice_visualise.load_results" name="DicePy.dice_visualise.load_results">
-<area shape="rect" id="node1" title="Loads the results as a dataset NetCDF object to be passed to other functions." alt="" coords="251,5,425,47"/>
-<area shape="rect" id="node2" href="$namespace_dice_py_1_1dice__visualise.html#a5a0c22f15d7ec362e1e8063e090cff12" title="Processes the results output as a result of the parameter search from the NetCDF4 file." alt="" coords="5,5,203,47"/>
-</map>

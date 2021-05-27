@@ -374,13 +374,13 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keywordflow">if</span> (write_log) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <span class="keywordflow">if</span> (my_rank&gt;0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                <span class="comment">! Send the seeds to rank 0</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                <span class="keyword">call </span>mpi_send(seed,1,mpi_integer,0,tag_seed,mpi_comm_world,mpierr)</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                <span class="keyword">call </span>mpi_send(seed,1,mpi_integer8,0,tag_seed,mpi_comm_world,mpierr)</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                <span class="comment">! Write seed of rank=0 to logfile</span></div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;Rank &#39;,I2,&#39;. Initial seed from /dev/urandom: &#39;, I20)&quot;</span>) my_rank, seed</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                <span class="keywordflow">do</span> ip = 1, p-1</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                    <span class="comment">! Receive seed value from rank=ip</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                    <span class="keyword">call </span>mpi_recv(ip_seed,1,mpi_integer,ip,tag_seed,mpi_comm_world,status,mpierr) </div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                    <span class="keyword">call </span>mpi_recv(ip_seed,1,mpi_integer8,ip,tag_seed,mpi_comm_world,status,mpierr) </div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                    <span class="comment">! Write seed of rank=ip to logfile</span></div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                    <span class="keyword">write</span>(logid, <span class="stringliteral">&quot;(&#39;Rank &#39;,I2,&#39;. Initial seed from /dev/urandom: &#39;, I20)&quot;</span>) ip, ip_seed</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="keywordflow">                end do</span></div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['corder_136',['corder',['../namespace_dice_py_1_1dice__defaults.html#ad91c0b60d694e729ca585b7f4f209741',1,'DicePy::dice_defaults']]]
+  ['corder_148',['corder',['../namespacerepo_1_1_dice_py_1_1dice__defaults.html#aaf337f7f922fccb9d9b3c7f3481ab073',1,'repo::DicePy::dice_defaults']]]
 ];

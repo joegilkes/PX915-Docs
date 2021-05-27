@@ -1,0 +1,4 @@
+<map id="repo.DicePy.dice_visualise.H2_eng_plot" name="repo.DicePy.dice_visualise.H2_eng_plot">
+<area shape="rect" id="node1" title="Plots the energies against the parameters checked during the grid search Parameters: variables: Dicti..." alt="" coords="279,5,457,47"/>
+<area shape="rect" id="node2" href="$namespacerepo_1_1_dice_py_1_1dice__visualise.html#ad2ba27feabd9f2ec209fa863bdc4cb03" title="Processes the results output as a result of the parameter search from the NetCDF4 file." alt="" coords="5,5,231,47"/>
+</map>

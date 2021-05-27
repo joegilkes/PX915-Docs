@@ -223,13 +223,13 @@ Definition at line 53 of file driver.\+f90.
 \DoxyCodeLine{223         \textcolor{keywordflow}{if} (write\_log) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{224             \textcolor{keywordflow}{if} (my\_rank>0) \textcolor{keywordflow}{then}}
 \DoxyCodeLine{225                 \textcolor{comment}{! Send the seeds to rank 0}}
-\DoxyCodeLine{226                 \textcolor{keyword}{call }mpi\_send(seed,1,mpi\_integer,0,tag\_seed,mpi\_comm\_world,mpierr)}
+\DoxyCodeLine{226                 \textcolor{keyword}{call }mpi\_send(seed,1,mpi\_integer8,0,tag\_seed,mpi\_comm\_world,mpierr)}
 \DoxyCodeLine{227             \textcolor{keywordflow}{else}}
 \DoxyCodeLine{228                 \textcolor{comment}{! Write seed of rank=0 to logfile}}
 \DoxyCodeLine{229                 \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Rank ',I2,'. Initial seed from /dev/urandom: ', I20)"{}}) my\_rank, seed}
 \DoxyCodeLine{230                 \textcolor{keywordflow}{do} ip = 1, p-\/1}
 \DoxyCodeLine{231                     \textcolor{comment}{! Receive seed value from rank=ip}}
-\DoxyCodeLine{232                     \textcolor{keyword}{call }mpi\_recv(ip\_seed,1,mpi\_integer,ip,tag\_seed,mpi\_comm\_world,status,mpierr) }
+\DoxyCodeLine{232                     \textcolor{keyword}{call }mpi\_recv(ip\_seed,1,mpi\_integer8,ip,tag\_seed,mpi\_comm\_world,status,mpierr) }
 \DoxyCodeLine{233                     \textcolor{comment}{! Write seed of rank=ip to logfile}}
 \DoxyCodeLine{234                     \textcolor{keyword}{write}(logid, \textcolor{stringliteral}{"{}('Rank ',I2,'. Initial seed from /dev/urandom: ', I20)"{}}) ip, ip\_seed}
 \DoxyCodeLine{235 \textcolor{keywordflow}{                end do}}

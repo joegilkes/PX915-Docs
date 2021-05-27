@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['view_5foriginal_5ftrace_133',['view_original_trace',['../namespace_dice_py_1_1dice__visualise.html#a74e67f9c7fa59205001d85b39eed2aa6',1,'DicePy::dice_visualise']]]
+  ['view_5foriginal_5ftrace_145',['view_original_trace',['../namespacerepo_1_1_dice_py_1_1dice__visualise.html#a47a92f8dbf9abdc6b5faf448b9a3dab8',1,'repo::DicePy::dice_visualise']]]
 ];

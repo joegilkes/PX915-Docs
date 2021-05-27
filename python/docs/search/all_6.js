@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['h2_5feng_5fplot_46',['H2_eng_plot',['../namespace_dice_py_1_1dice__visualise.html#a12b764183adcced19e3e7bf8a10f4e92',1,'DicePy::dice_visualise']]],
-  ['h2_5fprob_5fplot_47',['H2_prob_plot',['../namespace_dice_py_1_1dice__visualise.html#ae92b300a144ac37a74e18b6dc16d89a7',1,'DicePy::dice_visualise']]],
-  ['h2energyplot_48',['H2EnergyPlot',['../namespace_dice_py_1_1dice__visualise.html#a68554c3801b44e369f77719d5147e591',1,'DicePy::dice_visualise']]],
-  ['h2plusenergyplot_49',['H2plusEnergyPlot',['../namespace_dice_py_1_1dice__visualise.html#abe1e1fab789ff04e6f5ac5f6887695ec',1,'DicePy::dice_visualise']]],
-  ['hydprobplot_50',['HydProbPlot',['../namespace_dice_py_1_1dice__visualise.html#a05c1a1feaeeaae37d1692368f422ecf1',1,'DicePy::dice_visualise']]]
+  ['h2_5feng_5fplot_45',['H2_eng_plot',['../namespacerepo_1_1_dice_py_1_1dice__visualise.html#aabcd512b93d1e0758fa1d969d917bd26',1,'repo::DicePy::dice_visualise']]],
+  ['h2_5fprob_5fplot_46',['H2_prob_plot',['../namespacerepo_1_1_dice_py_1_1dice__visualise.html#a0177611f236482d4e8bc325eeaf1a0d8',1,'repo::DicePy::dice_visualise']]],
+  ['h2energyplot_47',['H2EnergyPlot',['../namespacerepo_1_1_dice_py_1_1dice__visualise.html#ab732ded507d5bf8486bc0afb9ff5d184',1,'repo::DicePy::dice_visualise']]],
+  ['h2plusenergyplot_48',['H2plusEnergyPlot',['../namespacerepo_1_1_dice_py_1_1dice__visualise.html#a136634d062b3b34f3807e5376fa758a0',1,'repo::DicePy::dice_visualise']]],
+  ['hydprobplot_49',['HydProbPlot',['../namespacerepo_1_1_dice_py_1_1dice__visualise.html#ae080438a4b7ad604af62edd681c13576',1,'repo::DicePy::dice_visualise']]]
 ];

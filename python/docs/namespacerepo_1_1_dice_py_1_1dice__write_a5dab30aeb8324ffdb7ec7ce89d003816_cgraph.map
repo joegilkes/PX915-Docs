@@ -1,0 +1,4 @@
+<map id="repo.DicePy.dice_write.query_posfloat" name="repo.DicePy.dice_write.query_posfloat">
+<area shape="rect" id="node1" title="Queries a positive float value, using the input string as a prompt." alt="" coords="5,5,192,47"/>
+<area shape="rect" id="node2" href="$namespacerepo_1_1_dice_py_1_1dice__write.html#a091651cb5a2344490852ec428f3749ad" title="Checks if the input string represents a float." alt="" coords="240,13,431,39"/>
+</map>

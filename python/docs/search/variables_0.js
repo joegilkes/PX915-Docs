@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['boolean_135',['boolean',['../namespace_dice_py_1_1dice__defaults.html#a6b6b594f0de2981da60b218bb30c86e4',1,'DicePy::dice_defaults']]]
+  ['boolean_147',['boolean',['../namespacerepo_1_1_dice_py_1_1dice__defaults.html#a2ed58733e8d4b3b05fcb22920b8aa8c8',1,'repo::DicePy::dice_defaults']]]
 ];

@@ -1,0 +1,8 @@
+<map id="repo.DicePy.dice_check.default_message" name="repo.DicePy.dice_check.default_message">
+<area shape="rect" id="node1" title="Subroutine that notifies the user when defaults are being used for a certain parameter." alt="" coords="765,89,968,131"/>
+<area shape="rect" id="node2" href="$namespacerepo_1_1_dice_py_1_1dice__check.html#a11e1a939a780b57bc6fbf04e7d491319" title="Checks the input value of a parameter that is expected to be a float." alt="" coords="503,5,701,47"/>
+<area shape="rect" id="node3" href="$namespacerepo_1_1_dice_py_1_1dice__check.html#af1c7783b7b783b4f45627515b7e53884" title="Major subroutine that checks the inputs of file params.txt." alt="" coords="240,89,439,131"/>
+<area shape="rect" id="node5" href="$namespacerepo_1_1_dice_py_1_1dice__check.html#ae8ec810c9210b7d47ba15ca0120f8bf9" title="Checks the input values for a grid parameter." alt="" coords="489,122,715,149"/>
+<area shape="rect" id="node6" href="$namespacerepo_1_1_dice_py_1_1dice__check.html#a8a1c7a05141ff970441250fe8355b9d7" title="Checks the input value of a parameter that is expected to be an integer step." alt="" coords="487,173,717,199"/>
+<area shape="rect" id="node4" href="$namespacerepo_1_1_dice_py_1_1dice__inputs.html#a4fdc3c6a540c2c6125999f3e8a5d3020" title="Enquires whether the user would like to write a new params.txt file, or check an existing params...." alt="" coords="5,89,192,131"/>
+</map>

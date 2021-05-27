@@ -1,0 +1,4 @@
+<map id="repo.DicePy.dice_visualise.load_global_attr" name="repo.DicePy.dice_visualise.load_global_attr">
+<area shape="rect" id="node1" title="Loads the global metadata in the results file into a dictionary." alt="" coords="279,5,481,47"/>
+<area shape="rect" id="node2" href="$namespacerepo_1_1_dice_py_1_1dice__visualise.html#ad2ba27feabd9f2ec209fa863bdc4cb03" title="Processes the results output as a result of the parameter search from the NetCDF4 file." alt="" coords="5,5,231,47"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="repo.DicePy.dice_write.isint" name="repo.DicePy.dice_write.isint">
+<area shape="rect" id="node1" title="Checks if the input string represents an integer." alt="" coords="741,13,921,39"/>
+<area shape="rect" id="node2" href="$namespacerepo_1_1_dice_py_1_1dice__write.html#a706c67c9391b763fb7c9deae9158b5fc" title="Queries an integer step value, using the input string as a prompt." alt="" coords="475,13,693,39"/>
+<area shape="rect" id="node3" href="$namespacerepo_1_1_dice_py_1_1dice__write.html#ad98a8932dcff38aeae7a609bab6f0897" title="Major function that queries the user for all the inputs required to assemble params...." alt="" coords="240,5,427,47"/>
+<area shape="rect" id="node4" href="$namespacerepo_1_1_dice_py_1_1dice__inputs.html#a4fdc3c6a540c2c6125999f3e8a5d3020" title="Enquires whether the user would like to write a new params.txt file, or check an existing params...." alt="" coords="5,5,192,47"/>
+</map>

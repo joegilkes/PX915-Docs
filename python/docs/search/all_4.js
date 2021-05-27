@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['example_5fh1s_5fwfn_44',['example_H1s_wfn',['../namespace_dice_py_1_1dice__visualise.html#ac82e6fdf20ce6eca6265e10dc59acc08',1,'DicePy::dice_visualise']]]
+  ['example_5fh1s_5fwfn_43',['example_H1s_wfn',['../namespacerepo_1_1_dice_py_1_1dice__visualise.html#a7a58a155784fa7494c63e150dd519d82',1,'repo::DicePy::dice_visualise']]]
 ];

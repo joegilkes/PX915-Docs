@@ -1,0 +1,4 @@
+<map id="repo.DicePy.dice_check.check_float" name="repo.DicePy.dice_check.check_float">
+<area shape="rect" id="node1" title="Checks the input value of a parameter that is expected to be a float." alt="" coords="5,5,204,47"/>
+<area shape="rect" id="node2" href="$namespacerepo_1_1_dice_py_1_1dice__check.html#af7828f10e902486cf549e1d4d0b567d9" title="Subroutine that notifies the user when defaults are being used for a certain parameter." alt="" coords="252,5,455,47"/>
+</map>

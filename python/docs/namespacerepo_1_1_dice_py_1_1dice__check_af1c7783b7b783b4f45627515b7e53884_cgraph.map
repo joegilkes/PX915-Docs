@@ -1,0 +1,8 @@
+<map id="repo.DicePy.dice_check.check_inputs" name="repo.DicePy.dice_check.check_inputs">
+<area shape="rect" id="node1" title="Major subroutine that checks the inputs of file params.txt." alt="" coords="5,115,204,156"/>
+<area shape="rect" id="node2" href="$namespacerepo_1_1_dice_py_1_1dice__check.html#a11e1a939a780b57bc6fbf04e7d491319" title="Checks the input value of a parameter that is expected to be a float." alt="" coords="268,5,467,47"/>
+<area shape="rect" id="node3" href="$namespacerepo_1_1_dice_py_1_1dice__check.html#af7828f10e902486cf549e1d4d0b567d9" title="Subroutine that notifies the user when defaults are being used for a certain parameter." alt="" coords="531,89,733,131"/>
+<area shape="rect" id="node4" href="$namespacerepo_1_1_dice_py_1_1dice__check.html#ae8ec810c9210b7d47ba15ca0120f8bf9" title="Checks the input values for a grid parameter." alt="" coords="254,122,481,149"/>
+<area shape="rect" id="node5" href="$namespacerepo_1_1_dice_py_1_1dice__check.html#a8a1c7a05141ff970441250fe8355b9d7" title="Checks the input value of a parameter that is expected to be an integer step." alt="" coords="252,173,483,199"/>
+<area shape="rect" id="node6" href="$namespacerepo_1_1_dice_py_1_1dice__check.html#a1a1f6c0cd51ea74a13b5dd0f42293fdb" title="Checks the validity of the input value given for a tag present in params.txt." alt="" coords="267,223,467,250"/>
+</map>
