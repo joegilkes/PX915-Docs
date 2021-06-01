@@ -1,6 +1,5 @@
 var NAVTREEINDEX0 =
 {
-"":[2,0,0],
 "____init_____8py.html":[3,0,0,1],
 "____init_____8py_source.html":[3,0,0,1],
 "_dice_py_2____init_____8py.html":[3,0,0,0,0],
@@ -173,5 +172,6 @@ var NAVTREEINDEX0 =
 "namespacerepo_1_1_dice_py_1_1dice__write.html#ab9f232c7f1271decfbe923238d44e2e9":[2,0,1,0,4,7],
 "namespacerepo_1_1_dice_py_1_1dice__write.html#ad98a8932dcff38aeae7a609bab6f0897":[2,0,1,0,4,6],
 "namespaces.html":[2,0],
-"pages.html":[]
+"pages.html":[],
+"":[2,0,0]
 };
